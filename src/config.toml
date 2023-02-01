@@ -1,0 +1,13 @@
+baseURL = 'https://esp3d.io'
+languageCode = 'en-us'
+title = 'ESP3D Project'
+
+# Change the default theme to be use when building the site with Hugo
+theme = "hugo-theme-relearn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "SEARCH"]
+
+[params]
+themeVariant = "blue"
