@@ -13,9 +13,8 @@ home = [ "HTML", "RSS", "SEARCH"]
 themeVariant = "blue"
 description = "Web site of ESP3D ecosystem"
 disableLandingPageButton = true
+disableShortcutsTitle = true
+collapsibleMenu = true
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-identifier = "ds"
-url = "https://github.com/luc-github/esp3d.io"
-weight = 10
+

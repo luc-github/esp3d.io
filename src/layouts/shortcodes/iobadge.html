@@ -1,0 +1,7 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- partial "shortcodes/iobadge.html" (dict
+  "context" .
+  "content" .Inner
+  "path"    (.Get "path")
+  "alt"   (.Get "alt")
+) }}

@@ -1,0 +1,8 @@
+{{- $context := .context }}
+{{- $content := .content }}
+{{- $alt := .alt | default "" }}
+{{- $path := .path | default "" }}
+
+{{- with $context -}}
+<span style="display:inline-block!important;"><img src="https://{{ $path }}" atl="{{ $alt }}"/></span>
+{{- end }}
