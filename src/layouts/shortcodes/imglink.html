@@ -1,0 +1,9 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- partial "shortcodes/imglink.html" (dict
+  "context" .
+  "content" .Inner
+  "img"    (.Get "img")
+  "alt"   (.Get "alt")
+  "url"   (.Get "url")
+  "width"   (.Get "width")
+) }}

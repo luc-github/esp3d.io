@@ -44,7 +44,7 @@ graph LR;
 %%{init:{"theme":"default"}}%%
 graph LR;
     A{<strong>Is main board ?</strong>} -->|Yes| B{<strong>Hardware ?</strong>} 
-    B -->|ESPP8266| C[Sorry no support for this]
+    B -->|ESP8266| C[Sorry no support for this]
     B -->|ESP32| D[ESP3DLib]
     A -->|No| E{<strong>Hardware ?</strong>} 
     E -->|ESP8266| F[ESP3D]
