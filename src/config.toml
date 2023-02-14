@@ -1,6 +1,6 @@
 baseURL = 'https://esp3d.io'
 languageCode = 'en-us'
-title = 'ESP3D Project'
+title = 'ESP3D Ecosystem'
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-relearn"
@@ -16,5 +16,13 @@ disableLandingPageButton = true
 disableShortcutsTitle = true
 collapsibleMenu = true
 
-[[menu.shortcuts]]
+mermaidInitialize = "{ \"theme\": \"dark\" }"
+mermaidZoom = true
+
+[markup]
+  [markup.highlight]
+    # if `guessSyntax = true`, there will be no unstyled code even if no language
+    # was given BUT Mermaid and Math codefences will not work anymore! So this is a
+    # mandatory setting for your site if you want to use Mermaid codefences
+    guessSyntax = false
 
