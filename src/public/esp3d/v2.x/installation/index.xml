@@ -36,7 +36,7 @@ Compile and Flash</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/installation/wiring/index.html</guid>
       <description>Connection between ESP and printer board needs 4 wires:
-ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board (ESP MCU is 3.3V) to 5V printer board Disclaimer : this wiki is for reference - you are responsible of your board supporting or not 5V, we are not responsible for any damage of wrong wiring.</description>
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.</description>
     </item>
   </channel>
 </rss>

@@ -7,13 +7,16 @@ weight = 2
 
 ### Setup your development environment
 
-{{% imglink url="/esp3d/v2.x/installation/arduino/" width="200px" img="/esp3d/v2.x/installation/arduino.png" %}}Arduino{{% /imglink %}} Arduino IDE
+{{% imglink url="/esp3d/v2.x/installation/arduino/" width="200px" img="/images/arduino.png" %}}Arduino{{% /imglink %}} 
+{{% center %}}Arduino IDE{{% /center %}}
+{{% center %}}or{{% /center %}}
 
-or
 
-{{% imglink url="/esp3d/v2.x/installation/vscode-platformio/" width="200px" img="/esp3d/v2.x/installation/platformiovscode.png" %}}VS Code{{% /imglink %}}
-PlatformIO
+{{% imglink url="/esp3d/v2.x/installation/vscode-platformio/" width="200px" img="/images/platformiovscode.png" %}}VS Code{{% /imglink %}}
+{{% center %}}PlatformIO{{% /center %}}
 
 The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
 
-### Connect board 
+### Connect your board 
+
+{{% include file="common/hardware-connection.md" %}}

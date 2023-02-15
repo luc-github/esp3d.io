@@ -2,9 +2,7 @@
 {{- $content := .content }}
 {{- with $page }}
           <article class="chapter">
-{{ partial "heading-pre.html" . }}<div class="article-subheading"></div>
-<h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>{{ partial "heading-post.html" . }}
-
+<h1 id="{{ .Title | urlize }}">{{ .Title }}</h1>
 {{ $content | safeHTML }}
             <footer class="footline">
               {{- partial "content-footer.html" . }}

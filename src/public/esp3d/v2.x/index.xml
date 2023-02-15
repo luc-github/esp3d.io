@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Version 2.X on ESP3D Ecosystem</title>
+    <title>Version 2.1.X on ESP3D Ecosystem</title>
     <link>https://esp3d.io/esp3d/v2.x/index.html</link>
-    <description>Recent content in Version 2.X on ESP3D Ecosystem</description>
+    <description>Recent content in Version 2.1.X on ESP3D Ecosystem</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://esp3d.io/esp3d/v2.x/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -11,18 +11,16 @@
       <link>https://esp3d.io/esp3d/v2.x/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/features/index.html</guid>
-      <description>Serial/Wifi bridge using configurable port 8888 Use GPIO2 to ground to reset all settings in hard way - 2-6 sec after boot / not before!! Set GPIO2 to ground before boot change boot mode and go to special boot that do not reach FW. Currently boot take 10 sec - giving 8 seconds to connect GPIO2 to GND and do a hard recovery for settings Complete configuration by web browser (Station or Access point) or by Serial/telnet commands Authentication (optional) for better security Update firmware by web browser Captive portal in Access point mode which redirect all unknow call to main page mDNS which allows to key the name defined in web browser and connect only with bonjour installed on computer SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
+      <description>Support for ESP8266, ESP8285 and standard ESP32 board with at least 1Mb of flash Serial/Wifi bridge using configurable port 8888 Reset settings using GPIO2 pin Complete configuration by web browser (Station or Access point) or by Serial/telnet commands Authentication (optional) for better security Update firmware by web browser for 4MB boards Captive portal in Access point mode which redirect all unknow call to main page mDNS, this feature is a discovery protocol, it need bonjour installed on computer, supported outof the box by OSX, on Windows and Linux need to be installed SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
     </item>
     <item>
       <title>Installation</title>
       <link>https://esp3d.io/esp3d/v2.x/installation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/installation/index.html</guid>
-      <description>Setup your development environment Arduino IDE
-or
-PlatformIO
-The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
-Connect board </description>
+      <description>Setup your development environment Arduino IDE or PlatformIO The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
+Connect your board Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V.</description>
     </item>
     <item>
       <title>Documentation</title>
@@ -37,6 +35,14 @@ Connect board </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/showcase/index.html</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Credits</title>
+      <link>https://esp3d.io/esp3d/v2.x/credits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/credits/index.html</guid>
+      <description>Big thanks to :
+@disneysw for bringing this module idea @lkarlslund for suggestion about independent reset using GPIO2 Roy Cortes from Panucatt Devices for supporting and pushing me implementing great features all contributors, feedbacks owners and donations. </description>
     </item>
   </channel>
 </rss>

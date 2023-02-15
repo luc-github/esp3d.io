@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.10.2+tip">
     <meta name="description" content="Web site of ESP3D ecosystem">
     <title>API :: ESP3D Ecosystem</title>
-    <link href="/images/favicon.ico?1676425399" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1676464049" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1676425399" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676425399" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1676425399" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676425399" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1676425399" rel="stylesheet">
-    <link href="/css/nucleus.css?1676425399" rel="stylesheet">
-    <link href="/css/fonts.css?1676425399" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676425399" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1676425399" rel="stylesheet">
-    <link href="/css/theme-blue.css?1676425399" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1676425399" rel="stylesheet">
-    <link href="/css/variant.css?1676425399" rel="stylesheet">
-    <link href="/css/print.css?1676425399" rel="stylesheet" media="print">
-    <script src="/js/url.js?1676425399"></script>
-    <script src="/js/variant.js?1676425399"></script>
+    <link href="/css/fontawesome-all.min.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1676464049" rel="stylesheet">
+    <link href="/css/nucleus.css?1676464049" rel="stylesheet">
+    <link href="/css/fonts.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1676464049" rel="stylesheet">
+    <link href="/css/theme-blue.css?1676464049" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1676464049" rel="stylesheet">
+    <link href="/css/variant.css?1676464049" rel="stylesheet">
+    <link href="/css/print.css?1676464049" rel="stylesheet" media="print">
+    <script src="/js/url.js?1676464049"></script>
+    <script src="/js/variant.js?1676464049"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -38,7 +38,7 @@
       var baseUriFull='https:\/\/esp3d.io/';
       window.variants && variants.init( [ 'blue' ] );
     </script>
-    <script src="/js/jquery.min.js?1676425399" defer></script>
+    <script src="/js/jquery.min.js?1676464049" defer></script>
   </head>
   <body class="mobile-support html" data-url="/esp3d/v2.x/documentation/api/index.html">
     <div id="body" class="default-animation">
@@ -56,25 +56,141 @@
             <span id="sidebar-toggle-span">
               <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
             </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
             <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1"> > </li>
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/index.html"><span itemprop="name">ESP3D</span></a><meta itemprop="position" content="2"> > </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v2.x/index.html"><span itemprop="name">Version 2.X</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v2.x/index.html"><span itemprop="name">Version 2.1.X</span></a><meta itemprop="position" content="3"> > </li>
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v2.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4"> > </li>
               <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">API</span><meta itemprop="position" content="5"></li>
             </ol>
           </div>
+          <div class="default-animation progress">
+            <div class="toc-wrapper" dir="ltr">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-handlers">Web Handlers</a>
+      <ul>
+        <li><a href="#-get">/ (GET)</a></li>
+        <li><a href="#files-getpost">/files (GET/POST)</a></li>
+        <li><a href="#upload_serial-post">/upload_serial (POST)</a></li>
+        <li><a href="#command-get">/command (GET)</a></li>
+        <li><a href="#login-getpost">/login (GET/POST)</a></li>
+        <li><a href="#config-get">/config (GET)</a></li>
+        <li><a href="#updatefw-post">/updatefw (POST)</a></li>
+        <li><a href="#descriptionxml-get">/description.xml (GET)</a></li>
+        <li><a href="#captive-portal-bypass-handlers">Captive portal bypass handlers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
         </div>
       </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
         <div class="flex-block-wrapper">
           <div id="head-tags">
           </div>
-          <article class="default">
+          <article class="chapter">
 <h1 id="api">API</h1>
+<h2 id="web-handlers">Web Handlers</h2>
+<h3 id="-get">/ (GET)</h3>
+<p>root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
+if you call specific file, it will look for the filename and filename.gz (compressed)
+if no file is defined and there is not index.html(.gz) it will display embedded page
+another way to show the embedded page is /?forcefallback=yes</p>
+<h3 id="files-getpost">/files (GET/POST)</h3>
+<p>this handler handle all commands for FS, including upload on FS.<br>
+possible options/arguments are:</p>
+<ul>
+<li><code>quiet=yes</code> can be used when you don&rsquo;t want list files but just upload them</li>
+<li><code>path=...</code> define the path to the file</li>
+<li><code>action=...</code> define the action to execute which can be:<br>
+- <code>delete</code><br>
+delete the file defined by <code>filename=...</code> it will also use <code>path=...</code> to do full path<br>
+- <code>deletedir</code><br>
+delete the directory defined by <code>filename=...</code> it will also use <code>path=...</code> to do full path <br>
+- <code>createdir</code>
+create the directory defined by <code>filename=...</code> it will also use <code>path=...</code> to do full path</li>
+<li><code>&lt;filename&gt;S=...</code> give the size of uploaded file with <!-- raw HTML omitted --> name, need to be set before file is set in upload, POST only</li>
+</ul>
+<p>the output is a json file:</p>
+<pre><code>```
+{   
+    &quot;files&quot;:[ //the files list  
+        {  
+            &quot;name&quot;:&quot;index.html.gz&quot;, //the name of the file
+            &quot;size&quot;:&quot;83.46 KB&quot;, //the formated size of the file 
+            &quot;time&quot;:&quot;2022-09-04 11:56:05&quot; //the time when the file was modified last time, this one is optional and depend on (FILESYSTEM_TIMESTAMP_FEATURE)
+        },
+        {
+            &quot;name&quot;:&quot;subdir&quot;, //the name of the file / directory
+            &quot;size&quot;:&quot;-1&quot;, //the size is -1 because it is a directory
+            &quot;time&quot;:&quot;&quot; //no time for directories optional as depend on (FILESYSTEM_TIMESTAMP_FEATURE)
+        }
+    ],
+    &quot;path&quot;:&quot;/&quot;, //current path
+    &quot;occupation&quot;:&quot;52&quot;, //% of occupation
+    &quot;status&quot;:&quot;subdir created&quot;, //status 
+    &quot;total&quot;:&quot;192.00 KB&quot;, //Formated total space of Filesystem
+    &quot;used&quot;:&quot;100.00 KB&quot; //Formated used space of Filesystem
+}
+```
+</code></pre>
+<h3 id="upload_serial-post">/upload_serial (POST)</h3>
+<p>this handler is for uploading files to printer SD using M28/M29 protocol</p>
+<h3 id="command-get">/command (GET)</h3>
+<p>this handler is for all commands the parameter is <code>cmd=...</code>
+if it is an <code>[ESPXXX]</code> command the answer is the <code>[ESPXXX]</code> response
+if it is not an <code>[ESPXXX]</code> command the answer is <code>ESP3D says: command forwarded</code> and can be ignored</p>
+<h3 id="login-getpost">/login (GET/POST)</h3>
+<p>this handler is for authentication function if enabled
+possible options/arguments are:<br>
+- <code>DISCONNECT=YES</code>
+it will clear current session, remove authentication cookie, set status to <code>disconnected</code> and response code to 401
+- <code>SUBMIT=YES</code>
+to login it will need also <code>PASSWORD=...</code> and <code>USER=...</code>, the answer will be 200 if success and 401 if failed
+if user is already authenticated it can use <code>NEWPASSWORD=...</code> instead of <code>PASSWORD=...</code> to change his password, if successful answer will be returned with code 200, otherwise code will be 500 if change failed or if password format is invalid</p>
+<h3 id="config-get">/config (GET)</h3>
+<p>this handler is a shortcut to [ESP420] command in text mode, to get output in json add <code>json=yes</code></p>
+<h3 id="updatefw-post">/updatefw (POST)</h3>
+<p>this handler is for FW upload and update</p>
+<h3 id="descriptionxml-get">/description.xml (GET)</h3>
+<p>this handler is for SSDP if enabled to present device informations</p>
+<pre tabindex="0"><code>&lt;root xmlns=&#34;urn:schemas-upnp-org:device-1-0&#34;&gt;
+    &lt;specVersion&gt;
+        &lt;major&gt;1&lt;/major&gt;
+        &lt;minor&gt;0&lt;/minor&gt;
+    &lt;/specVersion&gt;
+    &lt;URLBase&gt;http://192.168.2.178:80/&lt;/URLBase&gt;
+    &lt;device&gt;
+        &lt;deviceType&gt;urn:schemas-upnp-org:device:upnp:rootdevice:1&lt;/deviceType&gt;
+        &lt;friendlyName&gt;esp3d&lt;/friendlyName&gt;
+        &lt;presentationURL&gt;/&lt;/presentationURL&gt;
+        &lt;serialNumber&gt;52332&lt;/serialNumber&gt;
+        &lt;modelName&gt;ESP Board&lt;/modelName&gt;
+        &lt;modelDescription/&gt;
+        &lt;modelNumber&gt;ESP3D 3.0&lt;/modelNumber&gt;
+        &lt;modelURL&gt;https://www.espressif.com/en/products/devkits&lt;/modelURL&gt;
+        &lt;manufacturer&gt;Espressif Systems&lt;/manufacturer&gt;
+        &lt;manufacturerURL&gt;https://www.espressif.com&lt;/manufacturerURL&gt;
+        &lt;UDN&gt;uuid:38323636-4558-4dda-9188-cda0e600cc6c&lt;/UDN&gt;
+        &lt;serviceList/&gt;
+        &lt;iconList/&gt;
+    &lt;/device&gt;
+&lt;/root&gt;
+</code></pre><h3 id="captive-portal-bypass-handlers">Captive portal bypass handlers</h3>
+<p>to avoid a redirect to index.html and so a refresh of the page, some classic handler have been added so they all go to / handler actually</p>
+<ul>
+<li>/generate_204</li>
+<li>/gconnectivitycheck.gstatic.com</li>
+<li>/fwlink/</li>
+</ul>
 
+            <footer class="footline"><hr>
+<center>If any error please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a> or by proposing a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
 
-            <footer class="footline">
             </footer>
           </article>
         </div>
@@ -155,18 +271,18 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1676425399" defer></script>
-        <script src="/js/lunr/lunr.min.js?1676425399" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1676425399" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1676425399" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1676425399" defer></script>
-        <script src="/js/search.js?1676425399" defer></script>
+        <script src="/js/auto-complete.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1676464050" defer></script>
+        <script src="/js/search.js?1676464050" defer></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/esp3d/index.html" class="dd-item parent"><input type="checkbox" id="section-3b2590ad6330f0450d29f0f5d8554acc" aria-controls="subsections-3b2590ad6330f0450d29f0f5d8554acc" class="toggle" checked><label class="a11y-only toggle" for="section-3b2590ad6330f0450d29f0f5d8554acc" >Submenu ESP3D</label><a href="/esp3d/index.html">ESP3D</a><ul id="subsections-3b2590ad6330f0450d29f0f5d8554acc">
-          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-eb94f90027f42d72c4235371137ca827" aria-controls="subsections-eb94f90027f42d72c4235371137ca827" class="toggle" checked><label class="a11y-only toggle" for="section-eb94f90027f42d72c4235371137ca827" >Submenu Version 2.X</label><a href="/esp3d/v2.x/index.html">Version 2.X</a><ul id="subsections-eb94f90027f42d72c4235371137ca827">
-          <li data-nav-id="/esp3d/v2.x/features/index.html" class="dd-item"><a href="/esp3d/v2.x/features/index.html"><i class='fas fa-bullhorn'></i> Features</a></li>
+          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-eb94f90027f42d72c4235371137ca827" aria-controls="subsections-eb94f90027f42d72c4235371137ca827" class="toggle" checked><label class="a11y-only toggle" for="section-eb94f90027f42d72c4235371137ca827" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-eb94f90027f42d72c4235371137ca827">
+          <li data-nav-id="/esp3d/v2.x/features/index.html" class="dd-item"><a href="/esp3d/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-6e646a18cc7d5383e7752527c50fee93" aria-controls="subsections-6e646a18cc7d5383e7752527c50fee93" class="toggle" checked><label class="a11y-only toggle" for="section-6e646a18cc7d5383e7752527c50fee93" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-6e646a18cc7d5383e7752527c50fee93">
           <li data-nav-id="/esp3d/v2.x/installation/arduino/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/arduino/index.html">Arduino IDE</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/vscode-platformio/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
@@ -174,12 +290,14 @@
           <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-6260d23c6428785b999e48eb26dd5c7d" aria-controls="subsections-6260d23c6428785b999e48eb26dd5c7d" class="toggle" checked><label class="a11y-only toggle" for="section-6260d23c6428785b999e48eb26dd5c7d" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-6260d23c6428785b999e48eb26dd5c7d">
           <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item active"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li>
           <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li></ul></li>
-          <li data-nav-id="/esp3d/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d/v2.x/credits/index.html" class="dd-item"><a href="/esp3d/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
           <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-3da40856258fb17144961543245fd2a2" aria-controls="subsections-3da40856258fb17144961543245fd2a2" class="toggle" checked><label class="a11y-only toggle" for="section-3da40856258fb17144961543245fd2a2" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-3da40856258fb17144961543245fd2a2">
           <li data-nav-id="/esp3d/v3.x/features/index.html" class="dd-item"><a href="/esp3d/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d/v3.x/installation/index.html" class="dd-item"><a href="/esp3d/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d/v3.x/documentation/index.html">Documentation</a></li>
-          <li data-nav-id="/esp3d/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d/v3.x/showcase/index.html">Showcase</a></li>
+          <li data-nav-id="/esp3d/v3.x/credits/index.html" class="dd-item"><a href="/esp3d/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3dlib/index.html" class="dd-item"><input type="checkbox" id="section-ee1807b535682d8e513e24c16f0ce9c5" aria-controls="subsections-ee1807b535682d8e513e24c16f0ce9c5" class="toggle"><label class="a11y-only toggle" for="section-ee1807b535682d8e513e24c16f0ce9c5" >Submenu ESP3DLib</label><a href="/esp3dlib/index.html">ESP3DLib</a><ul id="subsections-ee1807b535682d8e513e24c16f0ce9c5">
           <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ddec73a3e0fa3915788ff10a29fd7589" aria-controls="subsections-ddec73a3e0fa3915788ff10a29fd7589" class="toggle" checked><label class="a11y-only toggle" for="section-ddec73a3e0fa3915788ff10a29fd7589" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-ddec73a3e0fa3915788ff10a29fd7589">
           <li data-nav-id="/esp3dlib/v1.x/features/index.html" class="dd-item"><a href="/esp3dlib/v1.x/features/index.html">Features</a></li>
@@ -257,8 +375,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1676425399" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1676425399" defer></script>
-    <script src="/js/theme.js?1676425399" defer></script>
+    <script src="/js/clipboard.min.js?1676464050" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1676464050" defer></script>
+    <script src="/js/theme.js?1676464050" defer></script>
   </body>
 </html>

@@ -1,0 +1,8 @@
+<hr>
+<center>If any error please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a> or by proposing a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
+{{- with .Params.LastModifierDisplayName }}
+            <i class='fas fa-user'></i> {{ with $.Params.LastModifierEmail }}<a href="mailto:{{ . }}">{{ end }}{{ . }}{{ with $.Params.LastModifierEmail }}</a>{{ end }}
+  {{- with $.Date }}
+            <i class='fas fa-calendar'></i> {{ . | time.Format ":date_medium" }}
+  {{- end }}
+{{- end }}

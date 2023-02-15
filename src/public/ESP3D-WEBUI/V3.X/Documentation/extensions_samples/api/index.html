@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Relearn 5.10.2+tip">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="Web site of ESP3D ecosystem">
+    <title>ESP3D Ecosystem</title>
+    <link href="/images/favicon.ico?1676464049" rel="icon" type="image/x-icon">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/css/fontawesome-all.min.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1676464049" rel="stylesheet">
+    <link href="/css/nucleus.css?1676464049" rel="stylesheet">
+    <link href="/css/fonts.css?1676464049" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676464049" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1676464049" rel="stylesheet">
+    <link href="/css/theme-blue.css?1676464049" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1676464049" rel="stylesheet">
+    <link href="/css/variant.css?1676464049" rel="stylesheet">
+    <link href="/css/print.css?1676464049" rel="stylesheet" media="print">
+    <script src="/js/url.js?1676464049"></script>
+    <script src="/js/variant.js?1676464049"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="/index.search.js";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/esp3d.io/';
+      window.variants && variants.init( [ 'blue' ] );
+    </script>
+    <script src="/js/jquery.min.js?1676464049" defer></script>
+  </head>
+  <body class="mobile-support html" data-url="/esp3d-webui/v3.x/documentation/extensions_samples/api/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable" dir="ltr">
+        <div>
+          <div class="navigation">
+            <a class="nav nav-next" href="/esp3d-webui/v3.x/showcase/index.html" title="Showcase (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+            <a class="nav nav-prev" href="/esp3d-webui/v3.x/documentation/index.html" title="Documentation (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ESP3D Ecosystem</span><meta itemprop="position" content="5"></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="toc-wrapper" dir="ltr">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-code">Basic code</a>
+      <ul>
+        <li><a href="#send-message">Send message</a></li>
+        <li><a href="#send-gcode-command-or-esp-command">Send GCODE command or ESP command</a></li>
+        <li><a href="#send-web-query">Send web query</a></li>
+        <li><a href="#send-web-upload">Send web upload</a></li>
+        <li><a href="#send-webdownload-request">Send webdownload request</a></li>
+        <li><a href="#send-sound-notification">Send sound notification</a></li>
+        <li><a href="#send-toast-notification">Send toast notification</a></li>
+        <li><a href="#send-translation-request">Send translation request</a></li>
+        <li><a href="#send-capabilities-request">Send capabilities request</a></li>
+        <li><a href="#dispatch-message-to-other-extensions">Dispatch message to other extensions</a></li>
+        <li><a href="#send-modal-dialog-display-request">Send Modal dialog display request</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id=""></h1>
+
+<h1 id="extension-api">Extension API</h1>
+<h2 id="basic-code">Basic code</h2>
+<pre tabindex="0"><code>&lt;script type=&#34;text/javascript&#34;&gt;
+
+//Send message to web ui
+function sendMessage(msg){
+    window.parent.postMessage(msg, &#39;*&#39;);
+}
+
+//Process Message coming from webUI
+function processMessage(eventMsg){
+    //now process eventMsg.data
+}
+
+//Setup message listener from webUI
+window.onload = (event) =&gt; {
+  window.addEventListener(&#34;message&#34;, processMessage, false);
+};
+
+&lt;/script&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+Display your HTML here
+&lt;/div&gt;
+</code></pre><p>As you can see code is minimal - it will fit a Frame, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.</p>
+<p>Communication between frame and main window is done by messages using objects (string / array based), do not use any object that could ne be cloned or loading will fail.</p>
+<hr>
+<h3 id="send-message">Send message</h3>
+<p>message structure used by <code>window.parent.postMessage(msg, '*');</code> has a defined format, some parameters are madatories, some are optionals and some depend on message type:<br>
+<code>{type:'&lt;message type&gt;', target:'webui', id:'[origin]', noDispatch:[true], XXX:YYY}</code><br>
+<code>&lt;message type&gt;</code> is mandatory, it define the purpose of the message<br>
+<code>target:'webui'</code> is mandatory, it help to screen the message <br>
+<code>id:'[origin]'</code> is optionnal, it define which id must read the response if any, if present it can be used by extension to filter message, no id means the message is for everyone<br>
+<code>noDispatch:[true]</code> is optionnal, if true it will prevent to send answer if any, if not or set to false, it will send answer message if any<br>
+<code>XXX:YYY</code> are optionals/mandatories according message type</p>
+<hr>
+<h3 id="send-gcode-command-or-esp-command">Send GCODE command or ESP command</h3>
+<p>Example: <code>{type:'cmd', target:'webui',id:'terminal', content:'[ESP111]'}</code><br>
+<strong>type</strong> is <code>cmd</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>terminal</code> (optional)<br>
+<strong>content</strong> is the command that need to be sent, in our case <code>[ESP111]</code> (mandatory)</p>
+<p>Note: there is no <code>noDispatch:true</code> so answer, if any from ESP firmware, will be sent<br>
+Note 2: there is no way to prevent the answer to be spread if it come from external board from serial, even if <code>id</code> and <code>noDispatch</code> are set</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<ul>
+<li>
+<p>if success</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;cmd&#34;,
+    &#34;content&#34;: {
+        &#34;status&#34;: &#34;success&#34;
+        &#34;response&#34;: &#34;192.168.1.111&#34;,
+        &#34;initiator&#34;: {  
+                        &#34;content&#34;:&#34;[ESP111]&#34;,
+                        &#34;id&#34;:&#34;terminal&#34;,
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;type&#34;:&#34;cmd&#34;, 
+                    }
+    },
+    &#34;id&#34;: &#34;terminal&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>cmd</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>success</code>, the response it self <strong>response</strong>, in our case <code>192.168.1.111</code>  and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+<li>
+<p>if error</p>
+<pre tabindex="0"><code>{ 
+    &#34;type&#34;: &#34;cmd&#34;, 
+    &#34;content&#34;: { 
+        &#34;status&#34;: &#34;error&#34;, 
+        &#34;error&#34;:&#34;Cannot connect&#34;, 
+        &#34;initiator&#34;: {  
+                        &#34;content&#34;:&#34;[ESP111]&#34;,
+                        &#34;id&#34;:&#34;terminal&#34;,
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;type&#34;:&#34;cmd&#34;, 
+                    }
+    }, 
+    &#34;id&#34;:&#34;terminal&#34;
+}
+</code></pre><p><strong>type</strong> is <code>error</code> for any error command<br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>error</code>, and the error it self <strong>error</strong>, in our case <code>Cannot connect</code> and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="send-web-query">Send web query</h3>
+<p>Example: <code>{type:'query', target:'webui', id:'filemanager', url:'files', args:{action:'list', path:'/'}}</code>
+<strong>type</strong> is <code>query</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>terminal</code> (optional)<br>
+<strong>url</strong> is the base url in our case <code>files</code> for <code>/files</code> (mandatory)<br>
+<strong>args</strong> is the set of arguments url in our case <code>{action:'list', path:'/'}</code> for <code>/files?action=list&amp;path=/</code> (optional for query)</p>
+<p>Note:  <code>noDispatch:true</code> and <code>id:'term'</code> are applicable in this case if needed</p>
+<ul>
+<li>Answer format: check the <code>eventMsg.data</code>
+<ul>
+<li>
+<p>if success</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;query&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;success&#34;,
+        &#34;response&#34;: &#34;{\&#34;files\&#34;:[{\&#34;name\&#34;:\&#34;config.yaml\&#34;,\&#34;size\&#34;:\&#34;1.55 KB\&#34;}],\&#34;path\&#34;:\&#34;/\&#34;,\&#34;occupation\&#34;:\&#34;35\&#34;,\&#34;status\&#34;:\&#34;ok\&#34;,\&#34;total\&#34;:\&#34;1.31 MB\&#34;,\&#34;used\&#34;:\&#34;470.08 KB\&#34;}&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;: &#34;query&#34;, 
+                        &#34;target&#34;: &#34;webui&#34;, 
+                        &#34;id&#34;: &#34;filemanager&#34;, 
+                        &#34;url&#34;: &#34;files&#34;, 
+                        &#34;args&#34;: {
+                                    &#34;action&#34;: &#34;list&#34;, 
+                                    &#34;path&#34;: &#34;/&#34;
+                                }
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>query</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>success</code>, the response it self <strong>response</strong>, in our case a JSON,  and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+<li>
+<p>if error</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;query&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;error&#34;,
+        &#34;error&#34;: &#34;Cannot connect&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;: &#34;query&#34;, 
+                        &#34;target&#34;: &#34;webui&#34;, 
+                        &#34;id&#34;: &#34;filemanager&#34;, 
+                        &#34;url&#34;: &#34;files&#34;, 
+                        &#34;args&#34;: {
+                                    &#34;action&#34;: &#34;list&#34;, 
+                                    &#34;path&#34;: &#34;/&#34;
+                                }
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>query</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>error</code>, and the error it self <strong>error</strong>, in our case <code>Cannot connect</code> and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="send-web-upload">Send web upload</h3>
+<p>Example: <code>{type:'upload', target:'webui', id:'filemanager', url:'files', content:[...],size:500, path:&quot;/&quot;, filename:'file.txt'}</code>
+<strong>type</strong> is <code>upload</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>filemanager</code> (optional)<br>
+<strong>url</strong> is the base url in our case <code>files</code> for <code>/files</code> (mandatory for upload)<br>
+<strong>content</strong> is the file in an array object (mandatory)
+<strong>size</strong> is the file size (mandatory)<br>
+<strong>path</strong> is the file target path (not including name) (mandatory)
+<strong>size</strong> is the filename (not including path) (mandatory)
+<strong>args</strong> is an object with optional arguments like for query, they are no used in post but in url itself</p>
+<p>Note:  <code>noDispatch:true</code> and <code>id:'filemanager'</code> are applicable in this case if needed</p>
+<ul>
+<li>Answer format: check the <code>eventMsg.data</code><br>
+for upload the initiator does not contain the file content
+<ul>
+<li>
+<p>if success</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;upload&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;success&#34;,
+        &#34;response&#34;: &#34;{\&#34;files\&#34;:[{\&#34;name\&#34;:\&#34;config.yaml\&#34;,\&#34;size\&#34;:\&#34;1.55 KB\&#34;},{\&#34;name\&#34;:\&#34;file.txt\&#34;,\&#34;size\&#34;:\&#34;500B\&#34;}],\&#34;path\&#34;:\&#34;/\&#34;,\&#34;occupation\&#34;:\&#34;35\&#34;,\&#34;status\&#34;:\&#34;ok\&#34;,\&#34;total\&#34;:\&#34;1.31 MB\&#34;,\&#34;used\&#34;:\&#34;470.08 KB\&#34;}&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;upload&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;files&#34;,
+                        &#34;size&#34;:500, 
+                        &#34;path&#34;:&#34;/&#34;, 
+                        &#34;filename&#34;:&#34;file.txt&#34;
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>upload</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>success</code>, the response it self <strong>response</strong>, in our case a JSON,  and also the  <strong>initiator</strong> is the initial command for reference but without the file content</p>
+</li>
+<li>
+<p>progression message</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;upload&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;progress&#34;,
+        &#34;progress&#34;: &#34;100&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;upload&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;files&#34;,
+                        &#34;size&#34;:500, 
+                        &#34;path&#34;:&#34;/&#34;, 
+                        &#34;filename&#34;:&#34;file.txt&#34;
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>upload</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>progress</code>, and the progression it self <strong>progress</strong>, in our case <code>100</code> = 100% and also the  <strong>initiator</strong> is the initial command for reference but without the file content</p>
+</li>
+<li>
+<p>if error</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;upload&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;error&#34;,
+        &#34;error&#34;: &#34;Cannot connect&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;upload&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;files&#34;,
+                        &#34;size&#34;:500, 
+                        &#34;path&#34;:&#34;/&#34;, 
+                        &#34;filename&#34;:&#34;file.txt&#34;
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>upload</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>error</code>, and the error it self <strong>error</strong>, in our case <code>Cannot connect</code> and also the  <strong>initiator</strong> is the initial command for reference but without the file content</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="send-webdownload-request">Send webdownload request</h3>
+<p>Example: <code>{type:'download', target:'webui', id:'filemanager', url:'preferences.json'}</code>
+<strong>type</strong> is <code>download</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>filemanager</code> (optional)<br>
+<strong>url</strong> is the url of the file in our case <code>preferences.json</code> for <code>/preferences.json</code> (mandatory)<br>
+<strong>args</strong> is an object with optional arguments like for query</p>
+<p>Note:  <code>id:'filemanager'</code> is applicable in this case if needed, but not  <code>noDispatch:true</code> as the purpose is to get response</p>
+<ul>
+<li>Answer format: check the <code>eventMsg.data</code>
+<ul>
+<li>
+<p>if success</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;download&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;success&#34;,
+        &#34;response&#34;: [...],
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;download&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;preferences.json&#34;,
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>upload</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>success</code>, the response it self <strong>response</strong>, in our case a blob  which is the file that need to be read properly, and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+<li>
+<p>progression message</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;upload&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;progress&#34;,
+        &#34;progress&#34;: &#34;100&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;upload&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;preferences.json&#34;,
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>download</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>progress</code>, and the progression it self <strong>progress</strong>, in our case <code>100</code> = 100% and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+<li>
+<p>if error</p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;download&#34;,
+    &#34;response&#34;: {
+        &#34;status&#34;: &#34;error&#34;,
+        &#34;error&#34;: &#34;404&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;upload&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;filemanager&#34;, 
+                        &#34;url&#34;:&#34;preferences.json&#34;,
+                    }
+    },
+    &#34;id&#34;: &#34;filemanager&#34;
+}
+</code></pre><p><strong>type</strong> is <code>download</code>
+<strong>id</strong> is the id set in output message to help to screen <br>
+<strong>content</strong> has the response&rsquo;s <strong>status</strong> which is <code>error</code>, and the error it self <strong>error</strong>, in our case <code>404</code> (file not found) and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="send-sound-notification">Send sound notification</h3>
+<p>There is no answer for this message, so <code>id</code> is not necessary</p>
+<ul>
+<li>
+<p>Generate a beep notification<br>
+Example: <code>{type:'sound', target:'webui', content:'beep'}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>sound</strong> is the sound type, in our case <code>beep</code> (mandatory)</p>
+</li>
+<li>
+<p>Generate a beep error notification<br>
+Example: <code>{type:'sound', target:'webui', content:'error'}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>sound</strong> is the sound type, in our case <code>error</code> (mandatory)</p>
+</li>
+<li>
+<p>Generate a beep sequence notification<br>
+Example: <code>{type:'sound', target:'webui', content:'beep', seq:[{ f: 1046, d: 200 },{ f: 1318, d: 100 }]}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>sound</strong> is the sound type, in our case <code>seq</code> (mandatory)<br>
+<strong>seq</strong> is an array of sequence of beep, in our case <code>[{ f: 1046, d: 200 },{ f: 1318, d: 100 }]</code> (mandatory),  <code>f</code> is frequency and <code>d</code> is duration of the beep</p>
+</li>
+</ul>
+<hr>
+<h3 id="send-toast-notification">Send toast notification</h3>
+<p>There is no answer for this message, so <code>id</code> is not necessary</p>
+<ul>
+<li>
+<p>Generate a success toast notification<br>
+Example: <code>{type:'toast', target:'webui', content:{text:'This is a success', type:'success'}}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>content</strong> has the toast <strong>type</strong>, in our case <code>success</code>, and the <strong>text</strong> to display, in ou case <code>This is a success</code> (mandatory)</p>
+</li>
+<li>
+<p>Generate an error toast notification<br>
+Example: <code>{type:'toast', target:'webui', content:{text:'This is an error', type:'error'}}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>content</strong> has the toast <strong>type</strong>, in our case <code>error</code>, and the <strong>text</strong> to display, in ou case <code>This is an error</code> (mandatory)</p>
+</li>
+<li>
+<p>Generate a normal toast notification<br>
+Example: <code>{type:'toast', target:'webui', content:{text:'This is a toast', type:'default'}}</code><br>
+<strong>type</strong> is `` (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>content</strong> has the toast <strong>type</strong>, in our case <code>default</code>, and the <strong>text</strong> to display, in ou case <code>This is a toast</code> (mandatory)</p>
+</li>
+</ul>
+<hr>
+<h3 id="send-translation-request">Send translation request</h3>
+<ul>
+<li>
+<p>simple translation
+Example: <code>{type:'translate', target:'webui', id:'transpanel', content:'S153'}</code><br>
+<strong>type</strong> is <code>translate</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>transpanel</code> (optional)<br>
+<strong>content</strong> is the text that need to be translated, in our case <code>S153</code> (mandatory)</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;translate&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;Your session will end soon, do you want to stay connected ?&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;translate&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;transpanel&#34;, 
+                        &#34;content&#34;:&#34;S153&#34;
+                    }
+    },
+    &#34;id&#34;: &#34;transpanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>translate</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case <code>Your session will end soon, do you want to stay connected ?</code> and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+<li>
+<p>full dump of translations<br>
+Example: <code>{type:'translate', target:'webui', id:'transpanel', all:'true'}</code><br>
+<strong>type</strong> is <code>translate</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>transpanel</code> (optional)<br>
+<strong>all</strong> to take all translations (mandatory)</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;translate&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;Your session will end soon, do you want to stay connected ?&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;translate&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;transpanel&#34;, 
+                        &#34;content&#34;:[....]
+                    }
+    },
+    &#34;id&#34;: &#34;transpanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>translate</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case an array of all translations and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="send-capabilities-request">Send capabilities request</h3>
+<p>Example: <code>{type:'capabilities', target:'webui', id:'transpanel'}</code><br>
+<strong>type</strong> is <code>capabilities</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>infopanel</code> (optional)</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;capabilities&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;Your session will end soon, do you want to stay connected ?&#34;,
+        &#34;initiator&#34;: {
+                        &#34;type&#34;:&#34;capabilities&#34;, 
+                        &#34;target&#34;:&#34;webui&#34;, 
+                        &#34;id&#34;:&#34;infopanel&#34;
+                    }
+    },
+    &#34;id&#34;: &#34;infopanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>capabilities</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case a JSON and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+<hr>
+<h3 id="dispatch-message-to-other-extensions">Dispatch message to other extensions</h3>
+<p>Example: <code>{type:'dispatch', target:'webui', id:'senderpanel', content:'any message' , targetid:'receiverpanel'}</code><br>
+<strong>type</strong> is <code>dispatch</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>senderpanel</code> (optional)<br>
+<strong>content</strong> the message to dispatch using</p>
+<p>Note: there no answer as the purpose of this is to send answer</p>
+<hr>
+<h3 id="send-modal-dialog-display-request">Send Modal dialog display request</h3>
+<ul>
+<li>
+<p>Simple modal
+Example: <code>{type:'modal', target:'webui', id:'modalpanel', content:{title:'This is tile', id:'simple_modal', style:'default', bt1Txt:'S126', response1:'ok', text:'some text', overlay:true}}</code><br>
+<strong>type</strong> is <code>modal</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>modalpanel</code> (optional)<br>
+<strong>content</strong> is modal deescription:</p>
+<ul>
+<li><strong>title</strong> of the modal (mandatory), <code>This is tile</code> is used as example but you better use predefined text that could be translated</li>
+<li><strong>id</strong> is modal id (mandatory), here <code>simple_modal</code></li>
+<li><strong>style</strong> is modal style (mandatory), for simple modal it is <code>default</code>,</li>
+<li><strong>bt1Txt</strong> is the text to show on button 1 (optional), <code>S126</code> will be translated as <code>Ok</code>, if not defined button won&rsquo;t be displayed</li>
+<li><strong>response1</strong> is the message sent if button 1 is clicked (optional), here <code>ok</code>, the click close the modal</li>
+<li><strong>bt2Txt</strong> is the text to show on button 2 (optional), if not defined button won&rsquo;t be displayed</li>
+<li><strong>response2</strong> is the message sent if button 2 is clicked (optional), the click close the modal</li>
+<li><strong>hideclose</strong> if set and true it will hide the cross button to close the modal (optional)</li>
+<li><strong>overlay</strong> if set and true it will automatically close modal if modal loose focus (optional)</li>
+<li><strong>text</strong> display the text in modal, if it is predefined&rsquo;s one it will be translated (optional)</li>
+</ul>
+<p>Note: close button and overlay feature won&rsquo;t send any notification when modal is closed, be aware of it</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;modal&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;ok&#34;,
+        &#34;initiator&#34;: {
+                        type:&#39;modal&#39;, 
+                        target:&#39;webui&#39;, 
+                        id:&#39;modalpanel&#39;, 
+                        content : { 
+                                    &#34;title&#34;:&#34;This is tile&#34;, 
+                                    &#34;id&#34;:&#34;simple_modal&#34;, 
+                                    &#34;style&#34;:&#34;default&#34;, 
+                                    &#34;bt1Txt&#34;:&#34;S126&#34;, 
+                                    &#34;response1&#34;:&#34;ok&#34;, 
+                                    &#34;text&#34;:&#34;some text&#34;, 
+                                    &#34;overlay&#34;:true
+                                  }
+                     }
+    },
+    &#34;id&#34;: &#34;modalpanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>modal</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case <code>ok</code> because only one button, and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Confirmation modal
+Example: <code>{type:'modal', target:'webui', id:'modalpanel', content:{title:'S26', id:'confirm_modal',style:'question',bt1Txt:'S27', response1:'yes',bt2Txt:'S28', response2:'cancel', text:'S30',hideclose:true}}</code><br>
+<strong>type</strong> is <code>modal</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>modalpanel</code> (optional)<br>
+<strong>content</strong> is modal deescription:</p>
+<ul>
+<li><strong>title</strong> of the modal (mandatory), <code>S26</code> will be translated as <code>Please Confirm</code></li>
+<li><strong>id</strong> is modal id (mandatory), here <code>confirmation_modal</code></li>
+<li><strong>style</strong> is modal style (mandatory), for confirmation modal it is <code>question</code>,</li>
+<li><strong>bt1Txt</strong> is the text to show on button 1 (optional), here <code>S27</code> will be translated as <code>Yes</code>, if not defined button won&rsquo;t be displayed</li>
+<li><strong>response1</strong> is the message sent if button 1 is clicked (optional), here <code>yes</code>, the click close the modal</li>
+<li><strong>bt2Txt</strong> is the text to show on button 2 (optional), here <code>S28</code> will be translated as <code>Cancel</code>, if not defined button won&rsquo;t be displayed</li>
+<li><strong>response2</strong> is the message sent if button 2 is clicked (optional), here <code>cancel</code>, the click close the modal</li>
+<li><strong>hideclose</strong> if set and true it will hide the cross button to close the modal (optional)</li>
+<li><strong>overlay</strong> if set and true it will automatically close modal if modal loose focus (optional)</li>
+<li><strong>text</strong> display the text in moda  (optional), here <code>S30</code> will be translated as<code>Do you want to update?</code></li>
+</ul>
+<p>Note: close button and overlay feature won&rsquo;t send any notification when modal is closed, be aware of it</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;modal&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;yes&#34;,
+        &#34;initiator&#34;: {
+                        type:&#39;modal&#39;, 
+                        target:&#39;webui&#39;, 
+                        id:&#39;modalpanel&#39;, 
+                        content : { 
+                                    &#34;title&#34;:&#34;S26&#34;, 
+                                    &#34;id&#34;:&#34;confirmation_modal&#34;, 
+                                    &#34;style&#34;:&#34;question&#34;, 
+                                    &#34;bt1Txt&#34;:&#34;S27&#34;, 
+                                    &#34;response1&#34;:&#34;yes&#34;,
+                                    &#34;bt2Txt&#34;:&#34;S28&#34;, 
+                                    &#34;response2&#34;:&#34;cancel&#34;, 
+                                    &#34;text&#34;:&#34;S30&#34;, 
+                                    &#34;hideclose&#34;:true
+                                  }
+                     }
+    },
+    &#34;id&#34;: &#34;modalpanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>modal</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case <code>yes</code> because user clicked on button 1, and also the  <strong>initiator</strong> is the initial command for reference</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Input modal
+Example: <code>{type:'modal', target:'webui', id:'modalpanel', content:{title:'S90', id:'input_modal',style:'input',bt1Txt:'S106', response1:'create',bt2Txt:'S28', response2:'cancel', text:'S104',hideclose:true}}</code><br>
+<strong>type</strong> is <code>modal</code> (mandatory)<br>
+<strong>target</strong> is <code>webui</code> (mandatory)<br>
+<strong>id</strong> is <code>modalpanel</code> (optional)<br>
+<strong>content</strong> is modal deescription:</p>
+<ul>
+<li><strong>title</strong> of the modal (mandatory), <code>S90</code> will be translated as <code>Create Directory</code></li>
+<li><strong>id</strong> is modal id (mandatory), here <code>inputmodal</code></li>
+<li><strong>style</strong> is modal style (mandatory), for input modal it is <code>input</code>,</li>
+<li><strong>bt1Txt</strong> is the text to show on button 1 (optional), here <code>S106</code> will be translated as <code>Create</code>, if not defined button won&rsquo;t be displayed</li>
+<li><strong>response1</strong> is the message sent if button 1 is clicked (optional), here <code>create</code>, the click close the modal</li>
+<li><strong>bt2Txt</strong> is the text to show on button 2 (optional), here <code>S28</code> will be translated as <code>Cancel</code>, if not defined button won&rsquo;t be displayed</li>
+<li><strong>response2</strong> is the message sent if button 2 is clicked (optional), here <code>cancel</code>, the click close the modal</li>
+<li><strong>hideclose</strong> if set and true it will hide the cross button to close the modal (optional)</li>
+<li><strong>overlay</strong> if set and true it will automatically close modal if modal loose focus (optional)</li>
+<li><strong>text</strong> display the text in moda  (optional), here <code>S104</code> will be translated as<code>Please type directory name</code></li>
+</ul>
+<p>Note: close button and overlay feature won&rsquo;t send any notification when modal is closed, be aware of it</p>
+<ul>
+<li>
+<p>Answer format: check the <code>eventMsg.data</code></p>
+<pre tabindex="0"><code>{
+    &#34;type&#34;: &#34;modal&#34;,
+    &#34;content&#34;: {
+        &#34;response&#34;: &#34;create&#34;,
+        &#34;inputData&#34;: &#34;mydir&#34;
+        &#34;initiator&#34;: {
+                        type:&#39;modal&#39;, 
+                        target:&#39;webui&#39;, 
+                        id:&#39;modalpanel&#39;, 
+                        content : { 
+                                    &#34;title&#34;:&#34;S90&#34;, 
+                                    &#34;id&#34;:&#34;input_modal&#34;, 
+                                    &#34;style&#34;:&#34;input&#34;, 
+                                    &#34;bt1Txt&#34;:&#34;S106&#34;, 
+                                    &#34;response1&#34;:&#34;create&#34;,
+                                    &#34;bt2Txt&#34;:&#34;S28&#34;, 
+                                    &#34;response2&#34;:&#34;cancel&#34;, 
+                                    &#34;text&#34;:&#34;S104&#34;, 
+                                    &#34;hideclose&#34;:true
+                                  }
+                     }
+    },
+    &#34;id&#34;: &#34;modalpanel&#34;
+}  
+</code></pre><p><strong>type</strong> is <code>modal</code><br>
+<strong>id</strong> is the id set in command message to help to screen <br>
+<strong>content</strong> has the response it self <strong>response</strong>, in our case <code>create</code> because user clicked on button 1, and the text entered is in <strong>inputData</strong>, here <code>mydir</code>, and also the  <strong>initiator</strong> is the initial command for reference</p>
+<p>Note: <strong>inputData</strong> is present for both buttons clicked, so screening must be done according response</p>
+</li>
+</ul>
+</li>
+</ul>
+
+            <footer class="footline"><hr>
+<center>If any error please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a> or by proposing a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
+
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation" dir="ltr">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+          <style>
+            #logo svg,
+            #logo svg * {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              opacity: .945;
+            }
+            a#logo {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              font-family: 'Work Sans', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+              font-size: 30px;
+              font-weight: 500;
+              margin-top: -13px;
+              max-width: 90%;
+              width: 226px;
+              white-space: nowrap;
+            }
+            a#logo:hover {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+            }
+            #logo svg {
+              margin-bottom: -20px;
+              margin-left: -23.5px;
+              width: 40.5%;
+            }
+            @media only all and (max-width: 59.938em) {
+              a#logo {
+                font-size: 25px;
+                margin-top: -3px;
+              }
+              #logo svg {
+                margin-bottom: -12px;
+                margin-left: -23px;
+              }
+            }
+            @media all and (-ms-high-contrast:none) {
+              /* IE11s understanding of positioning is weird at best */
+              a#logo {
+                margin-top: -58px;
+              }
+              #logo svg {
+                margin-bottom: -62px;
+              }
+            }
+          </style>
+          <a id="logo" href="/index.html">
+            <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 283.5 283.5">
+<path fill="white" d="m 227,91.9 -97,-0.3 0,100.4 83,0 c 20,0 46,-6 47,-36 l 0,-24 c 1,-20 -13,-40 -33,-40.1 z" />
+<path d="M79.7,200.2h124c-15.5,16.5-37.6,26.7-62,26.7S95.3,216.7,79.7,200.2z"/>
+<path d="M203.7,83.2h-124c15.5-16.5,37.6-26.7,62-26.7S188.2,66.8,203.7,83.2z"/>
+<path d="M200.3,152.7c0,2.7-0.5,5-1.5,7.1s-2.4,3.8-4.2,5.2c-1.8,1.4-4,2.5-6.5,3.2c-2.5,0.7-5.3,1.1-8.3,1.1c-1.8,0-3.5-0.1-5.1-0.4c-1.6-0.3-3-0.6-4.2-1c-1.2-0.4-2.2-0.8-3-1.2c-0.8-0.4-1.3-0.7-1.6-0.9c-0.2-0.2-0.4-0.5-0.6-0.7c-0.1-0.3-0.2-0.6-0.3-1c-0.1-0.4-0.2-0.8-0.2-1.4c0-0.6-0.1-1.2-0.1-2c0-1.3,0.1-2.2,0.3-2.7c0.2-0.5,0.5-0.8,1-0.8c0.3,0,0.7,0.2,1.4,0.6c0.7,0.4,1.5,0.8,2.6,1.2c1,0.4,2.3,0.8,3.7,1.2c1.4,0.4,3,0.6,4.8,0.6c1.5,0,2.8-0.2,4-0.5c1.2-0.4,2.1-0.9,2.9-1.5c0.8-0.6,1.4-1.4,1.8-2.3c0.4-0.9,0.6-1.9,0.6-3.1c0-1.2-0.2-2.3-0.7-3.3c-0.5-1-1.2-1.8-2.1-2.5c-0.9-0.7-2.1-1.2-3.6-1.6c-1.4-0.4-3.1-0.6-5.1-0.6h-4.6c-0.4,0-0.7,0-0.9-0.1c-0.2-0.1-0.5-0.3-0.6-0.6c-0.2-0.3-0.3-0.7-0.3-1.3c-0.1-0.5-0.1-1.2-0.1-2.1c0-0.8,0-1.4,0.1-2c0.1-0.5,0.2-0.9,0.3-1.2c0.2-0.3,0.3-0.5,0.6-0.6c0.2-0.1,0.5-0.2,0.8-0.2h4.6c1.6,0,3-0.2,4.2-0.6c1.2-0.4,2.3-0.9,3.1-1.6c0.8-0.7,1.5-1.5,1.9-2.5c0.4-1,0.7-2,0.7-3.2c0-0.9-0.2-1.8-0.5-2.6c-0.3-0.8-0.7-1.5-1.3-2.1c-0.6-0.6-1.3-1.1-2.3-1.4c-0.9-0.3-2-0.5-3.3-0.5c-1.4,0-2.8,0.2-4,0.6c-1.3,0.4-2.4,0.9-3.4,1.4c-1,0.5-1.8,1-2.5,1.4c-0.7,0.4-1.2,0.7-1.5,0.7c-0.2,0-0.4,0-0.6-0.1c-0.2-0.1-0.3-0.3-0.4-0.6c-0.1-0.3-0.2-0.7-0.2-1.2c-0.1-0.5-0.1-1.2-0.1-2c0-0.7,0-1.3,0-1.7c0-0.5,0.1-0.8,0.2-1.1c0.1-0.3,0.2-0.6,0.3-0.8c0.1-0.2,0.3-0.5,0.6-0.7c0.3-0.3,0.8-0.7,1.7-1.2c0.8-0.5,1.9-1,3.2-1.5c1.3-0.5,2.8-0.9,4.5-1.3c1.7-0.3,3.5-0.5,5.5-0.5c2.6,0,4.9,0.3,6.8,0.9c2,0.6,3.7,1.5,5,2.6c1.4,1.1,2.4,2.5,3.1,4.2c0.7,1.7,1,3.5,1,5.6c0,1.6-0.2,3.1-0.6,4.5c-0.4,1.4-1,2.6-1.8,3.7c-0.8,1.1-1.8,2-3,2.8c-1.2,0.8-2.6,1.3-4.1,1.7v0.1c1.9,0.2,3.5,0.7,5,1.4c1.5,0.7,2.7,1.6,3.8,2.7c1,1.1,1.8,2.3,2.4,3.7C200,149.7,200.3,151.2,200.3,152.7z"/>
+<path d="M249.6,141c0,4.9-0.6,9-1.9,12.5c-1.3,3.5-3.1,6.3-5.5,8.5c-2.4,2.2-5.3,3.8-8.7,4.8c-3.4,1-7.5,1.5-12.2,1.5h-12.7c-0.9,0-1.7-0.3-2.3-0.8c-0.6-0.5-0.9-1.4-0.9-2.6v-46.4c0-1.2,0.3-2.1,0.9-2.6c0.6-0.5,1.4-0.8,2.3-0.8h13.6c4.7,0,8.8,0.6,12.1,1.7c3.3,1.1,6.1,2.8,8.3,4.9c2.3,2.2,4,4.9,5.2,8.1C249,133,249.6,136.7,249.6,141z M238.5,141.3c0-2.5-0.3-4.9-0.9-7c-0.6-2.2-1.5-4-2.8-5.6c-1.3-1.6-3-2.8-5-3.7c-2-0.9-4.7-1.3-8-1.3h-5.5v36.2h5.6c3,0,5.5-0.4,7.5-1.2c2-0.8,3.7-1.9,5.1-3.5c1.4-1.5,2.4-3.5,3-5.8C238.1,147.1,238.5,144.4,238.5,141.3z"/>
+<path d="M222.1,90.3h-34.9H61.4c-21.5,0-39,17.5-39,39v24.9c0,21.5,17.5,39,39,39h68.4h92.3c21.5,0,39-17.5,39-39v-24.9C261.1,107.8,243.6,90.3,222.1,90.3z M155.1,179.4c5-7,4.9-16.5,4.9-16.5v-42.5c0-15,12.2-27.2,27.2-27.2h34.9c19.8,0,36,16.1,36,36v24.9c0,19.8-16.1,36-36,36h-79.2C142.9,190.2,149.6,187.2,155.1,179.4z"/>
+<path fill="white" d="M69.7,164.1c0,0.8,0,1.5-0.1,2c-0.1,0.5-0.2,1-0.3,1.3c-0.1,0.3-0.3,0.6-0.5,0.7c-0.2,0.2-0.4,0.2-0.7,0.2H41.4c-0.9,0-1.7-0.3-2.3-0.8c-0.6-0.5-0.9-1.4-0.9-2.6v-46.4c0-1.2,0.3-2.1,0.9-2.6c0.6-0.5,1.4-0.8,2.3-0.8H68c0.2,0,0.5,0.1,0.7,0.2c0.2,0.1,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.8,0.3,1.3c0.1,0.5,0.1,1.2,0.1,2c0,0.8,0,1.4-0.1,2c-0.1,0.5-0.2,1-0.3,1.3c-0.1,0.3-0.3,0.6-0.5,0.7c-0.2,0.2-0.4,0.2-0.7,0.2H49v13H65c0.2,0,0.5,0.1,0.7,0.2c0.2,0.2,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.7,0.3,1.3c0.1,0.5,0.1,1.2,0.1,2c0,0.8,0,1.5-0.1,2c-0.1,0.5-0.2,0.9-0.3,1.3c-0.1,0.3-0.3,0.5-0.5,0.7c-0.2,0.1-0.4,0.2-0.7,0.2H49v15h19.2c0.2,0,0.5,0.1,0.7,0.2c0.2,0.2,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.8,0.3,1.3C69.7,162.6,69.7,163.3,69.7,164.1z"/>
+<path fill="white" d="M109.4,152.4c0,2.8-0.5,5.2-1.6,7.4c-1,2.1-2.5,3.9-4.2,5.3c-1.8,1.4-3.9,2.5-6.2,3.2c-2.4,0.7-4.9,1.1-7.6,1.1c-1.8,0-3.5-0.2-5.1-0.5c-1.6-0.3-3-0.7-4.2-1.1c-1.2-0.4-2.2-0.9-3-1.3c-0.8-0.5-1.4-0.9-1.7-1.2c-0.4-0.4-0.6-0.9-0.8-1.5c-0.2-0.7-0.2-1.6-0.2-2.9c0-0.8,0-1.6,0.1-2.1c0.1-0.6,0.1-1,0.3-1.4c0.1-0.4,0.3-0.6,0.5-0.8c0.2-0.2,0.4-0.2,0.7-0.2c0.4,0,0.9,0.2,1.6,0.7c0.7,0.5,1.6,1,2.7,1.5c1.1,0.5,2.4,1,3.9,1.5c1.5,0.5,3.3,0.7,5.3,0.7c1.3,0,2.5-0.2,3.5-0.5c1-0.3,1.9-0.8,2.7-1.3c0.7-0.6,1.3-1.3,1.7-2.1c0.4-0.8,0.6-1.8,0.6-2.8c0-1.2-0.3-2.2-1-3.1c-0.7-0.9-1.5-1.6-2.6-2.3c-1.1-0.7-2.3-1.3-3.6-1.9c-1.3-0.6-2.7-1.2-4.2-1.9c-1.4-0.7-2.8-1.4-4.2-2.2c-1.3-0.8-2.5-1.8-3.6-3c-1.1-1.2-1.9-2.5-2.6-4.1c-0.7-1.6-1-3.5-1-5.7c0-2.5,0.5-4.8,1.4-6.7c0.9-1.9,2.2-3.5,3.8-4.8c1.6-1.3,3.5-2.2,5.7-2.9c2.2-0.6,4.5-0.9,6.9-0.9c1.3,0,2.5,0.1,3.8,0.3c1.3,0.2,2.4,0.5,3.5,0.8c1.1,0.3,2.1,0.7,2.9,1.1c0.8,0.4,1.4,0.8,1.7,1c0.3,0.3,0.5,0.5,0.6,0.7c0.1,0.2,0.2,0.4,0.2,0.8c0.1,0.3,0.1,0.7,0.1,1.2c0,0.5,0,1.1,0,1.8c0,0.8,0,1.5-0.1,2c0,0.5-0.1,1-0.2,1.4c-0.1,0.4-0.2,0.6-0.4,0.8c-0.2,0.2-0.4,0.2-0.7,0.2c-0.3,0-0.8-0.2-1.4-0.6c-0.7-0.4-1.5-0.8-2.4-1.3c-1-0.5-2.1-0.9-3.3-1.2c-1.3-0.4-2.6-0.6-4.2-0.6c-1.2,0-2.2,0.1-3.1,0.4c-0.9,0.3-1.6,0.7-2.2,1.2c-0.6,0.5-1,1.1-1.3,1.8c-0.3,0.7-0.4,1.5-0.4,2.3c0,1.2,0.3,2.2,1,3.1c0.6,0.9,1.5,1.6,2.6,2.3c1.1,0.7,2.3,1.3,3.7,1.9c1.4,0.6,2.8,1.2,4.2,1.9c1.4,0.7,2.8,1.4,4.2,2.2c1.4,0.8,2.6,1.8,3.7,3c1.1,1.2,1.9,2.5,2.6,4.1C109.1,148.4,109.4,150.2,109.4,152.4z"/>
+<path fill="white" d="M151.4,131.2c0,3-0.5,5.6-1.4,7.9c-0.9,2.3-2.3,4.2-4.1,5.8c-1.8,1.6-4,2.8-6.6,3.6c-2.6,0.8-5.6,1.2-9.1,1.2h-4.4v17c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.5,0.4-0.9,0.5c-0.4,0.1-1,0.2-1.6,0.3c-0.7,0.1-1.6,0.1-2.6,0.1c-1,0-1.9,0-2.6-0.1c-0.7-0.1-1.3-0.2-1.7-0.3c-0.4-0.1-0.7-0.3-0.9-0.5c-0.2-0.2-0.2-0.5-0.2-0.7v-47.8c0-1.3,0.3-2.3,1-2.9c0.7-0.6,1.6-1,2.7-1h12.5c1.3,0,2.5,0,3.6,0.1c1.1,0.1,2.5,0.3,4.1,0.6c1.6,0.3,3.2,0.9,4.8,1.7c1.6,0.8,3,1.9,4.2,3.2c1.2,1.3,2,2.8,2.6,4.6C151.1,127.1,151.4,129,151.4,131.2z M140.1,132c0-1.9-0.3-3.4-1-4.6c-0.7-1.2-1.5-2.1-2.4-2.7c-1-0.6-2-0.9-3-1.1c-1.1-0.2-2.1-0.2-3.3-0.2h-4.6v18h4.8c1.7,0,3.2-0.2,4.3-0.7c1.2-0.5,2.1-1.1,2.9-2c0.7-0.8,1.3-1.8,1.7-3C139.9,134.6,140.1,133.3,140.1,132z"/>
+</svg>
+
+          </a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="search-by">Search</label>
+          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1676464050" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1676464050" defer></script>
+        <script src="/js/search.js?1676464050" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/esp3d/index.html" class="dd-item"><input type="checkbox" id="section-3b2590ad6330f0450d29f0f5d8554acc" aria-controls="subsections-3b2590ad6330f0450d29f0f5d8554acc" class="toggle"><label class="a11y-only toggle" for="section-3b2590ad6330f0450d29f0f5d8554acc" >Submenu ESP3D</label><a href="/esp3d/index.html">ESP3D</a><ul id="subsections-3b2590ad6330f0450d29f0f5d8554acc">
+          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-eb94f90027f42d72c4235371137ca827" aria-controls="subsections-eb94f90027f42d72c4235371137ca827" class="toggle" checked><label class="a11y-only toggle" for="section-eb94f90027f42d72c4235371137ca827" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-eb94f90027f42d72c4235371137ca827">
+          <li data-nav-id="/esp3d/v2.x/features/index.html" class="dd-item"><a href="/esp3d/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-6e646a18cc7d5383e7752527c50fee93" aria-controls="subsections-6e646a18cc7d5383e7752527c50fee93" class="toggle" checked><label class="a11y-only toggle" for="section-6e646a18cc7d5383e7752527c50fee93" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-6e646a18cc7d5383e7752527c50fee93">
+          <li data-nav-id="/esp3d/v2.x/installation/arduino/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/arduino/index.html">Arduino IDE</a></li>
+          <li data-nav-id="/esp3d/v2.x/installation/vscode-platformio/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
+          <li data-nav-id="/esp3d/v2.x/installation/wiring/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/wiring/index.html">Hardware connection</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-6260d23c6428785b999e48eb26dd5c7d" aria-controls="subsections-6260d23c6428785b999e48eb26dd5c7d" class="toggle" checked><label class="a11y-only toggle" for="section-6260d23c6428785b999e48eb26dd5c7d" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-6260d23c6428785b999e48eb26dd5c7d">
+          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d/v2.x/credits/index.html" class="dd-item"><a href="/esp3d/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-3da40856258fb17144961543245fd2a2" aria-controls="subsections-3da40856258fb17144961543245fd2a2" class="toggle" checked><label class="a11y-only toggle" for="section-3da40856258fb17144961543245fd2a2" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-3da40856258fb17144961543245fd2a2">
+          <li data-nav-id="/esp3d/v3.x/features/index.html" class="dd-item"><a href="/esp3d/v3.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3d/v3.x/installation/index.html" class="dd-item"><a href="/esp3d/v3.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d/v3.x/documentation/index.html">Documentation</a></li>
+          <li data-nav-id="/esp3d/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d/v3.x/showcase/index.html">Showcase</a></li>
+          <li data-nav-id="/esp3d/v3.x/credits/index.html" class="dd-item"><a href="/esp3d/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3dlib/index.html" class="dd-item"><input type="checkbox" id="section-ee1807b535682d8e513e24c16f0ce9c5" aria-controls="subsections-ee1807b535682d8e513e24c16f0ce9c5" class="toggle"><label class="a11y-only toggle" for="section-ee1807b535682d8e513e24c16f0ce9c5" >Submenu ESP3DLib</label><a href="/esp3dlib/index.html">ESP3DLib</a><ul id="subsections-ee1807b535682d8e513e24c16f0ce9c5">
+          <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ddec73a3e0fa3915788ff10a29fd7589" aria-controls="subsections-ddec73a3e0fa3915788ff10a29fd7589" class="toggle" checked><label class="a11y-only toggle" for="section-ddec73a3e0fa3915788ff10a29fd7589" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-ddec73a3e0fa3915788ff10a29fd7589">
+          <li data-nav-id="/esp3dlib/v1.x/features/index.html" class="dd-item"><a href="/esp3dlib/v1.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/documentation/index.html">Documentation</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v1.x/showcase/index.html">Showcase</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-cac27071a7c2480d5d6586af67af78a6" aria-controls="subsections-cac27071a7c2480d5d6586af67af78a6" class="toggle" checked><label class="a11y-only toggle" for="section-cac27071a7c2480d5d6586af67af78a6" >Submenu Version 3.X</label><a href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="subsections-cac27071a7c2480d5d6586af67af78a6">
+          <li data-nav-id="/esp3dlib/v3.x/features/index.html" class="dd-item"><a href="/esp3dlib/v3.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/documentation/index.html">Documentation</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-tft/index.html" class="dd-item"><input type="checkbox" id="section-83bbff6fffe38050f42af797c573171c" aria-controls="subsections-83bbff6fffe38050f42af797c573171c" class="toggle"><label class="a11y-only toggle" for="section-83bbff6fffe38050f42af797c573171c" >Submenu ESP3D-TFT</label><a href="/esp3d-tft/index.html">ESP3D-TFT</a><ul id="subsections-83bbff6fffe38050f42af797c573171c">
+          <li data-nav-id="/esp3d-tft/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-5ea28efe39852ff238c8462eca7932b8" aria-controls="subsections-5ea28efe39852ff238c8462eca7932b8" class="toggle" checked><label class="a11y-only toggle" for="section-5ea28efe39852ff238c8462eca7932b8" >Submenu Version 1.X</label><a href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="subsections-5ea28efe39852ff238c8462eca7932b8">
+          <li data-nav-id="/esp3d-tft/v1.x/features/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/installation/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-5589c4ae362bf2589322cbdd21fb32b4" aria-controls="subsections-5589c4ae362bf2589322cbdd21fb32b4" class="toggle" checked><label class="a11y-only toggle" for="section-5589c4ae362bf2589322cbdd21fb32b4" >Submenu Documentation</label><a href="/esp3d-tft/v1.x/documentation/index.html">Documentation</a><ul id="subsections-5589c4ae362bf2589322cbdd21fb32b4">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-df98b7a83e24f3e3cf439a09a55c78ec" aria-controls="subsections-df98b7a83e24f3e3cf439a09a55c78ec" class="toggle" checked><label class="a11y-only toggle" for="section-df98b7a83e24f3e3cf439a09a55c78ec" >Submenu API</label><a href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fa-light fa-puzzle-piece'></i>API</a><ul id="subsections-df98b7a83e24f3e3cf439a09a55c78ec">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/_commands/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/_commands/index.html">ESP3D commands</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html">[ESP400] format</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/showcase/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-webui/index.html" class="dd-item parent"><input type="checkbox" id="section-67381328b73859ba29e669bb309b6de7" aria-controls="subsections-67381328b73859ba29e669bb309b6de7" class="toggle" checked><label class="a11y-only toggle" for="section-67381328b73859ba29e669bb309b6de7" >Submenu ESP3D-WEBUI</label><a href="/esp3d-webui/index.html">ESP3D-WEBUI</a><ul id="subsections-67381328b73859ba29e669bb309b6de7">
+          <li data-nav-id="/esp3d-webui/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-83d81191407cfc066cda317ba04437d6" aria-controls="subsections-83d81191407cfc066cda317ba04437d6" class="toggle" checked><label class="a11y-only toggle" for="section-83d81191407cfc066cda317ba04437d6" >Submenu Version 2.X</label><a href="/esp3d-webui/v2.x/index.html">Version 2.X</a><ul id="subsections-83d81191407cfc066cda317ba04437d6">
+          <li data-nav-id="/esp3d-webui/v2.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/documentation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/documentation/index.html">Documentation</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/showcase/index.html">Showcase</a></li></ul></li>
+          <li data-nav-id="/esp3d-webui/v3.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-e4a440876c3aa7ea287dbea22d27e271" aria-controls="subsections-e4a440876c3aa7ea287dbea22d27e271" class="toggle" checked><label class="a11y-only toggle" for="section-e4a440876c3aa7ea287dbea22d27e271" >Submenu Version 3.X</label><a href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="subsections-e4a440876c3aa7ea287dbea22d27e271">
+          <li data-nav-id="/esp3d-webui/v3.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/features/index.html">Features</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/installation/index.html">Installation</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-e622e46b207b61b2d6ddf9e9eb80885c" aria-controls="subsections-e622e46b207b61b2d6ddf9e9eb80885c" class="toggle" checked><label class="a11y-only toggle" for="section-e622e46b207b61b2d6ddf9e9eb80885c" >Submenu Documentation</label><a href="/esp3d-webui/v3.x/documentation/index.html">Documentation</a><ul id="subsections-e622e46b207b61b2d6ddf9e9eb80885c">
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/extensions_samples/api/index.html" class="dd-item active"><a href="/esp3d-webui/v3.x/documentation/extensions_samples/api/index.html"></a></li></ul></li>
+          <li data-nav-id="/esp3d-webui/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-language">Language</label>
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-variant">Theme</label>
+                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                    <option id="blue" value="blue" selected>Blue</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+              <script>window.variants && variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><button class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</button></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><center>
+	<p><a href="https://liberapay.com/ESP3D/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></p>
+	<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FQL59C749A78L"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" alt="PayPal The safer, easier way to pay online."></a></p>
+	<p><a href="https://https://ko-fi.com/G2G0C0QT7"><img alt="Donate using ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a></p>
+	</center>
+		
+		<p class="padding"><a  href="https://github.com/luc-github/esp3d.io" title="esp3d.io"><i class="fab fa-fw fa-github"></i> GitHub repo</a></p>
+	    <p class="padding">Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1676464050" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1676464050" defer></script>
+    <script src="/js/theme.js?1676464050" defer></script>
+  </body>
+</html>

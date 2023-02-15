@@ -1,0 +1,5 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- partial "shortcodes/center.html" (dict
+  "context" .
+  "content" .Inner
+) }}

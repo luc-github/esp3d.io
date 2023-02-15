@@ -11,7 +11,8 @@
       <link>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</guid>
-      <description></description>
+      <description>Web Handlers / (GET) root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed) if you call specific file, it will look for the filename and filename.gz (compressed) if no file is defined and there is not index.html(.gz) it will display embedded page another way to show the embedded page is /?forcefallback=yes
+/files (GET/POST) this handler handle all commands for FS, including upload on FS.</description>
     </item>
     <item>
       <title>ESP3D commands</title>

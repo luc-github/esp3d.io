@@ -40,10 +40,10 @@
     <loc>https://esp3d.io/esp3dlib/v1.x/index.html</loc>
   </url>
   <url>
-    <loc>https://esp3d.io/esp3d-webui/v2.x/index.html</loc>
+    <loc>https://esp3d.io/esp3d/v2.x/index.html</loc>
   </url>
   <url>
-    <loc>https://esp3d.io/esp3d/v2.x/index.html</loc>
+    <loc>https://esp3d.io/esp3d-webui/v2.x/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</loc>
@@ -140,6 +140,12 @@
   </url>
   <url>
     <loc>https://esp3d.io/esp3dlib/v3.x/showcase/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/esp3d/v2.x/credits/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/esp3d/v3.x/credits/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/categories/index.html</loc>

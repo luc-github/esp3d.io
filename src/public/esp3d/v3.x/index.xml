@@ -11,7 +11,7 @@
       <link>https://esp3d.io/esp3d/v3.x/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v3.x/features/index.html</guid>
-      <description></description>
+      <description>Embedded maintenance page (terminal / local FS update / ESP3D Firmware update) WebUI support ESP8285 / ESP8266 / ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C3 support Wifi / ethernet support Raw TCP / serial bridge support (light telnet) Boot delay configuration Websocket / serial bridge support Serial / Serial bridge support Bluetooth Serial bridge support (when BT supported) MKS Serial protocol support Serial commands configurations Authentication support (admin / user) FTP support (limited to 1 connection at once) WebDav support Local FS support: Little FS (recommended) Fat (ESP32 only) SPIFFS (deprecated) SD support File format Native SPI Native SDIO (ESP32 only) SDFat 1.</description>
     </item>
     <item>
       <title>Installation</title>
@@ -32,6 +32,13 @@
       <link>https://esp3d.io/esp3d/v3.x/showcase/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v3.x/showcase/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Credits</title>
+      <link>https://esp3d.io/esp3d/v3.x/credits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v3.x/credits/index.html</guid>
       <description></description>
     </item>
   </channel>
