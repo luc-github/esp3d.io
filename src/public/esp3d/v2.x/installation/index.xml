@@ -6,5 +6,37 @@
     <description>Recent content in Installation on ESP3D Ecosystem</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://esp3d.io/esp3d/v2.x/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino IDE</title>
+      <link>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</guid>
+      <description>arduino ide: https://www.arduino.cc/en/software
+ESP8266: https://github.com/esp8266/arduino#contents
+ESP32: https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html
+ESP3D configuration
+Describe configuration settings&amp;hellip;
+Compile and Flash</description>
+    </item>
+    <item>
+      <title>VSCode &amp; Platformio</title>
+      <link>https://esp3d.io/esp3d/v2.x/installation/vscode-platformio/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/installation/vscode-platformio/index.html</guid>
+      <description>git: https://git-scm.com/downloads
+VSCODE: https://code.visualstudio.com/download
+PlatformIO: https://platformio.org/install/ide?install=vscode
+ESP3D configuration
+Describe configuration settings&amp;hellip;
+Compile and Flash</description>
+    </item>
+    <item>
+      <title>Hardware connection</title>
+      <link>https://esp3d.io/esp3d/v2.x/installation/wiring/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/installation/wiring/index.html</guid>
+      <description>Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board (ESP MCU is 3.3V) to 5V printer board Disclaimer : this wiki is for reference - you are responsible of your board supporting or not 5V, we are not responsible for any damage of wrong wiring.</description>
+    </item>
   </channel>
 </rss>

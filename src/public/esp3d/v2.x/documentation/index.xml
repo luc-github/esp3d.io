@@ -8,17 +8,21 @@
     <language>en-us</language><atom:link href="https://esp3d.io/esp3d/v2.x/documentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API</title>
-      <link>https://esp3d.io/esp3d/v2.x/documentation/_api/index.html</link>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://esp3d.io/esp3d/v2.x/documentation/_api/index.html</guid>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</guid>
       <description></description>
     </item>
     <item>
       <title>ESP3D commands</title>
-      <link>https://esp3d.io/esp3d/v2.x/documentation/_direct-commands/index.html</link>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/commands/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://esp3d.io/esp3d/v2.x/documentation/_direct-commands/index.html</guid>
-      <description></description>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/commands/index.html</guid>
+      <description>Format Please note all commands are in format [ESPxx]. These first brackets [] are not optional.
+Most of the time givin no argument will return current configuration If authentication is on, somme commands will need admin password. They are recognised by the optional argument [pwd=&amp;lt;admin password&amp;gt;] in command line.
+Commands Get/change STA SSID [ESP100] [&amp;lt;SSID&amp;gt;] [pwd=&amp;lt;admin password&amp;gt;]
+Change STA Password [ESP101] &amp;lt;Password&amp;gt; [pwd=&amp;lt;admin password&amp;gt;]
+Get/change Hostname [ESP102] [&amp;lt;hostname&amp;gt;] [pwd=&amp;lt;admin password&amp;gt;]</description>
     </item>
   </channel>
 </rss>
