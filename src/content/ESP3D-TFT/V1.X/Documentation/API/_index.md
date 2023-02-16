@@ -1,7 +1,7 @@
 +++
 archetype = "section"
 title = "API"
-menuPre = "<i class='fa-light fa-puzzle-piece'></i>"
+menuPre = "<i class='fas fa-cogs'></i> "
 weight = 1
 +++
 

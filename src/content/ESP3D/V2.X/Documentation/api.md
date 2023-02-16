@@ -107,3 +107,41 @@ to avoid a redirect to index.html and so a refresh of the page, some classic han
  - /generate_204
  - /gconnectivitycheck.gstatic.com
  - /fwlink/
+
+
+## Web Socket 
+**Only for WebUI not for bridge data**
+
+use subprotocol `arduino` and web port +1 (e.g: 80+1=>81)
+
+### <u>text mode</u>
+
+Reserved
+messages between webui / ESP
+Format: `<label>:<message>`
+
+-   from ESP to WebUI
+
+    -   `CURRENT_ID:<id>`
+        Sent when client is connecting, it is the last ID used and become the active ID
+
+    -   `ACTIVE_ID:<id>`
+        Broadcast current active ID, when new client is connecting, client without this is <id> should close, ESP WS Server close all open WS connections but this one also
+
+    -   `ERROR:<code>:<message>`
+        If an error raise when doing upload, it informs client it must stop uploading because sometimes the http answer is not possible,
+        or cannot cancel the upload, this is a workaround as there is no API in current webserver to cancel active upload
+
+    -   `DHT: <value>C`
+        The DHT sensor connected to ESP like DHT22
+
+
+### <u>binary mode</u>
+
+Reserved
+
+-   from ESP to WebUI
+    serial stream data from ESP to WebUI
+
+-   from WEBUI to ESP  
+    [Not used]

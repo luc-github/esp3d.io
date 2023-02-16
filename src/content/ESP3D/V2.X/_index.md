@@ -5,8 +5,9 @@ weight = 1
 +++
 
 {{% iobadge url="https://github.com/luc-github/ESP3D/tree/2.1.x" path="https://img.shields.io/badge/Github-black?style=plastic&logo=github" %}}
-{{% iobadge url="https://github.com/luc-github/ESP3D/tree/2.1.x" path="https://img.shields.io/github/stars/luc-github/ESP3D?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D/releases/tag/v2.1.2" path="https://img.shields.io/github/release/luc-github/ESP3D.svg?style=plastic" %}}
+{{% iobadge url="https://github.com/luc-github/ESP3D/tree/2.1.x" path="https://img.shields.io/github/commit-activity/y/luc-github/ESP3D/2.1.x?style=plastic" %}}
+{{% iobadge url="https://github.com/luc-github/ESP3D/tree/2.1.x" path="https://img.shields.io/github/last-commit/luc-github/ESP3D/2.1.x?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D/actions/workflows/build-ci-2.0.yml" path="https://github.com/luc-github/ESP3D/workflows/build-ci-2.0/badge.svg" %}}
 {{% iobadge url="https://discord.gg/Z4ujTwE" path="https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord" %}}
 
