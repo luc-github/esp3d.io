@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notifications on ESP3D Ecosystem</title>
+    <link>https://esp3d.io/esp3d/v2.x/documentation/notifications/index.html</link>
+    <description>Recent content in Notifications on ESP3D Ecosystem</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://esp3d.io/esp3d/v2.x/documentation/notifications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Pushover Notification</title>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/notifications/pushover/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/notifications/pushover/index.html</guid>
+      <description>Pushover is paid service
+Considering you have pushover account (even just trial) and you already installed pushover client on you phone/PC:
+1 - Go to https://pushover.net/ and connect with email and password
+2 - Once connected you will be able to get the token 1, the user token
+3 - You also need to generate an application token, which is the token 2
+4 - The token 2 generation: 5 - Save the generate token 1 and token 2 in ESP3D, and set PUSHOVER as notification supplier</description>
+    </item>
+    <item>
+      <title> Line Notification</title>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/notifications/line/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/notifications/line/index.html</guid>
+      <description>Line is free service
+Considering you have line account and you already installed line on you phone/PC:
+1 - Go to https://notify-bot.line.me/my/ and connect with email and password 2 - Once connected you will be able to generate token
+3 - Type token name on top, select recipient(s) and press Generate token
+4 - Once token is created you need to copy it
+5 - You can create as many tokens you want, and delete the ones you do not need</description>
+    </item>
+    <item>
+      <title> Email Notification</title>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html</guid>
+      <description>Email Notification is using SMTP and HTTPS, so you need to collect the following information fof your email supplier
+smtp server address and https port smtp username/ID smtp password ESP3D use the parameters as follow:
+token 1 = ID to login to your email supplier token 2 = Password to login to your email supplier token settings = the_recipient email#smtp_server:port where # and : are fields separators. For example: luc@gmail.com#smtp.gmail.com:465</description>
+    </item>
+    <item>
+      <title> IFTTT Notification</title>
+      <link>https://esp3d.io/esp3d/v2.x/documentation/notifications/ifttt/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://esp3d.io/esp3d/v2.x/documentation/notifications/ifttt/index.html</guid>
+      <description>IFTTT is free service up to 5 applets
+IFTTT is a wrapper that allows several kind of notifications, please refer to it documentation.
+ESP3D use the webhook method.
+1 - If you do not have IFTTT account you can create for free to use up to 5 applets. 2 - Create New applet
+Create new trigger
+The trigger is a webhook
+Choose Web request
+Set the event name Define the action you want Select the service you want to use</description>
+    </item>
+  </channel>
+</rss>

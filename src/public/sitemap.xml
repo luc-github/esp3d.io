@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/notifications/pushover/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/documentation/api/index.html</loc>
   </url>
   <url>
-    <loc>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</loc>
+    <loc>https://esp3d.io/esp3d/index.html</loc>
   </url>
   <url>
-    <loc>https://esp3d.io/esp3d/index.html</loc>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/commands/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3dlib/index.html</loc>
@@ -34,6 +37,9 @@
     <loc>https://esp3d.io/esp3dlib/v3.x/features/index.html</loc>
   </url>
   <url>
+    <loc>https://esp3d.io/tools/discovery/ssdp/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/index.html</loc>
   </url>
   <url>
@@ -46,13 +52,13 @@
     <loc>https://esp3d.io/esp3d-webui/v2.x/index.html</loc>
   </url>
   <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/notifications/line/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/documentation/api/_commands/index.html</loc>
-  </url>
-  <url>
-    <loc>https://esp3d.io/esp3d/v2.x/documentation/commands/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/installation/index.html</loc>
@@ -76,6 +82,12 @@
     <loc>https://esp3d.io/esp3dlib/v3.x/installation/index.html</loc>
   </url>
   <url>
+    <loc>https://esp3d.io/tools/discovery/mdns/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/notifications/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d-webui/v3.x/index.html</loc>
   </url>
   <url>
@@ -88,7 +100,13 @@
     <loc>https://esp3d.io/esp3d/v2.x/installation/vscode-platformio/index.html</loc>
   </url>
   <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/api/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3d-tft/v1.x/documentation/index.html</loc>
@@ -118,6 +136,9 @@
     <loc>https://esp3d.io/esp3d/v2.x/installation/wiring/index.html</loc>
   </url>
   <url>
+    <loc>https://esp3d.io/esp3d/v2.x/documentation/notifications/ifttt/index.html</loc>
+  </url>
+  <url>
     <loc>https://esp3d.io/esp3d-webui/index.html</loc>
   </url>
   <url>
@@ -140,6 +161,12 @@
   </url>
   <url>
     <loc>https://esp3d.io/esp3dlib/v3.x/showcase/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/tools/discovery/index.html</loc>
+  </url>
+  <url>
+    <loc>https://esp3d.io/tools/index.html</loc>
   </url>
   <url>
     <loc>https://esp3d.io/esp3d/v2.x/credits/index.html</loc>

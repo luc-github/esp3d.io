@@ -11,12 +11,12 @@
       <link>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/installation/arduino/index.html</guid>
-      <description>Prepare the development environment Please download ide from https://www.arduino.cc/en/software Warning Please use the Legacy IDE (1.8.X), the Arduino IDE 2.X was not tested and won&amp;rsquo;t be supported
+      <description>Prepare the development environment Please download ide from https://www.arduino.cc/en/software WarningPlease use the Legacy IDE (1.8.X), the Arduino IDE 2.X was not tested and won&amp;rsquo;t be supported
 Install the esp core according your target:
 ESP8266
-Warning Please use the version 2.5.2 or 2.7.4 only! Do not use any version upper than 2.7.4
+WarningPlease use the version 2.5.2 or 2.7.4 only! Do not use any version upper than 2.7.4
 ESP32
-Warning Please use the version 1.0.4 only! Do not use any version upper than 1.0.4, and only use ESP32 board, other ESP32 flavors(C2, S2, S3, etc) are not supported in this version.</description>
+WarningPlease use the version 1.0.4 only! Do not use any version upper than 1.0.4, and only use ESP32 board, other ESP32 flavors(C2, S2, S3, etc) are not supported in this version.</description>
     </item>
     <item>
       <title>VSCode &amp; Platformio</title>

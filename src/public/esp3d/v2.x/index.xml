@@ -11,30 +11,33 @@
       <link>https://esp3d.io/esp3d/v2.x/features/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/features/index.html</guid>
-      <description>Support for ESP8266, ESP8285 and standard ESP32 board with at least 1Mb of flash Serial/Wifi bridge using configurable port 8888 Reset settings using GPIO2 pin Complete configuration by web browser (Station or Access point) or by Serial/telnet commands Authentication (optional) for better security Update firmware by web browser for 4MB boards Captive portal in Access point mode which redirect all unknow call to main page mDNS, this feature is a discovery protocol, it need bonjour installed on computer, supported outof the box by OSX, on Windows and Linux need to be installed SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
+      <description>The V2.1.X features are :
+Support for ESP8266, ESP8285 and standard ESP32 board with at least 1Mb of flash Serial/Wifi bridge using configurable port 8888 Reset settings using GPIO2 pin Complete configuration by web browser (Station or Access point) or by Serial/telnet commands Authentication (optional) for better security Update firmware by web browser for 4MB boards Captive portal in Access point mode which redirect all unknow call to main page mDNS, this feature is a discovery protocol, it need bonjour installed on computer, supported outof the box by OSX, on Windows and Linux need to be installed SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
     </item>
     <item>
       <title>Installation</title>
       <link>https://esp3d.io/esp3d/v2.x/installation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/installation/index.html</guid>
-      <description>Setup your development environment Arduino IDE or PlatformIO The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
+      <description>Setup your development environment Click on the corresponding image to display how to setup.
+Arduino IDE or PlatformIO Tip: The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
 Connect your board Connection between ESP and printer board needs 4 wires:
-ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V.</description>
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board.</description>
     </item>
     <item>
       <title>Documentation</title>
       <link>https://esp3d.io/esp3d/v2.x/documentation/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/documentation/index.html</guid>
-      <description></description>
+      <description>The documentation section will help you to:
+Use and understand the ESP3D commands To setup and enable a notification service Understand the APi used. </description>
     </item>
     <item>
       <title>Showcase</title>
       <link>https://esp3d.io/esp3d/v2.x/showcase/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d/v2.x/showcase/index.html</guid>
-      <description></description>
+      <description>On a Davinci 2.0 </description>
     </item>
     <item>
       <title>Credits</title>

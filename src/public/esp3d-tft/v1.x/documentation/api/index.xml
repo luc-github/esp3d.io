@@ -11,7 +11,7 @@
       <link>https://esp3d.io/esp3d-tft/v1.x/documentation/api/_commands/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://esp3d.io/esp3d-tft/v1.x/documentation/api/_commands/index.html</guid>
-      <description>Warning Some commands may not have been implemented yet.
+      <description>WarningSome commands may not have been implemented yet.
 Conventions 1 - Commands are case sensitives 2 - Add space to separate parameters
 3 - If parameter has space, add \ in front of space to not be seen as separator
 4 - json, json=YES, json=TRUE and json=1 are paremeters to switch output to json. By default output is plain text, to get json formated output add json or json=yes after main parameters</description>

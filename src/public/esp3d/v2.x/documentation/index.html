@@ -8,20 +8,20 @@
     <meta name="description" content="Web site of ESP3D ecosystem">
     <title>Documentation :: ESP3D Ecosystem</title>
     <link href="/esp3d/v2.x/documentation/index.xml" rel="alternate" type="application/rss+xml" title="Documentation :: ESP3D Ecosystem">
-    <link href="/images/favicon.ico?1676549400" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1676626857" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1676549400" rel="stylesheet">
-    <link href="/css/nucleus.css?1676549400" rel="stylesheet">
-    <link href="/css/fonts.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1676549400" rel="stylesheet">
-    <link href="/css/theme-blue.css?1676549400" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1676549400" rel="stylesheet">
-    <link href="/css/variant.css?1676549400" rel="stylesheet">
-    <link href="/css/print.css?1676549400" rel="stylesheet" media="print">
-    <script src="/js/url.js?1676549400"></script>
-    <script src="/js/variant.js?1676549400"></script>
+    <link href="/css/fontawesome-all.min.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1676626857" rel="stylesheet">
+    <link href="/css/nucleus.css?1676626857" rel="stylesheet">
+    <link href="/css/fonts.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1676626857" rel="stylesheet">
+    <link href="/css/theme-blue.css?1676626857" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1676626857" rel="stylesheet">
+    <link href="/css/variant.css?1676626857" rel="stylesheet">
+    <link href="/css/print.css?1676626857" rel="stylesheet" media="print">
+    <script src="/js/url.js?1676626857"></script>
+    <script src="/js/variant.js?1676626857"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -39,7 +39,7 @@
       var baseUriFull='https:\/\/esp3d.io/';
       window.variants && variants.init( [ 'blue' ] );
     </script>
-    <script src="/js/jquery.min.js?1676549400" defer></script>
+    <script src="/js/jquery.min.js?1676626857" defer></script>
   </head>
   <body class="mobile-support html" data-url="/esp3d/v2.x/documentation/index.html">
     <div id="body" class="default-animation">
@@ -48,7 +48,7 @@
       <nav id="topbar" class="highlightable" dir="ltr">
         <div>
           <div class="navigation">
-            <a class="nav nav-next" href="/esp3d/v2.x/documentation/api/index.html" title="API (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+            <a class="nav nav-next" href="/esp3d/v2.x/documentation/commands/index.html" title="ESP3D commands (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
           </div>
           <div class="navigation">
             <a class="nav nav-prev" href="/esp3d/v2.x/installation/wiring/index.html" title="Hardware connection (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
@@ -72,9 +72,15 @@
           </div>
           <article class="chapter">
 <h1 id="documentation">Documentation</h1>
+<p>The documentation section will help you to:</p>
+<ul>
+<li>Use and understand the <a href="commands/">ESP3D commands</a></li>
+<li>To setup and enable a <a href="notifications/">notification service</a></li>
+<li>Understand the <a href="api/">APi</a> used.</li>
+</ul>
 
             <footer class="footline"><hr>
-<center>If any error please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a> or by proposing a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
 
             </footer>
           </article>
@@ -156,64 +162,78 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1676549400" defer></script>
-        <script src="/js/search.js?1676549400" defer></script>
+        <script src="/js/auto-complete.js?1676626858" defer></script>
+        <script src="/js/lunr/lunr.min.js?1676626858" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1676626858" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1676626858" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1676626858" defer></script>
+        <script src="/js/search.js?1676626858" defer></script>
+      </div>
+      <div id="homelinks" class="default-animation">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+        </ul>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/esp3d/index.html" class="dd-item parent"><input type="checkbox" id="section-53cbfcb1a2c32dd775ad321d8a658063" aria-controls="subsections-53cbfcb1a2c32dd775ad321d8a658063" class="toggle" checked><label class="a11y-only toggle" for="section-53cbfcb1a2c32dd775ad321d8a658063" >Submenu ESP3D</label><a href="/esp3d/index.html">ESP3D</a><ul id="subsections-53cbfcb1a2c32dd775ad321d8a658063">
-          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-23c1432885c015f9b59902aff25caa89" aria-controls="subsections-23c1432885c015f9b59902aff25caa89" class="toggle" checked><label class="a11y-only toggle" for="section-23c1432885c015f9b59902aff25caa89" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-23c1432885c015f9b59902aff25caa89">
+          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-231f5fcdc550a5ed7946ace973e3356c" aria-controls="subsections-231f5fcdc550a5ed7946ace973e3356c" class="toggle" checked><label class="a11y-only toggle" for="section-231f5fcdc550a5ed7946ace973e3356c" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-231f5fcdc550a5ed7946ace973e3356c">
           <li data-nav-id="/esp3d/v2.x/features/index.html" class="dd-item"><a href="/esp3d/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
-          <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-f6a3273608792e4ad999c80a2b4e9c8c" aria-controls="subsections-f6a3273608792e4ad999c80a2b4e9c8c" class="toggle" checked><label class="a11y-only toggle" for="section-f6a3273608792e4ad999c80a2b4e9c8c" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-f6a3273608792e4ad999c80a2b4e9c8c">
+          <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-26a469f915cfda3b478f39da66e40a25" aria-controls="subsections-26a469f915cfda3b478f39da66e40a25" class="toggle" checked><label class="a11y-only toggle" for="section-26a469f915cfda3b478f39da66e40a25" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-26a469f915cfda3b478f39da66e40a25">
           <li data-nav-id="/esp3d/v2.x/installation/arduino/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/arduino/index.html">Arduino IDE</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/vscode-platformio/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/wiring/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/wiring/index.html">Hardware connection</a></li></ul></li>
-          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item active parent alwaysopen"><input type="checkbox" id="section-a2d4b39617775f5ae165f52aacdb38ce" aria-controls="subsections-a2d4b39617775f5ae165f52aacdb38ce" class="toggle" checked><label class="a11y-only toggle" for="section-a2d4b39617775f5ae165f52aacdb38ce" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-a2d4b39617775f5ae165f52aacdb38ce">
-          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li>
-          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item active parent alwaysopen"><input type="checkbox" id="section-09677294d2f66d5c07d755f2c150960d" aria-controls="subsections-09677294d2f66d5c07d755f2c150960d" class="toggle" checked><label class="a11y-only toggle" for="section-09677294d2f66d5c07d755f2c150960d" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-09677294d2f66d5c07d755f2c150960d">
+          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b15ae9dc0d9fff03d3fc13a7a8008880" aria-controls="subsections-b15ae9dc0d9fff03d3fc13a7a8008880" class="toggle" checked><label class="a11y-only toggle" for="section-b15ae9dc0d9fff03d3fc13a7a8008880" >Submenu Notifications</label><a href="/esp3d/v2.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="subsections-b15ae9dc0d9fff03d3fc13a7a8008880">
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/pushover/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/line/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/ifttt/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li></ul></li>
           <li data-nav-id="/esp3d/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
           <li data-nav-id="/esp3d/v2.x/credits/index.html" class="dd-item"><a href="/esp3d/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
-          <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-08db5c456e119729dc6a7422e94c4612" aria-controls="subsections-08db5c456e119729dc6a7422e94c4612" class="toggle" checked><label class="a11y-only toggle" for="section-08db5c456e119729dc6a7422e94c4612" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-08db5c456e119729dc6a7422e94c4612">
+          <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-80d6dc0be85571e2f97c6c066641ea02" aria-controls="subsections-80d6dc0be85571e2f97c6c066641ea02" class="toggle" checked><label class="a11y-only toggle" for="section-80d6dc0be85571e2f97c6c066641ea02" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-80d6dc0be85571e2f97c6c066641ea02">
           <li data-nav-id="/esp3d/v3.x/features/index.html" class="dd-item"><a href="/esp3d/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d/v3.x/installation/index.html" class="dd-item"><a href="/esp3d/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d/v3.x/showcase/index.html">Showcase</a></li>
           <li data-nav-id="/esp3d/v3.x/credits/index.html" class="dd-item"><a href="/esp3d/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3dlib/index.html" class="dd-item"><input type="checkbox" id="section-1f50da9b5be031f4c871e092365ed9e8" aria-controls="subsections-1f50da9b5be031f4c871e092365ed9e8" class="toggle"><label class="a11y-only toggle" for="section-1f50da9b5be031f4c871e092365ed9e8" >Submenu ESP3DLib</label><a href="/esp3dlib/index.html">ESP3DLib</a><ul id="subsections-1f50da9b5be031f4c871e092365ed9e8">
-          <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-9a191369f97152ffe714b0055c559eae" aria-controls="subsections-9a191369f97152ffe714b0055c559eae" class="toggle" checked><label class="a11y-only toggle" for="section-9a191369f97152ffe714b0055c559eae" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-9a191369f97152ffe714b0055c559eae">
+          <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-2bfd2993e2fc8c60058b136ef26b8854" aria-controls="subsections-2bfd2993e2fc8c60058b136ef26b8854" class="toggle" checked><label class="a11y-only toggle" for="section-2bfd2993e2fc8c60058b136ef26b8854" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-2bfd2993e2fc8c60058b136ef26b8854">
           <li data-nav-id="/esp3dlib/v1.x/features/index.html" class="dd-item"><a href="/esp3dlib/v1.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3dlib/v1.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3dlib/v1.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3dlib/v1.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v1.x/showcase/index.html">Showcase</a></li></ul></li>
-          <li data-nav-id="/esp3dlib/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-5c6deecccc672d58b05f8e5e440b18c2" aria-controls="subsections-5c6deecccc672d58b05f8e5e440b18c2" class="toggle" checked><label class="a11y-only toggle" for="section-5c6deecccc672d58b05f8e5e440b18c2" >Submenu Version 3.X</label><a href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="subsections-5c6deecccc672d58b05f8e5e440b18c2">
+          <li data-nav-id="/esp3dlib/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ccbdb1a35ade1aaf92ecd7ab0a7de193" aria-controls="subsections-ccbdb1a35ade1aaf92ecd7ab0a7de193" class="toggle" checked><label class="a11y-only toggle" for="section-ccbdb1a35ade1aaf92ecd7ab0a7de193" >Submenu Version 3.X</label><a href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="subsections-ccbdb1a35ade1aaf92ecd7ab0a7de193">
           <li data-nav-id="/esp3dlib/v3.x/features/index.html" class="dd-item"><a href="/esp3dlib/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3dlib/v3.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3dlib/v3.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3dlib/v3.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-tft/index.html" class="dd-item"><input type="checkbox" id="section-45c0a57bdbb531deab79af6fe15794f1" aria-controls="subsections-45c0a57bdbb531deab79af6fe15794f1" class="toggle"><label class="a11y-only toggle" for="section-45c0a57bdbb531deab79af6fe15794f1" >Submenu ESP3D-TFT</label><a href="/esp3d-tft/index.html">ESP3D-TFT</a><ul id="subsections-45c0a57bdbb531deab79af6fe15794f1">
-          <li data-nav-id="/esp3d-tft/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b860bf468e28710a7c113fa385ebf6dc" aria-controls="subsections-b860bf468e28710a7c113fa385ebf6dc" class="toggle" checked><label class="a11y-only toggle" for="section-b860bf468e28710a7c113fa385ebf6dc" >Submenu Version 1.X</label><a href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="subsections-b860bf468e28710a7c113fa385ebf6dc">
+          <li data-nav-id="/esp3d-tft/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-7e2c30c237ea9ac8c3de4539dfa4b069" aria-controls="subsections-7e2c30c237ea9ac8c3de4539dfa4b069" class="toggle" checked><label class="a11y-only toggle" for="section-7e2c30c237ea9ac8c3de4539dfa4b069" >Submenu Version 1.X</label><a href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="subsections-7e2c30c237ea9ac8c3de4539dfa4b069">
           <li data-nav-id="/esp3d-tft/v1.x/features/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-tft/v1.x/installation/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/installation/index.html">Installation</a></li>
-          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ee360bd091b9b49bf8c5b8a2fc579d7a" aria-controls="subsections-ee360bd091b9b49bf8c5b8a2fc579d7a" class="toggle" checked><label class="a11y-only toggle" for="section-ee360bd091b9b49bf8c5b8a2fc579d7a" >Submenu Documentation</label><a href="/esp3d-tft/v1.x/documentation/index.html">Documentation</a><ul id="subsections-ee360bd091b9b49bf8c5b8a2fc579d7a">
-          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-e7aaf84714eec3a7054769c3fbb0a1a0" aria-controls="subsections-e7aaf84714eec3a7054769c3fbb0a1a0" class="toggle" checked><label class="a11y-only toggle" for="section-e7aaf84714eec3a7054769c3fbb0a1a0" >Submenu API</label><a href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="subsections-e7aaf84714eec3a7054769c3fbb0a1a0">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-3db12631701db1d003bea4107a21f94d" aria-controls="subsections-3db12631701db1d003bea4107a21f94d" class="toggle" checked><label class="a11y-only toggle" for="section-3db12631701db1d003bea4107a21f94d" >Submenu Documentation</label><a href="/esp3d-tft/v1.x/documentation/index.html">Documentation</a><ul id="subsections-3db12631701db1d003bea4107a21f94d">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-a1ded372486a4171b687daa29f21f430" aria-controls="subsections-a1ded372486a4171b687daa29f21f430" class="toggle" checked><label class="a11y-only toggle" for="section-a1ded372486a4171b687daa29f21f430" >Submenu API</label><a href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="subsections-a1ded372486a4171b687daa29f21f430">
           <li data-nav-id="/esp3d-tft/v1.x/documentation/api/_commands/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/_commands/index.html">ESP3D commands</a></li>
           <li data-nav-id="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html">[ESP400] format</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-tft/v1.x/showcase/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-webui/index.html" class="dd-item"><input type="checkbox" id="section-17361b6c0b1ed642c771e18821f4f773" aria-controls="subsections-17361b6c0b1ed642c771e18821f4f773" class="toggle"><label class="a11y-only toggle" for="section-17361b6c0b1ed642c771e18821f4f773" >Submenu ESP3D-WEBUI</label><a href="/esp3d-webui/index.html">ESP3D-WEBUI</a><ul id="subsections-17361b6c0b1ed642c771e18821f4f773">
-          <li data-nav-id="/esp3d-webui/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ee6b21bb30e94abfb630c588f737b0e1" aria-controls="subsections-ee6b21bb30e94abfb630c588f737b0e1" class="toggle" checked><label class="a11y-only toggle" for="section-ee6b21bb30e94abfb630c588f737b0e1" >Submenu Version 2.X</label><a href="/esp3d-webui/v2.x/index.html">Version 2.X</a><ul id="subsections-ee6b21bb30e94abfb630c588f737b0e1">
+          <li data-nav-id="/esp3d-webui/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-704634bbb8020192dd72ede8195752f7" aria-controls="subsections-704634bbb8020192dd72ede8195752f7" class="toggle" checked><label class="a11y-only toggle" for="section-704634bbb8020192dd72ede8195752f7" >Submenu Version 2.X</label><a href="/esp3d-webui/v2.x/index.html">Version 2.X</a><ul id="subsections-704634bbb8020192dd72ede8195752f7">
           <li data-nav-id="/esp3d-webui/v2.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/documentation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/showcase/index.html">Showcase</a></li></ul></li>
-          <li data-nav-id="/esp3d-webui/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-f334b49fcca6cbd39177e2bd58b199c8" aria-controls="subsections-f334b49fcca6cbd39177e2bd58b199c8" class="toggle" checked><label class="a11y-only toggle" for="section-f334b49fcca6cbd39177e2bd58b199c8" >Submenu Version 3.X</label><a href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="subsections-f334b49fcca6cbd39177e2bd58b199c8">
+          <li data-nav-id="/esp3d-webui/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-a3ac2326883e40da5c605f66665e2b0d" aria-controls="subsections-a3ac2326883e40da5c605f66665e2b0d" class="toggle" checked><label class="a11y-only toggle" for="section-a3ac2326883e40da5c605f66665e2b0d" >Submenu Version 3.X</label><a href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="subsections-a3ac2326883e40da5c605f66665e2b0d">
           <li data-nav-id="/esp3d-webui/v3.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+          <li data-nav-id="/tools/index.html" class="dd-item"><input type="checkbox" id="section-119695d21223206d3a21952913ee96ab" aria-controls="subsections-119695d21223206d3a21952913ee96ab" class="toggle"><label class="a11y-only toggle" for="section-119695d21223206d3a21952913ee96ab" >Submenu Extra tools</label><a href="/tools/index.html"><i class='fas fa-tools'></i> Extra tools</a><ul id="subsections-119695d21223206d3a21952913ee96ab">
+          <li data-nav-id="/tools/discovery/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b6c2119bfb8c06f7bbd4321cb35ad4dd" aria-controls="subsections-b6c2119bfb8c06f7bbd4321cb35ad4dd" class="toggle" checked><label class="a11y-only toggle" for="section-b6c2119bfb8c06f7bbd4321cb35ad4dd" >Submenu Discovery tools</label><a href="/tools/discovery/index.html"><i class='fas fa-search'></i> Discovery tools</a><ul id="subsections-b6c2119bfb8c06f7bbd4321cb35ad4dd">
+          <li data-nav-id="/tools/discovery/ssdp/index.html" class="dd-item"><a href="/tools/discovery/ssdp/index.html">SSDP protocol</a></li>
+          <li data-nav-id="/tools/discovery/mdns/index.html" class="dd-item"><a href="/tools/discovery/mdns/index.html">mDNS protocol</a></li></ul></li></ul></li>
         </ul>
         <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
@@ -248,7 +268,7 @@
             <li class="footerVisitedLinks"><button class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</button></li>
           </ul>
         </div>
-        <div id="footer" class="footerFooter showFooter"><center>
+        <div id="footer" class="footerFooter showFooter">    <center>
 	<p><a href="https://liberapay.com/ESP3D/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></p>
 	<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FQL59C749A78L"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" alt="PayPal The safer, easier way to pay online."></a></p>
 	<p><a href="https://https://ko-fi.com/G2G0C0QT7"><img alt="Donate using ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a></p>
@@ -260,8 +280,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1676549400" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1676549400" defer></script>
-    <script src="/js/theme.js?1676549400" defer></script>
+    <script src="/js/clipboard.min.js?1676626858" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1676626858" defer></script>
+    <script src="/js/theme.js?1676626858" defer></script>
   </body>
 </html>

@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.10.2+tip">
     <meta name="description" content="Web site of ESP3D ecosystem">
     <title>Hardware connection :: ESP3D Ecosystem</title>
-    <link href="/images/favicon.ico?1676549400" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1676626857" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1676549400" rel="stylesheet">
-    <link href="/css/nucleus.css?1676549400" rel="stylesheet">
-    <link href="/css/fonts.css?1676549400" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676549400" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1676549400" rel="stylesheet">
-    <link href="/css/theme-blue.css?1676549400" rel="stylesheet" id="variant-style">
-    <link href="/css/ie.css?1676549400" rel="stylesheet">
-    <link href="/css/variant.css?1676549400" rel="stylesheet">
-    <link href="/css/print.css?1676549400" rel="stylesheet" media="print">
-    <script src="/js/url.js?1676549400"></script>
-    <script src="/js/variant.js?1676549400"></script>
+    <link href="/css/fontawesome-all.min.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1676626857" rel="stylesheet">
+    <link href="/css/nucleus.css?1676626857" rel="stylesheet">
+    <link href="/css/fonts.css?1676626857" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1676626857" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1676626857" rel="stylesheet">
+    <link href="/css/theme-blue.css?1676626857" rel="stylesheet" id="variant-style">
+    <link href="/css/ie.css?1676626857" rel="stylesheet">
+    <link href="/css/variant.css?1676626857" rel="stylesheet">
+    <link href="/css/print.css?1676626857" rel="stylesheet" media="print">
+    <script src="/js/url.js?1676626857"></script>
+    <script src="/js/variant.js?1676626857"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -38,7 +38,7 @@
       var baseUriFull='https:\/\/esp3d.io/';
       window.variants && variants.init( [ 'blue' ] );
     </script>
-    <script src="/js/jquery.min.js?1676549400" defer></script>
+    <script src="/js/jquery.min.js?1676626857" defer></script>
   </head>
   <body class="mobile-support html" data-url="/esp3d/v2.x/installation/wiring/index.html">
     <div id="body" class="default-animation">
@@ -69,15 +69,11 @@
             <div class="toc-wrapper" dir="ltr">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#connecting-esp-board-to-target-board">Connecting ESP board to target board</a></li>
-    <li><a href="#connection-diagrams-for-some-printers-and-esp-boards">Connection diagrams for some printers and ESP boards</a></li>
-    <li><a href="#printer-motherboards">Printer motherboards</a>
+    <li>
       <ul>
-        <li><a href="#anet-a8-boards">Anet A8 boards</a></li>
-        <li><a href="#anycubic-i3-mega---trigorilla-8bit-board">Anycubic i3 mega - Trigorilla 8bit board</a></li>
-        <li><a href="#azsmz-lcd-board">AZSMZ LCD board</a></li>
-        <li><a href="#azsmz-mini-board">AZSMZ-mini board</a></li>
-        <li><a href="#azteeg-x5-mini-board">Azteeg X5 mini board</a></li>
+        <li><a href="#connecting-esp-board-to-target-board">Connecting ESP board to target board</a></li>
+        <li><a href="#connection-diagrams-for-some-printers-and-esp-boards">Connection diagrams for some printers and ESP boards</a></li>
+        <li><a href="#printer-motherboards">Printer motherboards</a></li>
         <li><a href="#biqu-kfb20-board">BIQU KFB2.0 board</a></li>
         <li><a href="#creality-cr10-ender-3-board">Creality CR10 Ender 3 board</a></li>
         <li><a href="#creality-ender-4-board">Creality Ender 4 board</a></li>
@@ -123,7 +119,7 @@
 <li>ESP Rx needs to connect to Tx on MCU of printer board.</li>
 <li>You also need to power supply ESP board with with GND and 3V3 or 5V.</li>
 </ul>
-<h2 id="connecting-esp-board-to-target-board">Connecting ESP board to target board</h2>
+<h3 id="connecting-esp-board-to-target-board">Connecting ESP board to target board</h3>
 <p>Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.3V and others 5V, so you may not be able to directly connect ESP  board to target board.</p>
 <p><strong>Disclaimer</strong> : this wiki is for reference - you are responsible of your board supporting or not 5V, we are not responsible for any damage of wrong wiring.</p>
 <p>ESP32 and ESP8266 MCU are only supporting 3.3V. Power supply them with 5V will likelly fry them immediatelly. As MCU is supplied at 3.3V, Tx and Rx signals will be at 3.3V even when board is supplied with 5V. Wether Rx pin is supporting 5V is controversial so we will keep on the safe side and only take datahseet as reference. It&rsquo;s not recommended to have any signal (including Rx) be higher than power supply (3.3V here).</p>
@@ -140,12 +136,12 @@ You could also use 10k and 22k or anything near a factor 2.</p>
 <p>
 		
 <a href="#0-images-dividerbridge-png-width-300px">
-<img src="/images/dividerBridge.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/dividerbridge.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-dividerbridge-png-width-300px">
-<img src="/images/dividerBridge.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/dividerbridge.png?width=300px" alt="step1"loading="lazy">
 </a></p>
-<h2 id="connection-diagrams-for-some-printers-and-esp-boards">Connection diagrams for some printers and ESP boards</h2>
+<h3 id="connection-diagrams-for-some-printers-and-esp-boards">Connection diagrams for some printers and ESP boards</h3>
 <ul>
 <li><a href="#printer-motherboards">Printer motherboards</a></li>
 <li><a href="#anet-a8-boards">Anet A8 boards</a></li>
@@ -176,36 +172,41 @@ You could also use 10k and 22k or anything near a factor 2.</p>
 <li><a href="#sonoff">Sonoff</a></li>
 <li><a href="#wemos-d1-mini">Wemos D1 mini</a></li>
 </ul>
-<h2 id="printer-motherboards">Printer motherboards</h2>
-<h3 id="anet-a8-boards">Anet A8 boards</h3>
+<h3 id="printer-motherboards">Printer motherboards</h3>
 <h4 id="anet-boards-up-to-v15">Anet boards up to v1.5</h4>
-<h4 id="step-1">Step 1</h4>
+<ul>
+<li>Step 1</li>
+</ul>
 <p>You will also have to unsolder the resistors R52 and R53 – they are zero ohm resistors, and serve no other purpose than connecting the atmega chip directly to the onboard USB to UART converter (the CH340 chip). Do it VERY careful – you don’t want to damage your board. If you don’t feel confident – don’t do it.</p>
 <p>
 <a href="#0-images-anet-image08-300x300-jpg">
-<img src="/images/Anet/image08-300x300.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/anet/image08-300x300.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-anet-image08-300x300-jpg">
-<img src="/images/Anet/image08-300x300.jpg" alt="step1"loading="lazy">
+<img src="/images/anet/image08-300x300.jpg" alt="step1"loading="lazy">
 </a></p>
-<h4 id="step-2">Step 2</h4>
+<ul>
+<li>Step 2</li>
+</ul>
 <p>Now prepare the printer’s motherboard. It requires a simple modification, that does not interfere with it’s operation afterwards – just solder 3 pin x 2 row male header on J8, and add 2 jumpers (or jumper wires) as shown on the picture:</p>
 <p>
 <a href="#0-images-anet-image05-300x300-jpg">
-<img src="/images/Anet/image05-300x300.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/anet/image05-300x300.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-anet-image05-300x300-jpg">
-<img src="/images/Anet/image05-300x300.jpg" alt="step1"loading="lazy">
+<img src="/images/anet/image05-300x300.jpg" alt="step1"loading="lazy">
 </a></p>
-<h4 id="step-3">Step 3</h4>
+<ul>
+<li>Step 3</li>
+</ul>
 <p>Connect the ESP to J3 repsecting pinout</p>
 <p>
 		
 <a href="#0-images-anet-image00-232x300-jpg-width-300px">
-<img src="/images/Anet/image00-232x300.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/anet/image00-232x300.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-anet-image00-232x300-jpg-width-300px">
-<img src="/images/Anet/image00-232x300.jpg?width=300px" alt="step3"loading="lazy">
+<img src="/images/anet/image00-232x300.jpg?width=300px" alt="step3"loading="lazy">
 </a></p>
 <table>
 <thead>
@@ -243,13 +244,13 @@ You could also use 10k and 22k or anything near a factor 2.</p>
 You will have to solder two wires from number 9 and number 10 its recommender to connect these to pin 1 and 2 of J3 connector.</p>
 <p>
 <a href="#0-images-anet-board-jpg">
-<img src="/images/Anet/board.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/anet/board.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-anet-board-jpg">
-<img src="/images/Anet/board.jpg" alt="step1"loading="lazy">
+<img src="/images/anet/board.jpg" alt="step1"loading="lazy">
 </a></p>
 <hr>
-<h3 id="anycubic-i3-mega---trigorilla-8bit-board">Anycubic i3 mega - Trigorilla 8bit board</h3>
+<h4 id="anycubic-i3-mega---trigorilla-8bit-board">Anycubic i3 mega - Trigorilla 8bit board</h4>
 <p>To connect the ESP12e to the UART0. (Credits:<a href="https://www.lesimprimantes3d.fr/forum/profile/197-murdock/" target="_blank">197-murdock</a>).<br>
 (Green = RX, Blue = TX)<br>
 5V (buck to 3.3v if directly connect to ESP - most development ESP boards already have this voltage limited built-in - but check!) and GND can be taken from the AUX3 exposed connector.<br>
@@ -257,57 +258,57 @@ UART0 is normally used by USB port so don&rsquo;t use both together - so this ha
 <p>
 		
 <a href="#0-images-trigorilla-board-jpg-width-300px">
-<img src="/images/Trigorilla/board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/trigorilla/board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-trigorilla-board-jpg-width-300px">
-<img src="/images/Trigorilla/board.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/trigorilla/board.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-trigorilla-nodemcu-jpg-width-300px">
-<img src="/images/Trigorilla/nodemcu.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/trigorilla/nodemcu.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-trigorilla-nodemcu-jpg-width-300px">
-<img src="/images/Trigorilla/nodemcu.jpg?width=300px" alt="step2"loading="lazy">
+<img src="/images/trigorilla/nodemcu.jpg?width=300px" alt="step2"loading="lazy">
 </a></p>
 <hr>
-<h3 id="azsmz-lcd-board">AZSMZ LCD board</h3>
+<h4 id="azsmz-lcd-board">AZSMZ LCD board</h4>
 <p>
 <a href="#0-images-azsmz-mini-azsmz-12864-lcd-jpg">
-<img src="/images/AZSMZ-mini/AZSMZ-12864-LCD.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/azsmz-mini/azsmz-12864-lcd.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-azsmz-mini-azsmz-12864-lcd-jpg">
-<img src="/images/AZSMZ-mini/AZSMZ-12864-LCD.jpg" alt="step1"loading="lazy">
+<img src="/images/azsmz-mini/azsmz-12864-lcd.jpg" alt="step1"loading="lazy">
 </a></p>
 <hr>
-<h3 id="azsmz-mini-board">AZSMZ-mini board</h3>
+<h4 id="azsmz-mini-board">AZSMZ-mini board</h4>
 <p>
 <a href="#0-images-azsmz-mini-azsmz-mini-jpg">
-<img src="/images/AZSMZ-mini/AZSMZ-mini.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/azsmz-mini/azsmz-mini.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-azsmz-mini-azsmz-mini-jpg">
-<img src="/images/AZSMZ-mini/AZSMZ-mini.jpg" alt="step1"loading="lazy">
+<img src="/images/azsmz-mini/azsmz-mini.jpg" alt="step1"loading="lazy">
 </a></p>
 <p>If you don&rsquo;t have the soldering skills to grab the connectors from the unpopulated ethernet connection, you can also get 3.3v and GND from the ISP header (bottom left on the diagram above).</p>
 <hr>
-<h3 id="azteeg-x5-mini-board">Azteeg X5 mini board</h3>
+<h4 id="azteeg-x5-mini-board">Azteeg X5 mini board</h4>
 <p>
 		
 <a href="#0-images-azteegx5-mini-azteeg-png-width-300px">
-<img src="/images/AzteegX5-mini/azteeg.PNG?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/azteegX5-mini/azteeg.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-azteegx5-mini-azteeg-png-width-300px">
-<img src="/images/AzteegX5-mini/azteeg.PNG?width=300px" alt="step1"loading="lazy">
+<img src="/images/azteegX5-mini/azteeg.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="biqu-kfb20-board">BIQU KFB2.0 board</h3>
 <p>all in one Ramps1.4/Mega2560 R3 controller based</p>
 <p>
 <a href="#0-images-biqu-kfb2-0-board-jpg">
-<img src="/images/BIQU-KFB2.0/board.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/biqu-kfb2.0/board.jpg" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-biqu-kfb2-0-board-jpg">
-<img src="/images/BIQU-KFB2.0/board.jpg" alt="step1"loading="lazy">
+<img src="/images/biqu-kfb2.0/board.jpg" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="creality-cr10-ender-3-board">Creality CR10 Ender 3 board</h3>
@@ -315,19 +316,19 @@ UART0 is normally used by USB port so don&rsquo;t use both together - so this ha
 <p>
 		
 <a href="#0-images-cr10-board-jpg-width-300px">
-<img src="/images/CR10/board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/cr10/board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-cr10-board-jpg-width-300px">
-<img src="/images/CR10/board.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/cr10/board.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>Since soldering might be difficult because the solder points are so close to each other, another option is to scrape off the insulation from the traces on the backside and solder there. Be extra careful not to scrape the surrounding ground plane. You need suitable fine scraping tools for this. The picture below shows an Ender-2 PCB.</p>
 <p>
 		
 <a href="#0-images-cr10-traces-jpg-width-300px">
-<img src="/images/CR10/traces.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/cr10/traces.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-cr10-traces-jpg-width-300px">
-<img src="/images/CR10/traces.jpg?width=300px" alt="step2"loading="lazy">
+<img src="/images/cr10/traces.jpg?width=300px" alt="step2"loading="lazy">
 </a></p>
 <hr>
 <h3 id="creality-ender-4-board">Creality Ender 4 board</h3>
@@ -344,77 +345,77 @@ UART0 is normally used by USB port so don&rsquo;t use both together - so this ha
 <h3 id="davinci-1020-board">Davinci 1.0/2.0 board</h3>
 <p>
 <a href="#0-images-davinci-davinci-png">
-<img src="/images/Davinci/davinci.png" alt="step1" style="height: auto; width: auto;" loading="lazy">
+<img src="/images/davinci/davinci.png" alt="step1" style="height: auto; width: auto;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-davinci-png">
-<img src="/images/Davinci/davinci.png" alt="step1"loading="lazy">
+<img src="/images/davinci/davinci.png" alt="step1"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-board-jpg-width-300px">
-<img src="/images/Davinci/board.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/board.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-board-jpg-width-300px">
-<img src="/images/Davinci/board.jpg?width=300px" alt="step2"loading="lazy">
+<img src="/images/davinci/board.jpg?width=300px" alt="step2"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-boardconnected-jpg-width-300px">
-<img src="/images/Davinci/boardconnected.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/boardconnected.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-boardconnected-jpg-width-300px">
-<img src="/images/Davinci/boardconnected.jpg?width=300px" alt="step3"loading="lazy">
+<img src="/images/davinci/boardconnected.jpg?width=300px" alt="step3"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-backside-jpg-width-300px">
-<img src="/images/Davinci/backside.jpg?width=300px" alt="step4" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/backside.jpg?width=300px" alt="step4" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-backside-jpg-width-300px">
-<img src="/images/Davinci/backside.jpg?width=300px" alt="step4"loading="lazy">
+<img src="/images/davinci/backside.jpg?width=300px" alt="step4"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-screen-jpg-width-300px">
-<img src="/images/Davinci/screen.jpg?width=300px" alt="step5" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/screen.jpg?width=300px" alt="step5" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-screen-jpg-width-300px">
-<img src="/images/Davinci/screen.jpg?width=300px" alt="step5"loading="lazy">
+<img src="/images/davinci/screen.jpg?width=300px" alt="step5"loading="lazy">
 </a></p>
 <hr>
 <h3 id="davinci-10a-board">Davinci 1.0A board</h3>
 <p>
 		
 <a href="#0-images-davinci-davincia-1-jpg-width-300px">
-<img src="/images/Davinci/davinciA-1.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/davincia-1.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-davincia-1-jpg-width-300px">
-<img src="/images/Davinci/davinciA-1.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/davinci/davincia-1.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-davincia-4-jpg-width-300px">
-<img src="/images/Davinci/davinciA-4.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/davincia-4.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-davincia-4-jpg-width-300px">
-<img src="/images/Davinci/davinciA-4.jpg?width=300px" alt="step2"loading="lazy">
+<img src="/images/davinci/davincia-4.jpg?width=300px" alt="step2"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-davinci-davincia-2-jpg-width-300px">
-<img src="/images/Davinci/davinciA-2.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/davincia-2.jpg?width=300px" alt="step3" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-davincia-2-jpg-width-300px">
-<img src="/images/Davinci/davinciA-2.jpg?width=300px" alt="step3"loading="lazy">
+<img src="/images/davinci/davincia-2.jpg?width=300px" alt="step3"loading="lazy">
 </a></p>
 <p>Alternate Module placement for increased WiFi range (outside metal chassis, antenna has vertical polarization)</p>
 <p>
 		
 <a href="#0-images-davinci-davincia-3-jpg-width-300px">
-<img src="/images/Davinci/davinciA-3.jpg?width=300px" alt="step4" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/davinci/davincia-3.jpg?width=300px" alt="step4" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-davinci-davincia-3-jpg-width-300px">
-<img src="/images/Davinci/davinciA-3.jpg?width=300px" alt="step4"loading="lazy">
+<img src="/images/davinci/davincia-3.jpg?width=300px" alt="step4"loading="lazy">
 </a></p>
 <hr>
 <h3 id="mks-boards">MKS boards</h3>
@@ -423,10 +424,10 @@ UART0 is normally used by USB port so don&rsquo;t use both together - so this ha
 <p>
 		
 <a href="#0-images-mks-1-2-wires-png-width-300px">
-<img src="/images/MKS-1.2/wires.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/mks-1.2/wires.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-mks-1-2-wires-png-width-300px">
-<img src="/images/MKS-1.2/wires.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/mks-1.2/wires.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>ESP12E is connected to the AUX1</p>
 <p>ESP12E RX is connected to the pin NEAR GND of the upper row (Marked TXD on pinout.)<br>
@@ -434,38 +435,38 @@ ESP12E TX is connected to the adiacent pin at the end of the upper row (Marked R
 <p>
 		
 <a href="#0-images-mks-1-2-board-png-width-300px">
-<img src="/images/MKS-1.2/board.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/mks-1.2/board.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-mks-1-2-board-png-width-300px">
-<img src="/images/MKS-1.2/board.png?width=300px" alt="step2"loading="lazy">
+<img src="/images/mks-1.2/board.png?width=300px" alt="step2"loading="lazy">
 </a></p>
 <hr>
 <h3 id="mks-smoothieware-board">MKS Smoothieware board</h3>
 <p>
 		
 <a href="#0-images-mks-smoothieware-mks-smoothie-png-width-300px">
-<img src="/images/MKS-SMOOTHIEWARE/MKS-smoothie.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/mks-smoothieware/mks-smoothie.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-mks-smoothieware-mks-smoothie-png-width-300px">
-<img src="/images/MKS-SMOOTHIEWARE/MKS-smoothie.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/mks-smoothieware/mks-smoothie.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="radds-board">RADDS board</h3>
 <p>
 		
 <a href="#0-images-radds-radds-png-width-300px">
-<img src="/images/RADDS/RADDS.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/radds/radds.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-radds-radds-png-width-300px">
-<img src="/images/RADDS/RADDS.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/radds/radds.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-radds-screen-jpg-width-300px">
-<img src="/images/RADDS/screen.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/radds/screen.jpg?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-radds-screen-jpg-width-300px">
-<img src="/images/RADDS/screen.jpg?width=300px" alt="step2"loading="lazy">
+<img src="/images/radds/screen.jpg?width=300px" alt="step2"loading="lazy">
 </a></p>
 <hr>
 <h3 id="ramps-14re-arm-board">RAMPS 1.4/Re-ARM board</h3>
@@ -473,29 +474,29 @@ ESP12E TX is connected to the adiacent pin at the end of the upper row (Marked R
 <p>
 		
 <a href="#0-images-ramps1-4-ramps-png-width-300px">
-<img src="/images/RAMPS1.4/RAMPS.PNG?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/ramps1.4/ramps.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-ramps1-4-ramps-png-width-300px">
-<img src="/images/RAMPS1.4/RAMPS.PNG?width=300px" alt="step1"loading="lazy">
+<img src="/images/ramps1.4/ramps.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>Alternative pins if use Re-ARM (J4/UART port)</p>
 <p>
 		
 <a href="#0-images-ramps1-4-screenshot-20190803-022151-png-width-300px">
-<img src="/images/RAMPS1.4/Screenshot-20190803-022151.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/ramps1.4/screenshot-20190803-022151.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-ramps1-4-screenshot-20190803-022151-png-width-300px">
-<img src="/images/RAMPS1.4/Screenshot-20190803-022151.png?width=300px" alt="step2"loading="lazy">
+<img src="/images/ramps1.4/screenshot-20190803-022151.png?width=300px" alt="step2"loading="lazy">
 </a></p>
 <hr>
 <h3 id="smoothieboard-board">Smoothieboard board</h3>
 <p>
 		
 <a href="#0-images-smoothieware-smoothieboard-wiring-png-width-300px">
-<img src="/images/Smoothieware/smoothieboard-wiring.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/smoothieware/smoothieboard-wiring.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-smoothieware-smoothieboard-wiring-png-width-300px">
-<img src="/images/Smoothieware/smoothieboard-wiring.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/smoothieware/smoothieboard-wiring.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="skr-mini-e3-board">SKR Mini E3 board</h3>
@@ -503,18 +504,18 @@ ESP12E TX is connected to the adiacent pin at the end of the upper row (Marked R
 <p>
 		
 <a href="#0-images-skr-mini-e3-mini_12_board-jpg-width-300px">
-<img src="/images/SKR-Mini-E3/mini_12_board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/skr-mini-e3/mini_12_board.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-skr-mini-e3-mini_12_board-jpg-width-300px">
-<img src="/images/SKR-Mini-E3/mini_12_board.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/skr-mini-e3/mini_12_board.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>
 		
 <a href="#0-images-skr-mini-e3-skr_mini_12_schematic-png-width-300px">
-<img src="/images/SKR-Mini-E3/skr_mini_12_schematic.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/skr-mini-e3/skr_mini_12_schematic.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-skr-mini-e3-skr_mini_12_schematic-png-width-300px">
-<img src="/images/SKR-Mini-E3/skr_mini_12_schematic.png?width=300px" alt="step2"loading="lazy">
+<img src="/images/skr-mini-e3/skr_mini_12_schematic.png?width=300px" alt="step2"loading="lazy">
 </a></p>
 <p>You literally cannot miss it because the TFT connector is labeled on the board; you can use dupont connectors for the wiring job, no soldering skills needed as long as your ESP comes with pre soldered headers.
 Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on the correct ESP pin and, most importantly, if your ESP can work with 5 volts as input. You should also pay attention on the board orientation in the schematic, although I oriented it the same way as the actual picture on the left so it&rsquo;s easier for you.</p>
@@ -524,10 +525,10 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 <p>
 		
 <a href="#0-images-tina2-weedo_tina2-jpg-width-300px">
-<img src="/images/TINA2/weedo_tina2.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/tina2/weedo_tina2.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-tina2-weedo_tina2-jpg-width-300px">
-<img src="/images/TINA2/weedo_tina2.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/tina2/weedo_tina2.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>In marlin this connection is <strong>serial port 3</strong>.</p>
 <p>Note the Mega2560 is 5V powered and ESP is 3V3 powered.</p>
@@ -544,20 +545,20 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 <p>
 		
 <a href="#0-images-hw-wires-png-width-300px">
-<img src="/images/HW/Wires.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/hw/wires.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-hw-wires-png-width-300px">
-<img src="/images/HW/Wires.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/hw/wires.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="esp-01-serial-wifi-module">ESP-01 serial wifi module</h3>
 <p>
 		
 <a href="#0-images-hw-ff587ce89a-jpg-width-300px">
-<img src="/images/HW/ff587ce89a.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/hw/ff587ce89a.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-hw-ff587ce89a-jpg-width-300px">
-<img src="/images/HW/ff587ce89a.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/hw/ff587ce89a.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>more info about the Breakout PCB: <a href="https://www.keyestudio.com/keyestudio-esp-01s-wifi-to-serial-shield-module-for-arduino-esp8266-wifi-p0499-p0499.html" target="_blank">keyestudio</a></p>
 <hr>
@@ -566,19 +567,19 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 <p>
 		
 <a href="#0-images-hw-wiresesp12e-png-width-300px">
-<img src="/images/HW/WiresESP12E.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/hw/wiresesp12e.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-hw-wiresesp12e-png-width-300px">
-<img src="/images/HW/WiresESP12E.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/hw/wiresesp12e.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>you can also use Logic LevelConverter Bi-Directional</p>
 <p>
 		
 <a href="#0-images-hw-logic-png-width-300px">
-<img src="/images/HW/logic.PNG?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/hw/logic.png?width=300px" alt="step2" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-hw-logic-png-width-300px">
-<img src="/images/HW/logic.PNG?width=300px" alt="step2"loading="lazy">
+<img src="/images/hw/logic.png?width=300px" alt="step2"loading="lazy">
 </a></p>
 <p>In order to flash some ESP12E/F boards via their UART interface, the following pins need to be connected:</p>
 <ul>
@@ -594,10 +595,10 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 
 		
 <a href="#0-images-esp-esp12-png-width-300px">
-<img src="/images/ESP/ESP12.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/esp/esp12.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-esp-esp12-png-width-300px">
-<img src="/images/ESP/ESP12.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/esp/esp12.png?width=300px" alt="step1"loading="lazy">
 </a></li>
 <li>Use FTDI adapter as usb2serial</li>
 <li>Need to see in console/serial monitor boot mode is (<strong>1</strong>,7).
@@ -613,10 +614,10 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 <p>
 		
 <a href="#0-images-esp-espcam32-png-width-300px">
-<img src="/images/ESP/ESPcam32.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/esp/espcam32.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-esp-espcam32-png-width-300px">
-<img src="/images/ESP/ESPcam32.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/esp/espcam32.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>Note: 5V is power supply input and 3V3 is output from regulator. UART Tx and RX signals will be 3.3V</p>
 <hr>
@@ -624,20 +625,20 @@ Just a heads up: the TFT connector provides 5V DC, so be sure to provide them on
 <p>
 		
 <a href="#0-images-nodemcu-nodemcu-png-width-300px">
-<img src="/images/NodeMCU/NodeMCU.PNG?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/nodemcu/nodemcu.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-nodemcu-nodemcu-png-width-300px">
-<img src="/images/NodeMCU/NodeMCU.PNG?width=300px" alt="step1"loading="lazy">
+<img src="/images/nodemcu/nodemcu.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <hr>
 <h3 id="sonoff">Sonoff</h3>
 <p>
 		
 <a href="#0-images-sonoff-sonoff-png-width-300px">
-<img src="/images/Sonoff/Sonoff.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/sonoff/sonoff.png?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-sonoff-sonoff-png-width-300px">
-<img src="/images/Sonoff/Sonoff.png?width=300px" alt="step1"loading="lazy">
+<img src="/images/sonoff/sonoff.png?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>Relay is connected by GPIO12, it can be handled using ESP201 command:</p>
 <pre><code>*Get/Set pin value
@@ -655,19 +656,19 @@ if RAW=YES do not set pinmode just read value
 <p>
 		
 <a href="#0-images-d1_mini-wemos-d1-mini_logic-level-converter-jpg-width-300px">
-<img src="/images/D1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-d1_mini-wemos-d1-mini_logic-level-converter-jpg-width-300px">
-<img src="/images/D1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>example:<br>
 
 		
 <a href="#0-images-d1_mini-wemos-d1-mini_logic-level-converter-2-jpg-width-300px">
-<img src="/images/D1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
+<img src="/images/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px" alt="step1" style="height: auto; width: 300px;" loading="lazy">
 </a>
 <a href="javascript:history.back();" class="lightbox" id="0-images-d1_mini-wemos-d1-mini_logic-level-converter-2-jpg-width-300px">
-<img src="/images/D1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px" alt="step1"loading="lazy">
+<img src="/images/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px" alt="step1"loading="lazy">
 </a></p>
 <p>printed cases:</p>
 <ul>
@@ -676,7 +677,7 @@ if RAW=YES do not set pinmode just read value
 </ul>
 
             <footer class="footline"><hr>
-<center>If any error please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a> or by proposing a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</aa></center>
 
             </footer>
           </article>
@@ -758,64 +759,78 @@ if RAW=YES do not set pinmode just read value
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1676549400" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1676549400" defer></script>
-        <script src="/js/search.js?1676549400" defer></script>
+        <script src="/js/auto-complete.js?1676626857" defer></script>
+        <script src="/js/lunr/lunr.min.js?1676626857" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1676626857" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1676626857" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1676626857" defer></script>
+        <script src="/js/search.js?1676626857" defer></script>
+      </div>
+      <div id="homelinks" class="default-animation">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+        </ul>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics collapsible-menu">
           <li data-nav-id="/esp3d/index.html" class="dd-item parent"><input type="checkbox" id="section-53cbfcb1a2c32dd775ad321d8a658063" aria-controls="subsections-53cbfcb1a2c32dd775ad321d8a658063" class="toggle" checked><label class="a11y-only toggle" for="section-53cbfcb1a2c32dd775ad321d8a658063" >Submenu ESP3D</label><a href="/esp3d/index.html">ESP3D</a><ul id="subsections-53cbfcb1a2c32dd775ad321d8a658063">
-          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-23c1432885c015f9b59902aff25caa89" aria-controls="subsections-23c1432885c015f9b59902aff25caa89" class="toggle" checked><label class="a11y-only toggle" for="section-23c1432885c015f9b59902aff25caa89" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-23c1432885c015f9b59902aff25caa89">
+          <li data-nav-id="/esp3d/v2.x/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-231f5fcdc550a5ed7946ace973e3356c" aria-controls="subsections-231f5fcdc550a5ed7946ace973e3356c" class="toggle" checked><label class="a11y-only toggle" for="section-231f5fcdc550a5ed7946ace973e3356c" >Submenu Version 2.1.X</label><a href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="subsections-231f5fcdc550a5ed7946ace973e3356c">
           <li data-nav-id="/esp3d/v2.x/features/index.html" class="dd-item"><a href="/esp3d/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
-          <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-f6a3273608792e4ad999c80a2b4e9c8c" aria-controls="subsections-f6a3273608792e4ad999c80a2b4e9c8c" class="toggle" checked><label class="a11y-only toggle" for="section-f6a3273608792e4ad999c80a2b4e9c8c" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-f6a3273608792e4ad999c80a2b4e9c8c">
+          <li data-nav-id="/esp3d/v2.x/installation/index.html" class="dd-item parent alwaysopen"><input type="checkbox" id="section-26a469f915cfda3b478f39da66e40a25" aria-controls="subsections-26a469f915cfda3b478f39da66e40a25" class="toggle" checked><label class="a11y-only toggle" for="section-26a469f915cfda3b478f39da66e40a25" >Submenu Installation</label><a href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="subsections-26a469f915cfda3b478f39da66e40a25">
           <li data-nav-id="/esp3d/v2.x/installation/arduino/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/arduino/index.html">Arduino IDE</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/vscode-platformio/index.html" class="dd-item"><a href="/esp3d/v2.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
           <li data-nav-id="/esp3d/v2.x/installation/wiring/index.html" class="dd-item active"><a href="/esp3d/v2.x/installation/wiring/index.html">Hardware connection</a></li></ul></li>
-          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-a2d4b39617775f5ae165f52aacdb38ce" aria-controls="subsections-a2d4b39617775f5ae165f52aacdb38ce" class="toggle" checked><label class="a11y-only toggle" for="section-a2d4b39617775f5ae165f52aacdb38ce" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-a2d4b39617775f5ae165f52aacdb38ce">
-          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li>
-          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-09677294d2f66d5c07d755f2c150960d" aria-controls="subsections-09677294d2f66d5c07d755f2c150960d" class="toggle" checked><label class="a11y-only toggle" for="section-09677294d2f66d5c07d755f2c150960d" >Submenu Documentation</label><a href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="subsections-09677294d2f66d5c07d755f2c150960d">
+          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b15ae9dc0d9fff03d3fc13a7a8008880" aria-controls="subsections-b15ae9dc0d9fff03d3fc13a7a8008880" class="toggle" checked><label class="a11y-only toggle" for="section-b15ae9dc0d9fff03d3fc13a7a8008880" >Submenu Notifications</label><a href="/esp3d/v2.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="subsections-b15ae9dc0d9fff03d3fc13a7a8008880">
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/pushover/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/line/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/ifttt/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class="dd-item"><a href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li></ul></li>
           <li data-nav-id="/esp3d/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
           <li data-nav-id="/esp3d/v2.x/credits/index.html" class="dd-item"><a href="/esp3d/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
-          <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-08db5c456e119729dc6a7422e94c4612" aria-controls="subsections-08db5c456e119729dc6a7422e94c4612" class="toggle" checked><label class="a11y-only toggle" for="section-08db5c456e119729dc6a7422e94c4612" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-08db5c456e119729dc6a7422e94c4612">
+          <li data-nav-id="/esp3d/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-80d6dc0be85571e2f97c6c066641ea02" aria-controls="subsections-80d6dc0be85571e2f97c6c066641ea02" class="toggle" checked><label class="a11y-only toggle" for="section-80d6dc0be85571e2f97c6c066641ea02" >Submenu Version 3.X</label><a href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="subsections-80d6dc0be85571e2f97c6c066641ea02">
           <li data-nav-id="/esp3d/v3.x/features/index.html" class="dd-item"><a href="/esp3d/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d/v3.x/installation/index.html" class="dd-item"><a href="/esp3d/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d/v3.x/showcase/index.html">Showcase</a></li>
           <li data-nav-id="/esp3d/v3.x/credits/index.html" class="dd-item"><a href="/esp3d/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3dlib/index.html" class="dd-item"><input type="checkbox" id="section-1f50da9b5be031f4c871e092365ed9e8" aria-controls="subsections-1f50da9b5be031f4c871e092365ed9e8" class="toggle"><label class="a11y-only toggle" for="section-1f50da9b5be031f4c871e092365ed9e8" >Submenu ESP3DLib</label><a href="/esp3dlib/index.html">ESP3DLib</a><ul id="subsections-1f50da9b5be031f4c871e092365ed9e8">
-          <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-9a191369f97152ffe714b0055c559eae" aria-controls="subsections-9a191369f97152ffe714b0055c559eae" class="toggle" checked><label class="a11y-only toggle" for="section-9a191369f97152ffe714b0055c559eae" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-9a191369f97152ffe714b0055c559eae">
+          <li data-nav-id="/esp3dlib/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-2bfd2993e2fc8c60058b136ef26b8854" aria-controls="subsections-2bfd2993e2fc8c60058b136ef26b8854" class="toggle" checked><label class="a11y-only toggle" for="section-2bfd2993e2fc8c60058b136ef26b8854" >Submenu Version 1.X</label><a href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="subsections-2bfd2993e2fc8c60058b136ef26b8854">
           <li data-nav-id="/esp3dlib/v1.x/features/index.html" class="dd-item"><a href="/esp3dlib/v1.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3dlib/v1.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3dlib/v1.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v1.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3dlib/v1.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v1.x/showcase/index.html">Showcase</a></li></ul></li>
-          <li data-nav-id="/esp3dlib/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-5c6deecccc672d58b05f8e5e440b18c2" aria-controls="subsections-5c6deecccc672d58b05f8e5e440b18c2" class="toggle" checked><label class="a11y-only toggle" for="section-5c6deecccc672d58b05f8e5e440b18c2" >Submenu Version 3.X</label><a href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="subsections-5c6deecccc672d58b05f8e5e440b18c2">
+          <li data-nav-id="/esp3dlib/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ccbdb1a35ade1aaf92ecd7ab0a7de193" aria-controls="subsections-ccbdb1a35ade1aaf92ecd7ab0a7de193" class="toggle" checked><label class="a11y-only toggle" for="section-ccbdb1a35ade1aaf92ecd7ab0a7de193" >Submenu Version 3.X</label><a href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="subsections-ccbdb1a35ade1aaf92ecd7ab0a7de193">
           <li data-nav-id="/esp3dlib/v3.x/features/index.html" class="dd-item"><a href="/esp3dlib/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3dlib/v3.x/installation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3dlib/v3.x/documentation/index.html" class="dd-item"><a href="/esp3dlib/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3dlib/v3.x/showcase/index.html" class="dd-item"><a href="/esp3dlib/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-tft/index.html" class="dd-item"><input type="checkbox" id="section-45c0a57bdbb531deab79af6fe15794f1" aria-controls="subsections-45c0a57bdbb531deab79af6fe15794f1" class="toggle"><label class="a11y-only toggle" for="section-45c0a57bdbb531deab79af6fe15794f1" >Submenu ESP3D-TFT</label><a href="/esp3d-tft/index.html">ESP3D-TFT</a><ul id="subsections-45c0a57bdbb531deab79af6fe15794f1">
-          <li data-nav-id="/esp3d-tft/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b860bf468e28710a7c113fa385ebf6dc" aria-controls="subsections-b860bf468e28710a7c113fa385ebf6dc" class="toggle" checked><label class="a11y-only toggle" for="section-b860bf468e28710a7c113fa385ebf6dc" >Submenu Version 1.X</label><a href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="subsections-b860bf468e28710a7c113fa385ebf6dc">
+          <li data-nav-id="/esp3d-tft/v1.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-7e2c30c237ea9ac8c3de4539dfa4b069" aria-controls="subsections-7e2c30c237ea9ac8c3de4539dfa4b069" class="toggle" checked><label class="a11y-only toggle" for="section-7e2c30c237ea9ac8c3de4539dfa4b069" >Submenu Version 1.X</label><a href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="subsections-7e2c30c237ea9ac8c3de4539dfa4b069">
           <li data-nav-id="/esp3d-tft/v1.x/features/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-tft/v1.x/installation/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/installation/index.html">Installation</a></li>
-          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ee360bd091b9b49bf8c5b8a2fc579d7a" aria-controls="subsections-ee360bd091b9b49bf8c5b8a2fc579d7a" class="toggle" checked><label class="a11y-only toggle" for="section-ee360bd091b9b49bf8c5b8a2fc579d7a" >Submenu Documentation</label><a href="/esp3d-tft/v1.x/documentation/index.html">Documentation</a><ul id="subsections-ee360bd091b9b49bf8c5b8a2fc579d7a">
-          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-e7aaf84714eec3a7054769c3fbb0a1a0" aria-controls="subsections-e7aaf84714eec3a7054769c3fbb0a1a0" class="toggle" checked><label class="a11y-only toggle" for="section-e7aaf84714eec3a7054769c3fbb0a1a0" >Submenu API</label><a href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="subsections-e7aaf84714eec3a7054769c3fbb0a1a0">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-3db12631701db1d003bea4107a21f94d" aria-controls="subsections-3db12631701db1d003bea4107a21f94d" class="toggle" checked><label class="a11y-only toggle" for="section-3db12631701db1d003bea4107a21f94d" >Submenu Documentation</label><a href="/esp3d-tft/v1.x/documentation/index.html">Documentation</a><ul id="subsections-3db12631701db1d003bea4107a21f94d">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-a1ded372486a4171b687daa29f21f430" aria-controls="subsections-a1ded372486a4171b687daa29f21f430" class="toggle" checked><label class="a11y-only toggle" for="section-a1ded372486a4171b687daa29f21f430" >Submenu API</label><a href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="subsections-a1ded372486a4171b687daa29f21f430">
           <li data-nav-id="/esp3d-tft/v1.x/documentation/api/_commands/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/_commands/index.html">ESP3D commands</a></li>
           <li data-nav-id="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/documentation/api/esp3d-esp400-format/index.html">[ESP400] format</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-tft/v1.x/showcase/index.html" class="dd-item"><a href="/esp3d-tft/v1.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
           <li data-nav-id="/esp3d-webui/index.html" class="dd-item"><input type="checkbox" id="section-17361b6c0b1ed642c771e18821f4f773" aria-controls="subsections-17361b6c0b1ed642c771e18821f4f773" class="toggle"><label class="a11y-only toggle" for="section-17361b6c0b1ed642c771e18821f4f773" >Submenu ESP3D-WEBUI</label><a href="/esp3d-webui/index.html">ESP3D-WEBUI</a><ul id="subsections-17361b6c0b1ed642c771e18821f4f773">
-          <li data-nav-id="/esp3d-webui/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-ee6b21bb30e94abfb630c588f737b0e1" aria-controls="subsections-ee6b21bb30e94abfb630c588f737b0e1" class="toggle" checked><label class="a11y-only toggle" for="section-ee6b21bb30e94abfb630c588f737b0e1" >Submenu Version 2.X</label><a href="/esp3d-webui/v2.x/index.html">Version 2.X</a><ul id="subsections-ee6b21bb30e94abfb630c588f737b0e1">
+          <li data-nav-id="/esp3d-webui/v2.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-704634bbb8020192dd72ede8195752f7" aria-controls="subsections-704634bbb8020192dd72ede8195752f7" class="toggle" checked><label class="a11y-only toggle" for="section-704634bbb8020192dd72ede8195752f7" >Submenu Version 2.X</label><a href="/esp3d-webui/v2.x/index.html">Version 2.X</a><ul id="subsections-704634bbb8020192dd72ede8195752f7">
           <li data-nav-id="/esp3d-webui/v2.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/documentation/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d-webui/v2.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v2.x/showcase/index.html">Showcase</a></li></ul></li>
-          <li data-nav-id="/esp3d-webui/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-f334b49fcca6cbd39177e2bd58b199c8" aria-controls="subsections-f334b49fcca6cbd39177e2bd58b199c8" class="toggle" checked><label class="a11y-only toggle" for="section-f334b49fcca6cbd39177e2bd58b199c8" >Submenu Version 3.X</label><a href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="subsections-f334b49fcca6cbd39177e2bd58b199c8">
+          <li data-nav-id="/esp3d-webui/v3.x/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-a3ac2326883e40da5c605f66665e2b0d" aria-controls="subsections-a3ac2326883e40da5c605f66665e2b0d" class="toggle" checked><label class="a11y-only toggle" for="section-a3ac2326883e40da5c605f66665e2b0d" >Submenu Version 3.X</label><a href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="subsections-a3ac2326883e40da5c605f66665e2b0d">
           <li data-nav-id="/esp3d-webui/v3.x/features/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/features/index.html">Features</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/installation/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/installation/index.html">Installation</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/documentation/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/documentation/index.html">Documentation</a></li>
           <li data-nav-id="/esp3d-webui/v3.x/showcase/index.html" class="dd-item"><a href="/esp3d-webui/v3.x/showcase/index.html">Showcase</a></li></ul></li></ul></li>
+          <li data-nav-id="/tools/index.html" class="dd-item"><input type="checkbox" id="section-119695d21223206d3a21952913ee96ab" aria-controls="subsections-119695d21223206d3a21952913ee96ab" class="toggle"><label class="a11y-only toggle" for="section-119695d21223206d3a21952913ee96ab" >Submenu Extra tools</label><a href="/tools/index.html"><i class='fas fa-tools'></i> Extra tools</a><ul id="subsections-119695d21223206d3a21952913ee96ab">
+          <li data-nav-id="/tools/discovery/index.html" class="dd-item alwaysopen"><input type="checkbox" id="section-b6c2119bfb8c06f7bbd4321cb35ad4dd" aria-controls="subsections-b6c2119bfb8c06f7bbd4321cb35ad4dd" class="toggle" checked><label class="a11y-only toggle" for="section-b6c2119bfb8c06f7bbd4321cb35ad4dd" >Submenu Discovery tools</label><a href="/tools/discovery/index.html"><i class='fas fa-search'></i> Discovery tools</a><ul id="subsections-b6c2119bfb8c06f7bbd4321cb35ad4dd">
+          <li data-nav-id="/tools/discovery/ssdp/index.html" class="dd-item"><a href="/tools/discovery/ssdp/index.html">SSDP protocol</a></li>
+          <li data-nav-id="/tools/discovery/mdns/index.html" class="dd-item"><a href="/tools/discovery/mdns/index.html">mDNS protocol</a></li></ul></li></ul></li>
         </ul>
         <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
@@ -850,7 +865,7 @@ if RAW=YES do not set pinmode just read value
             <li class="footerVisitedLinks"><button class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</button></li>
           </ul>
         </div>
-        <div id="footer" class="footerFooter showFooter"><center>
+        <div id="footer" class="footerFooter showFooter">    <center>
 	<p><a href="https://liberapay.com/ESP3D/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></p>
 	<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FQL59C749A78L"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" alt="PayPal The safer, easier way to pay online."></a></p>
 	<p><a href="https://https://ko-fi.com/G2G0C0QT7"><img alt="Donate using ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a></p>
@@ -862,8 +877,8 @@ if RAW=YES do not set pinmode just read value
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1676549400" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1676549400" defer></script>
-    <script src="/js/theme.js?1676549400" defer></script>
+    <script src="/js/clipboard.min.js?1676626857" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1676626857" defer></script>
+    <script src="/js/theme.js?1676626857" defer></script>
   </body>
 </html>
