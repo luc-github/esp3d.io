@@ -34,5 +34,20 @@ src
    |_ static      //All images of the website
    |_ themes      //Relearn theme
 ```
+
 ### Shortcodes
 
+please read the [documentation](https://mcshelby.github.io/hugo-theme-relearn/)
+
+### Extra Shortcodes
+* center
+to center a text - do not put shortcodes inside
+
+* imglink
+to get clickable link image
+
+* iobadge
+to use shields.io badges and github badges
+
+### Rules
+* only use lowcase letters without space for files and directories names 
