@@ -4,6 +4,7 @@ title = "Features"
 menuPre = "<i class='fas fa-list'></i> "
 weight = 1
 +++
+The V2.1.X features are :   
 
 * Support for ESP8266, ESP8285 and standard ESP32 board with at least 1Mb of flash
 * Serial/Wifi bridge using configurable port 8888

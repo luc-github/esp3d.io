@@ -12,7 +12,7 @@ home = [ "HTML", "RSS", "SEARCH"]
 [params]
 themeVariant = "blue"
 description = "Web site of ESP3D ecosystem"
-disableLandingPageButton = true
+disableLandingPageButton = false
 disableShortcutsTitle = true
 collapsibleMenu = true
 

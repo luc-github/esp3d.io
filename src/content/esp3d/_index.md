@@ -1,5 +1,5 @@
 +++
-archetype = "home"
+archetype = "section"
 title = "ESP3D"
 weight = 1
 +++

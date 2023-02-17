@@ -4,7 +4,7 @@ weight = 2
 menuPre = "<i class='fas fa-envelope'></i> "
 +++
 
-You can setup only one type of notification: 
+You can use only one type of notification: 
 
 * [Pushover](https://pushover.net/), which is a pay service
 
@@ -12,15 +12,16 @@ Please follow this [link](/common/pushover.md) for more information on how to se
 
 * [Line](https://line.m), which is a free service
 
-Please follow this [link](/common/line.md) for more information on how to setup a pushover notification service
+Please follow this [link](/common/line.md) for more information on how to setup a line notification service
 
 * Email using SMTP and HTTPS
 
-Please follow this [link](/common/email_and_smtp.md) for more information on how to setup a pushover notification service
+Please follow this [link](/common/email_and_smtp.md) for more information on how to setup a email notification service
 
 * [IFTTT webhook](https://ifttt.com), which is a free service up to 5 applets
 
-Please follow this [link](/common/ifttt.md) for more information on how to setup a pushover notification service
+Please follow this [link](/common/ifttt.md) for more information on how to setup a pushover iftt service
+
 
 ### How to setup the parameters:
 
