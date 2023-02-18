@@ -5,6 +5,10 @@ menuPre = "<i class='fas fa-bullhorn'></i> "
 weight = 10
 +++
 
+### Big thanks to :
+
+ESP3D contributors for their suggestions, feedback and ideas submitted during 2.X sustaining phase and 3.X development phase which pushed me to rewrite the ESP3D code to make it better and easier to sustain.
+
 ### Embedded code / inspiration code
 
 - FTP server come from Jean-Michel Gallego https://github.com/gallegojm/Arduino-Ftp-Server
@@ -28,3 +32,4 @@ weight = 10
 - TFT_eSPI come from Bodmer https://github.com/Bodmer/TFT_eSPI
 - ESP8266 core come from https://github.com/esp8266/Arduino
 - ESP32 core come from https://github.com/espressif/arduino-esp32
+- Alternative of Arduino come from PlatformIO https://platformio.org/
