@@ -1,8 +1,11 @@
 +++
 archetype = "section"
 title = "Features"
+menuPre = "<i class='fas fa-list'></i> "
 weight = 1
 +++
+The V3.X features are :  
+
 * Embedded maintenance page (terminal / local FS update / ESP3D Firmware update)
 * WebUI support
 * ESP8285 / ESP8266 / ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C3 support
@@ -18,9 +21,8 @@ weight = 1
 * FTP support (limited to 1 connection at once)
 * WebDav support
 * Local FS support:
-    * Little FS (recommended)
+    * Little FS
     * Fat (ESP32 only)
-    * SPIFFS (deprecated)
 * SD support
     * File format
       * Native SPI
@@ -64,7 +66,7 @@ weight = 1
     * Analog
     * BMX280
 * Auto script support at start
-* Basic Host GCODE stream for macros hosted on local FS (Work in Progress to improve it)
+* Basic Host GCODE stream for macros hosted on local FS (Work in Progress)
 * Update
     * ESP3D configuration using ini file on SD
     * ESP3D update using binary file on SD
