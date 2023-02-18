@@ -7,8 +7,9 @@ weight = 4
 
 {{% notice style="info" title="Note"  %}}
 The SD transfer is current supported on these configurations:
-  * MKS board and Marlin using MKS Serial Protocol (~110KB/s)
-     - like MKS Robin 
+  * MK WiFi modules using MKS Serial Protocol (~110KB/s)
+     - MKS Robin 
+     - MKS TFT
   * Using some sharing solution like : 
     - [Panucatt WiFi Backpack](https://www.panucatt.com/ProductDetails.asp?ProductCode=WB8266)
     - [Panucatt Azteeg X5](http://www.panucatt.com/azteeg_X5_mini_reprap_3d_printer_controller_p/ax5mini.htm)

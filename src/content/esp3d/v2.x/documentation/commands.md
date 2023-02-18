@@ -9,45 +9,45 @@ menuPre = "<i class='fas fa-terminal'></i> "
 
 Please note all commands are in format `[ESPxx]`. These first brackets `[]` are not optional.  
 Most of the time givin no argument will return current configuration
-If authentication is on, somme commands will need admin password. They are recognised by the optional argument `[pwd=<admin password>]` in command line.
+If authentication is on, somme commands will need admin password. They are recognised by the optional argument `pwd=<admin password>` in command line.
 
 ## Commands
 
 ### Get/change STA SSID
-`[ESP100] [<SSID>] [pwd=<admin password>]`
+`[ESP100] <SSID> pwd=<admin password>`
 
 ### Change STA Password
-`[ESP101] <Password> [pwd=<admin password>]`
+`[ESP101] <Password> pwd=<admin password>`
 
 ### Get/change Hostname
-`[ESP102] [<hostname>] [pwd=<admin password>]`
+`[ESP102] <hostname> pwd=<admin password>`
 
 ### Get/change Wifi mode (STA/AP)
-`[ESP103] [STA | AP] [pwd=<admin password>]`
+`[ESP103] <mode> pwd=<admin password>`
 
 ### Get/change STA IP mode (DHCP/STATIC)
-`[ESP104] [DHCP | STATIC] [pwd=<admin password>]`
+`[ESP104] <mode> pwd=<admin password>`
 
 ### Get/change AP SSID
-`[ESP105] [<SSID>] [pwd=<admin password>]`
+`[ESP105] <SSID> pwd=<admin password>`
 
 ### Change AP Password
-`[ESP106] <Password> [pwd=<admin password>]`
+`[ESP106] <Password> pwd=<admin password>`
 
 ### Get/change AP IP mode (DHCP/STATIC)
-`[ESP107] [DHCP | STATIC] [pwd=<admin password>]`
+`[ESP107] <mode> pwd=<admin password>`
 
 ### Get/change wifi state (on/off)
-`[ESP110] [ON | OFF | RESTART] [pwd=<admin password>]`
+`[ESP110] <state> pwd=<admin password>`
 
 ### Get current IP
 `[ESP111]`
 
 ### Get/Change hostname
-`[ESP112] [<hostname>]`
+`[ESP112] <hostname>`
 
 ### Get/Set pin value
-`[ESP201] P<pin> [V<value> PULLUP=YES RAW=YES ANALOG=NO ANALOG_RANGE=255 CLEARCHANNELS=NO pwd=<admin password>]`  
+`[ESP201] P<pin> V<value> PULLUP=<YES/NO> RAW=<YES/NO> ANALOG=<NO/YES> ANALOG_RANGE=[255/1024] CLEARCHANNELS=<NO/YES} pwd=<admin password>`  
 if no V<value> get P<pin> value  
 if V<value> 0/1 set INPUT_PULLUP value, but for GPIO16 INPUT_PULLDOWN_16
 GPIO1 and GPIO3 cannot be used as they are used for serial  
@@ -70,7 +70,7 @@ if RAW=YES do not set pinmode just read value
 `[ESP214] <Text>`
 
 ### Delay
-`[ESP290] <delayMs> [pwd=<admin password>]`
+`[ESP290] <delayMs> pwd=<admin password>`
 
 ### Get EEPROM mapping version
 `[ESP300]`
@@ -81,7 +81,7 @@ can filter if only need wifi or printer
 `[ESP400] <network/printer>`
 
 ### Set EEPROM setting
-`[ESP401] P=<position> T={B | I | S | A} V=<value> [pwd=<user/admin password>]`  
+`[ESP401] P=<position> T={B | I | S | A} V=<value> pwd=<user/admin password>`  
 `T` type: B(byte), I(integer/long), S(string), A(IP address / mask)  
 `P` position: address in EEPROM  
 
@@ -119,15 +119,15 @@ can filter if only need wifi or printer
 * `EP_TARGET_FW             461  //1  bytes = flag`
 
 ### Get available AP list (limited to 30)
-`[ESP410] [plain]`  
+`[ESP410]<plain>`  
 Output is JSON or plain text according parameter
 
 ### Get current settings of ESP3D
-`[ESP420] [plain]`  
+`[ESP420]<plain>`  
 Output is JSON or plain text according parameter
 
-### Get/Set ESP mode
-`[ESP444] [RESET | SAFEMODE | CONFIG | RESTART] [pwd=<admin password>]`  
+### Get/Set ESP mode (RESET, SAFEMODE, CONFIG, RESTART)
+`[ESP444] <mode> pwd=<admin password>`  
 if authentication is on, need admin password for RESET, RESTART and SAFEMODE
 
 ### Send GCode with check sum caching right line numbering
@@ -136,22 +136,26 @@ if authentication is on, need admin password for RESET, RESTART and SAFEMODE
 ### Send line checksum
 `[ESP501] <line>`
 
+### Change / Reset  password
+`[ESP550] <password> pwd=<admin password>`  
+If no password set it use default one
+
 ### Change / Reset user password
-`[ESP555] [<password>] [pwd=<admin password>]`  
+`[ESP555] <password> pwd=<admin/user password>`  
 If no password set it use default one
 
 ### Send notification
-`[ESP600] <message> [pwd=<admin password>]`
+`[ESP600] <message> pwd=<admin password>`
 
-### Set/Get notification settings
-`[ESP610] type={NONE | PUSHOVER | EMAIL | LINE} T1=<token1> T2=<token2> TS=<Settings> [pwd=<admin password>]`
+### Set/Get notification settings (type can be NONE, PUSHOVER, EMAIL, LINE)
+`[ESP610] type=<type> T1=<token1> T2=<token2> TS=<Settings> pwd=<admin password>`
 Get will give type and settings only not the protected T1/T2
 
 ### Read SPIFFS file and send each line to serial
 `[ESP700] <filename>`
 
 ### Format SPIFFS
-`[ESP710] FORMAT [pwd=<admin password>]`
+`[ESP710] FORMAT pwd=<admin password>`
 
 ### Get SPIFFS total size and used size
 `[ESP720]`
@@ -162,5 +166,5 @@ Get will give type and settings only not the protected T1/T2
 ### Get fw target
 `[ESP801]`
 
-### Get state / Set Enable / Disable Serial Communication
-`[ESP900] <{ENABLE | DISABLE}>`
+### Get state / Set Enable / Disable Serial Communication (state: {ENABLE, DISABLE)
+`[ESP900] <state>`
