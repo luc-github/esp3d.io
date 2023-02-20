@@ -10,14 +10,16 @@ theme = "hugo-theme-relearn"
 home = [ "HTML", "RSS", "SEARCH"]
 
 [params]
+alwaysopen = false
 themeVariant = "blue"
 description = "Web site of ESP3D ecosystem"
 disableLandingPageButton = false
 disableShortcutsTitle = true
 collapsibleMenu = true
-
 mermaidInitialize = "{ \"theme\": \"dark\" }"
 mermaidZoom = true
+editURL = "https://github.com/luc-github/esp3d.io"
+author = "Luc LEBOSSE"
 
 [markup]
   [markup.highlight]

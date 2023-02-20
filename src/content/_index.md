@@ -13,7 +13,7 @@ Depending of the configuration and the hardware the solution will be different b
 
 Check on the menu the current projects, each one has a different implementation for same purpose. 
 
-### What project should I use ?
+### What project to use ?
 
 **Based on hardware**
 {{< mermaid >}}
