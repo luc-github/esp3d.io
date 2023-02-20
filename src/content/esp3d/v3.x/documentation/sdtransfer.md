@@ -2,7 +2,7 @@
 archetype = "section"
 title = "About SD Transfer"
 menuPre = "<i class='fas fa-sd-card'></i> "
-weight = 4
+weight = 3
 +++
 
 {{% notice style="info" title="Note"  %}}

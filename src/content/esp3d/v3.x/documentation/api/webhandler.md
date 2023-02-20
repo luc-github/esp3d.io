@@ -1,15 +1,19 @@
-# Web Handlers 
++++
+archetype = "section"
+title = "Web Handlers"
+weight = 1
++++
 
-### /
+### / (GET)
 root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
 if you call specific file, it will look for the filename and filename.gz (compressed)
 if no file is defined and there is not index.html(.gz) it will display embedded page
 another way to show the embedded page is /?forcefallback=yes
 
-### /sd/
+### /sd/ (GET)
 it will serve any file from SD card if there is one, it is only a wrapper to read SD card, no upload
 
-### /files
+### /files (GET/POST)
 this handler handle all commands for FS, including upload on FS.   
     possible options/arguments are:   
 - `quiet=yes` can be used when you don't want list files but just upload them    
@@ -26,7 +30,7 @@ this handler handle all commands for FS, including upload on FS.
 
 the output is a json file:  
 
-    ```
+    ```json
     {   
         "files":[ //the files list  
             {  
@@ -47,7 +51,7 @@ the output is a json file:
         "used":"100.00 KB" //Formated used space of Filesystem
     }
     ```
-### /sdfiles
+### /sdfiles (GET/POST) )
 this handler handle all commands for SD, including upload on SD (only shared and direct SD)
 this handler handle all commands for FS, including upload on FS.   
     possible options/arguments are:   
@@ -67,7 +71,7 @@ this handler handle all commands for FS, including upload on FS.
 
 the output is a json file:   
 
-    ```
+    ```json
     {
         "files":[ //the files list
             {
@@ -89,15 +93,15 @@ the output is a json file:
         "used":"100.00 KB" //Formated used space of Filesystem
     }
     ```
-### /upload
+### /upload (POST)
 this handler is for MKS boards using MKS communication protocol if enabled, it handle only upload on SD    
 
-### /command
+### /command (GET)
 this handler is for all commands the parameter is `cmd=...`
 if it is an `[ESPXXX]` command the answer is the `[ESPXXX]` response
 if it is not an `[ESPXXX]` command the answer is `ESP3D says: command forwarded` and can be ignored
 
-### /login 
+### /login (GET/POST)
 this handler is for authentication function if enabled
     possible options/arguments are:  
         - `DISCONNECT=YES`
@@ -114,22 +118,22 @@ Output:
     `{"status":"Wrong authentication!","authentication_lvl":"guest"}` and code 401
 
 
-### /config 
+### /config (GET)
 this handler is a shortcut to [ESP420] command in text mode, to get output in json add `json=yes`
 
-### /updatefw
+### /updatefw (GET/POST)
 this handler is for FW upload and update
 Answer output is :
 `{"status":"..."}` if upload is successful the ESP will restart
 
-### /snap
+### /snap (GET)
 this handler is on esp32cam with camera enabled to capture a Frame
 it answer by sending a jpg image 
 
-### /description.xml
+### /description.xml (GET)
 this handler is for SSDP if enabled to present device informations  
 
-```
+```json
 <root xmlns="urn:schemas-upnp-org:device-1-0">
     <specVersion>
         <major>1</major>
