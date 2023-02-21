@@ -17,6 +17,9 @@
 #    include "myconfig.h"
 #  endif
 #endif
+```
+
+```cpp
 
 /************************************
 *
@@ -55,6 +58,10 @@
 */
 #define SERIAL_RX_BUFFER_SIZE 512
 
+```
+
+```cpp
+
 /************************************
 *
 * Target firmware
@@ -70,6 +77,10 @@
 * REPETIER
 */
 #define DEFAULT_FW UNKNOWN_FW
+
+```
+
+```cpp
 
 /************************************
 *
@@ -120,6 +131,10 @@
 */
 //#define BLUETOOTH_FEATURE
 
+```
+
+```cpp
+
 /************************************
 *
 * Channels of ESP3D
@@ -156,6 +171,10 @@
 * The title of notification
 */
 #define ESP_NOTIFICATION_TITLE "ESP3D Notification"
+
+```
+
+```cpp
 
 /************************************
 *
@@ -213,6 +232,10 @@
 */
 #define ESP_MANUFACTURER_URL "https://www.espressif.com"
 
+```
+
+```cpp
+
 /************************************
 *
 * Flash filesystem
@@ -233,6 +256,10 @@
 * Set date/time on files using SNTP or last webui connection
 */
 //#define FILESYSTEM_TIMESTAMP_FEATURE
+
+```
+
+```cpp
 
 /************************************
 *
@@ -329,6 +356,10 @@
 */
 //#define FTP_FEATURE FS_ROOT
 
+```
+
+```cpp
+
 /************************************
 *
 * Reset ESP3D
@@ -346,6 +377,10 @@
 * The pin used to reset ESP3D setting if set to low for more than 1 second at start
 */
 #define ESP3D_RESET_PIN 0
+
+```
+
+```cpp
 
 /************************************
 *
@@ -369,6 +404,10 @@
 * Update firmware and settings using file on SDCard
 */
 //#define SD_UPDATE_FEATURE
+
+```
+
+```cpp
 
 /************************************
 *
@@ -412,6 +451,10 @@
 */
 //#define DISPLAY_LED_PIN -1
 
+```
+
+```cpp
+
 /************************************
 *
 * Audio settings
@@ -430,6 +473,10 @@
 */
 //#define ESP3D_BUZZER_PIN 33
 
+```
+
+```cpp
+
 /************************************
 *
 * Sensor settings
@@ -446,6 +493,10 @@
 *  Unit of the sensor result
 */
 //#define SENSOR__UNIT "C"
+
+```
+
+```cpp
 
 /************************************
 *
@@ -476,6 +527,9 @@
 */
 //#define CAMERA_DEVICE_FLIP_VERTICALY
 
+```
+
+```cpp
 
 /************************************
 *
@@ -504,6 +558,10 @@
 */
 //#define AUTHENTICATION_FEATURE
 
+```
+
+```cpp
+
 /************************************
 *
 * Additional features
@@ -516,6 +574,10 @@
 * Controls pins using [ESP201]
 */
 #define DIRECT_PIN_FEATURE
+
+```
+
+```cpp
 
 /************************************
 *

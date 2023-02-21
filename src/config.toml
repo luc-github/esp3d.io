@@ -18,7 +18,7 @@ disableShortcutsTitle = true
 collapsibleMenu = true
 mermaidInitialize = "{ \"theme\": \"dark\" }"
 mermaidZoom = true
-editURL = "https://github.com/luc-github/esp3d.io"
+editURL = "https://github.com/luc-github/esp3d.io/tree/main/src/content/"
 author = "Luc LEBOSSE"
 
 [markup]

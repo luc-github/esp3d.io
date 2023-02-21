@@ -148,9 +148,10 @@ label can be: light/framesize/quality/contrast/brightness/saturation/gainceiling
 
 * Get full EEPROM settings content   
     `[ESP400] pwd=<admin password>`   
-    Note: do not give any passwords
+    Note: do not give any passwords    
+    [More informations](esp400/)
 
-*Set EEPROM setting   
+* Set EEPROM setting   
     position in EEPROM, type: B(byte), I(integer/long), S(string), A(IP address / mask)    
     `[ESP401]P=<position> T=<type> V=<value> json=<no> pwd=<user/admin password>`   
 ```cpp
@@ -223,13 +224,16 @@ label can be: light/framesize/quality/contrast/brightness/saturation/gainceiling
         ESP_SERIAL_BRIDGE_FLAG  1037    //1 byte = flag
         ESP_SERIAL_BRIDGE_BAUD  1038    //4  bytes= int
 ```
+    
+[More informations](esp401/)
 
 * Get/Set Check update at boot state which can be ON, OFF   
     `[ESP402]<state> json=<no> pwd=<admin password>`
 
 * Get available AP list (limited to 30)   
     output is JSON or plain text according parameter   
-    `[ESP410]json=<no> <pwd=admin/user>`
+    `[ESP410]json=<no> <pwd=admin/user>`    
+    [More informations](esp410/)
 
 * Get current settings of ESP3D   
     Output is JSON or plain text according parameter   
@@ -293,7 +297,8 @@ label can be: light/framesize/quality/contrast/brightness/saturation/gainceiling
     `[ESP790]<Action>=<path> json=<no> pwd=<admin password>`
 
 * FW Informations  
-    `[ESP800]json=<no> pwd=<admin password> <time=YYYY-MM-DDTHH:mm:ss> <version=3.0.0-a11> <setup=0/1>`
+    `[ESP800]json=<no> pwd=<admin password> <time=YYYY-MM-DDTHH:mm:ss> <version=3.0.0-a11> <setup=0/1>`    
+[More informations](esp800/)
 
 * Get state / Set Enable / Disable Serial Communication   
     `[ESP900]<ENABLE/DISABLE> json=<no> pwd=<admin/user password>`

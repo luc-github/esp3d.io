@@ -10,7 +10,7 @@ ESP3D is a a firmware for ESP8266 and ESP32 boards from espressif, This firmware
 Firmware support different target firmwares according version. 
 
 {{% notice style="orange" title="Warning" icon="exclamation" %}}
-This is for  esp8266, esp8285, esp32 boards as daughters boards connected to your main board only.
+This is for esp8266, esp8285, esp32 boards as daughters boards connected to your main board only.
 For esp32 board as main board for your 3D Printer please use [ESP3DLib](/esp3dlib)
 {{% /notice %}}
 
