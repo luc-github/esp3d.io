@@ -1,3 +1,10 @@
++++
+archetype = "section"
+title = "Compilation"
+menuPre = "<i class='fas fa-code'></i> "
+weight = 2
++++
+
 To be able to generate file from sources you need to install nodejs, gulp and some addons.    
 1 - Install current [nodejs LTS](https://nodejs.org/en/download/)   (v10.15.3)    
 2 - Install gulp-cli globaly `npm install --global gulp-cli`   
@@ -47,20 +54,13 @@ E:\github\ESP3D-WEBUI>gulp package
 [15:17:16] Finished 'clean2' after 3.83 ms
 [15:17:16] Finished 'package' after 2.61 s
 ``` 
-If no issue, a file called index.html.gz will be generated at the root of repository, so you just need to upload it to ESP3D.    
-In default uploader :
-![](https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/docs/images/ESP3D-UPLOAD2.png)   
+If no issue, a file called index.html.gz will be generated at the root of repository, so you just need to upload it like described in [installation page](/esp3d-webui/v2.x/installation)     
 
-Or in filesystem uploader
-![](https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/docs/images/ESP3D-UPLOAD1a.png)   
+By default is build a multilanguage file, if file is too big for your flash size you can build with only english and one additional language:
 
-
-![](https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/docs/images/ESP3D-UPLOAD1b.png)   
-
-by default is build a multilanguage file, if file is too big for your flash you can build with only one additional language:
-`gulp package --lang en` will only build english
-`gulp package --lang fr` will only build french + english
-`gulp package --lang es` will only build spanish + english
-`gulp package --lang it` will only build italian + english
-`gulp package --lang de` will only build german + english
-etc...
+* `gulp package --lang en` will only build english  
+* `gulp package --lang fr` will only build french + english  
+* `gulp package --lang es` will only build spanish + english  
+* `gulp package --lang it` will only build italian + english  
+* `gulp package --lang de` will only build german + english   
+* etc...
