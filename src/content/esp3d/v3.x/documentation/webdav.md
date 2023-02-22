@@ -1,4 +1,5 @@
 +++
+description = "WebDav usage and configuration"
 archetype = "section"
 title = "About WebDAV"
 menuPre = "<i class='fas fa-cloud-upload-alt'></i> "

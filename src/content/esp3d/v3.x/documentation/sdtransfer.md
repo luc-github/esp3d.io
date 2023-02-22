@@ -1,4 +1,5 @@
 +++
+description = "SD Card usage examples"
 archetype = "section"
 title = "About SD card"
 menuPre = "<i class='fas fa-sd-card'></i> "

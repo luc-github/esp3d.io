@@ -1,6 +1,7 @@
 +++
 archetype = "section"
 title = "Notifications"
+description = "Setup and configuration"
 weight = 2
 menuPre = "<i class='fas fa-envelope'></i> "
 +++

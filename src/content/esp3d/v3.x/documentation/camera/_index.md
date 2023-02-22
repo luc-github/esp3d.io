@@ -1,4 +1,5 @@
 +++
+description = "Camera configuration"
 archetype = "home"
 title = "Camera support"
 menuPre = "<i class='fas fa-camera'></i> "

@@ -1,6 +1,7 @@
 +++
 archetype = "section"
 title = "ESP3D commands"
+description = "Syntax and parameters"
 weight = 1
 menuPre = "<i class='fas fa-terminal'></i> "
 +++
