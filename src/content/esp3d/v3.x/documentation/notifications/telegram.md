@@ -40,7 +40,7 @@ You need a bot token and a channel id:
 * Validate bot can admin the channel
 ![image](/images/notifications/telegram/create_channel_6.png)  
 
-4 - Save the generate token and chatID/ChannelID in ESP3D, and set Telegram as notification supplier  
+4 - Save the generate token and chatID in ESP3D, and set Telegram as notification supplier  
 `[ESP610]type=TELEGRAM T1=<bot token> T2=<@chatID>`
 
 5 - Type `[ESP610]` to verify (T1/T2 won't be displayed)  

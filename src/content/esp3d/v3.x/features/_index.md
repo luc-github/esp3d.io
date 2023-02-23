@@ -27,7 +27,6 @@ The V3.X features are :
     * File format
       * Native SPI
       * Native SDIO (ESP32 only)
-      * SDFat 1.x
       * SDFat 2.x
     * Connection
       * Direct connection

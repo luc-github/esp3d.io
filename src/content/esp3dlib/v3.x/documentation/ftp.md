@@ -1,4 +1,5 @@
 +++
+description = "FTP usage and configuration"
 archetype = "section"
 title = "About FTP"
 menuPre = "<i class='fas fa-file-upload'></i> "

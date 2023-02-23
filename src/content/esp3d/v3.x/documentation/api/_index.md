@@ -1,4 +1,3 @@
-
 +++
 description = "API description"
 archetype = "section"

@@ -15,19 +15,16 @@
 * Local FS support:
     * Little FS (prefered)
     * Fat (ESP32 only)
-    * SPIFFS (deprecated)
 * SD support
     * File format
       * Native SPI
       * Native SDIO (ESP32 only)
-      * SDFat 1.x
       * SDFat 2.x
 * USB support
     * planned
 * Global FS under FTP / Webdav : SD + Local FS in same directory
 * Recovery pin support
 * Time synchronization support (manual / internet server)
-* Lua interpreter support
 * Notifications support
     * WebUI
     * Email
@@ -35,10 +32,6 @@
     * Telegram
     * PushOver
     * IFTTT
-* Sensors support
-    * DHT 11/22
-    * Analog
-    * BMX280
 * Auto script support at start
 
 

@@ -1,4 +1,5 @@
 +++
+description = "Steps and supported languages"
 archetype = "section"
 title = "Translations"
 menuPre = "<i class='fas fa-language'></i> "

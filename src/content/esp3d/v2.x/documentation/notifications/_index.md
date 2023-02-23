@@ -1,4 +1,5 @@
 +++
+description = "Setup and configuration"
 archetype = "section"
 title = "Notifications"
 weight = 2

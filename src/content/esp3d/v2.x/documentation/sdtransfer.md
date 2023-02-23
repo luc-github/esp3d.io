@@ -1,6 +1,7 @@
 +++
+description = "SD Card support"
 archetype = "section"
-title = "About SD Transfer"
+title = "About SD card"
 menuPre = "<i class='fas fa-sd-card'></i> "
 weight = 4
 +++
