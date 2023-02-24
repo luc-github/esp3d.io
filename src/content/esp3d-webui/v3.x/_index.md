@@ -16,6 +16,7 @@ WebUI should support features of the following firmwares:
    * [Marlin 1.X/2.X](https://marlinfw.org/)
    * [Smoothieware 1.x](https://smoothieware.org/)
    * [grbl 1.x](https://github.com/gnea/grbl) 
+   * [grblHAL](https://github.com/grblHAL)
 
 ![image](showcase/full.png)
 
