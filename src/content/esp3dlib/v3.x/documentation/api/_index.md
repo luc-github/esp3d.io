@@ -6,8 +6,8 @@ weight = 100
 menuPre = "<i class='fas fa-cogs'></i> "
 +++
 
-* [Web Handlers](webhandlers)
-* [Web Sockets](websockets)
+{{% children sort="weight" description="true" depth="1" %}}
+
 * Entry points in Marlin
 ```
 #include "esp3dlib.h"

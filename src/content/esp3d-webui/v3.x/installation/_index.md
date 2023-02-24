@@ -19,11 +19,14 @@ If the embedded is not visible you can access to it using:
 `http://your_IP_address?forcefallback=yes` anytime
 
 #### Using Web UI
-You can upload file using Web UI
+* You can upload file using Web UI file panel
 
 ![image](spiffs_access.png)
 
 ![image](spiffs_modal.png)
+
+* You can also directly update index.html.gz using Web UI update button
+![image](webui_update.png)
 
 ### Finalize update
 

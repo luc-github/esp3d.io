@@ -1,5 +1,5 @@
 +++
-archetype = "chapter"
+archetype = "section"
 title = "Features"
 menuPre = "<i class='fas fa-list'></i> "
 weight = 1
@@ -37,8 +37,8 @@ The V3.X features are :
         -   Smoothieware (1.x / 2.x)
         -   Repetier (1.x / 2.x)
         -   GRBL (1.1h)
-    -   ESP3D-TFT (ESP3D)
-    -   ESP3DLib
+    -   [ESP3D-TFT](/esp3d-tft/)
+    -   [ESP3DLib](/esp3dlib/v3.x/)
         -   Marlin (2.x) - currently need custom version of Marlin : https://github.com/luc-github/Marlin/tree/ESP3DLibV3.0
     -   [grblHAL](https://github.com/grblHAL)
     -   Makerbase TFT (/esp3d/v3.x/)

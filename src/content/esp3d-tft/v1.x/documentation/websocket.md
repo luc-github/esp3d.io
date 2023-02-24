@@ -3,7 +3,7 @@
 there are 2
 
 -   terminal websocket
-    used to stream data to webUIand exchange internal data
+    used to stream data to webUI and exchange internal data
 
 -   data websocket
     used to exchange data

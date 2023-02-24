@@ -67,7 +67,7 @@ This mode is used to transfert all GCODE commands and their answers from printer
 
 ### <u>binary mode</u>
 
-This mode is used to transfert files to / from esp board
+This mode is used to transfert files to / from esp board **(not implemented yet)**
 
 it use frame of 1024 bytes, can be increased after test
 

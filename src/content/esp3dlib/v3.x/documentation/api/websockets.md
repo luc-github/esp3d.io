@@ -1,4 +1,5 @@
 +++
+description = "Web Sockets description, messages and parameters"
 archetype = "section"
 title = "Web Sockets"
 weight = 2
@@ -7,7 +8,7 @@ weight = 2
 there are 2
 
 -   terminal websocket
-    used to stream data to webUIand exchange internal data
+    used to stream data to webUI and exchange internal data
 
 -   data websocket
     used to exchange data
