@@ -26,7 +26,11 @@ You need a bot token and a channel id:
 * Make channel public and create your channelid/chatid
 ![image](/images/notifications/telegram/create_channel_2.png)  
 * Now you have your chatid without the `@`
+* Alternatively if you don't want to create a channel, you can have notifications directly from your bot by finding the numeric chatid. Note: use the numeric chat id without the `@`. If so you can go to number 4.
+{{% include file="chatid.html" %}} 
+
 3 - Assign your bot as administrator of your channel so it can use it
+
 * Press your channel title, the top banner will expand  
 ![image](/images/notifications/telegram/channel.jpg)  
 * Selet manage channel
