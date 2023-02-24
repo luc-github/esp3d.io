@@ -5,7 +5,7 @@ weight = 3
 +++
 
 ### What is ESP3D-TFT ?
-ESP3D-TFT is a a firmware for ESP32 boards from espressif with a TFT and SD Card, allowing to control a 3D Printer or CNC by serial or USB depending of ESP32 board used.
+ESP3D-TFT is a firmware for ESP32 boards from espressif with a TFT and a SD Card, allowing to control a 3D Printer or CNC by serial or USB depending of ESP32 board used.
 
 Firmware support different target firmwares according version. 
 

@@ -7,16 +7,19 @@ menuPre = "<i class='fas fa-terminal'></i> "
 +++
 
 ## Conventions
-1 - add space to separate parameters
-2 - if parameter has space add \\ in front of space to not be seen as separator
-3 - json json=YES json=TRUE json=1 are paremeters to switch output to json
-By default output is plain text, to get json formated output
-add json or json=yes after main parameters   
-The json format is {
+1 - add space to separate parameters  
+2 - if parameter has space add \\ in front of space to not be seen as separator  
+3 - json json=YES json=TRUE json=1 are paremeters to switch output to json  
+By default output is plain text, to get json formated output add json or json=yes after main parameters   
+The json format is 
+
+```json
+{
     cmd:"<command id>", //the id of requested command
     status:"<ok/error>" //give if it is success or an failure
     data:"<response>" // response corresponding to answer in json format too
 }
+```
 
 ## Commands
 * Show commands help   
@@ -147,7 +150,7 @@ label can be: light/framesize/quality/contrast/brightness/saturation/gainceiling
     `[ESP400]json=<no> pwd=<admin password>`   
     Note: do not give any passwords
 
-*Set EEPROM setting   
+* Set EEPROM setting   
     position in EEPROM, type: B(byte), I(integer/long), S(string), A(IP address / mask)    
     `[ESP401]P=<position> T=<type> V=<value> json=<no> pwd=<user/admin password>`   
 
