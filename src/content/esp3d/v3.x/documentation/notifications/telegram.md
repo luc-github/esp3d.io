@@ -12,13 +12,18 @@ You need a bot token and a channel id:
 
 * Open telegram application and open chat with Botfather.  
 * Type or select `/newbot`  
-  ![image]/images/notifications/telegram/newbot.jpg)
+  ![image](/images/notifications/telegram/newbot.jpg)
 * Type the name of the bot (2) and its username (3)  
   ![image](/images/notifications/telegram/newbot2.jpg)
 * Doing this you will get your bot token (4) that you need for `T1=<bot token>`
+* You can have notifications directly from your bot by finding the numeric chatid. Note: use the numeric chat id. `T2=<numeric chat id>`
 
-2 - Create a public channel
+  {{< embed "/static/chatid.html" >}}
 
+  If you have the numeric chat id you can proceed to step 4.
+
+2 - Alternatively you may create a public channel if you want to share your printer
+   
 * In telegram select new channel  
 ![image](/images/notifications/telegram/newchannel.jpg)  
 * Type channel name (1) and description (2)  
@@ -26,8 +31,6 @@ You need a bot token and a channel id:
 * Make channel public and create your channelid/chatid
 ![image](/images/notifications/telegram/create_channel_2.png)  
 * Now you have your chatid without the `@`
-* Alternatively if you don't want to create a channel, you can have notifications directly from your bot by finding the numeric chatid. Note: use the numeric chat id without the `@`. If so you can go to number 4.
-{{% include file="chatid.html" %}} 
 
 3 - Assign your bot as administrator of your channel so it can use it
 

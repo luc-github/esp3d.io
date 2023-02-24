@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get your chat Id</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .codexx {
+            font-size: 2em;
+            font-weight: bold;
+            background-color: #f7f7f7;
+            padding: 0.5em;
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            font-size: 1em;
+            padding: 0.5em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .result {
+            margin-top: 1em;
+            padding: 1em;
+            border: 1px dashed #ccc;
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Get your chat Id</h3>
+
+    <div>Post this code into your bot's window:</div>
+    <span class="codexx"></span><button class="copy-code-btn">Copy</button>
+
+    <div>Paste below your Bot's token:</div>
+    <input type="text" id="bot-token-input">
+    <button id="submit-token-btn">Get Chat Id</button>
+
+    <div class="result"></div>
+
+    <script>
+        $(function () {
+
+            // Generate random code
+            var code = generateCode();
+            $('.codexx').text(code);
+
+            // Copy code to clipboard
+            var clipboard = new ClipboardJS('.copy-code-btn', {
+                text: function () {
+                    return code;
+                }
+            });
+            clipboard.on('success', function (e) {
+                alert('Code copied to clipboard');
+            });
+
+            // Submit token and get chat id
+            $('#submit-token-btn').click(function () {
+                var token = $('#bot-token-input').val();
+                var apiUrl = 'https://api.telegram.org/bot' + token + '/getUpdates?offset=-1';
+
+                $.get(apiUrl, function (response) {
+                    if (response.ok && response.result.length > 0) {
+                        var message = response.result[0].message;
+                        if (message.text == code) {
+                            var chatId = message.chat.id;
+                            $('.result').html('<span class="chat-id">' + chatId + '</span>  <button class="copy-chat-id-btn">Copy</button>');
+                            var clipboard2 = new ClipboardJS('.copy-chat-id-btn', {
+                                text: function () {
+                                    return chatId;
+                                }
+                            });
+                            clipboard2.on('success', function (e) {
+                                alert('Chat ID copied to clipboard');
+                            });
+                        } else {
+                            $('.result').text('Chat ID not found');
+                        }
+                    } else {
+                        $('.result').text('Error getting chat ID');
+                    }
+                });
+            });
+
+            // Function to generate random code
+            function generateCode() {
+                var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var code = '';
+                for (var i = 0; i < 6; i++) {
+                    code += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+                return code;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

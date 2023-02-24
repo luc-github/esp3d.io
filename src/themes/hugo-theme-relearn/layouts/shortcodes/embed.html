@@ -1,0 +1,2 @@
+{{ $html := readFile (.Get 0) }}
+{{ printf "%s" $html | safeHTML }}
