@@ -4,7 +4,7 @@ title = "Version 3.X"
 weight = 3
 +++
 
-{{% iobadge url="https://github.com/luc-github/ESP3DLib/tree/3.0" path="https://img.shields.io/badge/ESPDLib-3.0-green?style=plastic&logo=github" %}}
+{{% iobadge url="https://github.com/luc-github/ESP3DLib/tree/3.0" path="https://img.shields.io/badge/ESPDLib-3.X_alpha-red?style=plastic&logo=github" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3DLib/tree/3.0" path="https://img.shields.io/github/commit-activity/y/luc-github/ESP3DLib/3.0?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3DLib/tree/3.0" path="https://img.shields.io/github/last-commit/luc-github/ESP3DLib/3.0?style=plastic" %}}
 {{% iobadge url="https://discord.gg/Z4ujTwE" path="https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord" %}}

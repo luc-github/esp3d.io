@@ -4,7 +4,7 @@ title = "Version 2.1.X"
 weight = 1
 +++
 
-{{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1" path="https://img.shields.io/badge/Github-black?style=plastic&logo=github" %}}
+{{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1" path="https://img.shields.io/badge/ESP3D_WEBUI-2.X-green?style=plastic&logo=github" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/releases/tag/v2.1.1" path="https://img.shields.io/github/release/luc-github/ESP3D-WEBUI.svg?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1" path="https://img.shields.io/github/commit-activity/y/luc-github/ESP3D-WEBUI/2.1?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1.x" path="https://img.shields.io/github/last-commit/luc-github/ESP3D-WEBUI/2.1?style=plastic" %}}

@@ -12,7 +12,7 @@ The version to be used depend on firmware version itself, please refer to the fi
 {{% /notice %}}
 
 
-{{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI" path="https://img.shields.io/badge/Github-black?style=plastic&logo=github&label=ESP3D-WEBUI" %}}
+{{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI" path="https://img.shields.io/badge/Github-ESP3D_WEBUI-green?style=plastic&logo=github" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/stargazers" path="https://img.shields.io/github/stars/luc-github/esp3d-webui?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI" path="https://img.shields.io/github/contributors/luc-github/esp3d-webui?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-WEBUI/releases/latest" path="https://img.shields.io/github/v/release/luc-github/esp3d-webui?style=plastic" %}}
