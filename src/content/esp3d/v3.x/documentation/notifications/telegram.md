@@ -7,7 +7,7 @@ weight = 5
 
 Considering you have Telegram account and you already installed Telegram on you phone/PC:   
 
-You need a bot token and a channel id:  
+You need a bot token and a chat/channel id:  
 1 - Create a bot with [BotFather](https://core.telegram.org/bots#3-how-do-i-create-a-bot)
 
 * Open telegram application and open chat with Botfather.  
@@ -16,13 +16,14 @@ You need a bot token and a channel id:
 * Type the name of the bot (2) and its username (3)  
   ![image](/images/notifications/telegram/newbot2.jpg)
 * Doing this you will get your bot token (4) that you need for `T1=<bot token>`
-* You can have notifications directly from your bot by finding the numeric chatid. Note: use the numeric chat id. `T2=<numeric chat id>`
+* You can have notifications directly from your bot by finding the numeric chatid.
+  In order to find it you need to say something to your bot:
+  ![image](/images/notifications/telegram/talktobot.png)
+  Copy this url into your browser and modify it with your bot's token ` https://api.telegram.org/bot<TOKEN>/getUpdates?offset=-1`
+  You can quickly find your numeric chat id `T2=<numeric chat id>`
+  ![image](/images/notifications/telegram/chatidjson.png)
 
-  {{< embed "/static/chatid.html" >}}
-
-  If you have the numeric chat id you can proceed to step 4.
-
-2 - Alternatively you may create a public channel if you want to share your printer
+2 - Alternatively you may create a public channel if you want to share your printer. If isn't the case proceed to step 4.
    
 * In telegram select new channel  
 ![image](/images/notifications/telegram/newchannel.jpg)  
@@ -48,7 +49,9 @@ You need a bot token and a channel id:
 ![image](/images/notifications/telegram/create_channel_6.png)  
 
 4 - Save the generate token and chatID in ESP3D, and set Telegram as notification supplier  
-`[ESP610]type=TELEGRAM T1=<bot token> T2=<@chatID>`
+`[ESP610]type=TELEGRAM T1=<bot token> T2=<numeric chat id>` 
+
+`[ESP610]type=TELEGRAM T1=<bot token> T2=<@chatID>` (for channel)
 
 5 - Type `[ESP610]` to verify (T1/T2 won't be displayed)  
 
