@@ -1,4 +1,7 @@
 # esp3d.io
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 Project page for the web site on http://esp3d.io
 
 It use [Hugo](https://gohugo.io/) to generate the static pages and use the [hugo relearn theme](https://mcshelby.github.io/hugo-theme-relearn/) as code base.
@@ -51,3 +54,25 @@ to use shields.io badges and github badges
 
 ### Rules
 * only use lowcase letters without space for files and directories names 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://dev76.org"><img src="https://avatars.githubusercontent.com/u/222385?v=4?s=100" width="100px;" alt="Paulo Bruckmann"/><br /><sub><b>Paulo Bruckmann</b></sub></a><br /><a href="#ideas-peekpt" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/luc-github/esp3d.io/commits?author=peekpt" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
