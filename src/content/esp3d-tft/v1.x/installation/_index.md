@@ -7,8 +7,9 @@ weight = 2
 
 ### Setup your development environment
 
-{{% imglink url="/esp3d-tft/v1.x/installation/vscode-platformio/" width="200px" img="/images/platformiovscode.png" %}}VS Code{{% /imglink %}}
-{{% center %}}PlatformIO{{% /center %}}
+{{% imglink url="https://code.visualstudio.com/download" width="100px" img="/images/visual_studio_code.png" %}}VS Code{{% /imglink %}}
+
+Download and install [VSCode](https://code.visualstudio.com/download)
 
 ### Install the espressif vscode extension
 
@@ -22,7 +23,7 @@ Please follow the [official tutorial](https://github.com/espressif/vscode-esp-id
 - Select : View->Command palette 
 - Type : configure esp
 
-Currently ESP3D-TFT use the version 5.1dev of the IDF 
+Currently ESP3D-TFT use the version 5.1 (git version) of the IDF 
 
 ### Open ESP3D-TFT project
 - Go to file and select open folder where project is located

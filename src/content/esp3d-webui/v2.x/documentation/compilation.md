@@ -3,7 +3,7 @@ description = "Commands and syntax"
 archetype = "section"
 title = "Compilation"
 menuPre = "<i class='fas fa-code'></i> "
-weight = 2
+weight = 3
 +++
 
 To be able to generate file from sources you need to install nodejs, gulp and some addons.    

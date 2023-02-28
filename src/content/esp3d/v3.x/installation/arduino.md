@@ -24,7 +24,7 @@ Please use the version 3.1.1.
 Please use the version 2.0.6.
 {{% /notice %}}  
 
-* Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/libraries) and [extra libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries) to your arduino library directory.
+* Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/libraries) and [extra libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries) (according your target [ESP8266](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP8266) or [ESP32](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP32) ) to your arduino library directory
 
    {{% notice style="orange" title="Warning" icon="exclamation" %}}
 Do not try any version different than the ones provided, they may not work properly. 

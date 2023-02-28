@@ -2,6 +2,8 @@
 archetype = "home"
 title = "Version 3.X"
 weight = 2
+mermaidInitialize = "{ \"theme\": \"dark\" }"
+mermaidZoom = true
 +++
 
 {{% iobadge url="https://github.com/luc-github/ESP3D/tree/3.0" path="https://img.shields.io/badge/ESP3D-3.X_alpha-red?style=plastic&logo=github" %}}
@@ -24,3 +26,4 @@ The firmware must be used with [ESP3D-WEBUI 3.X](/esp3d-webui/v3.x/)
 
 To help and simplify the configuration, a configurator is available:    
 {{% iobadge url="https://luc-github.github.io/" path="https://img.shields.io/badge/ESP3D-Configurator-red?plastic&logo=preact" %}}    
+
