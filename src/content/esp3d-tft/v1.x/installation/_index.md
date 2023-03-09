@@ -4,6 +4,19 @@ title = "Installation"
 menuPre = "<i class='fas fa-hammer'></i> "
 weight = 2
 +++
+### Download the project
+
+#### Using git
+* Clone repository   
+`git clone https://github.com/luc-github/ESP3D-TFT.git ESP3D-TFT`
+* Go to the project   
+`cd ESP3D-TFT`
+* Update the project submodules   
+`git submodule update --init`
+
+#### Using release package
+
+*Not ready yet, please be patient*
 
 ### Setup your development environment
 
