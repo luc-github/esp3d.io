@@ -2,7 +2,7 @@
 description = "Description and supported firmwares"
 archetype = "section"
 title = "Real time commands"
-weight = 3
+weight = 4
 +++
 
 Real time commands are not printable commands most of the time so it can be tricky to type them in terminal or to see them in terminal as echo. To workaround this you can use and see the `text equivalent` variables

@@ -5,7 +5,10 @@ title = "Syntax conventions"
 weight = 4
 +++
 
-This document is a receipe of conventions that may not be currently already implemented, but will be from now, current code will be updated according to it before beta state.
+{{% notice style="info"  %}}
+This document is a receipe of conventions that may not be currently implemented yet, but will be from now, current code will be updated according to it before beta state.
+{{% /notice %}}
+
 
 Style should be also applied also
 
@@ -13,14 +16,13 @@ Style should be also applied also
 ## C++
 
 ### Style
-* Use AStyle `
---style=otbs` 
-
 * Use Clang-format
-- Download the tool according your system
-https://releases.llvm.org/
-- Install client extension
-CLang-Format from Xaver Hellauer
+    - Download the tool according your system    
+    https://releases.llvm.org/
+    - Install client extension     
+    CLang-Format from Xaver Hellauer
+    - Define the style    
+    set `Google` as default style
 
 ### General
 * Avoid abreviation as much as possible
@@ -48,7 +50,7 @@ e.g: `ESP32S3_ZX3D50CE02S_USRC_4832`
 * Pointer variables should be prepended with ‘p’ and place the asterisk ‘*’ close to the name instead of the pointer type.
 * Static variables should be prepended with ‘s’.
 * always initialize the variable   
-e.g:
+e.g:   
 `char adminPassword[20]{0};`  
 `char *pAdminLogin = nullptr;`  
 
@@ -58,7 +60,7 @@ e.g:
 * Use upper case letters as words separators
 * Digits may be used in the name but only after the alphabet.
 * No special symbols can be used in names.
-* No keywords can be used as names.
+* No keywords can be used as names.   
 e.g: `const int kTopLimit 100;`
 
 ### Define
@@ -77,8 +79,7 @@ e.g: `#define LOWER_LIMIT 10;`
 * Define enum values as much as possible to ensure consistency when doing update
 * Do not use `#ifdef` in enum unless all enum values are explicitly defined   
 
-e.g:  
-`esp3d_gcode_host_type.h`
+e.g: `esp3d_gcode_host_type.h`
 
 - not explicitly defined   
 ```
@@ -110,8 +111,7 @@ Usage example: `Status::low`
 * No need to `typedef` for struct   
 * As we use C++20, initialize struct explicitly
 
-e.g:
-`setting_description_type.h`
+e.g: `setting_description_type.h`
 
 ```
 struct  SettingDescription{
@@ -188,9 +188,9 @@ Prefer sizeof(varname) to sizeof(type). sizeof(varname) will update appropriatel
 Only use auto type if no need to to do type deduction, C++ code is usually clearer when types are explicit, especially when type deduction would depend on information from distant parts of the code. 
 
 ### Casting 
-* Use C++-style casts 
+* Use C++-style casts   
 e.g: `static_cast<float>(double_value)`
-* Do not use C cast unless the cast is to void
+* Do not use C cast unless the cast is to void  
 e.g: `(int)3.5;` 
 
 ### Initialization 
@@ -199,27 +199,6 @@ e.g: `(int)3.5;`
 ### Lambda Expressions
 //TODO
 
-## Javascript
-
-### General
-//TODO
-
-### File name
-//TODO
-
-### Variable
-//TODO
-
-### Constant
-//TODO
-
-### Component
-
-### Function/Procedure
-//TODO
-
 Inspired from :
 * [Naming Convention in C++](https://www.geeksforgeeks.org/naming-convention-in-c/)
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)
-* [Naming Conventions in React JS - Upbeat Code](https://www.upbeatcode.com/react/react-naming-conventions/)
-* [10-react-naming-conventions-best-practices](https://climbtheladder.com/10-react-naming-conventions-best-practices/)
