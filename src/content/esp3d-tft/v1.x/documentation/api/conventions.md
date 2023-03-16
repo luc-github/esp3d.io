@@ -27,6 +27,8 @@ Style should be also applied also
 ### General
 * Avoid abreviation as much as possible
 * Avoid unnecessary long name
+* ESP3D is always uppercase in code, esp3d is valid only for filename, any mixing case is proscribed (e.g.:`Esp3D`/`esp3D`/`Esp3d`)
+* ESP command is always uppercase, so any reference to it (e.g.: `ESP100`) should be uppercase to avoid confusion, only filename can be lowercase, any  mixing case is proscribed 
 
 ### File name
 * Use lower case for file names 
@@ -103,11 +105,11 @@ enum class Status: char
 ```   
 Usage example: `Status::low`
 
-### Struct
-* If struct is used by several file, struct should be defined in separate file to avoid repeated definitions, and add `_type` suffix to file name
+### Struct/Union
+* If struct/union is used by several file, struct should be defined in separate file to avoid repeated definitions, and add `_type` suffix to file name
 * The first character in the struct name must be in upper case.
 * Use upper case letters as word separators
-* Struct values are lower case and use underscores as words separators.
+* Struct values are lower case and use underscores as words separators if variables.
 * No need to `typedef` for struct   
 * As we use C++20, initialize struct explicitly
 
@@ -174,6 +176,17 @@ namespace esp3d_hal{
 ```
 usage example: `esp3d_hal::millis();` 
 
+### typedef
+* If variable 
+    * Use lower case for names 
+    * Use underscores as words separators
+    * Add suffix `_t`
+    e.g: `typedef int setting_index_t`
+* If function
+   * Follow function naming syntax
+   * Add suffix `_t`
+   e.g: `typedef std::function<bool(const char*, const char*,const char*)> processingFunction_t;`     
+
 ### 0 and nullptr/NULL
 Use nullptr for pointers, and '\0' for chars (and not the 0 literal).
 
@@ -184,7 +197,7 @@ Use '\0' for the null character. Using the correct type makes the code more read
 ### sizeof
 Prefer sizeof(varname) to sizeof(type). sizeof(varname) will update appropriately if someone changes the variable type either now or later. 
 
-### auto type
+### `auto` type
 Only use auto type if no need to to do type deduction, C++ code is usually clearer when types are explicit, especially when type deduction would depend on information from distant parts of the code. 
 
 ### Casting 
