@@ -15,7 +15,7 @@ weight = 4
 * PSRAM: 2MB     
 * FLASH: 8MB
 * Micro-SD card slot (SPI)
-* 4.3-inch display with 800×480 RM68120 (8080 parallel bus)  
+* 4.3-inch display with 800×600 RM68120 (8080 parallel bus)  
 * I2C capacitive touch panel ft5x06 (i2C 0x38)
 * Audio amplifier RealNetworks (i2C 0x68) Speaker
 * Built-in microphone   
