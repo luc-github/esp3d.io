@@ -12,7 +12,7 @@ weight = 2
 * Go to the project   
 `cd ESP3D-TFT`
 * Update the project submodules   
-`git submodule update --init`
+`git submodule update --init --recursive`
 
 #### Using release package
 
