@@ -1,6 +1,6 @@
 # esp3d.io
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Project page for the web site on http://esp3d.io
 
@@ -66,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://dev76.org"><img src="https://avatars.githubusercontent.com/u/222385?v=4?s=100" width="100px;" alt="Paulo Bruckmann"/><br /><sub><b>Paulo Bruckmann</b></sub></a><br /><a href="#ideas-peekpt" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/luc-github/esp3d.io/commits?author=peekpt" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jamespearson04"><img src="https://avatars.githubusercontent.com/u/26628667?v=4?s=100" width="100px;" alt="James Pearson"/><br /><sub><b>James Pearson</b></sub></a><br /><a href="https://github.com/luc-github/esp3d.io/commits?author=jamespearson04" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
