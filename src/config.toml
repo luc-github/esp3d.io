@@ -7,7 +7,9 @@ theme = "hugo-theme-relearn"
 
 # For search functionality
 [outputs]
-home = [ "HTML", "RSS", "SEARCH"]
+home = [ "HTML", "RSS", "SEARCH", "PRINT"]
+section = [ "HTML", "RSS", "PRINT"]
+page = [ "HTML", "RSS", "PRINT"]
 
 [params]
 alwaysopen = false
