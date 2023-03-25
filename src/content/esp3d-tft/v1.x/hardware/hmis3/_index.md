@@ -4,7 +4,7 @@ archetype = "section"
 title = "3.5' HMI-V3"
 weight = 4
 +++
-* ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen  (800x600) [model](https://www.aliexpress.com/item/1005003814428825.html)
+* ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen  (800x480) [model](https://www.aliexpress.com/item/1005003814428825.html)
 
 ![image](front.png?width=400px)
 ![image](back.png?width=400px)
@@ -15,7 +15,7 @@ weight = 4
 * PSRAM: 2MB     
 * FLASH: 8MB
 * Micro-SD card slot (SPI)
-* 4.3-inch display with 800×600 RM68120 (8080 parallel bus)  
+* 4.3-inch display with 800×480 RM68120 (8080 parallel bus)  
 * I2C capacitive touch panel ft5x06 (i2C 0x38)
 * Audio amplifier RealNetworks (i2C 0x68) Speaker
 * Built-in microphone   
