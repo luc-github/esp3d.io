@@ -5,9 +5,12 @@ menuPre = "<i class='fas fa-hammer'></i> "
 weight = 2
 +++
 
-The Web UI is represented by one file : index.hml.gz
-The full package with all languages is available [here](https://github.com/luc-github/ESP3D-WEBUI/blob/2.1/languages/multi/index.html.gz) 
-But it may not fit your available size on flash, so you can select a single language package [here](https://github.com/luc-github/ESP3D-WEBUI/tree/2.1/languages) which is lighter and will fit smallest boards.
+The Web UI is represented by one file : index.hml.gz   
+The index.html.gz according targeted system is available [here](https://github.com/luc-github/ESP3D-WEBUI/tree/3.0/dist).   
+
+Select the file according your system type (CNC/3D Printer/...) and system firmware (GRBL/Repetier...).   
+
+The default language is english, additionnal language pack can be added later independantly.
 
 ### Upload index.html.gz
 
