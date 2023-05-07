@@ -21,7 +21,7 @@ Please use the version 3.1.1.
    - [ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
 
       {{% notice style="orange" title="Warning" icon="exclamation" %}}
-Please use the version 2.0.6.
+Please use the version 2.0.8.
 {{% /notice %}}  
 
 * Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/libraries) and [extra libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries) (according your target [ESP8266](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP8266) or [ESP32](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP32) ) to your arduino library directory
