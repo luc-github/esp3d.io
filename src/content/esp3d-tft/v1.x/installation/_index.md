@@ -36,7 +36,7 @@ Please follow the [official tutorial](https://github.com/espressif/vscode-esp-id
 - Select : View->Command palette 
 - Type : configure esp
 
-Currently ESP3D-TFT use the version 5.1 (git version) of the IDF 
+Currently ESP3D-TFT use the released version 5.1  of the IDF 
 
 ### Open ESP3D-TFT project
 - Go to file and select open folder where project is located
