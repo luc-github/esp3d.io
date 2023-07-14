@@ -55,3 +55,4 @@ or
 
 - Just use the bottom menu for all commands
 
+![image](vscodeInterface.png?width=400px)
