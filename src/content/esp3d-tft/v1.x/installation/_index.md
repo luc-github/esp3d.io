@@ -56,3 +56,7 @@ or
 - Just use the bottom menu for all commands
 
 ![image](vscodeInterface.png?width=400px)
+
+{{% notice style="blue" title="Note" icon="info" %}}
+Sometime the build button failed and you must delete the build directory manualy
+{{% /notice %}}
