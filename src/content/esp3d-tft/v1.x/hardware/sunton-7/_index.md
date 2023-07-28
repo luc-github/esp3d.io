@@ -8,10 +8,6 @@ weight = 4
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
 
-{{% notice style="warning" title="Note" icon="info" %}}
-Support still ongoing, not yet ready for production
-{{% /notice %}}
-
 
 ## Features
 * ESP32-S3 dual-core Xtensa 32-bit LX7 microprocessor, up to 240 MHz with 384KB ROM, 512KB SRAM. 2.4GHz WiFi and Bluetooth 5
