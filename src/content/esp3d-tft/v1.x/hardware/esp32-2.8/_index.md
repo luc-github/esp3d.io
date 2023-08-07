@@ -1,9 +1,16 @@
 +++
 description = "ESP32 - 2.8' TFT"
 archetype = "section"
-title = "2.8' ESP32-2432S028R"
-weight = 1
+title = "Deprecated - ESP32-2432S028R "
+weight = 8
 +++
+
+{{% notice style="red" title="Important"  %}}
+Only boards with PSRAM are supported in ESP3D-TFT due to performances issue without PSRAM.   
+
+So this board is no more supported.
+{{% /notice %}}
+
 ESP32 based + SDReader + 2.8'resistive screen (240x320) [model](https://www.aliexpress.com/item/3256804315935867.html)
 
 ![image](front.jpg?width=400px)
