@@ -21,6 +21,23 @@ weight = 2
 * 1 debug port: GND, 5V, EN, GPIO 0, GPIO 2, GPIO 1 (TX), GPIO 3 (RX)
 * Power Supply: 5V / 1A
 
+{{% notice style="orange" title="Important"  %}}
+The USB-C connector is actually a raw serial 1 port, not a real USB port.   
+
+Serial 1 is the serial port used for communication with other devices.   
+
+Serial 0 is the serial port used for programming the ESP32, this port is not easily accessible because connector is not soldered.
+
+So do not try to flash TFT using usb-c connector, it won't work. 
+{{% /notice %}}    
+
+{{% notice style="info" title="Note about USB-C connector"  %}}
+The ESP32 serial 1 TX is on both TX3 of USB connector, and ESP32 serial 1 RX is on both RX3 of USB connector, GND is GND, 5V is 5V, D+, D-, TX6 and RX6 seems not connected. 
+{{% /notice %}}
+
+![image](usb.png?width=400px)
+
+
 ## Pins
 Pin | Usage 
 ----|-----
