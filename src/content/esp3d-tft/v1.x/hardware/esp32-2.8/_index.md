@@ -1,5 +1,5 @@
 +++
-description = "ESP32 - 2.8' TFT"
+description = "ESP32 - 2.8' (320x240) TFT"
 archetype = "section"
 title = "Deprecated - ESP32-2432S028R "
 weight = 8
@@ -22,7 +22,7 @@ ESP32 based + SDReader + 2.8'resistive screen (240x320) [model](https://www.alie
 * PSRAM: NO     
 * FLASH: 4MB
 * Micro-SD card slot (SPI)
-* 2.8-inch display with 240 x 320 ILI9341 (SPI)   
+* 2.8-inch display with 320 x 240 ILI9341 (SPI)   
 * SPI resitive touch panel XTP2048 (SPI)    
 * 1 RGB led
 * 1 USB-Micro (Serial 0)

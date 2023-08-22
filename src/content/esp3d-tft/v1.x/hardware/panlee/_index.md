@@ -1,10 +1,10 @@
 +++
-description = "ESP32-S3 3.5' TFT"
+description = "ESP32-S3 3.5' (480x320) TFT"
 archetype = "section"
 title = "3.5' ZX3D50CE02S-USRC-4832"
 weight = 3
 +++
-ESP32-S3 based + SDReader + PSRAM + 3.5' capacitive screen (320x480) [model](https://www.aliexpress.com/item/1005004309826174.html)
+ESP32-S3 based + SDReader + PSRAM + 3.5' capacitive screen (480x320) [model](https://www.aliexpress.com/item/1005004309826174.html)
 
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)

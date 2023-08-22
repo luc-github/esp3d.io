@@ -1,7 +1,7 @@
 +++
-description = "ESP32-S3 4.3' TFT"
+description = "ESP32-S3 4.3' (800x480) TFT"
 archetype = "section"
-title = "3.5' HMI-V3"
+title = "4.3' HMI-V3"
 weight = 4
 +++
 * ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen  (800x480) [model](https://www.aliexpress.com/item/1005003814428825.html)
