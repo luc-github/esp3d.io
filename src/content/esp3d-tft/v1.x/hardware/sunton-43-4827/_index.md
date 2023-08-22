@@ -4,7 +4,7 @@ archetype = "section"
 title = " 4.3' ESP32-4827S043"
 weight = 5
 +++
-* ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen IPS (800x480) [model](https://www.aliexpress.com/item/1005004788147691.html)   
+* ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen IPS (480x272) [model](https://www.aliexpress.com/item/1005004788147691.html)   
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
 
@@ -14,7 +14,7 @@ weight = 5
 * PSRAM: 8MB     
 * FLASH: 16MB
 * Micro-SD card slot (SPI)
-* 4.3-inch display with 480x273 ILI9485 (Parallel RGB-565 interface)  (https://lang-ship.com/blog/work/esp32-4827s043/)
+* 4.3-inch display with 480x272 ILI9485 (Parallel RGB-565 interface)  (https://lang-ship.com/blog/work/esp32-4827s043/)
 * I2C capacitive touch panel GT911 (i2C 0x38)
 * Audio amplifier MA98357 (i2s) Speaker
 * 1 USB-C Serial port
