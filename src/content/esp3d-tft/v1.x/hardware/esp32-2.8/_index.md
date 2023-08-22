@@ -1,7 +1,7 @@
 +++
 description = "ESP32 - 2.8' (320x240) TFT"
 archetype = "section"
-title = "ESP32-2432S028R (Mod Required)"
+title = " 2.8' ESP32-2432S028R (Mod Required)"
 weight = 8
 +++
 
