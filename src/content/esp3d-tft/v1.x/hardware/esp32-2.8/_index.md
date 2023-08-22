@@ -8,7 +8,7 @@ weight = 8
 {{% notice style="red" title="Important"  %}}
 ESP3D-TFT requires PSRAM for full functionality.
 
-By default, this board does not have PSRAM and has critical performance issues.
+By default, this board does not have PSRAM, and is unsupported due to critical performance issues.
 
 To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
 {{% /notice %}}
@@ -83,7 +83,7 @@ Note: There are (at least) two revisions of this board.
 * On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.
 * On another revision, the external SOIC-8 footprint is un-populated (the SPI flash is built into the ESP32 module).  See Option 2 below for Mod details.
 
-In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Some compatible ICs are: IPS6404L-SQ, APM6404-SQ, APS6404L-3SQR.  Make sure whatever IC you choose supports ~3.3v and at least 80 MHz.
+In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Some compatible ICs are: IPS6404L-SQ-SPN, APM6404-SQ-SPN, APS6404L-3SQR-SN.  Make sure whatever IC you choose supports ~3.3v and at least 80 MHz.
 
 (TODO... add details about firmware changes required in order to use the PSRAM.)
 
