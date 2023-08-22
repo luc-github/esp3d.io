@@ -52,18 +52,18 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   14  |  GPIO12 |  TFT_SDO (TFT)                           |
 |   15  |  GND    |  Ground                                  |
 |   16  |  GPIO13 |  TFT_SDI (TFT)                           |
-|   17  | SHD/SD2 |  HOLD (SPI Flash / PSRAM)                |
-|   18  | SWP/SD3 |  WP (SPI Flash / PSRAM)                  |
+|   17  | SHD/SD2 |  HOLD (SPI Flash / PSRAM*)               |
+|   18  | SWP/SD3 |  WP (SPI Flash / PSRAM*)                 |
 |   19  | SCS/CMD |  CS (SPI Flash)                          |
 |   20  | SCK/CLK |  SCK (SPI Flash)                         |
-|   21  | SDO/SD0 |  SO (SPI Flash / PSRAM)                  |
-|   22  | SDI/SD1 |  SI (SPI Flash / PSRAM)                  |
+|   21  | SDO/SD0 |  SO (SPI Flash / PSRAM*)                 |
+|   22  | SDI/SD1 |  SI (SPI Flash / PSRAM*)                 |
 |   23  |  GPIO15 |  TFT_CS (TFT)                            |
 |   24  |  GPIO02 |  TFT_RS (TFT)                            |
 |   25  |  GPIO0  |  BOOT_SW                                 |
 |   26  |  GPIO04 |  LED_RGB                                 |
-|   27  |  GPIO16 |  LED_RGB (PSRAM_CS)                      |
-|   28  |  GPIO17 |  LED_RGB (PSRAM_SCK)                     |
+|   27  |  GPIO16 |  LED_RGB (PSRAM_CS*)                     |
+|   28  |  GPIO17 |  LED_RGB (PSRAM_SCK*)                    |
 |   29  |  GPIO05 |  TF_CS (SD Card)                         |
 |   30  |  GPIO18 |  TF_CLK (SD Card)                        |
 |   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
@@ -75,6 +75,8 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   37  |  GPIO23 |  MCU_MOSI (SD Card)                      |
 |   38  |  GND    |  Ground                                  |
 |   39  |  GND    |  Ground                                  |
+
+* Requires Hardware Mod
 
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
