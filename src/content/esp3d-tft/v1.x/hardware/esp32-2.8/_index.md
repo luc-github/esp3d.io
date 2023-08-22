@@ -10,7 +10,7 @@ ESP3D-TFT requires PSRAM for full functionality.
 
 By default, this board does not have PSRAM and has critical performance issues.
 
-To restore full functionality, this board must be modded with external PSRAM.
+To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
 {{% /notice %}}
 
 ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.aliexpress.com/item/3256804315935867.html)
@@ -21,7 +21,7 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 
 ### Features
 * ESP32
-* PSRAM: NO* (See Hardware Mod section below...)
+* PSRAM: NO* (*See Hardware Mod section below...)
 * FLASH: 4MB
 * Micro-SD card slot (SPI)
 * 2.8-inch display with 320 x 240 ILI9341 (SPI)   
@@ -62,8 +62,8 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   24  |  GPIO02 |  TFT_RS (TFT)                            |
 |   25  |  GPIO0  |  BOOT_SW                                 |
 |   26  |  GPIO04 |  LED_RGB                                 |
-|   27  |  GPIO16 |  LED_RGB (PSRAM /CS)                     |
-|   28  |  GPIO17 |  LED_RGB (PSRAM CLK)                     |
+|   27  |  GPIO16 |  LED_RGB (PSRAM_CS)                      |
+|   28  |  GPIO17 |  LED_RGB (PSRAM_SCK)                     |
 |   29  |  GPIO05 |  TF_CS (SD Card)                         |
 |   30  |  GPIO18 |  TF_CLK (SD Card)                        |
 |   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
@@ -77,7 +77,7 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   39  |  GND    |  Ground                                  |
 
 ### Hardware Mod (Add External PSRAM)
-This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM IC in order to achieve full functionality and performance.
+This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
 
 Note: There are (at least) two revisions of this board.
 * On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.
