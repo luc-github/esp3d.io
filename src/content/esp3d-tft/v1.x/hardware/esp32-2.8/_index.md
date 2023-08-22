@@ -107,4 +107,7 @@ On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint
 * Connect a bodge wire from Pin 6 to GPIO 17 (can use the Pad of the RGB LED farthest from the ESP32 module on the bottom row).
 * Attach a 10k resistor between Pins 1 & 8 of the PSRAM IC. This is a pull-up resistor that ensures the PSRAM is deselected by default (i.e. when the Flash IC is in use).
 
-(TODO: add pictures...)
+##### Before:
+![image-before](opt2-before-mod.jpg?width=400px)
+##### After:
+![image-after](opt2-after-mod.jpg?width=400px)
