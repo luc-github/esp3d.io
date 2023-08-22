@@ -87,7 +87,9 @@ Note: There are (at least) two revisions of this board.
 
 In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Some compatible ICs are: IPS6404L-SQ-SPN, APM6404-SQ-SPN, APS6404L-3SQR-SN.  Make sure whatever IC you choose supports ~3.3v and at least 80 MHz.
 
-(TODO... add details about firmware changes required in order to use the PSRAM.)
+sdkconfig need to be modified to enable PSRAM
+
+```
 
 #### Option 1
 On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.
@@ -98,7 +100,7 @@ On this revision, the PSRAM must be piggy-backed on top of the external Flash IC
 * Connect a bodge wire from Pin 6 to GPIO 17 (can use the Pad of the RGB LED farthest from the ESP32 module on the bottom row).
 * Attach a 10k resistor between Pins 1 & 8 of the PSRAM IC. This is a pull-up resistor that ensures the PSRAM is deselected by default (i.e. when the Flash IC is in use).
 
-(TODO: add pictures...)
+
 
 #### Option 2
 On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint.
