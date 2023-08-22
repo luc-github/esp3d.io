@@ -23,12 +23,12 @@ ESP32 based + SDReader + 2.8'resistive screen (240x320) [model](https://www.alie
 * FLASH: 4MB
 * Micro-SD card slot (SPI)
 * 2.8-inch display with 320 x 240 ILI9341 (SPI)   
-* SPI resitive touch panel XTP2048 (SPI)    
+* SPI resitive touch panel XPT2046 (SPI)    
 * 1 RGB led
 * 1 USB-Micro (Serial 0)
 * Power Supply: 5V / 1A
-* Header P3 : GND - GPIO 35 -GPIO 22 - GPIO21 
-* Header CN1 :  GND - GPIO 27 - NC - V3.3
+* Header P3 : GND - GPIO 35 - GPIO 22 - GPIO 21 
+* Header CN1 :  GND - NC (or GPIO 22 on some boards) - GPIO 27 - V3.3
 * Header power : VIN - TX - RX - GND
 
 ### Pins
@@ -66,10 +66,10 @@ ESP32 based + SDReader + 2.8'resistive screen (240x320) [model](https://www.alie
 |   30  |  GPIO18 |  TF_CLK (SD Card)                        |
 |   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
 |   32  |  NC     |  NA                                      |
-|   33  |  GPIO21 |  TFT / Header P3 Pin 1                   |
+|   33  |  GPIO21 |  TFT_BL / Header P3 Pin 1                |
 |   34  |  RXD0   |  RXD2 Header P1 Pin 3                    |
 |   35  |  TXD0   |  TXD2 Header P1 Pin 2                    |
-|   36  |  GPIO22 |  Header P3 Pin 2                         |
+|   36  |  GPIO22 |  Header P3 Pin 2 (also Header CN1 Pin 3 on some boards) |
 |   37  |  GPIO23 |  MCU_MOSI (SD Card)                      |
 |   38  |  GND    |  Ground                                  |
 |   39  |  GND    |  Ground                                  |
