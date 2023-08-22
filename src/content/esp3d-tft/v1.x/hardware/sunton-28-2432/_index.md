@@ -89,8 +89,6 @@ In either case, one will first need to acquire a compatible PSRAM IC.  This can 
 
 sdkconfig need to be modified to enable PSRAM
 
-```
-
 #### Option 1
 On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.
 * Place the PSRAM IC directly on top of the Flash IC (with the same orientation for Pin 1).
