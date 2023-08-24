@@ -4,7 +4,11 @@ archetype = "section"
 title = " 7.0' ESP32-8048S070"
 weight = 6
 +++
-* ESP32-S3 based + SDReader + PSRAM + 7' capacitive screen (800x480) [model](https://www.makerfabs.com/sunton-esp32-s3-7-inch-tn-display-with-touch.html)   
+
+* ESP32-S3 based + SDReader + PSRAM + 7' TFT (800x480) with Capacitive touch screen
+  * [Makerfabs](https://www.makerfabs.com/sunton-esp32-s3-7-inch-tn-display-with-touch.html)   
+  * [Aliexpress](https://www.aliexpress.us/item/3256804766411337.html)
+
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
 
@@ -14,8 +18,8 @@ weight = 6
 * PSRAM: 8MB     
 * FLASH: 16MB
 * Micro-SD card slot (SPI)
-* 7-inch display with 800×480 EK9716 (Parallel RGB-565 interface)  
-* I2C capacitive touch panel GT911 (i2C 0x38)
+* 7-inch 800x480 TFT display - EK9716 (Parallel RGB-565 interface)
+* Capacitive touch panel - GT911 (i2C 0x38)
 * Audio amplifier MA98357 (i2s) Speaker
 * 1 USB-C Serial port
 * I2C / SPI / GPIOs

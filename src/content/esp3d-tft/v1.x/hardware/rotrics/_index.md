@@ -4,7 +4,9 @@ archetype = "section"
 title = "3.5' Rotrics"
 weight = 2
 +++
-* ESP32 + SDReader + 3.5' Resistive screen (480x320) [Rotrics TFT](https://rotrics.com/products/3-5-inch-touchscreen)
+
+* ESP32 + SDReader + PSRAM + 3.5' TFT (480x320) with Resistive touch screen
+  * [Rotrics](https://rotrics.com/products/3-5-inch-touchscreen)
 
 ![image](front.png?width=400px)
 
@@ -13,8 +15,8 @@ weight = 2
 * PSRAM: 8MB   
 * FLASH: 8MB
 * Micro-SD card slot (SDIO 1 bit)
-* 3.5-inch display with 480 x 320 ILI9488 (SPI)   
-* SPI capacitive touch panel XTP2048 (SPI)    
+* 3.5-inch 480x320 TFT display - ILI9488 (SPI)   
+* Capacitive touch panel - XPT2046 (SPI)    
 * Built-in microphone   
 * Speaker
 * 1 USB-C (Serial 1)
