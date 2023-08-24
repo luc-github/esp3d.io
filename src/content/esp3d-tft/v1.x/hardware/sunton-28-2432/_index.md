@@ -81,13 +81,19 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
 
-Note: There are (at least) two revisions of this board.
+NOTE: There are (at least) two revisions of this board.
 * On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.
 * On another revision, the external SOIC-8 footprint is un-populated (the SPI flash is built into the ESP32 module).  See Option 2 below for Mod details.
 
-In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Some compatible ICs are: IPS6404L-SQ-SPN, APM6404-SQ-SPN, APS6404L-3SQR-SN.  Make sure whatever IC you choose supports ~3.3v and at least 80 MHz.
+In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Make sure whatever IC you choose supports 3.3v and at least 80 MHz.  Ideally it should support Quad SPI (QIO) as well.
 
-sdkconfig need to be modified to enable PSRAM
+Some compatible PSRAM ICs are:
+* ESP-PSRAM64H
+* IPS6404L-SQ-SPN
+* APM6404-SQ-SPN
+* APS6404L-3SQR-SN
+
+NOTE: sdkconfig, bsp.c, and lv_conf.h need to be modified to enable PSRAM
 
 #### Option 1
 On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.
