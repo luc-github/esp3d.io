@@ -17,7 +17,8 @@ By default, this board does not have PSRAM, and is unsupported due to critical p
 To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
 {{% /notice %}}
 
-ESP32 based + SDReader + 3.5' resistive or capacitive touch screen (480x320) [model](https://www.aliexpress.com/item/3256804446638703.html)
+* ESP32 based + SDReader + 3.5' TFT (480x320) with Resistive or Capacitive touch screen
+  * [Aliexpress](https://www.aliexpress.com/item/3256804446638703.html)
 
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
@@ -31,7 +32,7 @@ ESP32 based + SDReader + 3.5' resistive or capacitive touch screen (480x320) [mo
 * 3.5-inch 480x320 TFT display - ST7796 (SPI)   
 * Touch panel options:
   * ESP32-3248S028R - Resistive touch panel - XPT2046 (SPI)
-  * ESP32-3248S028C - Capacitive touch panel - GT911 (I2C)
+  * ESP32-3248S028C - Capacitive touch panel - GT911 (i2C 0x38)
 * 1 RGB led
 * 1 USB-Micro (Serial 0)
 * Power Supply: 5V / 1A

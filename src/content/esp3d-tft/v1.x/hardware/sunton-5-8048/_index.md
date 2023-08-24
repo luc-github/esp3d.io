@@ -1,10 +1,13 @@
 +++
-description = "ESP32-S3 5' (800x480) TFT"
+description = "ESP32-S3 5' (800x480) IPS TFT"
 archetype = "section"
 title = " 5.0' ESP32-8048S050"
 weight = 5
 +++
-* ESP32-S3 based + SDReader + PSRAM + 5' capacitive screen (800x480) [model](https://www.aliexpress.com/item/1005004952694042.html)   
+
+* ESP32-S3 based + SDReader + PSRAM + 5' IPS TFT (800x480) with Capacitive touch screen
+  * [Aliexpress](https://www.aliexpress.com/item/1005004952694042.html)
+
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
 
@@ -14,8 +17,8 @@ weight = 5
 * PSRAM: 8MB     
 * FLASH: 16MB
 * Micro-SD card slot (SPI)
-* 5-inch display with 800×480 ST7262 (Parallel RGB-565 interface)  
-* I2C capacitive touch panel GT911 (i2C 0x38)
+* 5-inch 800x480 IPS TFT display - ST7262 (Parallel RGB-565 interface)
+* Capacitive touch panel - GT911 (i2C 0x38)
 * Audio amplifier MA98357 (i2s) Speaker
 * 1 USB-C Serial port
 * I2C / SPI / GPIOs

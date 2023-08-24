@@ -13,7 +13,8 @@ By default, this board does not have PSRAM, and is unsupported due to critical p
 To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
 {{% /notice %}}
 
-ESP32 based + SDReader + 2.8' resistive touch screen (320x240) [model](https://www.aliexpress.com/item/3256804315935867.html)
+* ESP32 based + SDReader + 2.8' TFT (320x240) with Resistive touch screen
+  * [Aliexpress](https://www.aliexpress.com/item/3256804315935867.html)
 
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)

@@ -4,7 +4,9 @@ archetype = "section"
 title = "3.5' ZX3D50CE02S-USRC-4832"
 weight = 3
 +++
-ESP32-S3 based + SDReader + PSRAM + 3.5' capacitive screen (480x320) [model](https://www.aliexpress.com/item/1005004309826174.html)
+
+* ESP32-S3 based + SDReader + PSRAM + 3.5' TFT (480x320) with Capacitive touch screen
+  * [Aliexpress](https://www.aliexpress.com/item/1005004309826174.html)
 
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
@@ -15,8 +17,8 @@ ESP32-S3 based + SDReader + PSRAM + 3.5' capacitive screen (480x320) [model](htt
 * PSRAM: 2MB     
 * FLASH: 8MB
 * Micro-SD card slot (SPI)
-* 3.5-inch display with 480×320 ST7796UI (8080 parallel bus)  RGB565
-* I2C capacitive touch panel ft5x06 (i2C 0x38)
+* 3.5-inch 480x320 TFT display - ST7796UI (8080 parallel bus - RGB565)
+* Capacitive touch panel - ft5x06 (i2C 0x38)
 * Audio (NS4168)
 * 1 USB-C OTG (DFU/CDC) port
 * Wakeup and reset buttons, 

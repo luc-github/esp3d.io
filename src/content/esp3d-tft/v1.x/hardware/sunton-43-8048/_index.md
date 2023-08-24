@@ -1,10 +1,13 @@
 +++
-description = "ESP32-S3 4.3' (800x480) TFT"
+description = "ESP32-S3 4.3' (800x480) IPS TFT"
 archetype = "section"
 title = " 4.3' ESP32-8048S043"
 weight = 5
 +++
-* ESP32-S3 based + SDReader + PSRAM + 4.3' capacitive screen IPS (800x480) [model](https://www.aliexpress.com/item/1005004788147691.html)   
+
+* ESP32-S3 based + SDReader + PSRAM + 4.3' IPS TFT (800x480) with Capacitive touch screen
+  * [Aliexpress](https://www.aliexpress.com/item/1005004788147691.html)   
+
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
 
@@ -14,8 +17,9 @@ weight = 5
 * PSRAM: 8MB     
 * FLASH: 16MB
 * Micro-SD card slot (SPI)
-* 4.3-inch display with 800x480 ST7262 (Parallel RGB-565 interface)  (https://lang-ship.com/blog/work/esp32-4827s043/)
-* I2C capacitive touch panel GT911 (i2C 0x38)
+* 4.3-inch 800x480 IPS TFT display - ST7262 (Parallel RGB-565 interface)
+  * (https://lang-ship.com/blog/work/esp32-4827s043/)
+* Capacitive touch panel - GT911 (i2C 0x38)
 * Audio amplifier MA98357 (i2s) Speaker
 * 1 USB-C Serial port
 * I2C / SPI / GPIOs
