@@ -5,7 +5,7 @@ title = " 3.5' ESP32-3248S028 (Mod Required)"
 weight = 9
 +++
 
-{{% notice style="Blue" title="COMING SOON"  %}}
+{{% notice style="blue" title="COMING SOON"  %}}
 No firmware support yet.  Waiting on initial hardware delivery.
 {{% /notice %}}
 
@@ -28,7 +28,7 @@ ESP32 based + SDReader + 3.5' resistive or capacitive touch screen (480x320) [mo
 * PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
 * FLASH: 4MB* (*Up to 16MB with hardware mod)
 * Micro-SD card slot (SPI)
-* 3.5-inch display with 480 x 320 ST7796 (SPI)   
+* 3.5-inch 480x320 TFT display - ST7796 (SPI)   
 * Touch panel options:
   * ESP32-3248S028R - Resistive touch panel - XPT2046 (SPI)
   * ESP32-3248S028C - Capacitive touch panel - GT911 (I2C)

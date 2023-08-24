@@ -13,7 +13,7 @@ By default, this board does not have PSRAM, and is unsupported due to critical p
 To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
 {{% /notice %}}
 
-ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.aliexpress.com/item/3256804315935867.html)
+ESP32 based + SDReader + 2.8' resistive touch screen (320x240) [model](https://www.aliexpress.com/item/3256804315935867.html)
 
 ![image](front.jpg?width=400px)
 ![image](back.jpg?width=400px)
@@ -21,11 +21,11 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 
 ### Features
 * ESP32
-* PSRAM: NO* (*See Hardware Mod section below...)
-* FLASH: 4MB
+* PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
+* FLASH: 4MB* (*Up to 16MB with hardware mod)
 * Micro-SD card slot (SPI)
-* 2.8-inch display with 320 x 240 ILI9341 (SPI)   
-* SPI resitive touch panel XPT2046 (SPI)    
+* 2.8-inch 320x240 TFT display - ILI9341 (SPI)   
+* Resistive touch panel - XPT2046 (SPI)
 * 1 RGB led
 * 1 USB-Micro (Serial 0)
 * Power Supply: 5V / 1A
@@ -68,7 +68,7 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   30  |  GPIO18 |  TF_CLK (SD Card)                        |
 |   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
 |   32  |  NC     |  NA                                      |
-|   33  |  GPIO21 |  TFT_BL / Header P3 Pin 1                |
+|   33  |  GPIO21 |  TFT_BL (TFT) / Header P3 Pin 1          |
 |   34  |  RXD0   |  RXD2 Header P1 Pin 3                    |
 |   35  |  TXD0   |  TXD2 Header P1 Pin 2                    |
 |   36  |  GPIO22 |  Header P3 Pin 2 (also Header CN1 Pin 3 on some boards) |
@@ -76,7 +76,7 @@ ESP32 based + SDReader + 2.8' resistive screen (320x240) [model](https://www.ali
 |   38  |  GND    |  Ground                                  |
 |   39  |  GND    |  Ground                                  |
 
-* Requires Hardware Mod
+\* Requires Hardware Mod
 
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
@@ -87,13 +87,13 @@ NOTE: There are (at least) two revisions of this board.
 
 In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Make sure whatever IC you choose supports 3.3v and at least 80 MHz.  Ideally it should support Quad SPI (QIO) as well.
 
-Some compatible PSRAM ICs are:
+Some compatible 8MB PSRAM ICs are:
 * ESP-PSRAM64H
 * IPS6404L-SQ-SPN
 * APM6404-SQ-SPN
 * APS6404L-3SQR-SN
 
-NOTE: sdkconfig, bsp.c, and lv_conf.h need to be modified to enable PSRAM
+NOTE: Remember to choose the correct variant in CMakeLists.txt to enable PSRAM support.
 
 #### Option 1
 On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.
@@ -104,12 +104,10 @@ On this revision, the PSRAM must be piggy-backed on top of the external Flash IC
 * Connect a bodge wire from Pin 6 to GPIO 17 (can use the Pad of the RGB LED farthest from the ESP32 module on the bottom row).
 * Attach a 10k resistor between Pins 1 & 8 of the PSRAM IC. This is a pull-up resistor that ensures the PSRAM is deselected by default (i.e. when the Flash IC is in use).
 
-
-
 #### Option 2
 On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint.
-* Solder the PSRAM IC to the SOIC-8 footprint (making sure Pin 1 is in the correct orientation).
 * Cut the PCB trace going to Pin 1 as well as the PCB trace going to pin 6.
+* Solder the PSRAM IC to the SOIC-8 footprint (making sure Pin 1 is in the correct orientation).
 * Remove the RGB LED, as it conflicts with GPIO 16 & 17 that are needed for the new PSRAM IC.
 * Connect a bodge wire from Pin 1 to GPIO 16 (can use the Pad of the RGB LED closest to the ESP32 module).
 * Connect a bodge wire from Pin 6 to GPIO 17 (can use the Pad of the RGB LED farthest from the ESP32 module on the bottom row).
