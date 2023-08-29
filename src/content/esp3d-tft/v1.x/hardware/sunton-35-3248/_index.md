@@ -1,7 +1,7 @@
 +++
 description = "ESP32 - 3.5' (480x320) TFT"
 archetype = "section"
-title = " 3.5' ESP32-3248S028 (Mod Required)"
+title = " 3.5' ESP32-3248S035 (Mod Required)"
 weight = 9
 +++
 
@@ -31,8 +31,8 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 * Micro-SD card slot (SPI)
 * 3.5-inch 480x320 TFT display - ST7796 (SPI)   
 * Touch panel options:
-  * ESP32-3248S028R - Resistive touch panel - XPT2046 (SPI)
-  * ESP32-3248S028C - Capacitive touch panel - GT911 (i2C 0x38)
+  * ESP32-3248S035R - Resistive touch panel - XPT2046 (SPI)
+  * ESP32-3248S035C - Capacitive touch panel - GT911 (i2C 0x38)
 * 1 RGB led
 * 1 USB-Micro (Serial 0)
 * Power Supply: 5V / 1A
