@@ -56,4 +56,4 @@ CONFIG_BOOT_ROM_LOG_ON_GPIO_HIGH=y
 ```
 
 Then flash the board, you can reverse the change in SDK config file after as it won't take in account anymore because the change is only allowed once.
-On [Panlee](/esp3d-tft/v1.x/hardware/panlee/) and [HMI S3](/esp3d-tft/v1.x/hardware/hmis3/) the pin that trigger the bootloader repport is the GPIO 46 and it is low at boot.
+On [Panlee](/esp3d-tft/v1.x/hardware/panlee/) and [HMI S3](/esp3d-tft/v1.x/hardware/hmis3/) the pin that trigger the bootloader report is the GPIO 46 and it is low at boot.
