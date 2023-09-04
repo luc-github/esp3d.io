@@ -46,7 +46,7 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 |   1   |  GND    |  Ground                                  |
 |   2   |  VCC    |  +3V3                                    |
 |   3   |  EN     |  RST / TFT_RST (Reset / LCD)             |
-|   4   |  GPIO36 |  SENSOR_VP / TP_IRQ (Res. Touchscreen)   |
+|   4   |  GPIO36 |  SENSOR_VP / RTP_IRQ (Res. Touchscreen)  |
 |   5   |  GPIO39 |  SENSOR_VN                               |
 |   6   |  GPIO34 |  ADC                                     |
 |   7   |  GPIO35 |  Header P3 Pin 3                         |
