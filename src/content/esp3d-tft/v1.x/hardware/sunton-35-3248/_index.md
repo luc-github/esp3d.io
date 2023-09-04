@@ -5,10 +5,6 @@ title = " 3.5' ESP32-3248S035 (Mod Required)"
 weight = 9
 +++
 
-{{% notice style="blue" title="COMING SOON"  %}}
-No firmware support yet.  Waiting on initial hardware delivery.
-{{% /notice %}}
-
 {{% notice style="red" title="Important"  %}}
 ESP3D-TFT requires PSRAM for full functionality.
 
