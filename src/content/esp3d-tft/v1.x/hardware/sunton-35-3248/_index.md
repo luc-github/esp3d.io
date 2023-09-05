@@ -28,7 +28,7 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 * 3.5-inch 480x320 TFT display - ST7796 (SPI)   
 * Touch panel options:
   * ESP32-3248S035R - Resistive touch panel - XPT2046 (SPI)
-  * ESP32-3248S035C - Capacitive touch panel - GT911 (i2C 0x38)
+  * ESP32-3248S035C - Capacitive touch panel - GT911 (i2C 0x5D)
 * 1 RGB led
 * 1 USB-Micro (Serial 0)
 * Power Supply: 5V / 1A
@@ -71,7 +71,7 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 |   30  |  GPIO18 |  TF_CLK (SD Card)                        |
 |   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
 |   32  |  NC     |  NA                                      |
-|   33  |  GPIO21 |  CTP_INT (Cap. Touchscreen) / Headers: P3 Pin 1, CN1 Pin 2 |
+|   33  |  GPIO21 |  CTP_INT* (Cap. Touchscreen) / Headers: P3 Pin 1, CN1 Pin 2 |
 |   34  |  RXD0   |  RXD2 Header P1 Pin 3                    |
 |   35  |  TXD0   |  TXD2 Header P1 Pin 2                    |
 |   36  |  GPIO22 |  Header P3 Pin 2 (also Header CN1 Pin 3 on some boards) |
@@ -80,6 +80,18 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 |   39  |  GND    |  Ground                                  |
 
 \* Requires Hardware Mod
+
+### Hardware Mod (Add Hardware Interrupt for GT911 Capacitive Touch - Only applies to ESP32_3248S035C)
+There is a routing mistake on the ESP32_3248S035C board that accidentally connects the Capacitive Touch Screen's GT911 Interrupt pin to GND instead of through the R25 jumper to GPIO21.  This means that the code has to use polling (by default) instead of hardware interrupts to determine when the screen is being touched.  This results in excessive CPU utilization of greater than 80%.  Making the below modifications results in a significantly reduced CPU utilization of under 10% on avg (on static screens).
+
+#### Steps (see picture)
+* Cut the PCB trace going to the GT911's INT pin (labeled as pin 5 on the flex cable).  This disconnects GT911's INT pin from GND.
+* Connect a bodge wire from the GT911's INT pin to the closest side of R25 (connecting it to GPIO21).
+* Remove (pull-up) resistor R18 (GPIO21 to 3V3).  The GT911's INT pin is not strong enough to drive GPIO21 low with this resistor installed.
+
+NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt
+
+![image-after](gt911-int-after-mod.jpg?width=400px)
 
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
