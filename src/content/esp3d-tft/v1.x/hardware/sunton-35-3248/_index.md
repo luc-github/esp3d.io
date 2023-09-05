@@ -81,7 +81,9 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 
 \* Requires Hardware Mod
 
-### Hardware Mod (Add Hardware Interrupt for GT911 Capacitive Touch - Only applies to ESP32_3248S035C)
+### Hardware Mod (Add Hardware Interrupt for GT911)
+NOTE: This only applies to the screen with the Capacitive touch panel (ESP32_3248S035C)
+
 There is a routing mistake on the ESP32_3248S035C board that accidentally connects the Capacitive Touch Screen's GT911 Interrupt pin to GND instead of through the R25 jumper to GPIO21.  This means that the code has to use polling (by default) instead of hardware interrupts to determine when the screen is being touched.  This results in excessive CPU utilization of greater than 80%.  Making the below modifications results in a significantly reduced CPU utilization of under 10% on avg (on static screens).
 
 #### Steps (see picture)
@@ -91,7 +93,7 @@ There is a routing mistake on the ESP32_3248S035C board that accidentally connec
 
 NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt
 
-![image-after](gt911-int-after-mod.jpg?width=400px)
+![image-gt911-int-after-mod](gt911-int-after-mod.jpg?width=400px)
 
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
