@@ -84,7 +84,7 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 ### Hardware Mod (Add Hardware Interrupt for GT911 Capacitive Touch - Only applies to ESP32_3248S035C)
 There is a routing mistake on the ESP32_3248S035C board that accidentally connects the Capacitive Touch Screen's GT911 Interrupt pin to GND instead of through the R25 jumper to GPIO21.  This means that the code has to use polling (by default) instead of hardware interrupts to determine when the screen is being touched.  This results in excessive CPU utilization of greater than 80%.  Making the below modifications results in a significantly reduced CPU utilization of under 10% on avg (on static screens).
 
-#### Steps (see pictures)
+#### Steps (see picture)
 * Cut the PCB trace going to the GT911's INT pin (labeled as pin 5 on the flex cable).  This disconnects GT911's INT pin from GND.
 * Connect a bodge wire from the GT911's INT pin to the closest side of R25 (connecting it to GPIO21).
 * Remove (pull-up) resistor R18 (GPIO21 to 3V3).  The GT911's INT pin is not strong enough to drive GPIO21 low with this resistor installed.
