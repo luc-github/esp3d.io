@@ -91,7 +91,7 @@ There is a routing mistake on the ESP32_3248S035C board that accidentally connec
 
 NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt
 
-![image-after](gt911-int-after-mod.jpg?width=400px)
+![image-gt911-int-after-mod](gt911-int-after-mod.jpg?width=400px)
 
 ### Hardware Mod (Add External PSRAM)
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
