@@ -2,7 +2,7 @@
 description = "ESP32 - 2.8' (320x240) TFT"
 archetype = "section"
 title = " 2.8' ESP32-2432S028R (Mod Required)"
-weight = 8
+weight = 10
 +++
 
 {{% notice style="red" title="Important"  %}}
@@ -22,13 +22,14 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 
 ### Features
 * ESP32
-* PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
 * FLASH: 4MB* (*Up to 16MB with hardware mod)
+* PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
 * Micro-SD card slot (SPI)
 * 2.8-inch 320x240 TFT display - ILI9341 (SPI)   
 * Resistive touch panel - XPT2046 (SPI)
 * 1 RGB led
-* 1 USB-Micro (Serial 0)
+* 1 USB-Micro to Serial 0 (CH340C)
+* Boot and reset buttons
 * Power Supply: 5V / 1A
 * Header P3 : GND - GPIO 35 - GPIO 22 - GPIO 21 
 * Header CN1 :  GND - NC (or GPIO 22 on some boards) - GPIO 27 - V3.3
