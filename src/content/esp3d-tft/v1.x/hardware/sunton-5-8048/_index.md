@@ -19,7 +19,7 @@ weight = 6
 * Micro-SD card slot (SPI)
 * 5-inch 800x480 IPS TFT display - ST7262 (Parallel RGB-565 interface)
 * Capacitive touch panel - GT911 (i2C - 0x5D or 0x14)
-* Audio amplifier MA98357 (i2s) Speaker
+* Audio amplifier MAX98357 (i2s) Speaker
 * 1 USB-C to Serial 0 (CH340C)
 * I2C / SPI / GPIOs
 * Boot and reset buttons

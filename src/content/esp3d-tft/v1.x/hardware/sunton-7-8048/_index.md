@@ -20,7 +20,7 @@ weight = 5
 * Micro-SD card slot (SPI)
 * 7-inch 800x480 TFT display - EK9716 (Parallel RGB-565 interface)
 * Capacitive touch panel - GT911 (i2C - 0x5D or 0x14)
-* Audio amplifier MA98357 (i2s) Speaker
+* Audio amplifier MAX98357 (i2s) Speaker
 * 1 USB-C to Serial 0 (CH340C)
 * I2C / SPI / GPIOs
 * Boot and reset buttons
