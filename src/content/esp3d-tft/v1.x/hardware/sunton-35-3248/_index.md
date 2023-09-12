@@ -1,7 +1,7 @@
 +++
 description = "ESP32 - 3.5' (480x320) TFT"
 archetype = "section"
-title = " 3.5' ESP32-3248S035 (Mod Required)"
+title = " 3.5' ESP32-3248S035R/C (Mod Required)"
 weight = 9
 +++
 
@@ -22,15 +22,16 @@ To restore full functionality, this board must be modded with external PSRAM. (S
 
 ### Features
 * ESP32
-* PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
 * FLASH: 4MB* (*Up to 16MB with hardware mod)
+* PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below...)
 * Micro-SD card slot (SPI)
-* 3.5-inch 480x320 TFT display - ST7796 (SPI)   
+* 3.5-inch 480x320 TFT display - ST7796 (SPI)
 * Touch panel options:
   * ESP32-3248S035R - Resistive touch panel - XPT2046 (SPI)
-  * ESP32-3248S035C - Capacitive touch panel - GT911 (i2C 0x5D)
+  * ESP32-3248S035C - Capacitive touch panel - GT911 (i2C - 0x5D or 0x14)
 * 1 RGB led
-* 1 USB-Micro (Serial 0)
+* 1 USB-Micro to Serial 0 (CH340C)
+* Boot and reset buttons
 * Power Supply: 5V / 1A
 * Header P3 : GND - GPIO 35 - GPIO 22 - GPIO 21 
 * Header CN1 :  GND - NC (or GPIO 22 on some boards) - GPIO 21 - V3.3
