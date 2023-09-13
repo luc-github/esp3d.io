@@ -1,17 +1,9 @@
 +++
 description = "ESP32 - 3.5' (480x320) TFT"
 archetype = "section"
-title = " 3.5' ESP32-3248S035R/C (Mod Required)"
+title = " 3.5' ESP32-3248S035R/C"
 weight = 9
 +++
-
-{{% notice style="red" title="Important"  %}}
-ESP3D-TFT requires PSRAM for full functionality.
-
-By default, this board does not have PSRAM, and is unsupported due to critical performance issues.
-
-To restore full functionality, this board must be modded with external PSRAM. (See Hardware Mod section below...)
-{{% /notice %}}
 
 * ESP32 based + SDReader + 3.5' TFT (480x320) with Resistive or Capacitive touch screen
   * [Aliexpress](https://www.aliexpress.com/item/3256804446638703.html)
@@ -97,7 +89,7 @@ NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt
 ![image-gt911-int-after-mod](gt911-int-after-mod.jpg?width=400px)
 
 ### Hardware Mod (Add External PSRAM)
-This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve full functionality and performance.
+This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve more available memory.
 
 NOTE: There are (at least) two revisions of this board.
 * On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.
