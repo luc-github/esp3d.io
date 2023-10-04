@@ -11,10 +11,10 @@ weight = 2
 
 ```
 node -v
-v16.14.2
+v20.8.0
 
 npm -v
-8.5.0
+10.2.0
 ```
 
 2 - Download all necessary packages in ESP3D-WEBUI directory (repository root)
