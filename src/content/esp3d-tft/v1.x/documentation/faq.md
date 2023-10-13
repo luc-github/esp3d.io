@@ -31,7 +31,7 @@ So make it silent is a must.
 Bootloader report is not displayed if GPIO15 is connected to GND at startup.
 
 #### On ESP32-S3
-On ESP32-S3 bootloader report is always displayed by default, changing the behavior can be done only once.
+On ESP32-S3 bootloader report is always displayed by default, changing the behavior can be done only once for the pin GPIO46
 in sdkconfig file change :
 ```
 #
