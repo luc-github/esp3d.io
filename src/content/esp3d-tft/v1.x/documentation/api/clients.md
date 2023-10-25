@@ -2,6 +2,7 @@
 description = "Clients description, messages and parameters"
 archetype = "section"
 title = "Clients"
+menuPre = "<i class='fas fa-network-wired'></i> "
 weight = 2
 mermaidInitialize = "{ \"theme\": \"dark\" }"
 mermaidZoom = true

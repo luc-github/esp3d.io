@@ -2,6 +2,7 @@
 description = "Web Sockets description, messages and parameters"
 archetype = "section"
 title = "Web Sockets"
+menuPre = "<i class='fas fa-plug'></i> "
 weight = 2
 +++
 

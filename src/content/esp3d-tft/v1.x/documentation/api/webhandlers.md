@@ -2,6 +2,7 @@
 description = "Web handlers description and parameters"
 archetype = "section"
 title = "Web Handlers"
+menuPre = "<i class='fas fa-link'></i> "
 weight = 1
 +++
 

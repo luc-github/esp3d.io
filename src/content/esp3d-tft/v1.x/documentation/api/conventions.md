@@ -2,6 +2,7 @@
 description = "Syntax conventions in used languages"
 archetype = "section"
 title = "Syntax conventions"
+menuPre = "<i class='fas fa-spell-check'></i> "
 weight = 4
 +++
 
