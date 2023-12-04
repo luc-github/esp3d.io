@@ -60,6 +60,7 @@ The V3.X features are :
     * Telegram
     * PushOver
     * IFTTT
+    * Home Assistant
 * Sensors support
     * DHT 11/22
     * Analog

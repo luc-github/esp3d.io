@@ -35,6 +35,11 @@ Please follow this [link](telegram/) for more information on how to setup a tele
 
 The notification will also be sent to the WebUi 
 
+### [Home Assistant](https://developers.home-assistant.io/docs/api/rest//)    
+Talk directly to your local home assistant
+
+Please follow this [link](home-assistant/) for more information on how to setup a Home Assistant notification service
+
 ### How to send message ?  
 Just add following command in your slicer's end script, or manualy on your GCODE file:   
 `[ESP600]msg pwd=<admin password>`
