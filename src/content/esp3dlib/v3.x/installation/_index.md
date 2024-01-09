@@ -34,6 +34,7 @@ Please be sure these setting are enabled they are mandatory for ESP3DLib
 ```cpp
 #define WEBSUPPORT          // Start a webserver (which may include auto-discovery)
 #define WIFI_CUSTOM_COMMAND // Accept feature config commands (e.g., WiFi ESP3D) from the host|
+#define CUSTOM_SD_ACCESS    // Enable another lib accessing the SD card without conflicts
 ```
 Web Update is supported by ESP3DLib but you can also use:
 ```cpp

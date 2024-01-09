@@ -11,7 +11,7 @@ there are 2
     used to stream data to webUI and exchange internal data
 
 -   data websocket
-    used to exchange data
+    used to exchange data with external client (not used by WebUI)
 
 ## Terminal websocket
 
