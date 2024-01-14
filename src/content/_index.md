@@ -31,7 +31,9 @@ graph LR;
 {{< mermaid >}}
 %%{init:{"theme":"default"}}%%
 graph LR;
-    A{<strong>Connection?</strong>} -->|Serial| B[ESP3D]
+    A{<strong>Connection?</strong>} -->|Serial| B{<strong>Has Touchscreen ?</strong>} 
+    B -->|No|H[ESP3D]
+    B -->|Yes|I[ESP3D-TFT]
     A -->|USB| C{<strong>Is ESP32-S3 ?</strong>} 
     C -->|No| D[Sorry no support for this] 
     C -->|Yes| E{<strong>Has Touchscreen ?</strong>}
