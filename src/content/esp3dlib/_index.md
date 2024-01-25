@@ -11,12 +11,7 @@ Features depends on the version the ESP3DLib installed.
 
 ### Tested boards 
 
-#### [ESP32 Controller](https://github.com/simon-jouet/ESP32Controller)
-#### [FYSETC-E4](https://github.com/FYSETC/FYSETC-E4)
-#### [MRR_ESPA](https://github.com/maplerainresearch/MRR_ESPA)
-#### [MRR_ESPE](https://github.com/maplerainresearch/MRR_ESPE)
-#### [Panda Zhu](https://github.com/markniu/PandaZHU)
-#### [MKS Tinybee](https://github.com/makerbase-mks/MKS-TinyBee)
+The list is [here](/esp3dlib/v1.x/hardware/) for 1.0, and [here](/esp3dlib/v3.x/hardware/) for 3.0
 
 Please refer to Marlin documentation for more information on specific configurations for each boards.
 

@@ -3,7 +3,7 @@ archetype = "section"
 title = " Home Assistant"
 weight = 2
 +++
-[Line](https://www.home-assistant.io/) is a home automation platform
+[Home Assistant](https://www.home-assistant.io/) is a home automation platform
 
 Considering you have Home Assistant running in your local network:
 
