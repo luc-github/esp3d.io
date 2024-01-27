@@ -19,3 +19,10 @@ This ESP01 cannot be used on Bigtreetech boards as it is, a small rework is nece
 ![bridge](bridge.png?width=400px)
 
 {{% /notice %}}
+
+### Pinout
+
+| 1 | 2 | 3 | 4 |
+|:-:|:-:|:-:|:-:|
+|GND|IO02|IO0|RXD|
+|TXD|CH_PD|RESET|VCC|

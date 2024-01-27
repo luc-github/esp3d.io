@@ -13,3 +13,10 @@ weight = 3
 {{% notice style="warning" title="Note"  %}}
 Because flash is only 1MB, OTA/Web Update are not possible
 {{% /notice %}}
+
+### Pinout
+
+| 1 | 2 | 3 | 4 |
+|:-:|:-:|:-:|:-:|
+|GND|IO02|IO0|RXD|
+|TXD|CH_PD|RESET|VCC|

@@ -10,3 +10,15 @@ weight = 4
 
 ![image](front.png?width=400px)
 
+### Pinout
+
+| 1 | 2 |
+|:-:|:-:|
+|RST|TX|
+|ADC|RX|
+|CH_PD|IO5 |
+|IO16|IO4|
+|IO14|IO0|
+|IO12|IO2|
+|IO13|IO15|
+|VCC|GND|
