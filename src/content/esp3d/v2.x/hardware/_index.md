@@ -2,6 +2,6 @@
 archetype = "section"
 title = "Hardware"
 menuPre = "<i class='fas fa-microchip'></i> "
-weight = 4
+weight = 1
 +++
 {{% children sort="weight" description="false" depth="4" %}}
