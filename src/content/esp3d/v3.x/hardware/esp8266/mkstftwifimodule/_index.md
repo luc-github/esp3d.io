@@ -13,7 +13,6 @@ weight = 9
 ![image](mkswifimodulefront.png?width=400px)
 ![image](mkswifimoduleback.png?width=400px)
 
-
 ### Pinout
 
 | 1 | 2 | 3| 4|
@@ -21,6 +20,4 @@ weight = 9
 |VCC |GND|IO0|IO4|
 |NC|TX|RX|RST|
 
-{{% notice style="warning" title="Note"  %}}
-MKS file upload is not supported, use ESP3D 3.0 or later for MKS protocol support
-{{% /notice %}}
+

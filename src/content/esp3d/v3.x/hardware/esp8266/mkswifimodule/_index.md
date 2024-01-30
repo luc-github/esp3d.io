@@ -24,7 +24,3 @@ weight = 9
 |IO12|IO2|
 |IO13|IO15|
 |3.3V|GND|
-
-{{% notice style="warning" title="Note"  %}}
-MKS file upload is not supported, use ESP3D 3.0 or later for MKS protocol support
-{{% /notice %}}
