@@ -54,4 +54,12 @@ Just add following command in your slicer's end script, or manualy on your GCODE
 * on Smoothieware   
 `echo [ESP600]msg`
 
+{{% notice style="info" title="Note"  %}}
 
+The message can also contain the following variables:
+
+* %ESP_IP% : the IP address of the ESP
+* %ESP_NAME% : the name of the ESP
+* %ESP_DATETIME% : the current date and time
+
+{{% /notice %}}
