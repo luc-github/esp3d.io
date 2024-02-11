@@ -8,7 +8,7 @@ weight = 3
 [Github](https://github.com/Freenove/Freenove_ESP32_S3_WROOM_Board)
 
 ## Specs
-* ESP32-S3 with 8MB flash memory, 8MB PSRAM, ceramic antenna, RGB led, Camera and SD card reader (SDIO 1bit)
+* ESP32-S3 with 8MB flash memory, 8MB PSRAM (opi), ceramic antenna, RGB led, Camera and SD card reader (SDIO 1bit)
 
 
 ![image](front.jpg?width=400px)
