@@ -28,3 +28,14 @@ Camera: CAMERA_MODEL_ESP32S3_EYE
 RGB Led:  WS2812_PIN  48
  
 
+{{% notice style="orange" title="Warning" icon="exclamation" %}}
+This board may have a significant grounding or EMI issue.    
+
+If you experience poor performance when PSRAM is enabled, such as the web UI taking 20 seconds to load in the browser or camera lag, you can try a workaround:
+
+Plug the board into a breadboard, making sure that each pin does not connect to any others, in order to shield the external pins. Additionally, apply pressure to the ESP shield with your finger. The performance should return to normal within a couple of seconds.   
+
+Solution found by [@levak](https://github.com/levak)
+{{% /notice %}}
+
+
