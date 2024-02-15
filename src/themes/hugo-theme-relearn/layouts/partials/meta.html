@@ -11,7 +11,7 @@
     {{ $ver | safeHTML }}
     {{- end }}
     {{- if not (and .Title (or (ne (.Scratch.Get "relearnIsHiddenStem") true) (ne .Site.Params.disableSeoHiddenPages true) ) ) }}
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="keywords" content="esp3d, esp3dlib, esp3d-webui, esp3d-tft, esp3d-configurator, marlin, repetier, smoothieware, grblhal, cnc, 3dprinter, wifi, ethernet,  bluetooth, nodemcu, mks, fysetc, panucatt, nodemcu, wemos, camera, esp8285, esp32, esp32s3, esp32s2, esp32c3, firmware, arduino, espressif, idf, library, tft, sdcard, monitoring, control, upload">
     {{- end }}
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     {{- with .Site.Params.author }}
