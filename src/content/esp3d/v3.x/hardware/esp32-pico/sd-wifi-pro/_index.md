@@ -18,3 +18,20 @@ weight = 17
 {{% notice style="warning" title="Note"  %}}
 Because there is no serial connection to printer, the features are limited to SD card access features
 {{% /notice %}}
+
+{{% notice style="info" title="Note"  %}}
+My boards have only 4MB flash and no PSRAM unlike described in github and FYSETC website, so the following pio settings are limited to 4MB flash size and no PSRAM, if you have an 8MB board and 2MB PSRAM you may need to adjust the parameters .
+
+{{% /notice %}}
+
+### configuration.h
+```js          
+{{% include file="/esp3d/v3.x/hardware/esp32-pico/sd-wifi-pro/configuration.h"  %}}
+```
+
+### platformio.ini
+```ini
+{{% include file="/esp3d/v3.x/hardware/esp32-pico/sd-wifi-pro/platformio.ini"  %}}
+```
+
+{{% attachments sort="asc" /%}}

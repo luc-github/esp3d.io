@@ -5,7 +5,7 @@ weight = 1
 +++
 
 ### What is ESP3D ?
-ESP3D is a a firmware for ESP8266 and ESP32 boards from espressif, This firmware allows not only to have a cheap bridge between Wifi and serial, but also to have a web UI to configure wifi, to monitor 3D printer/CNC and even control it, and to make things easy, UI is fully customizable without reflashing FW.
+ESP3D is a firmware for ESP8266 and ESP32 boards from espressif, This firmware allows not only to have a cheap bridge between Wifi and serial, but also to have a web UI to configure wifi, to monitor 3D printer/CNC and even control it, and to make things easy, UI is fully customizable without reflashing FW.
 
 Firmware support different target firmwares according version. 
 
