@@ -1,7 +1,7 @@
 +++
 archetype = "section"
 title = "Bigtreetech Octopus 1.1 board"
-descrption = "Socket avvailable"
+description = "Socket avvailable"
 weight = 7
 +++
 The wifi connector is for BTT WIFI module (16 pins)

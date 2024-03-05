@@ -1,7 +1,7 @@
 +++
 archetype = "section"
 title = "Bigtreetech skr mini board"
-descrption = "No socket available"
+description = "No socket available"
 weight = 9
 +++
 This board is from Bigtreetech and went through various hardware revisions; all of them still feature a TFT pin header which is where you can tap the TX and RX needed. The wiring below is made with a 1.2 board, but the same applies for the other revisions as well; if you need the exact schematic for your mainboard version, you can check [Bigtreetech's github repository](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/tree/master/hardware).

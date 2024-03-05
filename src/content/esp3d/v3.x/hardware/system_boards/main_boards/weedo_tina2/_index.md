@@ -1,7 +1,7 @@
 +++
 archetype = "section"
 title = "Bigtreetech skr board"
-descrption = "Socket available"
+description = "Socket available"
 weight = 20
 +++
 
