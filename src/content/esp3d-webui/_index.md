@@ -5,7 +5,7 @@ weight = 4
 +++
 
 ### What is ESP3D-WEBUI ?
-ESP3D-WEBUI is a web interface designed to work with [ESP3D](/esp3d/), [ESPDLib](/esp3dlib/) and [ESP3D-TFT](/esp3d-tft/) 
+ESP3D-WEBUI is a web interface designed to work with [ESP3D](/esp3d/), [ESPDLib](/esp3dlib/), [ESP3D-TFT](/esp3d-tft/) and [grblHAL](https://github.com/grblHAL)
 
 {{% notice style="orange" title="Warning" icon="exclamation" %}}
 The version to be used depend on firmware version itself, please refer to the firmware version page to know what Web UI to use.
