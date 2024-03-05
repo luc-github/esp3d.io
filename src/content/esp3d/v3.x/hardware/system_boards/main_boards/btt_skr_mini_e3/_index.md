@@ -11,5 +11,11 @@ This board is from Bigtreetech and went through various hardware revisions; all 
 ![step2](skr_mini_12_schematic.png?width=300px)
 
 The TFT connector is labeled on the board; you can use dupont connectors for the wiring job, no soldering skills needed as long as your ESP comes with pre soldered headers. 
-Note: the TFT connector provides 5V DC, so be sure to provide them on the correct ESP pin and, most importantly, if your ESP can work with 5 volts as input. You should also pay attention on the board orientation in the schematic, although I oriented it the same way as the actual picture on the left so it's easier for you. 
+Note: the TFT connector provides 5V DC, so be sure to provide them on the correct ESP pin. 
 
+| <!-- -->  | <!-- --> |
+|-|-|
+| Board pins voltage | 3.3v |
+| Board firmware | Marlin | 
+| Board configuration note | Enable second serial port in the marlin configuration file |
+| ESP3D configuration note | Raw serial, no SD |
