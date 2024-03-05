@@ -4,4 +4,4 @@ title = "Hardware connection"
 weight = 3
 +++
 
-{{% include file="common/hardware-connection.md" %}}
+{{% include file="common/hardware-connection2.md" %}}
