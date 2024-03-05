@@ -12,3 +12,10 @@ Since soldering might be difficult because the solder points are so close to eac
 
 ![step2](traces.jpg?width=300px)
 
+
+| <!-- -->  | <!-- --> |
+|-|-|
+| Board pins voltage | 5v |
+| Board firmware | Marlin | 
+| Board configuration note | None, it use same serial as USB port so don't use both together |
+| ESP3D configuration note | Raw serial, no SD |

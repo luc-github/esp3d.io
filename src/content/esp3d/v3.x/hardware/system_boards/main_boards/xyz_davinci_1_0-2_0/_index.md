@@ -14,3 +14,11 @@ The board is a due based and has a serial port available on the backside of the 
 ![step4](backside.jpg?width=300px)
 
 ![step5](screen.jpg?width=300px)
+
+
+| <!-- -->  | <!-- --> |
+|-|-|
+| Board pins voltage | 3.3v |
+| Board firmware | Repetier for Davinci | 
+| Board configuration note | Enable wifi in the firmware configuration file |
+| ESP3D configuration note | Raw serial, no SD |

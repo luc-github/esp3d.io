@@ -16,3 +16,11 @@ ESP12E RX is connected to the pin NEAR GND of the upper row (Marked TXD on pinou
 ESP12E TX is connected to the adiacent pin at the end of the upper row (Marked RXD on pinout.)
 
 ![step2](board.png?width=300px)
+
+
+| <!-- -->  | <!-- --> |
+|-|-|
+| Board pins voltage | 5v |
+| Board firmware | Marlin | 
+| Board configuration note | None, it use same serial as USB port so don't use both together |
+| ESP3D configuration note | Raw serial, no SD |
