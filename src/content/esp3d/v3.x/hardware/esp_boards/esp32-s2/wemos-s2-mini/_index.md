@@ -13,7 +13,7 @@ weight = 3
 [Documentation](https://www.wemos.cc/en/latest/s2/s2_mini.html)
 
 ## Specs
-* ESP32-S2 with 4MB flash memory, 2MB PSRAM ceramic antenna
+* ESP32-S2 (single-core) with 4MB flash memory, 2MB PSRAM ceramic antenna
 
 
 ![image](front.jpg?width=400px)
