@@ -14,6 +14,8 @@ weight = 2
 * Update the project submodules   
 `git submodule update --init --recursive`
 
+If you need to climb over a wall to connect to GitHub, it is recommended to use dev sidecar.
+
 #### Using release package
 
 *Not ready yet, please be patient*
@@ -32,11 +34,22 @@ The [espressif extension](https://github.com/espressif/vscode-esp-idf-extension)
 
 Please follow the [official tutorial](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
 
+You can also install ESP-IDF offline .Especially suitable for people with slow download speeds.
+- Download [installer](https://dl.espressif.cn/dl/esp-idf/).
+- Installing the installer.
+### Install the CMake extension and CMake Tools extension  in vscode
+
+Cmake can automatically download the components required for ESP3D, such as camera and USB host.
+
 ### Configure the extension
 - Select : View->Command palette 
 - Type : configure esp
 
 Currently ESP3D-TFT use the released version 5.1  of the IDF 
+
+If you install ESP-IDF offline, you need to select "UseExitSetup"
+![image](UseExitSetup.png?width=200px)
+Then select the ESP IDF installation path
 
 ### Open ESP3D-TFT project
 - Go to file and select open folder where project is located
