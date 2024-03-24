@@ -15,7 +15,7 @@ there are 2
 
 ## Terminal websocket
 
-use subprotocol `webui-v3`
+use subprotocol `webui-v3` and port is web port +1 (e.g: 80+1=>81)
 
 ### <u>text mode</u>
 
@@ -59,7 +59,7 @@ Reserved
 
 ## Data websocket
 
-use sub protocol `arduino`
+use sub protocol `arduino` and port is any defined port (e.g: 8282)
 
 ### <u>text mode</u>
 

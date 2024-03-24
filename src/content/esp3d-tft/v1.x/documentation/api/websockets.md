@@ -16,8 +16,8 @@ there are 2
 
 ## Terminal websocket
 
-use subprotocol `webui-v3`
-
+use subprotocol `webui-v3` and port is same as web port but use address `/ws`
+ 
 ### <u>text mode</u>
 
 Reserved
@@ -60,7 +60,7 @@ Reserved
 
 ## Data websocket
 
-use sub protocol `arduino`
+use sub protocol `arduino` and port same as web port but use address `/wsdata`
 
 ### <u>text mode</u>
 

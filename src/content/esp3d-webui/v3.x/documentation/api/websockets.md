@@ -15,7 +15,7 @@ there are 2
 
 ## Terminal websocket
 
-use subprotocol `webui-v3`
+use subprotocol `webui-v3` the port depend on the firmware, please refer to the firmware documentation
 
 ### <u>text mode</u>
 
@@ -59,7 +59,7 @@ Reserved
 
 ## Data websocket
 
-use sub protocol `arduino`
+use sub protocol `arduino`  the port depend on the firmware, please refer to the firmware documentation
 
 ### <u>text mode</u>
 
