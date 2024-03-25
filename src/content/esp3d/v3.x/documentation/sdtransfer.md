@@ -19,3 +19,12 @@ The SD transfer is current supported on these configurations:
     -  on ESPCam32
 
 {{% /notice %}}
+
+{{% notice style="warning" title="Clarification"  %}}
+The M28/M29 protocol is no more supported on ESP3D V3.0, this protocol is slow like hell (0.4 KB/S = 40min for 1MB) so not really usable, often no well managed by FW and suject to error due to external queries.
+
+People usualy after tested once they never use it again and are disappointed and complaining about it.
+
+So instead of keeping it using flash space and development time, and having to support it, it has been removed from 3.0, no more M28/M29 support is planned neither add it back.
+ 
+{{% /notice %}}
