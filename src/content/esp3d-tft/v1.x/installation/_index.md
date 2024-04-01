@@ -14,7 +14,7 @@ weight = 2
 * Update the project submodules   
 `git submodule update --init --recursive`
 
-If you need to climb over a wall to connect to GitHub, it is recommended to use dev sidecar.
+If you need to climb over a wall to connect to GitHub, it is recommended to use [dev sidecar](https://github.com/docmirror/dev-sidecar).
 
 #### Using release package
 
