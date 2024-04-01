@@ -50,7 +50,9 @@ Cmake can automatically download the components required for ESP3D, such as came
 Currently ESP3D-TFT use the released version 5.1  of the IDF 
 
 If you install ESP-IDF offline, you need to select "UseExitSetup"
-![image](UseExitSetup.png?width=200px)
+
+![image](UseExistSetup.png?width=400px)
+
 Then select the ESP IDF installation path
 
 ### Open ESP3D-TFT project
