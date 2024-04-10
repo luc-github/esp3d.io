@@ -93,6 +93,8 @@ Here the scope of right for each authentication level:
 | [[ESP131]](../commands/esp131/) | No | No | Get | Get/Set |
 | [[ESP140]](../commands/esp140/) | No | No | Get | Get/Set |
 | [[ESP160]](../commands/esp150/) | No | No | Get | Get/Set |
+| [[ESP170]](../commands/esp170/) | No | No | Get/Set | Get/Set |
+| [[ESP171]](../commands/esp171/) | No | No | Get | Get|
 | [[ESP200]](../commands/esp200/) | No | No | Get/Set | Get/Set |
 | [[ESP202]](../commands/esp202/) | No | No | Get | Get/Set |
 | [[ESP214]](../commands/esp214/) | No | No | Set | Set |
