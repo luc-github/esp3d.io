@@ -22,7 +22,7 @@ The V3.X features are :
 * SD support(Direct connection)
     * File format
       * Native SPI
-      * Native SDIO (ESP32 only)
+      * Native SDIO
 * USB Host support
 * Global FS under Webdav : SD + Local FS in same directory
 * Buzzer support

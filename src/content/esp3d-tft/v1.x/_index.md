@@ -9,6 +9,8 @@ weight = 1
 {{% iobadge url="https://github.com/luc-github/ESP3D-TFT/tree/main" path="https://img.shields.io/github/last-commit/luc-github/ESP3D-TFT/main?style=plastic" %}}
 {{% iobadge url="https://github.com/luc-github/ESP3D-TFT/actions/workflows/build-ci.yml" path="https://github.com/luc-github/ESP3D-TFT/workflows/build-ci/badge.svg" %}}
 {{% iobadge url="https://discord.gg/Z4ujTwE" path="https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord" %}}
+{{% iobadge url="https://github.com/espressif/esp-idf" path="https://img.shields.io/badge/IDF-v5.1.2-blue?style=plastic&label=IDF&logo=espressif" %}}
+
 
 This version is the development version, features can change anytime, feedback, PR and suggestions are welcome.
 
