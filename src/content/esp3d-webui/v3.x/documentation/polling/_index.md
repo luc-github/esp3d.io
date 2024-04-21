@@ -79,4 +79,9 @@ Here the list of polling commands available per firmware type:
 | $G | View GCode parser state |
 | $# | View GCode Parameters |
 
+## ESP3D-TFT
+
+| Command | Description|
+|:---|:---|
+| [ESP701]json | Get current streaming status |
 
