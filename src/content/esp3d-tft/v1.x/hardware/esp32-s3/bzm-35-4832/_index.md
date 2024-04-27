@@ -5,8 +5,8 @@ title = " 3.5' BZM-V1"
 weight = 9
 +++
 
-* ESP32 based + TFReader + 3.5' TFT (480x320) with Capacitive touch screen
-  * [LiChuang](https://oshwhub.com/liqijian101/esp3d-tft)
+* ESP32 based + TFReader + OV2640 + 3.5' TFT (480x320) with Capacitive touch screen
+  * [OSHWHub](https://oshwhub.com/liqijian101/esp3d-tft_spi)
   * [TaoBao](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-24142695501.10.23c7177fA2MHvK&id=744376886851)
 
 ![image](front.jpg?width=400px)
@@ -14,57 +14,56 @@ weight = 9
 
 
 ### Features
-* ESP32
+* ESP32S3
 * FLASH: 8MB
 * PSRAM: 8MB
 * Micro-SD card slot (SPI)
-* 3.5-inch 480x320 TFT display - ST7796U (8080 parallel bus - RGB565)
+* 3.5-inch 480x320 TFT display - ST7796U (SPI - RGB565)
 * Capacitive touch panel - GT911 (i2C - 0x5D)
-* Reset buttons
-* Power Supply: 5V / 1A
+* Camera: OV2640 
+* Power Supply: 5V / 500A
 * Dimension: 98.5mm x 56.3mm
-* Header H1 (3 pins) : +5v, Gnd, IO42 
-* Header H2 (3 pins) : +5v, Gnd, IO41
+* Header H1 (4 pins) : +5v, Gnd, Rx, Tx
 
 
 ## Pins 
 Pin | Usage 
 ----|-----
-GPIO 0 | BOOT_BTN  
-GPIO 1 | NA 
-GPIO 2 | NA  
-GPIO 3 | LCD_RST
-GPIO 4 | LCD_BL 
-GPIO 5 | LCD_DB7
-GPIO 6 | LCD_DB6
-GPIO 7 | LCD_DB5 
-GPIO 8 | LCD_DB0 
-GPIO 9 | LCD_WR
-GPIO 10 | LCD_DC
-GPIO 11 | LCD_CS
-GPIO 12 | LCD_TE
-GPIO 13 | NC
-GPIO 14 | SD_MISO
-GPIO 15 | LCD_DB4
-GPIO 16 | LCD_DB3
-GPIO 17 | LCD_DB2
-GPIO 18 | LCD_DB1
+GPIO 0 | NA  
+GPIO 1 | CTP_INT 
+GPIO 2 | CTP_SCL  
+GPIO 3 | OV_D7
+GPIO 4 | OV_D1 
+GPIO 5 | OV_D2
+GPIO 6 | OV_D3
+GPIO 7 | OV_D0 
+GPIO 8 | OV_XCLK 
+GPIO 9 | OV_VSYNC
+GPIO 10 | SD_CS
+GPIO 11 | SD_MOSI
+GPIO 12 | SD_CLK
+GPIO 13 | SD_MISO
+GPIO 14 | OV_RESET
+GPIO 15 | OV_D4
+GPIO 16 | OV_PCLK
+GPIO 17 | OV_D5
+GPIO 18 | OV_D6
 GPIO 19 | ESP_USB_DM
 GPIO 20 | ESP_USB_DP
-GPIO 21 | SD_CLK
+GPIO 21 | OV_SCL
 GPIO 33 | NA
 GPIO 34 | NA
 GPIO 35 | NC / NA
 GPIO 36 | NC / NA
 GPIO 37 | NC / NA
-GPIO 38 | CTP_INT 
-GPIO 39 | CTP_SCL
-GPIO 40 | CTP_SDA
-GPIO 41 | IO41
-GPIO 42 | IO42
+GPIO 38 | LCD_MOSI 
+GPIO 39 | LCD_CLK
+GPIO 40 | LCD_DC
+GPIO 41 | LCD_CS
+GPIO 42 | CTP_SDA
 GPIO 43 | U0TXD
 GPIO 44 | U0RXD
-GPIO 45 | NC
-GPIO 46 | LCD_RD
-GPIO 47 | SD_MOSI
-GPIO 48 | SD_CS
+GPIO 45 | LCD_RST / CTP_RST
+GPIO 46 | OV_HREF
+GPIO 47 | OV_SDA
+GPIO 48 | LCD_BL
