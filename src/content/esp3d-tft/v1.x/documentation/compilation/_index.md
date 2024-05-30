@@ -8,10 +8,10 @@ weight = 5
 ## Code Formating
 
 ### How to do code formating?
-#### .cpp/.h/.ino files of esp3d directory
+#### .c/.cpp/.h/.ino files of main and hardware directories of esp3d-tft directory
 The code must be formatted using the [clang-format](https://clang.llvm.org/docs/ClangFormat.html) tool. The configuration style is [Google](https://google.github.io/styleguide/cppguide.html), no other extra customization is necessary. The tool can be added as extension in vscode, and will format one active file at once per request or during saving process according your vscode settings. 
 
-A python script is also available in the repository, in directory `tools`: `format_sources.py`, this script can be used to format all files of the directory `esp3d`, and all subdirectories at once.  
+A python script is also available in the repository, in root directory `tools`: `format_sources.py`, this script can be used to format all files of the directories `main` and `hardware`, and all subdirectories at once.  
 
 #### .js/.css files of embedded directory
 The code must be formatted using the [prettier](https://prettier.io/) tool. The configuration style is `.prettierrc` present in the root of `embedded` directory. The configuration file is as follows:

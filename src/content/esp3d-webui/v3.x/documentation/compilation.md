@@ -118,7 +118,7 @@ npx install -G prettier
 ```
 Prettier will format one active file at once per request or during saving process according your vscode settings.
 
-A python script is also available in the repository, in directory tools: `format_sources.py`, this script can be used to format all files of the directories `config` and `src`, and all subdirectories at once.
+A python script is also available in the repository, in directory `tools`: `format_sources.py`, this script can be used to format all files of the directories `config` and `src`, and all subdirectories at once.
 
 
 ### When to do code formating?
