@@ -29,8 +29,10 @@ This allows users to manage the display of macros based on their preferences and
 
 ### Creating a New Macro
 1. To add a new macro, click the "Add macro" button in the macros interface.
-2. Provide a name for the macro and select an icon to represent it.
-3. Configure the macro's action, which can be one of the following types:
+2. Provide a name for the macro and select an icon to represent it.   
+![image](macroicons.png?width=400px)
+3. Configure the macro's action, which can be one of the following types:   
+![image](macrotypes.png?width=400px)
    * GCODE Command: Enter a single G-code command or a sequence of commands separated by semicolons. It's recommended to use a file type instead if there are multiple commands.    
    ![image](macro.png?width=400px)
    * Flash File: Specify a file stored in the system's flash memory that will be sent to the target device.   
@@ -41,6 +43,14 @@ This allows users to manage the display of macros based on their preferences and
     ![image](macrourl.png?width=400px)
 
 4 . Optionally, assign a keyboard shortcut (e.g., "Shift+H") to quickly execute the macro.
+
+### Editing a Macro
+To modify an existing macro, click on the macro button  you wish to update. This will open the macro configuration interface, where you can make changes to the macro's name, icon, action, and keyboard shortcut.    
+![image](macroedit.png?width=400px)
+
+### Deleting a Macro
+To remove a macro, click on the "Trash" button next to the macro you wish to delete.    
+![image](macrodelete.png?width=400px)
 
 ## Using Macros
 
