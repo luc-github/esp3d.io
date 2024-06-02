@@ -15,7 +15,7 @@ The available macro types can depend on the targeted system and its capabilities
 
 ### Accessing the Setup Macros Interface 
 
-* The setup macros interface can be accessed through a dedicated "Macros" panel or section within the application.
+* The setup macros interface can be accessed through a dedicated "Macros" panel within the tab Settings/Interface of ESP3D-WebUI.
 
 ![image](settings.png?width=400px)
 
@@ -28,7 +28,7 @@ The macros panel can be set to "Show" or "Visible when starting" to control the 
 This allows users to manage the display of macros based on their preferences and workflow needs.
 
 ### Creating a New Macro
-1. To add a new macro, click the "Add macro" button in the macros interface.
+1. To add a new macro, click the "Add macro" button in the macros interface. It will create a new macro with default settings.
 2. Provide a name for the macro and select an icon to represent it.   
 ![image](macroicons.png?width=400px)
 3. Configure the macro's action, which can be one of the following types:   
