@@ -33,3 +33,12 @@
   "taxonomy" "categories"
   "icon" "layer-group"
 ) }}
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+{{- with .Params.LastModifierDisplayName }}
+            <i class='fas fa-user'></i> {{ with $.Params.LastModifierEmail }}<a href="mailto:{{ . }}">{{ end }}{{ . }}{{ with $.Params.LastModifierEmail }}</a>{{ end }}
+  {{- with $.Date }}
+            <i class='fas fa-calendar'></i> {{ . | time.Format ":date_medium" }}
+  {{- end }}
+{{- end }}
