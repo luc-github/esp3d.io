@@ -1,41 +1,128 @@
 @charset "UTF-8";
 
 @import "tags.css";
-@import "tabs.css";
+
+/* until browsers don't let us set length values based on dppx, we
+need a way to calculate them ourself */
+:root {
+    --dpr: 1;
+    --bpx: 1;
+    --bpx1: 1;
+}
+@media (min-resolution: 105dpi) {
+    :root {
+        --dpr: 1.1;
+        --bpx: 1.1;
+        --bpx1: calc(1/1.1);
+    }
+}
+@media (min-resolution: 115dpi) {
+    :root {
+        --dpr: 1.2;
+        --bpx: 1.2;
+        --bpx1: calc(1/1.2);
+    }
+}
+@media (min-resolution: 120dpi) {
+    :root {
+        --dpr: 1.25;
+        --bpx: 1.25;
+        --bpx1: calc(1/1.25);
+    }
+}
+@media (min-resolution: 128dpi) {
+    :root {
+        --dpr: 1.333;
+        --bpx: 1.333;
+        --bpx1: calc(1/1.333);
+    }
+}
+@media (min-resolution: 144dpi) {
+    :root {
+        --dpr: 1.5;
+        --bpx: 1.5;
+        --bpx1: calc(1/1.5);
+    }
+}
+@media (min-resolution: 160dpi) {
+    :root {
+        --dpr: 1.666;
+        --bpx: 1.666;
+        --bpx1: calc(1/1.666);
+    }
+}
+@media (min-resolution: 168dpi) {
+    :root {
+        --dpr: 1.75;
+        --bpx: 1.75;
+        --bpx1: calc(1/1.75);
+    }
+}
+@media (min-resolution: 192dpi) {
+    :root {
+        --dpr: 2;
+        --bpx: 1;
+        --bpx1: 1;
+    }
+}
+@media (min-resolution: 240dpi) {
+    :root {
+        --dpr: 2.5;
+        --bpx: 1.25;
+        --bpx1: calc(1/1.25);
+    }
+}
+@media (min-resolution: 288dpi) {
+    :root {
+        --dpr: 3;
+        --bpx: 1;
+        --bpx1: 1;
+    }
+}
+@media (min-resolution: 384dpi) {
+    :root {
+        --dpr: 4;
+        --bpx: 1;
+        --bpx1: 1;
+    }
+}
+@media (min-resolution: 480dpi) {
+    :root {
+        --dpr: 5;
+        --bpx: 1.25;
+        --bpx1: calc(1/1.25);
+    }
+}
+@media (min-resolution: 576dpi) {
+    :root {
+        --dpr: 6;
+        --bpx: 1.5;
+        --bpx1: calc(1/1.5);
+    }
+}
+@media (min-resolution: 768dpi) {
+    :root {
+        --dpr: 8;
+        --bpx: 1;
+        --bpx1: 1;
+    }
+}
 
 html {
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 body {
     display: flex;
-    flex-direction: row-reverse; /* IE11 to allow body to have initial focus for PS and better SEO and a11y */
-    font-size: 16.25px;
+    flex-direction: row-reverse; /* to allow body to have initial focus for PS in some browsers and better SEO and a11y */
+    font-size: 1.015625rem;
     font-weight: 300;
     height: 100%;
     justify-content: flex-end;
     line-height: 1.574;
     /* overflow: hidden; PSC removed for #242 #243 #244; to avoid browser scrollbar to flicker before we create our own */
     width: 100%;
-}
-
-body:not(.print) #body-inner.narrow h1 {
-    font-size: 3.5rem;
-}
-@media only screen and (min-width: 48em) and (max-width: 59.938em) {
-    body:not(.print) #body-inner.narrow h1 {
-        font-size: 2.8rem;
-    }
-}
-@media only screen and (max-width: 47.938em) {
-    body:not(.print) #body-inner.narrow h1 {
-        font-size: 2.5rem;
-    }
-}
-
-pre {
-    position: relative;
 }
 
 b,
@@ -62,31 +149,38 @@ dd {
     transition: all 0.35s ease;
 }
 
-#sidebar {
+#R-sidebar {
     display: flex;
     flex-basis: auto;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
-    font-size: 15.25px;
+    font-size: .953125rem;
     height: 100%;
-    left: 0;
+    inset-inline-start: 0;
     line-height: 1.574;
     min-height: 100%;
-    min-width: 300px;
-    max-width: 300px;
     position: fixed;
-    width: 300px;
+    min-width: var(--INTERNAL-MENU-WIDTH-L);
+    max-width: var(--INTERNAL-MENU-WIDTH-L);
+    width: var(--INTERNAL-MENU-WIDTH-L);
 }
 
-#header-wrapper {
-    border-bottom-style: solid;
-    border-bottom-width: 4px;
+#R-sidebar a{
+    text-decoration: none;
+}
+
+#R-header-wrapper {
     text-align: center;
     padding: 1rem;
     position: relative;
 }
-#header a {
+#R-header {
+    border-block-end: 1px solid transparent;
+    position: relative;
+    z-index: 1;
+}
+#R-header a {
     display: inline-block;
 }
 
@@ -99,8 +193,8 @@ dd {
 }
 
 .searchbox > :first-child {
+    inset-inline-start: .5rem;
     position: absolute;
-    left: 10px;
 }
 
 .searchbox > button {
@@ -110,38 +204,37 @@ dd {
     border: 0;
     margin: 0;
     padding: 0;
-    top: 4px;
+    top: .25rem;
 }
 
 .searchbox > i {
-    top: 7px;
+    top: .45rem;
 }
 
-.searchbox span {
+.searchbox > :last-child {
+    inset-inline-end: .5rem;
     position: absolute;
-    right: 10px;
-    top: 4px;
-    cursor: pointer;
 }
 
-#sidebar .searchbox > :first-child,
-#sidebar .searchbox button,
-.searchbox span {
+#R-sidebar .searchbox > :first-child,
+#R-sidebar .searchbox > :last-child{
     opacity: .65;
 }
 
-#sidebar .searchbox button:hover,
-.searchbox span:hover {
+#R-sidebar .searchbox button:hover {
     opacity: 1;
 }
 
 .searchbox input {
     display: inline-block;
     width: 100%;
-    height: 30px;
+    height: 1.875rem;
     background: transparent;
     border: 0;
-    padding: 0 25px 0 30px;
+    padding-bottom: 0;
+    padding-inline-end: 1.6rem;
+    padding-inline-start: 1.8rem;
+    padding-top: 0;
     margin: 0;
     font-weight: 300;
 }
@@ -150,7 +243,8 @@ dd {
     opacity: .45;
 }
 
-#content-wrapper {
+#R-content-wrapper {
+    --ps-rail-hover-color: rgba( 176, 176, 176, .25 );
     display: flex;
     flex-direction: column;
     flex: 1; /* fill rest of vertical space */
@@ -159,193 +253,152 @@ dd {
     z-index: 100;
 }
 
-#sidebar .padding {
+#R-sidebar .padding {
     padding: 0 1rem;
 }
 
-#sidebar ul.topics {
-    margin: 0 1rem;
+.footerFooter {
+    font-size: .8125rem;
+    padding-top: 2rem;
+    padding-bottom: .75rem;
+    text-align: center;
 }
 
-#sidebar ul.topics ul {
-    display: none;
+.footerFooter > * {
+    margin: 0 auto;
 }
 
-#sidebar ul.topics li {
-    position: relative;
+#R-footer > hr:first-child {
+    margin-top: 0;
 }
 
-#sidebar ul.topics > li > ul > li:last-child {
-    padding-bottom: 1rem;
+/* increase specifity to override following #R-content-wrapper hr style */
+#R-footer > hr:nth-child(n) {
+    margin-left: 0;
+    margin-right: 0;
 }
 
-#sidebar ul.topics ul ul {
-    padding-bottom: 0;
-}
-
-#sidebar ul.topics li.parent > ul,
-#sidebar ul.topics li.active > ul,
-#sidebar ul.topics li.alwaysopen > ul {
-    display: block;
-}
-
-#sidebar ul.collapsible-menu > li > .toggle,
-#sidebar ul.topics > li > a {
-    font-size: 1.1rem;
-    line-height: 2rem;
-}
-
-#sidebar ul.topics > li > a b {
-    font-weight: 400;
-}
-
-#sidebar ul.topics > li > a .fa {
-    margin-top: 9px;
-}
-
-#sidebar ul.topics > li {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-#sidebar ul.topics li > a {
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-#sidebar ul {
+#R-sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-#sidebar ul li {
+#R-sidebar ul li {
     padding: 0;
 }
 
-#sidebar ul li.visited + span {
-    margin-right: 16px;
+#R-sidebar ul li.visited + span {
+    margin-inline-end: 1rem;
 }
 
-#sidebar ul li a,
-#sidebar ul li button {
-    display: block;
-    padding: 2px 0;
-}
-
-#sidebar ul li a span {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-#sidebar ul li > a,
-#sidebar ul li > button {
-    padding: 4px 0;
-}
-
-#sidebar ul li li {
-    padding-left: 1rem;
-}
-
-#sidebar ul.topics > li > a .read-icon {
-    margin-top: 9px;
-}
-
-#sidebar #shortcuts li {
-    list-style: none;
-    padding: 2px 0;
-}
-
-#sidebar ul li .read-icon {
+#R-sidebar ul li .read-icon {
     display: none;
-    float: right;
-    font-size: 13px;
-    margin: 4px 0 0 0;
-    min-width: 16px;
-    text-align: right;
+    font-size: .8125rem;
+    inset-inline-end: 1rem;
+    margin: .25rem 0 0 0;
+    min-width: 1rem;
+    position: absolute;
 }
 
-#sidebar ul li.visited > a .read-icon {
+#R-sidebar ul li.visited > a .read-icon {
     display: inline;
 }
 
-#sidebar .nav-title {
+#R-sidebar .nav-title {
     font-size: 2rem;
     font-weight: 200;
-    letter-spacing: -1px;
-    line-height: 110% !important;
-    margin: 1rem 0 1rem 0;
-    padding-left: 1rem;
+    letter-spacing: -.02175em;
+    line-height: 110%;
+    margin: 1.2rem 0 .8rem 0;
+    padding-inline-start: 1rem;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
 }
 
-#sidebar .footermargin {
-    margin-top: auto;
+#R-sidebar .footermargin {
+    flex-grow: 1;
 }
 
-#sidebar hr {
+#R-content-wrapper hr {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     margin: 1.5rem 1rem 1rem 1rem;
 }
 
-#body {
+#R-body {
     display: flex;
     flex-basis: 100%;
     flex-direction: column;
     flex-grow: 1;
     flex-shrink: 0;
     height: 100%;
-    margin-left: 300px;
+    margin-inline-start: var(--INTERNAL-MENU-WIDTH-L);
     min-height: 100%;
-    min-width: calc( 100% - 300px);
-    max-width: calc( 100% - 300px);
     overflow-wrap: break-word; /* avoid x-scrolling of body if it is to large to fit */
     position: relative; /* PS */
-    width: calc( 100% - 300px);
+    min-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
+    max-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
+    width: calc( 100% - var(--INTERNAL-MENU-WIDTH-L) );
     z-index: 70;
 }
 
-#body img,
-#body img.center,
-#body .video-container {
+#R-body img,
+#R-body figure > figcaption > h4,
+#R-body figure > figcaption > p,
+#R-body .video-container {
     display: block;
-    margin: 1.5rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
     text-align: center;
 }
 
-#body img.left {
+#R-body img:not(.lightbox-image).left {
     margin-left: 0;
 }
 
-#body img.right {
+#R-body img:not(.lightbox-image).right {
     margin-right: 0;
 }
 
-#body img.border,
-#body .video-container.border {
-    border: 2px solid rgba( 134, 134, 134, .125 );
+#R-body img:not(.lightbox-image).border,
+#R-body .video-container.border {
+    background-clip: padding-box;
+    border: 1px solid rgba( 134, 134, 134, .333 );
 }
 
-#body img.shadow,
-#body .video-container.shadow {
-    box-shadow: 0 10px 30px rgba( 200, 200, 200, .666 );
+#R-body img:not(.lightbox-image).shadow,
+#R-body .video-container.shadow {
+    box-shadow: 0 10px 30px rgba( 176, 176, 176, .666 );
 }
 
-#body img.inline {
-    display: inline !important;
-    margin: 0 !important;
+#R-body img:not(.lightbox-image).inline {
+    display: inline;
+    margin: 0;
     vertical-align: bottom;
 }
 
-#body-inner {
+#R-body figure > figcaption{
+    margin: 0;
+}
+
+#R-body figure > figcaption > h4{
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+#R-body figure > figcaption > p{
+    font-size: .85rem;
+    font-weight: 300;
+    margin-top: .15rem;
+}
+#R-body figure > figcaption > h4 + p{
+    margin-top: 0;
+}
+
+#R-body-inner {
     display: flex;
     flex: auto;
     flex-direction: column;
@@ -353,85 +406,217 @@ dd {
     padding: 0 3.25rem 4rem 3.25rem;
     position: relative; /* PS */
 }
-@media screen and (max-width: 59.938em) {
-    #body-inner {
-        padding: 0 2rem 15px 2rem;
+@media screen and (max-width: 59.999rem) {
+    #R-body-inner {
+        padding: 0 2rem 1rem 2rem;
     }
 }
-@media screen and (max-width: 47.938em) {
-    #body-inner {
-        padding: 0 1.25rem 5px 1.25rem;
+@media screen and (max-width: 47.999rem) {
+    #R-body-inner {
+        padding: 0 1.25rem .375rem 1.25rem;
     }
 }
 
-#body-inner:focus-visible{
+#R-topbar a:hover:empty,
+#R-topbar a:active:empty,
+#R-topbar a:focus:empty,
+#R-topbar a:hover :not(i),
+#R-topbar a:active :not(i),
+#R-topbar a:focus :not(i),
+#R-topbar button:hover :not(i),
+#R-topbar button:active :not(i),
+#R-topbar button:focus :not(i),
+#R-topbar .title:hover,
+#R-topbar .title:active,
+#R-topbar .title:focus,
+.topbar-content a:hover,
+.topbar-content a:active,
+.topbar-content a:focus,
+article a:hover,
+article a:active,
+article a:focus,
+article a:hover .copy-to-clipboard,
+article a:active .copy-to-clipboard,
+article a:focus .copy-to-clipboard {
+    text-decoration: underline;
+}
+.topbar-content a:hover,
+.topbar-content a:active,
+.topbar-content a:focus,
+article a:hover,
+article a:active,
+article a:focus,
+article a:hover .copy-to-clipboard,
+article a:active .copy-to-clipboard,
+article a:focus .copy-to-clipboard,
+article a.lightbox-back:hover > img:only-child:empty,
+article a.lightbox-back:active > img:only-child:empty,
+article a.lightbox-back:focus > img:only-child:empty
+article .btn > button:hover,
+article .btn > button:active,
+article .btn > button:focus{
+    outline: none;
+}
+article a:hover > img:only-child:empty,
+article a:active > img:only-child:empty,
+article a:focus > img:only-child:empty{
+    outline: .15rem solid var(--INTERNAL-MAIN-LINK-HOVER-color);
+}
+
+#R-body-inner:focus-visible{
     /* remove focus indicator for programatically set focus */
     outline: none;
 }
 
-#body h1 + hr {
+#R-body h1 + hr {
     margin-bottom: 2rem;
     margin-top: -1rem;
 }
 
+#R-body .flex-block-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc( var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem );
+    width: 100%;
+}
+body:not(.print) #R-body .narrow .flex-block-wrapper {
+    max-width: calc( var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem );
+}
 /* we limit width if we have large screens */
-@media screen and ( min-width: 1300px ){ /* #sidebar/width + ./max-width */
-    #body .flex-block-wrapper {
-        margin-left: auto;
-        margin-right: auto;
-        min-width: calc( 1300px - 300px - 2 * 3.25rem );
-        width: calc( 1300px - 300px - 2 * 3.25rem );
-        max-width: calc( 1300px - 300px - 2 * 3.25rem );
+body.main-width-max #R-body .flex-block-wrapper {
+    width: calc( var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 3.25rem );
+}
+body.main-width-max:not(.print) #R-body .narrow .flex-block-wrapper {
+    width: calc( var(--INTERNAL-MAIN-WIDTH-MAX) - var(--INTERNAL-MENU-WIDTH-L) - 2 * 9.75rem );
+}
+
+body:not(.print) #R-body-inner.narrow {
+    padding: 0 9.75rem 2rem 9.75rem;
+}
+@media screen and (max-width: 59.999rem) {
+    body:not(.print) #R-body-inner.narrow {
+        padding: 0 6.5rem 1rem 6.5rem;
     }
-    body:not(.print) #body .narrow .flex-block-wrapper {
-        min-width: calc( 1300px - 300px - 2 * 9.75rem );
-        width: calc( 1300px - 300px - 2 * 9.75rem );
-        max-width: calc( 1300px - 300px - 2 * 9.75rem );
+}
+@media screen and (max-width: 47.999rem) {
+    body:not(.print) #R-body-inner.narrow {
+        padding: 0 3.25rem .375rem 3.25rem;
     }
 }
 
-body:not(.print) #body-inner.narrow {
-    padding: 2rem 9.75rem;
-}
-@media screen and (max-width: 59.938em) {
-    body:not(.print) #body-inner.narrow {
-        padding: 15px 6.5rem;
-    }
-}
-@media screen and (max-width: 47.938em) {
-    body:not(.print) #body-inner.narrow {
-        padding: 5px 3.25rem;
-    }
-}
-
-#body-inner div.article-subheading,
-#body-inner .chapter.deprecated h3:first-of-type {
+#R-body-inner div.article-subheading,
+#R-body-inner .chapter.deprecated h3:first-of-type {
     font-weight: 200;
     margin-top: 0;
     text-align: center;
 }
-
-body:not(.print) #body-inner.narrow h1 {
-    border-bottom: 4px solid rgba( 134, 134, 134, .125 );
+body:not(.print) #R-body-inner.narrow div.article-subheading{
+    margin-top: 2rem;
+}
+@media screen and (max-width: 59.999rem) {
+    body:not(.print) #R-body-inner.narrow div.article-subheading{
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width: 47.999rem) {
+    body:not(.print) #R-body-inner.narrow div.article-subheading{
+        margin-top: .375rem;
+    }
 }
 
-body:not(.print) #body-inner.narrow p {
+body:not(.print) #R-body-inner.narrow p {
     font-size: 1.2rem;
     text-align: justify;
 }
 
 mark {
-    color: black;
+    background: transparent;
+    border-radius: 0.8em 0.3rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    color: rgba( 0, 0, 0, 1 );
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    margin: 0 -0.4rem;
+    padding: 0.1em 0.4rem;
+}
+
+kbd {
+    background-color: rgba( 134, 134, 134, .166 );
+    border-color: rgba( 134, 134, 134, .5 );
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 .0625rem 0 .0625rem rgba( 134, 134, 134, .5 );
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    font-size: 0.75rem;
+    line-height: 1;
+    min-width: 0.75rem;
+    padding: .125rem .3125rem .125rem .3125rem;
+    position: relative;
+    text-align: center;
+    top: -.125rem;
 }
 
 h1 {
+    font-size: 3.25rem;
     font-weight: 200;
+    margin: 0.85rem 0 1rem 0;
+    /* big titles cause a horizontal scrollbar - fixing this by wrapping text */
+    overflow-wrap: break-word;
+    overflow-x: hidden;
     text-align: center;
+    text-rendering: optimizeLegibility;
     text-transform: uppercase;
 }
 
+body:not(.print) #R-body-inner.narrow h1 {
+    border-bottom: 4px solid rgba( 134, 134, 134, .125 );
+    font-size: 3.5rem;
+}
+@media only screen and (min-width: 48rem) and (max-width: 59.999rem) {
+    body:not(.print) #R-body-inner.narrow h1 {
+        font-size: 2.8rem;
+    }
+}
+@media only screen and (max-width: 47.999rem) {
+    body:not(.print) #R-body-inner.narrow h1 {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+h3, .article-subheading {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 1.85rem;
+    font-weight: 300;
+}
+
+h5 {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+h6 {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
 h2, h3, .article-subheading, h4, h5, h6 {
-    letter-spacing: -1px;
+    letter-spacing: -.0625rem;
+    margin: 2rem 0 1rem 0;
+    /* big titles cause a horizontal scrollbar - fixing this by wrapping text */
+    overflow-wrap: break-word;
+    overflow-x: hidden;
     text-rendering: optimizeLegibility;
 }
 
@@ -441,11 +626,11 @@ h2, h3, h4, h5, h6 {
 }
 
 blockquote {
-    border-inline-start: 10px solid rgba( 134, 134, 134, .4 );
+    border-inline-start: .6rem solid rgba( 134, 134, 134, .4 );
 }
 
 blockquote p {
-    font-size: 105%;
+    font-size: 1.06640625rem;
     font-style: italic;
     opacity: .75;
     text-align: justify;
@@ -455,7 +640,7 @@ blockquote cite {
     display: block;
     font-weight: bold;
     opacity: .5;
-    padding-top: .5em;
+    padding-top: .5rem;
     text-align: end;
 }
 
@@ -472,6 +657,8 @@ blockquote cite {
 
 div.box {
     margin: 1.5rem 0;
+    border-style: solid;
+    border-width: 1px;
 }
 
 div.box > .box-label {
@@ -486,25 +673,44 @@ div.box > .box-content {
     padding-right: 1rem;
 }
 
-#body table th > :first-child,
-#body table th > :first-child :first-child,
-#body table td > :first-child,
-#body table td > :first-child :first-child,
-#body div.box > .box-content > :first-child,
-#body div.box > .box-content > :first-child :first-child {
+p:empty {
+    /* in case of image render hook, Hugo may generate empty <p>s that we want to ignore */
+    display: none;
+}
+
+/* in case of image render hook, Hugo may generate empty <p>s that we want to ignore as well, so a simple :first-child or :last-child is not enough */
+#R-body table th > :nth-child(1 of :not(:empty)),
+#R-body table th > :nth-child(1 of :not(:empty)) :nth-child(1 of :not(:empty)),
+#R-body table td > :nth-child(1 of :not(:empty)),
+#R-body table td > :nth-child(1 of :not(:empty)) :nth-child(1 of :not(:empty)),
+#R-body div.box > .box-content > :nth-child(1 of :not(:empty)),
+#R-body div.box > .box-content > :nth-child(1 of :not(:empty)) :nth-child(1 of :not(:empty)),
+#R-body div.expand > .expand-content-text > :nth-child(1 of :not(:empty)),
+#R-body div.expand > .expand-content-text > :nth-child(1 of :not(:empty)) :nth-child(1 of :not(:empty)),
+#R-body div.tab-content > .tab-content-text > :nth-child(1 of :not(:empty)),
+#R-body div.tab-content > .tab-content-text > :nth-child(1 of :not(:empty)) :nth-child(1 of :not(:empty)) {
     margin-top: 0;
 }
 
-#body table th > :last-child,
-#body table th > :last-child :last-child,
-#body table td > :last-child,
-#body table td > :last-child :last-child,
-#body div.box > .box-content > :last-child,
-#body div.box > .box-content > :last-child :last-child {
+#R-body table th > :nth-last-child(1 of :not(:empty)),
+#R-body table th > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
+#R-body table th > div.highlight:last-child pre:not(.mermaid),
+#R-body table td > :nth-last-child(1 of :not(:empty)),
+#R-body table td > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
+#R-body table td > div:last-child pre:not(.mermaid),
+#R-body div.box > .box-content > :nth-last-child(1 of :not(:empty)),
+#R-body div.box > .box-content > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
+#R-body div.box > .box-content > div:last-child pre:not(.mermaid),
+#R-body div.expand > .expand-content-text > :nth-last-child(1 of :not(:empty)),
+#R-body div.expand > .expand-content-text > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
+#R-body div.expand > .expand-content-text > div:last-child pre:not(.mermaid),
+#R-body div.tab-content > .tab-content-text > :nth-last-child(1 of :not(:empty)),
+#R-body div.tab-content > .tab-content-text > :nth-last-child(1 of :not(:empty)) :nth-last-child(1 of :not(:empty)),
+#R-body div.tab-content > .tab-content-text > div:last-child pre:not(.mermaid) {
     margin-bottom: 0;
 }
 
-/* attachments shortcode */
+/* resources shortcode */
 
 div.attachments .box-content {
     display: block;
@@ -515,40 +721,40 @@ div.attachments .box-content {
 /* Children shortcode */
 
 .children p {
-    font-size: small;
-    margin-bottom:  0px;
-    margin-top: 0px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    font-size: .8125rem;
+    margin-bottom:  0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .children-li p {
-    font-size: small;
+    font-size: .8125rem;
     font-style: italic;
 }
 
 .children-h2 p,
 .children-h3 p {
-    font-size: small;
-    margin-bottom:  0px;
-    margin-top: 0px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    font-size: .8125rem;
+    margin-bottom:  0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
-#body-inner .children h2,
-#body-inner .children h3,
-#body-inner .children h4,
-#body-inner .children h5,
-#body-inner .children h6 {
+#R-body-inner .children h2,
+#R-body-inner .children h3,
+#R-body-inner .children h4,
+#R-body-inner .children h5,
+#R-body-inner .children h6 {
     margin-bottom: 0;
     margin-top: 1rem;
 }
-#body-inner ul.children-h2,
-#body-inner ul.children-h3,
-#body-inner ul.children-h4,
-#body-inner ul.children-h5,
-#body-inner ul.children-h6 {
+#R-body-inner ul.children-h2,
+#R-body-inner ul.children-h3,
+#R-body-inner ul.children-h4,
+#R-body-inner ul.children-h5,
+#R-body-inner ul.children-h6 {
     /* if we display children with style=h2 but without a containerstyle
     a ul will be used for structuring; we remove default indention for uls
     in this case */
@@ -557,9 +763,9 @@ div.attachments .box-content {
 
 code,
 kbd,
-pre,
+pre:not(.mermaid),
 samp {
-    font-size: 92%;
+    font-size: .934375rem;
     vertical-align: baseline;
 }
 
@@ -576,24 +782,16 @@ code {
 
 span.copy-to-clipboard {
     display: inline-block;
+    white-space: nowrap;
 }
 
 code.copy-to-clipboard-code {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    border-right-width: 0;
-}
-
-span > code.copy-to-clipboard-code {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
-    border-right-width: 1px;
     border-end-end-radius: 0;
     border-start-end-radius: 0;
     border-inline-end-width: 0;
 }
 
-pre {
+pre:not(.mermaid) {
     border-radius: 2px;
     border-style: solid;
     border-width: 1px;
@@ -601,44 +799,100 @@ pre {
     color-adjust: economy;
     line-height: 1.15;
     padding: 1rem;
+    position: relative;
 }
 
-pre.pre-code,
-pre:has( code ){
-    /* the :has() operator isn't available in FF yet, so we patch this by JS */
+/* pre:not(.mermaid):has( code ), */
+/* the :has() operator isn't available in FF yet, so we patch this by JS */
+pre:not(.mermaid).pre-code {
     direction: ltr;
+    text-align: left;
 }
 
-pre code {
+pre:not(.mermaid) code {
     background-color: inherit;
     border: 0;
     color: inherit;
     -webkit-print-color-adjust: economy;
     color-adjust: economy;
-    font-size: 15px;
+    font-size: .9375rem;
     margin: 0;
     padding: 0;
-    white-space: inherit;
+}
+
+div.highlight{
+    position: relative;
+}
+/* we may have special treatment if highlight shortcode was used in table lineno mode */
+div.highlight > div{
+    border-style: solid;
+    border-width: 1px;
+}
+/* remove default style for usual markdown tables */
+div.highlight > div table{
+    background-color: transparent;
+    border-width: 0;
+    margin: 0;
+}
+div.highlight > div td{
+    border-width: 0;
+}
+#R-body div.highlight > div a {
+    line-height: inherit;
+}
+#R-body div.highlight > div a:after {
+    display: none;
+}
+/* disable selection for lineno cells */
+div.highlight > div td:first-child:not(:last-child){
+    -webkit-user-select: none;
+    user-select: none;
+}
+/* increase code column to full width if highlight shortcode was used in table lineno mode  */
+div.highlight > div td:not(:first-child):last-child{
+    width: 100%;
+}
+/* add scrollbars if highlight shortcode was used in table lineno mode */
+div.highlight > div table{
+    display: block;
+    overflow: auto;
+}
+div.highlight:not(.wrap-code) pre:not(.mermaid){
+    overflow: auto;
+}
+div.highlight:not(.wrap-code) pre:not(.mermaid) code{
+    white-space: pre;
+}
+div.highlight.wrap-code pre:not(.mermaid) code{
+    white-space: pre-wrap;
+}
+/* remove border from row cells if highlight shortcode was used in table lineno mode */
+div.highlight > div td > pre:not(.mermaid) {
+    border-radius: 0;
+    border-width: 0;
+}
+/* in case of table lineno mode we want to move each row closer together - besides the edges
+this usually applies only to wrapfix tables but it doesn't hurt for non-wrapfix tables too */
+div.highlight > div tr:not(:first-child) pre:not(.mermaid){
+    padding-top: 0;
+}
+div.highlight > div tr:not(:last-child) pre:not(.mermaid){
+    padding-bottom: 0;
+}
+/* in case of table lineno mode we want to move each columns closer together on the inside */
+div.highlight > div td:first-child:not(:last-child) pre:not(.mermaid){
+    padding-right: 0;
+}
+div.highlight > div td:not(:first-child):last-child pre:not(.mermaid){
+    padding-left: 0;
 }
 
 hr {
     border-bottom: 4px solid rgba( 134, 134, 134, .125 );
 }
 
-#body-inner pre {
+#R-body-inner pre:not(.mermaid) {
     white-space: pre-wrap;
-}
-
-#body-inner h1,
-#body-inner h2,
-#body-inner h3,
-#body-inner h4,
-#body-inner h5,
-#body-inner h6,
-#body-inner .article-subheading {
-    /* big titles cause a horizontal scrollbar - fixing this by wrapping text */
-    overflow-wrap: break-word;
-    overflow-x: hidden;
 }
 
 table {
@@ -661,21 +915,27 @@ td {
     border: 1px solid rgba( 134, 134, 134, .333 );
     padding: 0.5rem;
 }
+tbody > tr:nth-child(even) > td {
+    background-color: rgba( 134, 134, 134, .045 );
+}
 
 .tooltipped {
     position: relative;
 }
 
 .tooltipped:after {
-    background: rgba(0, 0, 0, 1);
-    border: 1px solid #777;
+    background: rgba( 0, 0, 0, 1 );
+    border: 1px solid rgba( 119, 119, 119, 1 );
     border-radius: 3px;
-    color: #fff;
+    color: rgba( 255, 255, 255, 1 );
     content: attr(aria-label);
     display: none;
-    font: normal normal 11px/1.5 "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-size: .6875rem;
+    font-weight: normal;
     -webkit-font-smoothing: subpixel-antialiased;
     letter-spacing: normal;
+    line-height: 1.5;
     padding: 5px 8px;
     pointer-events: none;
     position: absolute;
@@ -690,7 +950,7 @@ td {
 
 .tooltipped:before {
     border: 5px solid transparent;
-    color: rgba(0, 0, 0, 1);
+    color: rgba( 0, 0, 0, 1 );
     content: "";
     display: none;
     height: 0;
@@ -721,7 +981,7 @@ td {
 .tooltipped-s:before,
 .tooltipped-se:before,
 .tooltipped-sw:before {
-    border-bottom-color: rgba(0, 0, 0, 0.8);
+    border-bottom-color: rgba( 0, 0, 0, .8 );
     bottom: -5px;
     margin-right: -5px;
     right: 50%;
@@ -749,7 +1009,7 @@ td {
 .tooltipped-n:before,
 .tooltipped-ne:before,
 .tooltipped-nw:before {
-    border-top-color: rgba(0, 0, 0, 0.8);
+    border-top-color: rgba( 0, 0, 0, .8 );
     bottom: auto;
     margin-right: -5px;
     right: 50%;
@@ -779,7 +1039,7 @@ td {
 }
 
 .tooltipped-w:before {
-    border-left-color: rgba(0, 0, 0, 0.8);
+    border-left-color: rgba( 0, 0, 0, .8 );
     bottom: 50%;
     left: -5px;
     margin-top: -5px;
@@ -794,107 +1054,108 @@ td {
 }
 
 .tooltipped-e:before {
-    border-right-color: rgba(0, 0, 0, 0.8);
+    border-right-color: rgba( 0, 0, 0, .8 );
     bottom: 50%;
     margin-top: -5px;
     right: -5px;
     top: 50%;
 }
 
-#sidebar .highlightable {
-    padding: 1rem 0 1rem;
-    position: relative;
-}
-
-#topbar {
+#R-topbar {
     min-height: 3rem;
     position: relative;
     z-index: 170;
 }
 
-#topbar > div {
+#R-topbar > .topbar-wrapper {
+    align-items: center;
     background-color: rgba( 134, 134, 134, .066 );
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
     height: 100%;
 }
 
-.navigation,
-#top-print-link,
-#top-github-link {
-    display: block;
-    float: right;
-}
-
-.nav,
-.print-link,
-.github-link {
-    border-left: thin solid rgba( 134, 134, 134, .333 );
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-span.nav i{
-    color: rgba( 134, 134, 134, .333 );
-}
-
-.navigation,
-#top-print-link,
-#top-github-link {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#toc-menu{
-    cursor: pointer;
-}
-#toc-menu,
-#sidebar-toggle-span {
-    border-right: thin solid rgba( 134, 134, 134, .333 );
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-#body #breadcrumbs {
+.topbar-button {
     display: inline-block;
-    float: left;
-    height: auto;
-    line-height: 1.4;
-    margin-bottom: 0;
-    overflow: hidden;
     position: relative;
-    text-overflow: ellipsis;
-    top: 50%;
-    transform: translateY(-50%);
-    white-space: nowrap;
-    width: calc(100% - 5*3.25rem);
 }
-@media screen and (max-width: 47.938em) {
-    #body #breadcrumbs {
-        text-overflow: unset;
-    }
-}
-
-#sidebar-toggle-span {
+.topbar-button:not([data-origin]) {
     display: none;
 }
-.progress {
-    left: 1rem;
-    top: 1rem;
+
+.topbar-button > .topbar-control {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
-@media screen and (max-width: 47.938em) {
-    .mobile-support #sidebar-toggle-span {
-        display: inline;
-    }
-    .progress {
-        left: 4.25rem;
-    }
+.topbar-wrapper > .topbar-area-start > .topbar-button > .topbar-control {
+    border-inline-end: 1px solid rgba( 134, 134, 134, .333 );
+}
+.topbar-wrapper > .topbar-area-end > .topbar-button > .topbar-control {
+    border-inline-start: 1px solid rgba( 134, 134, 134, .333 );
 }
 
-#body #breadcrumbs .links {
-    display: inline;
-    padding: 0 .75rem;
+.topbar-button > button:disabled i,
+.topbar-button > span i {
+    color: rgba( 134, 134, 134, .333 );
 }
-@media screen and (max-width: 47.938em) {
-    #body #breadcrumbs .links {
+.topbar-button button{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+}
+
+.topbar-sidebar-divider {
+    border-inline-start-style: solid;
+    border-inline-start-width: 1px;
+    margin-inline-end: -1px;
+    width: 1px;
+}
+.topbar-sidebar-divider::after {
+    content: "\00a0";
+}
+
+.topbar-wrapper > .topbar-area-start {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+.topbar-wrapper > .topbar-area-end {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+.topbar-wrapper > .topbar-hidden {
+    display: none;
+}
+
+html[dir="rtl"] .topbar-button-prev i,
+html[dir="rtl"] .topbar-button-next i {
+    transform: scaleX(-1);
+}
+
+.topbar-content {
+    top: .75rem;
+}
+.topbar-wrapper > .topbar-area-start .topbar-content {
+    inset-inline-start: 1.5rem;
+}
+.topbar-wrapper > .topbar-area-end .topbar-content {
+    inset-inline-end: 1.5rem;
+}
+.topbar-content .topbar-content{
+    /* we don't allow flyouts in flyouts; come on, don't get funny... */
+    display: none;
+}
+
+.topbar-breadcrumbs {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 1rem;
+}
+@media screen and (max-width: 47.999rem) {
+    .topbar-breadcrumbs {
         /* we just hide the breadcrumbs instead of display: none;
         this makes sure that the breadcrumbs are still usable for
         accessability */
@@ -902,66 +1163,75 @@ span.nav i{
     }
 }
 
-#body #breadcrumbs .links * {
-    display: inline-block;
-    padding: 0;
+.breadcrumbs {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
 }
 
-#body #breadcrumbs .links meta {
+.breadcrumbs meta {
     display: none;
 }
 
-#body #breadcrumbs .links li:last-of-type {
-    cursor: text;
+.breadcrumbs li {
+    display: inline-block;
 }
 
-#body a[aria-disabled="true"] {
+#R-body a[aria-disabled="true"] {
     pointer-events: none;
     text-decoration: none;
 }
 
-@media screen and (max-width: 59.938em) {
-    #sidebar {
-        min-width: 230px;
-        max-width: 230px;
-        width: 230px;
+@media screen and (max-width: 59.999rem) {
+    #R-sidebar {
+        min-width: var(--INTERNAL-MENU-WIDTH-M);
+        max-width: var(--INTERNAL-MENU-WIDTH-M);
+        width: var(--INTERNAL-MENU-WIDTH-M);
     }
-    #body {
-        margin-left: 230px;
-        min-width: calc( 100% - 230px);
-        max-width: calc( 100% - 230px);
-        width: calc( 100% - 230px);
+    #R-body {
+        margin-inline-start: var(--INTERNAL-MENU-WIDTH-M);
+        min-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
+        max-width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
+        width: calc( 100% - var(--INTERNAL-MENU-WIDTH-M) );
     }
 }
-@media screen and (max-width: 47.938em) {
+@media screen and (max-width: 47.999rem) {
     /* we don't support sidebar flyout in mobile */
-    .mobile-support #sidebar {
-        left: -230px;
+    .mobile-support #R-sidebar {
+        inset-inline-start: calc( -1 * var(--INTERNAL-MENU-WIDTH-S) );
+        min-width: var(--INTERNAL-MENU-WIDTH-S);
+        max-width: var(--INTERNAL-MENU-WIDTH-S);
+        width: var(--INTERNAL-MENU-WIDTH-S);
     }
     .mobile-support #navshow{
         display: inline;
     }
-    .mobile-support #body {
-        margin-left: 0;
+    .mobile-support #R-body {
         min-width: 100%;
         max-width: 100%;
         width: 100%;
     }
+    .mobile-support #R-body {
+        margin-inline-start: 0;
+    }
     .mobile-support.sidebar-flyout {
         overflow: hidden;
     }
-    .mobile-support.sidebar-flyout #sidebar {
-        left: 0;
+    .mobile-support.sidebar-flyout #R-sidebar {
+        inset-inline-start: 0;
         z-index: 90;
     }
-    .mobile-support.sidebar-flyout #body {
-        margin-left: 230px;
+    .mobile-support.sidebar-flyout #R-body {
+        margin-inline-start: var(--INTERNAL-MENU-WIDTH-S);
         overflow: hidden;
     }
-    .mobile-support.sidebar-flyout #sidebar-overlay{
-        background-color: rgba(134, 134, 134, 0.5);
+    .mobile-support.sidebar-flyout #R-body-overlay{
+        background-color: rgba( 134, 134, 134, .5 );
         bottom: 0;
         cursor: pointer;
+        height: 100vh;
         left: 0;
         position: absolute;
         right: 0;
@@ -971,12 +1241,15 @@ span.nav i{
 }
 
 .copy-to-clipboard-button {
-    border-radius: 0 2px 2px 0;
+    border-start-start-radius: 0;
+    border-start-end-radius: 2px;
+    border-end-end-radius: 2px;
+    border-end-start-radius: 0;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
-    font-size: 92%;
-    padding-left: 22px;
+    font-size: .934375rem;
+    line-height: 1.15;
 }
 
 span > .copy-to-clipboard-button {
@@ -987,24 +1260,43 @@ span > .copy-to-clipboard-button {
 }
 
 .copy-to-clipboard-button > i {
-    font-size: 92%;
-    font-weight: 500;
-    margin-left: -22px;
+    font-size: .859625rem;
 }
 
+/* only show copy to clipboard on hover for code blocks if configured */
+div.highlight .copy-to-clipboard-button {
+    display: none;
+}
+@media (any-hover: none) {
+    /* if there is at least one input device that does not support hover, we want to force the copy button */
+    div.highlight .copy-to-clipboard-button {
+        display: block;
+    }
+}
+div.highlight:hover .copy-to-clipboard-button {
+    display: block;
+}
+.disableHoverBlockCopyToClipBoard div.highlight .copy-to-clipboard-button {
+    display: block;
+}
+
+div.highlight > div table + .copy-to-clipboard-button > i,
+div.highlight pre:not(.mermaid) + .copy-to-clipboard-button > i,
 .copy-to-clipboard-code + .copy-to-clipboard-button > i {
     padding-left: 5px;
     padding-right: 5px;
 }
 
-pre > .copy-to-clipboard-button {
+div.highlight > div table + .copy-to-clipboard-button,
+div.highlight pre:not(.mermaid) + .copy-to-clipboard-button,
+pre:not(.mermaid) > .copy-to-clipboard-button {
     background-color: rgba( 160, 160, 160, .2 );
     border-radius: 2px;
     border-style: solid;
     border-width: 1px;
-    padding: 5px 3px 5px 25px;
-    position: absolute;
     right: 4px;
+    padding: 5px 3px;
+    position: absolute;
     top: 4px;
 }
 
@@ -1013,85 +1305,104 @@ pre > .copy-to-clipboard-button {
 }
 
 .disableInlineCopyToClipboard span > code.copy-to-clipboard-code {
-    border-end-end-radius: 2px;
     border-start-end-radius: 2px;
+    border-end-end-radius: 2px;
     border-inline-end-width: 1px;
 }
 
-#homelinks {
+#R-homelinks {
+    padding: 0;
+}
+#R-homelinks ul {
+    margin: .5rem 0;
+}
+#R-homelinks hr {
     border-bottom-style: solid;
-    border-bottom-width: 4px;
-    padding: 7px 0;
+    border-bottom-width: 1px;
+    margin: 0 1rem 3px 1rem;
 }
 
 option {
     color: initial;
 }
 
-.expand{
+.expand {
     margin-bottom: 1rem;
     margin-top: 1rem;
+    position: relative;
 }
 
-.expand-label {
+.expand > input {
+    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
 }
 
-.expand-label > .fas {
+.expand > label {
+    cursor: pointer;
+    display: inline;
+    font-weight: 300;
+    inset-inline-start: 0;
+    line-height: 1.1;
+    margin-top: .2rem;
+    position: absolute;
+}
+
+.expand > input:active + label,
+.expand > input:focus + label,
+.expand > label:hover {
+    text-decoration: underline;
+}
+
+.expand > label > .fas {
     font-size: .8rem;
     width: .6rem;
 }
 
-.expand-content {
+.expand > .expand-content {
+    margin-inline-start: 1rem;
     margin-top: .5rem;
 }
-
-/* expander collapsed, default */
-.expand > .expand-label > .fa-chevron-down {
+/* closed expander */
+.expand > input + label + div {
     display: none;
 }
-.expand > .expand-label > .fa-chevron-left,
-.expand > .expand-label > .fa-chevron-right {
+
+.expand > input + label > .fa-chevron-down {
+    display: none;
+}
+.expand > input + label > .fa-chevron-right {
     display: inline-block;
 }
 
-/* expander expanded, controlled by expand.html */
-.expand.expand-expanded > .expand-label > .fa-chevron-down {
+/* open expander */
+.expand > input:checked + label + div {
+	display: block;
+}
+
+.expand > input:checked + label > .fa-chevron-down {
     display: inline-block;
 }
-.expand.expand-expanded > .expand-label > .fa-chevron-left,
-.expand.expand-expanded > .expand-label > .fa-chevron-right {
+.expand > input:checked + label > .fa-chevron-right {
     display: none;
 }
 
-/* expander expand collapsed marked, must override logic of expand.html, controlled by theme.js */
-.expand:not(.expand-expanded).expand-marked > .expand-label > .fa-chevron-down {
-    display: inline-block;
-}
-.expand:not(.expand-expanded).expand-marked > .expand-label > .fa-chevron-left,
-.expand:not(.expand-expanded).expand-marked > .expand-label > .fa-chevron-right {
-    display: none;
-}
-.expand:not(.expand-expanded).expand-marked > .expand-content {
-    /* this will disable jquery's animation */
-    display: block !important;
+/* adjust expander for RTL reading direction */
+html[dir="rtl"] .expand > .expand-label > i.fa-chevron-right {
+    transform: scaleX(-1);
 }
 
-/* turn off unsuitable expander for this reading direction */
-.expand > .expand-label > .expand-rtl.direction-ltr,
-.expand > .expand-label > .expand-ltr.direction-rtl {
-    display: none;
-}
-
-#body footer.footline{
+#R-body footer.footline{
     margin-top: 2rem;
 }
 
+.headline i,
 .footline i{
-    margin-left: .5rem;
+    margin-inline-start: .5rem;
 }
+.headline i:first-child,
 .footline i:first-child{
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 .mermaid-container {
@@ -1099,15 +1410,58 @@ option {
     margin-top: 1.7rem;
 }
 
-.mermaid > svg {
+.mermaid {
+    display: inline-block;
     border: 1px solid transparent;
-    cursor: pointer;
+    padding: .5rem .5rem 0 .5rem;
+    position: relative;
+    /* don't use display: none, as this will cause no renderinge by Mermaid */
+    visibility: hidden;
+    width: 100%;
+}
+.mermaid-container.zoomable > .mermaid:hover {
+    border-color: rgba( 134, 134, 134, .333 );
+}
+.mermaid.mermaid-render {
+    visibility: visible;
+}
+
+.mermaid > svg {
     /* remove inline height from generated diagram */
     height: initial !important;
 }
+.mermaid-container.zoomable > .mermaid > svg {
+    cursor: grab;
+}
 
-.mermaid > svg:hover {
-    border-color: rgba( 134, 134, 134, .333 );
+.svg-reset-button {
+    background-color: rgba( 160, 160, 160, .2 );
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: none;
+    font-size: .934375rem;
+    line-height: 1.15;
+    padding: 5px 3px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+.mermaid:hover .svg-reset-button.zoomed {
+    display: block;
+}
+@media (any-hover: some) {
+    /* if there is at least one input device that does not support hover, we want to force the reset button if zoomed */
+    .svg-reset-button.zoomed {
+        display: block;
+    }
+}
+
+.svg-reset-button > i {
+    font-size: .859625rem;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .mermaid-code {
@@ -1141,102 +1495,103 @@ option {
     display: block;
 }
 
-#body a.highlight,
-#body a.highlight:hover,
-#body a.highlight:focus {
-    outline-style: none;
-    text-decoration: none;
-}
-
-#body a.highlight {
-    display: inline-block;
-    line-height: 1.1;
-}
-
-#body a.highlight:after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 0%;
-    transition: width 0.5s ease;
-}
-
-#body a.highlight:hover:after,
-#body a.highlight:focus:after {
-    width: 100%;
-}
-
-#body #topbar .navigation a.highlight:after,
-#body #sidebar-toggle-span a.highlight:after,
-#body #top-print-link a.highlight:after,
-#body #top-github-link a.highlight:after {
-    background-color: transparent;
-}
-
 /* Table of contents */
 
-.toc-flyout #toc-overlay{
+.topbar-flyout #R-main-overlay{
     bottom: 0;
     cursor: pointer;
     left: 0;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 3rem;
     z-index: 160;
 }
 
-.progress {
-    border: 0px solid rgba( 134, 134, 134, .166 );
+.topbar-content {
+    border: 0 solid rgba( 134, 134, 134, .166 );
     box-shadow: 1px 2px 5px 1px rgba( 134, 134, 134, .2 );
     height: 0;
     opacity: 0;
     overflow: hidden;
     position: absolute;
+    visibility: hidden;
     width: 0;
     z-index: 180;
 }
 
-.toc-flyout .progress {
+.topbar-button.topbar-flyout .topbar-content {
     border-width: 1px;
     height: auto;
     opacity: 1;
+    visibility: visible;
     width: auto;
 }
 
-.progress .toc-wrapper {
+.topbar-content .topbar-content-wrapper {
     background-color: rgba( 134, 134, 134, .066 );
 }
 
-.progress ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 15px;
-}
-
-#TableOfContents {
-    font-size: 13px !important;
+.topbar-content-wrapper {
+    --ps-rail-hover-color: rgba( 176, 176, 176, .25 );
     max-height: 90vh;
     overflow: hidden;
-    padding: 15px 5px !important;
+    padding: .5rem 1rem;
     position: relative; /* PS */
 }
 
-#TableOfContents > ul > li > a {
+.topbar-content .topbar-button .topbar-control {
+    border-width: 0;
+    padding: 0;
+}
+.topbar-content .topbar-button .topbar-control {
+    border-width: 0;
+    padding: .5rem 0;
+}
+
+#TableOfContents,
+.TableOfContents {
+    font-size: .8125rem;
+}
+#TableOfContents ul,
+.TableOfContents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+#TableOfContents > ul,
+.TableOfContents > ul {
+    padding: 0;
+}
+
+#TableOfContents li,
+.TableOfContents li {
+    white-space: nowrap;
+}
+
+#TableOfContents > ul > li > a,
+.TableOfContents > ul > li > a {
     font-weight: 500;
 }
 
 .btn {
     border-radius: 4px;
-    cursor: pointer;
     display: inline-block;
     font-size: .9rem;
     font-weight: 500;
     line-height: 1.1;
     margin-bottom: 0;
     touch-action: manipulation;
-    -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+}
+.btn.interactive {
+    cursor: pointer;
+}
+
+.btn > span,
+.btn > a {
+    display: block;
 }
 
 .btn > :where(button) {
@@ -1255,22 +1610,27 @@ option {
     padding: 6px 12px;
     text-align: center;
     touch-action: manipulation;
-    -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
     white-space: nowrap;
 }
 
-#body #body-inner .btn > *.highlight:after {
+.btn > *:after {
+    /* avoid breakage if no content is given */
+    content: "\200b"
+}
+
+#R-body #R-body-inner .btn > *.highlight:after {
     background-color: transparent;
 }
 
-.btn > *:focus {
+.btn.interactive > .btn-interactive:focus {
     outline: none;
 }
 
-.btn > *:hover,
-.btn > *:focus {
+.btn.interactive > *:hover,
+.btn.interactive > *:active,
+.btn.interactive > *:focus {
     text-decoration: none;
 }
 
@@ -1282,6 +1642,12 @@ option {
     margin-top: .9em;
     position: absolute;
     visibility: hidden;
+}
+@media (any-hover: none) {
+    /* if there is at least one input device that does not support hover, we want to force the copy button */
+    .anchor {
+        visibility: visible;
+    }
 }
 
 h2:hover .anchor,
@@ -1303,133 +1669,89 @@ h6 a {
     font-weight: inherit;
 }
 
-#body h2 {
-    font-size: 2.2rem;
-    font-weight: 500;
-    margin-top: 2rem;
-}
-
-#body h3, #body .article-subheading {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-top: 2rem;
-}
-
-#body h4 {
-    font-size: 1.85rem;
-    font-weight: 300;
-    margin-top: 2rem;
-}
-
-#body h5 {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin-top: 2rem;
-}
-
-#body h6 {
-    font-size: 1.3rem;
-    font-weight: 300;
-    margin-top: 2rem;
-}
-
-#body h1 + h2,
-#body h1 + h3,
-#body h1 + h4,
-#body h1 + h5,
-#body h1 + h6,
-#body h2 + h3,
-#body h2 + h4,
-#body h2 + h5,
-#body h2 + h6,
-#body h3 + h4,
-#body h3 + h5,
-#body h3 + h6,
-#body h4 + h5,
-#body h4 + h6,
-#body h5 + h6 {
+#R-body h1 + h2,
+#R-body h1 + h3,
+#R-body h1 + h4,
+#R-body h1 + h5,
+#R-body h1 + h6,
+#R-body h2 + h3,
+#R-body h2 + h4,
+#R-body h2 + h5,
+#R-body h2 + h6,
+#R-body h3 + h4,
+#R-body h3 + h5,
+#R-body h3 + h6,
+#R-body h4 + h5,
+#R-body h4 + h6,
+#R-body h5 + h6 {
     margin-top: 1rem;
 }
 
-rapi-doc {
-    /* adjust rapi-doc internals to fill out available space with render-style=view */
-    margin-left: calc( -8px - 24px );
-    width: calc( 100% + 8px + 24px + 8px );
-}
-@media (max-width: 767px) {
-    rapi-doc {
-        margin-left: calc( -12px );
-        width: calc( 100% + 12px + 4px );
-    }
-}
-
-rapi-doc::part(section-main-content) {
-    /* override variables for adapting rapidoc design to theme */
-    --font-mono: var(--INTERNAL-CODE-font);
-    --font-size-mono: 15px;
-    --font-regular: var(--INTERNAL-MAIN-font);
-    --font-size-regular: 16.25px;
-    font-weight: 300 !important;
-}
-
-rapi-doc::part(section-overview-title) {
-    color: var(--INTERNAL-MAIN-TITLES-H2-color);
-    font-size: 2.55rem;
-    font-weight: 500;
-}
-
-rapi-doc::part(btn) {
-    /* makes download button large enough to not overflow default text */
-    width: unset !important;
-}
-
-rapi-doc::part(section-endpoint-head-method) {
-    /* makes method marker large enough to not overflow on text DELETE */
-    font-size: 11px;
-}
-
-.select-container i {
-    padding-top: .25em;
-}
-
-.select-container i,
-.select-container span {
-    display: block;
-    float: left;
-}
-
-.select-style {
-    border: 0;
-    border-radius: 0px;
+.menu-control .control-style {
+    cursor: pointer;
     height: 1.574em;
     overflow: hidden;
 }
 
-.select-style select {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-image: none;
-    width: 100%;
+.menu-control i {
+    padding-top: .25em;
 }
 
-.select-style select:focus {
-    outline: none;
+.menu-control i,
+.menu-control span {
+    cursor: pointer;
+    display: block;
+    float: left;
+}
+html[dir="rtl"] .menu-control i,
+html[dir="rtl"] .menu-control span {
+    float: right;
 }
 
-.select-style :hover {
+.menu-control :hover,
+.menu-control i:hover,
+.menu-control span:hover {
     cursor: pointer;
 }
 
-.select-style option {
-    color: #000000;
+.menu-control select,
+.menu-control button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 1.33rem;
+    outline: none;
+    width: 100%;
+}
+.menu-control button:active,
+.menu-control button:focus,
+.menu-control select:active,
+.menu-control select:focus{
+    outline-style: solid;
+}
+
+.menu-control select {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.menu-control option {
+    color: rgba( 0, 0, 0, 1 );
     padding: 0;
     margin: 0;
 }
 
-.select-clear {
+.menu-control button {
+    background-color: transparent;
+	cursor: pointer;
+    display: block;
+    text-align: start;
+}
+
+.clear {
     clear: both;
 }
 
@@ -1444,23 +1766,7 @@ rapi-doc::part(section-endpoint-head-method) {
 .showVariantSwitch,
 .showVisitedLinks,
 .showFooter {
-    display: initial;
-}
-
-.footerVisitedLinks > * {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-	cursor: pointer;
-    text-align: left;
-    text-decoration: none;
-    width: 100%;
-}
-
-@media screen and (max-width: 47.938em) {
-    #breadcrumbs .links {
-        display: none;
-    }
+    display: block;
 }
 
 /* clears the 'X' from Chrome's search input */
@@ -1469,47 +1775,18 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
-#sidebar ul.collapsible-menu input.toggle {
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    height: 2rem;
-    left: 1rem;
-    padding-top: .35rem;
-    position: absolute;
-    width: 1px;
+span.math:has(> mjx-container[display]) {
+    display: block;
 }
 
-#sidebar ul.collapsible-menu > li > input.toggle {
-    padding-top: .25rem;
+@supports selector(.math:has(> mjx-container)){
+    .math{
+        visibility: hidden;
+    }
+    .math:has(> mjx-container){
+        visibility: visible;
+    }
 }
-
-#sidebar .collapsible-menu input.toggle:before {
-    content: "\f054";
-    font-family: "Font Awesome 5 Free";
-    font-size: .8rem;
-    font-weight: 900;
-    margin-left: -1rem;
-    padding-bottom: .65rem;
-    padding-left: .2rem;
-    padding-right: .2rem;
-    padding-top: .6rem;
-}
-
-#sidebar .collapsible-menu input.toggle:checked:before {
-    content: "\f078";
-    padding-left: .1rem;
-    padding-right: .1rem;
-}
-
-#sidebar .collapsible-menu input.toggle + label.toggle + a + ul {
-    display: none;
-}
-
-#sidebar .collapsible-menu input.toggle:checked + label.toggle + a + ul {
-	display: inline;
-}
-
 .math.align-left > mjx-container{
     text-align: left !important;
 }
@@ -1533,7 +1810,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .a11y-only {
     /* idea taken from https://www.filamentgroup.com/lab/a11y-form-labels.html */
-    clip: rect(1px,1px,1px,1px);
+    clip-path: polygon(0 0, 1px 0, 1px 1px, 0 1px);
     overflow: hidden;
     position: absolute;
     height: 1px;
@@ -1543,7 +1820,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     width: 1px;
 }
 
-/* filament style for making action visible on focus - not adepted yet
+/* filament style for making action visible on focus - not adapted yet
 .a11y-only:focus {
     position: fixed;
     height: auto;
@@ -1555,8 +1832,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     left: 50%;
     text-align: center;
     width: 200px;
-    background: #fff;
-    color: #368512;
+    background: rgba( 255, 255, 255, 1 );
+    color: rgba( 54, 133, 18, 1 );
     padding: .8em 0 .7em;
     font-size: 16px;
     z-index: 5000;
@@ -1568,22 +1845,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 */
 
-.mermaid-container .align-right > *  {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
+.mermaid-container.align-right  {
+    text-align: right;
 }
 
-.mermaid-container .align-center > *  {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.mermaid-container.align-center  {
+    text-align: center;
 }
 
-.mermaid-container .align-left > * {
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
+.mermaid-container.align-left {
+    text-align: left;
 }
 
 .searchform {
@@ -1602,7 +1873,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .searchform input::-webkit-input-placeholder,
 .searchform input::placeholder {
-    color: rgba( 134, 134, 134 );
+    color: rgba( 134, 134, 134, 1 );
     opacity: .666;
 }
 
@@ -1615,28 +1886,39 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     height: 1.5rem;
 }
 
-#searchresults a.autocomplete-suggestion {
+#R-searchresults a.autocomplete-suggestion {
     display: block;
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 1.5rem;
     padding: 1rem;
+    text-decoration: none;
 }
 
-#searchresults a.autocomplete-suggestion:after {
+#R-searchresults a.autocomplete-suggestion:after {
     height: 0;
 }
 
-#searchresults .autocomplete-suggestion > .context {
+#R-searchresults .autocomplete-suggestion > .breadcrumbs {
+    font-size: .9rem;
+    font-weight: 400;
+    margin-top: .167em;
+    padding-left: .2em;
+    padding-right: .2em;
+}
+
+#R-searchresults .autocomplete-suggestion > .context {
     font-size: 1rem;
     font-weight: 300;
-    margin-top: .66rem;
+    margin-top: .66em;
+    padding-left: .1em;
+    padding-right: .1em;
 }
 
 .badge {
     border-radius: 3px;
     display: inline-block;
-    font-size: 80%;
+    font-size: .8rem;
     font-weight: 500;
     vertical-align: middle;
 }
@@ -1664,25 +1946,28 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border-end-start-radius: 0;
 }
 
+.badge-content:after {
+    /* avoid breakage if no content is given */
+    content: "\200b";
+}
+
 /* task list and its checkboxes */
-article ul li:has(input[type="checkbox"]) {
+article ul > li:has(> input[type="checkbox"]) {
     list-style: none;
     margin-inline-start: -1rem;
 }
 
-article ul li:has(input[type="checkbox"])::before {
+article ul > li:has(> input[type="checkbox"])::before {
     content: "\200B"; /* accessibilty for Safari https://developer.mozilla.org/en-US/docs/Web/CSS/list-style */
 }
 
 /* https://moderncss.dev/pure-css-custom-checkbox-style/ */
-article ul li input[type="checkbox"] {
+article ul > li > input[type="checkbox"] {
     -webkit-appearance: none;
     appearance: none;
     /* For iOS < 15 */
-    background-color: var(--INTERNAL-MAIN-BG-color); /* box background */
     border: 0.15em solid currentColor;
     border-radius: 0.15em;
-    color: var(--INTERNAL-MAIN-TEXT-color);
     display: inline-grid;
     font: inherit;
     height: 1.15em;
@@ -1692,7 +1977,7 @@ article ul li input[type="checkbox"] {
     width: 1.15em;
 }
 
-article ul li input[type="checkbox"]::before {
+article ul > li > input[type="checkbox"]::before {
     box-shadow: inset 1em 1em var(--INTERNAL-PRIMARY-color);
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     content: "";
@@ -1705,14 +1990,14 @@ article ul li input[type="checkbox"]::before {
     background-color: CanvasText;
 }
 
-article ul li input[type="checkbox"]:checked::before {
+article ul > li > input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
 
 /* CSS Lightbox https://codepen.io/gschier/pen/kyRXVx */
-.lightbox {
+.lightbox-back {
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba( 0, 0, 0, .8 );
     bottom: 0;
     display: none;
     justify-content: center;
@@ -1725,13 +2010,322 @@ article ul li input[type="checkbox"]:checked::before {
     z-index: 1999;
 }
 
-.lightbox:target {
+.lightbox-back:target {
     display: flex;
 }
 
-.lightbox img {
+.lightbox-back img {
     max-height: 95%;
     max-width: 95%;
     overflow: auto;
     padding: min(2vh, 2vw);
+}
+
+/* basic menu list styles (non-collapsible) */
+
+#R-sidebar ul > li > :is( a, span ) {
+    display: block;
+    position: relative;
+}
+
+#R-sidebar ul.space > li > * {
+    padding-bottom: .125rem;
+    padding-top: .125rem;
+}
+#R-sidebar ul.space > li > ul {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+#R-sidebar ul.morespace > li > * {
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+}
+#R-sidebar ul.morespace > li > ul {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+#R-sidebar ul.enlarge > li > :is( a, span ) {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+#R-sidebar ul.enlarge > li > a > .read-icon {
+    margin-top: .5rem;
+}
+#R-sidebar ul.enlarge > li > ul > li:last-child {
+    padding-bottom: 1rem;
+}
+
+#R-sidebar ul ul {
+    padding-inline-start: 1rem;
+}
+
+/* collapsible menu style overrides */
+
+#R-sidebar ul.collapsible-menu > li {
+    position: relative;
+}
+
+#R-sidebar ul.collapsible-menu > li > input {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: .65rem;
+    position: absolute;
+    width: 1rem;
+    z-index: 1;
+}
+#R-sidebar ul.collapsible-menu.enlarge > li > input {
+    margin-top: .9rem;
+}
+
+#R-sidebar ul.collapsible-menu > li > label {
+    cursor: pointer;
+    display: inline-block;
+    inset-inline-start: 0;
+    margin-bottom: 0; /* nucleus */
+    padding-inline-start: .125rem;
+    position: absolute;
+    width: 1rem;
+    z-index: 2;
+}
+#R-sidebar ul.collapsible-menu.enlarge > li > label {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+#R-sidebar ul.collapsible-menu > li > label:after {
+    content: "";
+    display: block;
+    height: 1px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+#R-sidebar ul.collapsible-menu > li > label:hover:after {
+    width: 100%;
+}
+
+#R-sidebar ul.collapsible-menu > li > label > .fas {
+    font-size: .8rem;
+    width: .6rem;
+}
+
+#R-sidebar ul.collapsible-menu > li > :is( a, span ) {
+    display: inline-block;
+    width: 100%;
+}
+
+/* menu states for not(.collapsible-menu) */
+
+#R-sidebar ul ul {
+    display: none;
+}
+
+#R-sidebar ul > li.parent > ul,
+#R-sidebar ul > li.active > ul,
+#R-sidebar ul > li.alwaysopen > ul {
+    display: block;
+}
+
+/* closed menu */
+
+#R-sidebar ul.collapsible-menu > li > input + label ~ ul {
+    display: none;
+}
+
+#R-sidebar ul.collapsible-menu > li > input + label > .fa-chevron-down {
+    display: none;
+}
+#R-sidebar ul.collapsible-menu > li > input + label > .fa-chevron-right {
+    display: inline-block;
+}
+
+/* open menu  */
+
+#R-sidebar ul.collapsible-menu > li > input:checked + label ~ ul {
+	display: block;
+}
+
+#R-sidebar ul.collapsible-menu > li > input:checked + label > .fa-chevron-down {
+    display: inline-block;
+}
+#R-sidebar ul.collapsible-menu > li > input:checked + label > .fa-chevron-right {
+    display: none;
+}
+
+/* adjust menu for RTL reading direction */
+
+html[dir="rtl"] #R-sidebar ul.collapsible-menu > li > label > i.fa-chevron-right {
+    transform: scaleX(-1);
+}
+
+.columnize{
+    column-count: 2;
+}
+@media screen and (min-width: 79.25rem) {
+    .columnize{
+        column-count: 3;
+    }
+}
+
+.columnize > *{
+    break-inside: avoid-column;
+}
+
+.columnize .breadcrumbs{
+    font-size: .859625rem;
+}
+
+#R-body .tab-panel{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#R-body .tab-nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#R-body .tab-nav-title{
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.42857143;
+    padding: .2rem 0;
+    margin-inline-start: .6rem;
+}
+
+#R-body .tab-nav-button{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    display: block;
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1.42857143;
+    margin-inline-start: .6rem;
+}
+
+#R-body .tab-nav-button.active{
+    border-radius: 2px 2px 0 0;
+    cursor: default;
+}
+
+#R-body .tab-nav-button > .tab-nav-text{
+    border-bottom-style: solid;
+    border-bottom-width: .15rem;
+    display: block;
+    padding: .2rem .6rem 0 .6rem;
+}
+/* https://stackoverflow.com/a/46452396 */
+#R-body .tab-nav-button.active > .tab-nav-text{
+    border-bottom-color: transparent;
+    border-radius: 1px 1px 0 0;
+    text-shadow: -0.06ex 0 0 currentColor, 0.06ex 0 0 currentColor;
+}
+@supports (-webkit-text-stroke-width: 0.04ex){
+    #R-body .tab-nav-button.active > .tab-nav-text{
+        text-shadow: -0.03ex 0 0 currentColor, 0.03ex 0 0 currentColor;
+        -webkit-text-stroke-width: 0.04ex;
+    }
+}
+
+#R-body .tab-content{
+    border-style: solid;
+    border-width: 1px;
+    display: none;
+    /* if setting a border to 1px, a browser instead sets it to 1dppx which is not
+    usable as a unit yet, so we have to calculate it ourself */
+    margin-top: calc( -1px / var(--bpx) );
+    z-index: 10;
+}
+
+#R-body .tab-content.active{
+    display: block;
+}
+
+#R-body .tab-content-text{
+    padding: 1rem;
+}
+
+/* remove margin if only a single code block is contained in the tab (FF without :has using .codify style) */
+#R-body .tab-content.codify > .tab-content-text{
+    padding: 0;
+}
+#R-body .tab-content-text:has(> div.highlight:only-child){
+    padding: 0;
+}
+
+/* remove border from code block if single in tab */
+#R-body .tab-content-text > div.highlight:only-child > div,
+#R-body .tab-content-text > div.highlight:only-child pre:not(.mermaid),
+#R-body .tab-content-text > pre:not(.mermaid).pre-code:only-child{
+    border-width: 0;
+}
+
+/* bordering the menu and topbar */
+
+#R-topbar {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#R-header-topbar {
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-inline-end-style: solid;
+    border-inline-end-width: 1px;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#R-header-wrapper,
+#R-homelinks,
+#R-content-wrapper > * {
+    border-inline-end-style: solid;
+    border-inline-end-width: 1px;
+}
+
+#topics > ul {
+    margin-top: 1rem;
+}
+
+#R-sidebar ul.collapsible-menu li.active > a{
+    border-style: solid;
+    border-width: 1px;
+    padding-bottom: calc( .25rem - var(--bpx1)*1px);
+    padding-left: calc( 1rem - var(--bpx1)*1px);
+    padding-right: calc( 1rem - var(--bpx1)*1px);
+    padding-top: calc( .25rem - var(--bpx1)*1px);
+    width: calc(100% + var(--bpx1)*1px);
+}
+
+#R-menu-footer {
+    padding-bottom: 1rem;
+}
+
+#R-topics {
+    padding-top: 1rem;
+}
+
+.term-list ul,
+.term-list li {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+.term-list i ~ ul > li:before{
+    content: " "
+}
+.term-list ul > li ~ li:before {
+    content: " | "
 }

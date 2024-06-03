@@ -29,12 +29,12 @@ You need to have sd card enabled and sd update feature enabled in `configuration
 You can update all esp3d settings when board is starting using an ini file named `esp3dcnf.ini` at root of SD card.
 
 ```ini
-{{% include file="/esp3d/v3.x/documentation/update/esp3dcnf.ini" %}}
+{{% include file="esp3dcnf.ini" %}}
 ```
 
 Once update is done all passwords set in file will be replaced by `********`.
 
-{{% attachments sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc"  pattern=".*\.(ini)"/%}}
 
 #### Firmware
 You can update esp3d firmware when board is starting using a binary image file of firmware `esp3dfw.bin` at root of SD card.

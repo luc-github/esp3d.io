@@ -1,102 +1,149 @@
 +++
+tags = ["documentation"]
 title = "Installation"
 weight = 15
 +++
 
 The following steps are here to help you initialize your new website. If you don't know Hugo at all, we strongly suggest you learn more about it by following this [great documentation for beginners](https://gohugo.io/overview/quickstart/).
 
-## Create your project
+{{% notice tip %}}
+The following tutorial leads you through the steps of creating a first, minimal new site.
 
-Hugo provides a `new` command to create a new website.
+You don't need to edit any files besides your `hugo.toml` and only need to execute the commands in the given order.
+{{% /notice %}}
 
-```
-hugo new site <new_project>
-```
+## Create your Project
 
-## Install the theme
+Hugo provides the `new` command to create a new website:
 
-Install the Relearn theme by following [this documentation](https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme) using Hugo's module system.
+````shell
+hugo new site my-new-site
+````
 
-This theme's repository is: https://github.com/McShelby/hugo-theme-relearn.git
+After that change into the directory:
 
-Alternatively, you can [download the theme as .zip](https://github.com/McShelby/hugo-theme-relearn/archive/main.zip) file and extract it in the `themes` directory
+````shell
+cd my-new-site
+````
 
-## Basic configuration
+Every upcoming command will be executed from inside your new site's root.
 
-When building the website, you can set a theme by using `--theme` option. However, we suggest you modify the configuration file (`config.toml`) and set the theme as the default. You can also add the `[outputs]` section to enable the search functionality.
+## Install the Theme
 
-```toml
-# Change the default theme to be use when building the site with Hugo
+### Downloading as Archive
+
+You can [download the theme as .zip archive](https://github.com/McShelby/hugo-theme-relearn/archive/main.zip) and extract its content into them `themes/hugo-theme-relearn` directory.
+
+Afterwards add this at the end of your `hugo.toml`.
+
+{{< multiconfig file=hugo >}}
 theme = "hugo-theme-relearn"
+{{< /multiconfig >}}
 
-# For search functionality
-[outputs]
-home = [ "HTML", "RSS", "SEARCH"]
-```
+### Using Hugo's Module System
 
-## Create your first chapter page
+You can install the Relearn theme by following [the standard documentation](https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme) using Hugo's module system:
 
-Chapters are pages that contain other child pages. It has a special layout style and usually just contains a _chapter name_, the _title_ and a _brief abstract_ of the section.
+````shell
+hugo mod init example.com
+````
 
-```markdown
-### Chapter 1
+Afterwards add this at the end of your `hugo.toml`.
 
-# Basics
+{{< multiconfig file=hugo >}}
+[module]
+  [[module.imports]]
+    path = 'github.com/McShelby/hugo-theme-relearn'
+{{< /multiconfig >}}
 
-Discover what this Hugo theme is all about and the core concepts behind it.
-```
+### Using Git Submodules
 
-renders as
+If you plan to store your project in a git repository you can create one with:
 
-![A Chapter](chapter.png?classes=shadow&width=60pc)
+````shell
+git init
+````
 
-The Relearn theme provides archetypes to create skeletons for your website. Begin by creating your first chapter page with the following command
+Now add the theme as a submodule by:
 
-```shell
+````shell
+git submodule add https://github.com/McShelby/hugo-theme-relearn.git themes/hugo-theme-relearn
+````
+
+Afterwards add this at the end of your `hugo.toml`.
+
+{{< multiconfig file=hugo >}}
+theme = "hugo-theme-relearn"
+{{< /multiconfig >}}
+
+## Create your Home Page
+
+If you don't create a home page, yet, the theme will generate a placeholder text with instructions on how to proceed.
+
+Start your journey by creating a home page:
+
+````shell
+hugo new --kind home _index.md
+````
+
+The newly created home page `content/_index.md` is empty and you obviously should add some meaningful content.
+
+## Create your First Chapter Page
+
+Chapters are meant to be top level pages that contain other child pages. They have a special layout style and often just contain the _title_ and a _brief abstract_ of the section.
+
+Now create your first chapter page with the following command:
+
+````shell
 hugo new --kind chapter basics/_index.md
-```
+````
 
-By opening the given file, you should see the property `chapter=true` on top, meaning this page is a _chapter_.
+When opening the newly created file `content/basics/_index.md`, you should see the `weight` frontmatter with a number. This will be used to generate the subtitle of the chapter page, and should be set to a consecutive value starting at `1` for each chapter level.
 
-By default all chapters and pages are created as a draft. If you want to render these pages, remove the property `draft: true` from the metadata.
+## Create your First Content Pages
 
-## Create your first content pages
+Then create content pages inside the previously created chapter. Here are three ways to create content in the chapter:
 
-Then, create content pages inside the previously created chapter. Here are two ways to create content in the chapter:
-
-```shell
-hugo new basics/first-content.md
-hugo new basics/second-content/_index.md
-```
+````shell
+hugo new basics/first-content/_index.md
+hugo new basics/second-content/index.md
+hugo new basics/third-content.md
+````
 
 Feel free to edit those files by adding some sample content and replacing the `title` value in the beginning of the files.
 
-## Launching the website locally
+{{% notice note %}}
+Please note that Hugo overrides the default archetype template coming with this theme when using `hugo new site my-new-site`. To actually see your page later, you have to remove the `draft=true` from the page's frontmatter.
+{{% /notice %}}
 
-Launch by using the following command:
+## Testing your Website Locally
 
-```shell
+Launch your new web site by using the following command:
+
+````shell
 hugo serve
-```
+````
 
-Go to `http://localhost:1313`
+Go to [`http://localhost:1313`](http://localhost:1313) in your browser.
 
-You should notice three things:
+You should notice a few things:
 
-1. You have a left-side **Basics** menu, containing two submenus with names equal to the `title` properties in the previously created files.
-2. The home page explains how to customize it by following the instructions.
-3. When you run `hugo serve`, when the contents of the files change, the page automatically refreshes with the changes. Neat!
+1. The home page contains your provided text.
+2. You have the menu **Basics** in the sidebar. Clicking on it reveals three submenus with names equal to the `title` properties in the previously created content pages.
+3. While you are running `hugo serve` your page refreshes automatically when you change a content page. Neat!
 
-## Build the website
+## Build and Deploy your Website
 
-When your site is ready to deploy, run the following command:
+When your site is ready to be deployed, run the following command:
 
-```shell
+````shell
 hugo
-```
+````
 
-A `public` folder will be generated, containing all static content and assets for your website. It can now be deployed on any web server.
+A `public` directory will be generated, containing all content and assets for your web site.
+
+It now can be deployed to any web server by simply uploading its contents or you can check out one of [Hugo's many other deployment options](https://gohugo.io/hosting-and-deployment/).
 
 {{% notice note %}}
-This website can be automatically published and hosted with [Netlify](https://www.netlify.com/) (Read more about [Automated HUGO deployments with Netlify](https://www.netlify.com/blog/2015/07/30/hosting-hugo-on-netlifyinsanely-fast-deploys/)). Alternatively, you can use [GitHub pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/).
+If you are storing your web site in git, commit all but the `public` directory.
 {{% /notice %}}

@@ -34,7 +34,7 @@ You can update all esp3d settings when board is starting using an ini file named
 
 Once update is done all passwords set in file will be replaced by `********`.
 
-{{% attachments sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc" pattern=".*\.(ini)"  /%}}
 
 #### Firmware
 You can update esp3d firmware when board is starting using a binary image file of firmware `esp3dfw.bin` at root of SD card.

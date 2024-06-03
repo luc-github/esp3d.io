@@ -26,12 +26,12 @@ My boards have only 4MB flash and no PSRAM unlike described in github and FYSETC
 
 ### configuration.h
 ```js          
-{{% include file="/esp3d/v3.x/hardware/esp32-pico/sd-wifi-pro/configuration.h"  %}}
+{{% include file="configuration.h"  %}}
 ```
 
 ### platformio.ini
 ```ini
-{{% include file="/esp3d/v3.x/hardware/esp32-pico/sd-wifi-pro/platformio.ini"  %}}
+{{% include file="platformio.ini"  %}}
 ```
 
-{{% attachments sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc" pattern=".*\.(ini|h)" /%}}

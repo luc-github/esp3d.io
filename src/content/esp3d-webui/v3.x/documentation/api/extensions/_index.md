@@ -662,4 +662,4 @@ It will be displayed according your settings
 ![image](extra_extension_panel.png)
 
 ## Sample codes   
-{{% attachments sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc" pattern=".*\.(gz)"/%}}

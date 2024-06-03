@@ -7,16 +7,14 @@
   width: device-width; }
 @-moz-viewport {
   width: device-width; }
-@-ms-viewport {
-  width: device-width; }
 @-o-viewport {
   width: device-width; }
 @viewport {
   width: device-width; }
 html {
-  font-size: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
 
 body {
   margin: 0; }
@@ -54,10 +52,6 @@ a {
   background: transparent;
   text-decoration: none; }
 
-a:active,
-a:hover {
-  outline: 0; }
-
 abbr[title] {
   border-bottom: 1px dotted; }
 
@@ -81,6 +75,9 @@ sup {
 sub {
   bottom: -0.25em; }
 
+iframe {
+  border: 0; }
+
 img {
   border: 0;
   max-width: 100%; }
@@ -89,12 +86,12 @@ svg:not(:root) {
   overflow: hidden; }
 
 figure {
-  margin: 1em 40px; }
+  margin: 1rem 2.5rem; }
 
 hr {
   height: 0; }
 
-pre {
+pre:not(.mermaid) {
   overflow: auto; }
 
 button,
@@ -107,7 +104,8 @@ textarea {
   margin: 0; }
 
 button {
-  overflow: visible; }
+  overflow: visible;
+  padding: 0; }
 
 button,
 select {
@@ -172,32 +170,6 @@ th, td {
 th {
   text-align: start; }
 
-body {
-  font-size: 1rem;
-  line-height: 1.5; }
-
-h1, h2, h3, .article-subheading, h4, h5, h6 {
-  margin: 0.85rem 0 1rem 0;
-  text-rendering: optimizeLegibility; }
-
-h1 {
-  font-size: 3.25rem; }
-
-h2 {
-  font-size: 2.55rem; }
-
-h3, .article-subheading {
-  font-size: 2.15rem; }
-
-h4 {
-  font-size: 1.8rem; }
-
-h5 {
-  font-size: 1.4rem; }
-
-h6 {
-  font-size: 0.9rem; }
-
 p {
   margin: 1rem 0; }
 
@@ -218,7 +190,7 @@ cite {
   cite:before {
     content: "\2014 \0020"; }
 
-pre {
+pre:not(.mermaid) {
   margin: 1.5rem 0;
   padding: 0.938rem; }
 
@@ -267,7 +239,7 @@ textarea {
 
 input[type="checkbox"], input[type="radio"] {
   display: inline;
-  margin-right: 0.425rem; }
+  margin-inline-end: 0.425rem; }
 
 input[type="file"] {
   width: 100%; }
@@ -280,6 +252,7 @@ select {
 button,
 input[type="submit"] {
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
   white-space: nowrap;
   border: inherit; }

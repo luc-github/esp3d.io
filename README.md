@@ -4,10 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Project page for the web site on http://esp3d.io
 
-It use [Hugo](https://gohugo.io/) to generate the static pages and use the [hugo relearn theme](https://mcshelby.github.io/hugo-theme-relearn/) as code base.
-
->[!IMPORTANT]
->Please use version 110.0, lastest version (121.2) seems not compatible with current code, I did not checked what is latest working version for this site
+It use [Hugo v0.126.3](https://gohugo.io/) to generate the static pages and use the [hugo relearn theme v6.0.0](https://mcshelby.github.io/hugo-theme-relearn/) as code base.
 
 Discussion is available here: https://github.com/luc-github/esp3d.io/discussions or on discord: https://discord.gg/VNxDGBasYD
 

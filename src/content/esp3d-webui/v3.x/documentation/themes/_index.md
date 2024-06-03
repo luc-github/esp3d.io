@@ -2,6 +2,7 @@
 description = "Themes description"
 archetype = "section"
 title = "Themes"
+menuPre = "<i class='fas fa-palette'></i> "
 weight = 9
 +++
 Themes are actually just gzipped css file that overload current css, their name must start by `theme-` to be recognized and have proper `.gz` extension if they are compressed.
@@ -66,4 +67,4 @@ Once change are applied the webui will automatically restart
 ![image](black_theme.png)
 
 ### Here some themes as examples:   
-{{% attachments sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc" pattern="^(theme-)" /%}}

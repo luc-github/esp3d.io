@@ -6,7 +6,7 @@ menuPre = "<i class='fas fa-lock'></i> "
 weight = 2
 +++
 
-# Definition
+## Definition
 The authentication is an additional security layer to protect the ESP3D web interface and ESP3D commands from unauthorized access. It is based on a username and a password. The authentication is optional and can be enabled/disabled in the ESP3D configuration. There are 3 login levels for authentication:
 - guest, which is does not need any authentication
 - user, which has limited access to ESP3D features
@@ -14,7 +14,7 @@ The authentication is an additional security layer to protect the ESP3D web inte
 
 Currently the login cannot be customized and so is limited to `user` and `admin` levels. The `guest` level is always available and cannot be disabled.
 
-# Configuration
+## Configuration
 
 In configuration.h just uncomment the following line to enable the authentication:
 ```c++
@@ -22,9 +22,9 @@ In configuration.h just uncomment the following line to enable the authenticatio
 ```
 Default password authentication for `admin` is `admin` and for 'user' is `user`. You can change them using WebInterface or [ESP550] and [ESP555] commands.
 
-# Usage
+## Usage
 
-## Web Interface
+### Web Interface
 
 When user authentication is enabled, the web interface will ask for a username and a password. If the authentication is successful, the user will be redirected to the web interface. If the authentication fails, the user will be redirected to the login page.
 
@@ -36,12 +36,12 @@ http://user:password@<ip_address>
 
 On the web interface an authenticated session will stay open until the browser is closed. So if you close the browser and reopen it, you will be asked for authentication again. This session can also have a timeout. The default timeout is 3 minutes of inactivity. This timeout can be changed in the ESP3D configuration web interface or using `[ESP510]` command.
 
-## ESPXXX Command
+### ESPXXX Command
 
 When user authentication is enabled, the ESPXXX commands will ask for a password. If the authentication is successful, the command will be executed. If the authentication fails, the command will be rejected.
 
 The session for ESPXXX commands is a sticky session. This means that once authenticated, the session will stay authenticated until the ESP3D is restarted or session is closed (e.g: Telnet / WebSocket).
-# Limitations
+## Limitations
 
 The current authentication miss a lot of features, like:
 - user management
@@ -60,7 +60,7 @@ In web interface the passwords are replaced by `*******` so any modification mus
 
 All passwords and sensitive informations are sent using plain text. So if you want to use ESP3D in a public network or outside of your local network (which is not recommended), you must use a VPN.
 
-# Scope
+## Scope
 
 Here the scope of right for each authentication level:
 |Feature | not authenticated | guest  | user | admin |
@@ -143,9 +143,9 @@ Here the scope of right for each authentication level:
 | [[ESP931]](../commands/esp931/) | No | No | Get | Get/Set |
 | [[ESP999]](../commands/esp999/) | No | No | No | Set |
 
-# API Description
+## API Description
 
-## Global
+### Global
 Each authenticated session have unique session id, that will be stored on ESP3D with additionnal informations:
 - session id (25 characters)
 - session level (Guest / Admin / User)
@@ -154,6 +154,6 @@ Each authenticated session have unique session id, that will be stored on ESP3D 
 - client IP (http)
 - Client socket ID (telnet / WebSocket)
 
-## Http
+### Http
 When authentication is enabled, the http server will check if the session is authenticated. If not, it will ask for authentication. If the session is authenticated, it will check if the session is still valid. If not, it will ask for authentication again. If the session is still valid, it will process the request.
 the Session ID is stored in the cookie `ESP3D_SESSIONID`.
