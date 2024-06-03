@@ -467,7 +467,7 @@
 		},
 		"Resources": {
 			"body": [
-				"{{% resources title=\"[[&title]]\" pattern=\"[[&pattern]]\" sort=\"[[&sort]]\" style=\"[[&style]]\" color=\"[[&color]]\" icon=\"[[&icon]]\" /%}}"
+				"{{% resources color="blue" icon="fas fa-paperclip" title=\"[[&title]]\" pattern=\"[[&pattern]]\" sort=\"[[&sort]]\" style=\"[[&style]]\" color=\"[[&color]]\" icon=\"[[&icon]]\" /%}}"
 			],
 			"description": "Displays a list of resources contained in a page bundle",
 			"fields": [

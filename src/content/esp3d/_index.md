@@ -29,5 +29,3 @@ There is one production version and one development version, others versions are
 ### Cybersecurity concerns
 
 {{% include file="common/cybersecurity-concerns.md" %}}
-
-

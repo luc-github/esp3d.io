@@ -8,7 +8,7 @@ title = "Resources"
 
 The `resources` shortcode displays the [titles](https://gohugo.io/methods/resource/title/) of resources contained in a [page bundle](https://gohugo.io/content-management/page-bundles/).
 
-{{% resources sort="asc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" sort="asc" /%}}
 
 ## Usage
 
@@ -55,7 +55,7 @@ Multilanguage features are not supported directly by the shortcode but rely on H
 {{%/* resources title="Related **files**" pattern=".*\.(png|jpg|gif)" /*/%}}
 ````
 
-{{% resources title="Related **files**" pattern=".*\.(png|jpg|gif)" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" title="Related **files**" pattern=".*\.(png|jpg|gif)" /%}}
 
 ### Info Styled Box, Descending Sort Order
 
@@ -63,7 +63,7 @@ Multilanguage features are not supported directly by the shortcode but rely on H
 {{%/* resources style="info" sort="desc" /*/%}}
 ````
 
-{{% resources style="info" sort="desc" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" style="info" sort="desc" /%}}
 
 ### With User-Defined Color and Font Awesome Brand Icon
 
@@ -71,7 +71,7 @@ Multilanguage features are not supported directly by the shortcode but rely on H
 {{%/* resources color="fuchsia" icon="fa-fw fab fa-hackerrank" /*/%}}
 ````
 
-{{% resources color="fuchsia" icon="fa-fw fab fa-hackerrank" /%}}
+{{% resources color="blue" icon="fas fa-paperclip" color="fuchsia" icon="fa-fw fab fa-hackerrank" /%}}
 
 ### Style, Color, Title and Icons
 
