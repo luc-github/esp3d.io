@@ -9,22 +9,16 @@ The `math` shortcode generates beautiful formatted math and chemical formulae us
 $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 {{< /math >}}
 
-{{% notice note %}}
-This only works in modern browsers.
-{{% /notice %}}
-
 ## Usage
 
 While the examples are using shortcodes with named parameter it is recommended to use codefences instead. This is because more and more other software supports Math codefences (eg. GitHub) and so your markdown becomes more portable.
 
 You are free to also call this shortcode from your own partials.
 
-{{% notice note %}}
-To use codefence syntax you have to turn off `guessSyntax` for the `markup.highlight` setting ([see the configuration section](#configuration)).
-{{% /notice %}}
+Math is also usable without enclosing it in a shortcode or codefence but [requires configuration](#passthrough-configuration) by you. In this case no parameter from the below table are available.
 
-{{< tabs groupId="shortcode-parameter">}}
-{{% tab name="codefence" %}}
+{{< tabs groupid="shortcode-parameter">}}
+{{% tab title="codefence" %}}
 
 ````md
 ```math { align="center" }
@@ -33,7 +27,7 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 ````
 
 {{% /tab %}}
-{{% tab name="shortcode" %}}
+{{% tab title="shortcode" %}}
 
 ````go
 {{</* math align="center" */>}}
@@ -42,15 +36,21 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 ````
 
 {{% /tab %}}
-{{% tab name="partial" %}}
+{{% tab title="partial" %}}
 
 ````go
 {{ partial "shortcodes/math.html" (dict
-  "context" .
+  "page"    .
   "content" "$$left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$"
   "align"   "center"
 )}}
+````
 
+{{% /tab %}}
+{{% tab title="passthrough" %}}
+
+````md
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 ````
 
 {{% /tab %}}
@@ -59,43 +59,59 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 ### Parameter
 
 | Name                  | Default          | Notes       |
-|:----------------------|:-----------------|:------------|
+|-----------------------|------------------|-------------|
 | **align**             | `center`         | Allowed values are `left`, `center` or `right`. |
-| _**&lt;content&gt;**_ | _&lt;empty&gt;_  | Your formuale. |
+| _**&lt;content&gt;**_ | _&lt;empty&gt;_  | Your formulae. |
 
 ## Configuration
 
-MathJax is configured with default settings. You can customize MathJax's default settings for all of your files thru a JSON object in your `config.toml` or override these settings per page thru your pages frontmatter.
+MathJax is configured with default settings but you can customize MathJax's default settings for all of your files through a JSON object in your `hugo.toml` or override these settings per page through your pages frontmatter.
 
-The JSON object of your `config.toml` / frontmatter is forwarded into MathJax's configuration object.
+The JSON object of your `hugo.toml` / frontmatter is forwarded into MathJax's configuration object.
 
 See [MathJax documentation](https://docs.mathjax.org/en/latest/options/index.html) for all allowed settings.
 
-{{% notice note %}}
-To use codefence syntax you have to turn off `guessSyntax` for the `markup.highlight` setting.
-{{% /notice %}}
-
 ### Global Configuration File
 
-````toml
-[params]
-  mathJaxInitialize = "{ \"chtml\": { \"displayAlign\": \"left\" } }"
+This example reflects the default configuration also used if you don't define `mathJaxInitialize`
 
-[markup]
-  [markup.highlight]
-    # if `guessSyntax = true`, there will be no unstyled code even if no language
-    # was given BUT Mermaid and Math codefences will not work anymore! So this is a
-    # mandatory setting for your site if you want to use Math codefences
-    guessSyntax = false
-````
+{{< multiconfig file=hugo >}}
+[params]
+  mathJaxInitialize = "{ \"tex\": { \"inlineMath\": [[\"\\(\", \"\\)\"], [\"$\", \"$\"]], displayMath: [[\"\\[\", \"\\]\"], [\"$$\", \"$$\"]] }, \"options\": { \"enableMenu\": false }"
+{{< /multiconfig >}}
 
 ### Page's Frontmatter
 
-````toml
-+++
-mathJaxInitialize = "{ \"chtml\": { \"displayAlign\": \"left\" } }"
-+++
-````
+Usually you don't need to redefine the global initialization settings for a single page. But if you do, you have repeat all the values from your global configuration you want to keep for a single page as well.
+
+Eg. If you have redefined the delimiters to something exotic like `@` symbols in your global config, but want to additionally align your math to the left for a specific page, you have to put this to your frontmatter:
+
+{{< multiconfig fm=true >}}
+mathJaxInitialize = "{ \"chtml\": { \"displayAlign\": \"left\" }, { \"tex\": { \"inlineMath\": [[\"\\(\", \"\\)\"], [\"@\", \"@\"]], displayMath: [[\"\\[\", \"\\]\"], [\"@@\", \"@@\"]] }, \"options\": { \"enableMenu\": false }"
+{{< /multiconfig >}}
+
+### Passthrough Configuration
+
+You can use your math without enclosing it in a shortcode or codefence by using a [passthrough configuration](https://gohugo.io/content-management/mathematics/#step-1) in your `hugo.toml`:
+
+{{< multiconfig file=hugo >}}
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          inline = [['\(', '\)'], ['$',  '$']]
+          block  = [['\[', '\]'], ['$$', '$$']]
+{{< /multiconfig >}}
+
+In this case you have to tell the theme that your page contains math by setting this in your page's frontmatter:
+
+{{< multiconfig fm=true >}}
+disableMathJax = false
+{{< /multiconfig >}}
+
+See the [example](#passthrough) on how it makes using math really easy.
 
 ## Examples
 
@@ -136,6 +152,26 @@ $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \
 ````math
 $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 ````
+
+### Passthrough
+
+This works for block as well as inline math but is only available if you are using the [passthrough configuration](#passthrough-configuration).
+
+With passthrough configuration you can just drop your math without enclosed by shortcodes or codefences but no settings from the [parameter table](#parameter) are available.
+
+````md
+$$\left|
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}\right|$$
+````
+
+$$\left|
+\begin{array}{cc}
+a & b \\
+c & d
+\end{array}\right|$$
 
 ### Chemical Formulae
 

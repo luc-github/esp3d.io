@@ -3,6 +3,7 @@ title = ""
 weight = 1
 mermaidInitialize = "{ \"theme\": \"dark\" }"
 mermaidZoom = true
+description = "Web site of ESP3D ecosystem"
 +++
   
 ### What is ESP3D Ecosystem ?

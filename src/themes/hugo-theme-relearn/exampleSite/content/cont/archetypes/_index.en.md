@@ -1,6 +1,6 @@
 +++
 title = "Archetypes"
-weight = 2
+weight = 3
 +++
 
 Using the command: `hugo new [relative new content path]`, you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more: [archetypes](https://gohugo.io/content/archetypes/). These are preconfigured skeleton pages with default frontmatter.
@@ -13,81 +13,78 @@ The Relearn theme defines some few archetypes of pages but you are free to defin
 
 A **Home** page is the starting page of your project. It's best to have only one page of this kind in your project.
 
-![Home page](pages-home.png?classes=shadow&width=60pc)
+![Home page](pages-home.png?width=60pc)
 
 To create a home page, run the following command
 
-```shell
+````shell
 hugo new --kind home _index.md
-```
+````
 
 This leads to a file with the following content
 
-```markdown
+````toml {title="_index.md"}
 +++
 archetype = "home"
 title = "{{ replace .Name "-" " " | title }}"
 +++
 
 Lorem Ipsum.
-```
+````
 
 ### Chapter {#archetypes-chapter}
 
 A **Chapter** displays a page meant to be used as introduction for a set of child pages. Commonly, it contains a simple title and a catch line to define content that can be found below it.
 
-![Chapter page](pages-chapter.png?classes=shadow&width=60pc)
+![Chapter page](pages-chapter.png?width=60pc)
 
 To create a chapter page, run the following command
 
-```shell
+````shell
 hugo new --kind chapter <name>/_index.md
-```
+````
 
 This leads to a file with the following content
 
-```markdown
+````toml {title="_index.md"}
 +++
 archetype = "chapter"
 title = "{{ replace .Name "-" " " | title }}"
-weight = X
+weight = 1
 +++
 
 Lorem Ipsum.
-```
+````
 
-Replace the `X` with a number. Because this number will be used to generate the subtitle of the chapter page, set the number to a consecutive value starting at 1 for each new chapter level.
+The `weight` number will be used to generate the subtitle of the chapter page, set the number to a consecutive value starting at 1 for each new chapter level.
 
 ### Default {#archetypes-default}
 
 A **Default** page is any other content page. If you set an unknown archetype in your frontmatter, this archetype will be used to generate the page.
 
-![Default page](pages-default.png?classes=shadow&width=60pc)
+![Default page](pages-default.png?width=60pc)
 
 To create a default page, run either one of the following commands
 
-```shell
+````shell
 hugo new <chapter>/<name>/_index.md
-```
+````
 
 or
 
-```shell
+````shell
 hugo new <chapter>/<name>.md
-```
+````
 
 This leads to a file with the following content
 
-```markdown
+````toml {title="*.md"}
 +++
 title = "{{ replace .Name "-" " " | title }}"
-weight = X
 +++
 
 Lorem Ipsum.
-```
-
-Replace the `X` with a number or delete the whole `weight` parameter entirely.
+````
 
 ## Self defined Archetypes
 
@@ -97,7 +94,7 @@ If you are in need of further archetypes you can define your own or even redefin
 
 Define a template file in your project at `archetypes/<kind>.md` and make sure it has at least the frontmatter parameter for that archetype like
 
-````markdown
+````toml {title="&lt;kind&gt;.md"}
 +++
 archetype = "<kind>"
 +++
@@ -105,9 +102,9 @@ archetype = "<kind>"
 
 Afterwards you can generate new content files of that kind with the following command
 
-```shell
+````shell
 hugo new --kind <kind> <name>/_index.md
-```
+````
 
 ### Partials
 
@@ -120,7 +117,7 @@ Related to each archetype, several _hook_ partial files in the form of `<hook>.h
 The following hooks are used:
 
 | Name                 | Notes       |
-|:---------------------|:------------|
+|----------------------|-------------|
 | styleclass           | Defines a set of CSS classes to be added to the HTML's `<main>` element. You can use these classes to define own CSS rules in your `custom-header.html` |
 | article              | Defines the HTML how to render your content |
 
@@ -128,4 +125,4 @@ Take a look at the existing archetypes of this theme to get an idea how to utili
 
 #### Output formats
 
-Each hook file can be overridden of a specific [output format](https://gohugo.io/templates/output-formats/). Eg. if you define a new output format `PLAINTEXT` in your `config.toml`, you can add a file `layouts/partials/archetypes/default.plaintext.html` to change the way how normal content is written for that output format.
+Each hook file can be overridden of a specific [output format](https://gohugo.io/templates/output-formats/). Eg. if you define a new output format `PLAINTEXT` in your `hugo.toml`, you can add a file `layouts/partials/archetypes/default.plaintext.html` to change the way how normal content is written for that output format.

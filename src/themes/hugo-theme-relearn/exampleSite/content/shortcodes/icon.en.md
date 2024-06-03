@@ -14,8 +14,8 @@ The `icon` shortcode displays icons using the [Font Awesome](https://fontawesome
 
 While the examples are using shortcodes with positional parameter you are free to also call this shortcode from your own partials.
 
-{{< tabs groupId="shortcode-parameter">}}
-{{% tab name="shortcode" %}}
+{{< tabs groupid="shortcode-parameter">}}
+{{% tab title="shortcode" %}}
 
 ````go
 {{%/* icon icon="exclamation-triangle" */%}}
@@ -24,7 +24,7 @@ While the examples are using shortcodes with positional parameter you are free t
 ````
 
 {{% /tab %}}
-{{% tab name="shortcode (positional)" %}}
+{{% tab title="shortcode (positional)" %}}
 
 ````go
 {{%/* icon exclamation-triangle */%}}
@@ -33,19 +33,19 @@ While the examples are using shortcodes with positional parameter you are free t
 ````
 
 {{% /tab %}}
-{{% tab name="partial" %}}
+{{% tab title="partial" %}}
 
 ````go
 {{ partial "shortcodes/icon.html" (dict
-    "context" .
+    "page" .
     "icon" "exclamation-triangle"
 )}}
 {{ partial "shortcodes/icon.html" (dict
-    "context" .
+    "page" .
     "icon" "angle-double-up"
 )}}
 {{ partial "shortcodes/icon.html" (dict
-    "context" .
+    "page" .
     "icon" "skull-crossbones"
 )}}
 ````
@@ -56,14 +56,14 @@ While the examples are using shortcodes with positional parameter you are free t
 ### Parameter
 
 | Name                  | Position | Default         | Notes       |
-|:----------------------|:---------|:----------------|:------------|
-| **icon**              | 1        | _&lt;empty&gt;_ | [Font Awesome icon name]({{%relref "#finding-an-icon" %}}) to be displayed. It will be displayed in the text color of its according context. |
+|-----------------------|----------|-----------------|-------------|
+| **icon**              | 1        | _&lt;empty&gt;_ | [Font Awesome icon name](#finding-an-icon) to be displayed. It will be displayed in the text color of its according context. |
 
 ### Finding an icon
 
-Browse through the available icons in the [Font Awesome Gallery](https://fontawesome.com/v5/search?m=free). Notice that the **free** filter is enabled, as only the free icons are available by default.
+Browse through the available icons in the [Font Awesome Gallery](https://fontawesome.com/v6/search?m=free). Notice that the **free** filter is enabled, as only the free icons are available by default.
 
-Once on the Font Awesome page for a specific icon, for example the page for the [heart](https://fontawesome.com/v5/icons/heart?s=solid), copy the icon name and paste into the Markdown content.
+Once on the Font Awesome page for a specific icon, for example the page for the [heart](https://fontawesome.com/v6/icons/heart?s=solid), copy the icon name and paste into the Markdown content.
 
 ### Customising Icons
 
@@ -88,10 +88,17 @@ Built with {{% icon heart %}} by Relearn and Hugo
 
 ### Advanced HTML Usage
 
-While the shortcode simplyfies using standard icons, the icon customisation and other advanced features of the Font Awesome library requires you to use HTML directly. Just paste the `<i>` HTML into markup and Font Awesome will load the relevant icon.
+While the shortcode simplifies using standard icons, the icon customization and other advanced features of the Font Awesome library require you to use HTML directly. Paste the `<i>` HTML into markup, and Font Awesome will load the relevant icon.
 
 ````html
 Built with <i class="fas fa-heart"></i> by Relearn and Hugo
 ````
 
 Built with <i class="fas fa-heart"></i> by Relearn and Hugo
+
+To use these native HTML elements in your Markdown, add this in your `hugo.toml`:
+
+````toml
+[markup.goldmark.renderer]
+    unsafe = true
+````
