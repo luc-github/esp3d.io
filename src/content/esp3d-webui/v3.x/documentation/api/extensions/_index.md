@@ -459,10 +459,20 @@ There is no answer for this message, so `id` is not necessary
 ---
 ### Send capabilities request
 
-Example: `{type:'capabilities', target:'webui', id:'transpanel'}`   
+This allow to collect all capabilities for specific topic:   
+* if id is `connection` you will get the json of [ESP800] response jsonified
+* if id is `features` you will get the [ESP400] response jsonified
+* if id is `interface` you will get the preferences.json jsonified
+* if id is `settings` you will get specific settings from target fw in json format
+
+Be noted this API only collect existing data, so for `features`,`interface`	and `settings` you may get empty response if corresponding query has not be done.
+
+About settings the format may differ from one firmware to another, so you need to check the response to know how to use it, response is always a variable named machineSettings and important content may usualy located in `machineSettings.cache` 
+
+Example: `{type:'capabilities', target:'webui', id:'connection'}`   
 **type** is `capabilities` (mandatory)  
 **target** is `webui` (mandatory)  
-**id** is `infopanel` (optional)  
+**id** is `connection` (mandatory)  
 
 * Answer format: check the `eventMsg.data`   
 
@@ -470,19 +480,202 @@ Example: `{type:'capabilities', target:'webui', id:'transpanel'}`
     {
         "type": "capabilities",
         "content": {
-            "response": "Your session will end soon, do you want to stay connected ?",
+            "response": "{
+				"FWVersion": "3.0.0.a111",
+				"FWTarget": "marlin",
+				"FWTargetID": "40",
+				"Setup": "Enabled",
+				"Screen": "HMI V3",
+				"Streaming": "Enabled",
+				"SDConnection": "direct",
+				"SerialProtocol": "Raw",
+				"Authentication": "Disabled",
+				"WebCommunication": "Asynchronous",
+				"WebSocketIP": "localhost",
+				"WebSocketPort": "81",
+				"Hostname": "esp3d",
+				"WiFiMode": "STA",
+				"WebUpdate": "Enabled",
+				"FlashFileSystem": "LittleFS",
+				"HostPath": "/",
+				"Time": "none",
+				"HostTarget": "files",
+				"HostUploadPath": "/",
+				"HostDownloadPath": "/",
+				"wsID": "0"
+			}",
             "initiator": {
                             "type":"capabilities", 
                             "target":"webui", 
-                            "id":"infopanel"
+                            "id":"connection"
                         }
         },
-        "id": "infopanel"
+        "id": "connection"
     }  
     ```
     **type** is `capabilities`   
-    **id** is the id set in command message to help to screen    
-    **content** has the response it self **response**, in our case a JSON and also the  **initiator** is the initial command for reference   
+    **id** is the id of requested capability  
+    **content** has the response it self **response**, in our case a JSON and also the  **initiator** is the initial command for reference 
+
+---
+### Send icon request
+
+The WebUI already a set of icons, so no need to bother with new icons, you can request a specific one if needed
+
+Be noted some icons may be specific to a system, so it may not be available in all systems
+
+Main icons are :
+```
+None: null,
+Activity: <Activity />,
+AlertCircle: <AlertCircle />,
+Anchor: <Anchor />,
+Aperture: <Aperture />,
+Award: <Award />,
+BarChart: <BarChart />,
+BellOff: <BellOff />,
+Bell: <Bell />,
+Bluetooth: <Bluetooth />,
+Bookmark: <Bookmark />,
+Box: <Box />,
+Camera: <Camera />,
+Cast: <Cast />,
+ChevronDown: <ChevronDown />,
+ChevronLeft: <ChevronLeft />,
+ChevronRight: <ChevronRight />,
+ChevronUp: <ChevronUp />,
+ChevronsDown: <ChevronsDown />,
+ChevronsLeft: <ChevronsLeft />,
+ChevronsRight: <ChevronsRight />,
+ChevronsUp: <ChevronsUp />,
+Clipboard: <Clipboard />,
+Clock: <Clock />,
+Cpu: <Cpu />,
+Crosshair: <Crosshair />,
+Database: <Database />,
+Delete: <Delete />,
+Download: <Download />,
+Droplet: <Droplet />,
+Edit: <Edit />,
+EyeOff: <EyeOff />,
+Eye: <Eye />,
+File: <File />,
+Filter: <Filter />,
+Flag: <Flag />,
+Frown: <Frown />,
+GitCommit: <GitCommit />,
+Globe: <Globe />,
+Grid: <Grid />,
+HardDrive: <HardDrive />,
+Hash: <Hash />,
+Heart: <Heart />,
+HelpCircle: <HelpCircle />,
+Home: <Home />,
+Image: <Image />,
+Info: <Info />,
+Layers: <Layers />,
+LifeBuoy: <LifeBuoy />,
+List: <List />,
+Loader: <Loader />,
+Lock: <Lock />,
+LogIn: <LogIn />,
+LogOut: <LogOut />,
+Mail: <Mail />,
+MapPin: <MapPin />,
+Meh: <Meh />,
+Menu: <Menu />,
+MessageSquare: <MessageSquare />,
+MinusCircle: <MinusCircle />,
+Monitor: <Monitor />,
+Moon: <Moon />,
+MoreHorizontal: <MoreHorizontal />,
+MoreVertical: <MoreVertical />,
+Move: <Move />,
+PauseCircle: <PauseCircle />,
+Percent: <Percent />,
+PlayCircle: <PlayCircle />,
+PlusCircle: <PlusCircle />,
+Power: <Power />,
+Printer: <Printer />,
+Radio: <Radio />,
+RefreshCw: <RefreshCw />,
+Repeat: <Repeat />,
+RotateCcw: <RotateCcw />,
+Save: <Save />,
+Scissors: <Scissors />,
+Send: <Send />,
+Server: <Server />,
+Settings: <Settings />,
+Share: <Share />,
+Slash: <Slash />,
+Sliders: <Sliders />,
+Smile: <Smile />,
+Star: <Star />,
+StopCircle: <StopCircle />,
+Sun: <Sun />,
+Sunrise: <Sunrise />,
+Sunset: <Sunset />,
+Tag: <Tag />,
+Target: <Target />,
+Terminal: <Terminal />,
+Thermometer: <Thermometer />,
+Tool: <Tool />,
+Trash2: <Trash2 />,
+Underline: <Underline />,
+Upload: <Upload />,
+VideoOff: <VideoOff />,
+Video: <Video />,
+VolumeX: <VolumeX />,
+Volume: <Volume />,
+WifiOff: <WifiOff />,
+Wifi: <Wifi />,
+Wind: <Wind />,
+XCircle: <XCircle />,
+ZapOff: <ZapOff />,
+Zap: <Zap />,
+```
+
+3D printers have in addition:
+
+```
+Fan, 
+FeedRate, 
+FlowRate, 
+Extruder
+```
+
+cnc  has in addition :
+
+```
+Fan, 
+FeedRate, 
+FlowRate,
+```
+
+Example: `{type:'icon', target:'webui', id:'Activity'}`   
+**type** is `icon` (mandatory)  
+**target** is `webui` (mandatory)  
+**id** is `Activity` (mandatory)  
+
+* Answer format: check the `eventMsg.data`   
+
+    ```
+    {
+    "type": "icon",
+    "content": {
+        "response": "%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%2222%2012%2018%2012%2015%2021%209%203%206%2012%202%2012%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E",
+        "initiator": {
+            "type": "icon",
+            "target": "webui",
+            "id": "Activity"
+        }
+    },
+    "id": "Activity"
+    }
+    ```
+    **type** is `icon`   
+    **id** is the id of requested "Activity"  
+    **content** has the response it self **response**, in our case uriencoded svg , also the **initiator** is the initial command for reference   
 
 ---
 ### Dispatch message to other extensions
