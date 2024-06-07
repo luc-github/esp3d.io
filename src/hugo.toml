@@ -1,6 +1,8 @@
 baseURL = 'https://esp3d.io'
 languageCode = 'en-us'
 title = 'ESP3D Ecosystem'
+noTimes = true
+noChmod = true
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-relearn"

@@ -4,6 +4,11 @@ title = "Anycubic Kobra 2 - Trigorilla Pro B V1.0.2 board"
 description = "No socket available"
 weight = 2
 +++
+
+Trigorilla Pro B V1.0.2 board
+
+![board](main.png?width=300px)
+
 To connect you can use pins 2 and 3 of the CH340G chip.
 (Orange = RX, White = TX)
 GND and 3.3V can be taken from left side of the board.
