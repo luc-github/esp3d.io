@@ -4,6 +4,24 @@ archetype = "section"
 title = "Extensions API"
 weight = 8
 +++
+## Table of content
+- [Basic code](#basic-code)
+- [Send message](#send-message)
+- [Send GCODE command or ESP command](#send-gcode-command-or-esp-command)
+- [Send web query](#send-web-query)
+- [Send web upload](#send-web-upload)
+- [Send webdownload request](#send-webdownload-request)
+- [Send sound notification](#send-sound-notification)
+- [Send toast notification](#send-toast-notification)
+- [Send translation request](#send-translation-request)
+- [Send capabilities request](#send-capabilities-request)
+- [Save extension settings to preferences.json](#save-extension-settings-to-preferencesjson)
+- [Send icon request](#send-icon-request)
+- [Dispatch message to other extensions](#dispatch-message-to-other-extensions)
+- [Send Modal dialog display request](#send-modal-dialog-display-request)
+- [Sample codes](#sample-codes)
+
+
 ## Basic code
 
 ```
@@ -462,10 +480,11 @@ There is no answer for this message, so `id` is not necessary
 This allow to collect all capabilities for specific topic:   
 * if id is `connection` you will get the json of [ESP800] response jsonified
 * if id is `features` you will get the [ESP400] response jsonified
-* if id is `interface` you will get the preferences.json jsonified
+* if id is `interface` you will get the settings from preferences.json jsonified
 * if id is `settings` you will get specific settings from target fw in json format
+* if id is `extensions` you will get the extensions from preferences.json jsonified
 
-Be noted this API only collect existing data, so for `features`,`interface`	and `settings` you may get empty response if corresponding query has not be done.
+Be noted this API only collect existing data, so for `features`,`interface`, `extensions`and `settings` you may get empty response if corresponding query has not be done.
 
 About settings the format may differ from one firmware to another, so you need to check the response to know how to use it, response is always a variable named machineSettings and important content may usualy located in `machineSettings.cache` 
 
@@ -516,6 +535,42 @@ Example: `{type:'capabilities', target:'webui', id:'connection'}`
     **type** is `capabilities`   
     **id** is the id of requested capability  
     **content** has the response it self **response**, in our case a JSON and also the  **initiator** is the initial command for reference 
+
+---
+### Save extension settings to preferences.json
+
+This allow to save extension settings to preferences.json, it is a way to store settings for extension that need to be saved for next session:   
+
+
+Example: `{type:'extensionsData', target:'webui', id:'myextension', content:'{"setting1":"value1","setting2":"value2"}'}`   
+
+**type** is `extensionsData` (mandatory)  
+**target** is `webui` (mandatory)  
+**id** is `myextension` (mandatory)  
+**content** is the settings to save, in stringified JSON format, in our case `{"setting1":"value1","setting2":"value2"}` (mandatory)
+
+* Answer format: check the `eventMsg.data`   
+
+    ```
+    {
+        "type": "extensionsData",
+        "content": {
+            "response": "{
+				"status": "success"
+			}",
+            "initiator": {
+                            "type":"extensionsData", 
+                            "target":"webui", 
+                            "id":"myextension",
+                            "content":"{"setting1":"value1","setting2":"value2"}"
+                        }
+        },
+        "id": "myextension"
+    }  
+    ```
+    **type** is `extensionsData`   
+    **id** is the id of extension that saved settings
+    **content** has the response which is the status and also the  **initiator** is the initial command for reference 
 
 ---
 ### Send icon request
