@@ -1173,6 +1173,7 @@ Supported in the modal dialog is used to select a text value
    - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
    - "min" (optionnel) minimum length of the text
    - "max" (optionnel) maximum length of the text
+   - "regexpattern" (optionnel) a string with a regex to validate the text
    - "append" (optionnel) a string to append to the value input like a unit
 
 6. "list":
