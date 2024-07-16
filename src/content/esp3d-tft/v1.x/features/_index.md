@@ -4,10 +4,10 @@ title = "Features"
 menuPre = "<i class='fas fa-list'></i> "
 weight = 1
 +++
-The V3.X features are :  
+The V1.X features are :  
 
 * Embedded maintenance page (terminal / local FS update / ESP3D Firmware update)
-* WebUI support
+* WebUI 3.X support
 * ESP32 / ESP32-S3  support
 * Wifi 
 * Raw TCP / serial bridge support (light telnet)
@@ -23,10 +23,10 @@ The V3.X features are :
     * File format
       * Native SPI
       * Native SDIO
-* USB Host support
+* USB (OTG) Hostsupport (need to use external power supply)
 * Global FS under Webdav : SD + Local FS in same directory
-* Buzzer support
-* Pins control by commands
+* Buzzer support (Not yet)
+* Pins control by commands (Not yet)
 * Time synchronization support (manual / internet server)
 * Notifications support
     * WebUI
@@ -36,7 +36,7 @@ The V3.X features are :
     * Telegram
     * PushOver
     * IFTTT
-* Auto script support at start
+* Auto script support at start (Not yet)
 * Host GCODE stream for macros hosted on local FS (Work in Progress)
 * Update
     * ESP3D configuration using ini file on SD
