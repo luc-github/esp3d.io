@@ -9,6 +9,8 @@ ESP3D-TFT is a firmware for ESP32 boards from espressif with a TFT and a SD Card
 
 Firmware support different target firmwares according version. 
 
+ESP3D-TFT use idf framework and expressif Visual Code extension.
+
 There is not yet  currently any production version, but only one development version - actively developed.
 
 {{% iobadge url="https://github.com/luc-github/ESP3D-TFT" path="https://img.shields.io/badge/Github-ESP3D_TFT-green?style=plastic&logo=github" %}}

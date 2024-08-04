@@ -4,7 +4,7 @@ archetype = "section"
 title = "Extensions API"
 weight = 8
 +++
-## Table of content
+- [What is an extension ?](#what-is-an-extension-)
 - [Basic code](#basic-code)
 - [Send message](#send-message)
 - [Send GCODE command or ESP command](#send-gcode-command-or-esp-command)
@@ -27,8 +27,28 @@ weight = 8
 - [Install an extension in Web UI](#install-an-extension-in-web-ui)
 - [Sample codes](#sample-codes)
 
+## What is an extension ?
+An extension is a small piece of code that can be added to the Web UI to add new functionality. It can be used to add new tabs, new panels in web UI.
+Extensions are dynamic, modular components that enhance the functionality of our main application. They are designed to be flexible and easily integrated, allowing for customization and expansion of features without modifying the core application.
+Key characteristics of extensions include:
+
+* Isolated Execution: Extensions run within their own iframe, ensuring a level of separation from the main application.
+* Dynamic Loading: They can be loaded on-demand, improving the application's overall performance and flexibility.
+* Consistent Styling: Extensions adopt styles from the main application, maintaining a cohesive look and feel.
+* Diverse Functionality: Extensions can serve various purposes, from adding new features to integrating external services.
+* Managed Lifecycle: The system handles the loading, display, and unloading of extensions, simplifying their management.
+
+By leveraging extensions, our application becomes more adaptable and can cater to a wide range of user needs while maintaining a stable core structure.   
+
+{{% notice style="info" title="Note"  %}}
+To decrease the size of of the extension you can minify and gzip it, it will reduce its size, and will be faster to load.
+{{% /notice %}}
+
+
+
 
 ## Basic code
+Here is a basic code for extension to communicate with Web UI
 
 ```
 <script type="text/javascript">
@@ -56,13 +76,30 @@ Display your HTML here
 
 ```
 
-As you can see code is minimal - it will fit a Frame, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
+As you can see, code is minimal - it will fit a a panel or page, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
 
 Communication between frame and main window is done by messages using objects (string / array based), do not use any object that could ne be cloned or loading will fail.
 
+One typical use case is when WebUI send notificstion to extension o inform it that is visible or not, so extension can adjust its own behavior according to this information.
+
+The notification message (eventMsg.data) has the following structure:
+```
+{
+    type: 'notification',
+    content: {
+      isVisible: true | false,
+    },
+    id: 'extra_content_XXXXX'
+}
+```
+
+The id  is the id of the node that contain the iframe, which means unlike others messages, notification with specific id are addressed to the iframe of the node and not broadcasted to all iframes.
+Currently notifications are limited to visible / not visible, but it is possible to add more information in the future.
+
+
 ---
 
-### Send message
+## Send message
 message structure used by `window.parent.postMessage(msg, '*');` has a defined format, some parameters are madatories, some are optionals and some depend on message type:   
 `{type:'<message type>', target:'webui', id:'[origin]', noDispatch:[true], XXX:YYY}`   
 `<message type>` is mandatory, it define the purpose of the message  

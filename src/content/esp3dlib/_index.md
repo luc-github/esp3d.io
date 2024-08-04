@@ -9,6 +9,8 @@ weight = 1
 ESP3DLib is a Marlin library for ESP32 boards using Marlin 2.x. that enable ESP3D features like WiFi and WebUI.
 Features depends on the version the ESP3DLib installed.
 
+Marlin use arduino framework and platformio system
+
 ### Tested boards 
 
 The list is [here](/esp3dlib/v1.x/hardware/) for 1.0, and [here](/esp3dlib/v3.x/hardware/) for 3.0
