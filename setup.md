@@ -7,10 +7,7 @@ mkdocs new esp3d.io
 cd esp3d.io
 pip install mkdocs
 pip install mkdocs-material
-pip install "mkdocstrings[python]"
-pip install pygments
 pip install mkdocs-mermaid2-plugin
-pip install pymdown-extensions
 ```
 
 Test Locally:
