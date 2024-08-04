@@ -1,23 +1,43 @@
+### Notes Box
 
-Web Site: https://www.mkdocs.org/
+!!! info
+    this is the info
 
-Command Line:
-```
-mkdocs new esp3d.io
-cd esp3d.io
-pip install mkdocs
-pip install mkdocs-material
-pip install "mkdocstrings[python]"
-pip install pygments
-pip install mkdocs-mermaid2-plugin
-```
+!!! note
+    this is the info
+    
+!!! WARNING
+    this is the info
+    
+!!! warning
+    this is the info
+    
+!!! danger highlight blink "Don't try this at home"
+    ...
 
-Test Locally:
-```
-mkdocs serve
-```
 
-Build:
+### Code Box
+
+``` {.py3 hl_lines="1 3" linenums="1"}
+""" Bubble sort """
+def bubble_sort(items):
+    for i in range(len(items)):
+        for j in range(len(items) - 1 - i):
+            if items[j] > items[j + 1]:
+                items[j], items[j + 1] = items[j + 1], items[j]
 ```
-mkdocs build
-```
+notes: the `hl_lines` attribute is a string of line numbers to highlight but cannot make it work, no idea why.
+
+
+
+### How to include a file in a markdown file
+https://github.com/mondeja/mkdocs-include-markdown-plugin
+{% include-markdown "../../../common/hardware-connection.md" %}
+
+~~~yaml
+{% include "../examples/github-minimal.yml" %}
+~~~
+
+### ioshields
+
+same a github badges https://shields.io/badges

@@ -1,3 +1,11 @@
+---
+weight : 1
+mermaidInitialize : "{ \"theme\": \"dark\" }"
+mermaidZoom : true
+description : "Web site of ESP3D ecosystem"
+title : "ESP3D Ecosystem"
+---
+  
 ### What is ESP3D Ecosystem ?
 
 ESP3D Ecosystem is a collection of projects based on espressif boards like esp8266 and esp32. The purpose is to provide WiFi feature to users of 3D printer, CNC, Sand Table and plotter.
@@ -18,7 +26,6 @@ graph LR
     D -->|Yes| F[ESP3D-TFT]
     D -->|No| G[ESP3D]
 ```
-
 **Based on connection**
 ```mermaid
 graph LR

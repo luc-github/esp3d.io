@@ -3,20 +3,43 @@ site_description: ESP3D Ecosystem documentation
 site_url: https://esp3d.io
 repo_url: 'https://github.com/luc-github/esp3d.io'
 edit_uri_template: 'edit/main/src/content/{path}'
-
-nav:
-  - Introduction: 'index.md'
+copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
+ 
+not_in_nav:
+  /common
 
 plugins:
+  - section-index
+  #- awesome-pages # conflict with mkdocs-section-index
   - mermaid2
+  - search:
+      min_search_length: 2
+  - include-markdown
+  
+markdown_extensions:
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __s pan
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+          
+          
   
 theme:
     name: readthedocs
     custom_dir: custom_theme/
-    navigation_depth: 1
+    navigation_depth: 9
     titles_only: false
     sticky_navigation: false
     collapse_navigation: true
     logo: /img/ESP3D_mini2.png
+
 
 

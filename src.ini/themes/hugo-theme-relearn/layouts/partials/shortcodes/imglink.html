@@ -1,9 +1,0 @@
-{{- $context := .context }}
-{{- $content := .content }}
-{{- $alt := .alt | default "" }}
-{{- $url := .url | default "" }}
-{{- $img := .img | default "" }}
-{{- $width := .width | default "100%" }}
-{{- with $context -}}
-<a class="center" href="{{ $url }}"><img src="{{ $img }}" width="{{ $width }}" alt="{{ $alt }}"/></a>
-{{- end }}
