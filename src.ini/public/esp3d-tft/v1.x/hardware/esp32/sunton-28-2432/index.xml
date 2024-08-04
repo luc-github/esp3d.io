@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> 2.8&#39; ESP32-2432S028R :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/sunton-28-2432/index.html</link>
+    <description>ESP32 - 2.8&#39; (320x240) TFT</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/sunton-28-2432/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

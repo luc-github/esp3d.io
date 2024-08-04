@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Compilation Guide">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Compilation Guide :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Compilation Guide">
+    <meta property="og:url" content="http://localhost:1313/esp3d-webui/v3.x/documentation/compilation/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Compilation Guide :: ESP3D Ecosystem">
+    <meta property="og:description" content="Compilation Guide">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-WEBUI">
+    <meta itemprop="name" content="Compilation Guide :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Compilation Guide">
+    <meta itemprop="wordCount" content="353">
+    <title>Compilation Guide :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-webui/v3.x/documentation/compilation/index.html" rel="canonical" type="text/html" title="Compilation Guide :: ESP3D Ecosystem">
+    <link href="/esp3d-webui/v3.x/documentation/compilation/index.xml" rel="alternate" type="application/rss+xml" title="Compilation Guide :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-webui/v3.x/documentation/compilation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Compilation Guide</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/translation/index.html" title="Translations (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/update/index.html" title="Update support (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="compilation-guide">Compilation Guide</h1>
+<h2 id="compilation-steps">Compilation Steps</h2>
+<h3 id="setup-development-tools">Setup development tools</h3>
+<p>1 - Install current nodejs LTS (currently using v16.14.2)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>node -v
+v20.8.0
+
+npm -v
+10.2.0</code></pre></div><p>2 - Download all necessary packages in ESP3D-WEBUI directory (repository root)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>npm install</code></pre></div><h3 id="start-dev-server">Start dev server</h3>
+<p>in ESP3D-WEBUI directory (repository root)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>npm run dev-&lt;system&gt;-&lt;firmware&gt;</code></pre></div><ul>
+<li>where <code>&lt;system&gt;</code> is <code>cnc</code> (CNC system, laser, spindle..) , <code>printer</code> (3D printer), <code>sand</code> (Sand Table)</li>
+<li>where <code>&lt;firmware&gt;</code> is :
+<ul>
+<li><code>grbl</code>, <code>grblhal</code> for <code>cnc</code></li>
+<li><code>marlin</code>, <code>marlin-embedded</code> (esp3dlib), <code>repetier</code>, <code>smoothieware</code> for <code>printer</code></li>
+<li><code>grbl</code> for <code>sand</code></li>
+</ul>
+</li>
+</ul>
+<p>will open http://localhost:8088 which display the webUI using a local test server</p>
+<h3 id="build-indexhtmlgz-to-dist-folder">Build index.html.gz to /dist folder</h3>
+<p>in ESP3D-WEBUI directory (repository root)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>npm run buildall</code></pre></div><p>Will generate production version for each target and firmware in dist directory</p>
+<p>to build specific index.html.gz</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>npm run &lt;system&gt;-&lt;firmware&gt;</code></pre></div><ul>
+<li>where <code>&lt;system&gt;</code> is <code>cnc</code> (CNC system, laser, spindle..) , <code>printer</code> (3D printer), <code>sand</code> (Sand Table)</li>
+<li>where <code>&lt;firmware&gt;</code> is :
+<ul>
+<li><code>grbl</code>, <code>grblhal</code> for <code>cnc</code></li>
+<li><code>marlin</code>, <code>marlin-embedded</code> (esp3dlib), <code>repetier</code>, <code>smoothieware</code> for <code>printer</code></li>
+<li><code>grbl</code> for <code>sand</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="code-formating">Code Formating</h2>
+<h3 id="how-to-do-code-formating">How to do code formating?</h3>
+<h4 id="jscssscssjson-files-of-embedded-directory">.js/.css/.scss/.json files of embedded directory</h4>
+<p>The code must be formatted using the <a href="https://prettier.io/" rel="external" target="_blank">prettier</a> tool. The configuration style is <code>.prettierrc</code> present in the root directory. The configuration file is as follows:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;printWidth&#34;</span>: <span style="color:#ae81ff">80</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tabWidth&#34;</span>: <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;useTabs&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;semi&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;singleQuote&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;trailingComma&#34;</span>: <span style="color:#e6db74">&#34;es5&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;bracketSpacing&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;bracketSameLine&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;arrowParens&#34;</span>: <span style="color:#e6db74">&#34;always&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;requirePragma&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;insertPragma&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;proseWrap&#34;</span>: <span style="color:#e6db74">&#34;preserve&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;overrides&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;files&#34;</span>: <span style="color:#e6db74">&#34;*.js&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;parser&#34;</span>: <span style="color:#e6db74">&#34;babel&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {<span style="color:#f92672">&#34;files&#34;</span>: <span style="color:#e6db74">&#34;*.css&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;parser&#34;</span>: <span style="color:#e6db74">&#34;css&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {<span style="color:#f92672">&#34;files&#34;</span>: <span style="color:#e6db74">&#34;*.scss&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;parser&#34;</span>: <span style="color:#e6db74">&#34;scss&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {<span style="color:#f92672">&#34;files&#34;</span>: <span style="color:#e6db74">&#34;*.json&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;options&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;printWidth&#34;</span>: <span style="color:#ae81ff">120</span>,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>The tool can be added as extension in vscode, and installed using :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx install -G prettier</span></span></code></pre></div><p>Prettier will format one active file at once per request or during saving process according your vscode settings.</p>
+<p>A python script is also available in the repository, in directory <code>tools</code>: <code>format_sources.py</code>, this script can be used to format all files of the directories <code>config</code> and <code>src</code>, and all subdirectories at once.</p>
+<h3 id="when-to-do-code-formating">When to do code formating?</h3>
+<p>Before any pull request or before submit any code, the code must be formatted. The CI will check the code formatting, and will eventually fail if the code is not formatted correctly.</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

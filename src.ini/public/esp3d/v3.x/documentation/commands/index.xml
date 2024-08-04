@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP3D commands :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/documentation/commands/index.html</link>
+    <description>Syntax and parameters</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/documentation/commands/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ESP100]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp100/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp100/index.html</guid>
+      <description>Set / Display Station SSID</description>
+    </item>
+    <item>
+      <title>[ESP101]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp101/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp101/index.html</guid>
+      <description>Set Station Password</description>
+    </item>
+    <item>
+      <title>[ESP102]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp102/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp102/index.html</guid>
+      <description>Set / Display Station IP mode</description>
+    </item>
+    <item>
+      <title>[ESP103]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp103/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp103/index.html</guid>
+      <description>Set / Display Station IP address</description>
+    </item>
+    <item>
+      <title>[ESP104]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp104/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp104/index.html</guid>
+      <description>Set station fallback mode state at boot</description>
+    </item>
+    <item>
+      <title>[ESP105]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp105/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp105/index.html</guid>
+      <description>Set / Display Access point SSID</description>
+    </item>
+    <item>
+      <title>[ESP106]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp106/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp106/index.html</guid>
+      <description>Set Access point password</description>
+    </item>
+    <item>
+      <title>[ESP107]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp107/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp107/index.html</guid>
+      <description>Set / Display Access point IP value</description>
+    </item>
+    <item>
+      <title>[ESP108]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp108/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp108/index.html</guid>
+      <description>Set / Display Access point channel value</description>
+    </item>
+    <item>
+      <title>[ESP110]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp110/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp110/index.html</guid>
+      <description>Set / Display radio state at boot</description>
+    </item>
+    <item>
+      <title>[ESP111]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp111/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp111/index.html</guid>
+      <description>Display current IP</description>
+    </item>
+    <item>
+      <title>[ESP112]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp112/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp112/index.html</guid>
+      <description>Set / Display Hostname</description>
+    </item>
+    <item>
+      <title>[ESP114]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp114/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp114/index.html</guid>
+      <description>Get/Set Boot radio state</description>
+    </item>
+    <item>
+      <title>[ESP115]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp115/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp115/index.html</guid>
+      <description>Get/Set immediate Network state</description>
+    </item>
+    <item>
+      <title>[ESP120]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp120/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp120/index.html</guid>
+      <description>Get/Set HTTP state</description>
+    </item>
+    <item>
+      <title>[ESP121]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp121/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp121/index.html</guid>
+      <description>Get/Set HTTP port</description>
+    </item>
+    <item>
+      <title>[ESP130]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp130/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp130/index.html</guid>
+      <description>Get/Set TELNET state</description>
+    </item>
+    <item>
+      <title>[ESP131]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp131/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp131/index.html</guid>
+      <description>Get/Set TELNET port</description>
+    </item>
+    <item>
+      <title>[ESP140]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp140/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp140/index.html</guid>
+      <description>Sync / Set / Get current time</description>
+    </item>
+    <item>
+      <title>[ESP150]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp150/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp150/index.html</guid>
+      <description>Get/Set boot delay in ms / Verbose boot</description>
+    </item>
+    <item>
+      <title>[ESP160]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp160/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp160/index.html</guid>
+      <description>Get/Set WebSocket state</description>
+    </item>
+    <item>
+      <title>[ESP161]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp161/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp161/index.html</guid>
+      <description>Get/Set WebSocket port</description>
+    </item>
+    <item>
+      <title>[ESP170]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp170/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp170/index.html</guid>
+      <description>Get/Set Camera commands/values</description>
+    </item>
+    <item>
+      <title>[ESP171]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp171/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp171/index.html</guid>
+      <description>Save frame to target path and filename</description>
+    </item>
+    <item>
+      <title>[ESP180]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp180/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp180/index.html</guid>
+      <description>Get/Set Ftp state</description>
+    </item>
+    <item>
+      <title>[ESP181]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp181/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp181/index.html</guid>
+      <description>Get/Set Ftp ports</description>
+    </item>
+    <item>
+      <title>[ESP190]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp190/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp190/index.html</guid>
+      <description>Get/Set WebDav state</description>
+    </item>
+    <item>
+      <title>[ESP191]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp191/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp191/index.html</guid>
+      <description>Get/Set WebDav port</description>
+    </item>
+    <item>
+      <title>[ESP200]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp200/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp200/index.html</guid>
+      <description>Get/Set SD state</description>
+    </item>
+    <item>
+      <title>[ESP201]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp201/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp201/index.html</guid>
+      <description>Get/Set pin value</description>
+    </item>
+    <item>
+      <title>[ESP202]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp202/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp202/index.html</guid>
+      <description>Get/Set SD card Speed factor</description>
+    </item>
+    <item>
+      <title>[ESP210]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp210/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp210/index.html</guid>
+      <description>Get/Set Sensor Value / type</description>
+    </item>
+    <item>
+      <title>[ESP212]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp212/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp212/index.html</guid>
+      <description>Output to ESP3D screen status</description>
+    </item>
+    <item>
+      <title>[ESP214]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp214/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp214/index.html</guid>
+      <description>Output to ESP3D screen status</description>
+    </item>
+    <item>
+      <title>[ESP215]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp215/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp215/index.html</guid>
+      <description>Start a Touch Calibration</description>
+    </item>
+    <item>
+      <title>[ESP220]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp220/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp220/index.html</guid>
+      <description>Get ESP3D pins definition</description>
+    </item>
+    <item>
+      <title>[ESP250]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp250/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp250/index.html</guid>
+      <description>Play sound</description>
+    </item>
+    <item>
+      <title>[ESP290]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp290/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp290/index.html</guid>
+      <description>Delay/Pause command</description>
+    </item>
+    <item>
+      <title>[ESP400]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp400/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp400/index.html</guid>
+      <description>Get full ESP3D settings</description>
+    </item>
+    <item>
+      <title>[ESP401]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp401/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp401/index.html</guid>
+      <description>Set ESP3D settings</description>
+    </item>
+    <item>
+      <title>[ESP402]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp402/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp402/index.html</guid>
+      <description>Get/Set SD updater check at boot time</description>
+    </item>
+    <item>
+      <title>[ESP410]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp410/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp410/index.html</guid>
+      <description>List all AP detected around</description>
+    </item>
+    <item>
+      <title>[ESP420]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp420/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp420/index.html</guid>
+      <description>Get ESP3D current status</description>
+    </item>
+    <item>
+      <title>[ESP444]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp444/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp444/index.html</guid>
+      <description>Set ESP3D state</description>
+    </item>
+    <item>
+      <title>[ESP450]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp450/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp450/index.html</guid>
+      <description>List available ESP3D modules/ ESP3D related devices around</description>
+    </item>
+    <item>
+      <title>[ESP500]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp500/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp500/index.html</guid>
+      <description>Get authentication status</description>
+    </item>
+    <item>
+      <title>[ESP510]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp510/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp510/index.html</guid>
+      <description>Set/Get session timeout</description>
+    </item>
+    <item>
+      <title>[ESP550]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp550/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp550/index.html</guid>
+      <description>Set/Change admin password</description>
+    </item>
+    <item>
+      <title>[ESP555]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp555/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp555/index.html</guid>
+      <description>Set/Change user password</description>
+    </item>
+    <item>
+      <title>[ESP600]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp600/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp600/index.html</guid>
+      <description>Send Notification</description>
+    </item>
+    <item>
+      <title>[ESP610]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp610/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp610/index.html</guid>
+      <description>Set/Get Notification settings</description>
+    </item>
+    <item>
+      <title>[ESP620]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp620/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp620/index.html</guid>
+      <description>Send Notification using encodded URL</description>
+    </item>
+    <item>
+      <title>[ESP700]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp700/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp700/index.html</guid>
+      <description>Process local file on /FS or /SD</description>
+    </item>
+    <item>
+      <title>[ESP701]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp701/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp701/index.html</guid>
+      <description>Query and Control ESP700 stream</description>
+    </item>
+    <item>
+      <title>[ESP710]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp710/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp710/index.html</guid>
+      <description>Format ESP Filesystem</description>
+    </item>
+    <item>
+      <title>[ESP715]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp715/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp715/index.html</guid>
+      <description>Format SD Card</description>
+    </item>
+    <item>
+      <title>[ESP720]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp720/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp720/index.html</guid>
+      <description>List files on /FS or defined repository</description>
+    </item>
+    <item>
+      <title>[ESP730]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp730/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp730/index.html</guid>
+      <description>Do some actions on ESP Filesystem:  rmdir / remove / mkdir / exists / create</description>
+    </item>
+    <item>
+      <title>[ESP740]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp740/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp740/index.html</guid>
+      <description>List files on /SD or defined repository</description>
+    </item>
+    <item>
+      <title>[ESP750]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp750/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp750/index.html</guid>
+      <description>Do some actions on SD Card:  rmdir / remove / mkdir / exists / create</description>
+    </item>
+    <item>
+      <title>[ESP780]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp780/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp780/index.html</guid>
+      <description>List Global Filesystem</description>
+    </item>
+    <item>
+      <title>[ESP790]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp790/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp790/index.html</guid>
+      <description>Do some actions on Global Filesystem:  rmdir / remove / mkdir / exists / create</description>
+    </item>
+    <item>
+      <title>[ESP800]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp800/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp800/index.html</guid>
+      <description>Get ESP3D fw capabilities</description>
+    </item>
+    <item>
+      <title>[ESP900]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp900/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp900/index.html</guid>
+      <description>Get / Set state  for main  serial communication</description>
+    </item>
+    <item>
+      <title>[ESP901]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp901/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp901/index.html</guid>
+      <description>Set Serial baudrate for main serial communication</description>
+    </item>
+    <item>
+      <title>[ESP910]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp910/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp910/index.html</guid>
+      <description>Get / Set state for buzzer</description>
+    </item>
+    <item>
+      <title>[ESP930]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp930/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp930/index.html</guid>
+      <description>Get / Set state for Serial Bridge</description>
+    </item>
+    <item>
+      <title>[ESP931]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp931/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp931/index.html</guid>
+      <description>Get / Set baudrate for Serial Bridge</description>
+    </item>
+    <item>
+      <title>[ESP999]</title>
+      <link>http://localhost:1313/esp3d/v3.x/documentation/commands/esp999/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/documentation/commands/esp999/index.html</guid>
+      <description>Set quiet boot</description>
+    </item>
+  </channel>
+</rss>

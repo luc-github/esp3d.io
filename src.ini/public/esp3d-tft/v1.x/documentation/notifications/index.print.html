@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Setup and configuration">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Notifications :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Setup and configuration">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/documentation/notifications/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Notifications :: ESP3D Ecosystem">
+    <meta property="og:description" content="Setup and configuration">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Notifications :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Setup and configuration">
+    <meta itemprop="wordCount" content="171">
+    <title>Notifications :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/documentation/notifications/index.html" rel="canonical" type="text/html" title="Notifications :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/documentation/notifications/index.xml" rel="alternate" type="application/rss+xml" title="Notifications :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/documentation/notifications/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Notifications</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/authentication/index.html" title="Authentication (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/notifications/pushover/index.html" title="Pushover Notification (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="notifications">Notifications</h1>
+<p>You can use only one type of notification from the following ones:</p>
+<h3 id="pushoverhttpspushovernet"><a href="https://pushover.net/" rel="external" target="_blank">Pushover</a></h3>
+<p>A pay service</p>
+<p>Please follow this <a href="/esp3d-tft/v1.x/documentation/notifications/pushover/index.html">link</a> for more information on how to setup a pushover notification service</p>
+<h3 id="linehttpslinem"><a href="https://line.m" rel="external" target="_blank">Line</a></h3>
+<p>A free service</p>
+<p>Please follow this <a href="/esp3d-tft/v1.x/documentation/notifications/line/index.html">link</a> for more information on how to setup a line notification service</p>
+<h3 id="email-using-smtp-and-https">Email using SMTP and HTTPS</h3>
+<p>Please follow this <a href="/esp3d-tft/v1.x/documentation/notifications/email_and_smtp/index.html">link</a> for more information on how to setup a email notification service</p>
+<h3 id="ifttt-webhookhttpsiftttcom"><a href="https://ifttt.com" rel="external" target="_blank">IFTTT webhook</a></h3>
+<p>A free service up to 5 applets</p>
+<p>Please follow this <a href="/esp3d-tft/v1.x/documentation/notifications/ifttt/index.html">link</a> for more information on how to setup a pushover iftt service</p>
+<h3 id="telegramhttpstelegramorg"><a href="https://telegram.org/" rel="external" target="_blank">Telegram</a></h3>
+<p>A free service</p>
+<p>Please follow this <a href="/esp3d-tft/v1.x/documentation/notifications/telegram/index.html">link</a> for more information on how to setup a telegram notification service</p>
+<p>The notification will also be sent to the WebUi</p>
+<h3 id="how-to-send-message-">How to send message ?</h3>
+<p>Just add following command in your slicer&rsquo;s end script, or manualy on your GCODE file:<br>
+<code>[ESP600]msg pwd=&lt;admin password&gt;</code></p>
+<h3 id="how-to-ask-printer-to-send-command-from-file-played-from-sd-">How to ask printer to send command from file played from SD ?</h3>
+<ul>
+<li>
+<p>on Repetier<br>
+<code>M118 [ESP600]msg</code></p>
+</li>
+<li>
+<p>on Marlin<br>
+<code>M118 P0 [ESP600]msg</code></p>
+</li>
+<li>
+<p>on Smoothieware<br>
+<code>echo [ESP600]msg</code></p>
+</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Notifications</h1>
+          <article class="chapter">
+<h1 id="pushover-notification"> Pushover Notification</h1>
+<p><a href="https://pushover.net/" rel="external" target="_blank">Pushover</a> is paid service</p>
+<p>Considering you have pushover account (even just trial) and you already installed pushover client on you phone/PC:</p>
+<p>1 - Go to <a href="https://pushover.net/" rel="external" target="_blank">https://pushover.net/</a> and connect with email and password<br>
+<a href="#R-image-9b5bc308213ba97d24350660e87ea3f4" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/pushover/logon.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9b5bc308213ba97d24350660e87ea3f4"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/pushover/logon.png"></a></p>
+<p>2 - Once connected you will be able to get the token 1, the user token<br>
+<a href="#R-image-051277e6302a85422327847f70a916b6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/pushover/token1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-051277e6302a85422327847f70a916b6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/pushover/token1.png"></a></p>
+<p>3 - You also need to generate an application token, which is the token 2<br>
+<a href="#R-image-cc876bb44b9df1d70efdad800613192d" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/pushover/token2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc876bb44b9df1d70efdad800613192d"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/pushover/token2.png"></a></p>
+<p>4 - The token 2 generation:
+<a href="#R-image-44bdd345811bb7b53daa51bd83e8dd39" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/pushover/token2b.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-44bdd345811bb7b53daa51bd83e8dd39"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/pushover/token2b.png"></a></p>
+<p>5 - Save the generate token 1 and token 2 in ESP3D, and set PUSHOVER as notification supplier<br>
+<code>[ESP610]type=PUSHOVER T1=xxxxxxxxxxxxxxxxxx T2=yyyyyyyyyyyyyyyyy</code></p>
+<p>6 - type <code>[ESP610]</code> to verify (T1 and T2 won&rsquo;t be displayed)</p>
+<p>7 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="line-notification"> Line Notification</h1>
+<p><a href="https://line.me" rel="external" target="_blank">Line</a> is free service</p>
+<p>Considering you have line account and you already installed line on you phone/PC:</p>
+<p>1 - Go to <a href="https://notify-bot.line.me/my/" rel="external" target="_blank">https://notify-bot.line.me/my/</a> and connect with email and password
+<a href="#R-image-00617e976b2522620944a32d840c97e5" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/line/logon.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-00617e976b2522620944a32d840c97e5"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/line/logon.png"></a></p>
+<p>2 - Once connected you will be able to generate token<br>
+<a href="#R-image-720475a592becdf8d7cea3f67258765a" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/line/generate.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-720475a592becdf8d7cea3f67258765a"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/line/generate.png"></a></p>
+<p>3 - Type token name on top, select recipient(s) and press Generate token<br>
+<a href="#R-image-781a2386a107f32db79b68ea37940b71" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/line/generate2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-781a2386a107f32db79b68ea37940b71"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/line/generate2.png"></a></p>
+<p>4 - Once token is created you need to copy it<br>
+<a href="#R-image-c9c4f1b780910432d589f3fb672c1017" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/line/token1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c9c4f1b780910432d589f3fb672c1017"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/line/token1.png"></a></p>
+<p>5 - You can create as many tokens you want, and delete the ones you do not need<br>
+<a href="#R-image-9cc8995d6882a894a0bf134bca55a8c0" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/line/tokenmanagement.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9cc8995d6882a894a0bf134bca55a8c0"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/line/tokenmanagement.png"></a></p>
+<p>6 - Save the generate token in ESP3D, and set LINE as notification supplier <br>
+<code>[ESP610]type=LINE T1=xxxxxxxxxxxxxxxxxx</code></p>
+<p>7 - type <code>[ESP610]</code> to verify (T1 won&rsquo;t be displayed)</p>
+<p>8 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="email-notification"> Email Notification</h1>
+<p>Email Notification is using SMTP and HTTPS, so you need to collect the following information fof your email supplier</p>
+<ul>
+<li>smtp server address and https port</li>
+<li>smtp username/ID</li>
+<li>smtp password</li>
+</ul>
+<p>ESP3D use the parameters as follow:</p>
+<ul>
+<li><strong>token 1</strong> = ID to login to your email supplier</li>
+<li><strong>token 2</strong> = Password to login to your email supplier</li>
+<li><strong>token settings</strong> = <code>the_recipient email#smtp_server:port</code> where <strong>#</strong> and <strong>:</strong> are fields separators.</li>
+</ul>
+<p>For example: <code>luc@gmail.com#smtp.gmail.com:465</code></p>
+<p>1 -Save the token 1, token 2 and token settings in ESP3D, and set EMAIL as notification supplier<br>
+<code>[ESP610]type=EMAIL T1=luc@gmail.com T2=mypassword TS=luc@gmail.com#smtp.gmail.com:465</code></p>
+<p>2 - Type <code>[ESP610]</code> to verify (T1 and T2 won&rsquo;t be displayed)</p>
+<p>3 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+<p>4 - <strong>Important</strong> : if you are using Gmail there is an additional step, as by default https access is disabled.<br>
+go to : <a href="https://myaccount.google.com/lesssecureapps" rel="external" target="_blank">https://myaccount.google.com/lesssecureapps</a> and allow less secure applications to connect
+<a href="#R-image-eccc3165071975ae1bf4e2c78bfc4c62" class="lightbox-link"><img alt="gmail enabling http access" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/email/google.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eccc3165071975ae1bf4e2c78bfc4c62"><img alt="gmail enabling http access" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/email/google.png"></a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="ifttt-notification"> IFTTT Notification</h1>
+<p><a href="https://ifttt.com" rel="external" target="_blank">IFTTT</a> is free service up to 5 applets</p>
+<p><a href="https://ifttt.com" rel="external" target="_blank">IFTTT</a> is a wrapper that allows several kind of notifications, please refer to it <a href="https://platform.ifttt.com/docs" rel="external" target="_blank">documentation</a>.<br>
+ESP3D use the webhook method.</p>
+<p>1 - If you do not have IFTTT account you can create for free to use up to 5 applets.
+<a href="#R-image-5317217d4d775d8ebee8e41c81ae6f94" class="lightbox-link"><img alt="IFFTT account creation step" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/accountcreation1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5317217d4d775d8ebee8e41c81ae6f94"><img alt="IFFTT account creation step" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/accountcreation1.png"></a></p>
+<p>2 - Create New applet<br>
+<a href="#R-image-6217dac265a049ee9eadf0ff2e19c4f8" class="lightbox-link"><img alt="Create applet" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6217dac265a049ee9eadf0ff2e19c4f8"><img alt="Create applet" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook1.png"></a></p>
+<ul>
+<li>
+<p>Create new trigger<br>
+<a href="#R-image-9ca11d8026d2f8cd7c50b586b91cc677" class="lightbox-link"><img alt="create trigger" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ca11d8026d2f8cd7c50b586b91cc677"><img alt="create trigger" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook2.png"></a></p>
+</li>
+<li>
+<p>The trigger is a webhook<br>
+<a href="#R-image-3ed0cd9e618720e4f61b8474dea35b7c" class="lightbox-link"><img alt="trigger is a webhook" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ed0cd9e618720e4f61b8474dea35b7c"><img alt="trigger is a webhook" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook3.png"></a></p>
+</li>
+<li>
+<p>Choose Web request<br>
+<a href="#R-image-a058da8650a2c95c3758b011aadc834f" class="lightbox-link"><img alt="choose web request" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a058da8650a2c95c3758b011aadc834f"><img alt="choose web request" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook4.png"></a></p>
+</li>
+<li>
+<p>Set the event name
+<a href="#R-image-36e6d4d691d03e310bb96c122934b39c" class="lightbox-link"><img alt="set event name" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-36e6d4d691d03e310bb96c122934b39c"><img alt="set event name" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook5.png"></a></p>
+</li>
+<li>
+<p>Define the action you want
+<a href="#R-image-fb5700b5f8ffc8dc3ebc4ae149751d22" class="lightbox-link"><img alt="define wanted action" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fb5700b5f8ffc8dc3ebc4ae149751d22"><img alt="define wanted action" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook6.png"></a></p>
+</li>
+<li>
+<p>Select the service you want to use<br>
+As you can see there are a lot, let use email as example, but you can select any one that fit your needs
+<a href="#R-image-d128e71d95ad90f72bd6be9a124fedd3" class="lightbox-link"><img alt="select device" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook7.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d128e71d95ad90f72bd6be9a124fedd3"><img alt="select device" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook7.png"></a>
+<a href="#R-image-234c189ae7ac64d1968996c9b4ce14cd" class="lightbox-link"><img alt="select device" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-234c189ae7ac64d1968996c9b4ce14cd"><img alt="select device" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook8.png"></a></p>
+</li>
+<li>
+<p>Define the message<br>
+IFTTT allows some variables:</p>
+<ul>
+<li>title from ESP3D &ndash;&gt; value1</li>
+<li>message from ESP3D &ndash;&gt; value2</li>
+<li>ESP3D hostname &ndash;&gt; value3</li>
+</ul>
+<p><a href="#R-image-3597a8706d95840a58d521f4388482e9" class="lightbox-link"><img alt="define message" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook9.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3597a8706d95840a58d521f4388482e9"><img alt="define message" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook9.png"></a></p>
+</li>
+<li>
+<p>Applet is created
+<a href="#R-image-5ccba7c5c1047c616e7e0df30ffeb1b2" class="lightbox-link"><img alt="applet created" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook11.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ccba7c5c1047c616e7e0df30ffeb1b2"><img alt="applet created" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook11.png"></a></p>
+</li>
+</ul>
+<p>3 - Retrieve the webhook key</p>
+<ul>
+<li>
+<p>Go to settings
+<a href="#R-image-df9927de9b045435735e68e733a352e1" class="lightbox-link"><img alt="settings" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook12.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-df9927de9b045435735e68e733a352e1"><img alt="settings" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook12.png"></a></p>
+</li>
+<li>
+<p>Select service
+<a href="#R-image-d337d3be0bc282f3a9903582d8db20ba" class="lightbox-link"><img alt="service" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d337d3be0bc282f3a9903582d8db20ba"><img alt="service" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice.png"></a></p>
+</li>
+<li>
+<p>Select webhook
+<a href="#R-image-ffeb2571239b6fc8556db930411660bc" class="lightbox-link"><img alt="webhook" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ffeb2571239b6fc8556db930411660bc"><img alt="webhook" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice1.png"></a></p>
+</li>
+<li>
+<p>Choose documentation
+<a href="#R-image-e97d2ef8f03223fdc8f0ae7a121b3a24" class="lightbox-link"><img alt="documentation" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e97d2ef8f03223fdc8f0ae7a121b3a24"><img alt="documentation" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice2.png"></a></p>
+</li>
+<li>
+<p>Copy the key
+<a href="#R-image-f1b8319df70cbc0df4f4f66bf4e89bee" class="lightbox-link"><img alt="copy key" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f1b8319df70cbc0df4f4f66bf4e89bee"><img alt="copy key" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice3.png"></a></p>
+</li>
+</ul>
+<p>4 - Save the generate token and chatID in ESP3D, and set IFTTT as notification supplier<br>
+<code>[ESP610]type=IFTTT T1={event} T2={webhooks_key}</code></p>
+<p>5 - type <code>[ESP610]</code> to verify (T1/T2 won&rsquo;t be displayed)</p>
+<p>6 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+<p>7 - Verify the workflow</p>
+<ul>
+<li>Go to Applets<br>
+<a href="#R-image-cb3296422a7871c67b6f1a8ce85b4955" class="lightbox-link"><img alt="applets" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/applets.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb3296422a7871c67b6f1a8ce85b4955"><img alt="applets" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/applets.png"></a></li>
+<li>Select Activity<br>
+<a href="#R-image-19e3c3625182a959dbb1d60c525b3f2e" class="lightbox-link"><img alt="activity" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/activity1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-19e3c3625182a959dbb1d60c525b3f2e"><img alt="activity" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/activity1.png"></a></li>
+<li>Select the flow to display<br>
+<a href="#R-image-43d2415d0bd321871deff23741416144" class="lightbox-link"><img alt="flow to display" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/activity2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-43d2415d0bd321871deff23741416144"><img alt="flow to display" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/activity2.png"></a></li>
+</ul>
+<p>Note: This documentation is not exaustive due to huge features of IFTTT notifications service but base is always same :</p>
+<pre><code>IFThis =&gt; webhooks based on webrequest
+THENThat =&gt; IFTTT notification service
+</code></pre>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="telegram-notification"> Telegram Notification</h1>
+<p><a href="https://telegram.org/" rel="external" target="_blank">Telegram</a> is free service</p>
+<p>Considering you have Telegram account and you already installed Telegram on you phone/PC:</p>
+<p>You need a bot token and a channel id:<br>
+1 - Create a bot with <a href="https://core.telegram.org/bots#3-how-do-i-create-a-bot" rel="external" target="_blank">BotFather</a></p>
+<ul>
+<li>Open telegram application and open chat with Botfather.</li>
+<li>Type or select <code>/newbot</code><br>
+![image]/images/notifications/telegram/newbot.jpg)</li>
+<li>Type the name of the bot (2) and its username (3)<br>
+<a href="#R-image-213eb2aeae3d1abe4a00cfbf686d6c6e" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/newbot2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-213eb2aeae3d1abe4a00cfbf686d6c6e"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/newbot2.jpg"></a></li>
+<li>Doing this you will get your bot token (4) that you need for <code>T1=&lt;bot token&gt;</code></li>
+</ul>
+<p>2 - Create a public channel</p>
+<ul>
+<li>In telegram select new channel<br>
+<a href="#R-image-09a49d9f542b04ed70949d78990f1796" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/newchannel.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-09a49d9f542b04ed70949d78990f1796"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/newchannel.jpg"></a></li>
+<li>Type channel name (1) and description (2)<br>
+<a href="#R-image-778e7511715f83581398dc7818df6433" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-778e7511715f83581398dc7818df6433"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_1.png"></a></li>
+<li>Make channel public and create your channelid/chatid
+<a href="#R-image-03ddda5bfa512eaf4ae9a2e12252a1c9" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03ddda5bfa512eaf4ae9a2e12252a1c9"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_2.png"></a></li>
+<li>Now you have your chatid without the <code>@</code>
+3 - Assign your bot as administrator of your channel so it can use it</li>
+<li>Press your channel title, the top banner will expand<br>
+<a href="#R-image-8d28e82951d68a608e7c4db8aa8c4830" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/channel.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d28e82951d68a608e7c4db8aa8c4830"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/channel.jpg"></a></li>
+<li>Selet manage channel
+<a href="#R-image-ebe4f95b467c2db4e9a3d1782cc57737" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ebe4f95b467c2db4e9a3d1782cc57737"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_3.png"></a></li>
+<li>Push Administrators<br>
+<a href="#R-image-707ed472c0d832f085b6681d44c91f69" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-707ed472c0d832f085b6681d44c91f69"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_4.png"></a></li>
+<li>Look for your bot in search and add it<br>
+<a href="#R-image-5df18713b9f311d3ecd545160621ffd5" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/adminchannel2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5df18713b9f311d3ecd545160621ffd5"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/adminchannel2.jpg"></a></li>
+<li>Validate bot can have access to channel
+<a href="#R-image-53e6a34a4b890f141df69550c8f7f621" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-53e6a34a4b890f141df69550c8f7f621"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_5.png"></a></li>
+<li>Validate bot can admin the channel
+<a href="#R-image-374577628a5d71cf107009b90d0e029c" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/telegram/create_channel_6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-374577628a5d71cf107009b90d0e029c"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/telegram/create_channel_6.png"></a></li>
+</ul>
+<p>4 - Save the generate token and chatID in ESP3D, and set Telegram as notification supplier<br>
+<code>[ESP610]type=TELEGRAM T1=&lt;bot token&gt; T2=&lt;@chatID&gt;</code></p>
+<p>5 - Type <code>[ESP610]</code> to verify (T1/T2 won&rsquo;t be displayed)</p>
+<p>6 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

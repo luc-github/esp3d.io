@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v1.x/hardware/index.html</link>
+    <description>ESP32 generic controllerESP32 R1 controller from Simon Jouet&#xA;FYSETC-E4FYSETC-E4&#xA;MKS TinybeeMKS Tinybee V1&#xA;MRR-ESPAMRR-ESPA&#xA;MRR-ESPEMRR-ESPE&#xA;Panda Zhu/M4Panda Zhu/M4</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v1.x/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP32 generic controller</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/esp32-controller/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/esp32-controller/index.html</guid>
+      <description>ESP32 R1 controller from Simon Jouet</description>
+    </item>
+    <item>
+      <title>FYSETC-E4</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/fysetc-e4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/fysetc-e4/index.html</guid>
+      <description>FYSETC-E4</description>
+    </item>
+    <item>
+      <title>MKS Tinybee</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/mks-tinybee-v1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/mks-tinybee-v1/index.html</guid>
+      <description>MKS Tinybee V1</description>
+    </item>
+    <item>
+      <title>MRR-ESPA</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/mrr-espa/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/mrr-espa/index.html</guid>
+      <description>MRR-ESPA</description>
+    </item>
+    <item>
+      <title>MRR-ESPE</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/mrr-espe/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/mrr-espe/index.html</guid>
+      <description>MRR-ESPE</description>
+    </item>
+    <item>
+      <title>Panda Zhu/M4</title>
+      <link>http://localhost:1313/esp3dlib/v1.x/hardware/panda-zhu-m4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v1.x/hardware/panda-zhu-m4/index.html</guid>
+      <description>Panda Zhu/M4</description>
+    </item>
+  </channel>
+</rss>

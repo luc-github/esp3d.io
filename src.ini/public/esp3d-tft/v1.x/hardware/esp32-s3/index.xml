@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP32-S3 boards :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/index.html</link>
+    <description> </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3.5&#39; ZX3D50CE02S-USRC-4832</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/panlee/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/panlee/index.html</guid>
+      <description>ESP32-S3 3.5&#39; (480x320) TFT</description>
+    </item>
+    <item>
+      <title>4.3&#39; HMI-V3</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html</guid>
+      <description>ESP32-S3 4.3&#39; (800x480) TFT</description>
+    </item>
+    <item>
+      <title> 7.0&#39; ESP32-8048S070C</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-70-8048/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-70-8048/index.html</guid>
+      <description>ESP32-S3 7&#39; (800×480) TFT</description>
+    </item>
+    <item>
+      <title> 5.0&#39; ESP32-8048S050C</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-50-8048/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-50-8048/index.html</guid>
+      <description>ESP32-S3 5&#39; (800x480) IPS TFT</description>
+    </item>
+    <item>
+      <title> 4.3&#39; ESP32-8048S043C</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-8048/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-8048/index.html</guid>
+      <description>ESP32-S3 4.3&#39; (800x480) IPS TFT</description>
+    </item>
+    <item>
+      <title> 4.3&#39; ESP32-4827S043R/C</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-4827/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-4827/index.html</guid>
+      <description>ESP32-S3 4.3&#39; (480x272) TFT</description>
+    </item>
+    <item>
+      <title> 3.5&#39; BZM-V1</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/bzm-35-4832/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/bzm-35-4832/index.html</guid>
+      <description>ESP32 - 3.5&#39; (480x320) TFT</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Credits :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-webui/v3.x/credits/index.html</link>
+    <description>Big thanks to : @aganov for suggesting to use PreactJS to simplify the development @alxblog for the mentoring and contribution in Web UI rewrite, and for suggesting to use spectre.css instead of bootstrap all contributors, feedbacks owners and donations. Libraries PreactJS smooothiechart </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-webui/v3.x/credits/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

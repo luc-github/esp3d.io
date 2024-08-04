@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP32 boards :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v2.x/hardware/esp32/index.html</link>
+    <description> </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v2.x/hardware/esp32/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dev Kit V1</title>
+      <link>http://localhost:1313/esp3d/v2.x/hardware/esp32/devkit_v1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/hardware/esp32/devkit_v1/index.html</guid>
+      <description>Dev Kit V1</description>
+    </item>
+    <item>
+      <title>Dev Kit C V4</title>
+      <link>http://localhost:1313/esp3d/v2.x/hardware/esp32/devkit_c_v4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/hardware/esp32/devkit_c_v4/index.html</guid>
+      <description>Dev Kit C V4</description>
+    </item>
+    <item>
+      <title>Heltec Dev board</title>
+      <link>http://localhost:1313/esp3d/v2.x/hardware/esp32/heltec_devboard/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/hardware/esp32/heltec_devboard/index.html</guid>
+      <description>Heltec Dev board</description>
+    </item>
+  </channel>
+</rss>

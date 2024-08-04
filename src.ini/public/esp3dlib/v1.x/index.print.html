@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+It is already part of Marlin distribution, check how to enable it
+WarningThis is NOT for esp8266, esp8285, esp32 boards as daughters boards connected to your main board.
+The library must be used with ESP3D-WEBUI 2.X">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Version 1.X :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+It is already part of Marlin distribution, check how to enable it
+WarningThis is NOT for esp8266, esp8285, esp32 boards as daughters boards connected to your main board.
+The library must be used with ESP3D-WEBUI 2.X">
+    <meta property="og:url" content="http://localhost:1313/esp3dlib/v1.x/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Version 1.X :: ESP3D Ecosystem">
+    <meta property="og:description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+It is already part of Marlin distribution, check how to enable it
+WarningThis is NOT for esp8266, esp8285, esp32 boards as daughters boards connected to your main board.
+The library must be used with ESP3D-WEBUI 2.X">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Version 1.X :: ESP3D Ecosystem">
+    <meta itemprop="description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+It is already part of Marlin distribution, check how to enable it
+WarningThis is NOT for esp8266, esp8285, esp32 boards as daughters boards connected to your main board.
+The library must be used with ESP3D-WEBUI 2.X">
+    <meta itemprop="wordCount" content="50">
+    <title>Version 1.X :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3dlib/v1.x/index.html" rel="canonical" type="text/html" title="Version 1.X :: ESP3D Ecosystem">
+    <link href="/esp3dlib/v1.x/index.xml" rel="alternate" type="application/rss+xml" title="Version 1.X :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688350" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688350" rel="stylesheet">
+    <link href="/css/fonts.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688350" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688350" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688350" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688350" rel="stylesheet">
+    <link href="/css/print.css?1722688350" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688350" rel="stylesheet">
+    <script src="/js/variant.js?1722688350"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3dlib/v1.x/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3dlib/index.html"><span itemprop="name">ESP3DLib</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Version 1.X</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3dlib/index.html" title="ESP3DLib (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3dlib/v1.x/features/index.html" title="Features (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="version-1.x">Version 1.X</h1>
+<p><span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3DLib/tree/master" target="_blank"><img src="https://img.shields.io/badge/ESPDLib-1.0-green?style=plastic&amp;logo=github" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3DLib/tree/master" target="_blank"><img src="https://img.shields.io/github/release/luc-github/ESP3DLib.svg?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3DLib/tree/master" target="_blank"><img src="https://img.shields.io/github/commit-activity/y/luc-github/ESP3DLib/master?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3DLib/tree/master" target="_blank"><img src="https://img.shields.io/github/last-commit/luc-github/ESP3DLib/master?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://discord.gg/Z4ujTwE" target="_blank"><img src="https://img.shields.io/discord/752822148795596940?color=blue&amp;label=discord-esp3d&amp;logo=discord" style="height:1.2rem" atl=""/></a></span>
+
+</p>
+<p>This version is the production version, features are frozen, only bugfixes are accepted.</p>
+<p>It is already part of Marlin distribution, check <a href="/esp3dlib/v1.x/installation/index.html">how to enable it</a></p>
+
+<div class="box notices cstyle orange">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation"></i> Warning</div>
+  <div class="box-content">
+
+<p>This is <strong>NOT</strong> for  esp8266, esp8285, esp32 boards as daughters boards connected to your main board.</p>
+</div>
+</div>
+<p>The library must be used with <a href="/esp3d-webui/v2.x/index.html">ESP3D-WEBUI 2.X</a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Version 1.X</h1>
+          <article class="chapter">
+<h1 id="features">Features</h1>
+<p>The V1.X features are :</p>
+<ul>
+<li>Complete configuration by web browser (Station or Access point) or by Serial commands</li>
+<li>Authentication for sensitive pages</li>
+<li>Update firmware by web browser or OTA</li>
+<li>Captive portal in Access point mode which redirect all unknow call to main page</li>
+<li>mDNS which allows to key the name defined in web browser and connect only with bonjour installed on computer</li>
+<li>SSDP, this feature is a discovery protocol, supported on Windows out of the box</li>
+<li>Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</li>
+<li>Web UI support</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="installation">Installation</h1>
+<p>In Marlin configuration files :</p>
+<h3 id="configurationh">Configuration.h</h3>
+<p>Select an ESP32 based board.</p>
+<p>Uncomment the second serial port to allow esp3d to get all printer feedback</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Select a secondary serial port on the board to use for communication with the host.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERIAL_PORT_2 -1</span></span></span></code></pre></div><h3 id="configuration_advh">Configuration_adv.h</h3>
+<p>Enable ESP3DLib support using :
+<code>#define ESP3D_WIFISUPPORT   // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)</code></p>
+<p>You can optionnaly define to which access point your board need to connect to:</p>
+<p><code>#define WIFI_SSID &quot;Wifi SSID&quot;</code><br>
+<code>#define WIFI_PWD  &quot;Wifi Password&quot;</code><br>
+if not defined or you left like this the board will act as an Access Point instead. and you can do further configuration using command line or web interface.</p>
+<p>Please be sure these setting are enabled they are mandatory for ESP3DLib</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define WEBSUPPORT          </span><span style="color:#75715e">// Start a webserver (which may include auto-discovery)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define WIFI_CUSTOM_COMMAND </span><span style="color:#75715e">// Accept feature config commands (e.g., WiFi ESP3D) from the host|
+</span></span></span></code></pre></div><p>Web Update is supported by ESP3DLib but you can also use:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define OTASUPPORT          </span><span style="color:#75715e">// Support over-the-air firmware updates
+</span></span></span></code></pre></div><p>To enable the authentication feature which is disabled by default:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">//AUTHENTICATION_FEATURE: protect pages by login password.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define AUTHENTICATION_FEATURE</span></span></span></code></pre></div><p>to disable any of these features which are enabled by default:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">//MDNS_FEATURE: this feature allow  type the name defined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//in web browser by default: http:\\marlinesp.local and connect
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISABLE_MDNS_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//SSDD_FEATURE: this feature is a discovery protocol, supported on Windows out of the box
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//Rely on Configuration_adv.h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISABLE_SSDP_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//CAPTIVE_PORTAL_FEATURE: In SoftAP redirect all unknow call to main page
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISABLE_CAPTIVE_PORTAL_FEATURE</span></span></span></code></pre></div>
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="documentation">Documentation</h1>
+<p>The documentation section will help you on:
+
+  <ul class="children children-li children-sort-weight">
+  	
+  <li><a href="/esp3dlib/v1.x/documentation/commands/index.html">ESP3D commands</a><p>Syntax and parameters</p></li>
+  </ul></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Documentation</h1>
+          <article class="chapter">
+<h1 id="esp3d-commands">ESP3D commands</h1>
+<h2 id="conventions">Conventions</h2>
+<p>Add space to separate parameters</p>
+<h3 id="display-command-list">Display command list</h3>
+<p>[ESP]</p>
+<h3 id="setget-sta-ssid">Set/Get STA SSID</h3>
+<p>[ESP100]<!-- raw HTML omitted --></p>
+<h3 id="set-sta-password">Set STA Password</h3>
+<p>[ESP101]<!-- raw HTML omitted --></p>
+<h3 id="setget-sta-ip-mode-dhcpstatic">Set/Get STA IP mode (DHCP/STATIC)</h3>
+<p>[ESP102]<!-- raw HTML omitted --></p>
+<h3 id="setget-sta-ipmaskgw">Set/Get STA IP/Mask/GW</h3>
+<p>[ESP103]IP=<!-- raw HTML omitted --> MSK=<!-- raw HTML omitted --> GW=<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-ssid">Set/Get AP SSID</h3>
+<p>[ESP105]<!-- raw HTML omitted --></p>
+<h3 id="change-ap-password">Change AP Password</h3>
+<p>[ESP106]<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-ip">Set/Get AP IP</h3>
+<p>[ESP107]<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-channel">Set/Get AP channel</h3>
+<p>[ESP108]<!-- raw HTML omitted --></p>
+<h3 id="setget-radio-state-which-can-be-sta-ap-off">Set/Get radio state which can be STA, AP, OFF</h3>
+<p>[ESP110]<!-- raw HTML omitted --></p>
+<h3 id="get-current-ip">Get current IP</h3>
+<p>[ESP111]</p>
+<h3 id="getset-hostname">Get/Set hostname</h3>
+<p>[ESP112]<!-- raw HTML omitted --></p>
+<h3 id="getset-http-state-which-can-be-on-off">Get/Set HTTP state which can be ON, OFF</h3>
+<p>[ESP120]<!-- raw HTML omitted --></p>
+<h3 id="getset-http-port">Get/Set HTTP port</h3>
+<p>[ESP121]<!-- raw HTML omitted --></p>
+<h3 id="get-sd-card-status">Get SD Card Status</h3>
+<p>[ESP200]</p>
+<h3 id="get-full-eeprom-settings-content">Get full EEPROM settings content</h3>
+<p>Note: it does not give any passwords<br>
+[ESP400]</p>
+<h3 id="set-eeprom-setting">Set EEPROM setting</h3>
+<p>Using position in EEPROM, type: B(byte), I(integer/long), S(string), A(IP address / mask)</p>
+<p>[ESP401]P=<!-- raw HTML omitted --> T=<!-- raw HTML omitted --> V=<!-- raw HTML omitted --></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Description:		Positions:
+</span></span><span style="display:flex;"><span>HOSTNAME_ENTRY 		<span style="color:#e6db74">&#34;ESP_HOSTNAME&#34;</span>
+</span></span><span style="display:flex;"><span>STA_SSID_ENTRY 		<span style="color:#e6db74">&#34;STA_SSID&#34;</span>
+</span></span><span style="display:flex;"><span>STA_PWD_ENTRY 		<span style="color:#e6db74">&#34;STA_PWD&#34;</span>
+</span></span><span style="display:flex;"><span>STA_IP_ENTRY 		<span style="color:#e6db74">&#34;STA_IP&#34;</span>
+</span></span><span style="display:flex;"><span>STA_GW_ENTRY 		<span style="color:#e6db74">&#34;STA_GW&#34;</span>
+</span></span><span style="display:flex;"><span>STA_MK_ENTRY 		<span style="color:#e6db74">&#34;STA_MK&#34;</span>
+</span></span><span style="display:flex;"><span>ESP_RADIO_MODE 		<span style="color:#e6db74">&#34;WIFI_MODE&#34;</span>
+</span></span><span style="display:flex;"><span>AP_SSID_ENTRY 		<span style="color:#e6db74">&#34;AP_SSID&#34;</span>
+</span></span><span style="display:flex;"><span>AP_PWD_ENTRY 		<span style="color:#e6db74">&#34;AP_PWD&#34;</span>
+</span></span><span style="display:flex;"><span>AP_IP_ENTRY 		<span style="color:#e6db74">&#34;AP_IP&#34;</span>
+</span></span><span style="display:flex;"><span>AP_CHANNEL_ENTRY 	<span style="color:#e6db74">&#34;AP_CHANNEL&#34;</span>
+</span></span><span style="display:flex;"><span>HTTP_ENABLE_ENTRY 	<span style="color:#e6db74">&#34;HTTP_ON&#34;</span>
+</span></span><span style="display:flex;"><span>HTTP_PORT_ENTRY 	<span style="color:#e6db74">&#34;HTTP_PORT&#34;</span>
+</span></span><span style="display:flex;"><span>TELNET_ENABLE_ENTRY <span style="color:#e6db74">&#34;TELNET_ON&#34;</span>
+</span></span><span style="display:flex;"><span>TELNET_PORT_ENTRY 	<span style="color:#e6db74">&#34;TELNET_PORT&#34;</span>
+</span></span><span style="display:flex;"><span>STA_IP_MODE_ENTRY   <span style="color:#e6db74">&#34;STA_IP_MODE&#34;</span></span></span></code></pre></div><h3 id="get-available-ap-list-limited-to-30">Get available AP list (limited to 30)</h3>
+<p>Output is JSON or plain text according parameter<br>
+[ESP410]<!-- raw HTML omitted --></p>
+<h3 id="get-current-settings-of-esp3d">Get current settings of ESP3D</h3>
+<p>Output is plain text<br>
+[ESP420]</p>
+<h3 id="set-esp-state">Set ESP State</h3>
+<p>cmd is RESTART / RESET<br>
+[ESP444]<!-- raw HTML omitted --></p>
+<h3 id="change-admin-password">Change admin password</h3>
+<p>[ESP550]<!-- raw HTML omitted --></p>
+<h3 id="change-user-password">Change user password</h3>
+<p>[ESP555]<!-- raw HTML omitted --></p>
+<h3 id="format-esp-filesystem">Format ESP Filesystem</h3>
+<p>[ESP710]FORMAT</p>
+<h3 id="fw-informations">FW Informations</h3>
+<p>[ESP800]<!-- raw HTML omitted --></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+          <article class="chapter">
+<h1 id="hardware">Hardware</h1>
+
+<ul class="children children-li children-sort-weight">
+	
+<li><a href="/esp3dlib/v1.x/hardware/esp32-controller/index.html">ESP32 generic controller</a><p>ESP32 R1 controller from Simon Jouet</p><ul>
+	</ul></li>
+<li><a href="/esp3dlib/v1.x/hardware/fysetc-e4/index.html">FYSETC-E4</a><p>FYSETC-E4</p><ul>
+	</ul></li>
+<li><a href="/esp3dlib/v1.x/hardware/mks-tinybee-v1/index.html">MKS Tinybee</a><p>MKS Tinybee V1</p><ul>
+	</ul></li>
+<li><a href="/esp3dlib/v1.x/hardware/mrr-espa/index.html">MRR-ESPA</a><p>MRR-ESPA</p><ul>
+	</ul></li>
+<li><a href="/esp3dlib/v1.x/hardware/mrr-espe/index.html">MRR-ESPE</a><p>MRR-ESPE</p><ul>
+	</ul></li>
+<li><a href="/esp3dlib/v1.x/hardware/panda-zhu-m4/index.html">Panda Zhu/M4</a><p>Panda Zhu/M4</p><ul>
+	</ul></li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Hardware</h1>
+          <article class="chapter">
+<h1 id="esp32-generic-controller">ESP32 generic controller</h1>
+<p>From <a href="https://github.com/simon-jouet" rel="external" target="_blank">Simon Jouet</a>, a generic ESP32 controller with 4MB flash memory, no IO expander.</p>
+<ul>
+<li><a href="https://github.com/simon-jouet/ESP32Controller" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-10036c49374af38f84947be4e798b5c8" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/esp32-controller/r1.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10036c49374af38f84947be4e798b5c8"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/esp32-controller/r1.jpg?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 4MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="fysetc-e4">FYSETC-E4</h1>
+<p>From <a href="https://github.com/FYSETC" rel="external" target="_blank">FYSETC</a>, an ESP32 controller with 16MB flash memory, no IO expander.</p>
+<ul>
+<li><a href="https://github.com/FYSETC/FYSETC-E4" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-44be00c5930a9fb618ec2767d14ecf90" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/fysetc-e4/e4.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-44be00c5930a9fb618ec2767d14ecf90"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/fysetc-e4/e4.png?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 16MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="mks-tinybee">MKS Tinybee</h1>
+<p>From <a href="https://github.com/makerbase-mks" rel="external" target="_blank">Maker Base</a>, an ESP32 controller with 8MB flash memory, with IO expander.</p>
+<ul>
+<li><a href="https://github.com/makerbase-mks/MKS-TinyBee" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-a6e98f30fe80340dd5986cb101aae3d1" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mks-tinybee-v1/mks_tinybee_v1.x.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a6e98f30fe80340dd5986cb101aae3d1"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mks-tinybee-v1/mks_tinybee_v1.x.png?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 8MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="mrr-espa">MRR-ESPA</h1>
+<p>From <a href="http://www.maplerain.com/en" rel="external" target="_blank">Maple Rain</a>, an ESP32 controller with 4MB flash memory, no IO expander.</p>
+<ul>
+<li><a href="https://github.com/maplerainresearch/MRR_ESPA" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-059a542ed67ae7afc1327b20bb81db45" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mrr-espa/mrr_espa_v1.3.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-059a542ed67ae7afc1327b20bb81db45"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mrr-espa/mrr_espa_v1.3.jpg?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 4MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="mrr-espe">MRR-ESPE</h1>
+<p>From <a href="http://www.maplerain.com/en" rel="external" target="_blank">Maple Rain</a>, an ESP32 controller with 4MB flash memory, with IO expander.</p>
+<ul>
+<li><a href="https://github.com/maplerainresearch/MRR_ESPE" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-8767ec65d0d8678619fbd2fcae8a7f00" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mrr-espe/mrr_espe.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8767ec65d0d8678619fbd2fcae8a7f00"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/mrr-espe/mrr_espe.jpg?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 4MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="panda-zhu/m4">Panda Zhu/M4</h1>
+<p>From <a href="https://github.com/markniu" rel="external" target="_blank">Mark Niu</a>, two ESP32 controllers with 4MB flash memory, with IO expander.</p>
+<ul>
+<li><a href="https://github.com/markniu/PandaZHU" rel="external" target="_blank">github</a></li>
+</ul>
+<p><a href="#R-image-7491228010735ccd4fc50bf8be237b8b" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3dlib/v1.x/hardware/panda-zhu-m4/pandazhu.jpeg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7491228010735ccd4fc50bf8be237b8b"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3dlib/v1.x/hardware/panda-zhu-m4/pandazhu.jpeg?width=400px"></a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 4MB flash memory, sd card reader</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+          <article class="chapter">
+<h1 id="showcase">Showcase</h1>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="home">
+            <header class="headline">
+            </header>
+
+<h1 id="credits">Credits</h1>
+
+<h3 id="embedded-code--inspiration-code">Embedded code / inspiration code</h3>
+<ul>
+<li>Line support come from <a href="https://github.com/TridentTD/TridentTD_LineNotify" rel="external" target="_blank">https://github.com/TridentTD/TridentTD_LineNotify</a> and <a href="https://notify-bot.line.me/doc/en/" rel="external" target="_blank">https://notify-bot.line.me/doc/en/</a> and <a href="https://pushover.net/api" rel="external" target="_blank">https://pushover.net/api</a></li>
+<li>Pushover support come from <a href="https://github.com/ArduinoHannover/Pushover" rel="external" target="_blank">https://github.com/ArduinoHannover/Pushover</a></li>
+<li>Email support come from <a href="https://github.com/CosmicBoris/ESP8266SMTP" rel="external" target="_blank">https://github.com/CosmicBoris/ESP8266SMTP</a> and <a href="https://www.electronicshub.org/send-an-email-using-esp8266/" rel="external" target="_blank">https://www.electronicshub.org/send-an-email-using-esp8266/</a></li>
+</ul>
+<h3 id="libraries">Libraries</h3>
+<ul>
+<li>Websockets come from Markus Sattler <a href="https://github.com/Links2004/arduinoWebSockets" rel="external" target="_blank">https://github.com/Links2004/arduinoWebSockets</a></li>
+<li>ESP32SSDP come from luc-github <a href="https://github.com/luc-github/ESP32SSDP" rel="external" target="_blank">https://github.com/luc-github/ESP32SSDP</a></li>
+<li>ESP32 core for arduino come from <a href="https://github.com/espressif/arduino-esp32" rel="external" target="_blank">https://github.com/espressif/arduino-esp32</a></li>
+<li>Alternative of arduino come from PlatformIO <a href="https://platformio.org/" rel="external" target="_blank">https://platformio.org/</a></li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688350" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688350" defer></script>
+    <script src="/js/theme.js?1722688350" defer></script>
+  </body>
+</html>

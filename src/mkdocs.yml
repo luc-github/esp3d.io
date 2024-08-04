@@ -1,0 +1,34 @@
+site_name: esp3d.io
+site_description: ESP3D Ecosystem documentation
+site_url: https://esp3d.io
+repo_url: 'https://github.com/luc-github/esp3d.io'
+edit_uri_template: 'edit/main/src/content/{path}'
+
+extra_css:
+  - css/style.css
+
+nav:
+  - Introduction: 'index.md'
+
+
+theme:
+    name: readthedocs
+    custom_dir: custom_theme/
+    navigation_depth: 1
+    titles_only: false
+    sticky_navigation: false
+    collapse_navigation: true
+    logo: /img/ESP3D_mini2.png
+
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  - markdown.extensions.codehilite:
+      linenums: true
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.superfences
+

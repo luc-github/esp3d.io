@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version 2.1.X :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v2.x/index.html</link>
+    <description>This version is the production version, features are frozen, only bugfixes are accepted.&#xA;Firmware should work with the following firmwares:&#xA;Repetier 1.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x The communication between ESP board and target board is done by serial.&#xA;The firmware must be used with ESP3D-WEBUI 2.X</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v2.x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Features</title>
+      <link>http://localhost:1313/esp3d/v2.x/features/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/features/index.html</guid>
+      <description>The V2.1.X features are :&#xA;Support for ESP8266, ESP8285 and standard ESP32 board with at least 1Mb of flash Serial/Wifi bridge using configurable port 8888 Reset settings using GPIO2 pin Complete configuration by web browser (Station or Access point) or by Serial/telnet commands Authentication (optional) for better security Update firmware by web browser for 4MB boards Captive portal in Access point mode which redirect all unknow call to main page mDNS, this feature is a discovery protocol, it need bonjour installed on computer, supported outof the box by OSX, on Windows and Linux need to be installed SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>http://localhost:1313/esp3d/v2.x/hardware/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/hardware/index.html</guid>
+      <description>&#xD;ESP8285 boards&#xD;blkboxme&#xD;Itead8285&#xD;ESP8266 boards&#xD;ESP01 512K&#xD;ESP01 1M Generic&#xD;ESP01S 1M&#xD;ESP07&#xD;ESP12 e/f&#xD;Bigtreetech Cloud&#xD;FYSETC-SD-WIFI&#xD;Bigtreetech WiFi module&#xD;Diymore&#xD;Wemos D1 mini&#xD;Wemos D1 mini Pro&#xD;MKS WiFi Module V1.0 (8 pins)&#xD;MKS WiFi Module V1.1 (16 pins)&#xD;Nodemcu V0.8&#xD;Nodemcu V1.0&#xD;SOnOff&#xD;ESP32 boards&#xD;Dev Kit V1&#xD;Dev Kit C V4&#xD;Heltec Dev board</description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>http://localhost:1313/esp3d/v2.x/installation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/installation/index.html</guid>
+      <description>Setup your development environment Click on the corresponding image to display how to setup.&#xA;Arduino IDE or PlatformIO Tip: The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.&#xA;Connect your board Connection between ESP and printer board needs 4 wires:&#xA;ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>http://localhost:1313/esp3d/v2.x/documentation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/documentation/index.html</guid>
+      <description>The documentation section will help you on: ESP3D commandsSyntax and parameters&#xA;NotificationsSetup and configuration&#xA;APIAPI description&#xA;About SD cardSD Card support</description>
+    </item>
+    <item>
+      <title>Showcase</title>
+      <link>http://localhost:1313/esp3d/v2.x/showcase/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/showcase/index.html</guid>
+      <description>On a Davinci 2.0 </description>
+    </item>
+    <item>
+      <title>Credits</title>
+      <link>http://localhost:1313/esp3d/v2.x/credits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v2.x/credits/index.html</guid>
+      <description>Big thanks to : @disneysw for bringing this module idea @lkarlslund for suggestion about independent reset using GPIO2 Roy Cortes from Panucatt Devices for supporting and pushing me implementing great features all contributors, feedbacks owners and donations. Embedded code / inspiration code Line support come from https://github.com/TridentTD/TridentTD_LineNotify and https://notify-bot.line.me/doc/en/ and https://pushover.net/api Pushover support come from https://github.com/ArduinoHannover/Pushover Email support come from https://github.com/CosmicBoris/ESP8266SMTP and https://www.electronicshub.org/send-an-email-using-esp8266/ Libraries Websockets come from Markus Sattler https://github.com/Links2004/arduinoWebSockets BMx280MI come from Gregor Christandl https://bitbucket.</description>
+    </item>
+  </channel>
+</rss>

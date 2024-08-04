@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="ESP32 - 3.5&#39; (480x320) TFT">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content=" 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="ESP32 - 3.5&#39; (480x320) TFT">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content=" 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem">
+    <meta property="og:description" content="ESP32 - 3.5&#39; (480x320) TFT">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content=" 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem">
+    <meta itemprop="description" content="ESP32 - 3.5&#39; (480x320) TFT">
+    <meta itemprop="wordCount" content="963">
+    <title> 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.html" rel="canonical" type="text/html" title=" 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.xml" rel="alternate" type="application/rss+xml" title=" 3.5&#39; ESP32-3248S035R/C :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/hardware/index.html"><span itemprop="name">Hardware</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/hardware/esp32/index.html"><span itemprop="name">ESP32 boards</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name"> 3.5&#39; ESP32-3248S035R/C</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/hardware/esp32/rotrics/index.html" title="3.5&#39; Rotrics (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/hardware/esp32/sunton-28-2432/index.html" title="2.8&#39; ESP32-2432S028R (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="3.5-esp32-3248s035r/c"> 3.5&#39; ESP32-3248S035R/C</h1>
+<ul>
+<li>ESP32 based + SDReader + 3.5&rsquo; TFT (480x320) with Resistive or Capacitive touch screen
+<ul>
+<li><a href="https://www.aliexpress.com/item/3256804446638703.html" rel="external" target="_blank">Aliexpress</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="#R-image-d9e9a5c0d349388b9e3d162add0adf2b" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/front.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d9e9a5c0d349388b9e3d162add0adf2b"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/front.jpg?width=400px"></a>
+<a href="#R-image-a951ad6feacc6cf46e7c187be88c4ac5" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/back.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a951ad6feacc6cf46e7c187be88c4ac5"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/back.jpg?width=400px"></a></p>
+<h3 id="features">Features</h3>
+<ul>
+<li>ESP32</li>
+<li>FLASH: 4MB* (*Up to 16MB with hardware mod)</li>
+<li>PSRAM: NO* (*Up to 8MB with hardware mod - See Hardware Mod section below&hellip;)</li>
+<li>Micro-SD card slot (SPI)</li>
+<li>3.5-inch 480x320 TFT display - ST7796 (SPI)</li>
+<li>Touch panel options:
+<ul>
+<li>ESP32-3248S035R - Resistive touch panel - XPT2046 (SPI)</li>
+<li>ESP32-3248S035C - Capacitive touch panel - GT911 (i2C - 0x5D or 0x14)</li>
+</ul>
+</li>
+<li>1 RGB led</li>
+<li>1 USB-Micro to Serial 0 (CH340C)</li>
+<li>Boot and reset buttons</li>
+<li>Power Supply: 5V / 1A</li>
+<li>Header P3 : GND - GPIO 35 - GPIO 22 - GPIO 21</li>
+<li>Header CN1 :  GND - NC (or GPIO 22 on some boards) - GPIO 21 - V3.3</li>
+<li>Header power : VIN - TX - RX - GND</li>
+</ul>
+<h3 id="pins">Pins</h3>
+<table>
+<thead>
+<tr>
+<th>ESP Pin</th>
+<th>GPIO</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>VCC</td>
+<td>+3V3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>EN</td>
+<td>RST / TFT_RST (Reset / LCD)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GPIO36</td>
+<td>SENSOR_VP / RTP_IRQ (Res. Touchscreen)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GPIO39</td>
+<td>SENSOR_VN</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GPIO34</td>
+<td>ADC</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GPIO35</td>
+<td>Header P3 Pin 3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>GPIO32</td>
+<td>CTP_SCL (Cap. Touchscreen)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>GPIO33</td>
+<td>CTP_SDA (Cap. Touchscreen) / RTP_CS (Res. Touchscreen)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>GPIO25</td>
+<td>CTP_RST (Cap. Touchscreen)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>GPIO26</td>
+<td>AUDIO IN-</td>
+</tr>
+<tr>
+<td>12</td>
+<td>GPIO27</td>
+<td>TFT_BL (TFT)</td>
+</tr>
+<tr>
+<td>13</td>
+<td>GPIO14</td>
+<td>TFT_SCK (TFT) / RTP_CLK (Res. Touchscreen)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>GPIO12</td>
+<td>TFT_SDO (TFT) / RTP_OUT (Res. Touchscreen)</td>
+</tr>
+<tr>
+<td>15</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>16</td>
+<td>GPIO13</td>
+<td>TFT_SDI (TFT) / RTP_DIN (Res. Touchscreen)</td>
+</tr>
+<tr>
+<td>17</td>
+<td>SHD/SD2</td>
+<td>HOLD (SPI Flash / PSRAM*)</td>
+</tr>
+<tr>
+<td>18</td>
+<td>SWP/SD3</td>
+<td>WP (SPI Flash / PSRAM*)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>SCS/CMD</td>
+<td>CS (SPI Flash)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>SCK/CLK</td>
+<td>SCK (SPI Flash)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>SDO/SD0</td>
+<td>SO (SPI Flash / PSRAM*)</td>
+</tr>
+<tr>
+<td>22</td>
+<td>SDI/SD1</td>
+<td>SI (SPI Flash / PSRAM*)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>GPIO15</td>
+<td>TFT_CS (TFT)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>GPIO02</td>
+<td>TFT_RS (TFT)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>GPIO0</td>
+<td>BOOT_SW</td>
+</tr>
+<tr>
+<td>26</td>
+<td>GPIO04</td>
+<td>LED_RGB</td>
+</tr>
+<tr>
+<td>27</td>
+<td>GPIO16</td>
+<td>LED_RGB (PSRAM_CS*)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>GPIO17</td>
+<td>LED_RGB (PSRAM_SCK*)</td>
+</tr>
+<tr>
+<td>29</td>
+<td>GPIO05</td>
+<td>TF_CS (SD Card)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>GPIO18</td>
+<td>TF_CLK (SD Card)</td>
+</tr>
+<tr>
+<td>31</td>
+<td>GPIO19</td>
+<td>MCU_MISO (SD Card)</td>
+</tr>
+<tr>
+<td>32</td>
+<td>NC</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>33</td>
+<td>GPIO21</td>
+<td>CTP_INT* (Cap. Touchscreen) / Headers: P3 Pin 1, CN1 Pin 2</td>
+</tr>
+<tr>
+<td>34</td>
+<td>RXD0</td>
+<td>RXD2 Header P1 Pin 3</td>
+</tr>
+<tr>
+<td>35</td>
+<td>TXD0</td>
+<td>TXD2 Header P1 Pin 2</td>
+</tr>
+<tr>
+<td>36</td>
+<td>GPIO22</td>
+<td>Header P3 Pin 2 (also Header CN1 Pin 3 on some boards)</td>
+</tr>
+<tr>
+<td>37</td>
+<td>GPIO23</td>
+<td>MCU_MOSI (SD Card)</td>
+</tr>
+<tr>
+<td>38</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>39</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+</tbody>
+</table>
+<p>* Requires Hardware Mod</p>
+<h3 id="hardware-mod-add-hardware-interrupt-for-gt911">Hardware Mod (Add Hardware Interrupt for GT911)</h3>
+<p>NOTE: This only applies to the screen with the Capacitive touch panel (ESP32_3248S035C)</p>
+<p>There is a routing mistake on the ESP32_3248S035C board that accidentally connects the Capacitive Touch Screen&rsquo;s GT911 Interrupt pin to GND instead of through the R25 jumper to GPIO21.  This means that the code has to use polling (by default) instead of hardware interrupts to determine when the screen is being touched.  This results in excessive CPU utilization of greater than 80%.  Making the below modifications results in a significantly reduced CPU utilization of under 10% on avg (on static screens).</p>
+<h4 id="steps-see-picture">Steps (see picture)</h4>
+<ul>
+<li>Cut the PCB trace going to the GT911&rsquo;s INT pin (labeled as pin 5 on the flex cable).  This disconnects GT911&rsquo;s INT pin from GND.</li>
+<li>Connect a bodge wire from the GT911&rsquo;s INT pin to the closest side of R25 (connecting it to GPIO21).</li>
+<li>Remove (pull-up) resistor R18 (GPIO21 to 3V3).  The GT911&rsquo;s INT pin is not strong enough to drive GPIO21 low with this resistor installed.</li>
+</ul>
+<p>NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt</p>
+<p><a href="#R-image-082f84c005cdcb03b3bd14d998f86ccd" class="lightbox-link"><img alt="image-gt911-int-after-mod" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/gt911-int-after-mod.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-082f84c005cdcb03b3bd14d998f86ccd"><img alt="image-gt911-int-after-mod" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/gt911-int-after-mod.jpg?width=400px"></a></p>
+<h3 id="hardware-mod-add-external-psram">Hardware Mod (Add External PSRAM)</h3>
+<p>This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve more available memory.</p>
+<p>NOTE: There are (at least) two revisions of this board.</p>
+<ul>
+<li>On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.</li>
+<li>On another revision, the external SOIC-8 footprint is un-populated (the SPI flash is built into the ESP32 module).  See Option 2 below for Mod details.</li>
+</ul>
+<p>In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Make sure whatever IC you choose supports 3.3v and at least 80 MHz.  Ideally it should support Quad SPI (QIO) as well.</p>
+<p>Some compatible 8MB PSRAM ICs are:</p>
+<ul>
+<li>ESP-PSRAM64H</li>
+<li>IPS6404L-SQ-SPN</li>
+<li>APM6404-SQ-SPN</li>
+<li>APS6404L-3SQR-SN</li>
+</ul>
+<p>NOTE: Remember to choose the correct variant in CMakeLists.txt to enable PSRAM support.</p>
+<h4 id="option-1">Option 1</h4>
+<p>On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.</p>
+<ul>
+<li>Place the PSRAM IC directly on top of the Flash IC (with the same orientation for Pin 1).</li>
+<li>Connect all Pins (except for Pins 1 &amp; 6) directly to the cooresponding pins on the Flash IC below.</li>
+<li>Remove the RGB LED, as it conflicts with GPIO 16 &amp; 17 that are needed for the new PSRAM IC.</li>
+<li>Connect a bodge wire from Pin 1 to GPIO 16.</li>
+<li>Connect a bodge wire from Pin 6 to GPIO 17.</li>
+<li>Attach a 10k resistor between Pins 1 &amp; 8 of the PSRAM IC. This is a pull-up resistor that ensures the PSRAM is deselected by default (i.e. when the Flash IC is in use).</li>
+</ul>
+<h4 id="option-2">Option 2</h4>
+<p>On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint.</p>
+<ul>
+<li>Cut the PCB trace going to Pin 1 as well as the PCB trace going to pin 6.</li>
+<li>Solder the PSRAM IC to the SOIC-8 footprint (making sure Pin 1 is in the correct orientation).</li>
+<li>Remove the RGB LED, as it conflicts with GPIO 16 &amp; 17 that are needed for the new PSRAM IC.</li>
+<li>Connect a bodge wire from Pin 1 to GPIO 16.</li>
+<li>Connect a bodge wire from Pin 6 to GPIO 17.</li>
+<li>Attach a 10k resistor between Pins 1 &amp; 8 of the PSRAM IC. This is a pull-up resistor that ensures the PSRAM is deselected by default (i.e. when the Flash IC is in use).</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

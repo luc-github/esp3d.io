@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-webui/v3.x/features/index.html</link>
+    <description>The V3.X features are :&#xA;Global Features Firmware update WebUI update List of enabled features /capabilities Wifi configuration Features configuration WebUI features configuration Haptic feedback Audio feedback Terminal commands Emmergency stop Pluggins support Themes support (CSS) Language packs support Macro commands Local FS listing / content management External pages/panel support PC / Tablet / phone UI IP Camera &amp; ESP32 Camera display support Import / Export settings Restart board support Monolitic small footprint Single user management support (auto close if not latest connected) Authentication support (admin / user) Configuration wizard (TBD) Firmware supported (3DPrinter / CNC / SandTable): ESP3D V3.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-webui/v3.x/features/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

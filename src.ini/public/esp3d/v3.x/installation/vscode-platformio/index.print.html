@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Prepare the development environment Download and install VSCode
+Add PlatformIO IDE extension to VSCode
+Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient
+ESP3D configuration Open esp3d/configuration.h and set features you want.
+You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="VSCode &amp; Platformio :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Prepare the development environment Download and install VSCode
+Add PlatformIO IDE extension to VSCode
+Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient
+ESP3D configuration Open esp3d/configuration.h and set features you want.
+You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.">
+    <meta property="og:url" content="http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="VSCode &amp; Platformio :: ESP3D Ecosystem">
+    <meta property="og:description" content="Prepare the development environment Download and install VSCode
+Add PlatformIO IDE extension to VSCode
+Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient
+ESP3D configuration Open esp3d/configuration.h and set features you want.
+You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D">
+    <meta itemprop="name" content="VSCode &amp; Platformio :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Prepare the development environment Download and install VSCode
+Add PlatformIO IDE extension to VSCode
+Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient
+ESP3D configuration Open esp3d/configuration.h and set features you want.
+You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.">
+    <meta itemprop="wordCount" content="1733">
+    <title>VSCode &amp; Platformio :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.html" rel="canonical" type="text/html" title="VSCode &amp; Platformio :: ESP3D Ecosystem">
+    <link href="/esp3d/v3.x/installation/vscode-platformio/index.xml" rel="alternate" type="application/rss+xml" title="VSCode &amp; Platformio :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688350" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688350" rel="stylesheet">
+    <link href="/css/fonts.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688350" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688350" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688350" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688350" rel="stylesheet">
+    <link href="/css/print.css?1722688350" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688350" rel="stylesheet">
+    <script src="/js/variant.js?1722688350"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d/v3.x/installation/vscode-platformio/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/index.html"><span itemprop="name">ESP3D</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">VSCode &amp; Platformio</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/installation/arduino/index.html" title="Arduino IDE (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/installation/wiring/index.html" title="Hardware connection (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="vscode-platformio">VSCode &amp; Platformio</h1>
+<h2 id="prepare-the-development-environment">Prepare the development environment</h2>
+<ul>
+<li>
+<p>Download and install <a href="https://code.visualstudio.com/download" rel="external" target="_blank">VSCode</a></p>
+</li>
+<li>
+<p>Add <a href="https://platformio.org/install/ide?install=vscode" rel="external" target="_blank">PlatformIO IDE extension</a> to VSCode</p>
+</li>
+</ul>
+<h2 id="open-the-esp3d-directory-folder-in-vscode">Open the ESP3D directory folder in VSCode</h2>
+<p>The first time you open the project, vscode need to download all necessary files, so be patient</p>
+<p><a href="#R-image-dfbb2d17bc2d247551ec177a6a584882" class="lightbox-link"><img alt="vscode" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d/v3.x/installation/open_vscode2_1.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dfbb2d17bc2d247551ec177a6a584882"><img alt="vscode" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d/v3.x/installation/open_vscode2_1.png?width=400px"></a></p>
+<h2 id="esp3d-configuration">ESP3D configuration</h2>
+<p>Open esp3d/configuration.h and set features you want.</p>
+<p>You can also generate it, using the ESP3D configurator, which simplify a lot this step. <br>
+<span style="display:inline-block!important;"><a href="https://luc-github.github.io/" target="_blank"><img src="https://img.shields.io/badge/ESP3D-Configurator-red?plastic&amp;logo=preact" style="height:1.2rem" atl=""/></a></span>
+
+</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/* Setup station as default, use AP mode first if not done
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Note: need both defined to enable it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Uncomment and edit them to define
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define STATION_WIFI_SSID &#34;*********&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//#define STATION_WIFI_PASSWORD &#34;*********&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* You can also use a different config file for SSID/password
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Just save it in same location as this configuration.h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* This file is ignored by github
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if defined __has_include
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#  if __has_include (&#34;myconfig.h&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#    include &#34;myconfig.h&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#  endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Serial Communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Settings and protocols
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Serial Communication protocol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* RAW_SERIAL // Basic serial protocol, without data change
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* MKS_SERIAL // This is a MakerBase communication protocol, used with MKS printers and TFT, it encapsulated data in a custom protocol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define COMMUNICATION_PROTOCOL RAW_SERIAL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Main Serial port
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* which serial ESP use to communicate to printer (ESP32 has 3 serials available, ESP8266 only 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_0 //for ESP8266/32, also used by bootloader output, so consider to make it quiet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_1 //for ESP8266/32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_2 //for ESP32 Only
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Main serial port
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define ESP_SERIAL_OUTPUT USE_SERIAL_0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Bridge Serial port (deprecated on esp8266 as second serial is)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* which serial ESP use to bridge to another device (ESP32 has 3 serials available, ESP8266 only 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_0 //for ESP8266/32, also used by bootloader output, so consider to make it quiet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_1 //for ESP8266/32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* USE_SERIAL_2 //for ESP32 Only\
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Comment if not used
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_SERIAL_BRIDGE_OUTPUT USE_SERIAL_1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Serial buffer size
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*  Maximum size of the serial buffer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERIAL_RX_BUFFER_SIZE 512</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Target firmware
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Targeted firmware that ESP3D will communicate with
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Target firmware (default UNKNOWN_FW can be changed later in settings)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* UNKNOWN_FW
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* GRBL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* MARLIN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SMOOTHIEWARE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* REPETIER
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DEFAULT_FW UNKNOWN_FW</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Radio mode of ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The radio mode ESP3D communicate with the network
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use WiFi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable wifi communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define WIFI_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use Ethernet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable ethernet communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ETH_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Ethernet type (Check ETH.h eth_phy_type_t)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_LAN8720
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_TLK110
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_RTL8201
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_DP83848
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_DM9051
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_KSZ8041
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//TYPE_ETH_PHY_KSZ8081
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define ESP3D_ETH_PHY_TYPE TYPE_ETH_PHY_LAN8720
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Ethernet board Clock mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// MODE_ETH_CLOCK_GPIO0_IN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// MODE_ETH_CLOCK_GPIO0_OUT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// MODE_ETH_CLOCK_GPIO16_OUT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// MODE_ETH_CLOCK_GPIO17_OUT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define ESP3D_ETH_CLK_MODE MODE_ETH_CLOCK_GPIO17_OUT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Pins of ethernet board
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define ESP3D_ETH_PHY_POWER_PIN 12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">//#define ESP3D_ETH_PHY_MDC_PIN 23
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP3D_ETH_PHY_MDIO_PIN 18
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Address of ethernet board
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP3D_ETH_PHY_ADDR 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use Bluetooth
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable serial bluetooth communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define BLUETOOTH_FEATURE
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Channels of ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The way ESP3D communicate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use Web server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable http server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define HTTP_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use telnet server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable telnet light (raw tcp) communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define TELNET_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use Websocket server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable websocket communications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define WS_DATA_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Enable notifications
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Allows to send notifications to the user
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define NOTIFICATION_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Notification message when online
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The message that will be sent when the ESP is online
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define NOTIFICATION_ESP_ONLINE &#34;Hi, %ESP_NAME% is now online at %ESP_IP%&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Notification title message
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The title of notification
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_NOTIFICATION_TITLE &#34;ESP3D Notification&#34;</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Discovery methods of ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The discovery methods of ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use captive portal
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Enable captive portal in AP mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define CAPTIVE_PORTAL_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use mDNS discovery
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* This method need `bonjour` protocol on windows, or `avahi` on linux
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MDNS_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Use Simple Service Discovery Protocol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* It is supported on Windows out of the box
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SSDP_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SSDP Customization settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Customize your ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Model name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Modele name of device
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_MODEL_NAME &#34;ESP Board&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Model number
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Modele number of device
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_MODEL_NUMBER &#34;ESP3D 3.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Model url
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Modele url of device
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_MODEL_URL &#34;https:</span><span style="color:#75715e">//www.espressif.com/en/products/devkits&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Manufacturer name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Manufacturer name of device
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_MANUFACTURER_NAME &#34;Espressif Systems&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Manufacturer url
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Manufacturer url of device
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP_MANUFACTURER_URL &#34;https:</span><span style="color:#75715e">//www.espressif.com&#34;
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Flash filesystem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Filesystem on flash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* File system type used by ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Type of file system used by ESP3D to store files
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_SPIFFS_FILESYSTEM (Deprecated)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_FAT_FILESYSTEM (ESP32 only with large partitions)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_LITTLEFS_FILESYSTEM (Default)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define FILESYSTEM_FEATURE ESP_LITTLEFS_FILESYSTEM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable date/time on files
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Set date/time on files using SNTP or last webui connection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define FILESYSTEM_TIMESTAMP_FEATURE
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SD filesystem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Filesystem on SD card
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD card connection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_NO_SD //(default)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_DIRECT_SD //Only your ESP board is connected to SDCard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_SHARED_SD //Printer SD Card is also connected to ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Does your system has SD card and how it is connected to your ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SD_DEVICE_CONNECTION ESP_DIRECT_SD
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD card library
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_SD_NATIVE //esp32 / esp8266
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_SDIO      //esp32 only
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* ESP_SDFAT2    //esp8266  / esp32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SD_DEVICE ESP_SDFAT2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Sdio bit mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Mode used by SDIO library 1 bit / 4bits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SD_ONE_BIT_MODE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SD_FOUR_BIT_MODE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SDIO_BIT_MODE SD_ONE_BIT_MODE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable date/time on files
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Set date/time on files using SNTP or last webui connection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SD_TIMESTAMP_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* SD card pins
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD card detect pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used to detect SD card
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_SD_DETECT_PIN 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD card detect pin value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* State of SD card detect pin when card is present
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_SD_DETECT_VALUE 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD shared flag pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used to enable SD card for ESP board
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_FLAG_SHARED_SD_PIN -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD shared flag pin value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* State of SD card shared pin for ESP board
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_FLAG_SHARED_SD_VALUE 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* SD card CS pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used to select SD card in SPI mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_SD_CS_PIN 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Remote access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Remote filesystem access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable global filesystem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Allows to access to all filesystems from same location
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define GLOBAL_FILESYSTEM_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* WebDav access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Use WebDav to access to your filesystem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_ROOT        //mount all FS, need GLOBAL_FILESYSTEM_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_FLASH       //mount Flash FS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_SD          mount SD FS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define WEBDAV_FEATURE FS_ROOT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* FTP access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Use FTP to access to your filesystem (1 connection only)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_ROOT        //mount all FS, need GLOBAL_FILESYSTEM_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_FLASH       //mount Flash FS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* FS_SD          //mount SD FS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define FTP_FEATURE FS_ROOT
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Reset ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Reset ESP3D settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable pin reset feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Use a pin to reset ESP3D settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define PIN_RESET_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Reset pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used to reset ESP3D setting if set to low for more than 1 second at start
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP3D_RESET_PIN 0</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Update ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Update ESP3D firmware
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable OTA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Over The Air Update (OTA)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define OTA_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable Web Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Update firmware using WebUI, need 4MB of flash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define WEB_UPDATE_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable SD card Update
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Update firmware and settings using file on SDCard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SD_UPDATE_FEATURE
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Display settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Rendering screens
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Printer screen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*  If your printer has a display
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define PRINTER_HAS_DISPLAY
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* ESP3D screen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Screen connected to ESP board
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* OLED I2C SSD1306 128X64
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* OLED_I2C_SSDSH1106_132X64
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* TFT_SPI_ST7789_240X240
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* TFT_SPI_ST7789_135X240
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define DISPLAY_DEVICE OLED_I2C_SSD1306_128X64
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Flip screen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Flip/rotate screen
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define DISPLAY_FLIP_VERTICALY
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Display i2C address
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Wire address of display
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define DISPLAY_I2C_ADDR 0x3c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Display reset pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used to reset the screen (optional)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define DISPLAY_I2C_PIN_RST 22
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* TFT led pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used for the backlight
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define DISPLAY_LED_PIN -1
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Audio settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Buzzer feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable buzzer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Your esp board has a passive buzzer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define BUZZER_DEVICE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Buzzer pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used for the passive buzzer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP3D_BUZZER_PIN 33
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Sensor settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Sensor feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Sensor pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* The pin used for the sensor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP3D_SENSOR_PIN 34
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Sensor Unit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*  Unit of the sensor result
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define SENSOR__UNIT &#34;C&#34;
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Camera settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Connected camera
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Camera type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_CUSTOM          //Edit the pins in include/pins.h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_ESP_EYE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_M5STACK_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_M5STACK_V2_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_M5STACK_WIDE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_AI_THINKER     //ESP32-CAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_WROVER_KIT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_ESP32_CAM_BOARD
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_ESP32S2_CAM_BOARD
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_ESP32S3_CAM_LCD
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* CAMERA_MODEL_ESP32S3_EYE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Camera connected to ESP board, only ones with PSRAM are supported
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define CAMERA_DEVICE CAMERA_MODEL_AI_THINKER
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Flip vertically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Flip camera vertically
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define CAMERA_DEVICE_FLIP_VERTICALY
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Levels of security
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* How commands are allowed to be sent to ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable serial commands
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Allow commands to be sent to ESP3D via serial port
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define SERIAL_COMMAND_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Allow remote access by enabling cross origin access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* check https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* this should be enabled only in specific cases
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* like show the camera in web page different than device web server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* /if you do not know what is that then better left it commented
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Allow to show the camera in web page different than device web server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_ACCESS_CONTROL_ALLOW_ORIGIN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable authentication
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Force usage of authentication for commands
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define AUTHENTICATION_FEATURE
+</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Additional features
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Extra settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable direct control pin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Controls pins using [ESP201]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DIRECT_PIN_FEATURE</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">/************************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Scripting settings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Scripting on ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">************************************/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable Autostart
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Commands to run on startup
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Separate commands with &#39;;&#39; or use file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_AUTOSTART_SCRIPT &#34;M117 Mounting SD;M21&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_AUTOSTART_SCRIPT_FILE &#34;autoscript.gco&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Enable lua interpreter
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Allow to use lua interpreter on ESP3D
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//#define ESP_LUA_INTERPRETER_FEATURE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* Gcode Host Feature
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* This feature allows to process Gcode files like macros.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define GCODE_HOST_FEATURE</span></span></span></code></pre></div><h2 id="select-the-target-in-vscode">Select the target in VSCode</h2>
+<p><a href="#R-image-7c7d4f38064e4b88f3268dfdf0ea3919" class="lightbox-link"><img alt="vscode" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d/v3.x/installation/vscode2_1.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c7d4f38064e4b88f3268dfdf0ea3919"><img alt="vscode" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d/v3.x/installation/vscode2_1.png?width=400px"></a></p>
+<ul>
+<li>[env:esp32dev] for ESP32 boards</li>
+<li>[env:esp32cam] for ESP32 Camera boards</li>
+<li>[env:esp32-TTGO_T_Display] for ESP32 boards with TTGO_T display</li>
+<li>[env:esp32-ST7789] for ESP32 boards with ST7789 display</li>
+<li>[env:esp32-s2]for ESP32-S2 boards</li>
+<li>[env:esp32-s3]for ESP32-S3 boards</li>
+<li>[env:esp32-c3]for ESP32-C3 boards</li>
+<li>[env:esp8266] for ESP8266 boards with 4MB flash</li>
+<li>[env:esp01s_160mhz] for ESP8266 boards with 1MB flash</li>
+</ul>
+<h2 id="connect-your-boardesp3dv3xinstallationconnect-your-board"><a href="/esp3d/v3.x/installation/index.html#connect-your-board">Connect your board</a></h2>
+<h2 id="compile-and-flash-your-module">Compile and flash your module</h2>
+<p>Use Upload and monitor from the target environment you selected to compile and flash your module.</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688350" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688350" defer></script>
+    <script src="/js/theme.js?1722688350" defer></script>
+  </body>
+</html>

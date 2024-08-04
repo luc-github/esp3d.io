@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-tft/v1.x/hardware/index.html</link>
+    <description>ESP32 boards 3.5&#39; RotricsESP32 3.5&#39; (480x320) TFT&#xA;3.5&#39; ESP32-3248S035R/CESP32 - 3.5&#39; (480x320) TFT&#xA;2.8&#39; ESP32-2432S028RESP32 - 2.8&#39; (320x240) TFT&#xA;ESP32-S3 boards 3.5&#39; ZX3D50CE02S-USRC-4832ESP32-S3 3.5&#39; (480x320) TFT&#xA;4.3&#39; HMI-V3ESP32-S3 4.3&#39; (800x480) TFT&#xA;7.0&#39; ESP32-8048S070CESP32-S3 7&#39; (800×480) TFT&#xA;5.0&#39; ESP32-8048S050CESP32-S3 5&#39; (800x480) IPS TFT&#xA;4.3&#39; ESP32-8048S043CESP32-S3 4.3&#39; (800x480) IPS TFT&#xA;4.3&#39; ESP32-4827S043R/CESP32-S3 4.3&#39; (480x272) TFT&#xA;3.5&#39; BZM-V1ESP32 - 3.5&#39; (480x320) TFT</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-tft/v1.x/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP32 boards</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32/index.html</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>ESP32-S3 boards</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/index.html</guid>
+      <description> </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mDNS protocol :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/tools/discovery/mdns/index.html</link>
+    <description> Windows :&#xA;You may need the bonjour protocol installed on your machine, you can download from here and/or use a dedicated browser like Bonjour browser for Windows&#xA;OSX :&#xA;It is supported out of the box but need to use some application like discovery-dns-sd-browser&#xA;search for esp3d Linux:&#xA;Avahi service must be installed, check this wiki&#xA;Android:&#xA;mdDNS Discovery&#xA;search for esp3d </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tools/discovery/mdns/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

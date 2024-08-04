@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version 3.X :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v3.x/index.html</link>
+    <description>This version is the development version, features can change anytime, feedback, PR and suggestions are welcome.&#xA;This version need currently a fork of Marlin&#xA;It is already part of Marlin distribution, check how to enable it</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v3.x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Features</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/features/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/features/index.html</guid>
+      <description>The V3.X features are :&#xA;Embedded maintenance page (terminal / local FS update / ESP3D Firmware update) WebUI support ESP8285 / ESP8266 / ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C3 support Wifi / ethernet support Raw TCP / serial bridge support (light telnet) Boot delay configuration Websocket / serial bridge support Serial / Serial bridge support Bluetooth Serial bridge support (when BT supported) MKS Serial protocol support Serial commands configurations Authentication support (admin / user) FTP support (limited to 1 connection at once) WebDav support Local FS support: Little FS Fat (ESP32 only) SD support File format Native SPI Native SDIO (ESP32 only) SDFat 1.</description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/installation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/installation/index.html</guid>
+      <description>In Marlin configuration files :&#xA;Configuration.h Select an ESP32 based board.&#xA;Uncomment the second serial port to allow esp3d to get all printer feedback&#xA;/** * Select a secondary serial port on the board to use for communication with the host. * :[-1, 0, 1, 2, 3, 4, 5, 6, 7] */ #define SERIAL_PORT_2 -1Configuration_adv.h Enable ESP3DLib support using : #define ESP3D_WIFISUPPORT // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)&#xA;You can optionnaly define to which access point your board need to connect to:</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/documentation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/documentation/index.html</guid>
+      <description>The documentation section will help you on: ESP3D commandsSyntax and parameters&#xA;AuthenticationWhat is authentication in ESP3D?&#xA;NotificationsSetup and configuration&#xA;Compilation GuideCompilation Guide&#xA;Update supportUpdate feature description&#xA;About FTPFTP usage and configuration&#xA;About WebDAVWebDav usage and configuration&#xA;FAQFrequent asked questions and their answers&#xA;APIAPI description</description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/hardware/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/hardware/index.html</guid>
+      <description>FYSETC-E4FYSETC-E4&#xA;MKS TinybeeMKS Tinybee V1&#xA;MRR-ESPAMRR-ESPA&#xA;MRR-ESPEMRR-ESPE&#xA;Panda Zhu/M4Panda Zhu/M4</description>
+    </item>
+    <item>
+      <title>Showcase</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/showcase/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/showcase/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Credits</title>
+      <link>http://localhost:1313/esp3dlib/v3.x/credits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/v3.x/credits/index.html</guid>
+      <description>Big thanks to : ESP3DLib contributors for their suggestions, feedback and ideas submitted during 1.X sustaining phase and 3.X development phase which pushed me to rewrite the ESP3DLib/ESP3D code to make it better and easier to sustain.&#xA;Embedded code / inspiration code FTP server come from Jean-Michel Gallego https://github.com/gallegojm/Arduino-Ftp-Server WebDav server come from David Gauchard https://github.com/d-a-v/ESPWebDAV Line support come from https://github.com/TridentTD/TridentTD_LineNotify and https://notify-bot.line.me/doc/en/ and https://pushover.net/api Pushover support come from https://github.com/ArduinoHannover/Pushover Email support come from https://github.</description>
+    </item>
+  </channel>
+</rss>

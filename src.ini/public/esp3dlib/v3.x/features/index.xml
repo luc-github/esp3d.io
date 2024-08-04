@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v3.x/features/index.html</link>
+    <description>The V3.X features are :&#xA;Embedded maintenance page (terminal / local FS update / ESP3D Firmware update) WebUI support ESP8285 / ESP8266 / ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C3 support Wifi / ethernet support Raw TCP / serial bridge support (light telnet) Boot delay configuration Websocket / serial bridge support Serial / Serial bridge support Bluetooth Serial bridge support (when BT supported) MKS Serial protocol support Serial commands configurations Authentication support (admin / user) FTP support (limited to 1 connection at once) WebDav support Local FS support: Little FS Fat (ESP32 only) SD support File format Native SPI Native SDIO (ESP32 only) SDFat 1.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v3.x/features/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

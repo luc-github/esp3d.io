@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Syntax and parameters">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ESP3D commands :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Syntax and parameters">
+    <meta property="og:url" content="http://localhost:1313/esp3dlib/v1.x/documentation/commands/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="ESP3D commands :: ESP3D Ecosystem">
+    <meta property="og:description" content="Syntax and parameters">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="ESP3D commands :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Syntax and parameters">
+    <meta itemprop="wordCount" content="195">
+    <title>ESP3D commands :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3dlib/v1.x/documentation/commands/index.html" rel="canonical" type="text/html" title="ESP3D commands :: ESP3D Ecosystem">
+    <link href="/esp3dlib/v1.x/documentation/commands/index.xml" rel="alternate" type="application/rss+xml" title="ESP3D commands :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688350" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688350" rel="stylesheet">
+    <link href="/css/fonts.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688350" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688350" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688350" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688350" rel="stylesheet">
+    <link href="/css/print.css?1722688350" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688350" rel="stylesheet">
+    <script src="/js/variant.js?1722688350"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3dlib/v1.x/documentation/commands/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3dlib/index.html"><span itemprop="name">ESP3DLib</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3dlib/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3dlib/v1.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ESP3D commands</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3dlib/v1.x/documentation/index.html" title="Documentation (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3dlib/v1.x/hardware/index.html" title="Hardware (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="esp3d-commands">ESP3D commands</h1>
+<h2 id="conventions">Conventions</h2>
+<p>Add space to separate parameters</p>
+<h3 id="display-command-list">Display command list</h3>
+<p>[ESP]</p>
+<h3 id="setget-sta-ssid">Set/Get STA SSID</h3>
+<p>[ESP100]<!-- raw HTML omitted --></p>
+<h3 id="set-sta-password">Set STA Password</h3>
+<p>[ESP101]<!-- raw HTML omitted --></p>
+<h3 id="setget-sta-ip-mode-dhcpstatic">Set/Get STA IP mode (DHCP/STATIC)</h3>
+<p>[ESP102]<!-- raw HTML omitted --></p>
+<h3 id="setget-sta-ipmaskgw">Set/Get STA IP/Mask/GW</h3>
+<p>[ESP103]IP=<!-- raw HTML omitted --> MSK=<!-- raw HTML omitted --> GW=<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-ssid">Set/Get AP SSID</h3>
+<p>[ESP105]<!-- raw HTML omitted --></p>
+<h3 id="change-ap-password">Change AP Password</h3>
+<p>[ESP106]<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-ip">Set/Get AP IP</h3>
+<p>[ESP107]<!-- raw HTML omitted --></p>
+<h3 id="setget-ap-channel">Set/Get AP channel</h3>
+<p>[ESP108]<!-- raw HTML omitted --></p>
+<h3 id="setget-radio-state-which-can-be-sta-ap-off">Set/Get radio state which can be STA, AP, OFF</h3>
+<p>[ESP110]<!-- raw HTML omitted --></p>
+<h3 id="get-current-ip">Get current IP</h3>
+<p>[ESP111]</p>
+<h3 id="getset-hostname">Get/Set hostname</h3>
+<p>[ESP112]<!-- raw HTML omitted --></p>
+<h3 id="getset-http-state-which-can-be-on-off">Get/Set HTTP state which can be ON, OFF</h3>
+<p>[ESP120]<!-- raw HTML omitted --></p>
+<h3 id="getset-http-port">Get/Set HTTP port</h3>
+<p>[ESP121]<!-- raw HTML omitted --></p>
+<h3 id="get-sd-card-status">Get SD Card Status</h3>
+<p>[ESP200]</p>
+<h3 id="get-full-eeprom-settings-content">Get full EEPROM settings content</h3>
+<p>Note: it does not give any passwords<br>
+[ESP400]</p>
+<h3 id="set-eeprom-setting">Set EEPROM setting</h3>
+<p>Using position in EEPROM, type: B(byte), I(integer/long), S(string), A(IP address / mask)</p>
+<p>[ESP401]P=<!-- raw HTML omitted --> T=<!-- raw HTML omitted --> V=<!-- raw HTML omitted --></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Description:		Positions:
+</span></span><span style="display:flex;"><span>HOSTNAME_ENTRY 		<span style="color:#e6db74">&#34;ESP_HOSTNAME&#34;</span>
+</span></span><span style="display:flex;"><span>STA_SSID_ENTRY 		<span style="color:#e6db74">&#34;STA_SSID&#34;</span>
+</span></span><span style="display:flex;"><span>STA_PWD_ENTRY 		<span style="color:#e6db74">&#34;STA_PWD&#34;</span>
+</span></span><span style="display:flex;"><span>STA_IP_ENTRY 		<span style="color:#e6db74">&#34;STA_IP&#34;</span>
+</span></span><span style="display:flex;"><span>STA_GW_ENTRY 		<span style="color:#e6db74">&#34;STA_GW&#34;</span>
+</span></span><span style="display:flex;"><span>STA_MK_ENTRY 		<span style="color:#e6db74">&#34;STA_MK&#34;</span>
+</span></span><span style="display:flex;"><span>ESP_RADIO_MODE 		<span style="color:#e6db74">&#34;WIFI_MODE&#34;</span>
+</span></span><span style="display:flex;"><span>AP_SSID_ENTRY 		<span style="color:#e6db74">&#34;AP_SSID&#34;</span>
+</span></span><span style="display:flex;"><span>AP_PWD_ENTRY 		<span style="color:#e6db74">&#34;AP_PWD&#34;</span>
+</span></span><span style="display:flex;"><span>AP_IP_ENTRY 		<span style="color:#e6db74">&#34;AP_IP&#34;</span>
+</span></span><span style="display:flex;"><span>AP_CHANNEL_ENTRY 	<span style="color:#e6db74">&#34;AP_CHANNEL&#34;</span>
+</span></span><span style="display:flex;"><span>HTTP_ENABLE_ENTRY 	<span style="color:#e6db74">&#34;HTTP_ON&#34;</span>
+</span></span><span style="display:flex;"><span>HTTP_PORT_ENTRY 	<span style="color:#e6db74">&#34;HTTP_PORT&#34;</span>
+</span></span><span style="display:flex;"><span>TELNET_ENABLE_ENTRY <span style="color:#e6db74">&#34;TELNET_ON&#34;</span>
+</span></span><span style="display:flex;"><span>TELNET_PORT_ENTRY 	<span style="color:#e6db74">&#34;TELNET_PORT&#34;</span>
+</span></span><span style="display:flex;"><span>STA_IP_MODE_ENTRY   <span style="color:#e6db74">&#34;STA_IP_MODE&#34;</span></span></span></code></pre></div><h3 id="get-available-ap-list-limited-to-30">Get available AP list (limited to 30)</h3>
+<p>Output is JSON or plain text according parameter<br>
+[ESP410]<!-- raw HTML omitted --></p>
+<h3 id="get-current-settings-of-esp3d">Get current settings of ESP3D</h3>
+<p>Output is plain text<br>
+[ESP420]</p>
+<h3 id="set-esp-state">Set ESP State</h3>
+<p>cmd is RESTART / RESET<br>
+[ESP444]<!-- raw HTML omitted --></p>
+<h3 id="change-admin-password">Change admin password</h3>
+<p>[ESP550]<!-- raw HTML omitted --></p>
+<h3 id="change-user-password">Change user password</h3>
+<p>[ESP555]<!-- raw HTML omitted --></p>
+<h3 id="format-esp-filesystem">Format ESP Filesystem</h3>
+<p>[ESP710]FORMAT</p>
+<h3 id="fw-informations">FW Informations</h3>
+<p>[ESP800]<!-- raw HTML omitted --></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688350" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688350" defer></script>
+    <script src="/js/theme.js?1722688350" defer></script>
+  </body>
+</html>

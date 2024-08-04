@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v1.x/features/index.html</link>
+    <description>The V1.X features are :&#xA;Complete configuration by web browser (Station or Access point) or by Serial commands Authentication for sensitive pages Update firmware by web browser or OTA Captive portal in Access point mode which redirect all unknow call to main page mDNS which allows to key the name defined in web browser and connect only with bonjour installed on computer SSDP, this feature is a discovery protocol, supported on Windows out of the box Fail safe mode (Access point)is enabled if cannot connect to defined station at boot.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v1.x/features/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

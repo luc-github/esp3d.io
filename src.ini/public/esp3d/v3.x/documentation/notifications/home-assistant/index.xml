@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> Home Assistant :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/documentation/notifications/home-assistant/index.html</link>
+    <description>Home Assistant is a home automation platform&#xA;Considering you have Home Assistant running in your local network:&#xA;1 - Go to , and create a long-lived access token&#xA;2 - Save the generated token in ESP3D, and set HOMEASSISTANT as notification supplier [ESP610]type=HOMEASSISTANT T1=xxxxxxxxxxxxx TS=homeassistant.local:8123&#xA;3 - type [ESP610] to verify (T1 won’t be displayed)&#xA;4 - Try to send message:&#xA;[ESP600]/api/services/light/toggle#{&#34;entity_id&#34;:&#34;light.wintergarten_spots&#34;} 5 - At the end of your gcode, you can add the following have your vacuum cleaner announce the print is done:</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/documentation/notifications/home-assistant/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hardware connection :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.">
+    <meta property="og:url" content="http://localhost:1313/esp3d/v3.x/installation/wiring/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Hardware connection :: ESP3D Ecosystem">
+    <meta property="og:description" content="Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D">
+    <meta itemprop="name" content="Hardware connection :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Connection between ESP and printer board needs 4 wires:
+ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.">
+    <meta itemprop="wordCount" content="704">
+    <title>Hardware connection :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d/v3.x/installation/wiring/index.html" rel="canonical" type="text/html" title="Hardware connection :: ESP3D Ecosystem">
+    <link href="/esp3d/v3.x/installation/wiring/index.xml" rel="alternate" type="application/rss+xml" title="Hardware connection :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688350" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688350" rel="stylesheet">
+    <link href="/css/fonts.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688350" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688350" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688350" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688350" rel="stylesheet">
+    <link href="/css/print.css?1722688350" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688350" rel="stylesheet">
+    <script src="/js/variant.js?1722688350"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d/v3.x/installation/wiring/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/index.html"><span itemprop="name">ESP3D</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Hardware connection</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/installation/vscode-platformio/index.html" title="VSCode &amp; Platformio (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/documentation/index.html" title="Documentation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="hardware-connection">Hardware connection</h1>
+<p>Connection between ESP and printer board needs 4 wires:</p>
+<ul>
+<li>ESP Tx needs to connect to Rx on MCU of printer board.</li>
+<li>ESP Rx needs to connect to Tx on MCU of printer board.</li>
+<li>You also need to power supply ESP board with with GND and 3V3 or 5V.</li>
+</ul>
+<h3 id="connecting-esp-board-to-target-board">Connecting ESP board to target board</h3>
+<p>Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.3V and others 5V, so you may not be able to directly connect ESP  board to target board.</p>
+<p><strong>Disclaimer</strong> : this wiki is for reference - you are responsible of your board supporting or not 5V, we are not responsible for any damage of wrong wiring.</p>
+<p>ESP32 and ESP8266 MCU are only supporting 3.3V. Power supply them with 5V will likelly fry them immediatelly. As MCU is supplied at 3.3V, Tx and Rx signals will be at 3.3V even when board is supplied with 5V. Wether Rx pin is supporting 5V is controversial so we will keep on the safe side and only take datahseet as reference. It&rsquo;s not recommended to have any signal (including Rx) be higher than power supply (3.3V here).</p>
+<p>There are several points to take care. One should check that</p>
+<ol>
+<li>MCU1 Tx voltage is lower than MCU2 supply voltage</li>
+<li>Voh_min of Tx is higher than Vih_min of Rx (to check both ways)</li>
+<li>Vol_max of Tx is lower than Vil_max of Rx (to check both ways)</li>
+</ol>
+<p>1 is mandatory and <a href="https://en.wikipedia.org/wiki/Voltage_divider" rel="external" target="_blank">resistor voltage divider bridge</a> or level shiffter is recommended<br>
+2 &amp; 3 are not destructive there is just a slight risk signals are not read correctly. But it will work in most case as the limit values given by datasheets are rarelly met in mild conditions (using near 25°C and low current flowing from Tx to Rx)</p>
+<p>For the divider bridge a value of R1=1k and R2=2.2k will be fine.
+You could also use 10k and 22k or anything near a factor 2.</p>
+<p><a href="#R-image-136951384a268f15363e59b0d892a5ae" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/dividerbridge.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-136951384a268f15363e59b0d892a5ae"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/dividerbridge.png?width=300px"></a></p>
+<h3 id="connection-diagrams-examples-for-some-esp-boards">Connection diagrams examples for some ESP boards</h3>
+<ul>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp-boards">ESP boards</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp-01">ESP-01</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp-01-serial-wifi-module">ESP-01 serial wifi module</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp-12ef">ESP-12E/F</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp-12f-serial-wifi-module">ESP 12F serial wifi module</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#esp32-cam">ESP32-Cam</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#nodemcu-v2v3">NodeMCU V2/V3</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#sonoff">Sonoff</a></li>
+<li><a href="/esp3d/v3.x/installation/wiring/index.html#wemos-d1-mini">Wemos D1 mini</a></li>
+</ul>
+<h2 id="esp-boards">ESP boards</h2>
+<h3 id="esp-01">ESP-01</h3>
+<ul>
+<li>Use GPIO2 to ground to reset all settings in hard way - 2-6 sec after boot / not before!! Set GPIO2 to ground before boot change boot mode and go to special boot that do not reach FW. Currently boot take 10 sec - giving 8 seconds to connect GPIO2 to GND and do an hard recovery for settings</li>
+<li>Use GPIO0 to ground to be in update mode</li>
+</ul>
+<p><a href="#R-image-72dfe339e35523de5e9ecd2d71956a03" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/hw/wires.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-72dfe339e35523de5e9ecd2d71956a03"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/hw/wires.png?width=300px"></a></p>
+<hr>
+<h3 id="esp-01-serial-wifi-module">ESP-01 serial wifi module</h3>
+<p><a href="#R-image-ad1120c4e569c09e735f5e18b79f7427" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/hw/ff587ce89a.jpg?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ad1120c4e569c09e735f5e18b79f7427"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/hw/ff587ce89a.jpg?width=300px"></a></p>
+<p>more info about the Breakout PCB: <a href="https://www.keyestudio.com/keyestudio-esp-01s-wifi-to-serial-shield-module-for-arduino-esp8266-wifi-p0499-p0499.html" rel="external" target="_blank">keyestudio</a></p>
+<hr>
+<h3 id="esp-12ef">ESP-12E/F</h3>
+<p>ESP need 3.3v, it is not 5v tolerant, if printer board use more than 3.3V like 5V on ramps.</p>
+<p><a href="#R-image-3ffd35534be1c6173a7da8e617562fe9" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/hw/wiresesp12e.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ffd35534be1c6173a7da8e617562fe9"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/hw/wiresesp12e.png?width=300px"></a></p>
+<p>you can also use Logic LevelConverter Bi-Directional</p>
+<p><a href="#R-image-1ebd4e64d8941a265ca42b20ad3db703" class="lightbox-link"><img alt="step2" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/hw/logic.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1ebd4e64d8941a265ca42b20ad3db703"><img alt="step2" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/hw/logic.png?width=300px"></a></p>
+<p>In order to flash some ESP12E/F boards via their UART interface, the following pins need to be connected:</p>
+<ul>
+<li>VCC to GPIO2</li>
+<li>GND to GPIO0</li>
+</ul>
+<p>This has been tested with ESP-12-E boards labeled &ldquo;ESP8266 For ESP3D FYSETC.COM&rdquo;</p>
+<hr>
+<h3 id="esp-12f-serial-wifi-module">ESP 12F serial wifi module</h3>
+<p>ESP-12F based serial wifi module (eg <a href="https://www.aliexpress.com/item/ESP8266-ESP-12F-Serial-WIFI-Wireless-Transceiver-Module-For-Arduino-ESP-12F-Adapter-Expansion-Board-For/32804504326.html" rel="external" target="_blank">from aliexpress</a> ) contains built in 2-way levelshifter/bi-directional logic level converter. So it can be powered via 5V uart from the target&rsquo; motherboard.</p>
+<ul>
+<li>We need to manualy ground the <code>IO0</code> while powering up to start in flash mode while powering up (there is no switch for that, neither for reset)
+<a href="#R-image-837d297ae1e3346af5754c9c5fbdcb9a" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/esp/esp12.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-837d297ae1e3346af5754c9c5fbdcb9a"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/esp/esp12.png?width=300px"></a></li>
+<li>Use FTDI adapter as usb2serial</li>
+<li>Need to see in console/serial monitor boot mode is (<strong>1</strong>,7).
+<ul>
+<li>baudrate: 74880</li>
+<li><code>rst cause:2, boot mode:(3,7)</code></li>
+</ul>
+</li>
+<li>Then flash like other esp based board for esp3d</li>
+</ul>
+<hr>
+<h3 id="esp32-cam">ESP32-Cam</h3>
+<p><a href="#R-image-ab5b5dd5adaef9d5977560d8931d971c" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/esp/espcam32.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ab5b5dd5adaef9d5977560d8931d971c"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/esp/espcam32.png?width=300px"></a></p>
+<p>Note: 5V is power supply input and 3V3 is output from regulator. UART Tx and RX signals will be 3.3V</p>
+<hr>
+<h3 id="nodemcu-v2v3">NodeMCU V2/V3</h3>
+<p><a href="#R-image-fbcfa1a881cb61154f242c1d6a779175" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/nodemcu/nodemcu.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fbcfa1a881cb61154f242c1d6a779175"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/nodemcu/nodemcu.png?width=300px"></a></p>
+<hr>
+<h3 id="sonoff">Sonoff</h3>
+<p><a href="#R-image-c325f1f812ee952f8cc3d9f27c2de363" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/sonoff/sonoff.png?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c325f1f812ee952f8cc3d9f27c2de363"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/sonoff/sonoff.png?width=300px"></a></p>
+<p>Relay is connected by GPIO12, it can be handled using ESP201 command:</p>
+<pre><code>*Get/Set pin value
+[ESP201]P&lt;pin&gt; V&lt;value&gt; [PULLUP=YES RAW=YES]
+if no V&lt;value&gt; get P&lt;pin&gt; value
+if V&lt;value&gt; 0/1 set INPUT_PULLUP value, but for GPIO16 INPUT_PULLDOWN_16
+GPIO1 and GPIO3 cannot be used as they are used for serial
+if PULLUP=YES set input pull up, if not set input
+if RAW=YES do not set pinmode just read value
+</code></pre>
+<p>So <code>[ESP201]P12 V0</code> should be off and <code>[ESP201]P12 V1</code> should be on</p>
+<hr>
+<h3 id="wemos-d1-mini">Wemos D1 mini</h3>
+<p>Connection with logic level conveter:</p>
+<p><a href="#R-image-986d63394d9e92c80c693a952f347b22" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-986d63394d9e92c80c693a952f347b22"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px"></a></p>
+<p>example:<br>
+<a href="#R-image-670b6a8a2df4366f9787d889ddce6cfc" class="lightbox-link"><img alt="step1" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px" style=" height: auto; width: 300px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-670b6a8a2df4366f9787d889ddce6cfc"><img alt="step1" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px"></a></p>
+<p>printed cases:</p>
+<ul>
+<li><a href="https://www.thingiverse.com/thing:4128593" rel="external" target="_blank">https://www.thingiverse.com/thing:4128593</a></li>
+<li><a href="https://www.thingiverse.com/thing:2671591" rel="external" target="_blank">https://www.thingiverse.com/thing:2671591</a></li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688350" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688350" defer></script>
+    <script src="/js/theme.js?1722688350" defer></script>
+  </body>
+</html>

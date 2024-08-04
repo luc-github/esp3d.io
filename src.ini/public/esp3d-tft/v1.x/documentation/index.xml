@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-tft/v1.x/documentation/index.html</link>
+    <description>The documentation section will help you on: ESP3D commandsSyntax and parameters&#xA;AuthenticationWhat is authentication in ESP3D-TFT?&#xA;NotificationsSetup and configuration&#xA;Camera supportCamera configuration&#xA;Compilation GuideCompilation Guide&#xA;Update supportUpdate feature description&#xA;About FTPFTP usage and configuration&#xA;About WebDAVWebDav usage and API&#xA;FAQFrequent asked questions and their answers&#xA;APIAPI description</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-tft/v1.x/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP3D commands</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/commands/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/commands/index.html</guid>
+      <description>Syntax and parameters</description>
+    </item>
+    <item>
+      <title>Authentication</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/authentication/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/authentication/index.html</guid>
+      <description>What is authentication in ESP3D-TFT?</description>
+    </item>
+    <item>
+      <title>Notifications</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/notifications/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/notifications/index.html</guid>
+      <description>Setup and configuration</description>
+    </item>
+    <item>
+      <title>Camera support</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/camera/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/camera/index.html</guid>
+      <description>Camera configuration</description>
+    </item>
+    <item>
+      <title>Compilation Guide</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/compilation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/compilation/index.html</guid>
+      <description>Compilation Guide</description>
+    </item>
+    <item>
+      <title>Update support</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/update/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/update/index.html</guid>
+      <description>Update feature description</description>
+    </item>
+    <item>
+      <title>About FTP</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/ftp/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/ftp/index.html</guid>
+      <description>FTP usage and configuration</description>
+    </item>
+    <item>
+      <title>About WebDAV</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/webdavservice/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/webdavservice/index.html</guid>
+      <description>WebDav usage and API</description>
+    </item>
+    <item>
+      <title>FAQ</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/faq/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/faq/index.html</guid>
+      <description>Frequent asked questions and their answers</description>
+    </item>
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/api/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/api/index.html</guid>
+      <description>API description</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/installation/index.html</link>
+    <description>Setup your development environment Click on the corresponding image to display how to setup.&#xA;Arduino IDE or PlatformIO Tip: The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.&#xA;Connect your board Connection between ESP and printer board needs 4 wires:&#xA;ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/installation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino IDE</title>
+      <link>http://localhost:1313/esp3d/v3.x/installation/arduino/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/installation/arduino/index.html</guid>
+      <description>Prepare the development environment Please download ide from https://www.arduino.cc/en/software Warning&#xD;Please use the Legacy IDE (1.8.X) or the latest Arduino IDE 2.X&#xA;Install the esp core according your target:&#xA;ESP8266&#xA;Warning&#xD;Please use the version 3.1.1.&#xA;ESP32&#xA;Warning&#xD;Please use the version 2.0.8.&#xA;Copy the content of the libraries directory and extra libraries directory (according your target ESP8266 or ESP32 ) to your arduino library directory&#xA;Warning&#xD;Do not try any version different than the ones provided, they may not work properly.</description>
+    </item>
+    <item>
+      <title>VSCode &amp; Platformio</title>
+      <link>http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.html</guid>
+      <description>Prepare the development environment Download and install VSCode&#xA;Add PlatformIO IDE extension to VSCode&#xA;Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient&#xA;ESP3D configuration Open esp3d/configuration.h and set features you want.&#xA;You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.</description>
+    </item>
+    <item>
+      <title>Hardware connection</title>
+      <link>http://localhost:1313/esp3d/v3.x/installation/wiring/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/installation/wiring/index.html</guid>
+      <description>Connection between ESP and printer board needs 4 wires:&#xA;ESP Tx needs to connect to Rx on MCU of printer board. ESP Rx needs to connect to Tx on MCU of printer board. You also need to power supply ESP board with with GND and 3V3 or 5V. Connecting ESP board to target board Be aware that ESP MCU is 3.3V on GPIO pin and some target board can be 3.</description>
+    </item>
+  </channel>
+</rss>

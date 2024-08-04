@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="IFTTT is free service up to 5 applets
+IFTTT is a wrapper that allows several kind of notifications, please refer to it documentation.
+ESP3D use the webhook method.
+1 - If you do not have IFTTT account you can create for free to use up to 5 applets. 2 - Create New applet
+Create new trigger
+The trigger is a webhook
+Choose Web request
+Set the event name Define the action you want Select the service you want to use">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content=" IFTTT Notification :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="IFTTT is free service up to 5 applets
+IFTTT is a wrapper that allows several kind of notifications, please refer to it documentation.
+ESP3D use the webhook method.
+1 - If you do not have IFTTT account you can create for free to use up to 5 applets. 2 - Create New applet
+Create new trigger
+The trigger is a webhook
+Choose Web request
+Set the event name Define the action you want Select the service you want to use">
+    <meta property="og:url" content="http://localhost:1313/esp3d/v3.x/documentation/notifications/ifttt/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content=" IFTTT Notification :: ESP3D Ecosystem">
+    <meta property="og:description" content="IFTTT is free service up to 5 applets
+IFTTT is a wrapper that allows several kind of notifications, please refer to it documentation.
+ESP3D use the webhook method.
+1 - If you do not have IFTTT account you can create for free to use up to 5 applets. 2 - Create New applet
+Create new trigger
+The trigger is a webhook
+Choose Web request
+Set the event name Define the action you want Select the service you want to use">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D">
+    <meta itemprop="name" content=" IFTTT Notification :: ESP3D Ecosystem">
+    <meta itemprop="description" content="IFTTT is free service up to 5 applets
+IFTTT is a wrapper that allows several kind of notifications, please refer to it documentation.
+ESP3D use the webhook method.
+1 - If you do not have IFTTT account you can create for free to use up to 5 applets. 2 - Create New applet
+Create new trigger
+The trigger is a webhook
+Choose Web request
+Set the event name Define the action you want Select the service you want to use">
+    <meta itemprop="wordCount" content="231">
+    <title> IFTTT Notification :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d/v3.x/documentation/notifications/ifttt/index.html" rel="canonical" type="text/html" title=" IFTTT Notification :: ESP3D Ecosystem">
+    <link href="/esp3d/v3.x/documentation/notifications/ifttt/index.xml" rel="alternate" type="application/rss+xml" title=" IFTTT Notification :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688350" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688350" rel="stylesheet">
+    <link href="/css/fonts.css?1722688350" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688350" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688350" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688350" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688350" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688350" rel="stylesheet">
+    <link href="/css/print.css?1722688350" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688350" rel="stylesheet">
+    <script src="/js/variant.js?1722688350"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d/v3.x/documentation/notifications/ifttt/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/index.html"><span itemprop="name">ESP3D</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/documentation/notifications/index.html"><span itemprop="name">Notifications</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name"> IFTTT Notification</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/documentation/notifications/email_and_smtp/index.html" title="Email Notification (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/documentation/notifications/telegram/index.html" title="Telegram Notification (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="ifttt-notification"> IFTTT Notification</h1>
+<p><a href="https://ifttt.com" rel="external" target="_blank">IFTTT</a> is free service up to 5 applets</p>
+<p><a href="https://ifttt.com" rel="external" target="_blank">IFTTT</a> is a wrapper that allows several kind of notifications, please refer to it <a href="https://platform.ifttt.com/docs" rel="external" target="_blank">documentation</a>.<br>
+ESP3D use the webhook method.</p>
+<p>1 - If you do not have IFTTT account you can create for free to use up to 5 applets.
+<a href="#R-image-7f5c58ab335ad8952db28445c345eda6" class="lightbox-link"><img alt="IFFTT account creation step" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/accountcreation1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7f5c58ab335ad8952db28445c345eda6"><img alt="IFFTT account creation step" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/accountcreation1.png"></a></p>
+<p>2 - Create New applet<br>
+<a href="#R-image-850d37cb067e2ea44bbdd33ebf23694f" class="lightbox-link"><img alt="Create applet" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-850d37cb067e2ea44bbdd33ebf23694f"><img alt="Create applet" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook1.png"></a></p>
+<ul>
+<li>
+<p>Create new trigger<br>
+<a href="#R-image-ed6bf79598bbac48d6d4679fe2ab3093" class="lightbox-link"><img alt="create trigger" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ed6bf79598bbac48d6d4679fe2ab3093"><img alt="create trigger" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook2.png"></a></p>
+</li>
+<li>
+<p>The trigger is a webhook<br>
+<a href="#R-image-09be938a973de271b60db8870d92daab" class="lightbox-link"><img alt="trigger is a webhook" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-09be938a973de271b60db8870d92daab"><img alt="trigger is a webhook" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook3.png"></a></p>
+</li>
+<li>
+<p>Choose Web request<br>
+<a href="#R-image-97860b75d81a8e1909874a34065f6c0d" class="lightbox-link"><img alt="choose web request" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook4.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-97860b75d81a8e1909874a34065f6c0d"><img alt="choose web request" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook4.png"></a></p>
+</li>
+<li>
+<p>Set the event name
+<a href="#R-image-f2f0f099109c3cfa329b4d372b54f317" class="lightbox-link"><img alt="set event name" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook5.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2f0f099109c3cfa329b4d372b54f317"><img alt="set event name" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook5.png"></a></p>
+</li>
+<li>
+<p>Define the action you want
+<a href="#R-image-db64920955ec7938b7a316b75edc10dd" class="lightbox-link"><img alt="define wanted action" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook6.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-db64920955ec7938b7a316b75edc10dd"><img alt="define wanted action" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook6.png"></a></p>
+</li>
+<li>
+<p>Select the service you want to use<br>
+As you can see there are a lot, let use email as example, but you can select any one that fit your needs
+<a href="#R-image-7a280169bfd28913994ac8cc74358f03" class="lightbox-link"><img alt="select device" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook7.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7a280169bfd28913994ac8cc74358f03"><img alt="select device" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook7.png"></a>
+<a href="#R-image-e148f737b967da9ff8d7fed730ebd98e" class="lightbox-link"><img alt="select device" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook8.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e148f737b967da9ff8d7fed730ebd98e"><img alt="select device" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook8.png"></a></p>
+</li>
+<li>
+<p>Define the message<br>
+IFTTT allows some variables:</p>
+<ul>
+<li>title from ESP3D &ndash;&gt; value1</li>
+<li>message from ESP3D &ndash;&gt; value2</li>
+<li>ESP3D hostname &ndash;&gt; value3</li>
+</ul>
+<p><a href="#R-image-2945fca09085523a341d9f244a3d152d" class="lightbox-link"><img alt="define message" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook9.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2945fca09085523a341d9f244a3d152d"><img alt="define message" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook9.png"></a></p>
+</li>
+<li>
+<p>Applet is created
+<a href="#R-image-a1e40683f3e7f872db7d1a0f42023b29" class="lightbox-link"><img alt="applet created" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook11.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a1e40683f3e7f872db7d1a0f42023b29"><img alt="applet created" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook11.png"></a></p>
+</li>
+</ul>
+<p>3 - Retrieve the webhook key</p>
+<ul>
+<li>
+<p>Go to settings
+<a href="#R-image-439d2688056f2c290945ce7f03e8c9ca" class="lightbox-link"><img alt="settings" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/createwebhook12.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-439d2688056f2c290945ce7f03e8c9ca"><img alt="settings" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/createwebhook12.png"></a></p>
+</li>
+<li>
+<p>Select service
+<a href="#R-image-7eea26294078ff267ff91f2ecf23aabb" class="lightbox-link"><img alt="service" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7eea26294078ff267ff91f2ecf23aabb"><img alt="service" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice.png"></a></p>
+</li>
+<li>
+<p>Select webhook
+<a href="#R-image-71c14fd3ad2f4570e6da4e7a87d9bf74" class="lightbox-link"><img alt="webhook" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-71c14fd3ad2f4570e6da4e7a87d9bf74"><img alt="webhook" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice1.png"></a></p>
+</li>
+<li>
+<p>Choose documentation
+<a href="#R-image-a40165f3064b33a695b4cd0c34f9f27f" class="lightbox-link"><img alt="documentation" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a40165f3064b33a695b4cd0c34f9f27f"><img alt="documentation" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice2.png"></a></p>
+</li>
+<li>
+<p>Copy the key
+<a href="#R-image-6ef9845bd29f25fb0aa66ef8cb85a72a" class="lightbox-link"><img alt="copy key" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/manageservice3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6ef9845bd29f25fb0aa66ef8cb85a72a"><img alt="copy key" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/manageservice3.png"></a></p>
+</li>
+</ul>
+<p>4 - Save the generate token and chatID in ESP3D, and set IFTTT as notification supplier<br>
+<code>[ESP610]type=IFTTT T1={event} T2={webhooks_key}</code></p>
+<p>5 - type <code>[ESP610]</code> to verify (T1/T2 won&rsquo;t be displayed)</p>
+<p>6 - Try to send message:<br>
+<code>[ESP600]Hi there, test from ESP3D</code></p>
+<p>7 - Verify the workflow</p>
+<ul>
+<li>Go to Applets<br>
+<a href="#R-image-fc21e3eb0a512a275416763b71bcdf60" class="lightbox-link"><img alt="applets" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/applets.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fc21e3eb0a512a275416763b71bcdf60"><img alt="applets" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/applets.png"></a></li>
+<li>Select Activity<br>
+<a href="#R-image-7efaaa41e0cd5054cadeea1b6aa55b36" class="lightbox-link"><img alt="activity" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/activity1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7efaaa41e0cd5054cadeea1b6aa55b36"><img alt="activity" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/activity1.png"></a></li>
+<li>Select the flow to display<br>
+<a href="#R-image-76443aa13627a912ec4345738c320a3c" class="lightbox-link"><img alt="flow to display" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/notifications/ifttt/activity2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76443aa13627a912ec4345738c320a3c"><img alt="flow to display" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/notifications/ifttt/activity2.png"></a></li>
+</ul>
+<p>Note: This documentation is not exaustive due to huge features of IFTTT notifications service but base is always same :</p>
+<pre><code>IFThis =&gt; webhooks based on webrequest
+THENThat =&gt; IFTTT notification service
+</code></pre>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688350" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688350" defer></script>
+    <script src="/js/theme.js?1722688350" defer></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://localhost:1313/esp3d/v3.x/installation/configuration/index.html</link>
+    <description>/* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.h * This file is ignored by github */ #if defined __has_include # if __has_include (&#34;myconfig.h&#34;) # include &#34;myconfig.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/installation/configuration/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Project content and files organization">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Project architecture reference :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Project content and files organization">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/documentation/api/project-arch/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Project architecture reference :: ESP3D Ecosystem">
+    <meta property="og:description" content="Project content and files organization">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-TFT">
+    <meta itemprop="name" content="Project architecture reference :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Project content and files organization">
+    <meta itemprop="wordCount" content="6035">
+    <title>Project architecture reference :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/documentation/api/project-arch/index.html" rel="canonical" type="text/html" title="Project architecture reference :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/documentation/api/project-arch/index.xml" rel="alternate" type="application/rss+xml" title="Project architecture reference :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688348" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688348" rel="stylesheet">
+    <link href="/css/fonts.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688348" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688348" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688348" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688348" rel="stylesheet">
+    <link href="/css/print.css?1722688348" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688348" rel="stylesheet">
+    <script src="/js/variant.js?1722688348"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/documentation/api/project-arch/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/api/index.html"><span itemprop="name">API</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Project architecture reference</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/api/index.html" title="API (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/api/webhandlers/index.html" title="Web Handlers (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="project-architecture-reference">Project architecture reference</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Goal of this document is to provide a high level overview of the project architecture. This document is a work in progress and will be updated as the project evolves.</p>
+<h2 id="files-and-directories">Files and Directories</h2>
+<p>The project is organized into the following directories:</p>
+<ul>
+<li><code>cmake</code>: Contains the cmake files for the project and for each target</li>
+<li><code>components</code>: Contains the main components of the project</li>
+<li><code>customization</code>: Contains the customization files for the project to avoid to change in sources</li>
+<li><code>docs</code>: Contains project documentation</li>
+<li><code>embedded</code>: Contains the code for embedded maintenance web page of the firmware</li>
+<li><code>hardware</code>: Contains the hardware specific files like drivers, partitions description, specific sdkconfig, hardware configuration files</li>
+<li><code>resources</code>: Contains the graphical resources like logo for bootsplash, icons, etc</li>
+<li><code>main</code>: Contains the main code of the project</li>
+<li><code>scripts</code>: Contains the scripts used for the project like the fonts builder, the language pack builder, etc</li>
+<li><code>tools</code>: Contains the tools used for the project to test features</li>
+<li><code>translations</code>: Contains the language files for the firmware</li>
+<li><code>CMakelists.txt</code>: The main CMake file for the project</li>
+<li><code>LICENSE</code>: The license file for the project</li>
+<li><code>README.md</code>: The main readme file for the project</li>
+<li><code>.gitignore</code>: The git ignore file for the project</li>
+<li><code>.gitmodules</code>: The git submodules file for the project</li>
+<li><code>.github</code>: The github actions directory for the project</li>
+</ul>
+<h3 id="cmake-directory">cmake directory</h3>
+<p>The <code>cmake</code> directory contains the cmake files for the project and for each target. The cmake files are organized into the following files and subdirectories:</p>
+<ul>
+<li><code>dev_tools.cmake</code>: Contains the cmake file for the development tools (log level, benchmark, log color, etc), this file can be edited but only for debug purpose</li>
+<li><code>features.cmake</code>: Contains the cmake file for the features of the project (wifi, webserver, etc)</li>
+<li><code>sanity_check.cmake</code>: Contains the cmake file for the sanity check of the project</li>
+<li><code>targets.cmake</code>: Complete the cmake file of the project according target board</li>
+<li><code>targets</code> directory : contains the cmake file for each target board, the file is named as the target board name</li>
+</ul>
+<p>Each target file contains the following sections:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code># Ensure the board is enabled in CMakeLists.txt
+if(&lt;BOARD_NAME&gt;) #&lt;BOARD_NAME&gt; is enabled or not in CMakeLists.txt
+    # Add board name (Mandatory)
+    set(TFT_TARGET &#34;&lt;BOARD_NAME&gt;&#34;)
+    # Add the sdkconfig file path (Mandatory), it can be specific or based on one of the common sdkconfig   
+    set(SDKCONFIG  ${CMAKE_SOURCE_DIR}/hardware/&lt;BOARD_NAME&gt;/sdkconfig)
+    # Add Specific Components if any for the board (Mandatory)
+    list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_SOURCE_DIR}/hardware/&lt;BOARD_NAME&gt;/components)
+    # Add specific usb driver for otg (Only if needed)
+    list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_SOURCE_DIR}/hardware/drivers_usb_otg)
+    # Add specific video driver for i80 (Only if needed)
+    list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_SOURCE_DIR}/hardware/drivers_video_i80)
+    # Add specific video driver for rgb (Only if needed)
+    list(APPEND EXTRA_COMPONENT_DIRS ${CMAKE_SOURCE_DIR}/hardware/rgb)
+    # Add specific bsp path for board definition (Mandatory)
+    add_compile_options(&#34;-I${CMAKE_SOURCE_DIR}/hardware/&lt;BOARD_NAME&gt;/components/bsp&#34;)
+    # Enable USB-OTG as serial alternative for communications (Only if needed)
+    add_compile_options(-DESP3D_USB_SERIAL_FEATURE=1)
+endif()</code></pre></div><h3 id="components-directory">components directory</h3>
+<p>The <code>components</code> directory contains the main components of the project. The components are organized into the following subdirectories:</p>
+<ul>
+<li><code>esp_litlefs</code>: Contains the code for the LittleFS file system</li>
+<li><code>esp3d_log</code>: Contains the code for the logging system</li>
+<li><code>lvgl</code>: Contains the code for the LittlevGL graphics library</li>
+<li><code>mdns</code>: Contains the code for the mDNS service</li>
+<li><code>SSDP_IDF</code>: Contains the code for the SSDP service</li>
+</ul>
+<p>Note SSDP_IDF and esp_littlefs are actually defined as git submodules.</p>
+<h3 id="customizations-directory">customizations directory</h3>
+<p>The <code>customizations</code> directory contains the customization files for the project. The customization files are organized into the following subdirectories:</p>
+<ul>
+<li><code>notifications</code>: Contains the customization strings for the notifications</li>
+<li><code>ssdp</code>: Contains the customization strings for the SSDP service</li>
+</ul>
+<h3 id="docs-directory">docs directory</h3>
+<h4 id="embedded-directory">embedded directory</h4>
+<p>The <code>embedded</code> directory contains the code for the embedded maintenance web page of the firmware. The code is organized into the following subdirectories:</p>
+<ul>
+<li>
+<p><code>assets</code>: Contains the assets for the embedded maintenance web page</p>
+<ul>
+<li><code>favicon.ico</code>: The favicon for the embedded maintenance web page</li>
+<li><code>header.txt</code>: The header for the embedded maintenance web page</li>
+<li><code>footer.txt</code>: The footer for the embedded maintenance web page</li>
+</ul>
+</li>
+<li>
+<p><code>config</code>: Contains the configuration files for the test server and production page</p>
+<ul>
+<li><code>buildassets.js</code>: This script will convert the binaries assets into a C header file</li>
+<li><code>server.js</code>: The test server for the embedded maintenance web page</li>
+<li><code>webpack.dev.js</code>: The webpack configuration for the test server and test page</li>
+<li><code>webpack.prod.js</code>: The webpack configuration for the production page</li>
+</ul>
+</li>
+<li>
+<p><code>dist</code>: Contains the binary distribution file for the embedded maintenance web page</p>
+</li>
+<li>
+<p><code>server</code>: Is the directory that simulate the local flash system for the upload</p>
+</li>
+<li>
+<p><code>src</code>: Contains the source code for the embedded maintenance web page</p>
+<ul>
+<li><code>index.html</code>: The main html file for the embedded maintenance web page</li>
+<li><code>index.js</code>: The main javascript file for the embedded maintenance web page</li>
+<li><code>menu.js</code>: The menu javascript file for the embedded maintenance web page</li>
+<li><code>style.css</code>: The main css file for the embedded maintenance web page</li>
+</ul>
+</li>
+<li>
+<p><code>package.json</code>: The package file for the embedded maintenance web page</p>
+</li>
+<li>
+<p><code>Notes.txt</code>: The notes file for the embedded maintenance web page</p>
+</li>
+<li>
+<p><code>.gitignore</code>: The git ignore file for the embedded maintenance web page</p>
+</li>
+</ul>
+<h4 id="hardware-directory">hardware directory</h4>
+<p>The <code>hardware</code> directory contains the hardware specific files like drivers, partitions description, specific sdkconfig, hardware configuration files. The hardware specific files are organized into one common subdirectory and one subdirectory for each supported hardware platform.</p>
+<ul>
+<li><code>common</code>: Contains the common hardware specific files like  partitions description, specific sdkconfig</li>
+<li><code>drivers_common</code>: Contains the common drivers for all the boards</li>
+<li><code>drivers_video_i80</code>: Contains the drivers for the i80 video drivers which cannot be in common drivers because of the specific sdkconfig</li>
+<li><code>drivers_video_rgb</code>: Contains the drivers for the rgb video drivers which cannot be in common drivers because of the specific sdkconfig</li>
+<li><code>drivers_usb_otg</code>: Contains the drivers for the usb otg which cannot be in common drivers because of the specific sdkconfig and hardware</li>
+<li><code>&lt;BOARD_NAME&gt;</code>: Contains the hardware drivers, definitions, partitions and sdkconfig specific files for the &lt;BOARD_NAME&gt; board</li>
+<li>&hellip;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Drivers</th>
+<th>Type</th>
+<th>Depend</th>
+<th style="text-align:center">ESP32_2432S028R</th>
+<th style="text-align:center">ESP32_3248S035C</th>
+<th style="text-align:center">ESP32_3248S035R</th>
+<th style="text-align:center">ESP32_ROTRICS_DEXARM35</th>
+<th style="text-align:center">ESP32_CUSTOM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disp_backlight</td>
+<td>Display component</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>disp_spi</td>
+<td></td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ili9341</td>
+<td>SPI Display</td>
+<td>esp3d_log esp_lcd driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ili9488</td>
+<td></td>
+<td>esp3d_log lvgl disp_spi</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>st7796</td>
+<td>SPI Display</td>
+<td>esp3d_log esp_lcd driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>xpt2046</td>
+<td>SPI Touch</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>gt911</td>
+<td></td>
+<td>esp3d_log i2c_bus</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ft5x06</td>
+<td></td>
+<td>esp3d_log lvgl i2c_bus</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>i2c_bus</td>
+<td></td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>spi_bus</td>
+<td>SPI Bus</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>sw_spi</td>
+<td>Software SPI</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Drivers</th>
+<th>Type</th>
+<th>Depend</th>
+<th style="text-align:center">ESP32S3_4827S043C</th>
+<th style="text-align:center">ESP32S3_8048S043C</th>
+<th style="text-align:center">ESP32S3_8048S050C</th>
+<th style="text-align:center">ESP32S3_8048S070C</th>
+<th style="text-align:center">ESP32S3_BZM_TFT35_GT911</th>
+<th style="text-align:center">ESP32S3_HMI43V3</th>
+<th style="text-align:center">ESP32S3_ZX3D50CE02S_USRC_4832</th>
+<th style="text-align:center">ESP32S3_CUSTOM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disp_backlight</td>
+<td>Display component</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>st7796</td>
+<td>i80 Display</td>
+<td>esp3d_log esp_lcd driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ili9485</td>
+<td>RGB Display</td>
+<td>esp3d_log esp_lcd driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>st7262</td>
+<td>RGB Display</td>
+<td>esp3d_log esp_lcd driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ek9716</td>
+<td>RGB Display</td>
+<td>esp3d_log lvgl esp_lcd driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>rm68120</td>
+<td>i80 Display</td>
+<td>esp3d_log lvgl esp_lcd driver</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>ft5x06</td>
+<td>i2c Touch</td>
+<td>esp3d_log lvgl i2c_bus</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>gt911</td>
+<td>i2c Touch</td>
+<td>esp3d_log i2c_bus</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>tca9554</td>
+<td>IO expander</td>
+<td>esp3d_log i2c_bus</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>i2c_bus</td>
+<td>i2c Bus</td>
+<td>esp3d_log driver</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">O</td>
+</tr>
+<tr>
+<td>usb_serial</td>
+<td>OTG Host</td>
+<td>esp3d_log</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bus-drivers">Bus drivers</h3>
+<ul>
+<li>spi_bus driver
+The <code>spi_bus</code> driver is a SPI bus driver that is used to control the SPI bus. The <code>spi_bus</code> driver configuration is part of display driver configuration.
+in disp_def.h:</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// SPI (dedicated or shared)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>.spi_bus_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        .spi_host_index <span style="color:#f92672">=</span> SPI2_HOST,
+</span></span><span style="display:flex;"><span>        .pin_miso <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>,                       <span style="color:#75715e">/**&lt; MISO pin number */</span>
+</span></span><span style="display:flex;"><span>        .pin_mosi <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>,                       <span style="color:#75715e">/**&lt; MOSI pin number */</span>
+</span></span><span style="display:flex;"><span>        .pin_clk <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,                        <span style="color:#75715e">/**&lt; CLK pin number */</span>
+</span></span><span style="display:flex;"><span>        .is_master <span style="color:#f92672">=</span> true,                    <span style="color:#75715e">/**&lt; SPI master mode */</span>
+</span></span><span style="display:flex;"><span>        .max_transfer_sz <span style="color:#f92672">=</span> DISP_BUF_SIZE <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, <span style="color:#75715e">/**&lt; Maximum transfer size */</span>
+</span></span><span style="display:flex;"><span>        .dma_channel <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,                     <span style="color:#75715e">/**&lt; DMA channel */</span>
+</span></span><span style="display:flex;"><span>        .quadwp_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,                  <span style="color:#75715e">/**&lt; QuadWP pin number */</span>
+</span></span><span style="display:flex;"><span>        .quadhd_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>                   <span style="color:#75715e">/**&lt; QuadHD pin number */</span>
+</span></span><span style="display:flex;"><span>    },</span></span></code></pre></div><ul>
+<li>sw_spi driver
+The <code>sw_spi</code> driver is a software SPI driver that is used to control the SPI bus. The <code>sw_spi</code> driver configuration is part of the driver configuration file which use it.</li>
+</ul>
+<p>eg: touch driver use it, so it can be part of the touch driver configuration.</p>
+<p>touch_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// SPI (BitBang)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> sw_spi_config_t touch_spi_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .cs_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span>,   <span style="color:#75715e">// GPIO 33
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .clk_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>,  <span style="color:#75715e">// GPIO 25
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .mosi_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">32</span>, <span style="color:#75715e">// GPIO 33
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .miso_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">39</span>, <span style="color:#75715e">// GPIO 39
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};</span></span></code></pre></div><ul>
+<li>i2c_bus driver
+The <code>i2c_bus</code> driver is a I2C bus driver that is used to control the I2C bus. The <code>i2c_bus</code> driver configuration file is i2c_def.h.</li>
+</ul>
+<p>bsp.c:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">//define the I2C bus 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define I2C_PORT_NUMBER   0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// I2C pins definition
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> i2c_config_t i2c_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .mode <span style="color:#f92672">=</span> I2C_MODE_MASTER,
+</span></span><span style="display:flex;"><span>    .scl_io_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>, <span style="color:#75715e">// GPIO 20
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .sda_io_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>, <span style="color:#75715e">// GPIO 19
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .scl_pullup_en <span style="color:#f92672">=</span> GPIO_PULLUP_ENABLE,
+</span></span><span style="display:flex;"><span>    .sda_pullup_en <span style="color:#f92672">=</span> GPIO_PULLUP_ENABLE,
+</span></span><span style="display:flex;"><span>    .master.clk_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><ul>
+<li>tca9554 driver
+The <code>tca9554</code> driver is a I2C GPIO expander driver that is used to control the TCA9554 GPIO expander. The <code>tca9554</code> driver configuration file is tca9554_def.h.</li>
+</ul>
+<p>tca9554_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> tca9554_config_t tca9554_cfg <span style="color:#f92672">=</span> {.i2c_clk_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>                                      .i2c_addr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint8_t</span>[]){<span style="color:#ae81ff">0x3C</span>, <span style="color:#ae81ff">0x24</span>, <span style="color:#ae81ff">0</span>}};</span></span></code></pre></div><ul>
+<li>usb_serial driver
+The <code>usb_serial</code> driver is a USB serial driver that is used to control the OTG USB serial. The <code>usb_serial</code> driver configuration usb_serial_def.h.</li>
+</ul>
+<p>usb_serial_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define ESP3D_USB_SERIAL_BAUDRATE &#34;115200&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP3D_USB_SERIAL_DATA_BITS (8)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define ESP3D_USB_SERIAL_PARITY \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (0)  </span><span style="color:#75715e">// 0: 1 stopbit, 1: 1.5 stopbits, 2: 2 stopbits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define ESP3D_USB_SERIAL_STOP_BITS \
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  (0)  </span><span style="color:#75715e">// 0: None, 1: Odd, 2: Even, 3: Mark, 4: Space
+</span></span></span></code></pre></div><h3 id="spi-display-drivers">SPI Display drivers</h3>
+<ul>
+<li>ili9341 driver
+The <code>ili9341</code> driver is a SPI display driver that is used to control the ILI9341 display. The <code>ili9341</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>in disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX 320
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX 240
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_DOUBLE_BUFFER (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// 1/10 (24-line) buffer (15KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX / 10)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_MALLOC_TYPE MALLOC_CAP_SPIRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// 1/20 (12-line) buffer (7.5KB) in internal DRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * 12)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_MALLOC_TYPE MALLOC_CAP_DMA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif  </span><span style="color:#75715e">// WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE_BYTES (DISP_BUF_SIZE * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Display configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>esp_spi_ili9341_config_t display_spi_ili9341_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .panel_dev_config <span style="color:#f92672">=</span> {.reset_gpio_num <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                             <span style="color:#ae81ff">4</span>,  <span style="color:#75715e">// GPIO 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                         .rgb_ele_order <span style="color:#f92672">=</span> LCD_RGB_ELEMENT_ORDER_BGR,
+</span></span><span style="display:flex;"><span>                         .data_endian <span style="color:#f92672">=</span> LCD_RGB_DATA_ENDIAN_BIG,
+</span></span><span style="display:flex;"><span>                         .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,
+</span></span><span style="display:flex;"><span>                         .flags <span style="color:#f92672">=</span> {.reset_active_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>},
+</span></span><span style="display:flex;"><span>                         .vendor_config <span style="color:#f92672">=</span> NULL},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    .spi_bus_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .spi_host_index <span style="color:#f92672">=</span> SPI2_HOST,
+</span></span><span style="display:flex;"><span>            .pin_miso <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>,                       <span style="color:#75715e">/**&lt; MISO pin number */</span>
+</span></span><span style="display:flex;"><span>            .pin_mosi <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>,                       <span style="color:#75715e">/**&lt; MOSI pin number */</span>
+</span></span><span style="display:flex;"><span>            .pin_clk <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,                        <span style="color:#75715e">/**&lt; CLK pin number */</span>
+</span></span><span style="display:flex;"><span>            .is_master <span style="color:#f92672">=</span> true,                    <span style="color:#75715e">/**&lt; SPI master mode */</span>
+</span></span><span style="display:flex;"><span>            .max_transfer_sz <span style="color:#f92672">=</span> DISP_BUF_SIZE <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, <span style="color:#75715e">/**&lt; Maximum transfer size */</span>
+</span></span><span style="display:flex;"><span>            .dma_channel <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,                     <span style="color:#75715e">/**&lt; DMA channel */</span>
+</span></span><span style="display:flex;"><span>            .quadwp_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,                  <span style="color:#75715e">/**&lt; QuadWP pin number */</span>
+</span></span><span style="display:flex;"><span>            .quadhd_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>                   <span style="color:#75715e">/**&lt; QuadHD pin number */</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .disp_spi_cfg <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {.dc_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, <span style="color:#75715e">/*!&lt; GPIO used to select the D/C line, set this to -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                              if the D/C line is not used */</span>
+</span></span><span style="display:flex;"><span>         .cs_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, <span style="color:#75715e">/*!&lt; GPIO used for CS line */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>         .spi_mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,               <span style="color:#75715e">/*!&lt; Traditional SPI mode (0~3) */</span>
+</span></span><span style="display:flex;"><span>         .pclk_hz <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>, <span style="color:#75715e">/*!&lt; Frequency of pixel clock */</span>
+</span></span><span style="display:flex;"><span>         .trans_queue_depth <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,     <span style="color:#75715e">/*!&lt; Size of internal transaction queue */</span>
+</span></span><span style="display:flex;"><span>         .on_color_trans_done <span style="color:#f92672">=</span> NULL, <span style="color:#75715e">/*!&lt; Callback invoked when color data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         transfer has finished */</span>
+</span></span><span style="display:flex;"><span>         .user_ctx <span style="color:#f92672">=</span> NULL,            <span style="color:#75715e">/*!&lt; User private data, passed directly to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         on_color_trans_done&#39;s user_ctx */</span>
+</span></span><span style="display:flex;"><span>         .lcd_cmd_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,           <span style="color:#75715e">/*!&lt; Bit-width of LCD command */</span>
+</span></span><span style="display:flex;"><span>         .lcd_param_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,         <span style="color:#75715e">/*!&lt; Bit-width of LCD parameter */</span>
+</span></span><span style="display:flex;"><span>         .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>             {
+</span></span><span style="display:flex;"><span>                 <span style="color:#75715e">/*!&lt; Extra flags to fine-tune the SPI device */</span>
+</span></span><span style="display:flex;"><span>                 .dc_low_on_data <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; If this flag is enabled, DC line = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         means transfer data, DC line = 1 means
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         transfer command; vice versa */</span>
+</span></span><span style="display:flex;"><span>                 .octal_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; transmit with octal mode (8 data lines), this mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           is used to simulate Intel 8080 timing */</span>
+</span></span><span style="display:flex;"><span>                 .quad_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; transmit with quad mode (4 data lines), this mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           is useful when transmitting LCD parameters (Only use
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           one line for command) */</span>
+</span></span><span style="display:flex;"><span>                 .sio_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Read and write through a single data line (MOSI) */</span>
+</span></span><span style="display:flex;"><span>                 .lsb_first <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,      <span style="color:#75715e">/*!&lt; transmit LSB bit first */</span>
+</span></span><span style="display:flex;"><span>                 .cs_high_active <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; CS line is high active */</span>
+</span></span><span style="display:flex;"><span>             }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><ul>
+<li>st7796 spi driver
+The <code>st7796</code> driver is a display driver that is used to control the ST7796 display. The <code>st7796</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX 480
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX 320
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Display interface
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_USE_DOUBLE_BUFFER (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// 1/10 (32-line) buffer (30KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX / 10)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_MALLOC_TYPE MALLOC_CAP_SPIRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// 1/40 (8-line) buffer (7.5KB) in internal DRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * 8)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_MALLOC_TYPE MALLOC_CAP_DMA
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif  </span><span style="color:#75715e">// WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE_BYTES (DISP_BUF_SIZE * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// LCD panel configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>esp_spi_st7262_config_t display_spi_st7262_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .panel_dev_config <span style="color:#f92672">=</span> {.reset_gpio_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                         .rgb_ele_order <span style="color:#f92672">=</span> LCD_RGB_ELEMENT_ORDER_BGR,
+</span></span><span style="display:flex;"><span>                         .data_endian <span style="color:#f92672">=</span> LCD_RGB_DATA_ENDIAN_BIG,
+</span></span><span style="display:flex;"><span>                         .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,
+</span></span><span style="display:flex;"><span>                         .flags <span style="color:#f92672">=</span> {.reset_active_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>},
+</span></span><span style="display:flex;"><span>                         .vendor_config <span style="color:#f92672">=</span> NULL},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    .spi_bus_config <span style="color:#f92672">=</span>  <span style="color:#75715e">// SPI (shared with Touch)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        .spi_host_index <span style="color:#f92672">=</span> SPI2_HOST,
+</span></span><span style="display:flex;"><span>        .pin_miso <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>,                       <span style="color:#75715e">/**&lt; MISO pin number */</span>
+</span></span><span style="display:flex;"><span>        .pin_mosi <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>,                       <span style="color:#75715e">/**&lt; MOSI pin number */</span>
+</span></span><span style="display:flex;"><span>        .pin_clk <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>,                        <span style="color:#75715e">/**&lt; CLK pin number */</span>
+</span></span><span style="display:flex;"><span>        .is_master <span style="color:#f92672">=</span> true,                    <span style="color:#75715e">/**&lt; SPI master mode */</span>
+</span></span><span style="display:flex;"><span>        .max_transfer_sz <span style="color:#f92672">=</span> DISP_BUF_SIZE <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>, <span style="color:#75715e">/**&lt; Maximum transfer size */</span>
+</span></span><span style="display:flex;"><span>        .dma_channel <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,                     <span style="color:#75715e">/**&lt; DMA channel */</span>
+</span></span><span style="display:flex;"><span>        .quadwp_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,                  <span style="color:#75715e">/**&lt; QuadWP pin number */</span>
+</span></span><span style="display:flex;"><span>        .quadhd_io_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>                   <span style="color:#75715e">/**&lt; QuadHD pin number */</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    .disp_spi_cfg <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {.cs_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>, <span style="color:#75715e">/*!&lt; GPIO used for CS line */</span>
+</span></span><span style="display:flex;"><span>         .dc_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, <span style="color:#75715e">/*!&lt; GPIO used to select the D/C line, set this to -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                              if the D/C line is not used */</span>
+</span></span><span style="display:flex;"><span>         .spi_mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,    <span style="color:#75715e">/*!&lt; Traditional SPI mode (0~3) */</span>
+</span></span><span style="display:flex;"><span>         .pclk_hz <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>, <span style="color:#75715e">/*!&lt; Frequency of pixel clock */</span>
+</span></span><span style="display:flex;"><span>         .trans_queue_depth <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,     <span style="color:#75715e">/*!&lt; Size of internal transaction queue */</span>
+</span></span><span style="display:flex;"><span>         .on_color_trans_done <span style="color:#f92672">=</span> NULL, <span style="color:#75715e">/*!&lt; Callback invoked when color data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         transfer has finished */</span>
+</span></span><span style="display:flex;"><span>         .user_ctx <span style="color:#f92672">=</span> NULL,            <span style="color:#75715e">/*!&lt; User private data, passed directly to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         on_color_trans_done&#39;s user_ctx */</span>
+</span></span><span style="display:flex;"><span>         .lcd_cmd_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,           <span style="color:#75715e">/*!&lt; Bit-width of LCD command */</span>
+</span></span><span style="display:flex;"><span>         .lcd_param_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,         <span style="color:#75715e">/*!&lt; Bit-width of LCD parameter */</span>
+</span></span><span style="display:flex;"><span>         .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>             {
+</span></span><span style="display:flex;"><span>                 <span style="color:#75715e">/*!&lt; Extra flags to fine-tune the SPI device */</span>
+</span></span><span style="display:flex;"><span>                 .dc_low_on_data <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; If this flag is enabled, DC line = 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         means transfer data, DC line = 1 means
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                         transfer command; vice versa */</span>
+</span></span><span style="display:flex;"><span>                 .octal_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; transmit with octal mode (8 data lines), this mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           is used to simulate Intel 8080 timing */</span>
+</span></span><span style="display:flex;"><span>                 .quad_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; transmit with quad mode (4 data lines), this mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           is useful when transmitting LCD parameters (Only use
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                           one line for command) */</span>
+</span></span><span style="display:flex;"><span>                 .sio_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Read and write through a single data line (MOSI) */</span>
+</span></span><span style="display:flex;"><span>                 .lsb_first <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,      <span style="color:#75715e">/*!&lt; transmit LSB bit first */</span>
+</span></span><span style="display:flex;"><span>                 .cs_high_active <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; CS line is high active */</span>
+</span></span><span style="display:flex;"><span>             }},
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><h3 id="rgb-display-drivers">RGB Display drivers</h3>
+<ul>
+<li>st7262 driver
+The <code>st7262</code> driver is a RGB display driver that is used to control the ST7262 display. The <code>st7262</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>in disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX 800
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX 480
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_CLK_FREQ (14 * 1000 * 1000)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_AVOID_TEAR_EFFECT_WITH_SEM (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_BOUNCE_BUFFER (false)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_DOUBLE_BUFFER (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_NUM_FB (1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_PATCH_FS_FREQ (6 * 1000 * 1000)  </span><span style="color:#75715e">// 6MHz
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_PATCH_FS_DELAY (40)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if DISP_NUM_FB == 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// Full frame buffer (255KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// 1/4 (68-line) buffer (63.75KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX / 4)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif  </span><span style="color:#75715e">// WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BUF_SIZE_BYTES (DISP_BUF_SIZE * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> esp_rgb_st7262_config_t disp_panel_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .panel_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {.clk_src <span style="color:#f92672">=</span> LCD_CLK_SRC_DEFAULT,
+</span></span><span style="display:flex;"><span>         .timings <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>             {
+</span></span><span style="display:flex;"><span>                 .pclk_hz <span style="color:#f92672">=</span> DISP_CLK_FREQ,
+</span></span><span style="display:flex;"><span>                 .h_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>                 .v_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>                 .hsync_pulse_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>                 .hsync_back_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,
+</span></span><span style="display:flex;"><span>                 .hsync_front_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,
+</span></span><span style="display:flex;"><span>                 .vsync_pulse_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>                 .vsync_back_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,
+</span></span><span style="display:flex;"><span>                 .vsync_front_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,
+</span></span><span style="display:flex;"><span>                 .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     {
+</span></span><span style="display:flex;"><span>                         .hsync_idle_low <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                         .vsync_idle_low <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                         .de_idle_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                         .pclk_active_neg <span style="color:#f92672">=</span> true,
+</span></span><span style="display:flex;"><span>                         .pclk_idle_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                     },
+</span></span><span style="display:flex;"><span>             },
+</span></span><span style="display:flex;"><span>         .data_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,  <span style="color:#75715e">// RGB565 in parallel mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>         .num_fbs <span style="color:#f92672">=</span> DISP_NUM_FB,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if DISP_USE_BOUNCE_BUFFER
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .bounce_buffer_size_px <span style="color:#f92672">=</span> DISP_BUF_SIZE,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          .bounce_buffer_size_px <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .sram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>         .psram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>,
+</span></span><span style="display:flex;"><span>         .hsync_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">39</span>,  <span style="color:#75715e">// GPIO 39
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .vsync_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>,  <span style="color:#75715e">// GPIO 41
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .de_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>,     <span style="color:#75715e">// GPIO 40
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .pclk_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>,   <span style="color:#75715e">// GPIO 42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .disp_gpio_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// EN pin not connected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>         .data_gpio_nums <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>             {
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">8</span>,   <span style="color:#75715e">// D0  (B0) - GPIO 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">3</span>,   <span style="color:#75715e">// D1  (B1) - GPIO 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">46</span>,  <span style="color:#75715e">// D2  (B2) - GPIO 46
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">9</span>,   <span style="color:#75715e">// D3  (B3) - GPIO 9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// D4  (B4) - GPIO 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">5</span>,   <span style="color:#75715e">// D5  (G0) - GPIO 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">6</span>,   <span style="color:#75715e">// D6  (G1) - GPIO 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">7</span>,   <span style="color:#75715e">// D7  (G2) - GPIO 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">15</span>,  <span style="color:#75715e">// D8  (G3) - GPIO 15
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">16</span>,  <span style="color:#75715e">// D9  (G4) - GPIO 16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">4</span>,   <span style="color:#75715e">// D10 (G5) - GPIO 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">45</span>,  <span style="color:#75715e">// D11 (R0) - GPIO 45
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">48</span>,  <span style="color:#75715e">// D12 (R1) - GPIO 48
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">47</span>,  <span style="color:#75715e">// D13 (R2) - GPIO 47
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">21</span>,  <span style="color:#75715e">// D14 (R3) - GPIO 21
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 <span style="color:#ae81ff">14</span>,  <span style="color:#75715e">// D15 (R4) - GPIO 14
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>             },
+</span></span><span style="display:flex;"><span>         .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>             {
+</span></span><span style="display:flex;"><span>                 .disp_active_low <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>                 .refresh_on_demand <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>                 .fb_in_psram <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                     true,  <span style="color:#75715e">// Do not change this, as it is mandatory for RGB
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            <span style="color:#75715e">// parallel interface and octal PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                 .double_fb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>                 .no_fb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>                 .bb_invalidate_cache <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>             }},
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><ul>
+<li>ek9716 driver
+The <code>ek9716</code> driver is a RGB display driver that is used to control the EK9716 display. The <code>ek9716</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>in disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX 800
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX 480
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_AVOID_TEAR_EFFECT_WITH_SEM (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_BOUNCE_BUFFER  (false)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_DOUBLE_BUFFER  (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_NUM_FB             (1)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_CLK_FREQ (16 * 1000 * 1000)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_PATCH_FS_FREQ (6 * 1000 * 1000)  </span><span style="color:#75715e">// 6MHz
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_PATCH_FS_DELAY  (40)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if DISP_NUM_FB == 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Full frame buffer (255KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 1/4 (68-line) buffer (63.75KB) in external PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * DISP_VER_RES_MAX / 4)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#endif  </span><span style="color:#75715e">// WITH_PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_SIZE_BYTES    (DISP_BUF_SIZE * 2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">//Panel configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> esp_rgb_ek9716_config_t disp_panel_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .panel_config <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .clk_src <span style="color:#f92672">=</span> LCD_CLK_SRC_DEFAULT,
+</span></span><span style="display:flex;"><span>    .timings <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        .pclk_hz <span style="color:#f92672">=</span> DISP_CLK_FREQ ,
+</span></span><span style="display:flex;"><span>        .h_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>        .v_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>        .hsync_pulse_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span>        .hsync_back_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,
+</span></span><span style="display:flex;"><span>        .hsync_front_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">210</span>,
+</span></span><span style="display:flex;"><span>        .vsync_pulse_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>,
+</span></span><span style="display:flex;"><span>        .vsync_back_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>        .vsync_front_porch <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>        .flags <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            .hsync_idle_low <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            .vsync_idle_low <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            .de_idle_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>            .pclk_active_neg <span style="color:#f92672">=</span> true,
+</span></span><span style="display:flex;"><span>            .pclk_idle_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    .data_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>, <span style="color:#75715e">// RGB565 in parallel mode
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    .num_fbs <span style="color:#f92672">=</span> DISP_NUM_FB,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if DISP_USE_BOUNCE_BUFFER
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .bounce_buffer_size_px <span style="color:#f92672">=</span> DISP_BUF_SIZE,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .bounce_buffer_size_px <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .sram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>    .psram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>,
+</span></span><span style="display:flex;"><span>    .hsync_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">39</span>, <span style="color:#75715e">// GPIO 39
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .vsync_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>, <span style="color:#75715e">// GPIO 40
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .de_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">41</span>, <span style="color:#75715e">// GPIO 41
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .pclk_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>, <span style="color:#75715e">// GPIO 42
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .disp_gpio_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">// EN pin not connected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .data_gpio_nums <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">15</span>, <span style="color:#75715e">// D0  (B0) - GPIO 15
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">7</span>,  <span style="color:#75715e">// D1  (B1) - GPIO 7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">6</span>,  <span style="color:#75715e">// D2  (B2) - GPIO 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">5</span>,  <span style="color:#75715e">// D3  (B3) - GPIO 5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">4</span>,  <span style="color:#75715e">// D4  (B4) - GPIO 4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">9</span>,  <span style="color:#75715e">// D5  (G0) - GPIO 9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">46</span>, <span style="color:#75715e">// D6  (G1) - GPIO 46
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">3</span>,  <span style="color:#75715e">// D7  (G2) - GPIO 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">8</span>,  <span style="color:#75715e">// D8  (G3) - GPIO 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">16</span>, <span style="color:#75715e">// D9  (G4) - GPIO 16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// D10 (G5) - GPIO 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">14</span>, <span style="color:#75715e">// D11 (R0) - GPIO 14
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">21</span>, <span style="color:#75715e">// D12 (R1) - GPIO 21
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">47</span>, <span style="color:#75715e">// D13 (R2) - GPIO 47
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">48</span>, <span style="color:#75715e">// D14 (R3) - GPIO 48
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">45</span>, <span style="color:#75715e">// D15 (R4) - GPIO 45
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    },
+</span></span><span style="display:flex;"><span>    .flags <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        .disp_active_low <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>        .refresh_on_demand <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>        .fb_in_psram <span style="color:#f92672">=</span> true, <span style="color:#75715e">// Do not change this, as it is mandatory for RGB parallel interface and octal PSRAM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        .double_fb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>        .no_fb <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>        .bb_invalidate_cache <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint32_t</span>)NULL,
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>},
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><h3 id="i80-display-drivers">i80 Display drivers</h3>
+<ul>
+<li>rm68120 driver
+The <code>rm68120</code> driver is a display driver that is used to control the RM68120 display. The <code>rm68120</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX (800)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX (480)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * (DISP_VER_RES_MAX / 10))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_USE_DOUBLE_BUFFER (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> esp_i80_rm68120_config_t rm68120_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .bus_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .clk_src <span style="color:#f92672">=</span> LCD_CLK_SRC_DEFAULT,
+</span></span><span style="display:flex;"><span>            .dc_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">38</span>,  <span style="color:#75715e">// DISP_RS_PIN=GPIO38
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .wr_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>,  <span style="color:#75715e">// DISP_WR_PIN=GPIO17
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .data_gpio_nums <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// DISP_D00_PIN = GPIO1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">9</span>,   <span style="color:#75715e">// DISP_D01_PIN = GPIO9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">2</span>,   <span style="color:#75715e">// DISP_D02_PIN = GPIO2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">10</span>,  <span style="color:#75715e">// DISP_D03_PIN = GPIO10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">3</span>,   <span style="color:#75715e">// DISP_D04_PIN = GPIO3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">11</span>,  <span style="color:#75715e">// DISP_D05_PIN = GPIO11
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">4</span>,   <span style="color:#75715e">// DISP_D06_PIN = GPIO4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">12</span>,  <span style="color:#75715e">// DISP_D07_PIN = GPIO12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">5</span>,   <span style="color:#75715e">// DISP_D08_PIN = GPIO5
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">13</span>,  <span style="color:#75715e">// DISP_D09_PIN = GPIO13
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">6</span>,   <span style="color:#75715e">// DISP_D10_PIN = GPIO6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">14</span>,  <span style="color:#75715e">// DISP_D11_PIN = GPIO14
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">7</span>,   <span style="color:#75715e">// DISP_D12_PIN = GPIO7
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">15</span>,  <span style="color:#75715e">// DISP_D13_PIN = GPIO15
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">8</span>,   <span style="color:#75715e">// DISP_D14_PIN = GPIO8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">16</span>,  <span style="color:#75715e">// DISP_D15_PIN = GPIO16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                },
+</span></span><span style="display:flex;"><span>            .bus_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,  <span style="color:#75715e">// DISP_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .max_transfer_bytes <span style="color:#f92672">=</span> DISP_BUF_SIZE <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">uint16_t</span>),
+</span></span><span style="display:flex;"><span>            .psram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>,
+</span></span><span style="display:flex;"><span>            .sram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .io_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .cs_gpio_num <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>            .pclk_hz <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                (<span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">1000</span>),  <span style="color:#75715e">// could be 10 if no PSRAM memory= DISP_CLK_FREQ,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .trans_queue_depth <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>            .dc_levels <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    .dc_idle_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_cmd_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_dummy_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_data_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            .on_color_trans_done <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                NULL,  <span style="color:#75715e">// Callback invoked when color data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                       <span style="color:#75715e">// transfer has finished updated in bdsp.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .user_ctx <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                NULL,  <span style="color:#75715e">// User private data, passed directly to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                       <span style="color:#75715e">// on_color_trans_done’s user_ctx updated in bdsp.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .lcd_cmd_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,    <span style="color:#75715e">// DISP_CMD_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .lcd_param_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,  <span style="color:#75715e">// DISP_PARAM_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        },
+</span></span><span style="display:flex;"><span>    .panel_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .reset_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>,  <span style="color:#75715e">// DISP_RST_PIN = GPIO21
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .rgb_ele_order <span style="color:#f92672">=</span> LCD_RGB_ELEMENT_ORDER_RGB,
+</span></span><span style="display:flex;"><span>            .data_endian <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Set the data endian for color data larger than 1 byte */</span>
+</span></span><span style="display:flex;"><span>            .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>, <span style="color:#75715e">/*!&lt; Color depth, in bpp */</span>
+</span></span><span style="display:flex;"><span>            .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    .reset_active_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Setting this if the panel reset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                               is high level active */</span>
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            .vendor_config <span style="color:#f92672">=</span> NULL, <span style="color:#75715e">/*!&lt; Vendor specific configuration */</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><ul>
+<li>st7796 i80 driver
+The <code>st7796</code> driver is a display driver that is used to control the ST7796 display. The <code>st7796</code> driver configuration is part of display driver configuration.</li>
+</ul>
+<p>disp_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#define DISP_HOR_RES_MAX (480)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_VER_RES_MAX (320)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define DISP_BUF_SIZE (DISP_HOR_RES_MAX * (DISP_VER_RES_MAX / 10))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> esp_i80_st7796_config_t st7796_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .bus_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .clk_src <span style="color:#f92672">=</span> LCD_CLK_SRC_DEFAULT,
+</span></span><span style="display:flex;"><span>            .dc_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,  <span style="color:#75715e">// DISP_RS_PIN=0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .wr_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>,  <span style="color:#75715e">// DISP_WR_PIN=GPIO47
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .data_gpio_nums <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#ae81ff">9</span>,   <span style="color:#75715e">// DISP_D00_PIN = GPIO9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">46</span>,   <span style="color:#75715e">// DISP_D01_PIN = GPIO46
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">3</span>,   <span style="color:#75715e">// DISP_D02_PIN = GPIO3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">8</span>,  <span style="color:#75715e">// DISP_D03_PIN = GPIO8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">18</span>,   <span style="color:#75715e">// DISP_D04_PIN = GPIO18
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">17</span>,  <span style="color:#75715e">// DISP_D05_PIN = GPIO17
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">16</span>,   <span style="color:#75715e">// DISP_D06_PIN = GPIO16
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#ae81ff">15</span>,  <span style="color:#75715e">// DISP_D07_PIN = GPIO15
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// DISP_D08_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// DISP_D09_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// DISP_D10_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// DISP_D11_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// DISP_D12_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// DISP_D13_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e">// DISP_D14_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,  <span style="color:#75715e">// DISP_D15_PIN = N/C
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                },
+</span></span><span style="display:flex;"><span>            .bus_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,  <span style="color:#75715e">// DISP_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .max_transfer_bytes <span style="color:#f92672">=</span> DISP_BUF_SIZE <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">uint16_t</span>),
+</span></span><span style="display:flex;"><span>            .psram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>,
+</span></span><span style="display:flex;"><span>            .sram_trans_align <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .io_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .cs_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">48</span>, <span style="color:#75715e">//DISP_CS_PIN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .pclk_hz <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                (<span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>                 <span style="color:#ae81ff">1000</span>),  <span style="color:#75715e">// could be 10 if no PSRAM memory= DISP_CLK_FREQ,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .trans_queue_depth <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>            .dc_levels <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    .dc_idle_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_cmd_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_dummy_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                    .dc_data_level <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            .on_color_trans_done <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                NULL,  <span style="color:#75715e">// Callback invoked when color data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                       <span style="color:#75715e">// transfer has finished updated in bdsp.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .user_ctx <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                NULL,  <span style="color:#75715e">// User private data, passed directly to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                       <span style="color:#75715e">// on_color_trans_done’s user_ctx updated in bdsp.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .lcd_cmd_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,    <span style="color:#75715e">// DISP_CMD_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .lcd_param_bits <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,  <span style="color:#75715e">// DISP_PARAM_BITS_WIDTH
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        },
+</span></span><span style="display:flex;"><span>    .panel_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .reset_gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,  <span style="color:#75715e">// DISP_RST_PIN = GPIO4 - Same as touch
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .rgb_ele_order <span style="color:#f92672">=</span> LCD_RGB_ELEMENT_ORDER_BGR,
+</span></span><span style="display:flex;"><span>            .data_endian <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Set the data endian for color data larger than 1 byte */</span>
+</span></span><span style="display:flex;"><span>            .bits_per_pixel <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>, <span style="color:#75715e">/*!&lt; Color depth, in bpp */</span>
+</span></span><span style="display:flex;"><span>            .flags <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    .reset_active_high <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; Setting this if the panel reset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                               is high level active */</span>
+</span></span><span style="display:flex;"><span>                },
+</span></span><span style="display:flex;"><span>            .vendor_config <span style="color:#f92672">=</span> NULL, <span style="color:#75715e">/*!&lt; Vendor specific configuration */</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .orientation <span style="color:#f92672">=</span> orientation_landscape,
+</span></span><span style="display:flex;"><span>    .hor_res <span style="color:#f92672">=</span> DISP_HOR_RES_MAX,
+</span></span><span style="display:flex;"><span>    .ver_res <span style="color:#f92672">=</span> DISP_VER_RES_MAX,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Backlight drivers
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>The <span style="color:#960050;background-color:#1e0010">`</span>disp_backlight<span style="color:#960050;background-color:#1e0010">`</span> driver is a display component that is used by the display drivers to control the backlight of the display. The <span style="color:#960050;background-color:#1e0010">`</span>disp_backlight<span style="color:#960050;background-color:#1e0010">`</span> driver configuration is part of display driver configuration.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>in disp_def.h:
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>cpp
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Default backlight level value in percentage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#define DISP_BCKL_DEFAULT_DUTY 100  </span><span style="color:#75715e">//%
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Backlight configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> disp_backlight_config_t disp_bcklt_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .pwm_control <span style="color:#f92672">=</span> false,   <span style="color:#75715e">// true: LEDC is used, false: GPIO is used
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .output_invert <span style="color:#f92672">=</span> false, <span style="color:#75715e">// true: LEDC output is inverted, false: LEDC output is not inverted
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .gpio_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>,         <span style="color:#75715e">// GPIO number for backlight control
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Relevant only for PWM controlled backlight
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Ignored for switch (ON/OFF) backlight control
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .timer_idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,         <span style="color:#75715e">// LEDC timer index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .channel_idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>        <span style="color:#75715e">// LEDC channel index    
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};</span></span></code></pre></div><h3 id="spi-touch-drivers">SPI Touch drivers</h3>
+<ul>
+<li>xpt2046 driver
+The <code>xpt2046</code> driver is a touch driver that is used to control the XPT2046 touch controller. The <code>xpt2046</code> driver configuration is part of the touch driver configuration.</li>
+</ul>
+<p>touch_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>xpt2046_config_t xpt2046_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .irq_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">36</span>,           <span style="color:#75715e">// GPIO 36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .touch_threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>,  <span style="color:#75715e">// Threshold for touch detection
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .swap_xy <span style="color:#f92672">=</span> true,
+</span></span><span style="display:flex;"><span>    .invert_x <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .invert_y <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .x_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">480</span>,
+</span></span><span style="display:flex;"><span>    .y_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">320</span>,
+</span></span><span style="display:flex;"><span>    .calibration_x_min <span style="color:#f92672">=</span> <span style="color:#ae81ff">140</span>,
+</span></span><span style="display:flex;"><span>    .calibration_y_min <span style="color:#f92672">=</span> <span style="color:#ae81ff">290</span>,
+</span></span><span style="display:flex;"><span>    .calibration_x_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">3950</span>,
+</span></span><span style="display:flex;"><span>    .calibration_y_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">3890</span>,
+</span></span><span style="display:flex;"><span>};</span></span></code></pre></div><h3 id="i2c-touch-drivers">I2C Touch drivers</h3>
+<ul>
+<li>gt911 driver
+The <code>gt911</code> driver is a touch driver that is used to control the GT911 touch controller. The <code>gt911</code> driver configuration is part of the touch driver configuration file : touch_def.h.</li>
+</ul>
+<p>touch_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// GT911 touch controller configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> gt911_config_t gt911_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .i2c_clk_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>    .i2c_addr <span style="color:#f92672">=</span> (<span style="color:#66d9ef">uint8_t</span>[]){<span style="color:#ae81ff">0x5D</span>, <span style="color:#ae81ff">0X14</span>,<span style="color:#ae81ff">0</span>},  <span style="color:#75715e">// Floating or mis-configured INT pin may cause GT911 to come up at address 0x14 instead of 0x5D, so check there as well.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .rst_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">38</span>, <span style="color:#75715e">// GPIO 38
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#if WITH_GT911_INT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .int_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, <span style="color:#75715e">// GPIO 18
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .int_pin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">// INT pin not connected (by default)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .swap_xy <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .invert_x <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .invert_y <span style="color:#f92672">=</span> false,   
+</span></span><span style="display:flex;"><span>    .x_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,<span style="color:#75715e">//auto detect
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .y_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,<span style="color:#75715e">//auto detect    
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};</span></span></code></pre></div><ul>
+<li>ft5x06 driver
+The <code>ft5x06</code> driver is a touch driver that is used to control the FT5x06 touch controller. The <code>ft5x06</code> driver configuration is part of the touch driver configuration file : touch_def.h.</li>
+</ul>
+<p>touch_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> ft5x06_config_t ft5x06_cfg <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .i2c_clk_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,
+</span></span><span style="display:flex;"><span>    .i2c_addr <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#66d9ef">uint8_t</span>[]){
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">0x38</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">0</span>}, 
+</span></span><span style="display:flex;"><span>    .rst_pin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">// GPIO 38
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#if WITH_FT5X06_INT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .int_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, <span style="color:#75715e">// GPIO 18
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .int_pin <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">// INT pin not connected (by default)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .swap_xy <span style="color:#f92672">=</span> true,
+</span></span><span style="display:flex;"><span>    .invert_x <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .invert_y <span style="color:#f92672">=</span> false,
+</span></span><span style="display:flex;"><span>    .x_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">480</span>,
+</span></span><span style="display:flex;"><span>    .y_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">800</span>,     
+</span></span><span style="display:flex;"><span>};    
+</span></span></code></pre></div><h3 id="camera">Camera</h3>
+<p>The <code>esp3d_camera</code> driver is a camera driver that is used to control the camera. The <code>esp3d_camera</code> driver configuration is part of the camera driver configuration file : camera_def.h.</p>
+<p>camera_def.h:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">// Camera configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> esp32_camera_config_t camera_config <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    .hw_config <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            .pin_pwdn <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,     <span style="color:#75715e">/*!&lt; GPIO pin for camera power down line */</span>
+</span></span><span style="display:flex;"><span>            .pin_reset <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,    <span style="color:#75715e">/*!&lt; GPIO pin for camera reset line */</span>
+</span></span><span style="display:flex;"><span>            .pin_xclk <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>,      <span style="color:#75715e">/*!&lt; GPIO pin for camera XCLK line */</span>
+</span></span><span style="display:flex;"><span>            .pin_sccb_sda <span style="color:#f92672">=</span> <span style="color:#ae81ff">47</span>, <span style="color:#75715e">/*!&lt; GPIO pin for camera SDA line */</span>
+</span></span><span style="display:flex;"><span>            .pin_sccb_scl <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>, <span style="color:#75715e">/*!&lt; GPIO pin for camera SCL line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d7 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,        <span style="color:#75715e">/*!&lt; GPIO pin for camera D7 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d6 <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>,       <span style="color:#75715e">/*!&lt; GPIO pin for camera D6 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d5 <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>,       <span style="color:#75715e">/*!&lt; GPIO pin for camera D5 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>,       <span style="color:#75715e">/*!&lt; GPIO pin for camera D4 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>,        <span style="color:#75715e">/*!&lt; GPIO pin for camera D3 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>,        <span style="color:#75715e">/*!&lt; GPIO pin for camera D2 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>,        <span style="color:#75715e">/*!&lt; GPIO pin for camera D1 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_d0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>,        <span style="color:#75715e">/*!&lt; GPIO pin for camera D0 line */</span>
+</span></span><span style="display:flex;"><span>            .pin_vsync <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>,     <span style="color:#75715e">/*!&lt; GPIO pin for camera VSYNC line */</span>
+</span></span><span style="display:flex;"><span>            .pin_href <span style="color:#f92672">=</span> <span style="color:#ae81ff">46</span>,     <span style="color:#75715e">/*!&lt; GPIO pin for camera HREF line */</span>
+</span></span><span style="display:flex;"><span>            .pin_pclk <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>,     <span style="color:#75715e">/*!&lt; GPIO pin for camera PCLK line */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            .xclk_freq_hz <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">1000</span>, <span style="color:#75715e">/*!&lt; Frequency of XCLK signal, in Hz. EXPERIMENTAL: Set to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                         16MHz on ESP32-S2 or ESP32-S3 to enable EDMA mode */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            .ledc_timer <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                LEDC_TIMER_0, <span style="color:#75715e">/*!&lt; LEDC timer to be used for generating XCLK  */</span>
+</span></span><span style="display:flex;"><span>            .ledc_channel <span style="color:#f92672">=</span> LEDC_CHANNEL_0, <span style="color:#75715e">/*!&lt; LEDC channel to be used for
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                               generating XCLK  */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            .pixel_format <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                PIXFORMAT_JPEG, <span style="color:#75715e">/*!&lt; Format of the pixel data: PIXFORMAT_ +
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                   YUV422|GRAYSCALE|RGB565|JPEG  */</span>
+</span></span><span style="display:flex;"><span>            .frame_size <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                FRAMESIZE_VGA, <span style="color:#75715e">/*!&lt; Size of the output image: FRAMESIZE_ +
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                  QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA  */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            .jpeg_quality <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>, <span style="color:#75715e">/*!&lt; Quality of JPEG output. 0-63 lower means
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                   higher quality  */</span>
+</span></span><span style="display:flex;"><span>            .fb_count <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ae81ff">1</span>, <span style="color:#75715e">/*!&lt; Number of frame buffers to be allocated. If more than
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                      one, then each frame will be acquired (double speed)  */</span>
+</span></span><span style="display:flex;"><span>            .fb_location <span style="color:#f92672">=</span> CAMERA_FB_IN_PSRAM, <span style="color:#75715e">/*!&lt; The location where the frame
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                                  buffer will be allocated */</span>
+</span></span><span style="display:flex;"><span>            .grab_mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                CAMERA_GRAB_WHEN_EMPTY, <span style="color:#75715e">/*!&lt; When buffers should be filled */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#if CONFIG_CAMERA_CONVERTER_ENABLED
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            .conv_mode <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; RGB&lt;-&gt;YUV Conversion mode */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#endif
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>            .sccb_i2c_port <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">/*!&lt; If pin_sccb_sda is -1, use the already
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                                   configured I2C bus by number */</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>    .pin_pullup_1 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">/* if any need */</span>
+</span></span><span style="display:flex;"><span>    .pin_pullup_2 <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#75715e">/* if any need */</span>
+</span></span><span style="display:flex;"><span>    .pin_led <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    .flip_horizontaly <span style="color:#f92672">=</span> false, <span style="color:#75715e">// if horizontal flip is needed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .flip_vertically <span style="color:#f92672">=</span> false, <span style="color:#75715e">// if vertical flip is needed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .brightness <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#75715e">// default value is 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    .contrast <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,  <span style="color:#75715e">// default value is 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} ;</span></span></code></pre></div><h4 id="main-directory">main directory</h4>
+<p>The main directory contains the main application code. The main application code is the code that is executed when the application is started. The main application code is responsible for initializing the application and starting the application tasks. The main application code is also responsible for handling the application events and updating the application state.</p>
+<p>The main application code is typically organized into the following files:</p>
+<ul>
+<li>
+<p>core directory, which contains the main application code, all common functions and  ESP3D commands.
+the core directory contains the following files:</p>
+<ul>
+<li>commands directory that contains the ESP3D commands.</li>
+<li>includes directory that contains the includes files of the core files</li>
+<li>esp3d_client.cpp file that contains the internal messaging API</li>
+<li>esp3d_commands.cpp file that contains the handle the ESP3D commands and also the API for the commands</li>
+<li>esp3d_hal.cpp file that contains the hardware abstraction layer API for all supported hardware</li>
+<li>esp3d_json_settings.cpp file that contains the API for reading setting from the JSON file like preferences.json</li>
+<li>esp3d_string.h file that contains the helpers to manipulate strings and char arrays</li>
+<li>esp3d_tft.cpp file that contains the core initialization of the main program</li>
+<li>esp3d_values.cpp file that contains the API for storing and dispaching the values used on TFT</li>
+</ul>
+</li>
+<li>
+<p>display directory, which contain the UI code for the TFT display.
+the display directory contains the following files:</p>
+<ul>
+<li>
+<p>esp3d_tft.ui.cpp file that contains the UI code for the TFT display</p>
+</li>
+<li>
+<p>esp3d_tft.ui.h file that contains the header code for the TFT display</p>
+</li>
+<li>
+<p>components directory that contains the UI common components for the TFT display</p>
+</li>
+<li>
+<p>screens directory that contains the common screens to be displayed on the TFT display</p>
+</li>
+<li>
+<p>3dprinter directory that contains the UI code for the 3D printer TFT display
+this directory contaain one directory for each targeted firmware:</p>
+<ul>
+<li>marlin directory that contains the UI code for the Marlin TFT display</li>
+<li>repetier directory that contains the UI code for the Repetier TFT display</li>
+<li>smoothieware directory that contains the UI code for the Smoothieware TFT display</li>
+</ul>
+<p>each target directory contain the ui code, the style to be used , the resources for each resolution and the screens to be displayed :</p>
+<ul>
+<li>res_320_240 directory that contains the resources for the 320x240 resolution
+Each resolution directory contains the following files:
+<ul>
+<li>esp3d_style.h file that contains the specific style to be used on this resolution</li>
+<li>logo_320_240.h file that contains the logo to be displayed on the TFT display at this resolution</li>
+</ul>
+</li>
+<li>res_480_272 directory that contains the resources for the 480x272 resolution</li>
+<li>res_480_320 directory that contains the resources for the 480x320 resolution</li>
+<li>res_800_480 directory that contains the resources for the 800x480 resolution</li>
+<li>screens directory that contains the specifics screens to be displayed on the TFT display</li>
+<li>esp3d_style.cpp/.h files that contains the common style to be used on the TFT display</li>
+<li>esp3d_tft_ui.cpp file that contains the main UI code for the TFT display</li>
+</ul>
+</li>
+<li>
+<p>cnc directory that contains the UI code for the CNC TFT display
+Same as above but for the CNC firmware</p>
+</li>
+</ul>
+</li>
+<li>
+<p>embedded directory, which contains the embedded resources for the ESP32.
+the embedded directory contains the following files:</p>
+<ul>
+<li>favicon.ico.gz file that contains the favicon for the web interface</li>
+<li>index.html.gz file that contains the index page for the web interface</li>
+</ul>
+</li>
+<li>
+<p>modules directory, which contains the modules code for the TFT display. each subdirectory contains the code for a specific module / feature.
+the modules directory contains the following files:</p>
+<ul>
+<li>authentication directory that contains the code for the authentication feature</li>
+<li>camera directory that contains the code for the camera feature</li>
+<li>config_files directory that contains the code for the config files feature, which allow to apply settings using ini file</li>
+<li>filesystem directory that contains the code for the filesystem feature: SD and flash</li>
+<li>gcode_host directory that contains the code for the gcode streaming feature</li>
+<li>http directory that contains the code for the http server feature, the different handlers for the web interface are splited in different subdirectories / files according usage \
+<ul>
+<li>authentication directory that contains the authentication handlers</li>
+<li>camera directory that contains the camera handler</li>
+<li>flash directory that contains the flash files management handler</li>
+<li>sd directory that contains the sd files managment handler</li>
+<li>ssdp directory that contains the ssdp service handler</li>
+<li>update directory that contains the firmware update handler</li>
+<li>webdav directory that contains the webdav protocol handler</li>
+<li>ws directory that contains the websocket handler (data only not webui)</li>
+<li>esp3d_commands.cpp file that handle the web commands handler</li>
+<li>esp3d_config.cpp file that handle the config handler (shortcut to [ESP420])</li>
+<li>esp3d_favicon.cpp file that handle the favicon handler</li>
+<li>esp3d_file_not_found.cpp file that handle the file not found handler (which also handle the download of the files)</li>
+<li>esp3d_root.cpp file that handle the root handler (including the maintenance mode)</li>
+<li>esp3d_websocket_webui.cpp file that handle the websocket handler for the webui</li>
+</ul>
+</li>
+<li>mdns directory that contains the code for the mdns feature</li>
+<li>network directory that contains the code for the network feature</li>
+<li>notifications directory that contains the code for the notifications feature</li>
+<li>rendering directory that contains the code for the renderer feature (Display)</li>
+<li>serial directory that contains the code for the serial communications feature</li>
+<li>socket_server directory that contains the code for the socket server feature (Telnet)</li>
+<li>ssdp directory that contains the code for the ssdp protocol feature</li>
+<li>time directory that contains the code for the time feature (NTP)</li>
+<li>translation directory that contains the code for the translation feature</li>
+<li>update directory that contains the code for the update feature</li>
+<li>usb_serial directory that contains the code for the usb serial feature (OTG)</li>
+<li>webdav directory that contains the code for the webdav protocol feature</li>
+<li>websocket directory that contains the code for the websocket feature (webui and data)</li>
+</ul>
+</li>
+<li>
+<p>target directory, which contains the target code specific actions. each subdirectory contains the code for a specific target.
+the target directory contains the following files:</p>
+<ul>
+<li>3dprinter directory that contains the code for the 3D printer target:
+<ul>
+<li>marlin directory that contains the code for the Marlin target</li>
+<li>repetier directory that contains the code for the Repetier target</li>
+<li>smoothieware directory that contains the code for the Smoothieware target</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>cnc directory that contains the code for the CNC target:</p>
+<ul>
+<li>grbl directory that contains the code for the Grbl target</li>
+</ul>
+</li>
+</ul>
+<h4 id="scripts-directory">scripts directory</h4>
+<p>The scripts directory contains the scripts used to build the firmware. The scripts directory contains the following files / directories:</p>
+<ul>
+<li>fonts_builder directory that contains the scripts used to build the fonts for the TFT display
+the scripts will build the c code for the fonts to be used on the TFT display, the gerenated files will be placed in the fonts directory
+The generated sizes are &ldquo;8&rdquo;,&ldquo;10&rdquo;,&ldquo;12&rdquo;,&ldquo;14&rdquo;,&ldquo;16&rdquo;,&ldquo;18&rdquo;,&ldquo;20&rdquo;,&ldquo;22&rdquo;,&ldquo;24&rdquo;,&ldquo;26&rdquo;,&ldquo;28&rdquo;,&ldquo;30&rdquo;,&ldquo;32&rdquo;,&ldquo;34&rdquo;,&ldquo;36&rdquo;,&ldquo;38&rdquo;,&ldquo;40&rdquo;,&ldquo;42&rdquo;,&ldquo;44&rdquo;,&ldquo;46&rdquo;,&ldquo;48&rdquo; pixels.
+<ul>
+<li>It use Montserrat-Medium.ttf as base font:</li>
+</ul>
+<ul>
+<li>Generic chars are from 0x20 to 0x7F and with 0xB0.</li>
+<li>French chars are 0xE0,0xE7,0xE8,0xE9,0xEA,0xF4</li>
+</ul>
+<ul>
+<li>I use also FreeSerifBold.ttf  0x2022 char</li>
+<li>for the symbols I use Font fa-solid-900 and fa-brands-400.ttf:
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>SYMBOL</th>
+<th>font</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0xe568</td>
+<td>HEAT_BED</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf2c9</td>
+<td>EXTRUDER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf0ca</td>
+<td>LIST</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf715</td>
+<td>SLASH</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf012</td>
+<td>STATION_MODE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf519</td>
+<td>ACCESS_POINT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf00c</td>
+<td>OK</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe596</td>
+<td>PROBE_CHECK</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf00d</td>
+<td>CLOSE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf011</td>
+<td>POWER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf028</td>
+<td>VOLUME_HIGH</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf027</td>
+<td>VOLUME_LOW</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf6a9</td>
+<td>VOLUME_OFF</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf013</td>
+<td>SETTINGS</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf2d1</td>
+<td>NO_HEAT_BED</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe040</td>
+<td>HEAT_EXTRUDER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf2ed</td>
+<td>TRASH</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe3af</td>
+<td>HOME</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf019</td>
+<td>DOWNLOAD</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf021</td>
+<td>REFRESH</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf304</td>
+<td>EDIT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf048</td>
+<td>PREVIOUS</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf051</td>
+<td>NEXT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf04b</td>
+<td>PLAY</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf04c</td>
+<td>PAUSE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf0c7</td>
+<td>SAVE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf0e0</td>
+<td>MESSAGE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf0e7</td>
+<td>LASER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf76f</td>
+<td>VACCUM</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf1f6</td>
+<td>DISABLE_ALERT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf023</td>
+<td>LOCK</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf2dc</td>
+<td>COOLANT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf04d</td>
+<td>STOP</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf1eb</td>
+<td>WIFI</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf071</td>
+<td>WARNING</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf07b</td>
+<td>FOLDER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf15b</td>
+<td>FILE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf11c</td>
+<td>KEYBOARD</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf55a</td>
+<td>BACKSPACE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf7c2</td>
+<td>SD_CARD</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf0b2</td>
+<td>JOG</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf077</td>
+<td>UP</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf078</td>
+<td>DOWN</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf053</td>
+<td>LEFT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf054</td>
+<td>RIGHT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf120</td>
+<td>COMMAND</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf624</td>
+<td>GAUGE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf1ab</td>
+<td>LANGUAGE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf863</td>
+<td>FAN</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf48b</td>
+<td>SPEED</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf72b</td>
+<td>WIZARD</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf185</td>
+<td>LIGHT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf5c1</td>
+<td>ENGINE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf5fd</td>
+<td>LAYERS</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe4b8</td>
+<td>LEVELING</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf4db</td>
+<td>FILAMENT</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe4bd</td>
+<td>CENTER</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf002</td>
+<td>SEARCH</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf4d7</td>
+<td>FILAMENT_SENSOR</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf2cc</td>
+<td>MIST</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf13e</td>
+<td>UNLOCK</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf192</td>
+<td>LASER_2</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xe4c3</td>
+<td>MILLING</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf3e5</td>
+<td>NEW_LINE</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf293</td>
+<td>BLUETOOTH</td>
+<td>fa-brands-400.ttf</td>
+</tr>
+<tr>
+<td>0xf287</td>
+<td>USB</td>
+<td>fa-brands-400.ttf</td>
+</tr>
+<tr>
+<td>0xf0a1</td>
+<td>MORE_INFO</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf055</td>
+<td>PLUS</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf056</td>
+<td>MINUS</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf256</td>
+<td>MANUAL</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+<tr>
+<td>0xf544</td>
+<td>AUTOMATIC</td>
+<td>fa-solid-900.ttf</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="#R-image-8df2ef60e99e4c0344c900f80e57d014" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/documentation/api/project-arch/symbols_1.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8df2ef60e99e4c0344c900f80e57d014"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/documentation/api/project-arch/symbols_1.png"></a> <br>
+<a href="#R-image-3bb5992cd5c69f5defcfccb47971b370" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/documentation/api/project-arch/symbols_2.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3bb5992cd5c69f5defcfccb47971b370"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/documentation/api/project-arch/symbols_2.png"></a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688348" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688348" defer></script>
+    <script src="/js/theme.js?1722688348" defer></script>
+  </body>
+</html>

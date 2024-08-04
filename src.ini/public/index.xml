@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP3D Ecosystem</title>
+    <link>http://localhost:1313/index.html</link>
+    <description>Web site of ESP3D ecosystem</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP3D</title>
+      <link>http://localhost:1313/esp3d/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/index.html</guid>
+      <description>What is ESP3D ? ESP3D is a firmware for ESP8266 and ESP32 boards from espressif, This firmware allows not only to have a cheap bridge between Wifi and serial, but also to have a web UI to configure wifi, to monitor 3D printer/CNC and even control it, and to make things easy, UI is fully customizable without reflashing FW.&#xA;Firmware support different target firmwares according version.&#xA;The firmware use arduino framework and platformio system</description>
+    </item>
+    <item>
+      <title>ESP3DLib</title>
+      <link>http://localhost:1313/esp3dlib/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3dlib/index.html</guid>
+      <description>What is ESP3DLib ? ESP3DLib is a Marlin library for ESP32 boards using Marlin 2.x. that enable ESP3D features like WiFi and WebUI. Features depends on the version the ESP3DLib installed.&#xA;Marlin use arduino framework and platformio system&#xA;Tested boards The list is here for 1.0, and here for 3.0&#xA;Please refer to Marlin documentation for more information on specific configurations for each boards.&#xA;Warning&#xD;This is NOT for esp8266, esp8285, esp32 boards as daughters boards connected to your main board.</description>
+    </item>
+    <item>
+      <title>ESP3D-TFT</title>
+      <link>http://localhost:1313/esp3d-tft/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/index.html</guid>
+      <description>What is ESP3D-TFT ? ESP3D-TFT is a firmware for ESP32 boards from espressif with a TFT and a SD Card, allowing to control a 3D Printer or CNC by serial or USB depending of ESP32 board used.&#xA;Firmware support different target firmwares according version.&#xA;ESP3D-TFT use idf framework and expressif Visual Code extension.&#xA;There is not yet currently any production version, but only one development version - actively developed.&#xA;Cybersecurity concerns If you plan to have access to you ESP from outside of your private network than you need to apply some basic security rules to avoid anybody to be able to access your ESP.</description>
+    </item>
+    <item>
+      <title>ESP3D-WEBUI</title>
+      <link>http://localhost:1313/esp3d-webui/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-webui/index.html</guid>
+      <description>What is ESP3D-WEBUI ? ESP3D-WEBUI is a web interface designed to work with ESP3D, ESPDLib, ESP3D-TFT and grblHAL&#xA;Warning&#xD;The version to be used depend on firmware version itself, please refer to the firmware version page to know what Web UI to use.</description>
+    </item>
+    <item>
+      <title>Extra tools</title>
+      <link>http://localhost:1313/tools/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tools/index.html</guid>
+      <description> Discovery tools to get ip of your esp device SD tools to manage your SD card </description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Credits :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v3.x/credits/index.html</link>
+    <description>Big thanks to : ESP3DLib contributors for their suggestions, feedback and ideas submitted during 1.X sustaining phase and 3.X development phase which pushed me to rewrite the ESP3DLib/ESP3D code to make it better and easier to sustain.&#xA;Embedded code / inspiration code FTP server come from Jean-Michel Gallego https://github.com/gallegojm/Arduino-Ftp-Server WebDav server come from David Gauchard https://github.com/d-a-v/ESPWebDAV Line support come from https://github.com/TridentTD/TridentTD_LineNotify and https://notify-bot.line.me/doc/en/ and https://pushover.net/api Pushover support come from https://github.com/ArduinoHannover/Pushover Email support come from https://github.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v3.x/credits/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

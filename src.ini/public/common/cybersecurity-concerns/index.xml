@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://localhost:1313/common/cybersecurity-concerns/index.html</link>
+    <description>If you plan to have access to you ESP from outside of your private network than you need to apply some basic security rules to avoid anybody to be able to access your ESP.&#xA;Disclaimer : this is for reference - you are responsible of your board and internet network, we are not responsible for any damage to any of your network appliances.&#xA;Recommendations Following steps must be done before your ESP is visible from public internet:</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/common/cybersecurity-concerns/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

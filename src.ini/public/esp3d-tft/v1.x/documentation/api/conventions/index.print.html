@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Syntax conventions in used languages">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Syntax conventions :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Syntax conventions in used languages">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/documentation/api/conventions/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Syntax conventions :: ESP3D Ecosystem">
+    <meta property="og:description" content="Syntax conventions in used languages">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-TFT">
+    <meta itemprop="name" content="Syntax conventions :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Syntax conventions in used languages">
+    <meta itemprop="wordCount" content="1048">
+    <title>Syntax conventions :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/documentation/api/conventions/index.html" rel="canonical" type="text/html" title="Syntax conventions :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/documentation/api/conventions/index.xml" rel="alternate" type="application/rss+xml" title="Syntax conventions :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688348" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688348" rel="stylesheet">
+    <link href="/css/fonts.css?1722688348" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688348" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688348" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688348" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688348" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688348" rel="stylesheet">
+    <link href="/css/print.css?1722688348" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688348" rel="stylesheet">
+    <script src="/js/variant.js?1722688348"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/documentation/api/conventions/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/api/index.html"><span itemprop="name">API</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Syntax conventions</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/api/websockets/index.html" title="Web Sockets (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/api/streamingservice/index.html" title="GCode streaming API (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="syntax-conventions">Syntax conventions</h1>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+  <div class="box-content">
+
+<p>This document is a receipe of conventions that may not be currently implemented yet, but will be from now, current code will be updated according to it before beta state.</p>
+</div>
+</div>
+<p>Style should be also applied also</p>
+<h2 id="c">C++</h2>
+<h3 id="style">Style</h3>
+<ul>
+<li>Use Clang-format
+<ul>
+<li>Download the tool according your system <br>
+<a href="https://releases.llvm.org/" rel="external" target="_blank">https://releases.llvm.org/</a></li>
+<li>Install client extension  <br>
+CLang-Format from Xaver Hellauer</li>
+<li>Define the style <br>
+set <code>Google</code> as default style</li>
+</ul>
+</li>
+</ul>
+<h3 id="general">General</h3>
+<ul>
+<li>Avoid abreviation as much as possible</li>
+<li>Avoid unnecessary long name</li>
+<li>ESP3D is always uppercase in code, esp3d is valid only for filename, any mixing case is proscribed (e.g.:<code>Esp3D</code>/<code>esp3D</code>/<code>Esp3d</code>)</li>
+<li>ESP command is always uppercase, so any reference to it (e.g.: <code>ESP100</code>) should be uppercase to avoid confusion, only filename can be lowercase, any  mixing case is proscribed</li>
+</ul>
+<h3 id="file-name">File name</h3>
+<ul>
+<li>Use lower case for file names</li>
+<li>Use underscores as words separators<br>
+e.g: <code>esp3d_settings.cpp</code></li>
+</ul>
+<h3 id="directory-name">Directory name</h3>
+<ul>
+<li>Use lower case for directory names</li>
+<li>Use underscores as words separators<br>
+e.g: <code>esp3d_commansds</code></li>
+<li>Target directories are the only names that use full uppercase unlike others directories<br>
+e.g: <code>ESP32S3_ZX3D50CE02S_USRC_4832</code></li>
+</ul>
+<h3 id="variable">Variable</h3>
+<ul>
+<li>Any name should begin with an alphabet.</li>
+<li>The first character should be lowercase.</li>
+<li>Use upper case letters as words separators</li>
+<li>Digits may be used in the name but only after the alphabet.</li>
+<li>No special symbols can be used in names.</li>
+<li>No keywords can be used as names.</li>
+<li>Pointer variables should be prepended with ‘p’ and place the asterisk ‘*’ close to the name instead of the pointer type.</li>
+<li>Static variables should be prepended with ‘s’.</li>
+<li>always initialize the variable<br>
+e.g:<br>
+<code>char adminPassword[20]{0};</code><br>
+<code>char *pAdminLogin = nullptr;</code></li>
+</ul>
+<h3 id="constant">Constant</h3>
+<ul>
+<li>Any name should begin with an alphabet.</li>
+<li>The first character should be <code>k</code>.</li>
+<li>Use upper case letters as words separators</li>
+<li>Digits may be used in the name but only after the alphabet.</li>
+<li>No special symbols can be used in names.</li>
+<li>No keywords can be used as names.<br>
+e.g: <code>const int kTopLimit 100;</code></li>
+</ul>
+<h3 id="define">Define</h3>
+<p>Define use uppercase letters only and underscores as words separators, dash is not allowed. <br>
+e.g: <code>#define LOWER_LIMIT 10;</code></p>
+<h3 id="enum">Enum</h3>
+<ul>
+<li>Enum should use <code>enum class</code> not plain <code>enum</code> neither <code>enum struct</code></li>
+<li>If enum is used by several file, enum should be defined in separate file to avoid repeated definitions, and add <code>_type</code> suffix to file name</li>
+<li>The first character in the enum name must be in upper case.</li>
+<li>Use upper case letters as word separators.</li>
+<li>No underscores (‘_’) are permitted in the enum name.</li>
+<li>Enum values are lower case and use underscores as words separators.</li>
+<li>No need to <code>typedef</code> enum</li>
+<li>Use type as much as possible to clarify any casting if necessary</li>
+<li>Define enum values as much as possible to ensure consistency when doing update</li>
+<li>Do not use <code>#ifdef</code> in enum unless all enum values are explicitly defined</li>
+</ul>
+<p>e.g: <code>esp3d_gcode_host_type.h</code></p>
+<ul>
+<li>not explicitly defined</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>enum class Esp3dGcodeHostWait : uint8_t {
+    no_wait = 0,
+    wait_ack,
+    wait_busy,
+    wait_processing,
+    wait_heating
+};</code></pre></div><p>Usage example: <code>Esp3dGcodeHostWait::no_wait</code></p>
+<ul>
+<li>explicitly defined</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>enum class Status: char
+{
+    high = &#39;h&#39;,
+    low = &#39;l&#39;
+}; </code></pre></div><p>Usage example: <code>Status::low</code></p>
+<h3 id="structunion">Struct/Union</h3>
+<ul>
+<li>If struct/union is used by several file, struct should be defined in separate file to avoid repeated definitions, and add <code>_type</code> suffix to file name</li>
+<li>The first character in the struct name must be in upper case.</li>
+<li>Use upper case letters as word separators</li>
+<li>Struct values are lower case and use underscores as words separators if variables.</li>
+<li>No need to <code>typedef</code> for struct</li>
+<li>As we use C++20, initialize struct explicitly</li>
+</ul>
+<p>e.g: <code>setting_description_type.h</code></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>struct  SettingDescription{
+    uint16_t size = 0;
+    const char* defaultVal = nullptr;
+} ;</code></pre></div><p>usage example: <code>SettingDescription notificationSetting;</code></p>
+<h3 id="class">Class</h3>
+<ul>
+<li>The class name should be a noun.</li>
+<li>Use upper case letters as word separators, and lower case for the rest of the word in the class name.</li>
+<li>The first character in the class name must be in upper case.</li>
+<li>No underscores (‘_’) are permitted in the class name.</li>
+<li>The private and protected attribute name in class should be prepended with the character underscore (‘_’).</li>
+<li>Each method/ function name should begin with a verb.</li>
+<li>The first character of function/ method argument names should be lowercase.</li>
+<li>Use upper case letter as word separator</li>
+<li>Any name should begin with an alphabet.</li>
+<li>Digits may be used in the name but only after the alphabet.</li>
+<li>No special symbols can be used in names except for the underscore(‘_’).</li>
+<li>No keywords can be used as names.</li>
+<li>Pointer variables should be prepended with ‘p’ and place the asterisk ‘*’ close to the name instead of the pointer type.</li>
+<li>Static variables should be prepended with ‘s’.</li>
+<li>Getter should use same name as attribute name.</li>
+<li>Setter should use same name as attribute name with <code>set</code> prefix and upper case the first letter of name.</li>
+</ul>
+<p>e.g:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>class Esp3dAuthenticationService {
+public:
+    bool begin();
+    bool isAdmin (const char *pwd);
+    char * getPassword ();
+private:
+    std::string _adminPwd;
+    char *_pName;
+    static char _sLogin; 
+}</code></pre></div><h3 id="functionprocedure">Function/Procedure</h3>
+<ul>
+<li>Each Function/Procedure name should begin with a verb.</li>
+<li>The first character of argument names should be lowercase.</li>
+<li>Use upper case letter as word separator</li>
+<li>Any name should begin with an alphabet.</li>
+<li>Digits may be used in the name but only after the alphabet.</li>
+<li>No special symbols can be used in names except for the underscore(‘_’).</li>
+<li>No keywords can be used as names.</li>
+</ul>
+<h3 id="namespace">Namespace</h3>
+<ul>
+<li>Namespace names are all lower-case, with words separated by underscores.</li>
+<li>Do not use <code>using</code> but full namespace instead for clarity<br>
+e.g:</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>namespace esp3d_hal{
+    int64_t millis();
+}</code></pre></div><p>usage example: <code>esp3d_hal::millis();</code></p>
+<h3 id="typedef">typedef</h3>
+<ul>
+<li>If variable
+<ul>
+<li>Use lower case for names</li>
+<li>Use underscores as words separators</li>
+<li>Add suffix <code>_t</code>
+e.g: <code>typedef int setting_index_t</code></li>
+</ul>
+</li>
+<li>If function
+<ul>
+<li>Follow function naming syntax</li>
+<li>Add suffix <code>_t</code>
+e.g: <code>typedef std::function&lt;bool(const char*, const char*,const char*)&gt; processingFunction_t;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="0-and-nullptrnull">0 and nullptr/NULL</h3>
+<p>Use nullptr for pointers, and &lsquo;\0&rsquo; for chars (and not the 0 literal).</p>
+<p>For pointers (address values), use nullptr, as this provides type-safety.</p>
+<p>Use &lsquo;\0&rsquo; for the null character. Using the correct type makes the code more readable.</p>
+<h3 id="sizeof">sizeof</h3>
+<p>Prefer sizeof(varname) to sizeof(type). sizeof(varname) will update appropriately if someone changes the variable type either now or later.</p>
+<h3 id="auto-type"><code>auto</code> type</h3>
+<p>Only use auto type if no need to to do type deduction, C++ code is usually clearer when types are explicit, especially when type deduction would depend on information from distant parts of the code.</p>
+<h3 id="casting">Casting</h3>
+<ul>
+<li>Use C++-style casts<br>
+e.g: <code>static_cast&lt;float&gt;(double_value)</code></li>
+<li>Do not use C cast unless the cast is to void<br>
+e.g: <code>(int)3.5;</code></li>
+</ul>
+<h3 id="initialization">Initialization</h3>
+<ul>
+<li>Do not mix brace initialization and <code>=</code> for readibility</li>
+</ul>
+<h3 id="lambda-expressions">Lambda Expressions</h3>
+<p>//TODO</p>
+<p>Inspired from :</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/naming-convention-in-c/" rel="external" target="_blank">Naming Convention in C++</a></li>
+<li><a href="https://google.github.io/styleguide/cppguide.html" rel="external" target="_blank">Google C++ Style Guide</a></li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688348" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688348" defer></script>
+    <script src="/js/theme.js?1722688348" defer></script>
+  </body>
+</html>

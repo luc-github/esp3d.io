@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> Email Notification :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html</link>
+    <description>Email Notification is using SMTP and HTTPS, so you need to collect the following information fof your email supplier&#xA;smtp server address and https port smtp username/ID smtp password ESP3D use the parameters as follow:&#xA;token 1 = ID to login to your email supplier token 2 = Password to login to your email supplier token settings = the_recipient email#smtp_server:port where # and : are fields separators. For example: luc@gmail.com#smtp.gmail.com:465</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v2.x/documentation/notifications/email_and_smtp/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Discovery tools :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/tools/discovery/index.html</link>
+    <description>ESP3D support several discovery protocol that may need extra software to work according your operating system.&#xA;SSDP (Simple Service Discovery Protocol) mDNS (multicast DNS)) </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/tools/discovery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSDP protocol</title>
+      <link>http://localhost:1313/tools/discovery/ssdp/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tools/discovery/ssdp/index.html</guid>
+      <description> Windows : Supported out of the box, just go to Network page OSX :&#xA;TBD Linux : On Debian-style distros, install gupnp-tools and run gssdp-discover -i &lt;devicename&gt; --timeout=3 Android : SSDP/UPnP Scanner </description>
+    </item>
+    <item>
+      <title>mDNS protocol</title>
+      <link>http://localhost:1313/tools/discovery/mdns/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tools/discovery/mdns/index.html</guid>
+      <description> Windows :&#xA;You may need the bonjour protocol installed on your machine, you can download from here and/or use a dedicated browser like Bonjour browser for Windows&#xA;OSX :&#xA;It is supported out of the box but need to use some application like discovery-dns-sd-browser&#xA;search for esp3d Linux:&#xA;Avahi service must be installed, check this wiki&#xA;Android:&#xA;mdDNS Discovery&#xA;search for esp3d </description>
+    </item>
+  </channel>
+</rss>

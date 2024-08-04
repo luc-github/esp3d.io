@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Olimex ESP32-Gateway">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Olimex ESP32-Gateway :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Olimex ESP32-Gateway">
+    <meta property="og:url" content="http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Olimex ESP32-Gateway :: ESP3D Ecosystem">
+    <meta property="og:description" content="Olimex ESP32-Gateway">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Olimex ESP32-Gateway :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Olimex ESP32-Gateway">
+    <meta itemprop="wordCount" content="45">
+    <title>Olimex ESP32-Gateway :: ESP3D Ecosystem</title>
+    <link href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.xml" rel="alternate" type="application/rss+xml" title="Olimex ESP32-Gateway :: ESP3D Ecosystem">
+    <link href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.print.html" rel="alternate" type="text/html" title="Olimex ESP32-Gateway :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688346" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688346" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688346" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688346" rel="stylesheet">
+    <link href="/css/fonts.css?1722688346" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688346" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688346" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688346" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688346" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688346" rel="stylesheet">
+    <link href="/css/print.css?1722688346" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1722688346"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#specs">Specs</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/index.html"><span itemprop="name">ESP3D</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/hardware/index.html"><span itemprop="name">Hardware</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/hardware/esp_boards/index.html"><span itemprop="name">ESP boards</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d/v3.x/hardware/esp_boards/esp32/index.html"><span itemprop="name">ESP32 boards</span></a><meta itemprop="position" content="6">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Olimex ESP32-Gateway</span><meta itemprop="position" content="7"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+				
+            <div class="topbar-button topbar-button-edit" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://github.com/luc-github/esp3d.io/tree/main/src/content/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/_index.md" target="_blank" title="Edit (CTRL&#43;ALT&#43;w)"><i class="fa-fw fas fa-pen"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/hardware/esp_boards/esp32/esp32-cam/index.html" title="ESP32-Cam (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-poe/index.html" title="Olimex ESP32-POE (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="olimex-esp32-gateway">Olimex ESP32-Gateway</h1>
+<p>From <a href="https://github.com/OLIMEX/ESP32-GATEWAY" rel="external" target="_blank">Olimex</a></p>
+<h2 id="specs">Specs</h2>
+<ul>
+<li>ESP32 with 4MB flash memory, Micro SDIO Card reader, ceramic antenna, RJ45 ethernet port</li>
+</ul>
+
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Note</div>
+  <div class="box-content">
+
+<p>Network is available to only for one peripheral at a time. It support only Wi-Fi communications or only Ethernet communications or Bluetooth  communications not all at once.</p>
+</div>
+</div>
+<p><a href="#R-image-3a50081d997225acc41b21715706a4d9" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/front.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a50081d997225acc41b21715706a4d9"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/front.jpg?width=400px"></a>
+<a href="#R-image-58013249d703bba0e6e70f0c5e617c3f" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/back.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-58013249d703bba0e6e70f0c5e617c3f"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/back.jpg?width=400px"></a>
+<a href="#R-image-f3ddee1faabdf48fc2280246f238067d" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/pinout.jpg?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f3ddee1faabdf48fc2280246f238067d"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/pinout.jpg?width=400px"></a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <style>
+            #R-logo svg,
+            #R-logo svg * {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+             
+              opacity: .945;
+            }
+            a#R-logo {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              font-family: 'Work Sans', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+              font-size: 1.875rem;
+              font-weight: 300;
+              margin-top: -.8125rem;
+              max-width: 60%;
+              text-transform: uppercase;
+              width: 14.125rem;
+              white-space: nowrap;
+            }
+            a#R-logo:hover {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+            }
+            #R-logo svg {
+              margin-bottom: -1.25rem;
+              margin-inline-start: -1.47rem;
+              margin-inline-end: .5rem;
+              width: 40.5%;
+            }
+            @media only all and (max-width: 59.999rem) {
+              a#R-logo {
+                font-size: 1.5625rem;
+                margin-top: -.1875rem;
+              }
+              #R-logo svg {
+                margin-bottom: -.75rem;
+                margin-inline-start: -1.47rem;
+                margin-inline-end: .5rem;
+              }
+            }
+          </style>
+          <a id="R-logo" href="/index.html">
+            <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 283.5 283.5">
+              <path fill="white" d="m 227,91.9 -97,-0.3 0,100.4 83,0 c 20,0 46,-6 47,-36 l 0,-24 c 1,-20 -13,-40 -33,-40.1 z" />
+              <path d="M79.7,200.2h124c-15.5,16.5-37.6,26.7-62,26.7S95.3,216.7,79.7,200.2z"/>
+              <path d="M203.7,83.2h-124c15.5-16.5,37.6-26.7,62-26.7S188.2,66.8,203.7,83.2z"/>
+              <path d="M200.3,152.7c0,2.7-0.5,5-1.5,7.1s-2.4,3.8-4.2,5.2c-1.8,1.4-4,2.5-6.5,3.2c-2.5,0.7-5.3,1.1-8.3,1.1c-1.8,0-3.5-0.1-5.1-0.4c-1.6-0.3-3-0.6-4.2-1c-1.2-0.4-2.2-0.8-3-1.2c-0.8-0.4-1.3-0.7-1.6-0.9c-0.2-0.2-0.4-0.5-0.6-0.7c-0.1-0.3-0.2-0.6-0.3-1c-0.1-0.4-0.2-0.8-0.2-1.4c0-0.6-0.1-1.2-0.1-2c0-1.3,0.1-2.2,0.3-2.7c0.2-0.5,0.5-0.8,1-0.8c0.3,0,0.7,0.2,1.4,0.6c0.7,0.4,1.5,0.8,2.6,1.2c1,0.4,2.3,0.8,3.7,1.2c1.4,0.4,3,0.6,4.8,0.6c1.5,0,2.8-0.2,4-0.5c1.2-0.4,2.1-0.9,2.9-1.5c0.8-0.6,1.4-1.4,1.8-2.3c0.4-0.9,0.6-1.9,0.6-3.1c0-1.2-0.2-2.3-0.7-3.3c-0.5-1-1.2-1.8-2.1-2.5c-0.9-0.7-2.1-1.2-3.6-1.6c-1.4-0.4-3.1-0.6-5.1-0.6h-4.6c-0.4,0-0.7,0-0.9-0.1c-0.2-0.1-0.5-0.3-0.6-0.6c-0.2-0.3-0.3-0.7-0.3-1.3c-0.1-0.5-0.1-1.2-0.1-2.1c0-0.8,0-1.4,0.1-2c0.1-0.5,0.2-0.9,0.3-1.2c0.2-0.3,0.3-0.5,0.6-0.6c0.2-0.1,0.5-0.2,0.8-0.2h4.6c1.6,0,3-0.2,4.2-0.6c1.2-0.4,2.3-0.9,3.1-1.6c0.8-0.7,1.5-1.5,1.9-2.5c0.4-1,0.7-2,0.7-3.2c0-0.9-0.2-1.8-0.5-2.6c-0.3-0.8-0.7-1.5-1.3-2.1c-0.6-0.6-1.3-1.1-2.3-1.4c-0.9-0.3-2-0.5-3.3-0.5c-1.4,0-2.8,0.2-4,0.6c-1.3,0.4-2.4,0.9-3.4,1.4c-1,0.5-1.8,1-2.5,1.4c-0.7,0.4-1.2,0.7-1.5,0.7c-0.2,0-0.4,0-0.6-0.1c-0.2-0.1-0.3-0.3-0.4-0.6c-0.1-0.3-0.2-0.7-0.2-1.2c-0.1-0.5-0.1-1.2-0.1-2c0-0.7,0-1.3,0-1.7c0-0.5,0.1-0.8,0.2-1.1c0.1-0.3,0.2-0.6,0.3-0.8c0.1-0.2,0.3-0.5,0.6-0.7c0.3-0.3,0.8-0.7,1.7-1.2c0.8-0.5,1.9-1,3.2-1.5c1.3-0.5,2.8-0.9,4.5-1.3c1.7-0.3,3.5-0.5,5.5-0.5c2.6,0,4.9,0.3,6.8,0.9c2,0.6,3.7,1.5,5,2.6c1.4,1.1,2.4,2.5,3.1,4.2c0.7,1.7,1,3.5,1,5.6c0,1.6-0.2,3.1-0.6,4.5c-0.4,1.4-1,2.6-1.8,3.7c-0.8,1.1-1.8,2-3,2.8c-1.2,0.8-2.6,1.3-4.1,1.7v0.1c1.9,0.2,3.5,0.7,5,1.4c1.5,0.7,2.7,1.6,3.8,2.7c1,1.1,1.8,2.3,2.4,3.7C200,149.7,200.3,151.2,200.3,152.7z"/>
+              <path d="M249.6,141c0,4.9-0.6,9-1.9,12.5c-1.3,3.5-3.1,6.3-5.5,8.5c-2.4,2.2-5.3,3.8-8.7,4.8c-3.4,1-7.5,1.5-12.2,1.5h-12.7c-0.9,0-1.7-0.3-2.3-0.8c-0.6-0.5-0.9-1.4-0.9-2.6v-46.4c0-1.2,0.3-2.1,0.9-2.6c0.6-0.5,1.4-0.8,2.3-0.8h13.6c4.7,0,8.8,0.6,12.1,1.7c3.3,1.1,6.1,2.8,8.3,4.9c2.3,2.2,4,4.9,5.2,8.1C249,133,249.6,136.7,249.6,141z M238.5,141.3c0-2.5-0.3-4.9-0.9-7c-0.6-2.2-1.5-4-2.8-5.6c-1.3-1.6-3-2.8-5-3.7c-2-0.9-4.7-1.3-8-1.3h-5.5v36.2h5.6c3,0,5.5-0.4,7.5-1.2c2-0.8,3.7-1.9,5.1-3.5c1.4-1.5,2.4-3.5,3-5.8C238.1,147.1,238.5,144.4,238.5,141.3z"/>
+              <path d="M222.1,90.3h-34.9H61.4c-21.5,0-39,17.5-39,39v24.9c0,21.5,17.5,39,39,39h68.4h92.3c21.5,0,39-17.5,39-39v-24.9C261.1,107.8,243.6,90.3,222.1,90.3z M155.1,179.4c5-7,4.9-16.5,4.9-16.5v-42.5c0-15,12.2-27.2,27.2-27.2h34.9c19.8,0,36,16.1,36,36v24.9c0,19.8-16.1,36-36,36h-79.2C142.9,190.2,149.6,187.2,155.1,179.4z"/>
+              <path fill="white" d="M69.7,164.1c0,0.8,0,1.5-0.1,2c-0.1,0.5-0.2,1-0.3,1.3c-0.1,0.3-0.3,0.6-0.5,0.7c-0.2,0.2-0.4,0.2-0.7,0.2H41.4c-0.9,0-1.7-0.3-2.3-0.8c-0.6-0.5-0.9-1.4-0.9-2.6v-46.4c0-1.2,0.3-2.1,0.9-2.6c0.6-0.5,1.4-0.8,2.3-0.8H68c0.2,0,0.5,0.1,0.7,0.2c0.2,0.1,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.8,0.3,1.3c0.1,0.5,0.1,1.2,0.1,2c0,0.8,0,1.4-0.1,2c-0.1,0.5-0.2,1-0.3,1.3c-0.1,0.3-0.3,0.6-0.5,0.7c-0.2,0.2-0.4,0.2-0.7,0.2H49v13H65c0.2,0,0.5,0.1,0.7,0.2c0.2,0.2,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.7,0.3,1.3c0.1,0.5,0.1,1.2,0.1,2c0,0.8,0,1.5-0.1,2c-0.1,0.5-0.2,0.9-0.3,1.3c-0.1,0.3-0.3,0.5-0.5,0.7c-0.2,0.1-0.4,0.2-0.7,0.2H49v15h19.2c0.2,0,0.5,0.1,0.7,0.2c0.2,0.2,0.4,0.4,0.5,0.7c0.1,0.3,0.2,0.8,0.3,1.3C69.7,162.6,69.7,163.3,69.7,164.1z"/>
+              <path fill="white" d="M109.4,152.4c0,2.8-0.5,5.2-1.6,7.4c-1,2.1-2.5,3.9-4.2,5.3c-1.8,1.4-3.9,2.5-6.2,3.2c-2.4,0.7-4.9,1.1-7.6,1.1c-1.8,0-3.5-0.2-5.1-0.5c-1.6-0.3-3-0.7-4.2-1.1c-1.2-0.4-2.2-0.9-3-1.3c-0.8-0.5-1.4-0.9-1.7-1.2c-0.4-0.4-0.6-0.9-0.8-1.5c-0.2-0.7-0.2-1.6-0.2-2.9c0-0.8,0-1.6,0.1-2.1c0.1-0.6,0.1-1,0.3-1.4c0.1-0.4,0.3-0.6,0.5-0.8c0.2-0.2,0.4-0.2,0.7-0.2c0.4,0,0.9,0.2,1.6,0.7c0.7,0.5,1.6,1,2.7,1.5c1.1,0.5,2.4,1,3.9,1.5c1.5,0.5,3.3,0.7,5.3,0.7c1.3,0,2.5-0.2,3.5-0.5c1-0.3,1.9-0.8,2.7-1.3c0.7-0.6,1.3-1.3,1.7-2.1c0.4-0.8,0.6-1.8,0.6-2.8c0-1.2-0.3-2.2-1-3.1c-0.7-0.9-1.5-1.6-2.6-2.3c-1.1-0.7-2.3-1.3-3.6-1.9c-1.3-0.6-2.7-1.2-4.2-1.9c-1.4-0.7-2.8-1.4-4.2-2.2c-1.3-0.8-2.5-1.8-3.6-3c-1.1-1.2-1.9-2.5-2.6-4.1c-0.7-1.6-1-3.5-1-5.7c0-2.5,0.5-4.8,1.4-6.7c0.9-1.9,2.2-3.5,3.8-4.8c1.6-1.3,3.5-2.2,5.7-2.9c2.2-0.6,4.5-0.9,6.9-0.9c1.3,0,2.5,0.1,3.8,0.3c1.3,0.2,2.4,0.5,3.5,0.8c1.1,0.3,2.1,0.7,2.9,1.1c0.8,0.4,1.4,0.8,1.7,1c0.3,0.3,0.5,0.5,0.6,0.7c0.1,0.2,0.2,0.4,0.2,0.8c0.1,0.3,0.1,0.7,0.1,1.2c0,0.5,0,1.1,0,1.8c0,0.8,0,1.5-0.1,2c0,0.5-0.1,1-0.2,1.4c-0.1,0.4-0.2,0.6-0.4,0.8c-0.2,0.2-0.4,0.2-0.7,0.2c-0.3,0-0.8-0.2-1.4-0.6c-0.7-0.4-1.5-0.8-2.4-1.3c-1-0.5-2.1-0.9-3.3-1.2c-1.3-0.4-2.6-0.6-4.2-0.6c-1.2,0-2.2,0.1-3.1,0.4c-0.9,0.3-1.6,0.7-2.2,1.2c-0.6,0.5-1,1.1-1.3,1.8c-0.3,0.7-0.4,1.5-0.4,2.3c0,1.2,0.3,2.2,1,3.1c0.6,0.9,1.5,1.6,2.6,2.3c1.1,0.7,2.3,1.3,3.7,1.9c1.4,0.6,2.8,1.2,4.2,1.9c1.4,0.7,2.8,1.4,4.2,2.2c1.4,0.8,2.6,1.8,3.7,3c1.1,1.2,1.9,2.5,2.6,4.1C109.1,148.4,109.4,150.2,109.4,152.4z"/>
+              <path fill="white" d="M151.4,131.2c0,3-0.5,5.6-1.4,7.9c-0.9,2.3-2.3,4.2-4.1,5.8c-1.8,1.6-4,2.8-6.6,3.6c-2.6,0.8-5.6,1.2-9.1,1.2h-4.4v17c0,0.3-0.1,0.5-0.3,0.7c-0.2,0.2-0.5,0.4-0.9,0.5c-0.4,0.1-1,0.2-1.6,0.3c-0.7,0.1-1.6,0.1-2.6,0.1c-1,0-1.9,0-2.6-0.1c-0.7-0.1-1.3-0.2-1.7-0.3c-0.4-0.1-0.7-0.3-0.9-0.5c-0.2-0.2-0.2-0.5-0.2-0.7v-47.8c0-1.3,0.3-2.3,1-2.9c0.7-0.6,1.6-1,2.7-1h12.5c1.3,0,2.5,0,3.6,0.1c1.1,0.1,2.5,0.3,4.1,0.6c1.6,0.3,3.2,0.9,4.8,1.7c1.6,0.8,3,1.9,4.2,3.2c1.2,1.3,2,2.8,2.6,4.6C151.1,127.1,151.4,129,151.4,131.2z M140.1,132c0-1.9-0.3-3.4-1-4.6c-0.7-1.2-1.5-2.1-2.4-2.7c-1-0.6-2-0.9-3-1.1c-1.1-0.2-2.1-0.2-3.3-0.2h-4.6v18h4.8c1.7,0,3.2-0.2,4.3-0.7c1.2-0.5,2.1-1.1,2.9-2c0.7-0.8,1.3-1.8,1.7-3C139.9,134.6,140.1,133.3,140.1,132z"/>
+              </svg>
+          </a>
+        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1722688346" defer></script>
+        <script src="/js/lunr/lunr.min.js?1722688346" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1722688346" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1722688346" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1722688346" defer></script>
+        <script src="/js/search.js?1722688346" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/esp3d/index.html" class="parent "><input type="checkbox" id="R-section-0c9303d617eb92cd41ef57cc3bcad9f0" aria-controls="R-subsections-0c9303d617eb92cd41ef57cc3bcad9f0" checked><label for="R-section-0c9303d617eb92cd41ef57cc3bcad9f0"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D</span></label><a class="padding" href="/esp3d/index.html">ESP3D</a><ul id="R-subsections-0c9303d617eb92cd41ef57cc3bcad9f0" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/index.html" class=""><input type="checkbox" id="R-section-c42f49335b17815a7b0e4dca93e0fd2e" aria-controls="R-subsections-c42f49335b17815a7b0e4dca93e0fd2e"><label for="R-section-c42f49335b17815a7b0e4dca93e0fd2e"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 2.1.X</span></label><a class="padding" href="/esp3d/v2.x/index.html">Version 2.1.X</a><ul id="R-subsections-c42f49335b17815a7b0e4dca93e0fd2e" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/features/index.html" class=""><a class="padding" href="/esp3d/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/index.html" class=""><input type="checkbox" id="R-section-2ed43b5ae8e5a3cc9d8bfe1b1b4ab167" aria-controls="R-subsections-2ed43b5ae8e5a3cc9d8bfe1b1b4ab167"><label for="R-section-2ed43b5ae8e5a3cc9d8bfe1b1b4ab167"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Hardware</span></label><a class="padding" href="/esp3d/v2.x/hardware/index.html"><i class='fas fa-microchip'></i> Hardware</a><ul id="R-subsections-2ed43b5ae8e5a3cc9d8bfe1b1b4ab167" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8285/index.html" class=""><input type="checkbox" id="R-section-efc09fa716c98da5da5b9a1859cfd0db" aria-controls="R-subsections-efc09fa716c98da5da5b9a1859cfd0db"><label for="R-section-efc09fa716c98da5da5b9a1859cfd0db"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP8285 boards</span></label><a class="padding" href="/esp3d/v2.x/hardware/esp8285/index.html"><i class='fas fa-microchip'></i> ESP8285 boards</a><ul id="R-subsections-efc09fa716c98da5da5b9a1859cfd0db" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8285/blkbox/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8285/blkbox/index.html">blkboxme</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8285/itead8285/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8285/itead8285/index.html">Itead8285</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/index.html" class=""><input type="checkbox" id="R-section-4c25069cecb99b9b315ce7c6caa912d4" aria-controls="R-subsections-4c25069cecb99b9b315ce7c6caa912d4"><label for="R-section-4c25069cecb99b9b315ce7c6caa912d4"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP8266 boards</span></label><a class="padding" href="/esp3d/v2.x/hardware/esp8266/index.html"><i class='fas fa-microchip'></i> ESP8266 boards</a><ul id="R-subsections-4c25069cecb99b9b315ce7c6caa912d4" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/esp01-512k/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/esp01-512k/index.html">ESP01 512K</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/esp01-1m-generic/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/esp01-1m-generic/index.html">ESP01 1M Generic</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/esp01s-1m/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/esp01s-1m/index.html">ESP01S 1M</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/esp07/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/esp07/index.html">ESP07</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/esp12ex/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/esp12ex/index.html">ESP12 e/f</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/bttcloud/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/bttcloud/index.html">Bigtreetech Cloud</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/fysetcwifisd/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/fysetcwifisd/index.html">FYSETC-SD-WIFI</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/bttwifi/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/bttwifi/index.html">Bigtreetech WiFi module</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/diymore/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/diymore/index.html">Diymore</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/d1mini/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/d1mini/index.html">Wemos D1 mini</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/d1minipro/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/d1minipro/index.html">Wemos D1 mini Pro</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/mkstftwifimodule/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/mkstftwifimodule/index.html">MKS WiFi Module V1.0 (8 pins)</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/mkswifimodule/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/mkswifimodule/index.html">MKS WiFi Module V1.1 (16 pins)</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/nodemcu_0_8/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/nodemcu_0_8/index.html">Nodemcu V0.8</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/nodemcu_1_0/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/nodemcu_1_0/index.html">Nodemcu V1.0</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp8266/sonoff/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp8266/sonoff/index.html">SOnOff</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp32/index.html" class=""><input type="checkbox" id="R-section-5fb0ccc5915cae15b9b75f862bb479eb" aria-controls="R-subsections-5fb0ccc5915cae15b9b75f862bb479eb"><label for="R-section-5fb0ccc5915cae15b9b75f862bb479eb"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32 boards</span></label><a class="padding" href="/esp3d/v2.x/hardware/esp32/index.html"><i class='fas fa-microchip'></i> ESP32 boards</a><ul id="R-subsections-5fb0ccc5915cae15b9b75f862bb479eb" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/hardware/esp32/devkit_v1/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp32/devkit_v1/index.html">Dev Kit V1</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp32/devkit_c_v4/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp32/devkit_c_v4/index.html">Dev Kit C V4</a></li>
+          <li data-nav-id="/esp3d/v2.x/hardware/esp32/heltec_devboard/index.html" class=""><a class="padding" href="/esp3d/v2.x/hardware/esp32/heltec_devboard/index.html">Heltec Dev board</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/installation/index.html" class=""><input type="checkbox" id="R-section-a67de5d9fb046430905db4ba307bd1fb" aria-controls="R-subsections-a67de5d9fb046430905db4ba307bd1fb"><label for="R-section-a67de5d9fb046430905db4ba307bd1fb"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Installation</span></label><a class="padding" href="/esp3d/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="R-subsections-a67de5d9fb046430905db4ba307bd1fb" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/installation/arduino/index.html" class=""><a class="padding" href="/esp3d/v2.x/installation/arduino/index.html">Arduino IDE</a></li>
+          <li data-nav-id="/esp3d/v2.x/installation/vscode-platformio/index.html" class=""><a class="padding" href="/esp3d/v2.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
+          <li data-nav-id="/esp3d/v2.x/installation/wiring/index.html" class=""><a class="padding" href="/esp3d/v2.x/installation/wiring/index.html">Hardware connection</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/index.html" class=""><input type="checkbox" id="R-section-2e55cf3c13c3a79f1446e1681e0c5922" aria-controls="R-subsections-2e55cf3c13c3a79f1446e1681e0c5922"><label for="R-section-2e55cf3c13c3a79f1446e1681e0c5922"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3d/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-2e55cf3c13c3a79f1446e1681e0c5922" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/documentation/commands/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/index.html" class=""><input type="checkbox" id="R-section-19dec006fb7e313994beaa2b8e2efcae" aria-controls="R-subsections-19dec006fb7e313994beaa2b8e2efcae"><label for="R-section-19dec006fb7e313994beaa2b8e2efcae"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Notifications</span></label><a class="padding" href="/esp3d/v2.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="R-subsections-19dec006fb7e313994beaa2b8e2efcae" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/pushover/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/line/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/notifications/ifttt/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/api/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a></li>
+          <li data-nav-id="/esp3d/v2.x/documentation/sdtransfer/index.html" class=""><a class="padding" href="/esp3d/v2.x/documentation/sdtransfer/index.html"><i class='fas fa-sd-card'></i> About SD card</a></li></ul></li>
+          <li data-nav-id="/esp3d/v2.x/showcase/index.html" class=""><a class="padding" href="/esp3d/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d/v2.x/credits/index.html" class=""><a class="padding" href="/esp3d/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/index.html" class="parent "><input type="checkbox" id="R-section-2c744e717f0f8ee25e7622ef65996a3a" aria-controls="R-subsections-2c744e717f0f8ee25e7622ef65996a3a" checked><label for="R-section-2c744e717f0f8ee25e7622ef65996a3a"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 3.X</span></label><a class="padding" href="/esp3d/v3.x/index.html">Version 3.X</a><ul id="R-subsections-2c744e717f0f8ee25e7622ef65996a3a" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/features/index.html" class=""><a class="padding" href="/esp3d/v3.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/index.html" class="parent "><input type="checkbox" id="R-section-e1429a6b28db493b5ca4a53bae1fafbf" aria-controls="R-subsections-e1429a6b28db493b5ca4a53bae1fafbf" checked><label for="R-section-e1429a6b28db493b5ca4a53bae1fafbf"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Hardware</span></label><a class="padding" href="/esp3d/v3.x/hardware/index.html"><i class='fas fa-microchip'></i> Hardware</a><ul id="R-subsections-e1429a6b28db493b5ca4a53bae1fafbf" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/index.html" class="parent "><input type="checkbox" id="R-section-129ce607bce0751271b124e86a72c39c" aria-controls="R-subsections-129ce607bce0751271b124e86a72c39c" checked><label for="R-section-129ce607bce0751271b124e86a72c39c"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/index.html"><i class='fas fa-microchip'></i> ESP boards</a><ul id="R-subsections-129ce607bce0751271b124e86a72c39c" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8285/index.html" class=""><input type="checkbox" id="R-section-6fe0e915ea7511c36e8ab1c3c3764382" aria-controls="R-subsections-6fe0e915ea7511c36e8ab1c3c3764382"><label for="R-section-6fe0e915ea7511c36e8ab1c3c3764382"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP8285 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8285/index.html"><i class='fas fa-microchip'></i> ESP8285 boards</a><ul id="R-subsections-6fe0e915ea7511c36e8ab1c3c3764382" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8285/blkbox/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8285/blkbox/index.html">blkboxme</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8285/itead8285/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8285/itead8285/index.html">Itead8285</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/index.html" class=""><input type="checkbox" id="R-section-9073479d70521fbc523807140c7b67d8" aria-controls="R-subsections-9073479d70521fbc523807140c7b67d8"><label for="R-section-9073479d70521fbc523807140c7b67d8"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP8266 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/index.html"><i class='fas fa-microchip'></i> ESP8266 boards</a><ul id="R-subsections-9073479d70521fbc523807140c7b67d8" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-512k/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-512k/index.html">ESP01 512K</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-1m-generic/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-1m-generic/index.html">ESP01 1M Generic</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01s-1m/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/esp01s-1m/index.html">ESP01S 1M</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/esp07/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/esp07/index.html">ESP07</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/esp12ex/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/esp12ex/index.html">ESP12 e/f</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/bttcloud/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/bttcloud/index.html">Bigtreetech Cloud</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/fysetcwifisd/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/fysetcwifisd/index.html">FYSETC-SD-WIFI</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/bttwifi/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/bttwifi/index.html">Bigtreetech WiFi module</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/diymore/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/diymore/index.html">Diymore</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/d1mini/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/d1mini/index.html">Wemos D1 mini</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/d1minipro/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/d1minipro/index.html">Wemos D1 mini Pro</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/mkstftwifimodule/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/mkstftwifimodule/index.html">MKS WiFi Module V1.0 (8 pins)</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/mkswifimodule/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/mkswifimodule/index.html">MKS WiFi Module V1.1 (16 pins)</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_0_8/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_0_8/index.html">Nodemcu V0.8</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_1_0/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_1_0/index.html">Nodemcu V1.0</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/sonoff/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/sonoff/index.html">SOnOff</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/wifibackpack/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/wifibackpack/index.html">WiFI backpack</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp8266/azteeg_x5_mini_wifi/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp8266/azteeg_x5_mini_wifi/index.html">Azteeg X5 mini WIFI</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/index.html" class="parent "><input type="checkbox" id="R-section-ffbc0eb98eb5cf47501192997e4fdf56" aria-controls="R-subsections-ffbc0eb98eb5cf47501192997e4fdf56" checked><label for="R-section-ffbc0eb98eb5cf47501192997e4fdf56"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/index.html"><i class='fas fa-microchip'></i> ESP32 boards</a><ul id="R-subsections-ffbc0eb98eb5cf47501192997e4fdf56" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/devkit_v1/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/devkit_v1/index.html">Dev Kit V1</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/devkit_c_v4/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/devkit_c_v4/index.html">Dev Kit C V4</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_v7_mini/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_v7_mini/index.html">TTGO/LILYGO V7 mini</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/wemos_d1_r32/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/wemos_d1_r32/index.html">Wemos D1 R32</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t8/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t8/index.html">TTGO T8</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/lolin_d32_pro/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/lolin_d32_pro/index.html">Lolin D32 Pro</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/heltec_devboard/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/heltec_devboard/index.html">Heltec Dev board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t_display/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t_display/index.html">TTGO T Display</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t96_oled/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/ttgo_t96_oled/index.html">TTGO T96 Oled</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/btt-esp32e/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/btt-esp32e/index.html">Bigtreetech ESP32E module</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/btt-esp32u/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/btt-esp32u/index.html">Bigtreetech ESP32U module</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/esp32-cam/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/esp32-cam/index.html">ESP32-Cam</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.html" class="active"><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.html">Olimex ESP32-Gateway</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-poe/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-poe/index.html">Olimex ESP32-POE</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32/w32-eth01/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32/w32-eth01/index.html">WT32-ETH1</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-pico/index.html" class=""><input type="checkbox" id="R-section-d34b4d4e36318e9236948bac3823e946" aria-controls="R-subsections-d34b4d4e36318e9236948bac3823e946"><label for="R-section-d34b4d4e36318e9236948bac3823e946"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32-Pico boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-pico/index.html"><i class='fas fa-microchip'></i> ESP32-Pico boards</a><ul id="R-subsections-d34b4d4e36318e9236948bac3823e946" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-pico/sd-wifi-pro/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-pico/sd-wifi-pro/index.html">FYSETC SD-WIFI-PRO</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-c3/index.html" class=""><input type="checkbox" id="R-section-35bca46b54e95b056cd0a9fb3d59eb1b" aria-controls="R-subsections-35bca46b54e95b056cd0a9fb3d59eb1b"><label for="R-section-35bca46b54e95b056cd0a9fb3d59eb1b"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32-C3 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-c3/index.html"><i class='fas fa-microchip'></i> ESP32-C3 boards</a><ul id="R-subsections-35bca46b54e95b056cd0a9fb3d59eb1b" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-c3/esp-c3-32s/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-c3/esp-c3-32s/index.html">ESP-C3-32S-Kit</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-c3/lilygo-t-01c03/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-c3/lilygo-t-01c03/index.html">LILYGO T-01C3</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-c3/esp-c3-super-mini/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-c3/esp-c3-super-mini/index.html">ESP-C3-Super-Mini</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s2/index.html" class=""><input type="checkbox" id="R-section-78a7721f03628bc82c1a64334850a773" aria-controls="R-subsections-78a7721f03628bc82c1a64334850a773"><label for="R-section-78a7721f03628bc82c1a64334850a773"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32-S2 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s2/index.html"><i class='fas fa-microchip'></i> ESP32-S2 boards</a><ul id="R-subsections-78a7721f03628bc82c1a64334850a773" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s2/lilygo-s2/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s2/lilygo-s2/index.html">LILYGO T8 ESP32-S2 V1.1</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s2/saola-1/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s2/saola-1/index.html">ESP32-S2-Saola-1</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s2/wemos-s2-mini/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s2/wemos-s2-mini/index.html">Wemos S2 mini</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/index.html" class=""><input type="checkbox" id="R-section-e1bfff802b72e38518dd2771202deee9" aria-controls="R-subsections-e1bfff802b72e38518dd2771202deee9"><label for="R-section-e1bfff802b72e38518dd2771202deee9"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32-S3 boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/index.html"><i class='fas fa-microchip'></i> ESP32-S3 boards</a><ul id="R-subsections-e1bfff802b72e38518dd2771202deee9" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/devkitc-1-v1/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/devkitc-1-v1/index.html">DevKitC-1 v1.0</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/devkitm-1-v1/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/devkitm-1-v1/index.html">DevKitM-1 v1.0</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/freenove/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/freenove/index.html">Freenove ESP32 S3</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/uicpal/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/uicpal/index.html">UICPAL ESP32 S3</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/tsimcam/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/tsimcam/index.html">T-SIMCAM</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/esp_boards/esp32-s3/xiao-s3-sense/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/esp_boards/esp32-s3/xiao-s3-sense/index.html">Seeed Studio XIAO ESP32S3 Sense</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/index.html" class=""><input type="checkbox" id="R-section-df7c30aae4548e7ee506abc4846bccc9" aria-controls="R-subsections-df7c30aae4548e7ee506abc4846bccc9"><label for="R-section-df7c30aae4548e7ee506abc4846bccc9"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu System boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/system_boards/index.html"><i class='fas fa-microchip'></i> System boards</a><ul id="R-subsections-df7c30aae4548e7ee506abc4846bccc9" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/index.html" class=""><input type="checkbox" id="R-section-a2ffd26e9f9e272edc93d0dac0d04d23" aria-controls="R-subsections-a2ffd26e9f9e272edc93d0dac0d04d23"><label for="R-section-a2ffd26e9f9e272edc93d0dac0d04d23"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu TFT</span></label><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/index.html"><i class='fas fa-microchip'></i> TFT</a><ul id="R-subsections-a2ffd26e9f9e272edc93d0dac0d04d23" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/index.html" class=""><input type="checkbox" id="R-section-c9b5c7fdcf47459362d71671fd9d1309" aria-controls="R-subsections-c9b5c7fdcf47459362d71671fd9d1309"><label for="R-section-c9b5c7fdcf47459362d71671fd9d1309"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Bigtreetech TFT</span></label><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/index.html"><i class='fas fa-microchip'></i> Bigtreetech TFT</a><ul id="R-subsections-c9b5c7fdcf47459362d71671fd9d1309" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/tft_35_e3/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/tft_35_e3/index.html">TFT 35 E3</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/tft_70/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/bigtreetech/tft_70/index.html">TFT 70</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/makerbase/index.html" class=""><input type="checkbox" id="R-section-80e6c8638399c2481db02721ece0f374" aria-controls="R-subsections-80e6c8638399c2481db02721ece0f374"><label for="R-section-80e6c8638399c2481db02721ece0f374"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Makerbase TFT</span></label><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/makerbase/index.html"><i class='fas fa-microchip'></i> Makerbase TFT</a><ul id="R-subsections-80e6c8638399c2481db02721ece0f374" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_32l/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_32l/index.html">TFT 32L V4.0</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_35/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_35/index.html">TFT 35 V1.0</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_70/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/tft/makerbase/tft_70/index.html">TFT 70 V1.1</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/index.html" class=""><input type="checkbox" id="R-section-c0714bdf2314cdeadc0619806768eb3e" aria-controls="R-subsections-c0714bdf2314cdeadc0619806768eb3e"><label for="R-section-c0714bdf2314cdeadc0619806768eb3e"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Main boards</span></label><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/index.html"><i class='fas fa-microchip'></i> Main boards</a><ul id="R-subsections-c0714bdf2314cdeadc0619806768eb3e" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/anet_a8/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/anet_a8/index.html">Anet boards up to v1.5 and 1.7</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/anycubic_trigorilla/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/anycubic_trigorilla/index.html">Anycubic i3 mega - Trigorilla 8bit board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/anycubic_kobra_2/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/anycubic_kobra_2/index.html">Anycubic Kobra 2 - Trigorilla Pro B V1.0.2 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/azsmz_lcd/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/azsmz_lcd/index.html">AZSMZ LCD board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/azsmz_mini/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/azsmz_mini/index.html">AZSMZ mini board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/azteeg_x5_wifi/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/azteeg_x5_wifi/index.html">Azteeg X5 mini board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/biqu_kfb_2_0/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/biqu_kfb_2_0/index.html">BIQU KFB2.0 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/btt_octopus_1_1/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/btt_octopus_1_1/index.html">Bigtreetech Octopus 1.1 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_1_3/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_1_3/index.html">Bigtreetech skr board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_mini_e3/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_mini_e3/index.html">Bigtreetech skr mini board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_pro_1_2/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/btt_skr_pro_1_2/index.html">Bigtreetech skr pro board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/creality_cr10/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/creality_cr10/index.html">Creality CR10 Ender 3 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/creality_ender_4/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/creality_ender_4/index.html">Creality Ender 4 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/mks_gen/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/mks_gen/index.html">MKS GEN v1.2 to 1.4 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/mks_robin_nano/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/mks_robin_nano/index.html">MKS Robin Nano board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/mks_sbase/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/mks_sbase/index.html">MKS SBase board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/radds_due/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/radds_due/index.html">RADDS/Due</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/ramps_mega/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/ramps_mega/index.html">Ramps / Mega</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/re-arm/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/re-arm/index.html">Ramps / re-Arm</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/smoothieboard/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/smoothieboard/index.html">Smoothieboard</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/weedo_tina2/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/weedo_tina2/index.html">Bigtreetech skr board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/xyz_davinci_1_0-2_0/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/xyz_davinci_1_0-2_0/index.html">Davinci 1.0/2.0 board</a></li>
+          <li data-nav-id="/esp3d/v3.x/hardware/system_boards/main_boards/xyz_davinci_1_0a/index.html" class=""><a class="padding" href="/esp3d/v3.x/hardware/system_boards/main_boards/xyz_davinci_1_0a/index.html">Davinci 1.0A board</a></li></ul></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/installation/index.html" class=""><input type="checkbox" id="R-section-67011baea3e10744f494754bec2a2844" aria-controls="R-subsections-67011baea3e10744f494754bec2a2844"><label for="R-section-67011baea3e10744f494754bec2a2844"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Installation</span></label><a class="padding" href="/esp3d/v3.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a><ul id="R-subsections-67011baea3e10744f494754bec2a2844" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/installation/arduino/index.html" class=""><a class="padding" href="/esp3d/v3.x/installation/arduino/index.html">Arduino IDE</a></li>
+          <li data-nav-id="/esp3d/v3.x/installation/vscode-platformio/index.html" class=""><a class="padding" href="/esp3d/v3.x/installation/vscode-platformio/index.html">VSCode &amp; Platformio</a></li>
+          <li data-nav-id="/esp3d/v3.x/installation/wiring/index.html" class=""><a class="padding" href="/esp3d/v3.x/installation/wiring/index.html">Hardware connection</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/index.html" class=""><input type="checkbox" id="R-section-0ae2eddce781c5294761dfa315d6fcd1" aria-controls="R-subsections-0ae2eddce781c5294761dfa315d6fcd1"><label for="R-section-0ae2eddce781c5294761dfa315d6fcd1"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3d/v3.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-0ae2eddce781c5294761dfa315d6fcd1" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/index.html" class=""><input type="checkbox" id="R-section-9fb478b526b7d40174a559c3a717942c" aria-controls="R-subsections-9fb478b526b7d40174a559c3a717942c"><label for="R-section-9fb478b526b7d40174a559c3a717942c"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D commands</span></label><a class="padding" href="/esp3d/v3.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a><ul id="R-subsections-9fb478b526b7d40174a559c3a717942c" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp100/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp100/index.html">[ESP100]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp101/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp101/index.html">[ESP101]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp102/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp102/index.html">[ESP102]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp103/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp103/index.html">[ESP103]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp104/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp104/index.html">[ESP104]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp105/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp105/index.html">[ESP105]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp106/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp106/index.html">[ESP106]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp107/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp107/index.html">[ESP107]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp108/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp108/index.html">[ESP108]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp110/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp110/index.html">[ESP110]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp111/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp111/index.html">[ESP111]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp112/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp112/index.html">[ESP112]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp114/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp114/index.html">[ESP114]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp115/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp115/index.html">[ESP115]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp120/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp120/index.html">[ESP120]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp121/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp121/index.html">[ESP121]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp130/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp130/index.html">[ESP130]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp131/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp131/index.html">[ESP131]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp140/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp140/index.html">[ESP140]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp150/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp150/index.html">[ESP150]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp160/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp160/index.html">[ESP160]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp161/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp161/index.html">[ESP161]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp170/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp170/index.html">[ESP170]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp171/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp171/index.html">[ESP171]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp180/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp180/index.html">[ESP180]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp181/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp181/index.html">[ESP181]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp190/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp190/index.html">[ESP190]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp191/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp191/index.html">[ESP191]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp200/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp200/index.html">[ESP200]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp201/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp201/index.html">[ESP201]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp202/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp202/index.html">[ESP202]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp210/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp210/index.html">[ESP210]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp212/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp212/index.html">[ESP212]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp214/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp214/index.html">[ESP214]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp215/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp215/index.html">[ESP215]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp220/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp220/index.html">[ESP220]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp250/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp250/index.html">[ESP250]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp290/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp290/index.html">[ESP290]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp400/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp400/index.html">[ESP400]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp401/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp401/index.html">[ESP401]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp402/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp402/index.html">[ESP402]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp410/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp410/index.html">[ESP410]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp420/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp420/index.html">[ESP420]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp444/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp444/index.html">[ESP444]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp450/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp450/index.html">[ESP450]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp500/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp500/index.html">[ESP500]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp510/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp510/index.html">[ESP510]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp550/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp550/index.html">[ESP550]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp555/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp555/index.html">[ESP555]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp600/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp600/index.html">[ESP600]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp610/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp610/index.html">[ESP610]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp620/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp620/index.html">[ESP620]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp700/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp700/index.html">[ESP700]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp701/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp701/index.html">[ESP701]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp710/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp710/index.html">[ESP710]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp715/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp715/index.html">[ESP715]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp720/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp720/index.html">[ESP720]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp730/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp730/index.html">[ESP730]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp740/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp740/index.html">[ESP740]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp750/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp750/index.html">[ESP750]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp780/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp780/index.html">[ESP780]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp790/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp790/index.html">[ESP790]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp800/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp800/index.html">[ESP800]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp900/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp900/index.html">[ESP900]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp901/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp901/index.html">[ESP901]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp910/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp910/index.html">[ESP910]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp930/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp930/index.html">[ESP930]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp931/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp931/index.html">[ESP931]</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/commands/esp999/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/commands/esp999/index.html">[ESP999]</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/authentication/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/authentication/index.html"><i class='fas fa-lock'></i> Authentication</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/index.html" class=""><input type="checkbox" id="R-section-3fef5e9a44cebf02ca0879f28946a91a" aria-controls="R-subsections-3fef5e9a44cebf02ca0879f28946a91a"><label for="R-section-3fef5e9a44cebf02ca0879f28946a91a"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Notifications</span></label><a class="padding" href="/esp3d/v3.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="R-subsections-3fef5e9a44cebf02ca0879f28946a91a" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/pushover/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/home-assistant/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/home-assistant/index.html"> Home Assistant</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/line/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/email_and_smtp/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/ifttt/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/notifications/telegram/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/notifications/telegram/index.html"> Telegram Notification</a></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/sdtransfer/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/sdtransfer/index.html"><i class='fas fa-sd-card'></i> About SD card</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/camera/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/camera/index.html"><i class='fas fa-camera'></i> Camera support</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/compilation/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/compilation/index.html"><i class='fas fa-code'></i> Compilation Guide</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/update/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/update/index.html"><i class='fas fa-download'></i> Update support</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/ftp/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/ftp/index.html"><i class='fas fa-file-upload'></i> About FTP</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/webdav/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/webdav/index.html"><i class='fas fa-cloud-upload-alt'></i> About WebDAV</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/faq/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/faq/index.html"><i class='fas fa-question'></i> FAQ</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/api/index.html" class=""><input type="checkbox" id="R-section-375ceb7f6b729cbac02e320c5fab9d56" aria-controls="R-subsections-375ceb7f6b729cbac02e320c5fab9d56"><label for="R-section-375ceb7f6b729cbac02e320c5fab9d56"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu API</span></label><a class="padding" href="/esp3d/v3.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="R-subsections-375ceb7f6b729cbac02e320c5fab9d56" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d/v3.x/documentation/api/webhandlers/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/api/webhandlers/index.html">Web Handlers</a></li>
+          <li data-nav-id="/esp3d/v3.x/documentation/api/websockets/index.html" class=""><a class="padding" href="/esp3d/v3.x/documentation/api/websockets/index.html">Web Sockets</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d/v3.x/showcase/index.html" class=""><a class="padding" href="/esp3d/v3.x/showcase/index.html"><i class='fas fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d/v3.x/credits/index.html" class=""><a class="padding" href="/esp3d/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3dlib/index.html" class=""><input type="checkbox" id="R-section-976aa2f9cb7ff1c94294de10b2ec208e" aria-controls="R-subsections-976aa2f9cb7ff1c94294de10b2ec208e"><label for="R-section-976aa2f9cb7ff1c94294de10b2ec208e"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3DLib</span></label><a class="padding" href="/esp3dlib/index.html">ESP3DLib</a><ul id="R-subsections-976aa2f9cb7ff1c94294de10b2ec208e" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v1.x/index.html" class=""><input type="checkbox" id="R-section-1ffe7639c9c881891bd82525c81151c0" aria-controls="R-subsections-1ffe7639c9c881891bd82525c81151c0"><label for="R-section-1ffe7639c9c881891bd82525c81151c0"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 1.X</span></label><a class="padding" href="/esp3dlib/v1.x/index.html">Version 1.X</a><ul id="R-subsections-1ffe7639c9c881891bd82525c81151c0" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v1.x/features/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/installation/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/documentation/index.html" class=""><input type="checkbox" id="R-section-38366fcb466c859104ef23363cfd6b5c" aria-controls="R-subsections-38366fcb466c859104ef23363cfd6b5c"><label for="R-section-38366fcb466c859104ef23363cfd6b5c"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3dlib/v1.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-38366fcb466c859104ef23363cfd6b5c" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v1.x/documentation/commands/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/index.html" class=""><input type="checkbox" id="R-section-c847f70c9b313c92a73f070c6489b9ea" aria-controls="R-subsections-c847f70c9b313c92a73f070c6489b9ea"><label for="R-section-c847f70c9b313c92a73f070c6489b9ea"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Hardware</span></label><a class="padding" href="/esp3dlib/v1.x/hardware/index.html"><i class='fas fa-microchip'></i> Hardware</a><ul id="R-subsections-c847f70c9b313c92a73f070c6489b9ea" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v1.x/hardware/esp32-controller/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/esp32-controller/index.html">ESP32 generic controller</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/fysetc-e4/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/fysetc-e4/index.html">FYSETC-E4</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/mks-tinybee-v1/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/mks-tinybee-v1/index.html">MKS Tinybee</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/mrr-espa/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/mrr-espa/index.html">MRR-ESPA</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/mrr-espe/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/mrr-espe/index.html">MRR-ESPE</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/hardware/panda-zhu-m4/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/hardware/panda-zhu-m4/index.html">Panda Zhu/M4</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v1.x/showcase/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3dlib/v1.x/credits/index.html" class=""><a class="padding" href="/esp3dlib/v1.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/index.html" class=""><input type="checkbox" id="R-section-4b2918fd98740959fe99c2116771b358" aria-controls="R-subsections-4b2918fd98740959fe99c2116771b358"><label for="R-section-4b2918fd98740959fe99c2116771b358"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 3.X</span></label><a class="padding" href="/esp3dlib/v3.x/index.html">Version 3.X</a><ul id="R-subsections-4b2918fd98740959fe99c2116771b358" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/features/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/installation/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/index.html" class=""><input type="checkbox" id="R-section-13f9570c026aaf3266bd41c70361e822" aria-controls="R-subsections-13f9570c026aaf3266bd41c70361e822"><label for="R-section-13f9570c026aaf3266bd41c70361e822"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3dlib/v3.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-13f9570c026aaf3266bd41c70361e822" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/index.html" class=""><input type="checkbox" id="R-section-c58e325f359994a402a45604e24f9a81" aria-controls="R-subsections-c58e325f359994a402a45604e24f9a81"><label for="R-section-c58e325f359994a402a45604e24f9a81"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D commands</span></label><a class="padding" href="/esp3dlib/v3.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a><ul id="R-subsections-c58e325f359994a402a45604e24f9a81" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp100/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp100/index.html">[ESP100]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp101/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp101/index.html">[ESP101]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp102/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp102/index.html">[ESP102]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp103/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp103/index.html">[ESP103]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp104/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp104/index.html">[ESP104]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp105/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp105/index.html">[ESP105]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp106/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp106/index.html">[ESP106]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp107/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp107/index.html">[ESP107]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp108/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp108/index.html">[ESP108]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp110/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp110/index.html">[ESP110]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp111/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp111/index.html">[ESP111]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp112/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp112/index.html">[ESP112]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp114/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp114/index.html">[ESP114]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp115/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp115/index.html">[ESP115]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp120/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp120/index.html">[ESP120]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp121/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp121/index.html">[ESP121]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp130/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp130/index.html">[ESP130]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp131/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp131/index.html">[ESP131]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp140/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp140/index.html">[ESP140]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp150/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp150/index.html">[ESP150]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp160/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp160/index.html">[ESP160]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp161/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp161/index.html">[ESP161]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp170/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp170/index.html">[ESP170]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp171/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp171/index.html">[ESP171]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp180/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp180/index.html">[ESP180]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp181/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp181/index.html">[ESP181]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp190/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp190/index.html">[ESP190]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp191/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp191/index.html">[ESP191]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp200/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp200/index.html">[ESP200]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp201/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp201/index.html">[ESP201]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp202/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp202/index.html">[ESP202]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp210/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp210/index.html">[ESP210]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp214/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp214/index.html">[ESP214]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp215/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp215/index.html">[ESP215]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp220/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp220/index.html">[ESP220]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp250/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp250/index.html">[ESP250]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp290/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp290/index.html">[ESP290]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp400/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp400/index.html">[ESP400]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp401/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp401/index.html">[ESP401]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp402/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp402/index.html">[ESP402]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp410/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp410/index.html">[ESP410]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp420/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp420/index.html">[ESP420]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp444/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp444/index.html">[ESP444]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp450/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp450/index.html">[ESP450]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp500/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp500/index.html">[ESP500]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp510/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp510/index.html">[ESP510]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp550/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp550/index.html">[ESP550]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp555/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp555/index.html">[ESP555]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp600/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp600/index.html">[ESP600]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp610/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp610/index.html">[ESP610]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp620/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp620/index.html">[ESP620]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp700/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp700/index.html">[ESP700]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp701/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp701/index.html">[ESP701]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp710/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp710/index.html">[ESP710]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp715/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp715/index.html">[ESP715]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp720/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp720/index.html">[ESP720]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp730/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp730/index.html">[ESP730]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp740/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp740/index.html">[ESP740]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp750/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp750/index.html">[ESP750]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp780/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp780/index.html">[ESP780]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp790/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp790/index.html">[ESP790]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp800/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp800/index.html">[ESP800]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp900/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp900/index.html">[ESP900]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp901/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp901/index.html">[ESP901]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp910/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp910/index.html">[ESP910]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp930/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp930/index.html">[ESP930]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp931/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp931/index.html">[ESP931]</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/commands/esp999/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/commands/esp999/index.html">[ESP999]</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/authentication/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/authentication/index.html"><i class='fas fa-lock'></i> Authentication</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/index.html" class=""><input type="checkbox" id="R-section-834c4ccf9c39746f2846f51ecfc094cd" aria-controls="R-subsections-834c4ccf9c39746f2846f51ecfc094cd"><label for="R-section-834c4ccf9c39746f2846f51ecfc094cd"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Notifications</span></label><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="R-subsections-834c4ccf9c39746f2846f51ecfc094cd" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/pushover/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/line/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/email_and_smtp/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/ifttt/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/notifications/telegram/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/notifications/telegram/index.html"> Telegram Notification</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/compilation/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/compilation/index.html"><i class='fas fa-code'></i> Compilation Guide</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/update/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/update/index.html"><i class='fas fa-download'></i> Update support</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/ftp/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/ftp/index.html"><i class='fas fa-file-upload'></i> About FTP</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/webdav/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/webdav/index.html"><i class='fas fa-cloud-upload-alt'></i> About WebDAV</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/faq/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/faq/index.html"><i class='fas fa-question'></i> FAQ</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/api/index.html" class=""><input type="checkbox" id="R-section-c5760a24cf69d5167beba2221f5ba1c5" aria-controls="R-subsections-c5760a24cf69d5167beba2221f5ba1c5"><label for="R-section-c5760a24cf69d5167beba2221f5ba1c5"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu API</span></label><a class="padding" href="/esp3dlib/v3.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="R-subsections-c5760a24cf69d5167beba2221f5ba1c5" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/documentation/api/webhandlers/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/api/webhandlers/index.html">Web Handlers</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/documentation/api/websockets/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/documentation/api/websockets/index.html">Web Sockets</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/hardware/index.html" class=""><input type="checkbox" id="R-section-3b7655fb0b531556bc8b0baf23d202f8" aria-controls="R-subsections-3b7655fb0b531556bc8b0baf23d202f8"><label for="R-section-3b7655fb0b531556bc8b0baf23d202f8"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Hardware</span></label><a class="padding" href="/esp3dlib/v3.x/hardware/index.html"><i class='fas fa-microchip'></i> Hardware</a><ul id="R-subsections-3b7655fb0b531556bc8b0baf23d202f8" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3dlib/v3.x/hardware/fysetc-e4/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/hardware/fysetc-e4/index.html">FYSETC-E4</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/hardware/mks-tinybee-v1/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/hardware/mks-tinybee-v1/index.html">MKS Tinybee</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/hardware/mrr-espa/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/hardware/mrr-espa/index.html">MRR-ESPA</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/hardware/mrr-espe/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/hardware/mrr-espe/index.html">MRR-ESPE</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/hardware/panda-zhu-m4/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/hardware/panda-zhu-m4/index.html">Panda Zhu/M4</a></li></ul></li>
+          <li data-nav-id="/esp3dlib/v3.x/showcase/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3dlib/v3.x/credits/index.html" class=""><a class="padding" href="/esp3dlib/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-tft/index.html" class=""><input type="checkbox" id="R-section-e10c9eab5d2e82f398559ed2cfb30979" aria-controls="R-subsections-e10c9eab5d2e82f398559ed2cfb30979"><label for="R-section-e10c9eab5d2e82f398559ed2cfb30979"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D-TFT</span></label><a class="padding" href="/esp3d-tft/index.html">ESP3D-TFT</a><ul id="R-subsections-e10c9eab5d2e82f398559ed2cfb30979" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/index.html" class=""><input type="checkbox" id="R-section-715b35baaae46ee15d8f596fbd32e447" aria-controls="R-subsections-715b35baaae46ee15d8f596fbd32e447"><label for="R-section-715b35baaae46ee15d8f596fbd32e447"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 1.X</span></label><a class="padding" href="/esp3d-tft/v1.x/index.html">Version 1.X</a><ul id="R-subsections-715b35baaae46ee15d8f596fbd32e447" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/features/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/installation/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/index.html" class=""><input type="checkbox" id="R-section-52e02b0637494b422aff0d269ae92ba2" aria-controls="R-subsections-52e02b0637494b422aff0d269ae92ba2"><label for="R-section-52e02b0637494b422aff0d269ae92ba2"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3d-tft/v1.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-52e02b0637494b422aff0d269ae92ba2" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/index.html" class=""><input type="checkbox" id="R-section-820ed8431fc29cf74df6cf8ef06b4bc9" aria-controls="R-subsections-820ed8431fc29cf74df6cf8ef06b4bc9"><label for="R-section-820ed8431fc29cf74df6cf8ef06b4bc9"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D commands</span></label><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/index.html"><i class='fas fa-terminal'></i> ESP3D commands</a><ul id="R-subsections-820ed8431fc29cf74df6cf8ef06b4bc9" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp100/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp100/index.html">[ESP100]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp101/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp101/index.html">[ESP101]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp102/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp102/index.html">[ESP102]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp103/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp103/index.html">[ESP103]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp104/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp104/index.html">[ESP104]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp105/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp105/index.html">[ESP105]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp106/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp106/index.html">[ESP106]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp107/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp107/index.html">[ESP107]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp108/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp108/index.html">[ESP108]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp110/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp110/index.html">[ESP110]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp111/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp111/index.html">[ESP111]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp112/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp112/index.html">[ESP112]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp114/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp114/index.html">[ESP114]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp115/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp115/index.html">[ESP115]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp120/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp120/index.html">[ESP120]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp121/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp121/index.html">[ESP121]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp130/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp130/index.html">[ESP130]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp131/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp131/index.html">[ESP131]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp140/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp140/index.html">[ESP140]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp160/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp160/index.html">[ESP160]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp170/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp170/index.html">[ESP170]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp171/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp171/index.html">[ESP171]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp200/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp200/index.html">[ESP200]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp202/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp202/index.html">[ESP202]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp210/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp210/index.html">[ESP210]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp214/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp214/index.html">[ESP214]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp216/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp216/index.html">[ESP216]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp220/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp220/index.html">[ESP220]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp250/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp250/index.html">[ESP250]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp290/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp290/index.html">[ESP290]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp400/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp400/index.html">[ESP400]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp401/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp401/index.html">[ESP401]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp402/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp402/index.html">[ESP402]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp410/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp410/index.html">[ESP410]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp420/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp420/index.html">[ESP420]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp444/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp444/index.html">[ESP444]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp450/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp450/index.html">[ESP450]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp460/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp460/index.html">[ESP460]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp500/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp500/index.html">[ESP500]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp510/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp510/index.html">[ESP510]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp550/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp550/index.html">[ESP550]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp555/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp555/index.html">[ESP555]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp600/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp600/index.html">[ESP600]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp610/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp610/index.html">[ESP610]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp700/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp700/index.html">[ESP700]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp701/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp701/index.html">[ESP701]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp702/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp702/index.html">[ESP702]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp710/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp710/index.html">[ESP710]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp720/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp720/index.html">[ESP720]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp730/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp730/index.html">[ESP730]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp740/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp740/index.html">[ESP740]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp750/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp750/index.html">[ESP750]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp780/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp780/index.html">[ESP780]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp790/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp790/index.html">[ESP790]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp800/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp800/index.html">[ESP800]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp900/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp900/index.html">[ESP900]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp901/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp901/index.html">[ESP901]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp902/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp902/index.html">[ESP902]</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/commands/esp950/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/commands/esp950/index.html">[ESP950]</a></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/authentication/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/authentication/index.html"><i class='fas fa-lock'></i> Authentication</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/index.html" class=""><input type="checkbox" id="R-section-61fda09b340690827f35073ee8be5445" aria-controls="R-subsections-61fda09b340690827f35073ee8be5445"><label for="R-section-61fda09b340690827f35073ee8be5445"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Notifications</span></label><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/index.html"><i class='fas fa-envelope'></i> Notifications</a><ul id="R-subsections-61fda09b340690827f35073ee8be5445" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/pushover/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/pushover/index.html"> Pushover Notification</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/line/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/line/index.html"> Line Notification</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/email_and_smtp/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/email_and_smtp/index.html"> Email Notification</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/ifttt/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/ifttt/index.html"> IFTTT Notification</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/notifications/telegram/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/notifications/telegram/index.html"> Telegram Notification</a></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/camera/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/camera/index.html"><i class='fas fa-camera'></i> Camera support</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/compilation/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/compilation/index.html"><i class='fas fa-code'></i> Compilation Guide</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/update/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/update/index.html"><i class='fas fa-download'></i> Update support</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/ftp/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/ftp/index.html"><i class='fas fa-file-upload'></i> About FTP</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/webdavservice/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/webdavservice/index.html"><i class='fas fa-cloud-upload-alt'></i> About WebDAV</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/faq/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/faq/index.html"><i class='fas fa-question'></i> FAQ</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/index.html" class=""><input type="checkbox" id="R-section-6cc9884af438016c3949eb502f3df823" aria-controls="R-subsections-6cc9884af438016c3949eb502f3df823"><label for="R-section-6cc9884af438016c3949eb502f3df823"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu API</span></label><a class="padding" href="/esp3d-tft/v1.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="R-subsections-6cc9884af438016c3949eb502f3df823" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/project-arch/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/project-arch/index.html"><i class='fas fa-sitemap'></i> Project architecture reference</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/webhandlers/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/webhandlers/index.html"><i class='fas fa-link'></i> Web Handlers</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/clients/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/clients/index.html"><i class='fas fa-network-wired'></i> Clients</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/websockets/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/websockets/index.html"><i class='fas fa-plug'></i> Web Sockets</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/conventions/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/conventions/index.html"><i class='fas fa-spell-check'></i> Syntax conventions</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/streamingservice/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/streamingservice/index.html"><i class='fas fa-water'></i> GCode streaming API</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/documentation/api/webdavservice/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/documentation/api/webdavservice/index.html"><i class='fas fa-cloud-upload-alt'></i> WebDAV API</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/index.html" class=""><input type="checkbox" id="R-section-d208771b8ff3e784efa7e6f87ba28540" aria-controls="R-subsections-d208771b8ff3e784efa7e6f87ba28540"><label for="R-section-d208771b8ff3e784efa7e6f87ba28540"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Hardware</span></label><a class="padding" href="/esp3d-tft/v1.x/hardware/index.html"><i class='fas fa-microchip'></i> Hardware</a><ul id="R-subsections-d208771b8ff3e784efa7e6f87ba28540" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32/index.html" class=""><input type="checkbox" id="R-section-faaf550661040fdfa7bb8abf65c105eb" aria-controls="R-subsections-faaf550661040fdfa7bb8abf65c105eb"><label for="R-section-faaf550661040fdfa7bb8abf65c105eb"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32 boards</span></label><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32/index.html"><i class='fas fa-microchip'></i> ESP32 boards</a><ul id="R-subsections-faaf550661040fdfa7bb8abf65c105eb" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32/rotrics/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32/rotrics/index.html">3.5&#39; Rotrics</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32/sunton-35-3248/index.html"> 3.5&#39; ESP32-3248S035R/C</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32/sunton-28-2432/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32/sunton-28-2432/index.html"> 2.8&#39; ESP32-2432S028R</a></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/index.html" class=""><input type="checkbox" id="R-section-6369da1c3ab2e7355d3d99fd43eba246" aria-controls="R-subsections-6369da1c3ab2e7355d3d99fd43eba246"><label for="R-section-6369da1c3ab2e7355d3d99fd43eba246"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP32-S3 boards</span></label><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/index.html"><i class='fas fa-microchip'></i> ESP32-S3 boards</a><ul id="R-subsections-6369da1c3ab2e7355d3d99fd43eba246" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/panlee/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/panlee/index.html">3.5&#39; ZX3D50CE02S-USRC-4832</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html">4.3&#39; HMI-V3</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-70-8048/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-70-8048/index.html"> 7.0&#39; ESP32-8048S070C</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-50-8048/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-50-8048/index.html"> 5.0&#39; ESP32-8048S050C</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-8048/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-8048/index.html"> 4.3&#39; ESP32-8048S043C</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-4827/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-43-4827/index.html"> 4.3&#39; ESP32-4827S043R/C</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/hardware/esp32-s3/bzm-35-4832/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/hardware/esp32-s3/bzm-35-4832/index.html"> 3.5&#39; BZM-V1</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-tft/v1.x/showcase/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/showcase/index.html"><i class='fas fa-lightbulb'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d-tft/v1.x/credits/index.html" class=""><a class="padding" href="/esp3d-tft/v1.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-webui/index.html" class=""><input type="checkbox" id="R-section-c485604d2d2ff3c1b875accac7ae122e" aria-controls="R-subsections-c485604d2d2ff3c1b875accac7ae122e"><label for="R-section-c485604d2d2ff3c1b875accac7ae122e"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ESP3D-WEBUI</span></label><a class="padding" href="/esp3d-webui/index.html">ESP3D-WEBUI</a><ul id="R-subsections-c485604d2d2ff3c1b875accac7ae122e" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v2.x/index.html" class=""><input type="checkbox" id="R-section-7e9ed5b9504370bd64f29cedbe3413a6" aria-controls="R-subsections-7e9ed5b9504370bd64f29cedbe3413a6"><label for="R-section-7e9ed5b9504370bd64f29cedbe3413a6"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 2.1.X</span></label><a class="padding" href="/esp3d-webui/v2.x/index.html">Version 2.1.X</a><ul id="R-subsections-7e9ed5b9504370bd64f29cedbe3413a6" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v2.x/features/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/installation/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/documentation/index.html" class=""><input type="checkbox" id="R-section-fed089124180bcebcd270821d5bd4c36" aria-controls="R-subsections-fed089124180bcebcd270821d5bd4c36"><label for="R-section-fed089124180bcebcd270821d5bd4c36"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3d-webui/v2.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-fed089124180bcebcd270821d5bd4c36" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v2.x/documentation/translation/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/documentation/translation/index.html"><i class='fas fa-language'></i> Translations</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/documentation/camera/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/documentation/camera/index.html"><i class='fas fa-camera'></i> Camera support</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/documentation/compilation/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/documentation/compilation/index.html"><i class='fas fa-code'></i> Compilation</a></li></ul></li>
+          <li data-nav-id="/esp3d-webui/v2.x/showcase/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d-webui/v2.x/credits/index.html" class=""><a class="padding" href="/esp3d-webui/v2.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li>
+          <li data-nav-id="/esp3d-webui/v3.x/index.html" class=""><input type="checkbox" id="R-section-2ae1179bd6eebde909122d12ab64e5f4" aria-controls="R-subsections-2ae1179bd6eebde909122d12ab64e5f4"><label for="R-section-2ae1179bd6eebde909122d12ab64e5f4"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Version 3.X</span></label><a class="padding" href="/esp3d-webui/v3.x/index.html">Version 3.X</a><ul id="R-subsections-2ae1179bd6eebde909122d12ab64e5f4" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v3.x/features/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/features/index.html"><i class='fas fa-list'></i> Features</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/installation/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/installation/index.html"><i class='fas fa-hammer'></i> Installation</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/index.html" class=""><input type="checkbox" id="R-section-d30bac947f83d18da09ca7c089d37438" aria-controls="R-subsections-d30bac947f83d18da09ca7c089d37438"><label for="R-section-d30bac947f83d18da09ca7c089d37438"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Documentation</span></label><a class="padding" href="/esp3d-webui/v3.x/documentation/index.html"><i class='fas fa-book'></i> Documentation</a><ul id="R-subsections-d30bac947f83d18da09ca7c089d37438" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/translation/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/translation/index.html"><i class='fas fa-language'></i> Translations</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/compilation/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/compilation/index.html"><i class='fas fa-code'></i> Compilation Guide</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/update/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/update/index.html"><i class='fas fa-download'></i> Update support</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/camera/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/camera/index.html"><i class='fas fa-camera'></i> Camera support</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/extra/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/extra/index.html"><i class='fas fa-plus'></i> Extra Content</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/macros/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/macros/index.html"><i class='fas fa-scroll'></i> Macros Documentation</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/polling/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/polling/index.html"><i class='fas fa-question'></i> Polling commands</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/themes/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/themes/index.html"><i class='fas fa-palette'></i> Themes</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/index.html" class=""><input type="checkbox" id="R-section-fe945383558dbc4d066818e915fa98d8" aria-controls="R-subsections-fe945383558dbc4d066818e915fa98d8"><label for="R-section-fe945383558dbc4d066818e915fa98d8"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu API</span></label><a class="padding" href="/esp3d-webui/v3.x/documentation/api/index.html"><i class='fas fa-cogs'></i> API</a><ul id="R-subsections-fe945383558dbc4d066818e915fa98d8" class="morespace collapsible-menu">
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/webhandlers/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/webhandlers/index.html">Web Handlers</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/websockets/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/websockets/index.html">Web Sockets</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/variableslist/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/variableslist/index.html">Variables list</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/realtimecmd/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/realtimecmd/index.html">Real time commands</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/conventions/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/conventions/index.html">Syntax conventions</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/fileupload/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/fileupload/index.html">File upload</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/documentation/api/extensions/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/documentation/api/extensions/index.html">Extensions API</a></li></ul></li></ul></li>
+          <li data-nav-id="/esp3d-webui/v3.x/showcase/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/showcase/index.html"><i class='far fa-eye'></i> Showcase</a></li>
+          <li data-nav-id="/esp3d-webui/v3.x/credits/index.html" class=""><a class="padding" href="/esp3d-webui/v3.x/credits/index.html"><i class='fas fa-bullhorn'></i> Credits</a></li></ul></li></ul></li>
+          <li data-nav-id="/tools/index.html" class=""><input type="checkbox" id="R-section-cff67d57e00d6d598d882def3568f700" aria-controls="R-subsections-cff67d57e00d6d598d882def3568f700"><label for="R-section-cff67d57e00d6d598d882def3568f700"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Extra tools</span></label><a class="padding" href="/tools/index.html"><i class='fas fa-tools'></i> Extra tools</a><ul id="R-subsections-cff67d57e00d6d598d882def3568f700" class="morespace collapsible-menu">
+          <li data-nav-id="/tools/discovery/index.html" class=""><input type="checkbox" id="R-section-3f8d0182cf635f464f13a310a3bc798a" aria-controls="R-subsections-3f8d0182cf635f464f13a310a3bc798a"><label for="R-section-3f8d0182cf635f464f13a310a3bc798a"><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Discovery tools</span></label><a class="padding" href="/tools/discovery/index.html"><i class='fas fa-search'></i> Discovery tools</a><ul id="R-subsections-3f8d0182cf635f464f13a310a3bc798a" class="morespace collapsible-menu">
+          <li data-nav-id="/tools/discovery/ssdp/index.html" class=""><a class="padding" href="/tools/discovery/ssdp/index.html">SSDP protocol</a></li>
+          <li data-nav-id="/tools/discovery/mdns/index.html" class=""><a class="padding" href="/tools/discovery/mdns/index.html">mDNS protocol</a></li></ul></li>
+          <li data-nav-id="/tools/sdtools/index.html" class=""><a class="padding" href="/tools/sdtools/index.html"><i class='fas fa-sd-card'></i> SD tools</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/esp3d/v3.x/hardware/esp_boards/esp32/olimex-gateway/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-blue" value="blue" selected>Blue</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">    <center>
+	<p><a href="https://liberapay.com/ESP3D/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></p>
+	<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FQL59C749A78L"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" alt="PayPal The safer, easier way to pay online."></a></p>
+	<p><a href="https://https://ko-fi.com/G2G0C0QT7"><img alt="Donate using ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a></p>
+	</center>
+		
+    <p class="padding"><a  href="https://github.com/luc-github/esp3d.io" title="esp3d.io"><i class="fab fa-fw fa-github"></i> GitHub repo</a></p>
+	<p class="padding">Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1722688346" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688346" defer></script>
+    <script src="/js/theme.js?1722688346" defer></script>
+  </body>
+</html>

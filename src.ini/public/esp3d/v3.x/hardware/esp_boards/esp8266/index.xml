@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP8266 boards :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/index.html</link>
+    <description> </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP01 512K</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-512k/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-512k/index.html</guid>
+      <description>ESP01 512K Blue</description>
+    </item>
+    <item>
+      <title>ESP01 1M Generic</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-1m-generic/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01-1m-generic/index.html</guid>
+      <description>ESP01 1M Generic Black</description>
+    </item>
+    <item>
+      <title>ESP01S 1M</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01s-1m/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp01s-1m/index.html</guid>
+      <description>ESP01S 1M</description>
+    </item>
+    <item>
+      <title>ESP07</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp07/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp07/index.html</guid>
+      <description>ESP07</description>
+    </item>
+    <item>
+      <title>ESP12 e/f</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp12ex/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/esp12ex/index.html</guid>
+      <description>ESP12 e/f</description>
+    </item>
+    <item>
+      <title>Bigtreetech Cloud</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/bttcloud/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/bttcloud/index.html</guid>
+      <description>Bigtreetech Cloud </description>
+    </item>
+    <item>
+      <title>FYSETC-SD-WIFI</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/fysetcwifisd/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/fysetcwifisd/index.html</guid>
+      <description>FYSETC-SD-WIFI</description>
+    </item>
+    <item>
+      <title>Bigtreetech WiFi module</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/bttwifi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/bttwifi/index.html</guid>
+      <description>Bigtreetech WiFi module</description>
+    </item>
+    <item>
+      <title>Diymore</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/diymore/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/diymore/index.html</guid>
+      <description>Diymore</description>
+    </item>
+    <item>
+      <title>Wemos D1 mini</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/d1mini/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/d1mini/index.html</guid>
+      <description>Wemos D1 mini</description>
+    </item>
+    <item>
+      <title>Wemos D1 mini Pro</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/d1minipro/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/d1minipro/index.html</guid>
+      <description>Wemos D1 mini Pro</description>
+    </item>
+    <item>
+      <title>MKS WiFi Module V1.0 (8 pins)</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/mkstftwifimodule/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/mkstftwifimodule/index.html</guid>
+      <description>MKS WiFi Module V1.0 (8 pins)</description>
+    </item>
+    <item>
+      <title>MKS WiFi Module V1.1 (16 pins)</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/mkswifimodule/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/mkswifimodule/index.html</guid>
+      <description>MKS WiFi Module V1.1 (16 pins)</description>
+    </item>
+    <item>
+      <title>Nodemcu V0.8</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_0_8/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_0_8/index.html</guid>
+      <description>Nodemcu V0.8</description>
+    </item>
+    <item>
+      <title>Nodemcu V1.0</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_1_0/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/nodemcu_1_0/index.html</guid>
+      <description>Nodemcu V1.0</description>
+    </item>
+    <item>
+      <title>SOnOff</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/sonoff/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/sonoff/index.html</guid>
+      <description>SOnOff</description>
+    </item>
+    <item>
+      <title>WiFI backpack</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/wifibackpack/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/wifibackpack/index.html</guid>
+      <description>WiFI backpack</description>
+    </item>
+    <item>
+      <title>Azteeg X5 mini WIFI</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/azteeg_x5_mini_wifi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp8266/azteeg_x5_mini_wifi/index.html</guid>
+      <description>Azteeg X5 mini WIFI</description>
+    </item>
+  </channel>
+</rss>

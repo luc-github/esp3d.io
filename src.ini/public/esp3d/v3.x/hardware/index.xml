@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/hardware/index.html</link>
+    <description>&#xD;ESP boards&#xD;System boards</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP boards</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/index.html</guid>
+      <description>ESP8285 boards&#xD;blkboxme&#xD;Itead8285&#xD;ESP8266 boards&#xD;ESP01 512K&#xD;ESP01 1M Generic&#xD;ESP01S 1M&#xD;ESP07&#xD;ESP12 e/f&#xD;Bigtreetech Cloud&#xD;FYSETC-SD-WIFI&#xD;Bigtreetech WiFi module&#xD;Diymore&#xD;Wemos D1 mini&#xD;Wemos D1 mini Pro&#xD;MKS WiFi Module V1.0 (8 pins)&#xD;MKS WiFi Module V1.1 (16 pins)&#xD;Nodemcu V0.8&#xD;Nodemcu V1.0&#xD;SOnOff&#xD;WiFI backpack&#xD;Azteeg X5 mini WIFI&#xD;ESP32 boards&#xD;Dev Kit V1&#xD;Dev Kit C V4&#xD;TTGO/LILYGO V7 mini&#xD;Wemos D1 R32&#xD;TTGO T8&#xD;Lolin D32 Pro&#xD;Heltec Dev board&#xD;TTGO T Display&#xD;TTGO T96 Oled&#xD;Bigtreetech ESP32E module&#xD;Bigtreetech ESP32U module&#xD;ESP32-Cam&#xD;Olimex ESP32-Gateway&#xD;Olimex ESP32-POE&#xD;WT32-ETH1&#xD;ESP32-Pico boards&#xD;FYSETC SD-WIFI-PRO&#xD;ESP32-C3 boards&#xD;ESP-C3-32S-Kit&#xD;LILYGO T-01C3&#xD;ESP-C3-Super-Mini&#xD;ESP32-S2 boards&#xD;LILYGO T8 ESP32-S2 V1.</description>
+    </item>
+    <item>
+      <title>System boards</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/system_boards/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/system_boards/index.html</guid>
+      <description>TFT&#xD;Bigtreetech TFT&#xD;TFT 35 E3&#xD;TFT 70&#xD;Makerbase TFT&#xD;TFT 32L V4.0&#xD;TFT 35 V1.0&#xD;TFT 70 V1.1&#xD;Main boards&#xD;Anet boards up to v1.5 and 1.7&#xD;Anycubic i3 mega - Trigorilla 8bit board&#xD;Anycubic Kobra 2 - Trigorilla Pro B V1.0.2 board&#xD;AZSMZ LCD board&#xD;AZSMZ mini board&#xD;Azteeg X5 mini board&#xD;BIQU KFB2.0 board&#xD;Bigtreetech Octopus 1.1 board&#xD;Bigtreetech skr board&#xD;Bigtreetech skr mini board&#xD;Bigtreetech skr pro board&#xD;Creality CR10 Ender 3 board&#xD;Creality Ender 4 board&#xD;MKS GEN v1.</description>
+    </item>
+  </channel>
+</rss>

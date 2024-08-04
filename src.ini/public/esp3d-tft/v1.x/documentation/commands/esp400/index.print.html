@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Get full ESP3D settings">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="[ESP400] :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Get full ESP3D settings">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/documentation/commands/esp400/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="[ESP400] :: ESP3D Ecosystem">
+    <meta property="og:description" content="Get full ESP3D settings">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-TFT">
+    <meta itemprop="name" content="[ESP400] :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Get full ESP3D settings">
+    <meta itemprop="wordCount" content="529">
+    <title>[ESP400] :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/documentation/commands/esp400/index.html" rel="canonical" type="text/html" title="[ESP400] :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/documentation/commands/esp400/index.xml" rel="alternate" type="application/rss+xml" title="[ESP400] :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/documentation/commands/esp400/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/documentation/commands/index.html"><span itemprop="name">ESP3D commands</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">[ESP400]</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/commands/esp290/index.html" title="[ESP290] (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/documentation/commands/esp401/index.html" title="[ESP401] (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="esp400">[ESP400]</h1>
+<p>Get full ESP3D settings</p>
+<h2 id="input">Input</h2>
+<p><code>[ESP400] json=&lt;no&gt; pwd=&lt;admin password&gt;</code></p>
+<ul>
+<li>
+<p>json=no
+the output format
+can be in JSON or plain text</p>
+</li>
+<li>
+<p>pwd=<!-- raw HTML omitted -->
+the admin password if authentication is enabled</p>
+</li>
+</ul>
+<h2 id="output">Output</h2>
+<p>Passwords are not displayed and replaced by <code>********</code></p>
+<ul>
+<li>if json</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;cmd&#34;</span>:<span style="color:#e6db74">&#34;400&#34;</span>,<span style="color:#f92672">&#34;status&#34;</span>:<span style="color:#e6db74">&#34;ok&#34;</span>,<span style="color:#f92672">&#34;data&#34;</span>:[
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/network&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;130&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;esp3d&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;hostname&#34;</span> ,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;32&#34;</span>, <span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/network&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;radio mode&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;none&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;sta&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;ap&#34;</span>:<span style="color:#e6db74">&#34;2&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;setup&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/network&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1034&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;radio_boot&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;Luc-Lab&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;32&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;SSID&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;34&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;N&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;MS&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;********&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;64&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;pwd&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;8&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;99&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;ip mode&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;dhcp&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;static&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;100&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;192.168.0.1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;ip&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;108&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;192.168.0.1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;gw&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;104&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;255.255.255.0&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;msk&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1029&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;192.168.0.1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;DNS&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/sta&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1035&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;sta fallback mode&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;none&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;setup&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/ap&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;218&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;ESP3D&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;32&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;SSID&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/ap&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;251&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;N&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;MS&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;********&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;64&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;pwd&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;8&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/ap&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;316&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;A&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;192.168.0.1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;ip&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;network/ap&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;118&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;11&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;channel&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;1&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;2&#34;</span>:<span style="color:#e6db74">&#34;2&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;3&#34;</span>:<span style="color:#e6db74">&#34;3&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;4&#34;</span>:<span style="color:#e6db74">&#34;4&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;5&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;6&#34;</span>:<span style="color:#e6db74">&#34;6&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;7&#34;</span>:<span style="color:#e6db74">&#34;7&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;8&#34;</span>:<span style="color:#e6db74">&#34;8&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;9&#34;</span>:<span style="color:#e6db74">&#34;9&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;10&#34;</span>:<span style="color:#e6db74">&#34;10&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;11&#34;</span>:<span style="color:#e6db74">&#34;11&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;12&#34;</span>:<span style="color:#e6db74">&#34;12&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;13&#34;</span>:<span style="color:#e6db74">&#34;13&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;14&#34;</span>:<span style="color:#e6db74">&#34;14&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/http&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;328&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;enable&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/http&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;121&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;8181&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;port&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;65001&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/telnetp&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;329&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;enable&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/telnetp&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;125&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;23&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;port&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;65001&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/webdavp&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1024&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;enable&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/webdavp&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1025&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;80&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;port&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;65001&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/time&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;120&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;i-time&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/time&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1042&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;+08:00&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;tzone&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;-12:00&#34;</span>:<span style="color:#e6db74">&#34;-12:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-11:00&#34;</span>:<span style="color:#e6db74">&#34;-11:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-10:00&#34;</span>:<span style="color:#e6db74">&#34;-10:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-09:00&#34;</span>:<span style="color:#e6db74">&#34;-09:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-08:00&#34;</span>:<span style="color:#e6db74">&#34;-08:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-07:00&#34;</span>:<span style="color:#e6db74">&#34;-07:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-06:00&#34;</span>:<span style="color:#e6db74">&#34;-06:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-05:00&#34;</span>:<span style="color:#e6db74">&#34;-05:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-04:00&#34;</span>:<span style="color:#e6db74">&#34;-04:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-03:30&#34;</span>:<span style="color:#e6db74">&#34;-03:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-03:00&#34;</span>:<span style="color:#e6db74">&#34;-03:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-02:00&#34;</span>:<span style="color:#e6db74">&#34;-02:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;-01:00&#34;</span>:<span style="color:#e6db74">&#34;-01:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+00:00&#34;</span>:<span style="color:#e6db74">&#34;+00:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+01:00&#34;</span>:<span style="color:#e6db74">&#34;+01:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+02:00&#34;</span>:<span style="color:#e6db74">&#34;+02:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+03:00&#34;</span>:<span style="color:#e6db74">&#34;+03:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+03:30&#34;</span>:<span style="color:#e6db74">&#34;+03:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+04:00&#34;</span>:<span style="color:#e6db74">&#34;+04:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+04:30&#34;</span>:<span style="color:#e6db74">&#34;+04:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+05:00&#34;</span>:<span style="color:#e6db74">&#34;+05:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+05:30&#34;</span>:<span style="color:#e6db74">&#34;+05:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+05:45&#34;</span>:<span style="color:#e6db74">&#34;+05:45&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+06:00&#34;</span>:<span style="color:#e6db74">&#34;+06:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+06:30&#34;</span>:<span style="color:#e6db74">&#34;+06:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+07:00&#34;</span>:<span style="color:#e6db74">&#34;+07:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+08:00&#34;</span>:<span style="color:#e6db74">&#34;+08:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+08:45&#34;</span>:<span style="color:#e6db74">&#34;+08:45&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+09:00&#34;</span>:<span style="color:#e6db74">&#34;+09:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+09:30&#34;</span>:<span style="color:#e6db74">&#34;+09:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+10:00&#34;</span>:<span style="color:#e6db74">&#34;+10:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+10:30&#34;</span>:<span style="color:#e6db74">&#34;+10:30&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+11:00&#34;</span>:<span style="color:#e6db74">&#34;+11:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+12:00&#34;</span>:<span style="color:#e6db74">&#34;+12:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+12:45&#34;</span>:<span style="color:#e6db74">&#34;+12:45&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+13:00&#34;</span>:<span style="color:#e6db74">&#34;+13:00&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;+14:00&#34;</span>:<span style="color:#e6db74">&#34;+14:00&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/time&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;464&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;time.windows.com&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;128&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;t-server&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/time&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;593&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;time.google.com&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;128&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;t-server&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/time&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;722&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;0.pool.ntp.org&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;128&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;t-server&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/notification&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1022&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;auto notif&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/notification&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;116&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;notification&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;none&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;pushover&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;2&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;line&#34;</span>:<span style="color:#e6db74">&#34;3&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;telegram&#34;</span>:<span style="color:#e6db74">&#34;4&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;IFTTT&#34;</span>:<span style="color:#e6db74">&#34;5&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/notification&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;332&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;********&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;63&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;t1&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/notification&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;396&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;********&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;63&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;t2&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;service/notification&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;856&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;S&#34;</span>,<span style="color:#f92672">&#34;R&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34; &#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;128&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;ts&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/system&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;461&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;targetfw&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;repetier&#34;</span>:<span style="color:#e6db74">&#34;50&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;marlin&#34;</span>:<span style="color:#e6db74">&#34;20&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;smoothieware&#34;</span>:<span style="color:#e6db74">&#34;40&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;grbl&#34;</span>:<span style="color:#e6db74">&#34;10&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;unknown&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/system&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;112&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;115200&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;baud&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;9600&#34;</span>:<span style="color:#e6db74">&#34;9600&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;19200&#34;</span>:<span style="color:#e6db74">&#34;19200&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;38400&#34;</span>:<span style="color:#e6db74">&#34;38400&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;57600&#34;</span>:<span style="color:#e6db74">&#34;57600&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;74880&#34;</span>:<span style="color:#e6db74">&#34;74880&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;115200&#34;</span>:<span style="color:#e6db74">&#34;115200&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;230400&#34;</span>:<span style="color:#e6db74">&#34;230400&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;250000&#34;</span>:<span style="color:#e6db74">&#34;250000&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;500000&#34;</span>:<span style="color:#e6db74">&#34;500000&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;921600&#34;</span>:<span style="color:#e6db74">&#34;921600&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;1958400&#34;</span>:<span style="color:#e6db74">&#34;1958400&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/boot&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;320&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;I&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;100&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;bootdelay&#34;</span>,<span style="color:#f92672">&#34;S&#34;</span>:<span style="color:#e6db74">&#34;40000&#34;</span>,<span style="color:#f92672">&#34;M&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/boot&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1023&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;verbose&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/outputmsg&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;129&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;serial&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/outputmsg&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;851&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;M117&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]},
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;F&#34;</span>:<span style="color:#e6db74">&#34;system/outputmsg&#34;</span>,<span style="color:#f92672">&#34;P&#34;</span>:<span style="color:#e6db74">&#34;1006&#34;</span>,<span style="color:#f92672">&#34;T&#34;</span>:<span style="color:#e6db74">&#34;B&#34;</span>,<span style="color:#f92672">&#34;V&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>,<span style="color:#f92672">&#34;H&#34;</span>:<span style="color:#e6db74">&#34;telnet&#34;</span>,<span style="color:#f92672">&#34;O&#34;</span>:[{<span style="color:#f92672">&#34;no&#34;</span>:<span style="color:#e6db74">&#34;0&#34;</span>},{<span style="color:#f92672">&#34;yes&#34;</span>:<span style="color:#e6db74">&#34;1&#34;</span>}]
+</span></span><span style="display:flex;"><span>}]}</span></span></code></pre></div><p>1 - key : <code>Settings</code><br>
+2 - value: array of data formated like this<br>
+{&ldquo;F&rdquo;:&ldquo;network/network&rdquo;,&ldquo;P&rdquo;:&ldquo;130&rdquo;,&ldquo;T&rdquo;:&ldquo;S&rdquo;,&ldquo;V&rdquo;:&ldquo;esp3d&rdquo;,&ldquo;H&rdquo;:&ldquo;hostname&rdquo;,&ldquo;S&rdquo;:&ldquo;32&rdquo;,&ldquo;M&rdquo;:&ldquo;1&rdquo;}<br>
+or<br>
+{&ldquo;F&rdquo;:&ldquo;service/notification&rdquo;,&ldquo;P&rdquo;:&ldquo;1004&rdquo;,&ldquo;T&rdquo;:&ldquo;B&rdquo;,&ldquo;V&rdquo;:&ldquo;1&rdquo;,&ldquo;H&rdquo;:&ldquo;auto notif&rdquo;,&ldquo;O&rdquo;:[{&ldquo;no&rdquo;:&ldquo;0&rdquo;},{&ldquo;yes&rdquo;:&ldquo;1&rdquo;}]}</p>
+<pre><code>-   F: is filter formated as section/sub-section, if section is same as sub-section, it means no sub-section
+-   P: is id (also position reference so it is unique)
+-   T: is type of data which can be:
+    -   S: for string
+    -   I: for integer
+    -   B: for Byte
+    -   A: for IP address / Mask
+    -   F: for float (only grblHAL)
+    -   M: for bits mask (only grblHAL)
+    -   X: for exclusive bitsfield (only grblHAL)
+-   V: is current value, if type is string and value is `********`, (8 stars) then it is a password
+-   E: is integer for exactess / precision of float/double value (only grblHAL)
+-   U: is text unit of value (only grblHAL)
+-   H: is text label of value
+-   S: is max size if type is string, and max possible value if value is number (byte, integer)
+-   M: is min size if type is string, and min possible value if value is number (byte, integer)
+-   MS: is additionnal min size if type is string (e.g for password can be 0 or 8, so need additional min size), M should be the more minimal value
+    so MS value must be between M and S
+-   O: is an array of {label:value} used for possible values in selection or bits labels list
+-   R: need restart to be applied
+</code></pre>
+<p>Note: if Type <code>M</code> and <code>X</code> use <code>O</code> entry to define the label / position, if <code>O</code> is <code>[]</code> then axis label are used according need <code>X</code>, <code>Y</code>, <code>Z</code>, <code>A</code>, <code>B</code>, <code>C</code><br>
+Note2 : the 2.1 Flag type is no more used, several entries are used instead grouped by sub-section</p>
+<p>If no json the list is limited to a list of <code>&lt;help&gt;: &lt;value&gt;</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Settings:
+</span></span><span style="display:flex;"><span>network/network/hostname: esp3d
+</span></span><span style="display:flex;"><span>network/network/radio mode: 5
+</span></span><span style="display:flex;"><span>network/network/radio_boot: 1
+</span></span><span style="display:flex;"><span>network/sta/SSID: NETWORK_SSID
+</span></span><span style="display:flex;"><span>network/sta/pwd: ********
+</span></span><span style="display:flex;"><span>network/sta/ip mode: 1
+</span></span><span style="display:flex;"><span>network/sta/ip: 192.168.0.254
+</span></span><span style="display:flex;"><span>network/sta/gw: 192.168.0.254
+</span></span><span style="display:flex;"><span>network/sta/msk: 255.255.255.0
+</span></span><span style="display:flex;"><span>network/sta/DNS: 192.168.0.254
+</span></span><span style="display:flex;"><span>network/sta/sta fallback mode: 5
+</span></span><span style="display:flex;"><span>network/ap/SSID: ESP3D
+</span></span><span style="display:flex;"><span>network/ap/pwd: ********
+</span></span><span style="display:flex;"><span>network/ap/ip: 192.168.0.1
+</span></span><span style="display:flex;"><span>network/ap/channel: 11
+</span></span><span style="display:flex;"><span>service/time/i-time: 0
+</span></span><span style="display:flex;"><span>service/time/tzone: +00:00
+</span></span><span style="display:flex;"><span>service/time/t-server: time.windows.com
+</span></span><span style="display:flex;"><span>service/time/t-server: time.google.com
+</span></span><span style="display:flex;"><span>service/time/t-server: 0.pool.ntp.org
+</span></span><span style="display:flex;"><span>service/notification/auto notif: 1
+</span></span><span style="display:flex;"><span>service/notification/notification: 0
+</span></span><span style="display:flex;"><span>service/notification/t1: 
+</span></span><span style="display:flex;"><span>service/notification/t2:
+</span></span><span style="display:flex;"><span>service/notification/ts: 
+</span></span><span style="display:flex;"><span>system/system/targetfw: 0
+</span></span><span style="display:flex;"><span>system/system/baud: 115200
+</span></span><span style="display:flex;"><span>system/boot/bootdelay: 10000
+</span></span><span style="display:flex;"><span>system/boot/verbose: 0
+</span></span><span style="display:flex;"><span>ok</span></span></code></pre></div>
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

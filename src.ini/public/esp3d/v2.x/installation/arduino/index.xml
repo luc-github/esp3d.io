@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino IDE :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v2.x/installation/arduino/index.html</link>
+    <description>Prepare the development environment Please download ide from https://www.arduino.cc/en/software Warning&#xD;Please use the Legacy IDE (1.8.X), the Arduino IDE 2.X was not tested and won’t be supported&#xA;Install the esp core according your target:&#xA;ESP8266&#xA;Warning&#xD;Please use the version 2.5.2 or 2.7.4 only! Do not use any version upper than 2.7.4&#xA;ESP32&#xA;Warning&#xD;Please use the version 1.0.4 only! Do not use any version upper than 1.0.4, and only use ESP32 board, other ESP32 flavors(C2, S2, S3, etc) are not supported in this version.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v2.x/installation/arduino/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

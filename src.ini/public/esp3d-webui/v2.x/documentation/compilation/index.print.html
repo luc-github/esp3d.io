@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Commands and syntax">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Compilation :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Commands and syntax">
+    <meta property="og:url" content="http://localhost:1313/esp3d-webui/v2.x/documentation/compilation/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Compilation :: ESP3D Ecosystem">
+    <meta property="og:description" content="Commands and syntax">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-WEBUI">
+    <meta itemprop="name" content="Compilation :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Commands and syntax">
+    <meta itemprop="wordCount" content="302">
+    <title>Compilation :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-webui/v2.x/documentation/compilation/index.html" rel="canonical" type="text/html" title="Compilation :: ESP3D Ecosystem">
+    <link href="/esp3d-webui/v2.x/documentation/compilation/index.xml" rel="alternate" type="application/rss+xml" title="Compilation :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-webui/v2.x/documentation/compilation/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v2.x/index.html"><span itemprop="name">Version 2.1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v2.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Compilation</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v2.x/documentation/camera/index.html" title="Camera support (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v2.x/showcase/index.html" title="Showcase (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="compilation">Compilation</h1>
+<p>To be able to generate file from sources you need to install nodejs, gulp and some addons. <br>
+1 - Install current <a href="https://nodejs.org/en/download/" rel="external" target="_blank">nodejs LTS</a>   (v10.15.3) <br>
+2 - Install gulp-cli globaly <code>npm install --global gulp-cli</code><br>
+3 - Install gulp globaly <code>npm install --global gulp@4.0.0</code><br>
+4 - Install all addons <code>npm install</code></p>
+<p>You should have something like this :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>E:\github\ESP3D-WEBUI&gt;node -v
+v10.14.0
+
+E:\github\ESP3D-WEBUI&gt;gulp -v
+[22:17:03] CLI version 2.0.1
+[22:17:03] Local version 4.0.0
+
+E:\github\ESP3D-WEBUI&gt;npm -v
+6.4.1</code></pre></div><p>5 - Do the code modification you want, then launch <code>gulp package</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>E:\github\ESP3D-WEBUI&gt;gulp package
+[15:17:13] Using gulpfile E:\github\ESP3D-WEBUI\gulpfile.js
+[15:17:13] Starting &#39;package&#39;...
+[15:17:13] Starting &#39;clean&#39;...
+[15:17:13] Finished &#39;clean&#39; after 5.6 ms
+[15:17:13] Starting &#39;lint&#39;...
+[15:17:13] Finished &#39;lint&#39; after 144 ms
+[15:17:13] Starting &#39;Copy&#39;...
+[15:17:13] Finished &#39;Copy&#39; after 21 ms
+[15:17:13] Starting &#39;concatApp&#39;...
+[15:17:14] Finished &#39;concatApp&#39; after 53 ms
+[15:17:14] Starting &#39;includehtml&#39;...
+[15:17:14] Finished &#39;includehtml&#39; after 7.91 ms
+[15:17:14] Starting &#39;includehtml&#39;...
+[15:17:14] Finished &#39;includehtml&#39; after 6.18 ms
+[15:17:14] Starting &#39;replaceSVG&#39;...
+[15:17:14] Finished &#39;replaceSVG&#39; after 5.36 ms
+[15:17:14] Starting &#39;minifyApp&#39;...
+\style.css: 125691
+\style.css: 102958
+[15:17:16] Finished &#39;minifyApp&#39; after 2.2 s
+[15:17:16] Starting &#39;smoosh&#39;...
+[15:17:16] Finished &#39;smoosh&#39; after 117 ms
+[15:17:16] Starting &#39;compress&#39;...
+[15:17:16] Finished &#39;compress&#39; after 26 ms
+[15:17:16] Starting &#39;clean2&#39;...
+[15:17:16] Finished &#39;clean2&#39; after 3.83 ms
+[15:17:16] Finished &#39;package&#39; after 2.61 s</code></pre></div><p>If no issue, a file called index.html.gz will be generated at the root of repository, so you just need to upload it like described in <a href="/esp3d-webui/v2.x/installation/index.html">installation page</a></p>
+<p>By default is build a multilanguage file, if file is too big for your flash size you can build with only english and one additional language:</p>
+<ul>
+<li><code>gulp package --lang en</code> will only build english</li>
+<li><code>gulp package --lang fr</code> will only build french + english</li>
+<li><code>gulp package --lang es</code> will only build spanish + english</li>
+<li><code>gulp package --lang it</code> will only build italian + english</li>
+<li><code>gulp package --lang de</code> will only build german + english</li>
+<li>etc&hellip;</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

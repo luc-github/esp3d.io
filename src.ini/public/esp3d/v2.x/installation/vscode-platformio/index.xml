@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode &amp; Platformio :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v2.x/installation/vscode-platformio/index.html</link>
+    <description>Prepare the development environment Download and install VSCode&#xA;Add PlatformIO IDE extension to VSCode&#xA;Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient&#xA;ESP3D configuration Open esp3d/config.h and set features you want.&#xA;//Customize ESP3D //////////////////////////////////////////////////////////////////////// #define ESP8266_MODEL_NAME &#34;ESP8266&#34; #define ESP8266_MODEL_URL &#34;http://espressif.com/en/products/esp8266/&#34; #define ESP32_MODEL_NAME &#34;ESP32&#34; #define ESP32_MODEL_URL &#34;https://www.espressif.com/en/products/hardware/esp-wroom-32/overview&#34; #define ESP_MODEL_NUMBER &#34;ESP3D 2.1&#34; #define ESP_MANUFACTURER_NAME &#34;Espressif Systems&#34; #define ESP_MANUFACTURER_URL &#34;http://espressif.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v2.x/installation/vscode-platformio/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

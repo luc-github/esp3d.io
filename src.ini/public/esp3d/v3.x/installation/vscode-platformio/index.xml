@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode &amp; Platformio :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.html</link>
+    <description>Prepare the development environment Download and install VSCode&#xA;Add PlatformIO IDE extension to VSCode&#xA;Open the ESP3D directory folder in VSCode The first time you open the project, vscode need to download all necessary files, so be patient&#xA;ESP3D configuration Open esp3d/configuration.h and set features you want.&#xA;You can also generate it, using the ESP3D configurator, which simplify a lot this step. /* Setup station as default, use AP mode first if not done * Note: need both defined to enable it * Uncomment and edit them to define */ //#define STATION_WIFI_SSID &#34;*********&#34; //#define STATION_WIFI_PASSWORD &#34;*********&#34; /* You can also use a different config file for SSID/password * Just save it in same location as this configuration.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/installation/vscode-platformio/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

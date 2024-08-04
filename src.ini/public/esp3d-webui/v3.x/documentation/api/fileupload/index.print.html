@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="File upload parameters">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="File upload :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="File upload parameters">
+    <meta property="og:url" content="http://localhost:1313/esp3d-webui/v3.x/documentation/api/fileupload/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="File upload :: ESP3D Ecosystem">
+    <meta property="og:description" content="File upload parameters">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="ESP3D-WEBUI">
+    <meta itemprop="name" content="File upload :: ESP3D Ecosystem">
+    <meta itemprop="description" content="File upload parameters">
+    <meta itemprop="wordCount" content="239">
+    <title>File upload :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-webui/v3.x/documentation/api/fileupload/index.html" rel="canonical" type="text/html" title="File upload :: ESP3D Ecosystem">
+    <link href="/esp3d-webui/v3.x/documentation/api/fileupload/index.xml" rel="alternate" type="application/rss+xml" title="File upload :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-webui/v3.x/documentation/api/fileupload/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/documentation/api/index.html"><span itemprop="name">API</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">File upload</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/api/conventions/index.html" title="Syntax conventions (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/api/extensions/index.html" title="Extensions API (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="file-upload">File upload</h1>
+<p>The file upload is done using a multipart form data POST request.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>------WebKitFormBoundaryYz6fcTCJfjQG8Wp6
+Content-Disposition: form-data; name=&#34;path&#34;
+
+/
+------WebKitFormBoundaryYz6fcTCJfjQG8Wp6
+Content-Disposition: form-data; name=&#34;/8822552.jpgS&#34;
+
+3308
+------WebKitFormBoundaryYz6fcTCJfjQG8Wp6
+Content-Disposition: form-data; name=&#34;/8822552.jpgT&#34;
+
+2022-08-24T20:17:30
+------WebKitFormBoundaryYz6fcTCJfjQG8Wp6
+Content-Disposition: form-data; name=&#34;myfiles&#34;; filename=&#34;/8822552.jpg&#34;
+Content-Type: image/jpeg
+
+
+------WebKitFormBoundaryYz6fcTCJfjQG8Wp6--</code></pre></div><p>All parameters are sent before the file data itself.</p>
+<p>For each file:</p>
+<h4 id="the-path-parameter-required">The path parameter (required)</h4>
+<p>The path parameter is the path where the file will be uploaded. It is an absolute path starting from the root of the filesystem and do not contain the filename.</p>
+<h4 id="the-file-size-parameter-optional-but-recommended">The file size parameter (optional but recommended)</h4>
+<p>The file size parameter is the size of the file to upload. It is used to check if the file can be uploaded and is used to check if the file is fully uploaded.
+The argument name is the full file path with filename with a <code>S</code> suffix.
+The value is the size of the file in bytes.</p>
+<h4 id="the-file-time-parameter-optional">The file time parameter (optional)</h4>
+<p>The file time parameter is the last modified time of the file to upload. It is optional but allow to set right time on file on ESP that has not time synchronization.
+The argument name is the full file path with filename with a <code>T</code> suffix.
+The value format is ISO 8601 (YYYY-MM-DDThh:mm:ss) without timezone.</p>
+<h4 id="the-file-data-binary-required">The file data binary (required)</h4>
+<p>The file data binary is the file data itself. It is the last parameter of the multipart form data POST request, and it also contains the full file name.</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

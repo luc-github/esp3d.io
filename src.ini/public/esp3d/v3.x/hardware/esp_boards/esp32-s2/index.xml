@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ESP32-S2 boards :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/index.html</link>
+    <description> </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LILYGO T8 ESP32-S2 V1.1</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/lilygo-s2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/lilygo-s2/index.html</guid>
+      <description>LILYGO T8 ESP32-S2 V1.1</description>
+    </item>
+    <item>
+      <title>ESP32-S2-Saola-1</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/saola-1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/saola-1/index.html</guid>
+      <description>ESP32-S2-Saola-1</description>
+    </item>
+    <item>
+      <title>Wemos S2 mini</title>
+      <link>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/wemos-s2-mini/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d/v3.x/hardware/esp_boards/esp32-s2/wemos-s2-mini/index.html</guid>
+      <description>Wemos S2 mini</description>
+    </item>
+  </channel>
+</rss>

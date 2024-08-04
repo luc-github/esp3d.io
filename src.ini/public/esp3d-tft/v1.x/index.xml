@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version 1.X :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3d-tft/v1.x/index.html</link>
+    <description>This version is the development version, features can change anytime, feedback, PR and suggestions are welcome.&#xA;Firmware should work with the following firmwares:&#xA;Repetier 1.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x grblHAL The communication between ESP board and target board is done by serial or by USB depending of ESP32 board.&#xA;The firmware must be used with ESP3D-WEBUI 3.X&#xA;Estimated planning %%{init:{&#34;theme&#34;:&#34;default&#34;}}%%&#xD;gantt&#xD;dateFormat YYYY-MM-DD&#xD;title ESP3D-TFT Planning&#xD;section Code Study&#xD;IDF FrameWork Study :done, des1, 2022-08-24,2022-09-05&#xD;Code project definition :done, des2, 2022-09-06, 2022-09-16&#xD;section Code implementation&#xD;Drivers implementation :done, des3, 2022-09-16, 2022-10-06&#xD;Serial implementation :done, des4, 2022-10-07, 2022-10-12&#xD;ESP3D Commands API :done, des5, 2022-10-13, 2022-10-23&#xD;Filesystem API :done, des6, 2022-10-24, 2022-10-27&#xD;Network implementation :done, des7, 2022-10-28, 2022-11-03&#xD;SD API :done, des8, 2022-11-04, 2022-11-06&#xD;HTTP Server :done, des9, 2022-11-07, 2022-12-04&#xD;WebSocket Server code base :done, des10, 2022-12-04, 2022-12-05&#xD;Tests and Bug fixes :done, des11, 2022-12-05, 2022-12-11&#xD;Update feature :done, des12, 2022-12-11, 2022-12-12&#xD;Notifications feature :done, des13, 2022-12-13, 2022-12-19&#xD;mDNS feature :done, des14, 2022-12-19, 2022-12-20&#xD;SSDP feature :done, des15, 2022-12-19, 2022-12-30&#xD;Telnet server feature :done, des16, 2022-12-31, 2023-01-07&#xD;Tests and Bug fixes :done, des17, 2022-12-31, 2023-01-15&#xD;USB Host feature :done, des18, 2023-01-16, 2023-01-18&#xD;Build-CI implementation :done, des19, 2023-01-18, 2023-01-22&#xD;Authentication implementation :done, des20, 2023-01-23, 2023-02-12&#xD;esp3d.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3d-tft/v1.x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Features</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/features/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/features/index.html</guid>
+      <description>The V1.X features are :&#xA;Embedded maintenance page (terminal / local FS update / ESP3D Firmware update) WebUI 3.X support ESP32 / ESP32-S3 support Wifi Raw TCP / serial bridge support (light telnet) Websocket / serial bridge support Serial / Serial bridge support Bluetooth Serial bridge support (when BT supported) Serial commands configurations Authentication support (admin / user) WebDav support Local FS support: Little FS SD support(Direct connection) File format Native SPI Native SDIO USB (OTG) Hostsupport (need to use external power supply) Global FS under Webdav : SD + Local FS in same directory Buzzer support (Not yet) Pins control by commands (Not yet) Time synchronization support (manual / internet server) Notifications support WebUI TFT/OLED Email Line Telegram PushOver IFTTT Auto script support at start (Not yet) Host GCODE stream for macros hosted on local FS (Work in Progress) Update ESP3D configuration using ini file on SD ESP3D update using binary file on SD OTA support Update by WebUI </description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/installation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/installation/index.html</guid>
+      <description>Download the project Using git Clone repository&#xA;git clone https://github.com/luc-github/ESP3D-TFT.git ESP3D-TFT Go to the project&#xA;cd ESP3D-TFT Update the project submodules&#xA;git submodule update --init --recursive Note&#xD;If you have limited network access and have issue to connect to GitHub, it is recommended to use dev sidecar software.&#xA;Using release package Not ready yet, please be patient&#xA;Setup your development environment Download and install VSCode&#xA;Install the espressif vscode extension The espressif extension can be installed using the extension manager.</description>
+    </item>
+    <item>
+      <title>Documentation</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/documentation/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/documentation/index.html</guid>
+      <description>The documentation section will help you on: ESP3D commandsSyntax and parameters&#xA;AuthenticationWhat is authentication in ESP3D-TFT?&#xA;NotificationsSetup and configuration&#xA;Camera supportCamera configuration&#xA;Compilation GuideCompilation Guide&#xA;Update supportUpdate feature description&#xA;About FTPFTP usage and configuration&#xA;About WebDAVWebDav usage and API&#xA;FAQFrequent asked questions and their answers&#xA;APIAPI description</description>
+    </item>
+    <item>
+      <title>Hardware</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/hardware/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/hardware/index.html</guid>
+      <description>ESP32 boards 3.5&#39; RotricsESP32 3.5&#39; (480x320) TFT&#xA;3.5&#39; ESP32-3248S035R/CESP32 - 3.5&#39; (480x320) TFT&#xA;2.8&#39; ESP32-2432S028RESP32 - 2.8&#39; (320x240) TFT&#xA;ESP32-S3 boards 3.5&#39; ZX3D50CE02S-USRC-4832ESP32-S3 3.5&#39; (480x320) TFT&#xA;4.3&#39; HMI-V3ESP32-S3 4.3&#39; (800x480) TFT&#xA;7.0&#39; ESP32-8048S070CESP32-S3 7&#39; (800×480) TFT&#xA;5.0&#39; ESP32-8048S050CESP32-S3 5&#39; (800x480) IPS TFT&#xA;4.3&#39; ESP32-8048S043CESP32-S3 4.3&#39; (800x480) IPS TFT&#xA;4.3&#39; ESP32-4827S043R/CESP32-S3 4.3&#39; (480x272) TFT&#xA;3.5&#39; BZM-V1ESP32 - 3.5&#39; (480x320) TFT</description>
+    </item>
+    <item>
+      <title>Showcase</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/showcase/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/showcase/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Credits</title>
+      <link>http://localhost:1313/esp3d-tft/v1.x/credits/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/esp3d-tft/v1.x/credits/index.html</guid>
+      <description>Big thanks to : @3DSmitty for pushing back this old project to the top list of projects.&#xA;Embedded code / inspiration code FTP server come from Jean-Michel Gallego https://github.com/gallegojm/Arduino-Ftp-Server WebDav server come from David Gauchard https://github.com/d-a-v/ESPWebDAV Line support come from https://github.com/TridentTD/TridentTD_LineNotify and https://notify-bot.line.me/doc/en/ and https://pushover.net/api Pushover support come from https://github.com/ArduinoHannover/Pushover Email support come from https://github.com/CosmicBoris/ESP8266SMTP and https://www.electronicshub.org/send-an-email-using-esp8266/ Telegram support come from https://medium.com/@xabaras/sending-a-message-to-a-telegram-channel-the-easy-way-eb0a0b32968 Libraries SSDP_IDF come from luc-github https://github.com/luc-github/SSDP_IDF lvgl come from https://littlevgl.</description>
+    </item>
+  </channel>
+</rss>

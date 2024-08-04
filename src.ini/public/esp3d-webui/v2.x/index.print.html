@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+WebUI should support features of the following firmwares:
+Repetier 1.0/2.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x The ESP3D-WEBUI 2.X must be used with ESP3D 2.X, ESP3DLib 1.X.">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Version 2.1.X :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+WebUI should support features of the following firmwares:
+Repetier 1.0/2.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x The ESP3D-WEBUI 2.X must be used with ESP3D 2.X, ESP3DLib 1.X.">
+    <meta property="og:url" content="http://localhost:1313/esp3d-webui/v2.x/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Version 2.1.X :: ESP3D Ecosystem">
+    <meta property="og:description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+WebUI should support features of the following firmwares:
+Repetier 1.0/2.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x The ESP3D-WEBUI 2.X must be used with ESP3D 2.X, ESP3DLib 1.X.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Version 2.1.X :: ESP3D Ecosystem">
+    <meta itemprop="description" content="This version is the production version, features are frozen, only bugfixes are accepted.
+WebUI should support features of the following firmwares:
+Repetier 1.0/2.0 Marlin 1.X/2.X Smoothieware 1.x grbl 1.x The ESP3D-WEBUI 2.X must be used with ESP3D 2.X, ESP3DLib 1.X.">
+    <meta itemprop="wordCount" content="40">
+    <title>Version 2.1.X :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-webui/v2.x/index.html" rel="canonical" type="text/html" title="Version 2.1.X :: ESP3D Ecosystem">
+    <link href="/esp3d-webui/v2.x/index.xml" rel="alternate" type="application/rss+xml" title="Version 2.1.X :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-webui/v2.x/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Version 2.1.X</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/index.html" title="ESP3D-WEBUI (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v2.x/features/index.html" title="Features (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="version-2.1.x">Version 2.1.X</h1>
+<p><span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1" target="_blank"><img src="https://img.shields.io/badge/ESP3D_WEBUI-2.X-green?style=plastic&amp;logo=github" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3D-WEBUI/releases/tag/v2.1.1" target="_blank"><img src="https://img.shields.io/github/release/luc-github/ESP3D-WEBUI.svg?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1" target="_blank"><img src="https://img.shields.io/github/commit-activity/y/luc-github/ESP3D-WEBUI/2.1?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1.x" target="_blank"><img src="https://img.shields.io/github/last-commit/luc-github/ESP3D-WEBUI/2.1?style=plastic" style="height:1.2rem" atl=""/></a></span>
+
+
+<span style="display:inline-block!important;"><a href="https://discord.gg/Z4ujTwE" target="_blank"><img src="https://img.shields.io/discord/752822148795596940?color=blue&amp;label=discord-esp3d&amp;logo=discord" style="height:1.2rem" atl=""/></a></span>
+
+</p>
+<p>This version is the production version, features are frozen, only bugfixes are accepted.</p>
+<p>WebUI should support features of the following firmwares:</p>
+<ul>
+<li><a href="https://www.repetier.com/documentation/repetier-firmware/" rel="external" target="_blank">Repetier 1.0/2.0</a></li>
+<li><a href="https://marlinfw.org/" rel="external" target="_blank">Marlin 1.X/2.X</a></li>
+<li><a href="https://smoothieware.org/" rel="external" target="_blank">Smoothieware 1.x</a></li>
+<li><a href="https://github.com/gnea/grbl" rel="external" target="_blank">grbl 1.x</a></li>
+</ul>
+<p><a href="#R-image-fc63fd0ea716e0c8fd585d8602b66b22" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/full.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fc63fd0ea716e0c8fd585d8602b66b22"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/full.png"></a></p>
+<p>The ESP3D-WEBUI 2.X must be used with <a href="/esp3d/v2.x/index.html">ESP3D 2.X</a>, <a href="/esp3dlib/v1.x/index.html">ESP3DLib 1.X</a>.</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Version 2.1.X</h1>
+          <article class="chapter">
+<h1 id="features">Features</h1>
+<p>The V2.1.X features are :</p>
+<ul>
+<li>Multiple firmwares support: Repetier, Marlin, Smoothieware and GRBL.</li>
+<li>Multiple languages support</li>
+<li>Full WiFi configuration of ESP3D settings including web update</li>
+<li>Control and monitor your connected board and firmware  in every aspect (position, temperature, print, SD card content, custom commands, etc&hellip;)</li>
+<li>Macro support to add custom commands in WebUI by adding buttons launching some GCODE files from SD or ESP</li>
+<li>IP Camera support.</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="installation">Installation</h1>
+<p>The Web UI is represented by one file : index.hml.gz
+The full package with all languages is available <a href="https://github.com/luc-github/ESP3D-WEBUI/blob/2.1/languages/multi/index.html.gz" rel="external" target="_blank">here</a>
+But it may not fit your available size on flash, so you can select a single language package <a href="https://github.com/luc-github/ESP3D-WEBUI/tree/2.1/languages" rel="external" target="_blank">here</a> which is lighter and will fit smallest boards.</p>
+<h3 id="upload-indexhtmlgz">Upload index.html.gz</h3>
+<h4 id="using-embedded-uploader">Using embedded uploader</h4>
+<p><a href="#R-image-76200f04ee04fb2adbfbdbcae8ceef80" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/installation/embedded_fs.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76200f04ee04fb2adbfbdbcae8ceef80"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/installation/embedded_fs.png"></a></p>
+<p>If the embedded is not visible you can access to it using:
+<code>http://your_IP_address?forcefallback=yes</code> anytime</p>
+<h4 id="using-web-ui">Using Web UI</h4>
+<p>You can upload file using Web UI</p>
+<p><a href="#R-image-34ce3ab06b95a0e6f1696a68dc60f483" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/installation/spiffs_access.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34ce3ab06b95a0e6f1696a68dc60f483"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/installation/spiffs_access.png"></a></p>
+<p><a href="#R-image-e848da3eb31728c40ef3f9af58103e2b" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/installation/spiffs_modal.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e848da3eb31728c40ef3f9af58103e2b"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/installation/spiffs_modal.png"></a></p>
+<h3 id="finalize-update">Finalize update</h3>
+<p>Refresh the page to <code>http://your_IP</code> to display updated Web interface.</p>
+<p><a href="#R-image-f3df3b7926ffba2e1f4071b1acce030d" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/installation/full.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f3df3b7926ffba2e1f4071b1acce030d"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/installation/full.png"></a></p>
+<p>Note: you can also upload a customized <code>favicon.ico</code></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="documentation">Documentation</h1>
+<h2 id="browser-compatibility-for-esp3d-21x">Browser compatibility for ESP3D 2.1.X</h2>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Browser</th>
+<th>Support</th>
+<th>Comment</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Win7/Win10</td>
+<td>IE 11</td>
+<td>Limited</td>
+<td>Dashboard is has one column due to no grid layout support</td>
+<td>Defined as limitation</td>
+</tr>
+<tr>
+<td>Win7</td>
+<td>Safari 5.1.7 2012</td>
+<td>Low</td>
+<td>Dashboard is has one column due to no grid layout support / not good SVG support so no Jog UI</td>
+<td>Defined as limitation</td>
+</tr>
+<tr>
+<td>Win10</td>
+<td>Edge</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Win7 /Win10</td>
+<td>Chrome</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Win7</td>
+<td>Opera</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Win7</td>
+<td>Firefox</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Android</td>
+<td>Chrome</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OSX</td>
+<td>Safari 11.1.2 2018</td>
+<td>Ok</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The documentation section will help you on:
+
+  <ul class="children children-li children-sort-weight">
+  	
+  <li><a href="/esp3d-webui/v2.x/documentation/translation/index.html">Translations</a><p>Steps and supported languages</p></li>
+  <li><a href="/esp3d-webui/v2.x/documentation/camera/index.html">Camera support</a><p>Camera configuration</p></li>
+  <li><a href="/esp3d-webui/v2.x/documentation/compilation/index.html">Compilation</a><p>Commands and syntax</p></li>
+  </ul></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Documentation</h1>
+          <article class="chapter">
+<h1 id="translations">Translations</h1>
+<p>The WebUI unfortunatly does not support UTF8, so for special character specific to the language like : ¡ í á ó <br>
+please refere to : <a href="https://www.degraeve.com/reference/specialcharacters.php" rel="external" target="_blank">specialcharacters.php</a> and <a href="https://pl.wikipedia.org/wiki/Kodowanie_polskich_znak%C3%B3w" rel="external" target="_blank">wiki</a></p>
+<h2 id="language-currently-supported">Language currently supported</h2>
+<h3 id="english-en--100-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguageenjs">English (en) : 100% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/en.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="french-fr--72-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagefrjs">French (fr) : 72% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/fr.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="german-de-72-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagedejs">German (de): 72% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/de.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="hungarian-hu-99-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagehujs">Hungarian: (hu) 99% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/hu.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="italian--it-72-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguageitjs">Italian : (it) 72% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/it.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="spanish--es-72-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguageesjs">Spanish : (es) 72% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/es.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="polish--pl-87-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagepljs">Polish : (pl) 87% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/pl.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="russian-ru-87-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagerujs">Russian: (ru) 87% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/ru.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="ukrainian-uk-87-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguageukjs">Ukrainian: (uk) 87% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/uk.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="portuguese-br-ptbr-97-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguageptbrjs">Portuguese-Br: (ptbr) 97% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/ptbr.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="chinese-simplified-zh_cn-99-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagezh_cnjs">Chinese (simplified) (zh_CN): 99% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/zh_CN.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="chinese-traditional-zh_tw-99-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagezh_twjs">Chinese (traditional) (zh_TW): 99% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/zh_TW.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="japanese-ja-99-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagejajs">Japanese (ja): 99% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/ja.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="turkish-tr-97-herehttpsrawgithubusercontentcomluc-githubesp3d-webui21wwwjslanguagetrjs">Turkish: (tr) 97% <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/tr.js" rel="external" target="_blank">Here</a></h3>
+<h3 id="how-to-translate">How to translate</h3>
+<ul>
+<li>Translate the right side only if necessary</li>
+<li>Check language.tpl if any update</li>
+<li>Submit Issue or PR with modified file</li>
+</ul>
+<p>Note: English is the reference but it can be adjusted if necessary, just add the corresponding reference to the english file.</p>
+<h3 id="to-add-a-new-language-">To add a new language :</h3>
+<p>The template file is <a href="https://raw.githubusercontent.com/luc-github/ESP3D-WEBUI/2.1/www/js/language/lang.tpl" rel="external" target="_blank">here</a></p>
+<ul>
+<li>Change <code>lang</code> to the proper local descriptor</li>
+<li>Translate the right side only</li>
+<li>Submit Issue with modified file (do not do PR as another <a href="https://github.com/luc-github/ESP3D-WEBUI/blob/2.1/www/js/translate.js#L3" rel="external" target="_blank">file</a> need to be updated)</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="home">
+            <header class="headline">
+            </header>
+
+<h1 id="camera-support">Camera support</h1>
+
+<p>You can display external IP camera stream enabling the camera page, and put ip address in input control.
+The address depend on your camera, same for credentials</p>
+<p>The screenshot is just an example</p>
+<p><a href="#R-image-9bd29878ca72c98479718c13088eb374" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/documentation/camera/camera.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9bd29878ca72c98479718c13088eb374"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/documentation/camera/camera.png?width=400px"></a></p>
+<p>If your camera cannot be opened in web browser, then it is not possible to capture it in WebUI.</p>
+<p>If you use espcam32 and want to use esp3d also on it, you need to use <a href="/esp3d/v3.x/index.html">ESP3D V3</a> with <a href="/esp3d-webui/v3.x/documentation/camera/index.html#espcam32">ESP3D-WEBUI V3</a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="chapter">
+<h1 id="compilation">Compilation</h1>
+<p>To be able to generate file from sources you need to install nodejs, gulp and some addons. <br>
+1 - Install current <a href="https://nodejs.org/en/download/" rel="external" target="_blank">nodejs LTS</a>   (v10.15.3) <br>
+2 - Install gulp-cli globaly <code>npm install --global gulp-cli</code><br>
+3 - Install gulp globaly <code>npm install --global gulp@4.0.0</code><br>
+4 - Install all addons <code>npm install</code></p>
+<p>You should have something like this :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>E:\github\ESP3D-WEBUI&gt;node -v
+v10.14.0
+
+E:\github\ESP3D-WEBUI&gt;gulp -v
+[22:17:03] CLI version 2.0.1
+[22:17:03] Local version 4.0.0
+
+E:\github\ESP3D-WEBUI&gt;npm -v
+6.4.1</code></pre></div><p>5 - Do the code modification you want, then launch <code>gulp package</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>E:\github\ESP3D-WEBUI&gt;gulp package
+[15:17:13] Using gulpfile E:\github\ESP3D-WEBUI\gulpfile.js
+[15:17:13] Starting &#39;package&#39;...
+[15:17:13] Starting &#39;clean&#39;...
+[15:17:13] Finished &#39;clean&#39; after 5.6 ms
+[15:17:13] Starting &#39;lint&#39;...
+[15:17:13] Finished &#39;lint&#39; after 144 ms
+[15:17:13] Starting &#39;Copy&#39;...
+[15:17:13] Finished &#39;Copy&#39; after 21 ms
+[15:17:13] Starting &#39;concatApp&#39;...
+[15:17:14] Finished &#39;concatApp&#39; after 53 ms
+[15:17:14] Starting &#39;includehtml&#39;...
+[15:17:14] Finished &#39;includehtml&#39; after 7.91 ms
+[15:17:14] Starting &#39;includehtml&#39;...
+[15:17:14] Finished &#39;includehtml&#39; after 6.18 ms
+[15:17:14] Starting &#39;replaceSVG&#39;...
+[15:17:14] Finished &#39;replaceSVG&#39; after 5.36 ms
+[15:17:14] Starting &#39;minifyApp&#39;...
+\style.css: 125691
+\style.css: 102958
+[15:17:16] Finished &#39;minifyApp&#39; after 2.2 s
+[15:17:16] Starting &#39;smoosh&#39;...
+[15:17:16] Finished &#39;smoosh&#39; after 117 ms
+[15:17:16] Starting &#39;compress&#39;...
+[15:17:16] Finished &#39;compress&#39; after 26 ms
+[15:17:16] Starting &#39;clean2&#39;...
+[15:17:16] Finished &#39;clean2&#39; after 3.83 ms
+[15:17:16] Finished &#39;package&#39; after 2.61 s</code></pre></div><p>If no issue, a file called index.html.gz will be generated at the root of repository, so you just need to upload it like described in <a href="/esp3d-webui/v2.x/installation/index.html">installation page</a></p>
+<p>By default is build a multilanguage file, if file is too big for your flash size you can build with only english and one additional language:</p>
+<ul>
+<li><code>gulp package --lang en</code> will only build english</li>
+<li><code>gulp package --lang fr</code> will only build french + english</li>
+<li><code>gulp package --lang es</code> will only build spanish + english</li>
+<li><code>gulp package --lang it</code> will only build italian + english</li>
+<li><code>gulp package --lang de</code> will only build german + english</li>
+<li>etc&hellip;</li>
+</ul>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+          <article class="chapter">
+<h1 id="showcase">Showcase</h1>
+<h3 id="full-ui">Full UI</h3>
+<p><a href="#R-image-e5e75b7d329394a14baea069a23884f7" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/full.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e5e75b7d329394a14baea069a23884f7"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/full.png?width=400px"></a></p>
+<h3 id="terminal-panel">Terminal panel</h3>
+<p><a href="#R-image-233e20f942a005d9bf42f1341910e234" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/commands_panel.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-233e20f942a005d9bf42f1341910e234"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/commands_panel.png?width=400px"></a></p>
+<h3 id="jog-panel">Jog panel</h3>
+<p><a href="#R-image-f95d316a247940f42991311205041e4d" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/controls_panel.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f95d316a247940f42991311205041e4d"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/controls_panel.png?width=400px"></a></p>
+<h3 id="macro-dialog">Macro dialog</h3>
+<p><a href="#R-image-10b91a3477317d6ea48d3c7a5169d476" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/macro_modal.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10b91a3477317d6ea48d3c7a5169d476"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/macro_modal.png?width=400px"></a></p>
+<h3 id="extruders-panel">Extruders panel</h3>
+<p><a href="#R-image-be63d9aa286a4e7daee37a344bdaf10b" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/extruders_panel.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-be63d9aa286a4e7daee37a344bdaf10b"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/extruders_panel.png?width=400px"></a></p>
+<h3 id="temperatures-panel">Temperatures panel</h3>
+<p><a href="#R-image-83a8e099e38e9dd799fc01c7a75d5bc6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/temperatures_panel.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-83a8e099e38e9dd799fc01c7a75d5bc6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/temperatures_panel.png?width=400px"></a></p>
+<h3 id="sd-panel">SD panel</h3>
+<h4 id="repetier--smoothieware">Repetier / smoothieware</h4>
+<p>Long names support
+<a href="#R-image-230d3a5c1e3e4a6998d5716e157131a5" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/sd_longname.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-230d3a5c1e3e4a6998d5716e157131a5"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/sd_longname.png?width=400px"></a></p>
+<h4 id="marlin">Marlin</h4>
+<p>Short names only
+<a href="#R-image-3b791148c20b25b14df9f8950362b0f5" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/sd_shortname.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b791148c20b25b14df9f8950362b0f5"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/sd_shortname.png?width=400px"></a></p>
+<h3 id="camera-tab">Camera tab</h3>
+<p><a href="#R-image-a9a362a3764de82810234f719ac514a6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/camera.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a9a362a3764de82810234f719ac514a6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/camera.png?width=400px"></a></p>
+<h3 id="esp3d-tab">ESP3D tab</h3>
+<p><a href="#R-image-bdccd19a955c05d1bf8908708a414cbe" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/esp3d_1.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bdccd19a955c05d1bf8908708a414cbe"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/esp3d_1.png?width=400px"></a></p>
+<h4 id="status-dialog">Status dialog</h4>
+<p><a href="#R-image-39ea2901a6d9c8034ff9a169b9851a98" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/status_modal.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39ea2901a6d9c8034ff9a169b9851a98"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/status_modal.png?width=400px"></a></p>
+<h4 id="flash-filesystem-dialog">Flash filesystem dialog</h4>
+<p><a href="#R-image-00ce2e080566c82601b140d9287222a6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/spiffs_modal.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-00ce2e080566c82601b140d9287222a6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/spiffs_modal.png?width=400px"></a></p>
+<h4 id="firmware-update-dialog">Firmware update dialog</h4>
+<p><a href="#R-image-3f5e23c76aedf6a9515ddc6c8f8f988a" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/webupdate_modal.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f5e23c76aedf6a9515ddc6c8f8f988a"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/webupdate_modal.png?width=400px"></a></p>
+<h3 id="target-firmware-settings">Target Firmware settings</h3>
+<h4 id="repetier">Repetier</h4>
+<p><a href="#R-image-9909a91df6b12805b48ea94aa98105fc" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/repetier_settings.PNG?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9909a91df6b12805b48ea94aa98105fc"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/repetier_settings.PNG?width=400px"></a></p>
+<h4 id="smoothieware">Smoothieware</h4>
+<p><a href="#R-image-302103acfa70f4c70e1dba3bb806a530" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/smoothieware_settings.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-302103acfa70f4c70e1dba3bb806a530"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v2.x/showcase/smoothieware_settings.png?width=400px"></a></p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          <article class="home">
+            <header class="headline">
+            </header>
+
+<h1 id="credits">Credits</h1>
+
+<p>Based on great UI from Jarek Szczepanski (imrahil): <a href="http://imrahil.github.io/smoothieware-webui/" rel="external" target="_blank">smoothieware-webui</a></p>
+<h3 id="libraries">Libraries</h3>
+<h4 id="a-compressed-css">A compressed css</h4>
+<p>Based on <a href="http://getbootstrap.com/css/" rel="external" target="_blank">bootstrap 3.x</a></p>
+<h4 id="a-stripped-and-limited-version-of-svg-icons">A stripped and limited version of svg icons</h4>
+<p>Based on <a href="http://glyphicons.com/" rel="external" target="_blank">Glyphicons Halflings</a> to get a small footprint.</p>
+<h4 id="a-customized-version-of-smoothiecharts">A Customized version of smoothiecharts</h4>
+<p>Based on <a href="http://smoothiecharts.org/" rel="external" target="_blank">smoothiecharts</a> to display temperatures charts</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

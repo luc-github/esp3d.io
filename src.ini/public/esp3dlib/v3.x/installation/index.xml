@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v3.x/installation/index.html</link>
+    <description>In Marlin configuration files :&#xA;Configuration.h Select an ESP32 based board.&#xA;Uncomment the second serial port to allow esp3d to get all printer feedback&#xA;/** * Select a secondary serial port on the board to use for communication with the host. * :[-1, 0, 1, 2, 3, 4, 5, 6, 7] */ #define SERIAL_PORT_2 -1Configuration_adv.h Enable ESP3DLib support using : #define ESP3D_WIFISUPPORT // ESP3D Library WiFi management (https://github.com/luc-github/ESP3DLib)&#xA;You can optionnaly define to which access point your board need to connect to:</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v3.x/installation/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

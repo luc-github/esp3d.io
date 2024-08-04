@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> Line Notification :: ESP3D Ecosystem</title>
+    <link>http://localhost:1313/esp3dlib/v3.x/documentation/notifications/line/index.html</link>
+    <description>Line is free service&#xA;Considering you have line account and you already installed line on you phone/PC:&#xA;1 - Go to https://notify-bot.line.me/my/ and connect with email and password 2 - Once connected you will be able to generate token&#xA;3 - Type token name on top, select recipient(s) and press Generate token&#xA;4 - Once token is created you need to copy it&#xA;5 - You can create as many tokens you want, and delete the ones you do not need</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/esp3dlib/v3.x/documentation/notifications/line/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

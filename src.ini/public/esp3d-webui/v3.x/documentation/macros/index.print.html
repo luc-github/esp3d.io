@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Macros Documentation">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Macros Documentation :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="Macros Documentation">
+    <meta property="og:url" content="http://localhost:1313/esp3d-webui/v3.x/documentation/macros/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="Macros Documentation :: ESP3D Ecosystem">
+    <meta property="og:description" content="Macros Documentation">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Macros Documentation :: ESP3D Ecosystem">
+    <meta itemprop="description" content="Macros Documentation">
+    <meta itemprop="wordCount" content="534">
+    <title>Macros Documentation :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-webui/v3.x/documentation/macros/index.html" rel="canonical" type="text/html" title="Macros Documentation :: ESP3D Ecosystem">
+    <link href="/esp3d-webui/v3.x/documentation/macros/index.xml" rel="alternate" type="application/rss+xml" title="Macros Documentation :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-webui/v3.x/documentation/macros/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/index.html"><span itemprop="name">ESP3D-WEBUI</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/index.html"><span itemprop="name">Version 3.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-webui/v3.x/documentation/index.html"><span itemprop="name">Documentation</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Macros Documentation</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/extra/index.html" title="Extra Content (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-webui/v3.x/documentation/polling/index.html" title="Polling commands (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable home" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="home">
+            <header class="headline">
+            </header>
+
+<h1 id="macros-documentation">Macros Documentation</h1>
+
+<h2 id="overview">Overview</h2>
+<p>Macros are a powerful feature that allow users to automate and streamline common tasks or workflows within the application. A macro is a customizable button or shortcut that can be configured to perform a specific set of actions, such as executing G-code commands, loading files from storage, or triggering remote devices.</p>
+<p>The available macro types can depend on the targeted system and its capabilities. This documentation is applicable to applications like ESP3D, ESP3DLib, ESP3D-TFT, or GrblHAL, which utilize the ESP3D-webUI for their user interface.</p>
+<h2 id="setting-up-macros">Setting up Macros</h2>
+<h3 id="accessing-the-setup-macros-interface">Accessing the Setup Macros Interface</h3>
+<ul>
+<li>The setup macros interface can be accessed through a dedicated &ldquo;Macros&rdquo; panel within the tab Settings/Interface of ESP3D-WebUI.</li>
+</ul>
+<p><a href="#R-image-8ad14f0ffb36cd7dfb66751751b13023" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/settings.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8ad14f0ffb36cd7dfb66751751b13023"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/settings.png?width=400px"></a></p>
+<ul>
+<li>This panel allows users to view, create, and manage their custom macros.</li>
+</ul>
+<p><a href="#R-image-435749409e7d2b0e994ebf2c1c4c4bcc" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/MacroList.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-435749409e7d2b0e994ebf2c1c4c4bcc"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/MacroList.png?width=400px"></a></p>
+<h3 id="macro-visibility-and-customization">Macro Visibility and Customization</h3>
+<p>The macros panel can be set to &ldquo;Show&rdquo; or &ldquo;Visible when starting&rdquo; to control the visibility of the macros.
+This allows users to manage the display of macros based on their preferences and workflow needs.</p>
+<h3 id="creating-a-new-macro">Creating a New Macro</h3>
+<ol>
+<li>To add a new macro, click the &ldquo;Add macro&rdquo; button in the macros interface. It will create a new macro with default settings.</li>
+<li>Provide a name for the macro and select an icon to represent it.<br>
+<a href="#R-image-e0c6eaf6333ad6155c71ad121f2cddf2" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroicons.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e0c6eaf6333ad6155c71ad121f2cddf2"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroicons.png?width=400px"></a></li>
+<li>Configure the macro&rsquo;s action, which can be one of the following types:<br>
+<a href="#R-image-34bec08d99ba83acb3a22ccd88db79e6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrotypes.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34bec08d99ba83acb3a22ccd88db79e6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrotypes.png?width=400px"></a>
+<ul>
+<li>GCODE Command: Enter a single G-code command or a sequence of commands separated by semicolons. It&rsquo;s recommended to use a file type instead if there are multiple commands. <br>
+<a href="#R-image-e4efbe5316dbdf2f610d319d15a231d4" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macro.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e4efbe5316dbdf2f610d319d15a231d4"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macro.png?width=400px"></a></li>
+<li>Flash File: Specify a file stored in the system&rsquo;s flash memory that will be sent to the target device.<br>
+<a href="#R-image-7bfcc9ec2672f9fb9a74f012ea883c77" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroflash.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7bfcc9ec2672f9fb9a74f012ea883c77"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroflash.png?width=400px"></a></li>
+<li>SD Card File: Select a file stored on the system&rsquo;s SD card to be sent to the target device. This is the preferred option over using the flash memory due to limited space. <br>
+<a href="#R-image-96a96169b3dcb6b4920d5648fa478921" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrosd.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-96a96169b3dcb6b4920d5648fa478921"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrosd.png?width=400px"></a></li>
+<li>URL Address: Input a URL that will be accessed when the macro is triggered. <br>
+<a href="#R-image-7c9c2ced4248bd42237cd15001cff2e6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrourl.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c9c2ced4248bd42237cd15001cff2e6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrourl.png?width=400px"></a></li>
+</ul>
+</li>
+</ol>
+<p>4 . Optionally, assign a keyboard shortcut (e.g., &ldquo;Shift+H&rdquo;) to quickly execute the macro.</p>
+<h3 id="editing-a-macro">Editing a Macro</h3>
+<p>To modify an existing macro, click on the macro button  you wish to update. This will open the macro configuration interface, where you can make changes to the macro&rsquo;s name, icon, action, and keyboard shortcut. <br>
+<a href="#R-image-56b09f9ab05ca1f42278d07b3029c841" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroedit.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56b09f9ab05ca1f42278d07b3029c841"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroedit.png?width=400px"></a></p>
+<h3 id="deleting-a-macro">Deleting a Macro</h3>
+<p>To remove a macro, click on the &ldquo;Trash&rdquo; button next to the macro you wish to delete. <br>
+<a href="#R-image-5b7736e99161ba5be8c0199b19d38414" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrodelete.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5b7736e99161ba5be8c0199b19d38414"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrodelete.png?width=400px"></a></p>
+<h2 id="using-macros">Using Macros</h2>
+<h3 id="accessing-macros-from-the-dashboard">Accessing Macros from the Dashboard</h3>
+<p>Once macros are set up, they will be displayed as buttons on the application&rsquo;s main dashboard.
+Users can simply click on the macro buttons to trigger the corresponding actions. <br>
+<a href="#R-image-0deb6f0df6d2afe915ac55af6a199480" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrodashboard.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0deb6f0df6d2afe915ac55af6a199480"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macrodashboard.png?width=400px"></a></p>
+<p>In the mobile view, the macro name may not be displayed to save UI space, and only the icon will be shown. <br>
+<a href="#R-image-6e597318cd89b28a9f4e59072f0ad990" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/themobileview.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6e597318cd89b28a9f4e59072f0ad990"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/themobileview.png?width=400px"></a></p>
+<h3 id="executing-macros-using-keyboard-shortcuts">Executing Macros using Keyboard Shortcuts</h3>
+<p>If a keyboard shortcut has been assigned to a macro, users can press the specified key combination to execute the macro quickly. <br>
+<a href="#R-image-4a58a85d27decd92404f826c825fcdd6" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroshortcuts.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4a58a85d27decd92404f826c825fcdd6"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/macroshortcuts.png?width=400px"></a></p>
+<p>An help is available to show the list of available shortcuts, including macro&rsquo;s ones. <br>
+<a href="#R-image-4cfa1b2344ed3e404794dd1631fe2af2" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/shortcutshelp.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4cfa1b2344ed3e404794dd1631fe2af2"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-webui/v3.x/documentation/macros/shortcutshelp.png?width=400px"></a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>By leveraging the macros feature, users can streamline their interactions with the application, automating repetitive tasks and accessing frequently used commands or functionalities with just a few clicks or keystrokes. The flexibility to configure macros of various types ensures that users can tailor the system to their specific requirements and enhance their overall productivity.</p>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>

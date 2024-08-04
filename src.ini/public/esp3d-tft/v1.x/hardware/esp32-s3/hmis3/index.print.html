@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="ESP32-S3 4.3&#39; (800x480) TFT">
+    <meta name="author" content="Luc LEBOSSE">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="4.3&#39; HMI-V3 :: ESP3D Ecosystem">
+    <meta name="twitter:description" content="ESP32-S3 4.3&#39; (800x480) TFT">
+    <meta property="og:url" content="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html">
+    <meta property="og:site_name" content="ESP3D Ecosystem">
+    <meta property="og:title" content="4.3&#39; HMI-V3 :: ESP3D Ecosystem">
+    <meta property="og:description" content="ESP32-S3 4.3&#39; (800x480) TFT">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="4.3&#39; HMI-V3 :: ESP3D Ecosystem">
+    <meta itemprop="description" content="ESP32-S3 4.3&#39; (800x480) TFT">
+    <meta itemprop="wordCount" content="261">
+    <title>4.3&#39; HMI-V3 :: ESP3D Ecosystem</title>
+    <link href="http://localhost:1313/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html" rel="canonical" type="text/html" title="4.3&#39; HMI-V3 :: ESP3D Ecosystem">
+    <link href="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.xml" rel="alternate" type="application/rss+xml" title="4.3&#39; HMI-V3 :: ESP3D Ecosystem">
+    <link href="/images/favicon.ico?1722688342" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1722688349" rel="stylesheet">
+    <link href="/css/auto-complete.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1722688349" rel="stylesheet">
+    <link href="/css/fonts.css?1722688349" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1722688349" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1722688349" rel="stylesheet">
+    <link href="/css/theme-blue.css?1722688349" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-learn.css?1722688349" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1722688349" rel="stylesheet">
+    <link href="/css/print.css?1722688349" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1722688349" rel="stylesheet">
+    <script src="/js/variant.js?1722688349"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'blue' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">ESP3D Ecosystem</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/index.html"><span itemprop="name">ESP3D-TFT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/index.html"><span itemprop="name">Version 1.X</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/hardware/index.html"><span itemprop="name">Hardware</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/esp3d-tft/v1.x/hardware/esp32-s3/index.html"><span itemprop="name">ESP32-S3 boards</span></a><meta itemprop="position" content="5">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">4.3&#39; HMI-V3</span><meta itemprop="position" content="6"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/hardware/esp32-s3/panlee/index.html" title="3.5&#39; ZX3D50CE02S-USRC-4832 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/esp3d-tft/v1.x/hardware/esp32-s3/sunton-70-8048/index.html" title="7.0&#39; ESP32-8048S070C (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+<h1 id="4.3-hmi-v3">4.3&#39; HMI-V3</h1>
+<ul>
+<li>ESP32-S3 based + SDReader + PSRAM + 4.3&rsquo; TFT (800x480) with Capacitive touch screen
+<ul>
+<li><a href="https://www.aliexpress.com/item/1005003814428825.html" rel="external" target="_blank">Aliexpress</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="#R-image-8824841a369cb96fb11f729c46916b21" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/front.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8824841a369cb96fb11f729c46916b21"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/front.png?width=400px"></a>
+<a href="#R-image-15f87099ba1360447be9142674ee2a70" class="lightbox-link"><img alt="image" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/back.png?width=400px" style=" height: auto; width: 400px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-15f87099ba1360447be9142674ee2a70"><img alt="image" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/esp3d-tft/v1.x/hardware/esp32-s3/hmis3/back.png?width=400px"></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>ESP32-S3 dual-core Xtensa 32-bit LX7 microprocessor, up to 240 MHz with 384KB ROM, 512KB SRAM. 2.4GHz WiFi and Bluetooth 5</li>
+<li>PSRAM: 2MB</li>
+<li>FLASH: 8MB</li>
+<li>Micro-SD card slot (SPI)</li>
+<li>4.3-inch 800x480 TFT display - RM68120 (8080 parallel bus)</li>
+<li>Capacitive touch panel - ft5x06 (i2C 0x38)</li>
+<li>Audio amplifier RealNetworks (i2C 0x68) Speaker</li>
+<li>Built-in microphone</li>
+<li>1 USB-C OTG (DFU/CDC) port</li>
+<li>1 USB-C debug port</li>
+<li>3-axis accelerometer /  3-axis gyroscope mpu6050 (i2C)</li>
+<li>temperature and humidity sensors hdc1080 / htu21 (i2C)</li>
+<li>I2C / SPI / GPIOs</li>
+<li>Wakeup and reset buttons,</li>
+<li>Power switch</li>
+<li>Power Supply: 5V / 1A</li>
+<li>Dimension: 110 x 61 x 13.5mm</li>
+<li>Header 1 (10 pins): GND, 5V, EXT_IO2, EXT_IO1, 3.3V, RXD, TXD, GND, SCL, SDA</li>
+<li>Header 2 (10 pins): GND, MOSI, CLK, MISO, CS, IO33, IO46, IO0, EXT_IO0</li>
+</ul>
+<h2 id="pins">Pins</h2>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPIO 0</td>
+<td>Upload mode</td>
+</tr>
+<tr>
+<td>GPIO 1</td>
+<td>LCD_D0</td>
+</tr>
+<tr>
+<td>GPIO 2</td>
+<td>LCD_D2</td>
+</tr>
+<tr>
+<td>GPIO 3</td>
+<td>LCD_D4</td>
+</tr>
+<tr>
+<td>GPIO 4</td>
+<td>LCD_D6</td>
+</tr>
+<tr>
+<td>GPIO 5</td>
+<td>LCD_D8</td>
+</tr>
+<tr>
+<td>GPIO 6</td>
+<td>LCD_D10</td>
+</tr>
+<tr>
+<td>GPIO 7</td>
+<td>LCD_D12</td>
+</tr>
+<tr>
+<td>GPIO 8</td>
+<td>LCD_D14</td>
+</tr>
+<tr>
+<td>GPIO 9</td>
+<td>LCD_D1</td>
+</tr>
+<tr>
+<td>GPIO 10</td>
+<td>LCD_D3</td>
+</tr>
+<tr>
+<td>GPIO 11</td>
+<td>LCD_D5</td>
+</tr>
+<tr>
+<td>GPIO 12</td>
+<td>LCD_D7</td>
+</tr>
+<tr>
+<td>GPIO 13</td>
+<td>LCD_D9</td>
+</tr>
+<tr>
+<td>GPIO 14</td>
+<td>LCD_D11</td>
+</tr>
+<tr>
+<td>GPIO 15</td>
+<td>LCD_D13</td>
+</tr>
+<tr>
+<td>GPIO 16</td>
+<td>LCD_D15</td>
+</tr>
+<tr>
+<td>GPIO 17</td>
+<td>LCD_WR</td>
+</tr>
+<tr>
+<td>GPIO 18</td>
+<td>BAT_ADC</td>
+</tr>
+<tr>
+<td>GPIO 19</td>
+<td>ESP_USB_DM</td>
+</tr>
+<tr>
+<td>GPIO 20</td>
+<td>ESP_USB_DP</td>
+</tr>
+<tr>
+<td>GPIO 21</td>
+<td>LCD_RST</td>
+</tr>
+<tr>
+<td>GPIO 33</td>
+<td>GPIO 33</td>
+</tr>
+<tr>
+<td>GPIO 34</td>
+<td>ESP_SPI_CS_SD</td>
+</tr>
+<tr>
+<td>GPIO 35</td>
+<td>ESP_SPI_MOSI</td>
+</tr>
+<tr>
+<td>GPIO 36</td>
+<td>ESP_SPI_CLK</td>
+</tr>
+<tr>
+<td>GPIO 37</td>
+<td>ESP_SPI_MISO</td>
+</tr>
+<tr>
+<td>GPIO 38</td>
+<td>LCD_RS</td>
+</tr>
+<tr>
+<td>GPIO 39</td>
+<td>ESP_I2C_SCL</td>
+</tr>
+<tr>
+<td>GPIO 40</td>
+<td>ESP_I2C_SDA</td>
+</tr>
+<tr>
+<td>GPIO 41</td>
+<td>ESP_I2S0_ASDOUT</td>
+</tr>
+<tr>
+<td>GPIO 42</td>
+<td>ESP_I2S0_SCLK</td>
+</tr>
+<tr>
+<td>GPIO 43</td>
+<td>U0TXD</td>
+</tr>
+<tr>
+<td>GPIO 44</td>
+<td>U0RXD</td>
+</tr>
+<tr>
+<td>GPIO 45</td>
+<td>ESP_I2S0_MCLK</td>
+</tr>
+<tr>
+<td>GPIO 46</td>
+<td>GPIO 46</td>
+</tr>
+<tr>
+<td>GPIO 47</td>
+<td>ESP_I2S0_DSDIN</td>
+</tr>
+<tr>
+<td>GPIO 48</td>
+<td>ESP_I2SS0_LRCK</td>
+</tr>
+</tbody>
+</table>
+
+            <footer class="footline">
+
+<hr>
+<center>If any error or need any addition,<br> please let me know by opening a ticket <a href="https://github.com/luc-github/esp3d.io/issues" target="_blank">here</a><br> or submit a fix by <a href="https://github.com/luc-github/esp3d.io/pulls" target="_blank">PR</a> or use the edit button on top menu</center>
+
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1722688349" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1722688349" defer></script>
+    <script src="/js/theme.js?1722688349" defer></script>
+  </body>
+</html>
