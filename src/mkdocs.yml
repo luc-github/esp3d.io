@@ -9,18 +9,13 @@ not_in_nav:
   /common
 
 plugins:
-  - mkdocs-nav-weight:
-      section_renamed: false
-      index_weight: -10
-      warning: true
-      reverse: false
-      headless_included: false
   - glightbox
-  #- awesome-pages # conflict with mkdocs-section-index
+  - awesome-pages
   - mermaid2
   - search:
       min_search_length: 2
   - include-markdown
+  - section-index
   
 markdown_extensions:
   - attr_list
@@ -47,8 +42,6 @@ theme:
     titles_only: true
     sticky_navigation: false
     collapse_navigation: true
-    features:
-        - navigation.indexes 
     logo: /img/ESP3D_mini2.png
 
 
