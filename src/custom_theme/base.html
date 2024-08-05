@@ -85,15 +85,15 @@
     {#- SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
+      <div class="wy-side-nav-search" style="margin:0;padding-top:0;">
       {%- block site_name %}
         {%- if config.theme.logo %}
-          <a href="{{ nav.homepage.url|url }}">
+          <a href="{{ nav.homepage.url|url }}"  style="margin-bottom:0px" >
         {%- else %}
           <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ config.site_name }}
         {%- endif %}
         {%- if config.theme.logo %}
-          <img src="{{ config.theme.logo|url }}" class="logo" alt="{% trans %}Logo{% endtrans %}"/>
+          <img src="{{ config.theme.logo|url }}" class="logo"  style="margin-bottom:0px" alt="{% trans %}Logo{% endtrans %}"/>
         {%- endif %}
         </a>
       {%- endblock %}
