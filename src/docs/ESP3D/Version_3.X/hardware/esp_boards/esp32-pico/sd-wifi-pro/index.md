@@ -33,4 +33,4 @@ weight : 17
 {% include "./platformio.ini"  %}
 ```
 
-{{% resources color="blue" icon="fas fa-paperclip" sort="asc" pattern=".*\.(ini|h)" /%}}
+resources color="blue" icon="fas fa-paperclip" sort="asc" pattern=".*\.(ini|h)" /

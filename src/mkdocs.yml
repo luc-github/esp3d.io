@@ -16,6 +16,7 @@ plugins:
       min_search_length: 2
   - include-markdown
   - section-index
+  - macros
   
 markdown_extensions:
   - attr_list
@@ -38,7 +39,7 @@ markdown_extensions:
 theme:
     name: readthedocs
     custom_dir: custom_theme/
-    navigation_depth: 9
+    navigation_depth: 12
     titles_only: true
     sticky_navigation: false
     collapse_navigation: true

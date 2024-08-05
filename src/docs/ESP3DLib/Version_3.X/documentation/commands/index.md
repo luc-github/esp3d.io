@@ -26,4 +26,4 @@ The json format is:
 * Show commands help   
     `[ESP]<command id> json=<no>`
 
-{{% children sort="weight" description="true" depth="1" %}}
+children sort="weight" description="true" depth="1"
