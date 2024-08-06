@@ -10,30 +10,30 @@ weight : 4
 ESP3D use the webhook method.
 
 1 - If you do not have IFTTT account you can create for free to use up to 5 applets.
-![IFFTT account creation step](/images/notifications/ifttt/accountcreation1.png)
+![IFFTT account creation step](/img/notifications/ifttt/accountcreation1.png)
 
 2 - Create New applet  
-![Create applet](/images/notifications/ifttt/createwebhook1.png)
+![Create applet](/img/notifications/ifttt/createwebhook1.png)
 
 * Create new trigger  
-  ![create trigger](/images/notifications/ifttt/createwebhook2.png)
+  ![create trigger](/img/notifications/ifttt/createwebhook2.png)
 
 * The trigger is a webhook  
-  ![trigger is a webhook](/images/notifications/ifttt/createwebhook3.png)
+  ![trigger is a webhook](/img/notifications/ifttt/createwebhook3.png)
 
 * Choose Web request  
-  ![choose web request](/images/notifications/ifttt/createwebhook4.png)
+  ![choose web request](/img/notifications/ifttt/createwebhook4.png)
 
 * Set the event name
-  ![set event name](/images/notifications/ifttt/createwebhook5.png)
+  ![set event name](/img/notifications/ifttt/createwebhook5.png)
 
 * Define the action you want
-   ![define wanted action](/images/notifications/ifttt/createwebhook6.png)
+   ![define wanted action](/img/notifications/ifttt/createwebhook6.png)
 
 * Select the service you want to use  
   As you can see there are a lot, let use email as example, but you can select any one that fit your needs
-  ![select device](/images/notifications/ifttt/createwebhook7.png)
-  ![select device](/images/notifications/ifttt/createwebhook8.png)
+  ![select device](/img/notifications/ifttt/createwebhook7.png)
+  ![select device](/img/notifications/ifttt/createwebhook8.png)
 
 * Define the message  
   IFTTT allows some variables:
@@ -41,27 +41,27 @@ ESP3D use the webhook method.
   * message from ESP3D --> value2  
   * ESP3D hostname --> value3  
  
-  ![define message](/images/notifications/ifttt/createwebhook9.png)
+  ![define message](/img/notifications/ifttt/createwebhook9.png)
 
 * Applet is created
-  ![applet created](/images/notifications/ifttt/createwebhook11.png)
+  ![applet created](/img/notifications/ifttt/createwebhook11.png)
 
 3 - Retrieve the webhook key
 
 * Go to settings
-   ![settings](/images/notifications/ifttt/createwebhook12.png)
+   ![settings](/img/notifications/ifttt/createwebhook12.png)
 
 * Select service
-   ![service](/images/notifications/ifttt/manageservice.png)
+   ![service](/img/notifications/ifttt/manageservice.png)
 
 * Select webhook
-   ![webhook](/images/notifications/ifttt/manageservice1.png)
+   ![webhook](/img/notifications/ifttt/manageservice1.png)
 
 * Choose documentation
-   ![documentation](/images/notifications/ifttt/manageservice2.png)
+   ![documentation](/img/notifications/ifttt/manageservice2.png)
 
 * Copy the key
-   ![copy key](/images/notifications/ifttt/manageservice3.png)
+   ![copy key](/img/notifications/ifttt/manageservice3.png)
 
 4 - Save the generate token and chatID in ESP3D, and set IFTTT as notification supplier  
 `[ESP610]type=IFTTT T1={event} T2={webhooks_key}`
@@ -74,11 +74,11 @@ ESP3D use the webhook method.
 7 - Verify the workflow
 
 * Go to Applets  
-   ![applets](/images/notifications/ifttt/applets.png)
+   ![applets](/img/notifications/ifttt/applets.png)
 * Select Activity  
-   ![activity](/images/notifications/ifttt/activity1.png)
+   ![activity](/img/notifications/ifttt/activity1.png)
 * Select the flow to display  
-   ![flow to display](/images/notifications/ifttt/activity2.png)
+   ![flow to display](/img/notifications/ifttt/activity2.png)
 
 Note: This documentation is not exaustive due to huge features of IFTTT notifications service but base is always same :
 

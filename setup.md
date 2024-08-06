@@ -12,6 +12,7 @@ pip install mkdocs-awesome-pages-plugin</s> # conflict with mkdocs-section-index
 pip install mkdocs-section-index
 pip install mkdocs-glightbox
 pip install mkdocs-macros-plugin
+pip install mkdocs-include-markdown-plugin
 ```
 
 Test Locally:

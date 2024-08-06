@@ -23,7 +23,7 @@ There are several points to take care. One should check that
 For the divider bridge a value of R1=1k and R2=2.2k will be fine.
 You could also use 10k and 22k or anything near a factor 2.
 
-![step1](/images/dividerbridge.png?width=300px)
+![step1](/img/dividerbridge.png?width=300px)
 
 
 ### Connection diagrams examples for some ESP boards
@@ -48,13 +48,13 @@ You could also use 10k and 22k or anything near a factor 2.
 - Use GPIO2 to ground to reset all settings in hard way - 2-6 sec after boot / not before!! Set GPIO2 to ground before boot change boot mode and go to special boot that do not reach FW. Currently boot take 10 sec - giving 8 seconds to connect GPIO2 to GND and do an hard recovery for settings   
 - Use GPIO0 to ground to be in update mode 
 
-![step1](/images/hw/wires.png?width=300px)
+![step1](/img/hw/wires.png?width=300px)
 
 ---
 
 ### ESP-01 serial wifi module
 
-![step1](/images/hw/ff587ce89a.jpg?width=300px)
+![step1](/img/hw/ff587ce89a.jpg?width=300px)
 
 more info about the Breakout PCB: [keyestudio](https://www.keyestudio.com/keyestudio-esp-01s-wifi-to-serial-shield-module-for-arduino-esp8266-wifi-p0499-p0499.html)
 
@@ -64,11 +64,11 @@ more info about the Breakout PCB: [keyestudio](https://www.keyestudio.com/keyest
 
 ESP need 3.3v, it is not 5v tolerant, if printer board use more than 3.3V like 5V on ramps.  
 
-![step1](/images/hw/wiresesp12e.png?width=300px)
+![step1](/img/hw/wiresesp12e.png?width=300px)
 
 you can also use Logic LevelConverter Bi-Directional
 
-![step2](/images/hw/logic.png?width=300px)
+![step2](/img/hw/logic.png?width=300px)
 
 In order to flash some ESP12E/F boards via their UART interface, the following pins need to be connected:
 
@@ -84,7 +84,7 @@ This has been tested with ESP-12-E boards labeled "ESP8266 For ESP3D FYSETC.COM"
  ESP-12F based serial wifi module (eg [from aliexpress](https://www.aliexpress.com/item/ESP8266-ESP-12F-Serial-WIFI-Wireless-Transceiver-Module-For-Arduino-ESP-12F-Adapter-Expansion-Board-For/32804504326.html) ) contains built in 2-way levelshifter/bi-directional logic level converter. So it can be powered via 5V uart from the target' motherboard.
 
 - We need to manualy ground the ```IO0``` while powering up to start in flash mode while powering up (there is no switch for that, neither for reset)
-![step1](/images/esp/esp12.png?width=300px)
+![step1](/img/esp/esp12.png?width=300px)
 - Use FTDI adapter as usb2serial
 - Need to see in console/serial monitor boot mode is (**1**,7).
   - baudrate: 74880
@@ -95,7 +95,7 @@ This has been tested with ESP-12-E boards labeled "ESP8266 For ESP3D FYSETC.COM"
 
 ### ESP32-Cam
 
-![step1](/images/esp/espcam32.png?width=300px)
+![step1](/img/esp/espcam32.png?width=300px)
 
 Note: 5V is power supply input and 3V3 is output from regulator. UART Tx and RX signals will be 3.3V
 
@@ -103,13 +103,13 @@ Note: 5V is power supply input and 3V3 is output from regulator. UART Tx and RX 
 
 ### NodeMCU V2/V3
 
-![step1](/images/nodemcu/nodemcu.png?width=300px)
+![step1](/img/nodemcu/nodemcu.png?width=300px)
 
 ---
 
 ### Sonoff
 
-![step1](/images/sonoff/sonoff.png?width=300px)
+![step1](/img/sonoff/sonoff.png?width=300px)
 
 Relay is connected by GPIO12, it can be handled using ESP201 command:
 
@@ -129,10 +129,10 @@ So `[ESP201]P12 V0` should be off and `[ESP201]P12 V1` should be on
 
 Connection with logic level conveter: 
 
-![step1](/images/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px)
+![step1](/img/d1_mini/wemos-d1-mini_logic-level-converter.jpg?width=300px)
 
 example:  
-![step1](/images/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px)
+![step1](/img/d1_mini/wemos-d1-mini_logic-level-converter-2.jpg?width=300px)
 
 printed cases:
 * <https://www.thingiverse.com/thing:4128593>

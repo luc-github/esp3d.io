@@ -8,16 +8,16 @@ weight : 1
 Considering you have pushover account (even just trial) and you already installed pushover client on you phone/PC:  
 
 1 - Go to <https://pushover.net/> and connect with email and password  
-![image](/images/notifications/pushover/logon.png)
+![image](/img/notifications/pushover/logon.png)
 
 2 - Once connected you will be able to get the token 1, the user token  
-![image](/images/notifications/pushover/token1.png)
+![image](/img/notifications/pushover/token1.png)
 
 3 - You also need to generate an application token, which is the token 2  
-![image](/images/notifications/pushover/token2.png)
+![image](/img/notifications/pushover/token2.png)
 
 4 - The token 2 generation:
-![image](/images/notifications/pushover/token2b.png)
+![image](/img/notifications/pushover/token2b.png)
 
 5 - Save the generate token 1 and token 2 in ESP3D, and set PUSHOVER as notification supplier  
 `[ESP610]type=PUSHOVER T1=xxxxxxxxxxxxxxxxxx T2=yyyyyyyyyyyyyyyyy`  

@@ -24,7 +24,7 @@ weight : 2
 
 ### Setup your development environment
 
-{{% imglink url="https://code.visualstudio.com/download" width="100px" img="/images/visual_studio_code.png" %}}VS Code{{% /imglink %}}
+{{% imglink url="https://code.visualstudio.com/download" width="100px" img="/img/visual_studio_code.png" %}}VS Code{{% /imglink %}}
 
 Download and install [VSCode](https://code.visualstudio.com/download)
 
@@ -32,7 +32,7 @@ Download and install [VSCode](https://code.visualstudio.com/download)
 
 The [espressif extension](https://github.com/espressif/vscode-esp-idf-extension) can be installed using the extension manager.    
 
-{{% imglink url="https://github.com/espressif/vscode-esp-idf-extension" width="100px" img="/images/espressif.png" %}}Espressif Extension{{% /imglink %}}
+{{% imglink url="https://github.com/espressif/vscode-esp-idf-extension" width="100px" img="/img/espressif.png" %}}Espressif Extension{{% /imglink %}}
 
 Please follow the [official tutorial](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
 

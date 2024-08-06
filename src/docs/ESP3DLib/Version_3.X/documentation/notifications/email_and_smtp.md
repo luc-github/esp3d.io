@@ -27,4 +27,4 @@ For example: `luc@gmail.com#smtp.gmail.com:465`
 
 4 - **Important** : if you are using Gmail there is an additional step, as by default https access is disabled.  
 go to : https://myaccount.google.com/lesssecureapps and allow less secure applications to connect
-![gmail enabling http access](/images/notifications/email/google.png) 
+![gmail enabling http access](/img/notifications/email/google.png) 

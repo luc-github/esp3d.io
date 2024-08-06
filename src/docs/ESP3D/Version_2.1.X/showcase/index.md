@@ -8,6 +8,6 @@ weight : 4
 
 ### On a Davinci 2.0
 
-![board](/images/davinci/boardconnected.jpg?width=400px)
-![board](/images/davinci/backside.jpg?width=400px)
-![board](/images/davinci/screen.jpg?width=400px)
+![board](/img/davinci/boardconnected.jpg?width=400px)
+![board](/img/davinci/backside.jpg?width=400px)
+![board](/img/davinci/screen.jpg?width=400px)
