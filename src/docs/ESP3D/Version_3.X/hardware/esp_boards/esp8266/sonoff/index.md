@@ -9,7 +9,7 @@ weight : 15
 * ESP8266 with 4MB flash memory, ceramic antenna
 
 ![image](Sonoff-1.png?width=400px)
-![image](Sonoff.jpeg?width=400px)
+![image](sonoff.jpeg?width=400px)
 ![image](Sonoff-2.png?width=400px)
 
 ![image](sonoff.png?width=400px)
