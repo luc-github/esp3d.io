@@ -6,18 +6,18 @@ import re
 def define_env(env):
     "Hook function"
 
-    def extraire_frontmatter(chemin_fichier):
+    def extract_fronmatter(chemin_fichier):
         with open(chemin_fichier, 'r', encoding='utf-8') as fichier:
             contenu = fichier.read()
         
         match = re.search(r'---\s*(.*?)\s*---', contenu, re.DOTALL)
         if match:
             frontmatter = match.group(1)
-            titre = re.search(r'title\s*:\s*(.*)', frontmatter)
+            title = re.search(r'title\s*:\s*(.*)', frontmatter)
             description = re.search(r'description\s*:\s*(.*)', frontmatter)
             weight = re.search(r'weight\s*:\s*(\d+)', frontmatter)
             return {
-                'titre': titre.group(1).strip().strip('"\'') if titre else None,
+                'title': title.group(1).strip().strip('"\'') if title else None,
                 'description': description.group(1).strip() if description else None,
                 'weight': int(weight.group(1)) if weight else 0
             }
@@ -40,29 +40,26 @@ def define_env(env):
                 if os.path.isdir(full_file_path):
                     index_path = os.path.join(full_file_path, 'index.md')
                     if os.path.exists(index_path):
-                        info = extraire_frontmatter(index_path) or {}
+                        info = extract_fronmatter(index_path) or {}
                         rel_path = os.path.relpath(full_file_path, full_path)
                         url = quote(rel_path.replace('\\', '/') + '/')
-                        title = info.get('titre')
-                        if title is None:
-                            title = os.path.basename(full_file_path)
+                        title = info.get('title') or os.path.basename(full_file_path)
                         weight = info.get('weight', 0)
-                        items.append((weight, f'<li><a href="{url}">{title}</a>{list_files(full_file_path, current_depth + 1)}</li>'))
+                        sub_list = list_files(full_file_path, current_depth + 1)
+                        items.append((weight, f'<li><a href="{url}">{title}</a>{sub_list}</li>'))
                 elif f.endswith('.md') and f != 'index.md':
-                    info = extraire_frontmatter(full_file_path) or {}
+                    info = extract_fronmatter(full_file_path) or {}
                     rel_path = os.path.relpath(full_file_path, full_path)
                     url = quote(rel_path.replace('\\', '/'))
-                    title = info.get('titre')
-                    if title is None:
-                        title = os.path.splitext(f)[0]
+                    title = info.get('title') or os.path.splitext(f)[0]
                     weight = info.get('weight', 0)
                     items.append((weight, f'<li><a href="{url}">{title}</a></li>'))
 
-            sorted_items = sorted(items, key=lambda x: x[0])
+            sorted_items = sorted(items, key=lambda x: x[0])  # sort by weight
             return '<ul>' + ''.join([item[1] for item in sorted_items]) + '</ul>' if items else ""
 
         result = list_files(full_path, 1)
         if result:
-              styled_result = f"<div style='display: flex; justify-content: center;'><div style='display: inline-block; text-align: left;'>{result}</div></div>"
-              return styled_result
+            styled_result = f"<div style='display: flex; justify-content: center;'><div style='display: inline-block; text-align: left;'>{result}</div></div>"
+            return styled_result
         return "<p>No files found.</p>"
