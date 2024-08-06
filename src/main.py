@@ -6,8 +6,8 @@ import re
 def define_env(env):
     "Hook function"
 
-    def extract_fronmatter(chemin_fichier):
-        with open(chemin_fichier, 'r', encoding='utf-8') as fichier:
+    def extract_frontmatter(file_path):
+        with open(file_path, 'r', encoding='utf-8') as fichier:
             contenu = fichier.read()
         
         match = re.search(r'---\s*(.*?)\s*---', contenu, re.DOTALL)
@@ -18,13 +18,13 @@ def define_env(env):
             weight = re.search(r'weight\s*:\s*(\d+)', frontmatter)
             return {
                 'title': title.group(1).strip().strip('"\'') if title else None,
-                'description': description.group(1).strip() if description else None,
+                'description': description.group(1).strip().strip('"\'')  if description else None,
                 'weight': int(weight.group(1)) if weight else 0
             }
         return None
 
     @env.macro
-    def List_children(depth=1):
+    def List_children(depth=1, addDescription=False):
         base_path = env.conf['docs_dir']
         current_page = Path(env.page.file.src_path)
         rooted = str(current_page.parent)
@@ -40,21 +40,29 @@ def define_env(env):
                 if os.path.isdir(full_file_path):
                     index_path = os.path.join(full_file_path, 'index.md')
                     if os.path.exists(index_path):
-                        info = extract_fronmatter(index_path) or {}
+                        info = extract_frontmatter(index_path) or {}
                         rel_path = os.path.relpath(full_file_path, full_path)
                         url = quote(rel_path.replace('\\', '/') + '/')
                         title = info.get('title') or os.path.basename(full_file_path)
                         weight = info.get('weight', 0)
+                        desc = info.get('description', '')
                         sub_list = list_files(full_file_path, current_depth + 1)
-                        items.append((weight, f'<li><a href="{url}">{title}</a>{sub_list}</li>'))
+                        item_content = f'<a href="{url}">{title}</a>'
+                        if addDescription and desc:
+                            item_content += f' <div class="description"  style="margin-bottom:1rem!important;margin-top:0px!important;"><i>{desc}</i></span>'
+                        items.append((weight, f'<li>{item_content}{sub_list}</li>'))
                 elif f.endswith('.md') and f != 'index.md':
-                    info = extract_fronmatter(full_file_path) or {}
+                    info = extract_frontmatter(full_file_path) or {}
                     rel_path = os.path.relpath(full_file_path, full_path)
                     url = quote(rel_path.replace('\\', '/'))
                     title = info.get('title') or os.path.splitext(f)[0]
                     weight = info.get('weight', 0)
-                    items.append((weight, f'<li><a href="{url}">{title}</a></li>'))
-
+                    desc = info.get('description', '')
+                    item_content = f'<a href="{url}">{title}</a>'
+                    if addDescription and desc:
+                        item_content += f' <div class="description" style="margin-bottom:1rem!important;margin-top:0px!important;"><i>{desc}</i></div>'
+                    items.append((weight, f'<li>{item_content}</li>'))
+            
             sorted_items = sorted(items, key=lambda x: x[0])  # sort by weight
             return '<ul>' + ''.join([item[1] for item in sorted_items]) + '</ul>' if items else ""
 

@@ -6,7 +6,7 @@ edit_uri_template: 'edit/main/src/content/{path}'
 copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
 
 nav:
-- Home: index.md
+- index.md
 - ESP3D: 
   - ESP3D/index.md  
   - Version 2.1.X:
@@ -23,6 +23,17 @@ nav:
                 - ... | flat | ESP3D/Version_2.1.X/hardware/ESP32/**
         - Installation:
             - ESP3D/Version_2.1.X/installation/index.md
+        - Documentation:
+            -  ESP3D/Version_2.1.X/documentation/index.md
+            -  ESP3D/Version_2.1.X/documentation/commands/index.md
+            - Notifications:
+              -  ESP3D/Version_2.1.X/documentation/notifications/index.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/pushover.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/line.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/email_and_smtp.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/ifttt.md
+            -  ESP3D/Version_2.1.X/documentation/sdtransfert/index.md
+            -  ESP3D/Version_2.1.X/documentation/api/index.md
         - ESP3D/Version_2.1.X/showcase/index.md
 not_in_nav:
   /common
