@@ -13,6 +13,7 @@ pip install mkdocs-section-index
 pip install mkdocs-glightbox
 pip install mkdocs-macros-plugin
 pip install mkdocs-include-markdown-plugin
+pip install mkdocs-autorefs
 ```
 
 Test Locally:

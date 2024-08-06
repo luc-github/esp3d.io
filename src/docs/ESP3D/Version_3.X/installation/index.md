@@ -9,13 +9,15 @@ weight : 2
 
 Click on the corresponding image to display how to setup.
 
-{{% imglink url="/esp3d/v3.x/installation/arduino/" width="200px" img="/img/arduino.png" %}}Arduino{{% /imglink %}} 
-{{% center %}}Arduino IDE{{% /center %}}
-{{% center %}}or{{% /center %}}
 
+<center>
+<a href="./arduino/"><img src="/img/arduino.png" width="250"></a>    
+<div>Arduino IDE</div>
+<div>or</div>
+<a href="./vscode-platformio/"><img src="/img/platformiovscode.png" width="250"></a>    
+<div>PlatformIO</div>
+</center>
 
-{{% imglink url="/esp3d/v3.x/installation/vscode-platformio/" width="200px" img="/img/platformiovscode.png" %}}VS Code{{% /imglink %}}
-{{% center %}}PlatformIO{{% /center %}}
 
 **Tip**: The platformIO environment is the easiest to setup, because you do not need to setup the esp core neither the libraries by yourself.
 
