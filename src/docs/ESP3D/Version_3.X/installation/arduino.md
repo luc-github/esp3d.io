@@ -8,31 +8,34 @@ weight : 2
 * Please download ide from https://www.arduino.cc/en/software
 
 !!! warning "Note"
-   Please use the Legacy IDE (1.8.X) or the latest Arduino IDE 2.X 
+      Please use the Legacy IDE (1.8.X) or the latest Arduino IDE 2.X 
 
 
 
-* Install the esp core according your target: 
-   - [ESP8266](https://github.com/esp8266/arduino#contents)
+* Install the esp core according your target:    
+
+      &#9755;&nbsp;If [ESP8266](https://github.com/esp8266/arduino#contents)
 
 !!! warning "Note"
-   Please use the version 3.1.1. 
+      Please use the version 3.1.1. 
    
-   - [ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
+   &nbsp;&nbsp;&nbsp;&nbsp;&#9755;&nbsp;If [ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
 
 !!! warning "Note"
-   Please use the version 2.0.8.
+      Please use the version 2.0.8.
 
 
 * Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/libraries) and [extra libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries) (according your target [ESP8266](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP8266) or [ESP32](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP32) ) to your arduino library directory
 
 !!! warning "Note"
-   Do not try any version different than the ones provided, they may not work properly. 
+      Do not try any version different than the ones provided, they may not work properly. 
 
 
 ## Open esp3d/esp3d.ino file in Arduino IDE
 
-![vscode](/esp3d/v3.x/installation/arduinoIde.png?width=400px)
+<center>
+![image](./arduinoIde.png){ width="400" }
+</center>
 
 ## ESP3D configuration   
 

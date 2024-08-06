@@ -5,4 +5,6 @@ menuPre : "<i class='fas fa-microchip'></i> "
 description : " "
 weight : 3
 ---
-children sort="weight" description : "true" depth="2"
+<center>
+{{ List_children(3,true) }}
+</center>

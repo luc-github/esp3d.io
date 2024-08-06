@@ -14,6 +14,9 @@ weight : 2
 The first time you open the project, vscode need to download all necessary files, so be patient
 
 ![vscode](/esp3d/v3.x/installation/open_vscode2_1.png?width=400px)
+<center>
+![image](./open_vscode2_1.png){ width="400" }
+</center>
 
 ## ESP3D configuration   
 
@@ -27,7 +30,10 @@ You can also generate it, using the ESP3D configurator, which simplify a lot thi
 
 ## Select the target in VSCode
 
-![vscode](/esp3d/v3.x/installation/vscode2_1.png?width=400px)
+<center>
+![image](./open_vscode2_1.png){ width="400" }
+</center>
+
 
 * [env:esp32dev] for ESP32 boards   
 * [env:esp32cam] for ESP32 Camera boards   

@@ -26,4 +26,6 @@ The json format is:
 * Show commands help   
     `[ESP]<command id> json=<no>`
 
-children sort="weight" description : "true" depth="1"
+<center>
+{{ List_children(3,true) }}
+</center>

@@ -71,3 +71,35 @@ def define_env(env):
             styled_result = f"<div style='display: flex; justify-content: center;'><div style='display: inline-block; text-align: left;'>{result}</div></div>"
             return styled_result
         return "<p>No files found.</p>"
+    
+    @env.macro
+    def attachements():
+        base_path = env.conf['docs_dir']
+        current_page = Path(env.page.file.src_path)
+        attachments_dir = os.path.join(base_path, str(current_page.parent), 'attachments.mkdocs')
+
+        if not os.path.isdir(attachments_dir):
+            return "<p>No directory " + attachments_dir + " found.</p>"
+
+        def get_file_size(file_path):
+            size_bytes = os.path.getsize(file_path)
+            for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+                if size_bytes < 1024.0:
+                    return f"{size_bytes:.2f} {unit}"
+                size_bytes /= 1024.0
+
+        items = []
+        for file in os.listdir(attachments_dir):
+            file_path = os.path.join(attachments_dir, file)
+            if os.path.isfile(file_path):
+                size = get_file_size(file_path)
+                url ="attachments.mkdocs/"+ file
+                items.append(f'<li><a href="{url}" download >{file} ({size})</a></li>')
+
+        if items:
+            result = '<ul>' + ''.join(items) + '</ul>'
+            styled_result = f'<div><div style="color:white; background:#6ab0de;font-weight:700;padding:6px 12px;"><span>&#x1F4E6;</span>Attachments</div><div class="admonition">{result}</div></div>'
+            return styled_result
+        return "<p>No attachement found.</p>"
+
+

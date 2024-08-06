@@ -6,4 +6,6 @@ weight : 100
 menuPre : "<i class='fas fa-cogs'></i> "
 ---
 
-children sort="weight" description : "true" depth="1"
+<center>
+{{ List_children(3,true) }}
+</center>

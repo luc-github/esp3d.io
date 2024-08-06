@@ -5,5 +5,6 @@ title : "API"
 weight : 100
 menuPre : "<i class='fas fa-cogs'></i> "
 ---
-
- children sort="weight" description : "true" depth="2"
+<center>
+{{ List_children(3,true) }}
+</center>

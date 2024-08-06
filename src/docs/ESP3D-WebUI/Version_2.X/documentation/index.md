@@ -18,4 +18,6 @@ weight : 3
 | OSX | Safari 11.1.2 2018 | Ok | | |
 
 The documentation section will help you on:
-  children sort="weight" description : "true" depth="1" 
+  <center>
+{{ List_children(3,true) }}
+</center>

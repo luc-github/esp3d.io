@@ -11,7 +11,6 @@ nav:
   - ESP3D/index.md  
   - Version 2.1.X:
         - ESP3D/Version_2.1.X/index.md
-        - ESP3D/Version_2.1.X/credits/index.md
         - ESP3D/Version_2.1.X/features/index.md
         - Hardware:
             - ESP3D/Version_2.1.X/hardware/index.md
@@ -23,6 +22,8 @@ nav:
                 - ... | flat | ESP3D/Version_2.1.X/hardware/ESP32/**
         - Installation:
             - ESP3D/Version_2.1.X/installation/index.md
+            - ESP3D/Version_2.1.X/installation/arduino.md
+            - ESP3D/Version_2.1.X/installation/vscode-platformio.md
         - Documentation:
             -  ESP3D/Version_2.1.X/documentation/index.md
             -  ESP3D/Version_2.1.X/documentation/commands/index.md
@@ -35,6 +36,54 @@ nav:
             -  ESP3D/Version_2.1.X/documentation/sdtransfert/index.md
             -  ESP3D/Version_2.1.X/documentation/api/index.md
         - ESP3D/Version_2.1.X/showcase/index.md
+        - ESP3D/Version_2.1.X/credits/index.md
+  - Version 3.X:
+      - ESP3D/Version_3.X/index.md
+      - ESP3D/Version_3.X/features/index.md
+      - Hardware:
+            - ESP3D/Version_3.X/hardware/index.md
+            - ESP boards:
+                - ESP3D/Version_3.X/hardware/esp_boards/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp8266/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp8285/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-c3/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-pico/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-s2/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-s3/index.md
+            - System boards:
+              - ESP3D/Version_3.X/hardware/system_boards/index.md
+              - ESP3D/Version_3.X/hardware/system_boards/main_boards/index.md
+              - ESP3D/Version_3.X/hardware/system_boards/tft/index.md
+      - Installation:
+          - ESP3D/Version_3.X/installation/index.md
+          - ESP3D/Version_3.X/installation/arduino.md
+          - ESP3D/Version_3.X/installation/vscode-platformio.md
+      - Documentation:
+          - ESP3D/Version_3.X/documentation/index.md
+          - ESP3D/Version_3.X/documentation/commands/index.md
+          - ESP3D/Version_3.X/documentation/authentication.md
+          - Notifications:
+                - ESP3D/Version_3.X/documentation/notifications/index.md
+                - ESP3D/Version_3.X/documentation/notifications/pushover.md
+                - ESP3D/Version_3.X/documentation/notifications/line.md
+                - ESP3D/Version_3.X/documentation/notifications/email_and_smtp.md
+                - ESP3D/Version_3.X/documentation/notifications/ifttt.md
+                - ESP3D/Version_3.X/documentation/notifications/telegram.md
+                - ESP3D/Version_3.X/documentation/notifications/home-assistant.md
+          - ESP3D/Version_3.X/documentation/camera/index.md
+          - ESP3D/Version_3.X/documentation/update/index.md
+          - ESP3D/Version_3.X/documentation/sdtransfer.md
+          - ESP3D/Version_3.X/documentation/ftp.md
+          - ESP3D/Version_3.X/documentation/webdav.md 
+          - ESP3D/Version_3.X/documentation/compilation/index.md
+          - API:
+            - ESP3D/Version_3.X/documentation/api/index.md
+            - ESP3D/Version_3.X/documentation/api/webhandlers.md
+            - ESP3D/Version_3.X/documentation/api/websockets.md
+          
+      - ESP3D/Version_3.X/showcase/index.md
+      - ESP3D/Version_3.X/credits/index.md
 not_in_nav:
   /common
 
@@ -51,6 +100,7 @@ plugins:
   
 markdown_extensions:
   - attr_list
+  - md_in_html
   - admonition
   - def_list
   - pymdownx.highlight:
@@ -64,6 +114,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
           
           
   
