@@ -4,8 +4,6 @@ title : "Hardware"
 menuPre : "<i class='fas fa-microchip'></i> "
 weight : 1
 ---
-
-
-{{ macros_info() }}
-
-{{ List_childrens(1) }}
+<center>
+{{ List_children(3) }}
+</center>

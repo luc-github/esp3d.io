@@ -4,7 +4,26 @@ site_url: https://esp3d.io
 repo_url: 'https://github.com/luc-github/esp3d.io'
 edit_uri_template: 'edit/main/src/content/{path}'
 copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
- 
+
+nav:
+- Home: index.md
+- ESP3D: 
+  - ESP3D/index.md  
+  - Version 2.1.X:
+        - ESP3D/Version_2.1.X/index.md
+        - ESP3D/Version_2.1.X/credits/index.md
+        - ESP3D/Version_2.1.X/features/index.md
+        - Hardware:
+            - ESP3D/Version_2.1.X/hardware/index.md
+            - ESP8266:
+                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP8266/**
+            - ESP8285:
+                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP8285/**
+            - ESP32:
+                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP32/**
+        - Installation:
+            - ESP3D/Version_2.1.X/installation/index.md
+        - ESP3D/Version_2.1.X/showcase/index.md
 not_in_nav:
   /common
 
