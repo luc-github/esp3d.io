@@ -1,7 +1,7 @@
 ---
 description : "Macros Documentation"
 archetype : "home"
-title : "Macros Documentation"
+title : "Macros"
 menuPre : "<i class='fas fa-scroll'></i> "
 weight : 5
 ---

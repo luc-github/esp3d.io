@@ -213,6 +213,7 @@ e.g: `(int)3.5;`
 ### Lambda Expressions
 //TODO
 
-Inspired from :
+Inspired from :   
+
 * [Naming Convention in C++](https://www.geeksforgeeks.org/naming-convention-in-c/)
 * [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html)

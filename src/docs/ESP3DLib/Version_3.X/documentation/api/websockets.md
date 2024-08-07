@@ -5,7 +5,7 @@ title : "Web Sockets"
 weight : 2
 ---
 
-there are 2
+There are 2 websocket servers:
 
 -   terminal websocket
     used to stream data to webUI and exchange internal data
@@ -76,11 +76,12 @@ the frame format is :
  2 bytes: for frame size to check some integrity, currently as already part of frame no checksume is used
  x bytes : extra data according frame type
 
- ## Frame types
+## Frame types
 
- ### Query status frame  
+### Query status frame  
  type: client -> esp
-  Status Request
+  Status Request:
+
   | `S` | `R` | 0 | 0 |   
   | - | - | - | - |
 
@@ -91,7 +92,8 @@ with hexadecimal values:
  
 
  Response frame use inverted header:
-Response Status
+Response Status:
+
  | `R` | `S` | 0 | 1 | `A` |
  | - | - | - | - | - |
 
@@ -100,7 +102,8 @@ with hexadecimal values:
  | 0x52 | 0x53 | 0 | 1 | 0x41 |
  | - | - | - | - | - |
 
-the first byte of answer is the state
+the first byte of answer is the state:
+
 |Code | Hexa | Meaning|
 |-|-|-|
 |`B` | 0x42| busy|
@@ -116,7 +119,8 @@ extra data may be added :
 error code and string, 
 1 byte : error code: 0->255
 1 byte : string size 0->255
-XX bytes for the string
+XX bytes for the string:
+
 |`R`|`S`|x|x|`C`|4|X|..|..|
 |-|-|-|-|-|-|-|-|-|
 
@@ -130,6 +134,7 @@ xx bytes : filename string
 4 bytes : total file size
 4 bytes : currently processed bytes
 4 bytes : last packet id processed
+
 |`R`|`S`|x|x|`U`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
@@ -143,12 +148,14 @@ xx bytes : filename string
 4 bytes : total file size
 4 bytes : currently processed bytes
 4 bytes : last packet id processed
+
 |`R`|`S`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
 
 ### Start upload frame
 header is : 
+
 | `S` | `U` | 0 | 0 |   
 | - | - | - | - |
 
@@ -172,6 +179,7 @@ it means transfert can start
 
 ### Transfert upload frame
 header is :
+
 | `U` | `P` | x | x | ID | ID | ID | ID |..|..|  
 | - | - | - | - | - | - | - | - | - | - |
 
@@ -185,6 +193,7 @@ if packet is received the answer is
 
 ### Start dowload frame
 header is :
+
 | `S` | `D` | 0 | 0 |   
 | - | - | - | - |
 
@@ -208,28 +217,32 @@ it means transfert can start
 
 ### Transfert download frame
 header is :
+
 | `D` | `P` | x | x | ID | ID | ID | ID |..|..|  
 | - | - | - | - | - | - | - | - | - | - |
 
 4 bytes is packet id
 XXXX bytes is data
 
-if packet is received the answer is 
-|`P`|`D`|0|5|`O`| ID | ID | ID | ID 
+if packet is received the answer is:
+
+|`P`|`D`|0|5|`O`| ID | ID | ID | ID |
 |-|-|-|-|-|-|-|-|-|
 
 
 ### Command frame
 header is :
+
 | `C` | `M` | 0 | 1 | X |
 | - | - | - | - |-|
 
 Commands:
+
 |Code | Hexa | Meaning|
 |-|-|-|
 |`A` | 0x41| abort|
 
-Abort command frame 
+Abort command frame: 
 
 | `C` | `M` | 0 | 1 | `A` |
 | - | - | - | - |-|

@@ -32,13 +32,13 @@ The V3.X features are :
 -   Authentication support (admin / user)
 -   Configuration wizard (TBD)
 -   Firmware supported (3DPrinter / CNC / SandTable):
-    -   [ESP3D V3.x](/esp3d/v3.x/):
+    -   [ESP3D V3.x](/ESP3D/Version_3.X/):
         -   Marlin (1.x / 2.x)
         -   Smoothieware (1.x / 2.x)
         -   Repetier (1.x / 2.x)
         -   GRBL (1.1h)
-    -   [ESP3D-TFT](/esp3d-tft/)
-    -   [ESP3DLib](/esp3dlib/v3.x/)
+    -   [ESP3D-TFT V1.X](/ESP3D-TFT/Version_1.X)
+    -   [ESP3DLib V3.X](/ESP3DLib/Version_3.X/)
         -   Marlin (2.x) - currently need custom version of Marlin : https://github.com/luc-github/Marlin/tree/ESP3DLibV3.0
     -   [grblHAL](https://github.com/grblHAL)
     -   Makerbase TFT (/esp3d/v3.x/)

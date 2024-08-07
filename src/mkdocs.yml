@@ -189,6 +189,28 @@ nav:
       - ESP3D-WebUI/Version_2.X/credits/index.md
   - Version 3.X:
       - ESP3D-WebUI/Version_3.X/index.md
+      - ESP3D-WebUI/Version_3.X/features/index.md
+      - ESP3D-WebUI/Version_3.X/installation/index.md
+      - Documentation:
+        - ESP3D-WebUI/Version_3.X/documentation/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/polling/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/themes/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/camera/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/update/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/macros/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/translation.md
+        - ESP3D-WebUI/Version_3.X/documentation/compilation.md
+        - API:
+          - ESP3D-WebUI/Version_3.X/documentation/api/index.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/conventions.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/fileupload.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/variablesList.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/realtimecmd.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/webhandlers.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/websockets.md
+      - ESP3D-WebUI/Version_3.X/showcase/index.md
+      - ESP3D-WebUI/Version_3.X/credits/index.md
+
 - Extra tools:
   - tools/index.md
   - tools/sdtools.md
@@ -196,6 +218,8 @@ nav:
     - tools/discovery/index.md
     - tools/discovery/mdns.md
     - tools/discovery/ssdp.md
+ 
+
 not_in_nav:
   /common
 

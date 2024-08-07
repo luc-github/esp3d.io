@@ -6,7 +6,7 @@ weight : 4
 ---
 
 !!! info "Note"
-This document is a receipe of conventions that may not be currently implemented yet, but will be from now, current code will be updated according to it before beta state.
+    This document is a receipe of conventions that may not be currently implemented yet, but will be from now, current code will be updated according to it before beta state.
 
 
 
@@ -67,7 +67,8 @@ Style should be also applied also
 * Digits may be used in the name but only after the alphabet.
 * No special symbols / keywords can be used in names
 
-Inspired from :
+Inspired from :   
+
 * [Google JavaScript Style Guide+](https://google.github.io/styleguide/jsguide.html)
 * [Naming Conventions in React JS - Upbeat Code](https://www.upbeatcode.com/react/react-naming-conventions/)
 * [10-react-naming-conventions-best-practices](https://climbtheladder.com/10-react-naming-conventions-best-practices/)

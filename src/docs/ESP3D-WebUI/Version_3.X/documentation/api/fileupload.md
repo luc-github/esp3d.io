@@ -42,7 +42,7 @@ The value is the size of the file in bytes.
 #### The file time parameter (optional)
 The file time parameter is the last modified time of the file to upload. It is optional but allow to set right time on file on ESP that has not time synchronization.
 The argument name is the full file path with filename with a `T` suffix.
-The value format is ISO 8601 (YYYY-MM-DDThh:mm:ss) without timezone.
+The value format is ISO 8601 (`YYYY-MM-DDThh:mm:ss`) without timezone.
 
 #### The file data binary (required)
 The file data binary is the file data itself. It is the last parameter of the multipart form data POST request, and it also contains the full file name.
