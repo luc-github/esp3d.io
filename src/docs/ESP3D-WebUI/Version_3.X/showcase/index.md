@@ -40,7 +40,7 @@ weight : 4
 
 ### Target Firmware settings
 #### Marlin
-![image](Marlin_settings.png?width=400px)
+![image](marlin_settings.png?width=400px)
 
 #### Repetier
 ![image](repetier_settings.png?width=400px)

@@ -22,4 +22,4 @@ WebUI should support features of the following firmwares:
 ![image](showcase/full.png)
 
 
-The ESP3D-WEBUI 2.X must be used with [ESP3D 2.X](/esp3d/v2.x/), [ESP3DLib 1.X](/esp3dlib/v1.x/).
+The ESP3D-WEBUI 2.X must be used with [ESP3D 2.X](/ESP3D/Version_2.X), [ESP3DLib 1.X](/ESP3DLib/Version_1.x/).

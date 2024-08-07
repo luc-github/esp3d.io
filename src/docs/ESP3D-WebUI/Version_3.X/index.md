@@ -22,5 +22,5 @@ WebUI should support features of the following firmwares:
 ![image](showcase/full.png)
 
 
-The ESP3D-WEBUI 3.X must be used with [ESP3D 3.X](/ESP3D/Version_3.x/), [ESP3DLib 3.X](/ESP3Lib/Version_3.x/) and [grblHAL](https://github.com/grblHAL)
+The ESP3D-WEBUI 3.X must be used with [ESP3D 3.X](/ESP3D/Version_3.X/), [ESP3DLib 3.X](/ESP3Lib/Version_3.X/) and [grblHAL](https://github.com/grblHAL)
 It won't work with older versions.

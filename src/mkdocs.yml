@@ -134,7 +134,7 @@ nav:
           - API:
             - ESP3DLib/Version_3.X/documentation/api/index.md
             - ESP3DLib/Version_3.X/documentation/api/webhandlers.md
-            - ESP3DLib/Version_3.X/documentation/api/websockets.m
+            - ESP3DLib/Version_3.X/documentation/api/websockets.md
       - ESP3DLib/Version_3.X/showcase/index.md
       - ESP3DLib/Version_3.X/credits/index.md
 - ESP3D-TFT: 
@@ -178,6 +178,15 @@ nav:
   - ESP3D-WebUI/index.md
   - Version 2.X:
       - ESP3D-WebUI/Version_2.X/index.md
+      - ESP3D-WebUI/Version_2.X/features/index.md
+      - ESP3D-WebUI/Version_2.X/installation/index.md
+      - Documentation:
+        - ESP3D-WebUI/Version_2.X/documentation/index.md
+        - ESP3D-WebUI/Version_2.X/documentation/camera/index.md
+        - ESP3D-WebUI/Version_2.X/documentation/translation.md
+        - ESP3D-WebUI/Version_2.X/documentation/compilation.md
+      - ESP3D-WebUI/Version_2.X/showcase/index.md
+      - ESP3D-WebUI/Version_2.X/credits/index.md
   - Version 3.X:
       - ESP3D-WebUI/Version_3.X/index.md
 - Extra tools:
