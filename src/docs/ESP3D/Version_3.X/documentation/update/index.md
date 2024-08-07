@@ -35,7 +35,7 @@ You can update all esp3d settings when board is starting using an ini file named
 Once update is done all passwords set in file will be replaced by `********`.
 
 
-{{ attachements() }} 
+{{ attachments() }} 
 
 
 

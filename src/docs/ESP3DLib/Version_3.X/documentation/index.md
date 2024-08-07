@@ -6,6 +6,7 @@ weight : 3
 ---
 
 The documentation section will help you on:
+
 <center>
-{{ List_children(3,true) }}
+{{ List_children(1,true) }}
 </center>

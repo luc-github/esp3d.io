@@ -67,4 +67,4 @@ Once change are applied the webui will automatically restart
 ![image](black_theme.png)
 
 ### Here some themes as examples:   
-resources color="blue" icon="fas fa-paperclip" sort="asc" pattern="^(theme-)" /
+{{ attachments() }} 

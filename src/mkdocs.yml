@@ -105,6 +105,38 @@ nav:
         - ESP3DLib/Version_1.X/credits/index.md
   - Version 3.X:
       - ESP3DLib/Version_3.X/index.md
+      - ESP3DLib/Version_3.X/features/index.md
+      - Hardware:
+          - ESP3DLib/Version_3.X/hardware/index.md
+          - ESP3DLib/Version_3.X/hardware/fysetc-e4/index.md
+          - ESP3DLib/Version_3.X/hardware/mks-tinybee-v1/index.md
+          - ESP3DLib/Version_3.X/hardware/mrr-espa/index.md
+          - ESP3DLib/Version_3.X/hardware/mrr-espe/index.md
+          - ESP3DLib/Version_3.X/hardware/panda-zhu-m4/index.md
+      - ESP3DLib/Version_3.X/installation/index.md
+      - Documentation:
+          - ESP3DLib/Version_3.X/documentation/index.md
+          - ESP3DLib/Version_3.X/documentation/commands/index.md
+          - ESP3DLib/Version_3.X/documentation/authentication.md
+          - Notifications:
+                - ESP3DLib/Version_3.X/documentation/notifications/index.md
+                - ESP3DLib/Version_3.X/documentation/notifications/pushover.md
+                - ESP3DLib/Version_3.X/documentation/notifications/line.md
+                - ESP3DLib/Version_3.X/documentation/notifications/email_and_smtp.md
+                - ESP3DLib/Version_3.X/documentation/notifications/ifttt.md
+                - ESP3DLib/Version_3.X/documentation/notifications/telegram.md
+                - ESP3DLib/Version_3.X/documentation/notifications/home-assistant.md
+          - ESP3DLib/Version_3.X/documentation/update/index.md
+          - ESP3DLib/Version_3.X/documentation/ftp.md
+          - ESP3DLib/Version_3.X/documentation/webdav.md 
+          - ESP3DLib/Version_3.X/documentation/compilation/index.md
+          - ESP3DLib/Version_3.X/documentation/faq.md
+          - API:
+            - ESP3DLib/Version_3.X/documentation/api/index.md
+            - ESP3DLib/Version_3.X/documentation/api/webhandlers.md
+            - ESP3DLib/Version_3.X/documentation/api/websockets.m
+      - ESP3DLib/Version_3.X/showcase/index.md
+      - ESP3DLib/Version_3.X/credits/index.md
 - ESP3D-TFT: 
   - ESP3D-TFT/index.md
   - Version 1.X:

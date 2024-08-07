@@ -54,11 +54,12 @@ def define_env(env):
                 elif f.endswith('.md') and f != 'index.md':
                     info = extract_frontmatter(full_file_path) or {}
                     rel_path = os.path.relpath(full_file_path, full_path)
-                    url = quote(rel_path.replace('\\', '/'))
+                    url = quote(rel_path.replace('\\', '/')).replace(".md", '/')
                     title = info.get('title') or os.path.splitext(f)[0]
                     weight = info.get('weight', 0)
                     desc = info.get('description', '')
                     item_content = f'<a href="{url}">{title}</a>'
+                    
                     if addDescription and desc:
                         item_content += f' <div class="description" style="margin-bottom:1rem!important;margin-top:0px!important;"><i>{desc}</i></div>'
                     items.append((weight, f'<li>{item_content}</li>'))
@@ -73,7 +74,7 @@ def define_env(env):
         return "<p>No files found.</p>"
     
     @env.macro
-    def attachements():
+    def attachments():
         base_path = env.conf['docs_dir']
         current_page = Path(env.page.file.src_path)
         attachments_dir = os.path.join(base_path, str(current_page.parent), 'attachments.mkdocs')
