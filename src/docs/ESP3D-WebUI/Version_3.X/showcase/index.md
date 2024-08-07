@@ -43,7 +43,7 @@ weight : 4
 ![image](marlin_settings.png?width=400px)
 
 #### Repetier
-![image](repetier_settings.png?width=400px)
+![image](repetier_settings.PNG?width=400px)
 
 #### Smoothieware
 ![image](smoothieware_settings.png?width=400px)

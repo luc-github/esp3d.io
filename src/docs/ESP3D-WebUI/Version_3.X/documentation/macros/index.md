@@ -21,7 +21,7 @@ The available macro types can depend on the targeted system and its capabilities
 
 * This panel allows users to view, create, and manage their custom macros.
 
-![image](macrolist.png?width=400px)
+![image](MacroList.png?width=400px)
 
 ### Macro Visibility and Customization
 The macros panel can be set to "Show" or "Visible when starting" to control the visibility of the macros.

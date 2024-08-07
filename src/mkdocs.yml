@@ -5,6 +5,9 @@ repo_url: 'https://github.com/luc-github/esp3d.io'
 edit_uri_template: 'edit/main/src/content/{path}'
 copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
 
+extra_css:
+  - style.css
+
 nav:
 - index.md
 - ESP3D: 
