@@ -84,6 +84,39 @@ nav:
           
       - ESP3D/Version_3.X/showcase/index.md
       - ESP3D/Version_3.X/credits/index.md
+- ESP3DLib: 
+  - ESP3DLib/index.md  
+  - Version 1.X:
+        - ESP3DLib/Version_1.X/index.md
+        - ESP3DLib/Version_1.X/features/index.md
+        - Hardware:
+          - ESP3DLib/Version_1.X/hardware/index.md
+          - ESP3DLib/Version_1.X/hardware/esp32-controller/index.md
+          - ESP3DLib/Version_1.X/hardware/fysetc-e4/index.md
+          - ESP3DLib/Version_1.X/hardware/mks-tinybee-v1/index.md
+          - ESP3DLib/Version_1.X/hardware/mrr-espa/index.md
+          - ESP3DLib/Version_1.X/hardware/mrr-espe/index.md
+          - ESP3DLib/Version_1.X/hardware/panda-zhu-m4/index.md
+        - ESP3DLib/Version_1.X/installation/index.md
+        - Documentation:
+          - ESP3DLib/Version_1.X/documentation/index.md
+          - ESP3DLib/Version_1.X/documentation/commands/index.md
+        - ESP3DLib/Version_1.X/showcase/index.md
+        - ESP3DLib/Version_1.X/credits/index.md
+  - Version 3.X:
+      - ESP3DLib/Version_3.X/index.md
+- ESP3D-TFT: 
+  - ESP3D-TFT/index.md
+  - Version 1.X:
+        - ESP3D-TFT/Version_1.X/index.md
+- ESP3D-WEBUI:
+  - ESP3D-WebUI/index.md
+  - Version 2.X:
+      - ESP3D-WebUI/Version_2.X/index.md
+  - Version 3.X:
+      - ESP3D-WebUI/Version_3.X/index.md
+- Extra tools:
+  - tools/index.md
 not_in_nav:
   /common
 

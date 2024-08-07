@@ -8,7 +8,7 @@ weight : 1
 [![badge](https://img.shields.io/github/release/luc-github/ESP3D-WEBUI.svg?style=plastic)](https://github.com/luc-github/ESP3D-WEBUI/releases/tag/v2.1.1)
 [![badge](https://img.shields.io/github/commit-activity/y/luc-github/ESP3D-WEBUI/2.1?style=plastic)](https://github.com/luc-github/ESP3D-WEBUI/tree/2.1)
 [![badge](https://img.shields.io/github/last-commit/luc-github/ESP3D-WEBUI/2.1?style=plastic)](https://github.com/luc-github/ESP3D-WEBUI/tree/2.1.x)
-[![badge](https://discord.gg/Z4ujTwE)](https://discord.gg/Z4ujTwE)
+[![badge](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)
 
 This version is the production version, features are frozen, only bugfixes are accepted.
 

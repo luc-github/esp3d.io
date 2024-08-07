@@ -23,7 +23,7 @@ Firmware should work with the following firmwares:
 
 The communication between ESP board and target board is done by serial. 
 
-The firmware must be used with [ESP3D-WEBUI 3.X](/esp3d-webui/v3.x/)
+The firmware must be used with [ESP3D-WEBUI 3.X](/ESP3D-WebUI/Version_3.x/)
 
 To help and simplify the configuration, a configurator is available:  
 
