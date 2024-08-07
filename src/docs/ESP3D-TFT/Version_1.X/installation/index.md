@@ -83,6 +83,15 @@ or
 !!! info "Note"
     Sometime the build button failed and you must delete the build directory manualy
 
+If compilation failed because of missing components like ssdp or LittleFS, it means you did not executed the `git submodule update --init --recursive`
+
+If compilation failed because of not declared config element like  `CONFIG_FATFS_MAX_LFN`,  it means your sdkconfig is corrupted, it happen when you change target esp, you may see a ne file with `.old` at the end, it is a bug in extension, just revert all change done in repository.
+
+You can check using the command `git status -s` to see if you have any change in repository
+
+If you use github desktop application, just revert all changes in repository, if you used git, you can revert all changes with `git reset --hard HEAD`
+You need to update the CMakeLists.txt to match your hardware the revert command removed your latest changes.
+
 ### Connect the TFT
 
 !!! info "Note"
