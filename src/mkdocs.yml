@@ -17,12 +17,15 @@ nav:
         - ESP3D/Version_2.1.X/features/index.md
         - Hardware:
             - ESP3D/Version_2.1.X/hardware/index.md
-            - ESP8266:
-                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP8266/**
-            - ESP8285:
-                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP8285/**
-            - ESP32:
-                - ... | flat | ESP3D/Version_2.1.X/hardware/ESP32/**
+            - ESP boards:
+                - ESP3D/Version_2.1.X/hardware/esp_boards/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp8266/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp8285/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp32/index.md
+            - System boards:
+              - ESP3D/Version_2.1.X/hardware/system_boards/index.md
+              - ESP3D/Version_2.1.X/hardware/system_boards/main_boards/index.md
+              - ESP3D/Version_2.1.X/hardware/system_boards/tft/index.md
         - Installation:
             - ESP3D/Version_2.1.X/installation/index.md
             - ESP3D/Version_2.1.X/installation/arduino.md

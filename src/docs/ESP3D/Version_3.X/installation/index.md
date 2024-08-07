@@ -23,4 +23,4 @@ Click on the corresponding image to display how to setup.
 
 ### Connect your board 
 
-{% include-markdown "../../../common/hardware-connection.md" %}
+Check the [hardware section](../hardware/) for more information.
