@@ -52,7 +52,8 @@ Cmake can automatically download the components required for ESP3D, such as came
 - Select : View->Command palette 
 - Type : configure esp
 
-Currently ESP3D-TFT use the released version 5.1  of the IDF 
+!!! info "Note"
+    Currently ESP3D-TFT use the released version **5.1.2**  of the IDF, using another release version of the IDF is not supported.
 
 If you install ESP-IDF offline, you need to select "UseExitSetup"
 
@@ -81,3 +82,8 @@ or
 
 !!! info "Note"
     Sometime the build button failed and you must delete the build directory manualy
+
+### Connect the TFT
+
+!!! info "Note"
+    If you use serial connection, to ensure the esp board and the connected board can communicate, be sure both boards use the same baud rate.

@@ -111,3 +111,17 @@ On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint
 ![image-before](opt2-before-mod.jpg?width=400px)
 ##### After:
 ![image-after](opt2-after-mod.jpg?width=400px)
+
+
+!!! warning "Warning"
+    It seems that there are several versions of this board, I only have one.
+
+    The pinout is different from the one in the pictures and the drivers can be differents.
+    
+    Boards pinouts are [here](https://github.com/rzeldent/platformio-espressif32-sunton)
+
+Because I do not have the 2 others boards, I cannot do an update here, if you are able to, please contact me I will be happy to update the documentation.
+
+I enclose also the files here for reference:
+
+{{ attachments()}}

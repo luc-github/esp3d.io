@@ -24,3 +24,7 @@ Click on the corresponding image to display how to setup.
 ### Connect your board 
 
 Check the [hardware section](../hardware/) for more information.
+
+
+!!! info "Note"
+    To be sure the esp board and the connected board can communicate, be sure both boards use the same baud rate.
