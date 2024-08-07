@@ -1038,6 +1038,7 @@ The scripts directory contains the scripts used to build the firmware. The scrip
     - French chars are 0xE0,0xE7,0xE8,0xE9,0xEA,0xF4
    * I use also FreeSerifBold.ttf  0x2022 char
    * for the symbols I use Font fa-solid-900 and fa-brands-400.ttf:
+   
       |code|SYMBOL|font|
       |-|-|-|
        |0xe568|HEAT_BED|fa-solid-900.ttf|
@@ -1112,6 +1113,3 @@ The scripts directory contains the scripts used to build the firmware. The scrip
        |0xf256|MANUAL|fa-solid-900.ttf|
        |0xf544|AUTOMATIC|fa-solid-900.ttf|
     
-
-![](symbols_1.png)    
-![](symbols_2.png)
