@@ -1,8 +1,0 @@
-{{- $context := .context }}
-{{- $alt := .alt | default "" }}
-{{- $path := .path | default "" }}
-{{- $url := .url | default "" }}
-
-{{- with $context -}}
-<span style="display:inline-block!important;"><a href="{{ $url }}" target="_blank"><img src="{{ $path }}" style="height:1.2rem" atl="{{ $alt }}"/></a></span>
-{{- end }}

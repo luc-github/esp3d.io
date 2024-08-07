@@ -1,0 +1,275 @@
+site_name: esp3d.io
+site_description: ESP3D Ecosystem documentation
+site_url: https://esp3d.io
+repo_url: 'https://github.com/luc-github/esp3d.io'
+edit_uri_template: 'edit/main/src/content/{path}'
+copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
+
+extra_css:
+  - style.css
+
+nav:
+- index.md
+- ESP3D: 
+  - ESP3D/index.md  
+  - Version 2.1.X:
+        - ESP3D/Version_2.1.X/index.md
+        - ESP3D/Version_2.1.X/features/index.md
+        - Hardware:
+            - ESP3D/Version_2.1.X/hardware/index.md
+            - ESP boards:
+                - ESP3D/Version_2.1.X/hardware/esp_boards/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp8266/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp8285/index.md
+                - ESP3D/Version_2.1.X/hardware/esp_boards/esp32/index.md
+            - System boards:
+              - ESP3D/Version_2.1.X/hardware/system_boards/index.md
+              - ESP3D/Version_2.1.X/hardware/system_boards/main_boards/index.md
+              - ESP3D/Version_2.1.X/hardware/system_boards/tft/index.md
+        - Installation:
+            - ESP3D/Version_2.1.X/installation/index.md
+            - ESP3D/Version_2.1.X/installation/arduino.md
+            - ESP3D/Version_2.1.X/installation/vscode-platformio.md
+        - Documentation:
+            -  ESP3D/Version_2.1.X/documentation/index.md
+            -  ESP3D/Version_2.1.X/documentation/commands/index.md
+            - Notifications:
+              -  ESP3D/Version_2.1.X/documentation/notifications/index.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/pushover.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/line.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/email_and_smtp.md
+              -  ESP3D/Version_2.1.X/documentation/notifications/ifttt.md
+            -  ESP3D/Version_2.1.X/documentation/sdtransfert/index.md
+            -  ESP3D/Version_2.1.X/documentation/api/index.md
+        - ESP3D/Version_2.1.X/showcase/index.md
+        - ESP3D/Version_2.1.X/credits/index.md
+  - Version 3.X:
+      - ESP3D/Version_3.X/index.md
+      - ESP3D/Version_3.X/features/index.md
+      - Hardware:
+            - ESP3D/Version_3.X/hardware/index.md
+            - ESP boards:
+                - ESP3D/Version_3.X/hardware/esp_boards/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp8266/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp8285/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-c3/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-pico/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-s2/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-s3/index.md
+            - System boards:
+              - ESP3D/Version_3.X/hardware/system_boards/index.md
+              - ESP3D/Version_3.X/hardware/system_boards/main_boards/index.md
+              - ESP3D/Version_3.X/hardware/system_boards/tft/index.md
+      - Installation:
+          - ESP3D/Version_3.X/installation/index.md
+          - ESP3D/Version_3.X/installation/arduino.md
+          - ESP3D/Version_3.X/installation/vscode-platformio.md
+      - Documentation:
+          - ESP3D/Version_3.X/documentation/index.md
+          - ESP3D/Version_3.X/documentation/commands/index.md
+          - ESP3D/Version_3.X/documentation/authentication.md
+          - Notifications:
+                - ESP3D/Version_3.X/documentation/notifications/index.md
+                - ESP3D/Version_3.X/documentation/notifications/pushover.md
+                - ESP3D/Version_3.X/documentation/notifications/line.md
+                - ESP3D/Version_3.X/documentation/notifications/email_and_smtp.md
+                - ESP3D/Version_3.X/documentation/notifications/ifttt.md
+                - ESP3D/Version_3.X/documentation/notifications/telegram.md
+                - ESP3D/Version_3.X/documentation/notifications/home-assistant.md
+          - ESP3D/Version_3.X/documentation/camera/index.md
+          - ESP3D/Version_3.X/documentation/update/index.md
+          - ESP3D/Version_3.X/documentation/sdtransfer.md
+          - ESP3D/Version_3.X/documentation/ftp.md
+          - ESP3D/Version_3.X/documentation/webdav.md 
+          - ESP3D/Version_3.X/documentation/compilation/index.md
+          - API:
+            - ESP3D/Version_3.X/documentation/api/index.md
+            - ESP3D/Version_3.X/documentation/api/webhandlers.md
+            - ESP3D/Version_3.X/documentation/api/websockets.md
+          
+      - ESP3D/Version_3.X/showcase/index.md
+      - ESP3D/Version_3.X/credits/index.md
+- ESP3DLib: 
+  - ESP3DLib/index.md  
+  - Version 1.X:
+        - ESP3DLib/Version_1.X/index.md
+        - ESP3DLib/Version_1.X/features/index.md
+        - Hardware:
+          - ESP3DLib/Version_1.X/hardware/index.md
+          - ESP3DLib/Version_1.X/hardware/esp32-controller/index.md
+          - ESP3DLib/Version_1.X/hardware/fysetc-e4/index.md
+          - ESP3DLib/Version_1.X/hardware/mks-tinybee-v1/index.md
+          - ESP3DLib/Version_1.X/hardware/mrr-espa/index.md
+          - ESP3DLib/Version_1.X/hardware/mrr-espe/index.md
+          - ESP3DLib/Version_1.X/hardware/panda-zhu-m4/index.md
+        - ESP3DLib/Version_1.X/installation/index.md
+        - Documentation:
+          - ESP3DLib/Version_1.X/documentation/index.md
+          - ESP3DLib/Version_1.X/documentation/commands/index.md
+        - ESP3DLib/Version_1.X/showcase/index.md
+        - ESP3DLib/Version_1.X/credits/index.md
+  - Version 3.X:
+      - ESP3DLib/Version_3.X/index.md
+      - ESP3DLib/Version_3.X/features/index.md
+      - Hardware:
+          - ESP3DLib/Version_3.X/hardware/index.md
+          - ESP3DLib/Version_3.X/hardware/fysetc-e4/index.md
+          - ESP3DLib/Version_3.X/hardware/mks-tinybee-v1/index.md
+          - ESP3DLib/Version_3.X/hardware/mrr-espa/index.md
+          - ESP3DLib/Version_3.X/hardware/mrr-espe/index.md
+          - ESP3DLib/Version_3.X/hardware/panda-zhu-m4/index.md
+      - ESP3DLib/Version_3.X/installation/index.md
+      - Documentation:
+          - ESP3DLib/Version_3.X/documentation/index.md
+          - ESP3DLib/Version_3.X/documentation/commands/index.md
+          - ESP3DLib/Version_3.X/documentation/authentication.md
+          - Notifications:
+                - ESP3DLib/Version_3.X/documentation/notifications/index.md
+                - ESP3DLib/Version_3.X/documentation/notifications/pushover.md
+                - ESP3DLib/Version_3.X/documentation/notifications/line.md
+                - ESP3DLib/Version_3.X/documentation/notifications/email_and_smtp.md
+                - ESP3DLib/Version_3.X/documentation/notifications/ifttt.md
+                - ESP3DLib/Version_3.X/documentation/notifications/telegram.md
+                - ESP3DLib/Version_3.X/documentation/notifications/home-assistant.md
+          - ESP3DLib/Version_3.X/documentation/update/index.md
+          - ESP3DLib/Version_3.X/documentation/ftp.md
+          - ESP3DLib/Version_3.X/documentation/webdav.md 
+          - ESP3DLib/Version_3.X/documentation/compilation/index.md
+          - ESP3DLib/Version_3.X/documentation/faq.md
+          - API:
+            - ESP3DLib/Version_3.X/documentation/api/index.md
+            - ESP3DLib/Version_3.X/documentation/api/webhandlers.md
+            - ESP3DLib/Version_3.X/documentation/api/websockets.md
+      - ESP3DLib/Version_3.X/showcase/index.md
+      - ESP3DLib/Version_3.X/credits/index.md
+- ESP3D-TFT: 
+  - ESP3D-TFT/index.md
+  - Version 1.X:
+        - ESP3D-TFT/Version_1.X/index.md
+        - ESP3D-TFT/Version_1.X/features/index.md
+        - Hardware:
+          - ESP3D-TFT/Version_1.X/hardware/index.md
+          - ESP32:
+            - ... | flat | ESP3D-TFT/Version_1.X/hardware/ESP32/**
+          - ESP32-S3:
+            - ... | flat | ESP3D-TFT/Version_1.X/hardware/ESP32-S3/**
+        - ESP3D-TFT/Version_1.X/installation/index.md
+        - Documentation:
+          - ESP3D-TFT/Version_1.X/documentation/index.md
+          - ESP3D-TFT/Version_1.X/documentation/commands/index.md
+          - ESP3D-TFT/Version_1.X/documentation/authentication.md
+          - Notifications:
+              - ESP3D-TFT/Version_1.X/documentation/notifications/index.md
+              - ESP3D-TFT/Version_1.X/documentation/notifications/pushover.md
+              - ESP3D-TFT/Version_1.X/documentation/notifications/line.md
+              - ESP3D-TFT/Version_1.X/documentation/notifications/email_and_smtp.md
+              - ESP3D-TFT/Version_1.X/documentation/notifications/ifttt.md
+              - ESP3D-TFT/Version_1.X/documentation/notifications/telegram.md
+          - ESP3D-TFT/Version_1.X/documentation/update/index.md
+          - ESP3D-TFT/Version_1.X/documentation/ftp.md
+          - ESP3D-TFT/Version_1.X/documentation/webdavservice.md 
+          - ESP3D-TFT/Version_1.X/documentation/compilation/index.md
+          - API:
+            - ESP3D-TFT/Version_1.X/documentation/api/index.md
+            - ESP3D-TFT/Version_1.X/documentation/api/conventions.md
+            - ESP3D-TFT/Version_1.X/documentation/api/project-arch.md
+            - ESP3D-TFT/Version_1.X/documentation/api/webhandlers.md
+            - ESP3D-TFT/Version_1.X/documentation/api/clients.md
+            - ESP3D-TFT/Version_1.X/documentation/api/websockets.md
+            - ESP3D-TFT/Version_1.X/documentation/api/streamingservice.md
+        - ESP3D-TFT/Version_1.X/showcase/index.md
+        - ESP3D-TFT/Version_1.X/credits/index.md
+- ESP3D-WEBUI:
+  - ESP3D-WebUI/index.md
+  - Version 2.X:
+      - ESP3D-WebUI/Version_2.X/index.md
+      - ESP3D-WebUI/Version_2.X/features/index.md
+      - ESP3D-WebUI/Version_2.X/installation/index.md
+      - Documentation:
+        - ESP3D-WebUI/Version_2.X/documentation/index.md
+        - ESP3D-WebUI/Version_2.X/documentation/camera/index.md
+        - ESP3D-WebUI/Version_2.X/documentation/translation.md
+        - ESP3D-WebUI/Version_2.X/documentation/compilation.md
+      - ESP3D-WebUI/Version_2.X/showcase/index.md
+      - ESP3D-WebUI/Version_2.X/credits/index.md
+  - Version 3.X:
+      - ESP3D-WebUI/Version_3.X/index.md
+      - ESP3D-WebUI/Version_3.X/features/index.md
+      - ESP3D-WebUI/Version_3.X/installation/index.md
+      - Documentation:
+        - ESP3D-WebUI/Version_3.X/documentation/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/polling/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/themes/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/camera/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/update/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/macros/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/translation.md
+        - ESP3D-WebUI/Version_3.X/documentation/compilation.md
+        - API:
+          - ESP3D-WebUI/Version_3.X/documentation/api/index.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/conventions.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/fileupload.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/variablesList.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/realtimecmd.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/webhandlers.md
+          - ESP3D-WebUI/Version_3.X/documentation/api/websockets.md
+      - ESP3D-WebUI/Version_3.X/showcase/index.md
+      - ESP3D-WebUI/Version_3.X/credits/index.md
+
+- Extra tools:
+  - tools/index.md
+  - tools/sdtools.md
+  - Discovery tools:
+    - tools/discovery/index.md
+    - tools/discovery/mdns.md
+    - tools/discovery/ssdp.md
+ 
+
+not_in_nav:
+  /common
+
+plugins:
+  - glightbox
+  - awesome-pages
+  - mermaid2
+  - search:
+      min_search_length: 2
+  - autorefs
+  - include-markdown
+  - section-index
+  - macros
+  
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - def_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __s pan
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+          
+          
+  
+theme:
+    name: readthedocs
+    custom_dir: custom_theme/
+    navigation_depth: 12
+    titles_only: true
+    sticky_navigation: false
+    collapse_navigation: true
+    logo: /img/ESP3D_mini2.png
+
+
+
