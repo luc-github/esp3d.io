@@ -2,7 +2,7 @@
 description : "ESP32 - 3.5' (480x320) TFT"
 archetype : "section"
 title : " 3.5' BZM-V1"
-weight : 9
+weight : 35
 ---
 
 * ESP32 based + TFReader + OV2640 + 3.5' TFT (480x320) with Capacitive touch screen

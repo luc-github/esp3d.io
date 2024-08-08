@@ -1,8 +1,8 @@
 ---
-description : "ESP32 3.5' (480x320) TFT"
+description : "ESP32 - 3.5' (480x320) TFT"
 archetype : "section"
 title : "3.5' Rotrics"
-weight : 2
+weight : 35
 ---
 
 * ESP32 + SDReader + PSRAM + 3.5' TFT (480x320) with Resistive touch screen

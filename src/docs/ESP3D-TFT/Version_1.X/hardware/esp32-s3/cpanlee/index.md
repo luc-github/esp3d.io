@@ -2,7 +2,7 @@
 description : "ESP32-S3 3.5' (480x320) TFT"
 archetype : "section"
 title : "3.5' ZX3D50CE02S-USRC-4832"
-weight : 3
+weight : 35
 ---
 
 * ESP32-S3 based + SDReader + PSRAM + 3.5' TFT (480x320) with Capacitive touch screen

@@ -2,7 +2,7 @@
 description : "ESP32-S3 4.3' (800x480) TFT"
 archetype : "section"
 title : "4.3' HMI-V3"
-weight : 4
+weight : 43
 ---
 
 * ESP32-S3 based + SDReader + PSRAM + 4.3' TFT (800x480) with Capacitive touch screen

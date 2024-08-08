@@ -2,7 +2,7 @@
 description : "ESP32-S3 4.3' (480x272) TFT"
 archetype : "section"
 title : " 4.3' ESP32-4827S043R/C"
-weight : 8
+weight : 43
 ---
 
 * ESP32-S3 based + SDReader + PSRAM + 4.3' TFT (470x272) with Resistive or Capacitive touch screen

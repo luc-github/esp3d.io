@@ -2,7 +2,7 @@
 description : "ESP32-S3 7' (800×480) TFT"
 archetype : "section"
 title : " 7.0' ESP32-8048S070C"
-weight : 5
+weight : 70
 ---
 
 * ESP32-S3 based + SDReader + PSRAM + 7' TFT (800x480) with Capacitive touch screen

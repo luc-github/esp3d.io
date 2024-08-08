@@ -2,7 +2,7 @@
 description : "ESP32 - 3.5' (480x320) TFT"
 archetype : "section"
 title : " 3.5' ESP32-3248S035R/C"
-weight : 9
+weight : 35
 ---
 
 * ESP32 based + SDReader + 3.5' TFT (480x320) with Resistive or Capacitive touch screen
@@ -92,12 +92,14 @@ NOTE: Remember to enable the HARDWARE_MOD_GT911_INT option in CMakeLists.txt
 This board has an external SOIC-8 footprint near the ESP32 module that is wired in parallel to the built-in SPI Flash.  This can be used (with some modifications) to add an external SPI PSRAM in order to achieve more available memory.
 
 NOTE: There are (at least) two revisions of this board.
+
 * On one revision, the external SOIC-8 footprint is populated with the SPI Flash IC.  See Option 1 below for Mod details.
 * On another revision, the external SOIC-8 footprint is un-populated (the SPI flash is built into the ESP32 module).  See Option 2 below for Mod details.
 
 In either case, one will first need to acquire a compatible PSRAM IC.  This can be desoldered from an existing board (i.e. ESP32-CAM board), or purchased separately.  Make sure whatever IC you choose supports 3.3v and at least 80 MHz.  Ideally it should support Quad SPI (QIO) as well.
 
 Some compatible 8MB PSRAM ICs are:
+
 * ESP-PSRAM64H
 * IPS6404L-SQ-SPN
 * APM6404-SQ-SPN
@@ -107,6 +109,7 @@ NOTE: Remember to choose the correct variant in CMakeLists.txt to enable PSRAM s
 
 #### Option 1
 On this revision, the PSRAM must be piggy-backed on top of the external Flash IC.
+
 * Place the PSRAM IC directly on top of the Flash IC (with the same orientation for Pin 1).
 * Connect all Pins (except for Pins 1 & 6) directly to the cooresponding pins on the Flash IC below.
 * Remove the RGB LED, as it conflicts with GPIO 16 & 17 that are needed for the new PSRAM IC.
@@ -116,6 +119,7 @@ On this revision, the PSRAM must be piggy-backed on top of the external Flash IC
 
 #### Option 2
 On this revision, the PSRAM can be soldered to the un-populated SOIC-8 footprint.
+
 * Cut the PCB trace going to Pin 1 as well as the PCB trace going to pin 6.
 * Solder the PSRAM IC to the SOIC-8 footprint (making sure Pin 1 is in the correct orientation).
 * Remove the RGB LED, as it conflicts with GPIO 16 & 17 that are needed for the new PSRAM IC.
