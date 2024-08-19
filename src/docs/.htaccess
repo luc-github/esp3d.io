@@ -1,0 +1,21 @@
+RewriteEngine On
+
+
+RewriteRule ^esp3dlib/index\.html$ /ESP3DLib/ [R=301,L,NC]
+RewriteRule ^esp3dlib/v([13])\.x/(.*)$ /ESP3DLib/Version_$1.X/$2 [R=301,L,NC]
+
+RewriteRule ^esp3d-tft/index\.html$ /ESP3D-TFT/ [R=301,L,NC]
+RewriteRule ^esp3d-tft/v([1])\.x/(.*)$ /ESP3D-TFT/Version_$1.X/$2 [R=301,L,NC]
+
+RewriteRule ^esp3d-webui/index\.html$ /ESP3D-WebUI/ [R=301,L,NC]
+RewriteRule ^esp3d-webui/v([23])\.x/(.*)$ /ESP3D-WebUI/Version_$1.X/$2 [R=301,L,NC]
+
+RewriteRule ^esp3d/index\.html$ /ESP3D/ [R=301,L,NC]
+RewriteRule ^esp3d/v2\.x/(.*)$ /ESP3D/Version_2.1.X/$1 [R=301,L,NC]
+RewriteRule ^esp3d/v3\.x/(.*)$ /ESP3D/Version_3.X/$1 [R=301,L,NC]
+
+
+# Redirection générique pour éviter les 404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ https://esp3d.io/ [R=302,L]

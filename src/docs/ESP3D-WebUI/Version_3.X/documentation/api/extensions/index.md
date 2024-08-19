@@ -1171,8 +1171,8 @@ Supported in the modal dialog is used to select a boolean value like for a check
    - "type" (mandatory)
    - "label" (mandatory)   
    - "value" (mandatory) a boolean value
-   - "help" (optionnel) a string with a help text in tooltip
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "help" (optionnal) a string with a help text in tooltip
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
 
 3. "group":
 Supported in the modal dialog is used to group fields together, it may contain any type of fields but not another group
@@ -1180,7 +1180,7 @@ Supported in the modal dialog is used to group fields together, it may contain a
    - "type" (mandatory)
    - "label" (optional)
    - "value" (mandatory) an array of fields
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
 
 4. "number":
 Supported in the modal dialog is used to select a number value float or integer
@@ -1189,12 +1189,12 @@ Supported in the modal dialog is used to select a number value float or integer
    - "label" (mandatory)
    - "min" (optional) a string with the minimum value
    - "max" (optional) a string with the maximum value
-   - "help" (optionnel) a string with a help text in tooltip
-   - "step" (optionnel) a string with the step value for the input, can be a float
-   - "placeholder" (optionnel) a string with a placeholder text
-   - "append" (optionnel) a string to append to the value input like a unit
+   - "help" (optionnal) a string with a help text in tooltip
+   - "step" (optionnal) a string with the step value for the input, can be a float
+   - "placeholder" (optionnal) a string with a placeholder text
+   - "append" (optionnal) a string to append to the value input like a unit
    - "value" (mandatory) a number value
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
 
 5. "text":
 Supported in the modal dialog is used to select a text value
@@ -1202,25 +1202,25 @@ Supported in the modal dialog is used to select a text value
    - "type" (mandatory)
    - "label" (mandatory)
    - "value" (mandatory) a string with the selected value
-   - "help" (optionnel) a string with a help text in tooltip
-   - "placeholder" (optionnel) a string with a placeholder text
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
-   - "min" (optionnel) minimum length of the text
-   - "max" (optionnel) maximum length of the text
-   - "regexpattern" (optionnel) a string with a regex to validate the text
-   - "append" (optionnel) a string to append to the value input like a unit
+   - "help" (optionnal) a string with a help text in tooltip
+   - "placeholder" (optionnal) a string with a placeholder text
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "min" (optionnal) minimum length of the text
+   - "max" (optionnal) maximum length of the text
+   - "regexpattern" (optionnal) a string with a regex to validate the text
+   - "append" (optionnal) a string to append to the value input like a unit
 
 6. "list":
 Currently not supported in the modal dialog it is used in interface tab to select a value from a list (macros, extracontent, panels order, shorkeys)
    - "id" (mandatory)
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
-   - "fixed" (optionnel) 
-   - "sorted" (optionnel)
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "fixed" (optionnal) 
+   - "sorted" (optionnal)
    - "type" (mandatory)
    - "label" (mandatory)
    - "value" (mandatory)
-   - "nodelete" (optionnel)
-   - "editable" (optionnel)
+   - "nodelete" (optionnal)
+   - "editable" (optionnal)
 
 7. "select":
 Supported in the modal dialog is used to select a value from a drop list
@@ -1229,8 +1229,8 @@ Supported in the modal dialog is used to select a value from a drop list
    - "label" (optional)
    - "value" (mandatory) a string with the selected value
    - "options" (mandatory) an array of objects with the options
-   - "help" (optionnel) a string with a help text in tooltip
-   - "depend" (optionnel) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+   - "help" (optionnal) a string with a help text in tooltip
+   - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
 
 
 
