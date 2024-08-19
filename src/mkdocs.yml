@@ -87,6 +87,8 @@ nav:
             - ESP3D/Version_3.X/documentation/api/index.md
             - ESP3D/Version_3.X/documentation/api/webhandlers.md
             - ESP3D/Version_3.X/documentation/api/websockets.md
+            - ESP3D/Version_3.X/documentation/api/variables.md
+            - ESP3D/Version_3.X/documentation/api/hooks.md
           
       - ESP3D/Version_3.X/showcase/index.md
       - ESP3D/Version_3.X/credits/index.md
