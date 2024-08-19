@@ -176,6 +176,7 @@ nav:
             - ESP3D-TFT/Version_1.X/documentation/api/index.md
             - ESP3D-TFT/Version_1.X/documentation/api/conventions.md
             - ESP3D-TFT/Version_1.X/documentation/api/project-arch.md
+            - ESP3D-TFT/Version_1.X/documentation/api/variables.md
             - ESP3D-TFT/Version_1.X/documentation/api/webhandlers.md
             - ESP3D-TFT/Version_1.X/documentation/api/clients.md
             - ESP3D-TFT/Version_1.X/documentation/api/websockets.md
