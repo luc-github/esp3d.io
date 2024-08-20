@@ -55,7 +55,6 @@ Just add following command in your slicer's end script, or manualy on your GCODE
 `echo [ESP600]msg`
 
 !!! info "Note"
-
     The message can also contain the following variables:
 
     * %ESP_IP% : the IP address of the ESP
