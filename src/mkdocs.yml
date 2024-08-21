@@ -205,6 +205,7 @@ nav:
         - ESP3D-WebUI/Version_3.X/documentation/polling/index.md
         - ESP3D-WebUI/Version_3.X/documentation/themes/index.md
         - ESP3D-WebUI/Version_3.X/documentation/camera/index.md
+        - ESP3D-WebUI/Version_3.X/documentation/extra/index.md
         - ESP3D-WebUI/Version_3.X/documentation/extensions/index.md
         - ESP3D-WebUI/Version_3.X/documentation/update/index.md
         - ESP3D-WebUI/Version_3.X/documentation/macros/index.md

@@ -89,7 +89,7 @@ Each extra content using panel as output will be displayed as a panel in dashboa
 
 
 !!! warning "Note"
-  An extra content act as independent content, so when panel / page is close the connection to the content is closed. A new connection will be open when the panel / page is displayed again.
+    An extra content act as independent content, but when panel / page is close, the connection to the content is keept, the page/panel content is just hidden. So when the panel / page is displayed again, the content is put as visible in same state as before closing.
 
 
 ## Conclusion
