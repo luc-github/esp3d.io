@@ -2,7 +2,7 @@ site_name: esp3d.io
 site_description: ESP3D Ecosystem documentation
 site_url: https://esp3d.io
 repo_url: 'https://github.com/luc-github/esp3d.io'
-edit_uri_template: 'edit/main/src/content/{path}'
+edit_uri_template: 'edit/main/src/docs/{path}'
 copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
 
 extra_css:
