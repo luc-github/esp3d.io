@@ -8,7 +8,7 @@ cd esp3d.io
 pip install mkdocs
 pip install mkdocs-material
 pip install mkdocs-mermaid2-plugin
-pip install mkdocs-awesome-pages-plugin</s> # conflict with mkdocs-section-index
+pip install mkdocs-awesome-pages-plugin
 pip install mkdocs-section-index
 pip install mkdocs-glightbox
 pip install mkdocs-macros-plugin

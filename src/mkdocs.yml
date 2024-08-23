@@ -82,6 +82,8 @@ nav:
           - ESP3D/Version_3.X/documentation/sdtransfer.md
           - ESP3D/Version_3.X/documentation/ftp.md
           - ESP3D/Version_3.X/documentation/webdav.md 
+          - ESP3D/Version_3.X/documentation/telnet.md
+          - ESP3D/Version_3.X/documentation/lua.md
           - ESP3D/Version_3.X/documentation/compilation/index.md
           - API:
             - ESP3D/Version_3.X/documentation/api/index.md

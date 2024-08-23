@@ -14,9 +14,13 @@ You can customize the hooks to fit your needs in configuration.h
 ## Hooks
 |Name|Description|
 |-|-|
-|`ESP_GOT_IP_HOOK`|Triggered when ESP got an IP address| 
-|`ESP_GOT_DATE_TIME_HOOK`|Triggered when ESP got a datetime|  
+|`ESP_GOT_IP_HOOK`|Triggered when ESP got an IP address, executes a command| 
+|`ESP_GOT_DATE_TIME_HOOK`|Triggered when ESP got a datetime, executes a command|  
+|`ESP_AUTOSTART_SCRIPT`|Triggered when ESP starts, executes a bunch of commands separated by `;`|
+|`ESP_AUTOSTART_SCRIPT_FILE`|Triggered when ESP starts, executes commands from a file|
 
+!!! Note
+    Only one between AUTOSTART_SCRIPT or AUTOSTART_SCRIPT_FILE can be defined.
 
 ## Examples
 
