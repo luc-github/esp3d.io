@@ -20,7 +20,8 @@ weight : 5
 ![image](pinout.png?width=400px)
 
 
-SD:
+SD (SPI):
+
 | Function | GPIO|
 |:-:|:-:|
 |CS | 21 |
