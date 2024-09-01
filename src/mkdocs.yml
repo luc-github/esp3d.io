@@ -53,8 +53,9 @@ nav:
                 - ESP3D/Version_3.X/hardware/esp_boards/esp8266/index.md
                 - ESP3D/Version_3.X/hardware/esp_boards/esp8285/index.md
                 - ESP3D/Version_3.X/hardware/esp_boards/esp32/index.md
-                - ESP3D/Version_3.X/hardware/esp_boards/esp32-c3/index.md
                 - ESP3D/Version_3.X/hardware/esp_boards/esp32-pico/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-c3/index.md
+                - ESP3D/Version_3.X/hardware/esp_boards/esp32-c6/index.md
                 - ESP3D/Version_3.X/hardware/esp_boards/esp32-s2/index.md
                 - ESP3D/Version_3.X/hardware/esp_boards/esp32-s3/index.md
             - System boards:
