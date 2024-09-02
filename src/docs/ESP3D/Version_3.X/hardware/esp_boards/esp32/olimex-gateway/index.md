@@ -18,3 +18,32 @@ From [Olimex](https://github.com/OLIMEX/ESP32-GATEWAY)
 ![image](back.jpg?width=400px)
 ![image](pinout.jpg?width=400px)
 
+SD (SPIO 1bit):
+
+| Function | GPIO|
+|:-:|:-:|
+|CMD | 15 |
+|CLK|14| 
+|D0|2|
+
+## How to enable ?
+
+In configuration.h:
+
+```cpp
+#define ETH_FEATURE
+
+//Ethernet type (Check ETH.h eth_phy_type_t)
+#define ESP3D_ETH_PHY_TYPE TYPE_ETH_PHY_LAN8720
+
+//Ethernet board Clock mode
+#define ESP3D_ETH_CLK_MODE ETH_CLOCK_GPIO17_OUT
+
+//Pins of ethernet board
+#define ESP3D_ETH_PHY_POWER_PIN 5
+#define ESP3D_ETH_PHY_MDC_PIN 23
+#define ESP3D_ETH_PHY_MDIO_PIN 18
+
+//Address of ethernet board
+#define ESP3D_ETH_PHY_ADDR 0
+```

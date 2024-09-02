@@ -17,6 +17,7 @@ weight : 3
 ## Pinout
 
 SD:
+
 | Function | GPIO|
 | :-: | :-: |
 | CMD | 39  |
