@@ -22,7 +22,7 @@ weight : 2
    &nbsp;&nbsp;&nbsp;&nbsp;&#9755;&nbsp;If [ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
 
 !!! warning "Note"
-      Please use the version 2.0.8.
+      Please use the version 3.0.4.
 
 
 * Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/libraries) and [extra libraries directory](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries) (according your target [ESP8266](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP8266) or [ESP32](https://github.com/luc-github/ESP3D/tree/3.0/extra-libraries/ESP32) ) to your arduino library directory

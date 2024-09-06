@@ -10,10 +10,15 @@ weight : 2
 
 * Add [PlatformIO IDE extension](https://platformio.org/install/ide?install=vscode) to VSCode
 
+!!! Note
+    Platformio stopped support with espressif for esp32 since 3.0 core update, a community project [pioarduino](https://github.com/pioarduino/platform-espressif32) is now used for esp32 instead, the tests are done using arduino esp32 core 3.0.4 / IDF 5.1.4.
+
+    `platform = https://github.com/pioarduino/platform-espressif32/releases/download/51.03.04/platform-espressif32.zip`
+
 ## Open the ESP3D directory folder in VSCode
 The first time you open the project, vscode need to download all necessary files, so be patient
 
-![vscode](/esp3d/v3.x/installation/open_vscode2_1.png?width=400px)
+![vscode](./open_vscode2_1.png?width=400px)
 <center>
 ![image](./open_vscode2_1.png){ width="400" }
 </center>
