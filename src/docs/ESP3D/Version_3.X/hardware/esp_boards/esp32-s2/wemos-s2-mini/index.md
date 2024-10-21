@@ -4,12 +4,6 @@ title : "Wemos S2 mini"
 description :  "Wemos S2 mini"
 weight : 3
 ---
-
-
-![image](notyet.png)
-
-![image](soon.jpeg)
-
 [Documentation](https://www.wemos.cc/en/latest/s2/s2_mini.html)
 
 ## Specs
