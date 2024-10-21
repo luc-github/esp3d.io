@@ -25,3 +25,9 @@ SD (SPI):
 |MOSI|9|
 
 Camera: CAMERA_MODEL_XIAO_ESP32S3
+
+!!! Note "Note"
+    The USB port is USB Serial OTG, so it can be connected to printer/cnc USB port if supported, but it cannot be used as Serial communication with PC USB port, Serial port emulation is not implemented. For this you must use Serial pins of board and any ftdi or Serial/USB adaptor.
+
+!!! Note "Note 2"
+    The printer / CNC usb port usually does not provide any power, so you may need to power the board to mske it work.
