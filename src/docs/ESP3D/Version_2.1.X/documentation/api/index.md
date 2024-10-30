@@ -57,7 +57,7 @@ the output is a json file:
 this handler is for uploading files to printer SD using M28/M29 protocol
 
 ### /command (GET)
-this handler is for all commands the parameter is `cmd=...`
+this handler is for all commands the parameter is `commandText=...`
 if it is an `[ESPXXX]` command the answer is the `[ESPXXX]` response
 if it is not an `[ESPXXX]` command the answer is `ESP3D says: command forwarded` and can be ignored
 
