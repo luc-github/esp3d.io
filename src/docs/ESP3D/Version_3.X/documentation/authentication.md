@@ -144,9 +144,11 @@ Here the scope of right for each authentication level:
 | [[ESP800]](../commands/esp800/) | No | No | Get/Set | Get/Set |
 | [[ESP900]](../commands/esp900/) | No | No | Get/Set | Get/Set |
 | [[ESP901]](../commands/esp901/) | No | No | Get | Get/Set |
+| [[ESP902]](../commands/esp902/) | No | No | Get | Get/Set |
 | [[ESP910]](../commands/esp910/) | No | No | Get/Set | Get/Set |
 | [[ESP930]](../commands/esp930/) | No | No | Get | Get/Set |
 | [[ESP931]](../commands/esp931/) | No | No | Get | Get/Set |
+| [[ESP950]](../commands/esp950/) | No | No | Get | Get/Set |
 | [[ESP999]](../commands/esp999/) | No | No | No | Set |
 
 ## API Description
