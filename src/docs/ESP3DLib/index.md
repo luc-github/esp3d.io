@@ -13,7 +13,7 @@ Marlin use arduino framework and platformio system
 
 ### Tested boards 
 
-The list is [here](./Version_1.X/hardware/) for 1.0, and [here](./Version_3.x/hardware/) for 3.0
+The list is [here](./Version_1.X/hardware/) for 1.0, and [here](./Version_3.X/hardware/) for 3.0
 
 Please refer to Marlin documentation for more information on specific configurations for each boards.
 
