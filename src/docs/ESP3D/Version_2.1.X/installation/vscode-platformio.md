@@ -23,7 +23,7 @@ The first time you open the project, vscode need to download all necessary files
 ## Select the target in VSCode
 
 <center>
-![image](./open_vscode2_1.png){ width="400" }
+![image](./vscode2_1.png){ width="400" }
 </center>
 
 * [env:esp32dev] for ESP32 boards   

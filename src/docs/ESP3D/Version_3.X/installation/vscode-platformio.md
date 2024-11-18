@@ -18,7 +18,6 @@ weight : 2
 ## Open the ESP3D directory folder in VSCode
 The first time you open the project, vscode need to download all necessary files, so be patient
 
-![vscode](./open_vscode2_1.png?width=400px)
 <center>
 ![image](./open_vscode2_1.png){ width="400" }
 </center>
@@ -36,7 +35,7 @@ You can also generate it, using the ESP3D configurator, which simplify a lot thi
 ## Select the target in VSCode
 
 <center>
-![image](./open_vscode2_1.png){ width="400" }
+![image](./vscode2_1.png){ width="400" }
 </center>
 
 
