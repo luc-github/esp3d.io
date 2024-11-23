@@ -62,7 +62,8 @@ All passwords and sensitive informations are sent using plain text. So if you wa
 
 ## Scope
 
-Here the scope of right for each authentication level:
+Here the scope of right for each authentication level:   
+
 |Feature | not authenticated | guest  | user | admin |
 |-|:-------------------:|:--------:|:------:|:-------:|
 | Web Interface | No | No | Yes | Yes |

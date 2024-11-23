@@ -54,11 +54,11 @@ Display your HTML here
 
 ```
 
-As you can see, code is minimal - it will fit a a panel or page, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
+As you can see, code is minimal - it will fit a panel or a page, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
 
-Communication between frame and main window is done by messages using objects (string / array based), do not use any object that could ne be cloned or loading will fail.
+Communication between frame and main window is done by messages using objects (string / array based), do not use any object that could not be cloned, or loading will fail.
 
-One typical use case is when WebUI send notificstion to extension o inform it that is visible or not, so extension can adjust its own behavior according to this information.
+One typical use case is when WebUI send notification to extension to inform it that is visible or not, so extension can adjust its own behavior according to this information.
 
 The notification message (eventMsg.data) has the following structure:
 ```
@@ -71,9 +71,40 @@ The notification message (eventMsg.data) has the following structure:
 }
 ```
 
-The id  is the id of the node that contain the iframe, which means unlike others messages, notification with specific id are addressed to the iframe of the node and not broadcasted to all iframes.
-Currently notifications are limited to visible / not visible, but it is possible to add more information in the future.
+The id  is the id of the node that contain the iframe, which means unlike others messages, notification with specific id are addressed to the iframe of the node and not broadcasted to all iframes, if not the id will be `all`.
+Currently notifications are limited to isVisible and isConnected, but it is possible to add more notifications in the future.
 
+Here an example of extension that display all notifications in a list:
+```html
+<script type="text/javascript">
+let output = ""
+//Process Message coming from webUI
+function processMessage(eventMsg){
+    //now process eventMsg.data
+    if (eventMsg.data.type && eventMsg.data.type == "notification"){
+        if (eventMsg.data.content){
+            if (typeof eventMsg.data.content.isVisible != 'undefined'){
+                output+="Visible:" + eventMsg.data.content.isVisible + "\n";
+                }
+            if (typeof eventMsg.data.content.isConnected != 'undefined'){
+                output+="Connected:" + eventMsg.data.content.isConnected + "\n";
+                }
+            document.getElementById("notificationsApi").innerHTML=  output;
+        }
+    }
+}
+//Setup message listener from webUI
+window.onload = (event) => {
+  window.addEventListener("message", processMessage, false);
+};
+</script>
+
+<div class="container">
+<pre id="notificationsApi"></pre>
+</div>
+```
+
+![image](test_extension.png)
 
 ---
 
