@@ -28,4 +28,4 @@ Considering you have line account and you already installed line on you phone/PC
 7 - type `[ESP610]` to verify (T1 won't be displayed)   
 
 8 - Try to send message:   
-`[ESP600]Hi there, test from ESP3D`
+`[ESP600]Hi\ there,\ test\ from\ ESP3D`

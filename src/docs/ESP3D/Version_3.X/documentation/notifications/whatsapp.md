@@ -30,5 +30,5 @@ To use automatic notifications you need to use a bot called [callmebot](https://
 6 - type `[ESP610]` to verify (T1/T2 won't be displayed)   
 
 7 - Try to send message:   
-`[ESP600]Hi there, test from ESP3D`
+`[ESP600]Hi\ there,\ test\ from\ ESP3D`
 

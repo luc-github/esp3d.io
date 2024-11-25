@@ -23,7 +23,7 @@ For example: `luc@gmail.com#smtp.gmail.com:465`
 2 - Type `[ESP610]` to verify (T1 and T2 won't be displayed)  
 
 3 - Try to send message:  
-`[ESP600]Hi there, test from ESP3D`  
+`[ESP600]Hi\ there,\ test\ from\ ESP3D`  
 
 4 - **Important** : if you are using Gmail there is an additional step, as by default https access is disabled.  
 go to : https://myaccount.google.com/lesssecureapps and allow less secure applications to connect

@@ -56,4 +56,4 @@ You need a bot token and a chat/channel id:
 5 - Type `[ESP610]` to verify (T1/T2 won't be displayed)  
 
 6 - Try to send message:  
-`[ESP600]Hi there, test from ESP3D`
+`[ESP600]Hi\ there,\ test\ from\ ESP3D`
