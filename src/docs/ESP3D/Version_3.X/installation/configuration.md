@@ -271,11 +271,11 @@
 
 /* SD card connection
 * ESP_NO_SD //(default)
-* ESP_DIRECT_SD //Only your ESP board is connected to SDCard
+* ESP_NOT_SHARED_SD //Only your ESP board is connected to SDCard
 * ESP_SHARED_SD //Printer SD Card is also connected to ESP3D
 * Does your system has SD card and how it is connected to your ESP3D
 */
-//#define SD_DEVICE_CONNECTION ESP_DIRECT_SD
+//#define SD_DEVICE_CONNECTION ESP_NOT_SHARED_SD
 
 /* SD card library
 * ESP_SD_NATIVE //esp32 / esp8266

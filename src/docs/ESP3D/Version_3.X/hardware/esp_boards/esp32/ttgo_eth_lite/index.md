@@ -23,5 +23,8 @@ Resolution: 128x64 - monochrome
 |     ETH_SCLK   |    18   |
 |     ETH_MISO   |    23   |
 |     ETH_MOSI   |    19   |
+|     ETH_INT    |    33   |
 |     OLED_SCL   |    22   |
 |     OLED_SDA   |    21   |
+
+ESP3D_ETH_PHY_ADDR 0
