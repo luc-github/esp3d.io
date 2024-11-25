@@ -32,6 +32,10 @@ A free service
 
 Please follow this [link](telegram/) for more information on how to setup a telegram notification service
 
+### [What's App using callmebot ](https://www.callmebot.com/blog/free-api-whatsapp-messages/)    
+A free service
+
+Please follow this [link](whatsapp/) for more information on how to setup a what's app notification service
 
 The notification will also be sent to the WebUi 
 

@@ -77,6 +77,7 @@ nav:
                 - ESP3D/Version_3.X/documentation/notifications/email_and_smtp.md
                 - ESP3D/Version_3.X/documentation/notifications/ifttt.md
                 - ESP3D/Version_3.X/documentation/notifications/telegram.md
+                 - ESP3D/Version_3.X/documentation/notifications/whatsapp.md
                 - ESP3D/Version_3.X/documentation/notifications/home-assistant.md
           - ESP3D/Version_3.X/documentation/camera/index.md
           - ESP3D/Version_3.X/documentation/update/index.md
