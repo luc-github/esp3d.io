@@ -227,7 +227,13 @@ nav:
           - ESP3D-WebUI/Version_3.X/documentation/api/webhandlers.md
           - ESP3D-WebUI/Version_3.X/documentation/api/websockets.md
           - ESP3D-WebUI/Version_3.X/documentation/api/extensions/index.md
-      - ESP3D-WebUI/Version_3.X/showcase/index.md
+      - Showcase:
+        - ESP3D-WebUI/Version_3.X/showcase/index.md
+        - ESP3D-WebUI/Version_3.X/showcase/ui/index.md
+        - Extensions:
+          - ESP3D-WebUI/Version_3.X/showcase/extensions/index.md
+          - ESP3D-WebUI/Version_3.X/showcase/extensions/click2go/index.md
+          - ESP3D-WebUI/Version_3.X/showcase/extensions/gcodeviewer/index.md
       - ESP3D-WebUI/Version_3.X/credits/index.md
 
 - Extra tools:
