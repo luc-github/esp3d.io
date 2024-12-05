@@ -5,7 +5,8 @@ title : "MRR-ESPE"
 weight : 2
 ---
 
-From [Maple Rain](http://www.maplerain.com/en), an ESP32 controller with 4MB flash memory, with IO expander.
+From [Maple Rain](http://www.maplerain.com/en), an ESP32 controller with 4MB flash memory, with IO expander. 
+
 * [github](https://github.com/maplerainresearch/MRR_ESPE)
 
 ![image](mrr_espe.jpg?width=400px)
