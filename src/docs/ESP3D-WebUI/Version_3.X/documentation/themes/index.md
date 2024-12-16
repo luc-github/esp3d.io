@@ -3,7 +3,7 @@ description : "Themes description"
 archetype : "section"
 title : "Themes"
 menuPre : "<i class='fas fa-palette'></i> "
-weight : 9
+weight : 2
 ---
 Themes are actually just gzipped css file that overload current css, their name must start by `theme-` to be recognized and have proper `.gz` extension if they are compressed.
 You only need to put inside the properties you want to customize.

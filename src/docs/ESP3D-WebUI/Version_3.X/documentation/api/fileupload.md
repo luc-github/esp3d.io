@@ -2,7 +2,7 @@
 description : "File upload parameters"
 archetype : "section"
 title : "File upload"
-weight : 5
+weight : 2
 ---
 
 The file upload is done using a multipart form data POST request.

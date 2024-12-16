@@ -3,7 +3,7 @@ description : "Steps and supported languages"
 archetype : "section"
 title : "Translations"
 menuPre : "<i class='fas fa-language'></i> "
-weight : 1
+weight : 2
 ---
 
 The WebUI unfortunatly does not support UTF8, so for special character specific to the language like : &iexcl; &iacute; &aacute; &oacute;    

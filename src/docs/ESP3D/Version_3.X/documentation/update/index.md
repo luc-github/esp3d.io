@@ -3,7 +3,7 @@ description : "Update feature description"
 archetype : "home"
 title : "Update support"
 menuPre : "<i class='fas fa-download'></i> "
-weight : 6
+weight : 4
 ---
 
 You can update ESP3D using the maintenance page, the web ui and the SD Card and OTA process.

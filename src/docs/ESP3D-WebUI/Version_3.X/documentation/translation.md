@@ -3,12 +3,12 @@ description : "Steps and supported languages"
 archetype : "section"
 title : "Translations"
 menuPre : "<i class='fas fa-language'></i> "
-weight : 1
+weight : 8
 ---
 
 ## Generate template files
 
-Use the script `npm run template` to geenrate up todate template files for all packs
+Use the script `npm run template` to generate up to date template files for all packs
 
 Currently:
 

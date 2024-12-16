@@ -2,7 +2,7 @@
 description : "Description and setup"
 archetype : "section"
 title : "Extensions"
-weight : 8
+weight : 5
 ---
 
 ## What is an extension ?

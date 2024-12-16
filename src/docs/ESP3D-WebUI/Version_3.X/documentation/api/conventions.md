@@ -2,7 +2,7 @@
 description : "Syntax conventions in used languages"
 archetype : "section"
 title : "Syntax conventions"
-weight : 4
+weight : 1
 ---
 
 !!! info "Note"

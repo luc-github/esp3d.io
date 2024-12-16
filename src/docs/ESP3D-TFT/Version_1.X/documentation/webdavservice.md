@@ -3,7 +3,7 @@ description : "WebDav usage and API"
 archetype : "section"
 title : "About WebDAV"
 menuPre : "<i class='fas fa-cloud-upload-alt'></i> "
-weight : 7
+weight : 9
 ---
 
 The WebDAV server serve filees on flash and sd at once through `/webdav`.

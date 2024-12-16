@@ -2,7 +2,7 @@
 description : "Web Sockets description, messages and parameters"
 archetype : "section"
 title : "Web Sockets"
-weight : 2
+weight : 7
 ---
 
 There are 2 websocket servers:

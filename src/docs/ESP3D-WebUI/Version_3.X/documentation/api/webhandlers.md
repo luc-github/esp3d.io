@@ -2,7 +2,7 @@
 description : "Web handlers description and parameters"
 archetype : "section"
 title : "Web Handlers"
-weight : 1
+weight : 6
 ---
 
 ### / (GET)

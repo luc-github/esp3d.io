@@ -3,7 +3,7 @@ description : "Camera configuration"
 archetype : "home"
 title : "Camera support"
 menuPre : "<i class='fas fa-camera'></i> "
-weight : 5
+weight : 3
 ---
 
 You can display your camera stream using an extra panel or an extra page.

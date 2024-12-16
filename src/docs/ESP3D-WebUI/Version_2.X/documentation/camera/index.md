@@ -3,7 +3,7 @@ description : "Camera configuration"
 archetype : "home"
 title : "Camera support"
 menuPre : "<i class='fas fa-camera'></i> "
-weight : 2
+weight : 1
 ---
 
 You can display external IP camera stream enabling the camera page, and put ip address in input control.

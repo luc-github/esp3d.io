@@ -3,7 +3,7 @@ description : "Telnet settings"
 archetype : "section"
 title : "About Telnet"
 menuPre : "<i class='fas fa-file-upload'></i> "
-weight : 7
+weight : 8
 ---
 
 ## About Telnet

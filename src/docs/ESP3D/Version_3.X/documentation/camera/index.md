@@ -3,7 +3,7 @@ description : "Camera configuration"
 archetype : "home"
 title : "Camera support"
 menuPre : "<i class='fas fa-camera'></i> "
-weight : 5
+weight : 3
 ---
 !!! warning "Note"
     Only camera with PSRAM are supported in ESP3D due to performances issue without PSRAM.

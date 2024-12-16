@@ -2,7 +2,7 @@
 description : "Description and sample code"
 archetype : "section"
 title : "Extensions API"
-weight : 8
+weight : 10
 ---
 - [Basic code](#basic-code)
 - [Send message](#send-message)

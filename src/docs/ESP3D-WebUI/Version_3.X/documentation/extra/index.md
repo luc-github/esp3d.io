@@ -3,7 +3,7 @@ description : "Extra Content Documentation"
 archetype : "home"
 title : "Extra Content"
 menuPre : "<i class='fas fa-plus'></i> "
-weight : 5
+weight : 4
 ---
 ## Overview
 

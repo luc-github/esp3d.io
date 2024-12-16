@@ -179,6 +179,7 @@ nav:
           - ESP3D-TFT/Version_1.X/documentation/ftp.md
           - ESP3D-TFT/Version_1.X/documentation/webdavservice.md 
           - ESP3D-TFT/Version_1.X/documentation/compilation/index.md
+          - ESP3D-TFT/Version_1.X/documentation/faq.md
           - API:
             - ESP3D-TFT/Version_1.X/documentation/api/index.md
             - ESP3D-TFT/Version_1.X/documentation/api/conventions.md

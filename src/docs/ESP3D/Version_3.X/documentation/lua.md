@@ -3,7 +3,7 @@ description : "Lua interpreter"
 archetype : "section"
 title : "About Lua interpreter"
 menuPre : "<i class='fas fa-file-upload'></i> "
-weight : 7
+weight : 10
 ---
 
 ## About Lua interpreter

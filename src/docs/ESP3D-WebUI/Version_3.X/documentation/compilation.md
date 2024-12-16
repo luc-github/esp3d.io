@@ -3,7 +3,7 @@ description : "Compilation Guide"
 archetype : "section"
 title : "Compilation Guide"
 menuPre : "<i class='fas fa-code'></i> "
-weight : 2
+weight : 9
 ---
 
 ## Compilation Steps

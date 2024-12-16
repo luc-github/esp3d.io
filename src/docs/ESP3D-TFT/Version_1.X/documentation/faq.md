@@ -3,7 +3,7 @@ description : "Frequent asked questions and their answers"
 archetype : "section"
 title : "FAQ"
 menuPre : "<i class='fas fa-question'></i> "
-weight : 7
+weight : 20
 ---
 * [Make boot silent](/esp3d-tft/v1.x/documentation/faq/#make-boot-silent)
 <hr> 

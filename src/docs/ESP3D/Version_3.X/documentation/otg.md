@@ -3,7 +3,7 @@ description : "USB Serial OTG"
 archetype : "section"
 title : "About USB Serial OTG"
 menuPre : "<i class='fas fa-file-upload'></i> "
-weight : 7
+weight : 9
 ---
 
 ## About USB Serial OTG

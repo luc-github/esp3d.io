@@ -3,7 +3,7 @@ description : "Compilation Guide"
 archetype : "home"
 title : "Compilation Guide"
 menuPre : "<i class='fas fa-code'></i> "
-weight : 5
+weight : 8
 ---
 ## Code Formating
 

@@ -3,7 +3,7 @@ description : "List of polling commands"
 archetype : "home"
 title : "Polling commands"
 menuPre : "<i class='fas fa-question'></i> "
-weight : 5
+weight : 1
 ---
 
 WebUI support autoreporting but in case there is a need to get some information on demand, you can use polling commands. 

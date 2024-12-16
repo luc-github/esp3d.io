@@ -3,7 +3,7 @@ description : "FTP usage and configuration"
 archetype : "section"
 title : "About FTP"
 menuPre : "<i class='fas fa-file-upload'></i> "
-weight : 7
+weight : 6
 ---
 
 !!! info "Note" 

@@ -2,7 +2,7 @@
 description : "Setup and configuration"
 archetype : "section"
 title : "Notifications"
-weight : 2
+weight : 3
 menuPre : "<i class='fas fa-envelope'></i> "
 ---
 
