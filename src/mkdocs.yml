@@ -7,6 +7,7 @@ copyright: 'Copyright &copy; Luc LEBOSSE 2022 ESP3D'
 
 extra_css:
   - style.css
+  - stylesheets/extra.css
 
 nav:
 - index.md
@@ -236,7 +237,8 @@ nav:
           - ESP3D-WebUI/Version_3.X/showcase/extensions/click2go/index.md
           - ESP3D-WebUI/Version_3.X/showcase/extensions/gcodeviewer/index.md
       - ESP3D-WebUI/Version_3.X/credits/index.md
-
+- Forum: 
+  - forum/index.md
 - Extra tools:
   - tools/index.md
   - tools/sdtools.md
