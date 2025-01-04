@@ -9,7 +9,7 @@ Extension for ESP3D v3.x WebUI to interact with custom SD WIFI PRO firmware from
 
 #### Where to find the extension?
 
-The extension is available on the [Levak'sgithub](https://github.com/Levak/esp3d-sdwifipro-extension).
+The extension is available on the [Levak's github](https://github.com/Levak/esp3d-sdwifipro-extension).
 
 The ready to use package is [sdwifi.html](https://raw.githubusercontent.com/Levak/esp3d-sdwifipro-extension/refs/heads/main/sdwifi.html)
 

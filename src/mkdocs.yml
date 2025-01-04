@@ -236,6 +236,7 @@ nav:
           - ESP3D-WebUI/Version_3.X/showcase/extensions/index.md
           - ESP3D-WebUI/Version_3.X/showcase/extensions/click2go/index.md
           - ESP3D-WebUI/Version_3.X/showcase/extensions/gcodeviewer/index.md
+          - ESP3D-WebUI/Version_3.X/showcase/extensions/wifisdpro/index.md
       - ESP3D-WebUI/Version_3.X/credits/index.md
 - Forum: 
   - forum/index.md
