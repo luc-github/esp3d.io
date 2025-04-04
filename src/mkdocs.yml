@@ -247,7 +247,8 @@ nav:
     - tools/discovery/index.md
     - tools/discovery/mdns.md
     - tools/discovery/ssdp.md
- 
+- Sponsoring:
+  - sponsoring/index.md
 
 not_in_nav:
   /common
