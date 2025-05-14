@@ -53,8 +53,7 @@ the output is a json file:
     }
     ```
 ### /sdfiles (GET/POST) )
-this handler handle all commands for SD, including upload on SD (only shared and direct SD)
-this handler handle all commands for FS, including upload on FS.   
+this handler handle all commands for SD, including upload on SD (only shared and direct SD)   
     possible options/arguments are:   
 - `quiet=yes` can be used when you don't want list files but just upload them    
 - `path=...` define the path to the file    
