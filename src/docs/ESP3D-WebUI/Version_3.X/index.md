@@ -9,7 +9,7 @@ weight : 1
 [![badge](https://img.shields.io/github/last-commit/luc-github/ESP3D-WEBUI/3.0?style=plastic)](https://github.com/luc-github/ESP3D-WEBUI/tree/3.0)
 [![badge](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)
 
-This version is the development version.
+This version is the production version, feedback, PR and suggestions are welcome.
 
 WebUI should support features of the following firmwares:    
 

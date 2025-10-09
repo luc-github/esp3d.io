@@ -11,7 +11,7 @@ weight : 1
 [![badge](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)
 
 
-This version is the production version, features are frozen, only bugfixes are accepted.
+This version is the previous production version, features are frozen, only major bugfixes are accepted.
 
 Firmware should work with the following firmwares: 
 

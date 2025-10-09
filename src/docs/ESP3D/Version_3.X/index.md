@@ -12,7 +12,7 @@ mermaidZoom : true
 [![badge](https://github.com/luc-github/ESP3D/workflows/build-ci/badge.svg)](https://github.com/luc-github/ESP3D/actions/workflows/build.yml)
 [![badge](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)  
 
-This version is the development version, features can change anytime, feedback, PR and suggestions are welcome.
+This version is the production version, feedback, PR and suggestions are welcome.
 
 Firmware should work with the following firmwares: 
 
