@@ -15,6 +15,7 @@ This board has a socket for MKS WiFi module (16 pins)
 | ESP3D configuration note | MKS serial, no SD |
 
 alternative solution using raw serial:
+
 | <!-- -->  | <!-- --> |
 |-|-|
 | Board configuration note |  Enable second serial port in firmware configuration |
