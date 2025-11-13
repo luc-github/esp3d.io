@@ -4,6 +4,11 @@ archetype : "section"
 title : "Web Handlers"
 weight : 1
 ---
+The handlers are the web endpoints that ESP3D web server is using to serve files or execute commands.  
+Each handler can support one or more HTTP methods (GET, POST).
+
+So the usage is like this:
+http://<ESP3D_IP_ADDRESS>/<HANDLER_PATH>?<PARAMETERS>
 
 ### / (GET)
 root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
