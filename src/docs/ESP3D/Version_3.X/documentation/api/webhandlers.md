@@ -8,7 +8,9 @@ The handlers are the web endpoints that ESP3D web server is using to serve files
 Each handler can support one or more HTTP methods (GET, POST).
 
 So the usage is like this:
-http://<ESP3D_IP_ADDRESS>/<HANDLER_PATH>?<PARAMETERS>
+`http://{ESP3D_IP_ADDRESS}/{HANDLER_PATH}?{PARAMETERS}`
+
+If you use a tool like __wget__ or __curl__ , be sure you use the right method (GET or POST) depending on the handler. (read the syntax of the tool you use in tool documentation)
 
 ### / (GET)
 root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
@@ -105,6 +107,9 @@ this handler is for MKS boards using MKS communication protocol if enabled, it h
 this handler is for all commands the parameter is `cmd=...`
 if it is an `[ESPXXX]` command the answer is the `[ESPXXX]` response
 if it is not an `[ESPXXX]` command the answer is `ESP3D says: command forwarded` and can be ignored
+
+The command must be encoded for URL if needed (spaces, special characters, etc.)
+
 
 ### /login (GET/POST)
 this handler is for authentication function if enabled
