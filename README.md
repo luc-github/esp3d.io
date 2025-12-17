@@ -1,4 +1,4 @@
-# esp3d.io
+# esp3d.io ![esp3d.io](https://img.shields.io/badge/dynamic/json?label=Version&query=$.version&url=https://raw.githubusercontent.com/luc-github/esp3d.io/refs/heads/main/info.json)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -8,6 +8,10 @@ It use [MkDocs](https://www.mkdocs.org/) to generate the static pages and use th
 
 Discussion is available here: https://github.com/luc-github/esp3d.io/discussions or on discord: https://discord.gg/VNxDGBasYD
 
+> [!WARNING]
+>### Disclaimer
+> The software is provided 'as is,' without any warranty of any kind, expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+>It is essential that you carefully read and understand this disclaimer before using this software and its components. If you do not agree with any part of this disclaimer, please refrain from using the software.
 
 To setup the environment:
 
