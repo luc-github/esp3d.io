@@ -7,243 +7,308 @@ weight : 2
 
 There are 2 websocket servers:
 
--   terminal websocket
-    used to stream data to webUI and exchange internal data
+-   **Terminal websocket** — streams data to WebUI and exchanges internal messages
+-   **Data websocket** — exchanges data with an external client (not used by WebUI)
 
--   data websocket
-    used to exchange data with external client (not used by WebUI)
+---
 
 ## Terminal websocket
 
-use subprotocol `webui-v3`and port is web port +1 (e.g: 80+1=>81)
+Uses subprotocol `webui-v3`. Port is web port + 1 (e.g. 80 → 81).
 
-### <u>text mode</u>
+### Text mode
 
-Reserved
-messages between webui / ESP
+Reserved messages between WebUI and ESP.
 Format: `<label>:<message>`
 
--   from ESP to WebUI
+**ESP → WebUI:**
 
-    -   `currentID:<id>`
-        Sent when client is connecting, it is the last ID used and become the active ID
+-   `currentID:<id>`
+    Sent when client connects. It is the last used ID and becomes the active ID.
 
-    -   `activeID:<id>`
-        Broadcast current active ID, when new client is connecting, client without this is <id> should close, ESP WS Server close all open WS connections but this one also
+-   `activeID:<id>`
+    Broadcast when a new client connects. Clients without this ID should close.
+    The ESP WS server closes all open WS connections except this one.
 
-    -   `PING:<time left>:<time out>`
-        It is a response to PING from client to inform the time left if no activity (see below)
+-   `PING:<time left>:<time out>`
+    Response to a PING from client, informing the time remaining before inactivity timeout.
 
-    -   `ERROR:<code>:<message>`
-        If an error raise when doing upload, it informs client it must stop uploading because sometimes the http answer is not possible,
-        or cannot cancel the upload, this is a workaround as there is no API in current webserver to cancel active upload
+-   `ERROR:<code>:<message>`
+    Raised during upload when the HTTP answer cannot cancel it.
+    This is a workaround: there is no API in the current webserver to cancel an active upload.
 
-    -   `NOTIFICATION:<message>`
-        Forward the message sent by [ESP600] to webUI toast system
+-   `NOTIFICATION:<message>`
+    Forwards the message sent by `[ESP600]` to the WebUI toast system.
 
-    -   `SENSOR: <value>[<unit>] <value2>[<unit2>] ...`
-        The sensor connected to ESP like DHT22
+-   `SENSOR: <value>[<unit>] <value2>[<unit2>] ...`
+    Sensor data (e.g. DHT22 temperature/humidity).
 
--   from WebUI to ESP
-    -   `PING:<current cookiesessionID / none >` if any, or "none" if none
+**WebUI → ESP:**
 
-### <u>binary mode</u>
+-   `PING:<cookieSessionID | none>`
+    Keepalive ping. Sends the current session cookie ID, or `none` if not authenticated.
 
-Reserved
+### Binary mode
 
--   from ESP to WebUI
-    stream data from ESP to WebUI
+**ESP → WebUI:** stream data from ESP to WebUI.
+**WebUI → ESP:** file transfer — not implemented yet.
 
--   from WEBUI to ESP  
-    [-> File transfert from WebUI to ESP : not implemented yet]
+---
 
 ## Data websocket
 
-use sub protocol `arduino` and port is any defined port (e.g: 8282)
+Uses subprotocol `arduino`. Port is configurable (e.g. 8282).
 
-### <u>text mode</u>
+### Text mode
 
-This mode is used to transfert all GCODE commands and their answers from printer/cnc
+Used to transfer all G-code commands and their responses from the CNC/printer.
 
-### <u>binary mode</u>
+### Binary mode
 
-This mode is used to transfert files to / from esp board
+Used to transfer files to/from the ESP board.
 
-it use frame of 1024 bytes, can be increased after test
+#### Frame format
 
-the frame format is :
- 2 bytes: for frame type
- 2 bytes: for frame size to check some integrity, currently as already part of frame no checksume is used
- x bytes : extra data according frame type
+Every binary frame uses the same fixed 4-byte header:
+
+| Byte 0 | Byte 1 | Byte 2–3 | Byte 4+ |
+|--------|--------|----------|---------|
+| Opcode MSB | Opcode LSB | Payload length (uint16_t LE) | Payload |
+
+- **Opcode**: 2 ASCII bytes identifying the frame type (e.g. `SR`, `UP`).
+- **Payload length**: number of bytes that follow the header, little-endian uint16_t.
+- All multi-byte integer fields in the payload are **little-endian**.
+- Maximum data payload per packet: **1024 bytes** (may be increased after testing).
+
+---
 
 ## Frame types
 
-### Query status frame  
- type: client -> esp
-  Status Request: 
+### Query status — `SR` / `RS`
 
-  | `S` | `R` | 0 | 0 |   
-  | - | - | - | - |
+**Client → ESP** (no payload):
 
-with hexadecimal values: 
+| `S` | `R` | 0x00 | 0x00 |
+|-|-|-|-|
 
-  |0x53 | 0x52 | 0 | 0 |   
-  | - | - | - | - |
- 
+**ESP → Client** (1-byte payload: status code):
 
- Response frame use inverted header:
-Response Status:
-
- | `R` | `S` | 0 | 1 | `A` |
- | - | - | - | - | - |
-
-with hexadecimal values: 
-
- | 0x52 | 0x53 | 0 | 1 | 0x41 |
- | - | - | - | - | - |
-
-the first byte of answer is the state:
-
-|Code | Hexa | Meaning|
-|-|-|-|
-|`B` | 0x42| busy|
-|`O` | 0x4F|idle/ok|
-|`E` | 0x45|error|
-|`A` | 0x41|abort|
-|`D` | 0x44|download ongoing
-|`U` | 0x55|upload ongoing
-
-extra data may be added :
-
-#### For Error:
-error code and string, 
-1 byte : error code: 0->255
-1 byte : string size 0->255
-XX bytes for the string
-
-|`R`|`S`|x|x|`C`|4|X|..|..|
-|-|-|-|-|-|-|-|-|-|
-
-
-#### For Upload:
-Upload informations: 
-1 byte : path size 0->255
-XX bytes : the path string
-1 byte : the filename size 0->255
-xx bytes : filename string
-4 bytes : total file size
-4 bytes : currently processed bytes
-4 bytes : last packet id processed
-
-|`R`|`S`|x|x|`U`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-
-
-#### For Download:
-Download informations:
-1 byte : path size 0->255
-XX bytes : the path string
-1 byte : the filename size 0->255
-xx bytes : filename string
-4 bytes : total file size
-4 bytes : currently processed bytes
-4 bytes : last packet id processed
-
-|`R`|`S`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-
-
-### Start upload frame
-header is : 
-
-| `S` | `U` | 0 | 0 |   
-| - | - | - | - |
-
-the content is: 
-1 byte : path size 0->255
-XX bytes : the path string
-1 byte : the filename size 0->255
-xx bytes : filename string
-4 bytes : total file size 
-
-|`S`|`U`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-
-if answer is :
-
-|`U`|`S`|0|1|`O`|
+| `R` | `S` | 0x00 | 0x01 | STATUS |
 |-|-|-|-|-|
 
-it means transfert can start
+Status codes:
 
+| Code | Hex | Meaning |
+|------|-----|---------|
+| `O`  | 0x4F | Idle / OK |
+| `B`  | 0x42 | Busy |
+| `E`  | 0x45 | Error |
+| `A`  | 0x41 | Abort |
+| `U`  | 0x55 | Upload ongoing |
+| `D`  | 0x44 | Download ongoing |
 
-### Transfert upload frame
-header is :
+**Additional payload for `E` (Error):**
 
-| `U` | `P` | x | x | ID | ID | ID | ID |..|..|  
-| - | - | - | - | - | - | - | - | - | - |
+After the status byte: 1 byte error code, 1 byte string length, then the string.
 
-4 bytes is packet id
-XXXX bytes is data
+| `R` | `S` | PL_LO | PL_HI | `E` | ERR_CODE | STR_LEN | STR... |
+|-|-|-|-|-|-|-|-|
 
-if packet is received the answer is:
+**Additional payload for `U` (Upload ongoing):**
 
-|`P`|`U`|0|5|`O`| ID | ID | ID | ID 
+After the status byte: path size (1 byte), path, filename size (1 byte), filename,
+total file size (uint32_t LE), processed bytes (uint32_t LE), last packet ID (uint32_t LE).
+
+| `R` | `S` | PL_LO | PL_HI | `U` | PATH_SZ | PATH... | NAME_SZ | NAME... | TOTAL(4) | DONE(4) | LAST_ID(4) |
+|-|-|-|-|-|-|-|-|-|-|-|-|
+
+**Additional payload for `D` (Download ongoing):**
+
+Same layout as Upload ongoing, with `D` status byte.
+
+| `R` | `S` | PL_LO | PL_HI | `D` | PATH_SZ | PATH... | NAME_SZ | NAME... | TOTAL(4) | DONE(4) | LAST_ID(4) |
+|-|-|-|-|-|-|-|-|-|-|-|-|
+
+---
+
+### Start upload — `SU` / `US`
+
+**Client → ESP:**
+
+Payload: path size (1 byte), path, filename size (1 byte), filename, total file size (uint32_t LE).
+
+| `S` | `U` | PL_LO | PL_HI | PATH_SZ | PATH... | NAME_SZ | NAME... | FILE_SIZE(4) |
 |-|-|-|-|-|-|-|-|-|
 
+**ESP → Client (OK — transfer can start):**
 
-### Start dowload frame
-header is :
-
-| `S` | `D` | 0 | 0 |   
-| - | - | - | - |
-
-the content is: 
-1 byte : path size 0->255
-XX bytes : the path string
-1 byte : the filename size 0->255
-xx bytes : filename string
-4 bytes : total file size 
-
-|`S`|`D`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-
-if answer is :
-
-|`D`|`S`|0|1|`O`|
+| `U` | `S` | 0x01 | 0x00 | `O` |
 |-|-|-|-|-|
 
-it means transfert can start
+**ESP → Client (Error — transfer rejected):**
 
+| `U` | `S` | 0x01 | 0x00 | `E` |
+|-|-|-|-|-|
 
-### Transfert download frame
-header is :
+---
 
-| `D` | `P` | x | x | ID | ID | ID | ID |..|..|  
-| - | - | - | - | - | - | - | - | - | - |
+### Upload packet — `UP` / `PU`
 
-4 bytes is packet id
-XXXX bytes is data
+**Client → ESP:**
 
-if packet is received the answer is:
+Payload: packet ID (uint32_t LE), then data bytes.
 
-|`P`|`D`|0|5|`O`| ID | ID | ID | ID 
-|-|-|-|-|-|-|-|-|-|
+| `U` | `P` | PL_LO | PL_HI | ID(4) | DATA... |
+|-|-|-|-|-|-|
 
+**ESP → Client (ACK):**
 
-### Command frame
-header is :
+| `P` | `U` | 0x05 | 0x00 | `O` | ID(4) |
+|-|-|-|-|-|-|
 
-| `C` | `M` | 0 | 1 | X |
-| - | - | - | - |-|
+---
 
-Commands:
+### End upload — `EU` / `UE`
 
-|Code | Hexa | Meaning|
-|-|-|-|
-|`A` | 0x41| abort|
+Sent by the client after the last upload packet.
 
-Abort command frame: 
+**Client → ESP** (no payload):
 
-| `C` | `M` | 0 | 1 | `A` |
-| - | - | - | - |-|
+| `E` | `U` | 0x00 | 0x00 |
+|-|-|-|-|
+
+**ESP → Client (OK):**
+
+| `U` | `E` | 0x01 | 0x00 | `O` |
+|-|-|-|-|-|
+
+**ESP → Client (Error):**
+
+| `U` | `E` | 0x01 | 0x00 | `E` |
+|-|-|-|-|-|
+
+---
+
+### Start download — `SD` / `DS`
+
+**Client → ESP:**
+
+Payload: path size (1 byte), path, filename size (1 byte), filename.
+
+| `S` | `D` | PL_LO | PL_HI | PATH_SZ | PATH... | NAME_SZ | NAME... |
+|-|-|-|-|-|-|-|-|
+
+**ESP → Client (OK — transfer can start):**
+
+Payload: status `O`, then total file size (uint32_t LE).
+
+| `D` | `S` | 0x05 | 0x00 | `O` | FILE_SIZE(4) |
+|-|-|-|-|-|-|
+
+**ESP → Client (Error):**
+
+| `D` | `S` | 0x01 | 0x00 | `E` |
+|-|-|-|-|-|
+
+---
+
+### Download packet — `DP` / `PD`
+
+**ESP → Client:**
+
+Payload: packet ID (uint32_t LE), then data bytes.
+
+| `D` | `P` | PL_LO | PL_HI | ID(4) | DATA... |
+|-|-|-|-|-|-|
+
+**Client → ESP (ACK):**
+
+| `P` | `D` | 0x05 | 0x00 | `O` | ID(4) |
+|-|-|-|-|-|-|
+
+---
+
+### End download — `ED` / `DE`
+
+Sent by the ESP after the last download packet.
+
+**ESP → Client** (no payload):
+
+| `E` | `D` | 0x00 | 0x00 |
+|-|-|-|-|
+
+**Client → ESP (ACK):**
+
+| `D` | `E` | 0x01 | 0x00 | `O` |
+|-|-|-|-|-|
+
+---
+
+### NAK — retransmit request — `NK`
+
+Sent by either side when a packet is missing or corrupted.
+The sender must retransmit starting from the requested packet ID.
+
+| `N` | `K` | 0x04 | 0x00 | ID(4) |
+|-|-|-|-|-|
+
+---
+
+### Command — `CM`
+
+**Client → ESP** (1-byte payload: command code):
+
+| `C` | `M` | 0x01 | 0x00 | CMD |
+|-|-|-|-|-|
+
+Command codes:
+
+| Code | Hex | Meaning |
+|------|-----|---------|
+| `A`  | 0x41 | Abort current transfer |
+
+**Abort frame:**
+
+| `C` | `M` | 0x01 | 0x00 | `A` |
+|-|-|-|-|-|
+
+---
+
+## Transfer flow summary
+
+### Upload
+
+```
+Client                        ESP
+  |--- SU (path, name, size) --->|
+  |<-- US (O) -------------------|
+  |--- UP (id=0, data) --------->|
+  |<-- PU (O, id=0) -------------|
+  |--- UP (id=1, data) --------->|
+  |<-- PU (O, id=1) -------------|
+  |         ...                  |
+  |--- EU ---------------------->|
+  |<-- UE (O) -------------------|
+```
+
+### Download
+
+```
+Client                        ESP
+  |--- SD (path, name) -------->|
+  |<-- DS (O, file_size) -------|
+  |<-- DP (id=0, data) ---------|
+  |--- PD (O, id=0) ----------->|
+  |<-- DP (id=1, data) ---------|
+  |--- PD (O, id=1) ----------->|
+  |         ...                 |
+  |<-- ED ----------------------|
+  |--- DE (O) ----------------->|
+```
+
+### Abort (at any point during transfer)
+
+```
+Client                        ESP
+  |--- CM (A) ----------------->|
+```

@@ -48,7 +48,7 @@ In configuration.h:
 #define ETH_PHY_CS 9
 
 // If use SD card and ethernet at the same time, ethernet need dedicated SPI, so we use SPI2
-#define ETHERNET_SPI_USE_SPI2
+#define ETHERNET_SPI_USE_SPI2 1
 
 // Ethernet board INTERRUPT
 #define ETH_PHY_IRQ 13

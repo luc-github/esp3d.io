@@ -66,5 +66,7 @@ Once change are applied the webui will automatically restart
 
 ![image](black_theme.png)
 
+Mores themes in [themes](ESP3D-WebUI/Version_3.X/showcase/themes/#)
+
 ### Here some themes as examples:   
 {{ attachments() }} 
