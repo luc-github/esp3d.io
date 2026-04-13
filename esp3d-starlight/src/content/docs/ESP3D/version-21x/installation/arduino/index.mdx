@@ -1,0 +1,87 @@
+---
+title: Arduino IDE
+description: Arduino IDE setup for ESP3D 2.1.X
+---
+
+## Prepare the development environment
+
+- Download the Arduino IDE from https://www.arduino.cc/en/software
+
+<aside class="warning-panel">
+  <p><strong>Warning:</strong> use the Legacy IDE (1.8.X). Arduino IDE 2.X was not tested and is not supported for this version.</p>
+</aside>
+
+- Install the ESP core according to your target:
+  - If using [ESP8266](https://github.com/esp8266/arduino#contents)
+
+<aside class="warning-panel">
+  <p><strong>Warning:</strong> use version `2.5.2` or `2.7.4` only. Do not use any version newer than `2.7.4`.</p>
+</aside>
+
+  - If using [ESP32](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
+
+<aside class="warning-panel">
+  <p><strong>Warning:</strong> use version `1.0.4` only. Do not use any version newer than `1.0.4`, and only ESP32 boards are supported for ESP3D 2.1.X.</p>
+</aside>
+
+- Copy the content of the [libraries directory](https://github.com/luc-github/ESP3D/tree/2.1.x/libraries) to your Arduino libraries directory.
+
+<aside class="warning-panel">
+  <p><strong>Warning:</strong> Do not try a different library version than the ones provided. They may not work properly.</p>
+</aside>
+
+## Open esp3d/esp3d.ino in Arduino IDE
+
+<center>
+  <img src="/img/installation/arduinoIde.png" width="400" alt="Arduino IDE" />
+</center>
+
+## Configure ESP3D
+
+See the [Configuration page](../configuration/).
+
+## Configure Flash settings
+
+### For ESP8266 with 4MB flash
+
+- Board: Generic ESP8266 Module
+- Upload Speed: 115200
+- CPU frequency: 160 MHz
+- Flash Size: 4M (2M SPIFFS)
+- Flash Mode: DIO
+- Flash Frequency: 40MHz
+- Reset Method: CK
+- Debug Port: Disabled
+- Debug Level: None
+
+### For ESP8266 with 1MB flash (this board may not support Web Update due to limited flash size)
+
+- Board: Generic ESP8266 Module
+- Upload Speed: 115200
+- CPU frequency: 160 MHz
+- Flash Size: 1M (128K SPIFFS)
+- Flash Mode: DIO
+- Flash Frequency: 40MHz
+- Reset Method: CK
+- Debug Port: Disabled
+- Debug Level: None
+
+### For ESP32 with 4MB flash
+
+- Board: ESP32 Dev Module
+- Upload Speed: 115200
+- CPU frequency: 240 MHz
+- Flash Frequency: 80MHz
+- Flash Mode: QIO
+- Flash Size: 4MB
+- Partition Scheme: Default 4MB with SPIFFS
+- Core Debug Level: None
+- PSRAM: Disabled
+
+## Connect your board
+
+Check the [hardware section](../hardware/) for more information.
+
+## Compile and flash your module
+
+Select the port your device is connected to and choose `Upload` from the sketch menu to compile and flash.

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Host: esp3d.io
+Sitemap: https:/esp3d.io/sitemap.xml
+Crawl-delay: 5

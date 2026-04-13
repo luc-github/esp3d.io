@@ -1,0 +1,60 @@
+---
+title: ESP3D Ecosystem
+description: Official documentation for ESP3D, ESP3DLib, ESP3D-TFT and ESP3D-WebUI
+---
+
+import Mermaid from '../../components/Mermaid.astro';
+
+<Mermaid />
+
+# What is ESP3D Ecosystem?
+
+ESP3D Ecosystem is a collection of projects based on Espressif boards like ESP8266 and ESP32. The purpose is to provide WiFi features to users of 3D printers, CNC, sand tables, and plotters.
+
+Depending on the configuration and the hardware, the solution can be different, but the goal is to provide a set of features that work across devices.
+
+Check the menu for the current projects: each one has a different implementation for the same purpose.
+
+## What project should I use?
+
+### Based on hardware
+
+```mermaid
+graph LR
+  A{<strong>Hardware?</strong>} -->|ESP8266| B[ESP3D]
+  A -->|ESP32| C{<strong>Is main board ?</strong>}
+  C -->|No| D{<strong>Has Touchscreen ?</strong>}
+  C -->|Yes| E[ESP3DLib]
+  D -->|Yes| F[ESP3D-TFT]
+  D -->|No| G[ESP3D]
+```
+
+### Based on connection
+
+```mermaid
+graph LR
+  A{<strong>Connection?</strong>} -->|Serial| B{<strong>Has Touchscreen ?</strong>}
+  B -->|No| H[ESP3D]
+  B -->|Yes| I[ESP3D-TFT]
+  A -->|USB| C{<strong>Is ESP32-S3 ?</strong>}
+  C -->|No| D[Sorry no support for this]
+  C -->|Yes| E{<strong>Has Touchscreen ?</strong>}
+  E -->|Yes| F[ESP3D-TFT]
+  E -->|No| G[Coming soon in ESP3D]
+```
+
+### Based on feature
+
+```mermaid
+graph LR
+  A{<strong>Is main board ?</strong>} -->|Yes| B{<strong>Hardware ?</strong>}
+  B -->|ESP8266| C[Sorry no support for this]
+  B -->|ESP32| D[ESP3DLib]
+  A -->|No| E{<strong>Hardware ?</strong>}
+  E -->|ESP8266| F[ESP3D]
+  E -->|ESP32| G{<strong>Has Touchscreen ?</strong>}
+  G -->|Yes| H[ESP3D-TFT]
+  G -->|No| I[ESP3D]
+```
+
+> **Note:** The current project selection is a migration preview. Explore the sidebar for ESP3D, ESP3DLib, ESP3D-TFT, and other sections.

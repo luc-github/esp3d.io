@@ -1,0 +1,77 @@
+.admonition {
+  border-left: 4px solid #f59e0b;
+  background: rgba(253, 230, 138, 0.18);
+  color: #92400e;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.admonition,
+.admonition-title,
+.admonition-title strong,
+.warning-panel {
+  border-left: 4px solid #f59e0b;
+  background: rgba(253, 230, 138, 0.18);
+  color: #92400e;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.info-panel {
+  border-left: 4px solid #2563eb;
+  background: rgba(191, 219, 254, 0.32);
+  color: #1d4ed8;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.danger-panel {
+  border-left: 4px solid #dc2626;
+  background: rgba(254, 202, 202, 0.25);
+  color: #991b1b;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.warning-panel strong,
+.info-panel strong,
+.danger-panel strong,
+.info-panel h4 {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.info-panel h4 {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.info-panel p,
+.info-panel ul {
+  margin: 0.75rem 0 0;
+}
+
+.info-panel ul {
+  padding-left: 1.2rem;
+}
+
+.info-panel li {
+  margin-bottom: 0.35rem;
+}
+
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.badges a {
+  display: inline-flex;
+}

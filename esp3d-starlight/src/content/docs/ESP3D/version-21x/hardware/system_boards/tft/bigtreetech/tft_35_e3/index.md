@@ -1,0 +1,18 @@
+---
+archetype : "section"
+title : "TFT 35 E3"
+description : "Socket available"
+weight : 1
+---
+The board has footprint for an ESP01 connector
+
+![step1](/img/hardware/system_boards/tft/bigtreetech/tft_35_e3/board.png)
+
+![step2](/img/hardware/system_boards/tft/bigtreetech/tft_35_e3/pinout.png)
+
+|    |   |
+|-|-|
+| Board pins socket | ESP01 |
+| Board firmware | BTT | 
+| Board configuration note |Need to enable wifi port using config.ini file|
+| ESP3D configuration note | Raw serial, no SD |

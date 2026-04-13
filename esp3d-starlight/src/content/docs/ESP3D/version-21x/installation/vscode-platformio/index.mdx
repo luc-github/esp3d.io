@@ -1,0 +1,39 @@
+---
+title: PlatformIO
+description: PlatformIO setup for ESP3D 2.1.X
+---
+
+## Prepare the development environment
+
+- Download and install [VSCode](https://code.visualstudio.com/download)
+- Add the [PlatformIO IDE extension](https://platformio.org/install/ide?install=vscode) to VSCode
+
+## Open the ESP3D directory in VSCode
+
+The first time you open the project, VSCode needs to download all necessary files, so be patient.
+
+<center>
+  <img src="/img/installation/open_vscode2_1.png" width="400" alt="Open ESP3D in VSCode" />
+</center>
+
+## Configure ESP3D
+
+See the [Configuration page](../configuration/).
+
+## Select the target in VSCode
+
+<center>
+  <img src="/img/installation/vscode2_1.png" width="400" alt="PlatformIO target selection" />
+</center>
+
+- Use `env:esp32dev` for ESP32 boards
+- Use `env:esp8266` for ESP8266 boards with 4MB flash
+- Use `env:esp01s_160mhz-2.7.4` for ESP8266 boards with 1MB flash
+
+## Connect your board
+
+Check the [hardware section](../hardware/) for more information.
+
+## Compile and flash your module
+
+Use Upload and Monitor from the target environment you selected to compile and flash your module.

@@ -1,0 +1,30 @@
+---
+title: Email notification
+description: ESP3D 2.1.X email and SMTP notification setup
+---
+
+Email notification uses SMTP and HTTPS, so you need to collect the following information for your email supplier:
+
+* SMTP server address and HTTPS port
+* SMTP username/ID
+* SMTP password
+
+ESP3D uses the parameters as follows:
+
+* **token 1** = ID to login to your email supplier
+* **token 2** = Password to login to your email supplier
+* **token settings** = `the_recipient email#smtp_server:port` where **#** and **:** are field separators.
+
+For example: `luc@gmail.com#smtp.gmail.com:465`
+
+1. Save token 1, token 2 and token settings in ESP3D, and set EMAIL as notification supplier  
+   `[ESP610]type=EMAIL T1=luc@gmail.com T2=mypassword TS=luc@gmail.com#smtp.gmail.com:465`
+
+2. Type `[ESP610]` to verify (T1 and T2 won't be displayed)
+
+3. Try to send a message:  
+   `[ESP600]Hi there, test from ESP3D`
+
+4. **Important:** if you are using Gmail there is an additional step, as by default HTTPS access is disabled.  
+   Go to: https://myaccount.google.com/lesssecureapps and allow less secure applications to connect  
+   ![gmail enabling http access](/img/notifications/email/google.png)

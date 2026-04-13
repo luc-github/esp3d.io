@@ -1,0 +1,19 @@
+{
+  "name": "esp3d-starlight",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.38.3",
+    "astro": "^6.0.1",
+    "mermaid": "^11.14.0",
+    "remark-mermaid": "^0.2.0",
+    "sharp": "^0.34.2"
+  }
+}

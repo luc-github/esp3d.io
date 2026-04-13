@@ -1,0 +1,16 @@
+---
+title: SD transfer
+description: ESP3D 2.1.X SD card transfer documentation
+---
+
+<aside class="danger-panel">
+<strong>Important</strong>
+The SD transfer uses the GCODE protocol based on M28/M29 commands. This protocol is often broken by external queries or auto reporting. Additionally, the SD transfer is very slow: ~0.4KB/s, which makes it almost unusable.
+
+So this protocol is no longer supported in ESP3D, and the feature is provided `as it is`.
+
+For file transfert, the only existing reliable solution for ESP3D 2.1.X is a WiFi SD card such as Toshiba FlashAir or FYSETC SD WIFI Pro.
+
+</aside>
+
+[ESP3D 3.X](/esp3d/version-3x/) has some existing solutions and ongoing plans for better SD support depending on the hardware used.

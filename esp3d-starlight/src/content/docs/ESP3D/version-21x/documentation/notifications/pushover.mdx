@@ -1,0 +1,28 @@
+---
+title: Pushover notification
+description: ESP3D 2.1.X Pushover notification setup
+---
+
+[Pushover](https://pushover.net/) is a paid service.
+
+Considering you have a Pushover account (even just trial) and already installed the Pushover client on your phone or PC:
+
+1. Go to [https://pushover.net/](https://pushover.net/) and connect with email and password  
+   ![Pushover login](/img/notifications/pushover/logon.png)
+
+2. Once connected you will be able to get the token 1, the user token  
+   ![Pushover user token](/img/notifications/pushover/token1.png)
+
+3. You also need to generate an application token, which is the token 2  
+   ![Pushover app token](/img/notifications/pushover/token2.png)
+
+4. The token 2 generation:  
+   ![Pushover application token generation](/img/notifications/pushover/token2b.png)
+
+5. Save the generated token 1 and token 2 in ESP3D, and set PUSHOVER as notification supplier  
+   `[ESP610]type=PUSHOVER T1=xxxxxxxxxxxxxxxxxx T2=yyyyyyyyyyyyyyyyy`
+
+6. Type `[ESP610]` to verify (T1 and T2 won't be displayed)
+
+7. Try to send a message:  
+   `[ESP600]Hi there, test from ESP3D`

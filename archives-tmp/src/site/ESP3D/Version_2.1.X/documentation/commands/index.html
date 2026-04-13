@@ -1,0 +1,869 @@
+<!DOCTYPE html><html class="writer-html5" lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="canonical" href="https://esp3d.io/ESP3D/Version_2.1.X/documentation/commands/">
+      <link rel="shortcut icon" href="../../../../img/favicon.ico">
+    <title>ESP3D commands - esp3d.io</title>
+    <link rel="stylesheet" href="../../../../css/theme.css">
+    <link rel="stylesheet" href="../../../../css/theme_extra.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../../../../style.css" rel="stylesheet">
+        <link href="../../../../stylesheets/extra.css" rel="stylesheet">
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ESP3D commands";
+        var mkdocs_page_input_path = "ESP3D\\Version_2.1.X\\documentation\\commands\\index.md";
+        var mkdocs_page_url = "/ESP3D/Version_2.1.X/documentation/commands/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+        </style></head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search" style="margin:0;padding-top:0;">
+          <a href="../../../.." style="margin-bottom:0px">
+          <img src="/img/ESP3D_mini2.png" class="logo" style="margin-bottom:0px" alt="Logo">
+        </a><div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here">
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">ESP3D Ecosystem</a>
+                </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">ESP3D</span></p>
+                    </a>
+                </li></ul>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="../../">Version 2.1.X</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../hardware/">Hardware</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../hardware/esp_boards/">ESP boards</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../hardware/esp_boards/esp8266/">ESP8266 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../hardware/esp_boards/esp8285/">ESP8285 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../hardware/esp_boards/esp32/">ESP32 boards</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../hardware/system_boards/">System boards</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../hardware/system_boards/main_boards/">Main boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../hardware/system_boards/tft/">TFT</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../installation/">Installation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../installation/arduino/">Arduino IDE</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../installation/vscode-platformio/">VSCode &amp; Platformio</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="../">Documentation</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">ESP3D commands</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../notifications/">Notifications</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../notifications/pushover/"> Pushover Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../notifications/line/"> Line Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../notifications/email_and_smtp/"> Email Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../notifications/ifttt/">Ifttt</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../sdtransfert/">About SD card</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../api/">API</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Version_3.X/">Version 3.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/hardware/">Hardware</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/">ESP boards</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp8266/">ESP8266 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp8285/">ESP8285 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32/">ESP32 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32-pico/">ESP32-Pico boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32-c3/">ESP32-C3 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32-c6/">ESP32-C6 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32-s2/">ESP32-S2 boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/esp_boards/esp32-s3/">ESP32-S3 boards</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/hardware/system_boards/">System boards</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/system_boards/main_boards/">Main boards</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/hardware/system_boards/tft/">TFT</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/installation/">Installation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/installation/arduino/">Arduino IDE</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/installation/vscode-platformio/">VSCode &amp; Platformio</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/commands/">ESP3D commands</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/authentication/">Authentication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/">Notifications</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/pushover/"> Pushover Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/line/"> Line Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/email_and_smtp/"> Email Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/ifttt/">Ifttt</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/telegram/"> Telegram Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/whatsapp/"> What's App Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/notifications/home-assistant/"> Home Assistant</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/camera/">Camera support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/update/">Update support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/sdtransfer/">About SD card</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/ftp/">About FTP</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/webdav/">About WebDAV</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/telnet/">About Telnet</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/otg/">About USB Serial OTG</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/lua/">About Lua interpreter</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/compilation/">Compilation Guide</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/faq/">FAQ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../Version_3.X/documentation/api/">API</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/api/webhandlers/">Web Handlers</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/api/websockets/">Web Sockets</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/api/variables/">Variables</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Version_3.X/documentation/api/hooks/">Hooks</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Version_3.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../../ESP3DLib/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">ESP3DLib</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/">Version 1.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/">Hardware</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/esp32-controller/">ESP32 generic controller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/fysetc-e4/">FYSETC-E4</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/mks-tinybee-v1/">MKS Tinybee</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/mrr-espa/">MRR-ESPA</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/mrr-espe/">MRR-ESPE</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/hardware/panda-zhu-m4/">Panda Zhu/M4</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/documentation/commands/">ESP3D commands</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_1.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/">Version 3.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/">Hardware</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/fysetc-e4/">FYSETC-E4</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/mks-tinybee-v1/">MKS Tinybee</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/mrr-espa/">MRR-ESPA</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/mrr-espe/">MRR-ESPE</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/hardware/panda-zhu-m4/">Panda Zhu/M4</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/commands/">ESP3D commands</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/authentication/">Authentication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/">Notifications</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/pushover/"> Pushover Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/line/"> Line Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/email_and_smtp/"> Email Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/ifttt/">Ifttt</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/telegram/"> Telegram Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/notifications/home-assistant/"> Home Assistant</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/update/">Update support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/ftp/">About FTP</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/webdav/">About WebDAV</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/compilation/">Compilation Guide</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/faq/">FAQ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/api/">API</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/api/webhandlers/">Web Handlers</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/documentation/api/websockets/">Web Sockets</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3DLib/Version_3.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../../ESP3D-TFT/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">ESP3D-TFT</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/">Version 1.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/">Hardware</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32/">ESP32</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32/sunton-28-2432/"> 2.8' ESP32-2432S028R</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32/sunton-35-3248/"> 3.5' ESP32-3248S035R/C</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32/zrotrics/">3.5' Rotrics</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/">ESP32-S3</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/bzm-35-4832/"> 3.5' BZM-V1</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/cpanlee/">3.5' ZX3D50CE02S-USRC-4832</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/hmis3/">4.3' HMI-V3</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/sunton-43-4827/"> 4.3' ESP32-4827S043R/C</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/sunton-43-8048/"> 4.3' ESP32-8048S043C</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/sunton-50-8048/"> 5.0' ESP32-8048S050C</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/sunton-70-8048/"> 7.0' ESP32-8048S070C</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/hardware/esp32-s3/waveshare-70-8048/"> 7.0' Waveshare ESP32-S3-Touch-LCD-7 V1.1</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/commands/">ESP3D commands</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/authentication/">Authentication</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/">Notifications</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/pushover/"> Pushover Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/line/"> Line Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/email_and_smtp/"> Email Notification</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/ifttt/">Ifttt</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/notifications/telegram/"> Telegram Notification</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/update/">Update support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/ftp/">About FTP</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/webdavservice/">About WebDAV</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/compilation/">Compilation Guide</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/faq/">FAQ</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/">API</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/conventions/">Syntax conventions</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/project-arch/">Project architecture reference</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/variables/">Variables</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/webhandlers/">Web Handlers</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/clients/">Clients</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/websockets/">Web Sockets</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/documentation/api/streamingservice/">GCode streaming API</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-TFT/Version_1.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../../ESP3D-WebUI/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">ESP3D-WEBUI</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/">Version 2.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/documentation/camera/">Camera support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/documentation/translation/">Translations</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/documentation/compilation/">Compilation</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/showcase/">Showcase</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_2.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/">Version 3.X</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/features/">Features</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/installation/">Installation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/">Documentation</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/polling/">Polling commands</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/themes/">Themes</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/camera/">Camera support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/extra/">Extra Content</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/extensions/">Extensions</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/update/">Update support</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/macros/">Macros</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/translation/">Translations</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/compilation/">Compilation Guide</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/">API</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/conventions/">Syntax conventions</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/fileupload/">File upload</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/variablesList/">Variables list</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/realtimecmd/">Real time commands</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/webhandlers/">Web Handlers</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/websockets/">Web Sockets</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/documentation/api/extensions/">Extensions API</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/">Showcase</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/ui/">Configurable Web Interface</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/extensions/">Extensions</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/extensions/click2go/">Click to go</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/extensions/gcodeviewer/">GCode Viewer for 3D Printer files</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/extensions/wifisdpro/">SD WIFI PRO</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/themes/">Themes</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/showcase/themes/orca/">Orca</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../ESP3D-WebUI/Version_3.X/credits/">Credits</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../../forum/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">Forum</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+              </ul>
+                <ul><li>
+                    <a href="../../../../tools/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">Extra tools</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tools/sdtools/">SD tools</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../tools/discovery/">Discovery tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../tools/discovery/mdns/">mDNS protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../tools/discovery/ssdp/">SSDP protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+                <ul><li>
+                    <a href="../../../../sponsoring/" style="padding: 0; font-size: inherit; line-height: inherit">
+              <p class="caption"><span class="caption-text">Sponsoring</span></p>
+                    </a>
+                </li></ul>
+              <ul>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">esp3d.io</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item"><a href="../../../">ESP3D</a></li>
+          <li class="breadcrumb-item"><a href="../../">Version 2.1.X</a></li>
+          <li class="breadcrumb-item"><a href="../">Documentation</a></li>
+      <li class="breadcrumb-item active">ESP3D commands</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/luc-github/esp3d.io/edit/main/src/docs/ESP3D/Version_2.1.X/documentation/commands/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h3 id="conventions">Conventions</h3>
+<p>Please note all commands are in format <code>[ESPxx]</code>. These first brackets <code>[]</code> are not optional.<br>
+Most of the time givin no argument will return current configuration
+If authentication is on, somme commands will need admin password. They are recognised by the optional argument <code>pwd=&lt;admin password&gt;</code> in command line.</p>
+<h3 id="commands">Commands</h3>
+<ul>
+<li>
+<p>Get/change STA SSID <br>
+<code>[ESP100] &lt;SSID&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Change STA Password <br>
+<code>[ESP101] &lt;Password&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change Hostname <br>
+<code>[ESP102] &lt;hostname&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change Wifi mode (STA/AP) <br>
+<code>[ESP103] &lt;mode&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change STA IP mode (DHCP/STATIC) <br>
+<code>[ESP104] &lt;mode&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change AP SSID <br>
+<code>[ESP105] &lt;SSID&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Change AP Password <br>
+<code>[ESP106] &lt;Password&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change AP IP mode (DHCP/STATIC) <br>
+<code>[ESP107] &lt;mode&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get/change wifi state (on/off) <br>
+<code>[ESP110] &lt;state&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get current IP <br>
+<code>[ESP111]</code></p>
+</li>
+<li>
+<p>Get/Change hostname <br>
+<code>[ESP112] &lt;hostname&gt;</code></p>
+</li>
+<li>
+<p>Get/Set pin value <br>
+<code>[ESP201] P&lt;pin&gt; V&lt;value&gt; PULLUP=&lt;YES/NO&gt; RAW=&lt;YES/NO&gt; ANALOG=&lt;NO/YES&gt; ANALOG_RANGE=[255/1024] CLEARCHANNELS=&lt;NO/YES} pwd=&lt;admin password&gt;</code><br>
+if no V<value> get P<pin> value<br>
+if V<value> 0/1 set INPUT_PULLUP value, but for GPIO16 INPUT_PULLDOWN_16
+GPIO1 and GPIO3 cannot be used as they are used for serial<br>
+if PULLUP=YES set input pull up, if not set input<br>
+if RAW=YES do not set pinmode just read value</value></pin></value></p>
+</li>
+<li>
+<p>Output to oled column C and line L<br>
+<code>[ESP210] C=&lt;col&gt; L=&lt;line&gt; T=&lt;Text&gt;</code></p>
+</li>
+<li>
+<p>Output to oled line 1 <br>
+<code>[ESP211] &lt;Text&gt;</code></p>
+</li>
+<li>
+<p>Output to oled line 2 <br>
+<code>[ESP212] &lt;Text&gt;</code></p>
+</li>
+<li>
+<p>Output to oled line 3 <br>
+<code>[ESP213] &lt;Text&gt;</code></p>
+</li>
+<li>
+<p>Output to oled line 4 <br>
+<code>[ESP214] &lt;Text&gt;</code></p>
+</li>
+<li>
+<p>Delay <br>
+<code>[ESP290] &lt;delayMs&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get EEPROM mapping version <br>
+<code>[ESP300]</code></p>
+</li>
+<li>
+<p>Get full EEPROM settings content  <br>
+but do not give any passwords
+can filter if only need wifi or printer
+<code>[ESP400] &lt;network/printer&gt;</code></p>
+</li>
+<li>
+<p>Set EEPROM setting <br>
+<code>[ESP401] P=&lt;position&gt; T={B | I | S | A} V=&lt;value&gt; pwd=&lt;user/admin password&gt;</code><br>
+<code>T</code> type: B(byte), I(integer/long), S(string), A(IP address / mask)<br>
+<code>P</code> position: address in EEPROM  </p>
+</li>
+</ul>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__s pan-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">     </span><span class="nl">Description</span><span class="p">:</span><span class="w">        </span><span class="n">Positions</span><span class="o">:</span><span class="w"> </span>
+</span><span id="__s pan-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">EP_WIFI_MODE</span><span class="w">             </span><span class="mi">0</span><span class="w">    </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">EP_STA_SSID</span><span class="w">              </span><span class="mi">1</span><span class="w">    </span><span class="c1">//33 bytes 32+1 = string  ; warning does not support multibyte char like chinese</span>
+</span><span id="__s pan-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">EP_STA_PASSWORD</span><span class="w">          </span><span class="mi">34</span><span class="w">   </span><span class="c1">//65 bytes 64 +1 = string ;warning  does not support multibyte char like chinese</span>
+</span><span id="__s pan-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">EP_STA_IP_MODE</span><span class="w">           </span><span class="mi">99</span><span class="w">   </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">EP_STA_IP_VALUE</span><span class="w">          </span><span class="mi">100</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">EP_STA_MASK_VALUE</span><span class="w">        </span><span class="mi">104</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">EP_STA_GATEWAY_VALUE</span><span class="w">     </span><span class="mi">108</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">EP_BAUD_RATE</span><span class="w">             </span><span class="mi">112</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">EP_STA_PHY_MODE</span><span class="w">          </span><span class="mi">116</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">EP_SLEEP_MODE</span><span class="w">            </span><span class="mi">117</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">EP_CHANNEL</span><span class="w">               </span><span class="mi">118</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">EP_AUTH_TYPE</span><span class="w">             </span><span class="mi">119</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">EP_SSID_VISIBLE</span><span class="w">          </span><span class="mi">120</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">EP_WEB_PORT</span><span class="w">              </span><span class="mi">121</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">EP_DATA_PORT</span><span class="w">             </span><span class="mi">125</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">EP_OUTPUT_FLAG</span><span class="w">           </span><span class="mi">129</span><span class="w">  </span><span class="c1">//1  bytes = flag</span>
+</span><span id="__s pan-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">EP_HOSTNAME</span><span class="w">              </span><span class="mi">130</span><span class="w">  </span><span class="c1">//33 bytes 32+1 = string  ; warning does  not support multibyte char like chinese</span>
+</span><span id="__s pan-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">EP_DHT_INTERVAL</span><span class="w">          </span><span class="mi">164</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="n">EP_FREE_INT2</span><span class="w">             </span><span class="mi">168</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="n">EP_FREE_INT3</span><span class="w">             </span><span class="mi">172</span><span class="w">  </span><span class="c1">//4  bytes = int</span>
+</span><span id="__s pan-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="n">EP_ADMIN_PWD</span><span class="w">             </span><span class="mi">176</span><span class="w">  </span><span class="c1">//21  bytes 20+1 = string  ; warning does  not support multibyte char like chinese</span>
+</span><span id="__s pan-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="n">EP_USER_PWD</span><span class="w">              </span><span class="mi">197</span><span class="w">  </span><span class="c1">//21  bytes 20+1 = string  ; warning does  not support multibyte char like chinese</span>
+</span><span id="__s pan-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="n">EP_AP_SSID</span><span class="w">               </span><span class="mi">218</span><span class="w">  </span><span class="c1">//33 bytes 32+1 = string  ; warning  does not support multibyte char like chinese</span>
+</span><span id="__s pan-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="n">EP_AP_PASSWORD</span><span class="w">           </span><span class="mi">251</span><span class="w">  </span><span class="c1">//65 bytes 64 +1 = string ;warning  does not support multibyte char like chinese</span>
+</span><span id="__s pan-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="n">EP_AP_IP_VALUE</span><span class="w">           </span><span class="mi">316</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="n">EP_AP_MASK_VALUE</span><span class="w">         </span><span class="mi">320</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="n">EP_AP_GATEWAY_VALUE</span><span class="w">      </span><span class="mi">324</span><span class="w">  </span><span class="c1">//4  bytes xxx.xxx.xxx.xxx</span>
+</span><span id="__s pan-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="n">EP_AP_IP_MODE</span><span class="w">            </span><span class="mi">329</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="n">EP_AP_PHY_MODE</span><span class="w">           </span><span class="mi">330</span><span class="w">  </span><span class="c1">//1 byte = flag</span>
+</span><span id="__s pan-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">EP_FREE_STRING1</span><span class="w">          </span><span class="mi">331</span><span class="w">  </span><span class="c1">//129 bytes 128+1 = string  ; warning  does not support multibyte char like chinese</span>
+</span><span id="__s pan-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="n">EP_DHT_TYPE</span><span class="w">              </span><span class="mi">460</span><span class="w">  </span><span class="c1">//1  bytes = flag</span>
+</span><span id="__s pan-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="n">EP_TARGET_FW</span><span class="w">             </span><span class="mi">461</span><span class="w">  </span><span class="c1">//1  bytes = flag</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p>Get available AP list (limited to 30)  <br>
+<code>[ESP410]&lt;plain&gt;</code><br>
+Output is JSON or plain text according parameter   </p>
+</li>
+<li>
+<p>Get current settings of ESP3D <br>
+<code>[ESP420]&lt;plain&gt;</code><br>
+Output is JSON or plain text according parameter   </p>
+</li>
+<li>
+<p>Get/Set ESP mode (RESET, SAFEMODE, CONFIG, RESTART)<br>
+<code>[ESP444] &lt;mode&gt; pwd=&lt;admin password&gt;</code><br>
+if authentication is on, need admin password for RESET, RESTART and SAFEMODE  </p>
+</li>
+<li>
+<p>Send GCode with check sum caching right line numbering <br>
+<code>[ESP500] &lt;gcode&gt;</code></p>
+</li>
+<li>
+<p>Send line checksum <br>
+<code>[ESP501] &lt;line&gt;</code></p>
+</li>
+<li>
+<p>Change / Reset  password <br>
+<code>[ESP550] &lt;password&gt; pwd=&lt;admin password&gt;</code><br>
+If no password set it use default one</p>
+</li>
+<li>
+<p>Change / Reset user password <br>
+<code>[ESP555] &lt;password&gt; pwd=&lt;admin/user password&gt;</code><br>
+If no password set it use default one</p>
+</li>
+<li>
+<p>Send notification  <br>
+<code>[ESP600] &lt;message&gt; pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Set/Get notification settings (type can be NONE, PUSHOVER, EMAIL, LINE) <br>
+<code>[ESP610] type=&lt;type&gt; T1=&lt;token1&gt; T2=&lt;token2&gt; TS=&lt;Settings&gt; pwd=&lt;admin password&gt;</code>
+Get will give type and settings only not the protected T1/T2</p>
+</li>
+<li>
+<p>Read SPIFFS file and send each line to serial <br>
+<code>[ESP700] &lt;filename&gt;</code></p>
+</li>
+<li>
+<p>Format SPIFFS <br>
+<code>[ESP710] FORMAT pwd=&lt;admin password&gt;</code></p>
+</li>
+<li>
+<p>Get SPIFFS total size and used size <br>
+<code>[ESP720]</code></p>
+</li>
+<li>
+<p>Get fw version and basic information <br>
+<code>[ESP800]</code></p>
+</li>
+<li>
+<p>Get fw target <br>
+<code>[ESP801]</code></p>
+</li>
+<li>
+<p>Get state / Set Enable / Disable Serial Communication (state: {ENABLE, DISABLE) <br>
+<code>[ESP900] &lt;state&gt;</code></p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../notifications/" class="btn btn-neutral float-right" title="Notifications">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright © Luc LEBOSSE 2022 ESP3D</p>
+  </div>
+  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7000738315770053" crossorigin="anonymous"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7YYLL9PTPV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7YYLL9PTPV');
+</script>
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+ <div style="height:50px;width:100%;display:inline-block;padding:5px;">   
+  <center>
+    <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=FQL59C749A78L" target="_blank" rel="noopener noreferrer"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif" border="0" alt="PayPal The safer, easier way to pay online."></a></p>
+</center>
+</div>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/luc-github/esp3d.io" class="fa fa-github" style="color: #fcfcfc"> GitHub </a>
+        </span>
+    
+    
+      <span><a href="../" style="color: #fcfcfc">« Previous</a></span>
+    
+    
+      <span><a href="../notifications/" style="color: #fcfcfc">Next »</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+</script></body></html>

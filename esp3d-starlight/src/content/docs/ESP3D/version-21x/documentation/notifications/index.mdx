@@ -1,0 +1,24 @@
+---
+title: Notifications
+description: ESP3D 2.1.X notification services
+---
+
+The notifications section covers ESP3D 2.1.X alert services and notification channels.
+You can configure one notification type at a time.
+
+### Supported notification services
+
+- [Pushover](./pushover/)
+- [Line](./line/)
+- [Email / SMTP](./email_and_smtp/)
+- [IFTTT](./ifttt/)
+
+### Send a notification
+Just add the following command in your slicer's end script or manually in a GCODE file:  
+`[ESP600]msg pwd=<admin password>`
+
+### Use notification commands from SD
+
+- on Repetier: `M118 [ESP600]msg`
+- on Marlin: `M118 P0 [ESP600]msg`
+- on Smoothieware: `echo [ESP600]msg`

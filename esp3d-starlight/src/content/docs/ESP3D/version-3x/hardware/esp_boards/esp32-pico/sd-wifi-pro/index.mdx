@@ -1,0 +1,37 @@
+---
+archetype : "section"
+title : "FYSETC SD-WIFI-PRO"
+description :  "FYSETC SD-WIFI-PRO"
+weight : 17
+---
+
+import configurationText from './configuration.h?raw';
+import platformioText from './platformio.ini?raw';
+
+[github](https://github.com/FYSETC/SD-WIFI-PRO)
+
+
+## Specs
+* ESP32-PICO with 4MB flash memory, ceramic antenna, SD Card with no serial header, the sharing of SD card between ESP and printer/CNC is done by a multiplexer which make sharing reliable without risk of conflict, only one device can access to SD at once. 
+
+
+![image](/img/hardware/esp_boards/esp32-pico/sd-wifi-pro/front.png)
+![image](/img/hardware/esp_boards/esp32-pico/sd-wifi-pro/pinout.png)
+
+<aside class="warning-panel">
+  <p><strong>Warning:</strong></p>
+</aside>
+    Because there is no serial connection to printer, the features are limited to SD card access features
+
+
+<aside class="info-panel">
+  <p><strong>Info:</strong></p>
+</aside>
+    My boards have only 4MB flash and no PSRAM unlike described in github and FYSETC website, so the following pio settings are limited to 4MB flash size and no PSRAM, if you have an 8MB board and 2MB PSRAM you may need to adjust the parameters .
+
+
+### configuration.h
+<pre><code className="language-ini">{configurationText}</code></pre>
+
+### platformio.ini
+<pre><code className="language-ini">{platformioText}</code></pre>
