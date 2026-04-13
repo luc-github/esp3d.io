@@ -31,16 +31,6 @@ export default defineConfig({
               items: [
                 { label: 'Overview', link: '/esp3d/version-21x/' },
                 { label: 'Credits', link: '/esp3d/version-21x/credits/' },
-                {
-                  label: 'Documentation',
-                  items: [
-                    { label: 'Overview', link: '/esp3d/version-21x/documentation/' },
-                    { label: 'Commands', link: '/esp3d/version-21x/documentation/commands/' },
-                    { label: 'API', link: '/esp3d/version-21x/documentation/api/' },
-                    { label: 'Notifications', link: '/esp3d/version-21x/documentation/notifications/' },
-                    { label: 'SD transfer', link: '/esp3d/version-21x/documentation/sdtransfert/' },
-                  ],
-                },
                 { label: 'Features', link: '/esp3d/version-21x/features/' },
                 {
                   label: 'Hardware',
@@ -73,12 +63,60 @@ export default defineConfig({
                   ],
                 },
                 { label: 'Showcase', link: '/esp3d/version-21x/showcase/' },
+                {
+                  label: 'Documentation',
+                  items: [
+                    { label: 'Overview', link: '/esp3d/version-21x/documentation/' },
+                    { label: 'Commands', link: '/esp3d/version-21x/documentation/commands/' },
+                    { label: 'API', link: '/esp3d/version-21x/documentation/api/' },
+                    { label: 'Notifications', link: '/esp3d/version-21x/documentation/notifications/' },
+                    { label: 'SD transfer', link: '/esp3d/version-21x/documentation/sdtransfert/' },
+                  ],
+                },
               ],
             },
             {
               label: 'ESP3D Version 3.X',
               items: [
                 { label: 'Overview', link: '/esp3d/version-3x/' },
+                { label: 'Features', link: '/esp3d/version-3x/features/' },
+                {
+                  label: 'Hardware',
+                  items: [
+                    { label: 'Overview', link: '/esp3d/version-3x/hardware/' },
+                    {
+                      label: 'ESP boards',
+                      items: [
+                        { label: 'ESP32', link: '/esp3d/version-3x/hardware/esp_boards/esp32/' },
+                        { label: 'ESP8266', link: '/esp3d/version-3x/hardware/esp_boards/esp8266/' },
+                        { label: 'ESP8285', link: '/esp3d/version-3x/hardware/esp_boards/esp8285/' },
+                        { label: 'ESP32-PICO', link: '/esp3d/version-3x/hardware/esp_boards/esp32-pico/' },
+                        { label: 'ESP32-C3', link: '/esp3d/version-3x/hardware/esp_boards/esp32-c3/' },
+                        { label: 'ESP32-C6', link: '/esp3d/version-3x/hardware/esp_boards/esp32-c6/' },
+                        { label: 'ESP32-S2', link: '/esp3d/version-3x/hardware/esp_boards/esp32-s2/' },
+                        { label: 'ESP32-S3', link: '/esp3d/version-3x/hardware/esp_boards/esp32-s3/' },
+                      ],
+                    },
+                    {
+                      label: 'System boards',
+                      items: [
+                        { label: 'Overview', link: '/esp3d/version-3x/hardware/system_boards/' },
+                        { label: 'Main boards', link: '/esp3d/version-3x/hardware/system_boards/main_boards/' },
+                        { label: 'TFT', link: '/esp3d/version-3x/hardware/system_boards/tft/' },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  label: 'Installation',
+                  items: [
+                    { label: 'Overview', link: '/esp3d/version-3x/installation/' },
+                    { label: 'Arduino IDE', link: '/esp3d/version-3x/installation/arduino/' },
+                    { label: 'PlatformIO', link: '/esp3d/version-3x/installation/vscode-platformio/' },
+                    { label: 'Configuration', link: '/esp3d/version-3x/installation/configuration/' },
+                  ],
+                },
+                { label: 'Showcase', link: '/esp3d/version-3x/showcase/' },
                 {
                   label: 'Documentation',
                   items: [
@@ -120,45 +158,6 @@ export default defineConfig({
                     },
                   ],
                 },
-                { label: 'Features', link: '/esp3d/version-3x/features/' },
-                {
-                  label: 'Hardware',
-                  items: [
-                    { label: 'Overview', link: '/esp3d/version-3x/hardware/' },
-                    {
-                      label: 'ESP boards',
-                      items: [
-                        { label: 'ESP32', link: '/esp3d/version-3x/hardware/esp_boards/esp32/' },
-                        { label: 'ESP8266', link: '/esp3d/version-3x/hardware/esp_boards/esp8266/' },
-                        { label: 'ESP8285', link: '/esp3d/version-3x/hardware/esp_boards/esp8285/' },
-                        { label: 'ESP32-PICO', link: '/esp3d/version-3x/hardware/esp_boards/esp32-pico/' },
-                        { label: 'ESP32-C3', link: '/esp3d/version-3x/hardware/esp_boards/esp32-c3/' },
-                        { label: 'ESP32-C6', link: '/esp3d/version-3x/hardware/esp_boards/esp32-c6/' },
-                        { label: 'ESP32-S2', link: '/esp3d/version-3x/hardware/esp_boards/esp32-s2/' },
-                        { label: 'ESP32-S3', link: '/esp3d/version-3x/hardware/esp_boards/esp32-s3/' },
-                      ],
-                    },
-                    {
-                      label: 'System boards',
-                      items: [
-                        { label: 'Overview', link: '/esp3d/version-3x/hardware/system_boards/' },
-                        { label: 'Main boards', link: '/esp3d/version-3x/hardware/system_boards/main_boards/' },
-                        { label: 'TFT', link: '/esp3d/version-3x/hardware/system_boards/tft/' },
-                      ],
-                    },
-                  ],
-                },
-                {
-                  label: 'Installation',
-                  items: [
-                    { label: 'Overview', link: '/esp3d/version-3x/installation/' },
-                    { label: 'Arduino IDE', link: '/esp3d/version-3x/installation/arduino/' },
-                    { label: 'PlatformIO', link: '/esp3d/version-3x/installation/vscode-platformio/' },
-                    { label: 'Configuration', link: '/esp3d/version-3x/installation/configuration/' },
-                  ],
-                },
-                { label: 'Partitions', link: '/esp3d/version-3x/partitions/' },
-                { label: 'Showcase', link: '/esp3d/version-3x/showcase/' },
                 { label: 'Credits', link: '/esp3d/version-3x/credits/' },
               ],
             },
