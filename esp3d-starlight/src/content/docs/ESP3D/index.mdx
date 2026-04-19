@@ -3,8 +3,6 @@ title: What is ESP3D ?
 description: ESP3D firmware introduction and migration preview
 ---
 
-import InfoPanel from '../../../components/InfoPanel.astro';
-
 ESP3D is a firmware for ESP8266 and ESP32 boards from Espressif. This firmware allows not only a cheap bridge between WiFi and serial, but also a web UI to configure WiFi, monitor a 3D printer/CNC, and control it. The UI is fully customizable without reflashing the firmware.
 
 Firmware support depends on the target board and the version.
@@ -26,15 +24,17 @@ Firmware support depends on the target board and the version.
 [![Discord ESP3D](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)
 </div>
 
-<InfoPanel>
+<aside class="info-panel">
   <h4>Cybersecurity</h4>
 
   <p>If you plan to have access to your ESP from outside of your private network, then you need to apply some basic security rules to avoid anybody being able to access your ESP.</p>
-
+</aside>
+<aside class="warning-panel" data-icon="alert">
   <h4>Disclaimer</h4>
 
   <p>This is for reference — you are responsible for your board and internet network; we are not responsible for any damage to any of your network appliances.</p>
-
+</aside>
+<aside class="info-panel" data-icon="info">
   <h4>Recommendations</h4>
 
   <p>Following steps must be done before your ESP is visible from public internet:</p>
@@ -51,9 +51,10 @@ Firmware support depends on the target board and the version.
     <li>Configure your box to redirect a different port than 80 to the port 80 of ESP</li>
     <li>Use the DMZ feature of your box</li>
   </ul>
-
+</aside>
+<aside class="info-panel" data-icon="tip">
   <h4>Additional tips</h4>
 
   <p>Remember the web server is not HTTPS, this means the server will never be fully secure. In particular, avoid connecting to your printer from any public network you do not own. Stick to your 4G network or other safe places to avoid MITM attack.</p>
-</InfoPanel>
+</aside>
 
