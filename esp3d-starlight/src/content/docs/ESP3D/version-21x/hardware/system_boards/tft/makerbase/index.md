@@ -3,6 +3,8 @@ archetype : "section"
 title : "Makerbase"
 menuPre : "<i class='fas fa-microchip'></i> "
 weight : 1
+sidebar :
+  label : Overview
 ---
 
 ### Makerbase TFTs

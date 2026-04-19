@@ -15,7 +15,7 @@ weight : 10
 
 
 <aside class="info-panel">
-  <p><strong>Note:</strong> **</p>
+  <p><strong>Note:</strong></p>
   The screen need to be reset at start using IO16 (Low then High)
 </aside>
 

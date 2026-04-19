@@ -11,7 +11,7 @@ weight : 5
 [github](https://github.com/bigtreetech/BTT-SD-TF-Cloud-V1.0)
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because there is no serial connection to printer and the sd connection is based on this project: https://github.com/ardyesp/ESPWebDAV which is a not reliable hack, the boards is not supported
 </aside>
 

@@ -13,7 +13,7 @@ From [blkbox](https://www.tindie.com/products/blkbox/4-layer-esp8266-wifi-module
 * ESP8285 with 1MB flash memory, ceramic antenna 
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because flash is only 1MB, OTA/Web Update are not possible
 </aside>
 

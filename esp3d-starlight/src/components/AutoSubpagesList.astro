@@ -1,0 +1,198 @@
+---
+import { slug as githubSlug } from 'github-slugger';
+import SubpagesTree from './SubpagesTree.astro';
+import type { SubpageNode } from '~/types/subpages';
+
+const { directory, maxDepth = Infinity, showRoot = false, centered = true } = Astro.props;
+
+if (!directory) {
+	throw new Error(
+		'AutoSubpagesList requires a `directory` prop. Example: <AutoSubpagesList directory="ESP3D/version-3x/hardware" />',
+	);
+}
+
+/** Align with @astrojs/starlight `slugToParam` / `slugToPathname` (no lowercasing). */
+function slugToParam(slug: string): string | undefined {
+	return slug === 'index' || slug === '' || slug === '/'
+		? undefined
+		: (slug.endsWith('/index') ? slug.slice(0, -6) : slug).normalize();
+}
+
+function slugToPathname(slug: string): string {
+	const param = slugToParam(slug);
+	return param ? '/' + param + '/' : '/';
+}
+
+const normalizePath = (value: string) => value.replace(/\\/g, '/').replace(/^\/|\/$/g, '');
+
+/** Match Astro content collection slugs: each path segment is passed through `github-slugger`. */
+function toCollectionSlug(relativePath: string): string {
+	const trimmed = normalizePath(relativePath).replace(/\.(md|mdx)$/, '');
+	const withoutIndex = trimmed.endsWith('/index') ? trimmed.replace(/\/index$/, '') : trimmed;
+	return withoutIndex
+		.split('/')
+		.filter(Boolean)
+		.map((segment) => githubSlug(segment))
+		.join('/');
+}
+
+const directoryRoot = toCollectionSlug(directory);
+
+const modules = import.meta.glob('../content/docs/**/*.{md,mdx}', { eager: true }) as Record<
+	string,
+	{ frontmatter?: { title?: string; description?: string; weight?: number } }
+>;
+
+const pages = Object.entries(modules)
+	.map(([filePath, module]) => {
+		const normalized = normalizePath(filePath);
+		const marker = 'content/docs/';
+		const markerIdx = normalized.indexOf(marker);
+		const sourcePath =
+			markerIdx === -1 ? normalized : normalized.slice(markerIdx + marker.length);
+		const slug = toCollectionSlug(sourcePath);
+		const title = module?.frontmatter?.title ?? slug.split('/').pop() ?? 'Untitled';
+		const description = module?.frontmatter?.description?.trim() ?? '';
+		const href = slugToPathname(slug);
+		const relativePath = slug === directoryRoot ? '' : slug.replace(`${directoryRoot}/`, '');
+		const depth = relativePath === '' ? 0 : relativePath.split('/').length;
+		const weight = Number(module?.frontmatter?.weight ?? 0);
+		return {
+			slug,
+			title,
+			description,
+			href,
+			relativePath,
+			depth,
+			weight,
+		};
+	})
+	.filter((page) => page.slug === directoryRoot || page.slug.startsWith(`${directoryRoot}/`))
+	.filter((page) => page.depth <= maxDepth)
+	.sort(
+		(a, b) =>
+			a.depth - b.depth ||
+			a.weight - b.weight ||
+			a.title.localeCompare(b.title, undefined, { numeric: true }),
+	);
+
+const listPages = pages;
+const rootPage = listPages.find((p) => p.depth === 0);
+const subPages = listPages.filter((p) => p.depth > 0);
+
+function buildTree(
+	items: typeof subPages,
+	parentPath: string,
+	currentDepth: number,
+): SubpageNode[] {
+	return items
+		.filter(
+			(item) =>
+				item.depth === currentDepth &&
+				item.relativePath.split('/').slice(0, -1).join('/') === parentPath,
+		)
+		.map((item) => ({
+			title: item.title,
+			description: item.description,
+			href: item.href,
+			children: buildTree(items, item.relativePath, currentDepth + 1),
+		}));
+}
+
+const tree = buildTree(subPages, '', 1);
+
+/** When the index page matches `directory`, listing it again is redundant (same URL as current page). */
+const shouldRenderRoot = showRoot && rootPage;
+const hasTree = tree.length > 0;
+const showNav = shouldRenderRoot || hasTree;
+---
+
+{
+	!listPages.length ? (
+		<p class:list={['auto-subpages-list-empty', centered && 'auto-subpages-list-empty--centered']}>
+			No pages found for <code>{directoryRoot}</code>.
+		</p>
+	) : showNav ? (
+		<nav
+			class:list={['auto-subpages-list', centered && 'auto-subpages-list--centered']}
+			aria-label={`Subpages for ${directoryRoot}`}
+		>
+			{shouldRenderRoot ? (
+				<ul>
+					<li>
+						<a href={rootPage.href}>{rootPage.title}</a>
+						{rootPage.description ? <p>{rootPage.description}</p> : null}
+						<SubpagesTree nodes={tree} />
+					</li>
+				</ul>
+			) : (
+				<SubpagesTree nodes={tree} />
+			)}
+		</nav>
+	) : null
+}
+
+<style>
+	.auto-subpages-list {
+		border: none;
+		padding: 1rem;
+		margin: 1rem 0;
+		background: var(--sl-color-surface);
+	}
+
+	/**
+	 * Full width so the surface aligns across pages; flex centers the tree even when
+	 * `width: fit-content` on inner `ul` is almost as wide as the prose column (narrow
+	 * trees looked centered before, wide trees looked "stuck left").
+	 */
+	.auto-subpages-list--centered {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.auto-subpages-list-empty {
+		margin: 1rem 0;
+	}
+
+	.auto-subpages-list-empty--centered {
+		text-align: center;
+	}
+
+	.auto-subpages-list ul {
+		list-style: disc;
+		margin: 0 auto;
+		padding: 0 0 0 1rem;
+		width: fit-content;
+	}
+
+	.auto-subpages-list li {
+		margin-bottom: 1rem;
+	}
+
+	.auto-subpages-list li:last-child {
+		margin-bottom: 0;
+	}
+
+	.auto-subpages-list a {
+		font-weight: 600;
+		color: blue;
+		text-decoration: none;
+	}
+
+	.auto-subpages-list a:hover,
+	.auto-subpages-list a:focus {
+		color: var(--sl-color-text-accent);
+	}
+
+	.auto-subpages-list p {
+		margin: 0.35rem 0 0;
+		color: var(--sl-color-gray-5);
+		font-size: 0.95rem;
+		line-height: 1.4;
+		font-style: italic;
+	}
+</style>

@@ -3,6 +3,8 @@ archetype : "section"
 title : "BigTreeTech"
 menuPre : "<i class='fas fa-microchip'></i> "
 weight : 1
+sidebar :
+  label : Overview
 ---
 
 ### BigTreeTech TFTs

@@ -1,0 +1,23 @@
+diff --git a/node_modules/@astrojs/starlight/utils/navigation.ts b/node_modules/@astrojs/starlight/utils/navigation.ts
+index e089ff7..ddad059 100644
+--- a/node_modules/@astrojs/starlight/utils/navigation.ts
++++ b/node_modules/@astrojs/starlight/utils/navigation.ts
+@@ -337,9 +337,15 @@ function dirToItem(
+ 	collapsed: boolean,
+ 	attrs?: LinkHTMLAttributes
+ ): SidebarEntry {
+-	return isDir(dirOrRoute)
+-		? groupFromDir(dirOrRoute, fullPath, dirName, currentPathname, locale, collapsed, attrs)
+-		: linkFromRoute(dirOrRoute, attrs);
++	if (isDir(dirOrRoute)) {
++		const entries = sortDirEntries(Object.entries(dirOrRoute));
++		/** Folder with only `index.*` → one leaf page: show a single link (no nested `<details>`). */
++		if (entries.length === 1 && entries[0][0] === 'index' && !isDir(entries[0][1])) {
++			return linkFromRoute(entries[0][1] as Route, attrs);
++		}
++		return groupFromDir(dirOrRoute, fullPath, dirName, currentPathname, locale, collapsed, attrs);
++	}
++	return linkFromRoute(dirOrRoute, attrs);
+ }
+ 
+ /** Create a sidebar entry for a given content directory. */

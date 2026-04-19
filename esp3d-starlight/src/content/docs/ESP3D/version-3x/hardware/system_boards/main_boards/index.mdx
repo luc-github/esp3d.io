@@ -3,28 +3,10 @@ archetype : "section"
 title : "Main boards"
 menuPre : "<i class='fas fa-microchip'></i> "
 weight : 29
+sidebar :
+  label : Overview
 ---
 
-* [Anet A8](./anet_a8/)
-* [Anycubic Kobra 2](./anycubic_kobra_2/)
-* [Anycubic Trigorilla](./anycubic_trigorilla/)
-* [Azsmz Lcd](./azsmz_lcd/)
-* [Azsmz Mini](./azsmz_mini/)
-* [Azteeg X5 Wifi](./azteeg_x5_wifi/)
-* [Biqu Kfb 2 0](./biqu_kfb_2_0/)
-* [Btt Octopus 1 1](./btt_octopus_1_1/)
-* [Btt Skr 1 3](./btt_skr_1_3/)
-* [Btt Skr Mini E3](./btt_skr_mini_e3/)
-* [Btt Skr Pro 1 2](./btt_skr_pro_1_2/)
-* [Creality Cr10](./creality_cr10/)
-* [Creality Ender 4](./creality_ender_4/)
-* [Mks Gen](./mks_gen/)
-* [Mks Robin Nano](./mks_robin_nano/)
-* [Mks Sbase](./mks_sbase/)
-* [Radds Due](./radds_due/)
-* [Ramps Mega](./ramps_mega/)
-* [Re Arm](./re-arm/)
-* [Smoothieboard](./smoothieboard/)
-* [Weedo Tina2](./weedo_tina2/)
-* [Xyz Davinci 1 0 2 0](./xyz_davinci_1_0-2_0/)
-* [Xyz Davinci 1 0A](./xyz_davinci_1_0A/)
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+
+<AutoSubpagesList directory="ESP3D/version-3x/hardware/system_boards/main_boards" maxDepth={3} />

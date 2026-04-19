@@ -11,7 +11,7 @@ weight : 3
 ![image](/img/hardware/esp_boards/esp8266/esp01s-1m/front.png?width=400px)
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because flash is only 1MB, OTA/Web Update are not possible
 </aside>
 

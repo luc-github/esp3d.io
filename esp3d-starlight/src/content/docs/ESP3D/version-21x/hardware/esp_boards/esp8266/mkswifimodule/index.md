@@ -26,7 +26,7 @@ weight : 9
 |3.3V|GND|
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   MKS file upload is not supported, use ESP3D 3.0 or later for MKS protocol support
 </aside>
 

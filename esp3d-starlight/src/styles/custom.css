@@ -10,31 +10,87 @@
 .admonition,
 .admonition-title,
 .admonition-title strong,
-.warning-panel {
+.warning-panel,
+.info-panel,
+.danger-panel {
   border-left: 4px solid #f59e0b;
   background: rgba(253, 230, 138, 0.18);
   color: #92400e;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.25rem 1rem 3rem;
   margin: 1rem 0;
   border-radius: 0.5rem;
+  position: relative;
+}
+
+.warning-panel {
+  border-left-color: #f59e0b;
+  background: rgba(253, 230, 138, 0.18);
+  color: #92400e;
 }
 
 .info-panel {
-  border-left: 4px solid #2563eb;
+  border-left-color: #2563eb;
   background: rgba(191, 219, 254, 0.32);
   color: #1d4ed8;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
 }
 
 .danger-panel {
-  border-left: 4px solid #dc2626;
+  border-left-color: #dc2626;
   background: rgba(254, 202, 202, 0.25);
   color: #991b1b;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
+}
+
+.admonition::before,
+.warning-panel::before,
+.info-panel::before,
+.danger-panel::before {
+  content: '💡';
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.warning-panel::before {
+  content: '⚠️';
+}
+
+.danger-panel::before {
+  content: '⛔';
+}
+
+.info-panel::before {
+  content: '📝';
+}
+
+.admonition::before {
+  content: '💡';
+}
+
+/* Optional icon override for more contextual notes */
+.info-panel[data-icon='tip']::before {
+  content: '💡';
+}
+
+.info-panel[data-icon='note']::before {
+  content: '📝';
+}
+
+.info-panel[data-icon='info']::before {
+  content: 'ℹ️';
+}
+
+.warning-panel[data-icon='warning']::before {
+  content: '⚠️';
+}
+
+.warning-panel[data-icon='alert']::before {
+  content: '🚨';
+}
+
+.danger-panel[data-icon='danger']::before {
+  content: '⛔';
 }
 
 .warning-panel strong,
@@ -74,4 +130,301 @@
 
 .badges a {
   display: inline-flex;
+}
+  /* Sidebar icon helpers for link items. Use attrs: { 'data-icon': 'home' } on a sidebar link. */
+  a[data-icon] {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+
+  a[data-icon]::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    content: attr(data-icon);
+  }
+
+  a[data-icon='home']::before {
+    content: '🏠';
+  }
+
+  a[data-icon='rocket']::before {
+    content: '🚀';
+  }
+
+  a[data-icon='library']::before {
+    content: '📚';
+  }
+
+  a[data-icon='monitor']::before {
+    content: '🖥️';
+  }
+
+  a[data-icon='globe']::before {
+    content: '🌍';
+  }
+
+  a[data-icon='wrench']::before {
+    content: '🔧';
+  }
+
+  a[data-icon='heart']::before {
+    content: '❤️';
+  }
+
+/* Root link in sidebar (same destination as header logo) — clearer than plain nav text */
+#starlight__sidebar a.sidebar-ecosystem-root {
+  display: block;
+  font-size: var(--sl-text-lg);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-block: 0.35em 0.65em;
+  margin-block-end: 0.35rem;
+  border-block-end: none;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+/* Même esprit que la TOC Galaxy (trait accent qui s’estompe) */
+#starlight__sidebar a.sidebar-ecosystem-root::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0.35rem;
+  bottom: 0.2rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--sl-color-accent) 38%, transparent) 38%,
+    color-mix(in srgb, var(--sl-color-accent) 18%, transparent) 58%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/*
+ * Inactif : le blanc imposé ici était illisible sur le fond Galaxy du haut de sidebar.
+ * Aligné sur les autres liens (Galaxy utilise --fb-body-color sur .sidebar-content li a).
+ */
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']),
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']) > span {
+  color: var(--fb-body-color, var(--sl-color-gray-2)) !important;
+  -webkit-text-fill-color: var(--fb-body-color, var(--sl-color-gray-2)) !important;
+}
+
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']):hover,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']):hover > span,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']):focus-visible,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root:not([aria-current='page']):focus-visible > span {
+  color: var(--sl-color-accent-high) !important;
+  -webkit-text-fill-color: var(--sl-color-accent-high) !important;
+}
+
+/*
+ * Page courante : Starlight (styles scoped sur le <a>, @layer starlight.core) et Galaxy
+ * (@layer galaxy) fixent un texte très clair sur fond gris — sans !important, la couleur
+ * sur le <a> est souvent « barrée » et le <span> du libellé n’hérite pas correctement.
+ */
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page'],
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:hover,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:focus-visible,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page'] > span,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:hover > span,
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:focus-visible > span {
+  color: #0d1117 !important;
+  -webkit-text-fill-color: #0d1117 !important;
+}
+
+/*
+ * Séparateurs « accent dégradé » (cohérent avec l’entrée TOC active Galaxy) :
+ * moins isolé qu’un seul trait gris au milieu de filets hairline.
+ */
+.toc-pagination-wrap {
+  border-top: none;
+}
+
+.toc-pagination-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--sl-color-accent) 34%, transparent) 42%,
+    color-mix(in srgb, var(--sl-color-accent) 16%, transparent) 62%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/*
+ * Ligne sous le titre de page : Starlight sépare h1 et corps avec
+ * `.content-panel + .content-panel { border-top: 1px solid hairline }`.
+ * Même dégradé accent que la séparation TOC / pagination.
+ */
+main .content-panel + .content-panel {
+  border-top: none;
+  position: relative;
+}
+
+main .content-panel + .content-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--sl-color-accent) 34%, transparent) 42%,
+    color-mix(in srgb, var(--sl-color-accent) 16%, transparent) 62%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.sl-markdown-content hr {
+  border: none;
+  height: 1px;
+  margin: 2rem 0;
+  max-width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--sl-color-accent) 30%, transparent) 45%,
+    color-mix(in srgb, var(--sl-color-accent) 14%, transparent) 55%,
+    transparent 100%
+  );
+  border-radius: 1px;
+  opacity: 0.95;
+}
+
+/*
+ * Pagination sous la TOC (colonne droite) : starlight-theme-galaxy met .pagination-links
+ * dans @layer galaxy, donc tout ce qui vit dans @layer starlight.* est ignoré.
+ * Ce bloc est volontairement HORS @layer (custom.css chargé après le thème) pour
+ * surcharge réelle : texte compact, flèche sous le libellé, pas d’order flex Galaxy.
+ */
+.toc-pagination-wrap .pagination-links {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-pagination-wrap .pagination-links a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  overflow: visible;
+}
+
+.toc-pagination-wrap .pagination-links a[rel='prev'] {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: stretch;
+}
+
+.toc-pagination-wrap .pagination-links a[rel='next'] {
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  text-align: right;
+  align-items: stretch;
+}
+
+.toc-pagination-wrap .pagination-links a > span {
+  order: 0;
+  margin: 0;
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  opacity: 1;
+}
+
+.toc-pagination-wrap .pagination-links a[rel='prev'] > span {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.toc-pagination-wrap .pagination-links a[rel='next'] > span {
+  align-items: flex-end;
+  text-align: right;
+  margin-right: 0;
+}
+
+.toc-pagination-wrap .pagination-links a svg {
+  order: 0;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.toc-pagination-wrap .pagination-links a[rel='next'] svg {
+  align-self: flex-end;
+}
+
+.toc-pagination-wrap .pagination-links a .link-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: var(--sl-color-white);
+}
+
+:root[data-theme='light'] .toc-pagination-wrap .pagination-links a .link-title {
+  color: var(--sl-color-gray-1);
+}
+
+.toc-pagination-wrap .pagination-links a:hover .link-title {
+  background: none;
+  -webkit-text-fill-color: unset;
+  color: var(--sl-color-accent-high);
+}
+
+@media (max-width: 640px) {
+  .toc-pagination-wrap .pagination-links a[rel='next'] {
+    flex-direction: column-reverse;
+    text-align: right;
+  }
+
+  .toc-pagination-wrap .pagination-links a[rel='next'] > span {
+    order: 0;
+    margin-right: 0;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .toc-pagination-wrap .pagination-links a[rel='next'] svg {
+    order: 0;
+    margin-left: 0;
+    align-self: flex-end;
+  }
 }

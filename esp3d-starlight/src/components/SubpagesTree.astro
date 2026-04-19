@@ -1,0 +1,24 @@
+---
+import type { SubpageNode } from '~/types/subpages';
+import SubpagesTree from './SubpagesTree.astro';
+
+interface Props {
+	nodes: SubpageNode[];
+}
+
+const { nodes } = Astro.props;
+---
+
+{
+	nodes?.length ? (
+		<ul>
+			{nodes.map((node) => (
+				<li>
+					<a href={node.href}>{node.title}</a>
+					{node.description ? <p>{node.description}</p> : null}
+					{node.children?.length ? <SubpagesTree nodes={node.children} /> : null}
+				</li>
+			))}
+		</ul>
+	) : null
+}

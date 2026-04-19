@@ -1,5 +1,6 @@
 ---
+const { icon } = Astro.props;
 ---
-<aside class="info-panel">
+<aside class="info-panel" data-icon={icon}>
   <slot />
 </aside>

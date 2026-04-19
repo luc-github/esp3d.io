@@ -4,21 +4,10 @@ title : "ESP32 boards"
 menuPre : "<i class='fas fa-microchip'></i> "
 description : " "
 weight : 3
+sidebar :
+  label : Overview
 ---
 
-- [Btt ESP32E](./btt-esp32e/)
-- [Btt ESP32U](./btt-esp32u/)
-- [Devkit C V4](./devkit_c_v4/)
-- [Devkit V1](./devkit_v1/)
-- [ESP32 Cam](./esp32-cam/)
-- [Heltec Devboard](./heltec_devboard/)
-- [Lolin D32 Pro](./lolin_d32_pro/)
-- [Olimex Gateway](./olimex-gateway/)
-- [Olimex Poe](./olimex-poe/)
-- [Ttgo Eth Lite](./ttgo_eth_lite/)
-- [Ttgo T8](./ttgo_t8/)
-- [Ttgo T96 Oled](./ttgo_t96_oled/)
-- [Ttgo T Display](./ttgo_t_display/)
-- [Ttgo V7 Mini](./ttgo_v7_mini/)
-- [W32 Eth01](./w32-eth01/)
-- [Wemos D1 R32](./wemos_d1_r32/)
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+
+<AutoSubpagesList directory="ESP3D/version-3x/hardware/esp_boards/esp32" maxDepth={3} />

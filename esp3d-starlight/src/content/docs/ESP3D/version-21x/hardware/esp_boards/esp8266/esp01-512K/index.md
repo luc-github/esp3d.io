@@ -14,7 +14,7 @@ weight : 1
 * ESP8266 in ESP01 format with 512KB flash memory, ceramic antenna 
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because flash is only 512KB, the board is not supported
 </aside>
 

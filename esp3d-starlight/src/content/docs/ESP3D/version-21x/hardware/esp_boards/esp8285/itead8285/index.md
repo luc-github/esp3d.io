@@ -13,7 +13,7 @@ From [Itead](https://wiki.iteadstudio.com/PSF-A85), also named PSF-A85
 * ESP8285 with 1MB flash memory, ipex antenna connector
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because flash is only 1MB, OTA/Web Update are not possible
 </aside>
 

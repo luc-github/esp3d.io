@@ -13,7 +13,7 @@ weight : 5
 [github](https://github.com/FYSETC/FYSETC-SD-WIFI)
 
 <aside class="warning-panel">
-  <p><strong>Warning:</strong> **</p>
+  <p><strong>Warning:</strong></p>
   Because there is no serial connection to printer and the sd connection is based on this project: https://github.com/ardyesp/ESPWebDAV which is a not reliable hack, the boards is not supported
 </aside>
 
