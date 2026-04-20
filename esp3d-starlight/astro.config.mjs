@@ -391,7 +391,6 @@ export default defineConfig({
                     { label: 'ESP32-S3', link: '/esp3d-tft/version_1x/hardware/esp32-s3/' },
                   ],
                 },
-                { label: 'Partitions', link: '/esp3d-tft/version_1x/partitions/' },
                 { label: 'Installation', link: '/esp3d-tft/version_1x/installation/' },
                 { label: 'Showcase', link: '/esp3d-tft/version_1x/showcase/' },
                 {
@@ -430,6 +429,18 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: 'What Is ESP3D-WebUI?', link: '/esp3d-webui/' },
+            {
+              label: 'Version 2.X',
+              collapsed: true,
+              items: [
+                { label: 'Overview', link: '/esp3d-webui/version_2x/' },
+                { label: 'Credits', link: '/esp3d-webui/version_2x/credits/' },
+                { label: 'Features', link: '/esp3d-webui/version_2x/features/' },
+                { label: 'Installation', link: '/esp3d-webui/version_2x/installation/' },
+                { label: 'Documentation', link: '/esp3d-webui/version_2x/documentation/' },
+                { label: 'Showcase', link: '/esp3d-webui/version_2x/showcase/' },
+              ],
+            },
             {
               label: 'Version 3.X',
               collapsed: true,
@@ -478,18 +489,6 @@ export default defineConfig({
                     { label: 'Extensions', link: '/esp3d-webui/version_3x/showcase/extensions/' },
                   ],
                 },
-              ],
-            },
-            {
-              label: 'Version 2.X',
-              collapsed: true,
-              items: [
-                { label: 'Overview', link: '/esp3d-webui/version_2x/' },
-                { label: 'Credits', link: '/esp3d-webui/version_2x/credits/' },
-                { label: 'Features', link: '/esp3d-webui/version_2x/features/' },
-                { label: 'Installation', link: '/esp3d-webui/version_2x/installation/' },
-                { label: 'Documentation', link: '/esp3d-webui/version_2x/documentation/' },
-                { label: 'Showcase', link: '/esp3d-webui/version_2x/showcase/' },
               ],
             },
           ],
