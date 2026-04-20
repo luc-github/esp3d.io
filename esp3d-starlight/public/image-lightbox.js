@@ -1,12 +1,10 @@
 /**
  * Zoom plein écran au clic.
- * - Sur `/esp3d/…` : images du contenu principal zoomables, sauf opt-out (`data-no-zoom`,
- *   `.badges`) et images déjà cliquables dans un lien `<a>`.
- * - Ailleurs : uniquement les balises `<img data-zoom>` explicites.
+ * - Sur toute la documentation : images du contenu principal zoomables, sauf opt-out
+ *   (`data-no-zoom`, `.badges`) et images déjà cliquables dans un lien `<a>`.
+ * - Possibilité de forcer/désactiver finement via `data-zoom` / `data-no-zoom`.
  */
 (() => {
-	const ESP3D_PATH = /^\/esp3d(?:\/|$)/i;
-
 	let dialog;
 	let zoomImg;
 
@@ -38,13 +36,11 @@
 		d.showModal();
 	}
 
-	function syncEsp3dZoomMarkers() {
+	function syncZoomMarkers() {
 		document.querySelectorAll('img[data-zoom-auto]').forEach((el) => {
 			el.removeAttribute('data-zoom-auto');
 			el.removeAttribute('data-zoom');
 		});
-
-		if (!ESP3D_PATH.test(location.pathname)) return;
 
 		const main = document.querySelector('main');
 		if (!main) return;
@@ -72,7 +68,7 @@
 	);
 
 	function onNav() {
-		syncEsp3dZoomMarkers();
+		syncZoomMarkers();
 		if (!dialog?.open) return;
 		dialog.close();
 	}
