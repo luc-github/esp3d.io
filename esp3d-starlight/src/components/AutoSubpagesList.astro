@@ -43,6 +43,13 @@ const modules = import.meta.glob('../content/docs/**/*.{md,mdx}', { eager: true 
 	{ frontmatter?: { title?: string; description?: string; weight?: number } }
 >;
 
+/** Pages without `weight` sort after all weighted siblings (same depth). */
+function parseListWeight(value: unknown): number | null {
+	if (value === undefined || value === null) return null;
+	const n = Number(value);
+	return Number.isFinite(n) ? n : null;
+}
+
 const pages = Object.entries(modules)
 	.map(([filePath, module]) => {
 		const normalized = normalizePath(filePath);
@@ -56,7 +63,7 @@ const pages = Object.entries(modules)
 		const href = slugToPathname(slug);
 		const relativePath = slug === directoryRoot ? '' : slug.replace(`${directoryRoot}/`, '');
 		const depth = relativePath === '' ? 0 : relativePath.split('/').length;
-		const weight = Number(module?.frontmatter?.weight ?? 0);
+		const weight = parseListWeight(module?.frontmatter?.weight);
 		return {
 			slug,
 			title,
@@ -69,12 +76,13 @@ const pages = Object.entries(modules)
 	})
 	.filter((page) => page.slug === directoryRoot || page.slug.startsWith(`${directoryRoot}/`))
 	.filter((page) => page.depth <= maxDepth)
-	.sort(
-		(a, b) =>
-			a.depth - b.depth ||
-			a.weight - b.weight ||
-			a.title.localeCompare(b.title, undefined, { numeric: true }),
-	);
+	.sort((a, b) => {
+		if (a.depth !== b.depth) return a.depth - b.depth;
+		const aw = a.weight ?? Number.POSITIVE_INFINITY;
+		const bw = b.weight ?? Number.POSITIVE_INFINITY;
+		if (aw !== bw) return aw - bw;
+		return a.title.localeCompare(b.title, undefined, { numeric: true });
+	});
 
 const listPages = pages;
 const rootPage = listPages.find((p) => p.depth === 0);

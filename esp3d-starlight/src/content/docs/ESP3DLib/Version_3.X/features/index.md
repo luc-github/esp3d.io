@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Features"
-menuPre : "<i class='fas fa-list'></i> "
-weight : 1
+
 ---
 The V3.X features are :  
 

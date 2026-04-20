@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Installation"
-menuPre : "<i class='fas fa-hammer'></i> "
-weight : 2
+
 ---
 
 In Marlin configuration files :

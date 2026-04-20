@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Creality CR10 Ender 3 board"
 description : "No socket available"
-weight : 11
 ---
 For the Sanguino based CR-10 and Ender printers you will need to solder to any of the via circled (can also be done in the backside of board), or to the legs of the Arduino or ftdi. Connect TX from the board to RX of Wemos D1 mini and RX from board to TX of Wemos D1 mini. 5v and GND are located in the six pin header next to the LCD connector.
   

@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "TFT 70"
 description : "Socket available"
-weight : 2
 ---
 The board has footprint for an ESP01 connector
 

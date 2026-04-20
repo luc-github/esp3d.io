@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Wemos D1 mini"
 description :  "Wemos D1 mini"
-weight : 7
 ---
 
 ## Specs

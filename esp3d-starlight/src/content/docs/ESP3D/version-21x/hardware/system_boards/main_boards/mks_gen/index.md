@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "MKS GEN v1.2 to 1.4 board"
 description : "No socket available"
-weight : 13
 ---
 
 

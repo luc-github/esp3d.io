@@ -1,0 +1,140 @@
+---
+import { getCollection } from 'astro:content';
+
+type LocalPaginationLink = { href: string; label: string };
+
+function normalizeDocPath(path: string | undefined): string {
+	if (!path) return '';
+	return path.replace(/^\/|\/$/g, '').replace(/\/index$/i, '');
+}
+
+function parseEspCommandPath(path: string | undefined): { base: string; code: number } | null {
+	if (!path) return null;
+	const normalized = normalizeDocPath(path);
+	const match = normalized.match(/^(.*\/documentation\/commands)\/esp(\d+)$/i);
+	if (!match) return null;
+	return { base: match[1], code: Number.parseInt(match[2], 10) };
+}
+
+const route = Astro.locals.starlightRoute;
+const currentPath = normalizeDocPath(Astro.url.pathname);
+const commandInfo = parseEspCommandPath(currentPath);
+const isRtl = route.dir === 'rtl';
+
+let fallbackPrev: LocalPaginationLink | undefined;
+let fallbackNext: LocalPaginationLink | undefined;
+
+if ((!route.pagination?.prev || !route.pagination?.next) && commandInfo) {
+	const allDocs = await getCollection('docs');
+	const siblings = allDocs
+		.map((entry) => {
+			const path = normalizeDocPath(entry.slug ?? entry.id);
+			const info = parseEspCommandPath(path);
+			if (!info || info.base.toLowerCase() !== commandInfo.base.toLowerCase()) return null;
+			return { path, code: info.code, title: entry.data.title };
+		})
+		.filter((entry): entry is { path: string; code: number; title: string } => Boolean(entry))
+		.sort((a, b) => a.code - b.code);
+
+	const currentIndex = siblings.findIndex((entry) => entry.path.toLowerCase() === currentPath.toLowerCase());
+	if (currentIndex !== -1) {
+		const prev = siblings[currentIndex - 1];
+		const next = siblings[currentIndex + 1];
+		fallbackPrev = prev ? { href: `/${prev.path}/`, label: prev.title } : undefined;
+		fallbackNext = next ? { href: `/${next.path}/`, label: next.title } : undefined;
+	}
+}
+
+const prev = route.pagination?.prev ?? fallbackPrev;
+const next = route.pagination?.next ?? fallbackNext;
+---
+
+<div class="pagination-links print:hidden" dir={route.dir}>
+	{
+		prev && (
+			<a href={prev.href} rel="prev">
+				<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d={
+							isRtl
+								? 'M9.29 6.71a1 1 0 0 1 1.42 0l5 5a1 1 0 0 1 0 1.42l-5 5a1 1 0 1 1-1.42-1.42L13.59 12 9.29 7.71a1 1 0 0 1 0-1.42Z'
+								: 'M14.71 6.71a1 1 0 0 1 0 1.42L10.41 12l4.3 3.88a1 1 0 1 1-1.34 1.48l-.08-.06-5-4.5a1 1 0 0 1 0-1.48l5-4.5a1 1 0 0 1 1.42 0Z'
+						}
+					/>
+				</svg>
+				<span>
+					{Astro.locals.t('page.previousLink')}
+					<br />
+					<span class="link-title">{prev.label}</span>
+				</span>
+			</a>
+		)
+	}
+	{
+		next && (
+			<a href={next.href} rel="next">
+				<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d={
+							isRtl
+								? 'M14.71 6.71a1 1 0 0 1 0 1.42L10.41 12l4.3 3.88a1 1 0 1 1-1.34 1.48l-.08-.06-5-4.5a1 1 0 0 1 0-1.48l5-4.5a1 1 0 0 1 1.42 0Z'
+								: 'M9.29 6.71a1 1 0 0 1 1.42 0l5 5a1 1 0 0 1 0 1.42l-5 5a1 1 0 1 1-1.42-1.42L13.59 12 9.29 7.71a1 1 0 0 1 0-1.42Z'
+						}
+					/>
+				</svg>
+				<span>
+					{Astro.locals.t('page.nextLink')}
+					<br />
+					<span class="link-title">{next.label}</span>
+				</span>
+			</a>
+		)
+	}
+</div>
+
+<style>
+	@layer starlight.core {
+		.pagination-links {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+			gap: 1rem;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 0.5rem;
+			width: 100%;
+			flex-basis: calc(50% - 0.5rem);
+			flex-grow: 1;
+			border: 1px solid var(--sl-color-gray-5);
+			border-radius: 0.5rem;
+			padding: 1rem;
+			text-decoration: none;
+			color: var(--sl-color-gray-2);
+			box-shadow: var(--sl-shadow-md);
+			overflow-wrap: anywhere;
+		}
+		[rel='next'] {
+			justify-content: end;
+			text-align: end;
+			flex-direction: row-reverse;
+		}
+		a:hover {
+			border-color: var(--sl-color-gray-2);
+		}
+
+		.link-title {
+			color: var(--sl-color-white);
+			font-size: var(--sl-text-2xl);
+			line-height: var(--sl-line-height-headings);
+		}
+
+		svg {
+			flex-shrink: 0;
+		}
+	}
+</style>

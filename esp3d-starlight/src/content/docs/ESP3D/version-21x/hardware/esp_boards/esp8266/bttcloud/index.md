@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Bigtreetech Cloud"
 description : "Bigtreetech Cloud "
-weight : 5
 ---
 ![image](/img/hardware/esp_boards/esp8266/bttcloud/nosupport.png?width=200px)
 ## Specs

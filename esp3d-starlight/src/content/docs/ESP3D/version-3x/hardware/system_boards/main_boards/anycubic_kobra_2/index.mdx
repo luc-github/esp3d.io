@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Anycubic Kobra 2 - Trigorilla Pro B V1.0.2 board"
 description : "No socket available"
-weight : 2
 ---
 
 Trigorilla Pro B V1.0.2 board

@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Heltec Dev board"
 description :  "Heltec Dev board"
-weight : 10
 ---
 
 

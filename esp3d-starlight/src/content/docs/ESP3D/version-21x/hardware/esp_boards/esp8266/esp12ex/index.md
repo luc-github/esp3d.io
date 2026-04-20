@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "ESP12 e/f"
 description : "ESP12 e/f"
-weight : 4
 ---
 
 ## Specs

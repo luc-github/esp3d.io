@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : " Pushover Notification"
-weight : 1
 ---
 [Pushover](https://pushover.net/) is paid service
 

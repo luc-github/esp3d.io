@@ -1,6 +1,7 @@
 /**
  * Zoom plein écran au clic.
- * - Sur `/esp3d/…` : toutes les images du contenu principal sont zoomables (opt-out : `data-no-zoom`, `.badges`).
+ * - Sur `/esp3d/…` : images du contenu principal zoomables, sauf opt-out (`data-no-zoom`,
+ *   `.badges`) et images déjà cliquables dans un lien `<a>`.
  * - Ailleurs : uniquement les balises `<img data-zoom>` explicites.
  */
 (() => {
@@ -50,6 +51,7 @@
 
 		main.querySelectorAll('img[src]').forEach((img) => {
 			if (img.closest('.badges')) return;
+			if (img.closest('a[href]')) return;
 			if (img.hasAttribute('data-no-zoom')) return;
 			img.setAttribute('data-zoom', '');
 			img.setAttribute('data-zoom-auto', '');
@@ -62,6 +64,7 @@
 			const t = e.target;
 			if (!(t instanceof HTMLImageElement)) return;
 			if (!t.hasAttribute('data-zoom')) return;
+			if (t.closest('a[href]')) return;
 			e.preventDefault();
 			open(t);
 		},

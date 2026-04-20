@@ -1,9 +1,8 @@
 ---
 description : "Update feature description"
-archetype : "home"
+
 title : "Update support"
-menuPre : "<i class='fas fa-download'></i> "
-weight : 4
+
 ---
 
 You can update Marlin with ESP3DLib using the maintenance page, the web ui and the SD Card and OTA process.

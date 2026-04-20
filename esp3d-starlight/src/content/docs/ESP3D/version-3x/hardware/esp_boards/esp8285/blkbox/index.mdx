@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "blkboxme"
 description : "blkboxme ESP8285 module"
-weight : 1
 ---
 
 From [blkbox](https://www.tindie.com/products/blkbox/4-layer-esp8266-wifi-module/)

@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "ESP01S 1M"
 description : "ESP01S 1M"
-weight : 3
 ---
 
 ## Specs

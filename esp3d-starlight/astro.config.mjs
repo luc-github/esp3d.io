@@ -45,6 +45,7 @@ export default defineConfig({
       components: {
         /** Prev/next aussi sous la TOC (footer inchangé). */
         PageSidebar: './src/components/PageSidebar.astro',
+        Pagination: './src/components/Pagination.astro',
       },
 
       sidebar: [
@@ -144,6 +145,7 @@ export default defineConfig({
                       label: 'ESP boards',
                       collapsed: true,
                       items: [
+                        { label: 'Overview', link: '/esp3d/version-3x/hardware/esp_boards/' },
                         {
                           label: 'ESP32',
                           collapsed: true,
@@ -199,7 +201,19 @@ export default defineConfig({
                         {
                           label: 'TFT',
                           collapsed: true,
-                          autogenerate: { directory: 'ESP3D/version-3x/hardware/system_boards/tft' },
+                          items: [
+                            { label: 'Overview', link: '/esp3d/version-3x/hardware/system_boards/tft/' },
+                            {
+                              label: 'Bigtreetech',
+                              collapsed: true,
+                              autogenerate: { directory: 'ESP3D/version-3x/hardware/system_boards/tft/bigtreetech' },
+                            },
+                            {
+                              label: 'Makerbase',
+                              collapsed: true,
+                              autogenerate: { directory: 'ESP3D/version-3x/hardware/system_boards/tft/makerbase' },
+                            },
+                          ],
                         },
                       ],
                     },
@@ -229,7 +243,7 @@ export default defineConfig({
                       items: [
                         { label: 'Overview', link: '/esp3d/version-3x/documentation/notifications/' },
                         { label: 'Pushover', link: '/esp3d/version-3x/documentation/notifications/pushover/' },
-                        { label: 'Line', link: '/esp3d/version-3x/documentation/notifications/line/' },
+                        { label: '⚠️Line (Discontinued)', link: '/esp3d/version-3x/documentation/notifications/line/' },
                         { label: 'Email & SMTP', link: '/esp3d/version-3x/documentation/notifications/email_and_smtp/' },
                         { label: 'IFTTT', link: '/esp3d/version-3x/documentation/notifications/ifttt/' },
                         { label: 'Telegram', link: '/esp3d/version-3x/documentation/notifications/telegram/' },
@@ -252,10 +266,10 @@ export default defineConfig({
                       collapsed: true,
                       items: [
                         { label: 'Overview', link: '/esp3d/version-3x/documentation/api/' },
+                        { label: 'Hooks', link: '/esp3d/version-3x/documentation/api/hooks/' },
                         { label: 'Web handlers', link: '/esp3d/version-3x/documentation/api/webhandlers/' },
                         { label: 'Web sockets', link: '/esp3d/version-3x/documentation/api/websockets/' },
                         { label: 'Variables', link: '/esp3d/version-3x/documentation/api/variables/' },
-                        { label: 'Hooks', link: '/esp3d/version-3x/documentation/api/hooks/' },
                       ],
                     },
                   ],

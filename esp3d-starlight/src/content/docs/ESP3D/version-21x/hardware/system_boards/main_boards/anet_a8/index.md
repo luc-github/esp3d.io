@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Anet boards up to v1.5 and 1.7"
 description :  "No socket available"
-weight : 1
 ---
 
 #### Anet boards up to v1.5

@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Dev Kit V1"
 description :  "Dev Kit V1"
-weight : 1
 ---
 
 

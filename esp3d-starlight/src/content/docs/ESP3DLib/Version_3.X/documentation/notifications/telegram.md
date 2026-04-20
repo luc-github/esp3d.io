@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : " Telegram Notification"
-weight : 5
 ---
 [Telegram](https://telegram.org/) is free service
 

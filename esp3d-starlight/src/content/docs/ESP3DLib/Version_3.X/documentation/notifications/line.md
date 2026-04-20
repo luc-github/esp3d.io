@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : " Line Notification"
-weight : 2
 ---
 [Line](https://line.me) is free service
 

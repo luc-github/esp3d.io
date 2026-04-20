@@ -1,9 +1,8 @@
 ---
-archetype : "section"
+
 title : "Authentication"
 description : "What is authentication in ESP3D?"
-menuPre : "<i class='fas fa-lock'></i> "
-weight : 2
+
 ---
 
 ## Definition

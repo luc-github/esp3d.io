@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Itead8285"
 description : "Itead8285 module"
-weight : 1
 ---
 
 From [Itead](https://wiki.iteadstudio.com/PSF-A85), also named PSF-A85

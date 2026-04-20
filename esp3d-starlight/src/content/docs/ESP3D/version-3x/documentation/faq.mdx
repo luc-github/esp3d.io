@@ -1,18 +1,17 @@
 ---
 description : "Frequent asked questions and their answers"
-archetype : "section"
 title : "FAQ"
-menuPre : "<i class='fas fa-question'></i> "
-weight : 20
+weight : 13
 ---
-* [Make boot silent](/esp3d/v3.x/documentation/faq/#make-boot-silent)
-<hr/> 
-
-
 ### Make boot silent
 
-At start the ESP board bootloader generate a report displayed on serial, this report may disturb communication with connected board.
-It may vary depending on boards but generally look like this:
+On every reset, the ESP ROM bootloader (stage 1) prints a diagnostic report on 
+the default console (UART0 and/or USB Serial/JTAG). This output can disturb the 
+communication between the ESP and the connected controller (3D printer, CNC 
+board, etc.).
+
+The output varies from chip to chip but generally looks like this:
+
 ```
 ets Jun  8 2016 00:22:57
 
@@ -25,16 +24,110 @@ load:0x40078000,len:13104
 load:0x40080400,len:3036
 entry 0x400805e4
 ```
-So make it silent is a must.
 
-#### On ESP32
-Bootloader report is not displayed if GPIO15 is connected to GND at startup.
+Silencing it is often a must for production use.
+<aside class="info-panel">
+  <p><strong>Note :</strong></p>
+The ROM bootloader output is separate from the **second-stage 
+bootloader** and **application** log output. Those are controlled via 
+`menuconfig`:
+- `Bootloader config` → `Bootloader log verbosity` → `No output`
+- `Component config` → `Log output` → `Default log verbosity` → `No output`
+</aside>
 
-#### On ESP32-S3 / ESP32-S2 / ESP32-C3
+#### On ESP32 (classic)
 
-On ESP32-S3/S2/C3 bootloader report is always displayed by default, changing the behavior can be done only once for the pin GPIO46.
+The ROM messages can be silenced simply by pulling **GPIO15 to GND** during 
+reset. GPIO15 has an internal pull-up, so when left floating it goes HIGH and 
+the ROM prints normally. Driving it LOW at reset silences the ROM bootloader.
 
-Use `[ESP999]QUIETBOOT pwd=<admin/user password>`
+This is a runtime choice: remove the pull-down and the ROM output comes back 
+on the next reset. It is fully reversible.
+
+#### On ESP32-S2 / S3 / C3 / C6 / H2 / P4
+<aside class="warning-panel">
+  <p><strong>Warning :</strong></p>
+Contrary to a common misconception, **there is no strapping pin** on 
+these chips that silences the ROM bootloader. Pins like GPIO46 (S2/S3), 
+GPIO8/GPIO9 (C3/C6) or GPIO8/GPIO27 (others) are **boot mode selection** 
+pins, not log control pins.
+</aside>
+On these newer targets, silencing the ROM log is done **exclusively via 
+eFuses**. Two eFuse fields are relevant, depending on where the ROM prints:
+
+| eFuse field                         | Output channel              | Availability          |
+|-------------------------------------|-----------------------------|-----------------------|
+| `UART_PRINT_CONTROL`                | UART0 (`U0TXD`)             | S2, S3, C3, C6, H2, P4|
+| `DIS_USB_SERIAL_JTAG_ROM_PRINT`     | USB Serial/JTAG controller  | S3, C3, C6, H2, P4 (not S2) |
+
+`UART_PRINT_CONTROL` is a **2-bit field** (not a simple on/off). Its values are:
+
+| Value | Behavior                                          |
+|-------|---------------------------------------------------|
+| `0b00`| Force enabled (default)                           |
+| `0b01`| Controlled by GPIO (pin level decides at reset)   |
+| `0b10`| Controlled by GPIO (inverted logic)               |
+| `0b11`| Force disabled (ROM log always silent)            |
+
+<aside class="info-panel">
+<p><strong>Note :</strong></p>
+eFuses are one-time programmable.** Bits can only go from `0` to `1`, 
+never back. Once you burn `UART_PRINT_CONTROL = 0b11` (force silent), the 
+ROM log is **permanently disabled** and cannot be re-enabled for debugging. 
+Similarly, `DIS_USB_SERIAL_JTAG_ROM_PRINT = 1` is irreversible.
+
+Test your firmware thoroughly before burning these fuses.
+</aside>
+
+The "GPIO-controlled" modes (`0b01` / `0b10`) give you a compromise: a chosen 
+GPIO level at reset decides whether the ROM prints, similar in spirit to 
+GPIO15 on the classic ESP32 — but the pin and polarity are fixed by the eFuse 
+value and cannot be changed afterwards.
+
+**Programmatic access** — ESP-IDF exposes a helper to set the scheme from 
+firmware:
+
+```c
+#include "esp_efuse.h"
+
+// Permanently silence UART ROM log (writes UART_PRINT_CONTROL eFuse)
+esp_efuse_set_rom_log_scheme(ESP_EFUSE_ROM_LOG_ALWAYS_OFF);
+```
+
+Other values are `ESP_EFUSE_ROM_LOG_ALWAYS_ON`, `ESP_EFUSE_ROM_LOG_ON_GPIO_LOW`,
+and `ESP_EFUSE_ROM_LOG_ON_GPIO_HIGH`.
+
+**From the command line** — `espefuse.py` can burn the fuses directly:
+
+```bash
+# Permanently disable UART ROM boot log
+espefuse.py --port /dev/ttyUSB0 burn_efuse UART_PRINT_CONTROL 3
+
+# Permanently disable USB Serial/JTAG ROM boot log (S3/C3/C6/H2/P4)
+espefuse.py --port /dev/ttyUSB0 burn_efuse DIS_USB_SERIAL_JTAG_ROM_PRINT 1
+```
+
+#### Using ESP3D
+
+ESP3D exposes the `[ESP999]` command to burn the appropriate eFuse without 
+needing `espefuse.py` or a separate firmware:
+
+```
+[ESP999]QUIETBOOT pwd=<admin password>
+```
+
+Supported on ESP32-S2, S3, C3, C6 (and newer variants as they are added). 
+**This action is permanent** — same irreversibility rules as above apply.
 
 #### On ESP8266
-It is not possible to make the boot silent on ESP8266.
+
+There is **no way to silence the ROM bootloader** on ESP8266. The initial 
+messages (on GPIO1 / `U0TXD` at 74880 baud, then 115200 once the app starts) 
+are always printed and cannot be disabled.
+
+Workarounds, depending on the hardware design:
+- Route the printer/host connection on a **different UART** than UART0, so the 
+  ROM chatter stays on the debug port.
+- Remap UART0 TX to a pin not connected to the host (ESP8266 allows swapping 
+  U0TXD to GPIO15).
+- Accept the noise and make the host firmware tolerant to the initial garbage.

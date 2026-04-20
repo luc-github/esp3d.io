@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "WT32-ETH1"
 description :  "WT32-ETH1"
-weight : 21
 ---
 
 From [Wireless Tag](https://en.wireless-tag.com/product-item-2.html)
@@ -12,9 +11,8 @@ From [Wireless Tag](https://en.wireless-tag.com/product-item-2.html)
 
 <aside class="info-panel">
   <p><strong>Info:</strong></p>
-</aside>
     Network is available to only for one peripheral at a time. It support only Wi-Fi communications or only Ethernet communications or Bluetooth  communications not all at once.
-
+</aside>
 
 ![image](/img/hardware/esp_boards/esp32/w32-eth01/front.png)
 ![image](/img/hardware/esp_boards/esp32/w32-eth01/back.png)
@@ -44,7 +42,6 @@ In configuration.h:
 
 <aside class="info-panel">
   <p><strong>Note:</strong></p>
-</aside>
     Do not use GPIO 0 because it is used by ethernet board.    
     e.g if you have these settings then comment them:   
 
@@ -56,3 +53,5 @@ In configuration.h:
     */
     //#define ESP3D_RESET_PIN 0
     ```
+
+    </aside>

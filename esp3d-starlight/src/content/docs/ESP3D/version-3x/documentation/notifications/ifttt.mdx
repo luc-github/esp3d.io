@@ -1,8 +1,7 @@
 
 ---
-archetype : "section"
+
 title : " IFTTT Notification"
-weight : 4
 ---
 [IFTTT](https://ifttt.com) is free service up to 5 applets  
 

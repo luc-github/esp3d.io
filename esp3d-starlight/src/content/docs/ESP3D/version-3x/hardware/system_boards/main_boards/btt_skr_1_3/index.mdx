@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Bigtreetech skr board"
 description : "No socket available"
-weight : 8
 ---
 
 Use the AUX1 or TFT connector

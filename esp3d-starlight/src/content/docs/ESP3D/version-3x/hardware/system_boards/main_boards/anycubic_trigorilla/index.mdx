@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Anycubic i3 mega - Trigorilla 8bit board"
 description : "No socket available"
-weight : 2
 ---
 To connect the ESP12e to the UART0. (Credits:[197-murdock](https://www.lesimprimantes3d.fr/forum/profile/197-murdock/)).  
 (Green = RX, Blue = TX)  

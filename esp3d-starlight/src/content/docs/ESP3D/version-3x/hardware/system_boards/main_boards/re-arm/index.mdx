@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Ramps / re-Arm"
 description : "No socket available"
-weight : 18
 ---
 Re-ARM for ramps boards (smoothieware/marlin)  
 

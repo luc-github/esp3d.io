@@ -1,12 +1,11 @@
 ---
 description : "API description"
-archetype : "section"
 title : "API"
-weight : 100
-menuPre : "<i class='fas fa-cogs'></i> "
+weight : 14
 ---
 
-* [Hooks](./hooks/)
-* [Variables](./variables/)
-* [Webhandlers](./webhandlers/)
-* [Websockets](./websockets/)
+Here the available documentation about several topics:
+
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+
+<AutoSubpagesList directory="ESP3D/version-3x/documentation/api" maxDepth={3} />

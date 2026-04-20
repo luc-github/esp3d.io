@@ -1,23 +1,11 @@
 ---
-archetype : "section"
+
 title : "Documentation"
-menuPre : "<i class='fas fa-book'></i> "
-weight : 3
+
 ---
 
 The documentation section will help you on:
 
-* [Api](./api/)
-* [Authentication](./authentication/)
-* [Camera](./camera/)
-* [Commands](./commands/)
-* [Compilation](./compilation/)
-* [Faq](./faq/)
-* [Ftp](./ftp/)
-* [Lua](./lua/)
-* [Notifications](./notifications/)
-* [Otg](./otg/)
-* [Sdtransfer](./sdtransfer/)
-* [Telnet](./telnet/)
-* [Update](./update/)
-* [Webdav](./webdav/)
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+
+<AutoSubpagesList directory="ESP3D/version-3x/documentation/" maxDepth={1} />

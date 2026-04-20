@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "FYSETC-SD-WIFI"
 description : "FYSETC-SD-WIFI"
-weight : 5
 ---
 
 ![image](/img/hardware/esp_boards/esp8266/fysetcwifisd/nosupport.png?width=200px)

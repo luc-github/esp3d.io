@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Bigtreetech WiFi module"
 description : "Bigtreetech WiFi module"
-weight : 6
 ---
 
 ## Specs

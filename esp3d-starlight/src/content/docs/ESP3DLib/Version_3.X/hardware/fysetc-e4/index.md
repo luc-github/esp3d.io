@@ -1,8 +1,7 @@
 ---
 description : "FYSETC-E4"
-archetype : "section"
+
 title : "FYSETC-E4"
-weight : 2
 ---
 
 From [FYSETC](https://github.com/FYSETC), an ESP32 controller with 16MB flash memory, no IO expander.

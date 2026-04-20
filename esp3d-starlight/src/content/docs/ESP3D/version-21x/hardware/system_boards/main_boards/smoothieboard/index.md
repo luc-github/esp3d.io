@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Smoothieboard"
 description : "No socket available"
-weight : 19
 ---
 ![step1](/img/hardware/system_boards/main_boards/smoothieboard/smoothieboard-wiring.png?width=300px)
 

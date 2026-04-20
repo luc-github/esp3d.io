@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "ESP07"
 description : "ESP07"
-weight : 4
 ---
 
 ## Specs

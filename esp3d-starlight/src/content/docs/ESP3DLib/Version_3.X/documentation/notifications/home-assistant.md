@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : " Home Assistant"
-weight : 2
 ---
 [Home Assistant](https://www.home-assistant.io/) is a home automation platform
 

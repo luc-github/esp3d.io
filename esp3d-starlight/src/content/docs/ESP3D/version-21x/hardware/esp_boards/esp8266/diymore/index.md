@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Diymore"
 description :  "Diymore"
-weight : 7
 ---
 
 

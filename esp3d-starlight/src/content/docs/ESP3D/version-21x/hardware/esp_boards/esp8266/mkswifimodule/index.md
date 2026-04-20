@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "MKS WiFi Module V1.1 (16 pins)"
 description : "MKS WiFi Module V1.1 (16 pins)"
-weight : 9
 ---
 
 ## Specs

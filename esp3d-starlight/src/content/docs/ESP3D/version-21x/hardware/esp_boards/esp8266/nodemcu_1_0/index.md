@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Nodemcu V1.0"
 description : "Nodemcu V1.0"
-weight : 11
 ---
 
 ## Specs

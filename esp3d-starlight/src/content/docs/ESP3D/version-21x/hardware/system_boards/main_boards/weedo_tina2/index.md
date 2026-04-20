@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "Bigtreetech skr board"
 description : "Socket available"
-weight : 20
 ---
 
 This printer is also brand labelled as **Monoprice MP cadet 3D printer**

@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "TFT 35 E3"
 description : "Socket available"
-weight : 1
 ---
 The board has footprint for an ESP01 connector
 

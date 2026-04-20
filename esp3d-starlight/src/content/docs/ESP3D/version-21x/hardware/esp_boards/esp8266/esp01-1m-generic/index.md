@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "ESP01 1M Generic"
 description : "ESP01 1M Generic Black"
-weight : 2
 ---
 
 ## Specs

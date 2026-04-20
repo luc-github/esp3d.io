@@ -1,9 +1,8 @@
 ---
 description : "Setup and configuration"
-archetype : "section"
+
 title : "Notifications"
-weight : 3
-menuPre : "<i class='fas fa-envelope'></i> "
+
 ---
 
 You can use only one type of notification from the following ones: 

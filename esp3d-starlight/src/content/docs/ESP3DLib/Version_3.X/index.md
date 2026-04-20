@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : "Version 3.X"
-weight : 3
 ---
 
 [![badge](https://img.shields.io/badge/ESPDLib-3.X_alpha-red?style=plastic&logo=github)](https://github.com/luc-github/ESP3DLib/tree/3.0)

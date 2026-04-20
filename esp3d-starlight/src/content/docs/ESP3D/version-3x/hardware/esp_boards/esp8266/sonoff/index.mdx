@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "SOnOff"
 description : "SOnOff"
-weight : 15
 ---
 
 ## Specs

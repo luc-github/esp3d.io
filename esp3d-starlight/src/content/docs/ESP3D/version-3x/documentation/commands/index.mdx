@@ -1,9 +1,7 @@
 ---
 description : "Syntax and parameters"
-archetype : "section"
 title : "ESP3D commands"
 weight : 1
-menuPre : "<i class='fas fa-terminal'></i> "
 ---
 
 ## Conventions
@@ -24,82 +22,9 @@ The json format is:
 
 ## Commands
 * Show commands help   
-    `[ESP]&lt;command id&gt; json=&lt;no&gt;`
+    `[ESP0]` to get full list    
+    or `[ESP0](number)` for specific command 
 
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
 
-* [ESP100](./esp100/)
-* [ESP101](./esp101/)
-* [ESP102](./esp102/)
-* [ESP103](./esp103/)
-* [ESP104](./esp104/)
-* [ESP105](./esp105/)
-* [ESP106](./esp106/)
-* [ESP107](./esp107/)
-* [ESP108](./esp108/)
-* [ESP110](./esp110/)
-* [ESP111](./esp111/)
-* [ESP112](./esp112/)
-* [ESP114](./esp114/)
-* [ESP115](./esp115/)
-* [ESP116](./esp116/)
-* [ESP117](./esp117/)
-* [ESP118](./esp118/)
-* [ESP120](./esp120/)
-* [ESP121](./esp121/)
-* [ESP130](./esp130/)
-* [ESP131](./esp131/)
-* [ESP140](./esp140/)
-* [ESP150](./esp150/)
-* [ESP160](./esp160/)
-* [ESP161](./esp161/)
-* [ESP170](./esp170/)
-* [ESP171](./esp171/)
-* [ESP180](./esp180/)
-* [ESP181](./esp181/)
-* [ESP190](./esp190/)
-* [ESP191](./esp191/)
-* [ESP200](./esp200/)
-* [ESP201](./esp201/)
-* [ESP202](./esp202/)
-* [ESP210](./esp210/)
-* [ESP212](./esp212/)
-* [ESP214](./esp214/)
-* [ESP215](./esp215/)
-* [ESP220](./esp220/)
-* [ESP250](./esp250/)
-* [ESP290](./esp290/)
-* [ESP300](./esp300/)
-* [ESP301](./esp301/)
-* [ESP400](./esp400/)
-* [ESP401](./esp401/)
-* [ESP402](./esp402/)
-* [ESP410](./esp410/)
-* [ESP420](./esp420/)
-* [ESP444](./esp444/)
-* [ESP450](./esp450/)
-* [ESP500](./esp500/)
-* [ESP510](./esp510/)
-* [ESP550](./esp550/)
-* [ESP555](./esp555/)
-* [ESP600](./esp600/)
-* [ESP610](./esp610/)
-* [ESP620](./esp620/)
-* [ESP700](./esp700/)
-* [ESP701](./esp701/)
-* [ESP710](./esp710/)
-* [ESP715](./esp715/)
-* [ESP720](./esp720/)
-* [ESP730](./esp730/)
-* [ESP740](./esp740/)
-* [ESP750](./esp750/)
-* [ESP780](./esp780/)
-* [ESP790](./esp790/)
-* [ESP800](./esp800/)
-* [ESP900](./esp900/)
-* [ESP901](./esp901/)
-* [ESP902](./esp902/)
-* [ESP910](./esp910/)
-* [ESP930](./esp930/)
-* [ESP931](./esp931/)
-* [ESP950](./esp950/)
-* [ESP999](./esp999/)
+<AutoSubpagesList directory="ESP3D/version-3x/documentation/commands" maxDepth={2} />

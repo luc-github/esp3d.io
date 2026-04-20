@@ -1,8 +1,7 @@
 ---
 description : "MKS Tinybee V1"
-archetype : "section"
+
 title : "MKS Tinybee"
-weight : 2
 ---
 
 From [Maker Base](https://github.com/makerbase-mks), an ESP32 controller with 8MB flash memory, with IO expander.

@@ -1,7 +1,6 @@
 ---
-archetype : "section"
+
 title : " Email Notification"
-weight : 3
 ---
 Email Notification is using SMTP and HTTPS, so you need to collect the following information fof your email supplier
 

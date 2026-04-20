@@ -1,8 +1,7 @@
 ---
-archetype : "section"
+
 title : "TFT 70 V1.1"
 description : "Socket available"
-weight : 1
 ---
 The board has a MKS WiFi Module connector 8 pins
 
