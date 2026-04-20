@@ -1,0 +1,30 @@
+---
+title: "API"
+description: "API description"
+---
+
+import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+
+<AutoSubpagesList directory="ESP3DLib/Version_3.X/documentation/api" maxDepth={3} />
+
+* Entry points in Marlin
+```
+#include "esp3dlib.h"
+//Serial2
+Serial2Socket class
+```
+
+```
+//init
+ esp3dlib.init();
+```
+
+```
+ //idle task
+ esp3dlib.idletask();
+```
+
+```
+//Custom command
+esp3dlib.parse(command_ptr);
+```

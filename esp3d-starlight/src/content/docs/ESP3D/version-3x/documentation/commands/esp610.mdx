@@ -6,7 +6,7 @@ description : "Set/Get Notification settings"
  Set/Get Notification settings
 
 ## Input
-`[ESP610]type=&lt;NONE/PUSHOVER/EMAIL/LINE/IFTTT/HOMEASSISTANT&gt; T1=&lt;token1&gt; T2=&lt;token2&gt; TS=&lt;Settings&gt; json=&lt;no&gt; pwd=&lt;admin password&gt;`
+`[ESP610]type=(NONE/PUSHOVER/EMAIL/LINE/IFTTT/HOMEASSISTANT) T1=(token1) T2=(token2) TS=(Settings) json=(no) pwd=(admin password)`
 
 * json=no
 the output format
@@ -35,7 +35,7 @@ can be in JSON or plain text
  if TS is not empty, it will set the setting token which depend on [type of notification](https://esp3d.io/esp3d/v3.x/documentation/notifications/index.html) 
 
 
-* `pwd=&lt;admin password&gt;`
+* `pwd=(admin password)`
 the admin password if authentication is enabled
 
 
