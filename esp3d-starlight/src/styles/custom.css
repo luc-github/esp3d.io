@@ -296,8 +296,8 @@ img[data-zoom] {
 #starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page'] > span,
 #starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:hover > span,
 #starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-ecosystem-root[aria-current='page']:focus-visible > span {
-  color: #0d1117 !important;
-  -webkit-text-fill-color: #0d1117 !important;
+  color: var(--fb-body-color, var(--sl-color-gray-2))!important;
+  -webkit-text-fill-color: var(--fb-body-color, var(--sl-color-gray-2)) !important;
 }
 
 /* Top-level direct link (e.g. Sponsoring) styled like section headers */

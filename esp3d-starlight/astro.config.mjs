@@ -542,6 +542,10 @@ export default defineConfig({
         },
         {
           tag: 'script',
+          attrs: { defer: true, src: '/mermaid-dark-arrows.js' },
+        },
+        {
+          tag: 'script',
           attrs: {
             async: true,
             src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TON_ID_ICI',
@@ -560,7 +564,10 @@ export default defineConfig({
 
       editLink: {
         baseUrl: 'https://github.com/luc-github/esp3d.io/edit/main/esp3d-starlight/'
-      }
+      },
+      components: {
+        Sidebar: './src/components/Sidebar.astro',
+      },
     })
   ],
 

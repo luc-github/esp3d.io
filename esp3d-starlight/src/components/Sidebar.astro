@@ -1,0 +1,28 @@
+---
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import PayPalDonate from './PayPalDonate.astro';
+---
+
+<Default>
+  <slot />
+</Default>
+
+<!-- Bouton PayPal en bas de la sidebar gauche -->
+<div class="sidebar-donate">
+  <PayPalDonate />
+</div>
+
+<style>
+  .sidebar-donate {
+    margin-top: 2rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  /* Style plus joli sur mobile */
+  @media (max-width: 50em) {
+    .sidebar-donate {
+      margin-top: 1.5rem;
+      padding: 1rem;
+    }
+  }
+</style>

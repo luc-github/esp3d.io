@@ -1,1 +1,0 @@
-python ./ftp_transfert.py --ftp-host ftp.cluster027.hosting.ovh.net --ftp-user espdios --ftp-pass Fujiang2012ftp --local-root site --files build_diff_files_to_transfer.txt --new-ref build_diff_new_hash_reference.json --remote-base /www --upload-ref

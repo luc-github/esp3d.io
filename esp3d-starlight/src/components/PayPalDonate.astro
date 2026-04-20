@@ -1,0 +1,25 @@
+<div class="paypal-box">
+  <p style="margin: 0 0 0.5rem; font-size: 0.9rem; color: var(--sl-color-gray-3);">
+    ❤️ Support ESP3D-X
+  </p>
+  <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+  <div id="donate-button-container"></div>
+
+  <script>
+    PayPal.Donation.Button({
+      env: 'production',
+      hosted_button_id: 'FQL59C749A78L',
+      image: {
+        src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif',
+        alt: 'Donate with PayPal'
+      }
+    }).render('#donate-button-container');
+  </script>
+</div>
+
+<style>
+  .paypal-box {
+    padding: 1rem;
+    background: var(--sl-color-bg-sidebar);
+  }
+</style>
