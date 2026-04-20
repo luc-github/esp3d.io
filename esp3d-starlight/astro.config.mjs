@@ -458,7 +458,7 @@ export default defineConfig({
                     { label: 'Polling', link: '/esp3d-webui/version_3x/documentation/polling/' },
                     { label: 'Extensions', link: '/esp3d-webui/version_3x/documentation/extensions/' },
                     { label: 'Camera', link: '/esp3d-webui/version_3x/documentation/camera/' },
-                    { label: 'Extra', link: '/esp3d-webui/version_3x/documentation/extra/' },
+                    { label: 'Extra Content', link: '/esp3d-webui/version_3x/documentation/extra/' },
                     { label: 'Macros', link: '/esp3d-webui/version_3x/documentation/macros/' },
                     { label: 'Translation', link: '/esp3d-webui/version_3x/documentation/translation/' },
                     { label: 'Update', link: '/esp3d-webui/version_3x/documentation/update/' },

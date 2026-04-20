@@ -1,6 +1,7 @@
 ---
 title: "Extensions API"
 description: "Description and sample code"
+weight: 8
 ---
 
 - [Basic code](#basic-code)
@@ -570,29 +571,29 @@ Example:
         "type": "capabilities",
         "content": {
             "response": "{
-				"FWVersion": "3.0.0.a111",
-				"FWTarget": "marlin",
-				"FWTargetID": "40",
-				"Setup": "Enabled",
-				"Screen": "HMI V3",
-				"Streaming": "Enabled",
-				"SDConnection": "direct",
-				"SerialProtocol": "Raw",
-				"Authentication": "Disabled",
-				"WebCommunication": "Asynchronous",
-				"WebSocketIP": "localhost",
-				"WebSocketPort": "81",
-				"Hostname": "esp3d",
-				"WiFiMode": "STA",
-				"WebUpdate": "Enabled",
-				"FlashFileSystem": "LittleFS",
-				"HostPath": "/",
-				"Time": "none",
-				"HostTarget": "files",
-				"HostUploadPath": "/",
-				"HostDownloadPath": "/",
-				"wsID": "0"
-			}",
+                "FWVersion": "3.0.0.a111",
+                "FWTarget": "marlin",
+                "FWTargetID": "40",
+                "Setup": "Enabled",
+                "Screen": "HMI V3",
+                "Streaming": "Enabled",
+                "SDConnection": "direct",
+                "SerialProtocol": "Raw",
+                "Authentication": "Disabled",
+                "WebCommunication": "Asynchronous",
+                "WebSocketIP": "localhost",
+                "WebSocketPort": "81",
+                "Hostname": "esp3d",
+                "WiFiMode": "STA",
+                "WebUpdate": "Enabled",
+                "FlashFileSystem": "LittleFS",
+                "HostPath": "/",
+                "Time": "none",
+                "HostTarget": "files",
+                "HostUploadPath": "/",
+                "HostDownloadPath": "/",
+                "wsID": "0"
+            }",
             "initiator": {
                             "type":"capabilities", 
                             "target":"webui", 
@@ -627,8 +628,8 @@ Example:
         "type": "extensionsData",
         "content": {
             "response": "{
-				"status": "success"
-			}",
+                "status": "success"
+            }",
             "initiator": {
                             "type":"extensionsData", 
                             "target":"webui", 
