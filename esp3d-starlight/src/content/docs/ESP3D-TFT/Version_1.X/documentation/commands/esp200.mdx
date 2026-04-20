@@ -1,0 +1,41 @@
+---
+title: "[ESP200]"
+description: "Get/Set SD state"
+---
+
+Get/Set SD state
+
+## Input
+`[ESP200] json=&lt;YES/NO&gt; &lt;RELEASESD&gt; &lt;REFRESH&gt; pwd=&lt;user/admin password&gt;`
+
+* json=no
+the output format
+can be in JSON or plain text
+
+* pwd=&lt;admin password&gt;
+the admin password if authentication is enabled
+
+  * RELEASESD
+      * if RELEASESD is present, it will release SD card
+
+  * REFRESH
+      * if REFRESH is present, it will refresh SD card
+      
+## Output
+
+- In json format
+
+```json
+{
+   "cmd":"200",
+   "status":"ok",
+   "data":"ok"
+}
+```
+
+states can be : `Busy`. `"Not available`, `ok`, `No SD card`
+
+* `cmd` Id of requested command, should be `200`
+* `status` status of command, should be `ok`
+* `data` content of response, here `ok`
+

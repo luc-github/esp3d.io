@@ -1,0 +1,54 @@
+---
+title: "ESP3D-TFT"
+---
+
+### What is ESP3D-TFT ?
+ESP3D-TFT is a firmware for ESP32 boards from espressif with a TFT and a SD Card, allowing to control a 3D Printer or CNC by serial or USB depending of ESP32 board used.
+
+Firmware support different target firmwares according version. 
+
+ESP3D-TFT use idf framework and expressif Visual Code extension.
+
+There is not yet  currently any production version, but only one development version - actively developed.
+
+<div class="badges">
+[![badge](https://img.shields.io/badge/Github-ESP3D_TFT-green?style=plastic&logo=github)](https://github.com/luc-github/ESP3D-TFT)
+[![badge](https://img.shields.io/github/stars/luc-github/ESP3D-TFT?style=plastic)](https://github.com/luc-github/ESP3D-TFT/stargazers)
+[![badge](https://img.shields.io/github/contributors/luc-github/esp3d-tft?style=plastic)](https://github.com/luc-github/ESP3D-TFT)
+[![badge](https://img.shields.io/discord/752822148795596940?color=blue&label=discord-esp3d&logo=discord)](https://discord.gg/Z4ujTwE)
+</div>
+### Cybersecurity concerns
+
+<aside class="info-panel">
+  <h4>Cybersecurity</h4>
+
+  <p>If you plan to have access to your ESP from outside of your private network, then you need to apply some basic security rules to avoid anybody being able to access your ESP.</p>
+</aside>
+<aside class="warning-panel" data-icon="alert">
+  <h4>Disclaimer</h4>
+
+  <p>This is for reference — you are responsible for your board and internet network; we are not responsible for any damage to any of your network appliances.</p>
+</aside>
+<aside class="info-panel" data-icon="info">
+  <h4>Recommendations</h4>
+
+  <p>Following steps must be done before your ESP is visible from public internet:</p>
+  <ul>
+    <li>Activate authentication in configuration file before flashing</li>
+    <li>Change default user and password (this can be done with commands or web UI)</li>
+  </ul>
+
+  <p>It is also strongly recommended to:</p>
+  <ul>
+    <li>Use strong passwords</li>
+    <li>Use unique passwords, not the same as for other accounts</li>
+    <li>Change password regularly</li>
+    <li>Configure your box to redirect a different port than 80 to the port 80 of ESP</li>
+    <li>Use the DMZ feature of your box</li>
+  </ul>
+</aside>
+<aside class="info-panel" data-icon="tip">
+  <h4>Additional tips</h4>
+
+  <p>Remember the web server is not HTTPS, this means the server will never be fully secure. In particular, avoid connecting to your printer from any public network you do not own. Stick to your 4G network or other safe places to avoid MITM attack.</p>
+</aside>

@@ -54,7 +54,7 @@ export default defineConfig({
           label: 'ESP3D',
           collapsed: true,
           items: [
-            { label: 'What is ESP3D ?', link: '/esp3d/' },
+            { label: 'What Is ESP3D?', link: '/esp3d/' },
             {
               label: 'ESP3D Version 2.1.X',
               collapsed: true,
@@ -142,7 +142,7 @@ export default defineConfig({
                   items: [
                     { label: 'Overview', link: '/esp3d/version-3x/hardware/' },
                     {
-                      label: 'ESP boards',
+                      label: 'ESP Boards',
                       collapsed: true,
                       items: [
                         { label: 'Overview', link: '/esp3d/version-3x/hardware/esp_boards/' },
@@ -189,7 +189,7 @@ export default defineConfig({
                       ],
                     },
                     {
-                      label: 'System boards',
+                      label: 'System Boards',
                       collapsed: true,
                       items: [
                         { label: 'Overview', link: '/esp3d/version-3x/hardware/system_boards/' },
@@ -284,7 +284,7 @@ export default defineConfig({
           label: 'ESP3DLib',
           collapsed: true,
           items: [
-            { label: 'What is ESP3DLib ?', link: '/esp3dlib/' },
+            { label: 'What Is ESP3DLib?', link: '/esp3dlib/' },
             {
               label: 'Version 1.X',
               collapsed: true,
@@ -370,10 +370,148 @@ export default defineConfig({
             },
           ],
         },
-        { label: 'ESP3D-TFT', collapsed: true, autogenerate: { directory: 'ESP3D-TFT' } },
-        { label: 'ESP3D-WebUI', collapsed: true, autogenerate: { directory: 'ESP3D-WebUI' } },
-        { label: 'Tools', collapsed: true, autogenerate: { directory: 'tools' } },
-        { label: 'Sponsoring', collapsed: true, autogenerate: { directory: 'sponsoring' } },
+        {
+          label: 'ESP3D-TFT',
+          collapsed: true,
+          items: [
+            { label: 'What Is ESP3D-TFT?', link: '/esp3d-tft/' },
+            {
+              label: 'Version 1.X',
+              collapsed: true,
+              items: [
+                { label: 'Overview', link: '/esp3d-tft/version_1x/' },
+                { label: 'Credits', link: '/esp3d-tft/version_1x/credits/' },
+                { label: 'Features', link: '/esp3d-tft/version_1x/features/' },
+                {
+                  label: 'Hardware',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', link: '/esp3d-tft/version_1x/hardware/' },
+                    { label: 'ESP32', link: '/esp3d-tft/version_1x/hardware/esp32/' },
+                    { label: 'ESP32-S3', link: '/esp3d-tft/version_1x/hardware/esp32-s3/' },
+                  ],
+                },
+                { label: 'Partitions', link: '/esp3d-tft/version_1x/partitions/' },
+                { label: 'Installation', link: '/esp3d-tft/version_1x/installation/' },
+                { label: 'Showcase', link: '/esp3d-tft/version_1x/showcase/' },
+                {
+                  label: 'Documentation',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', link: '/esp3d-tft/version_1x/documentation/' },
+                    { label: 'Commands', link: '/esp3d-tft/version_1x/documentation/commands/' },
+                    { label: 'Authentication', link: '/esp3d-tft/version_1x/documentation/authentication/' },
+                    { label: 'Camera', link: '/esp3d-tft/version_1x/documentation/camera/' },
+                    {
+                      label: 'API',
+                      collapsed: true,
+                      items: [
+                        { label: 'Overview', link: '/esp3d-tft/version_1x/documentation/api/' },
+                        { label: 'Conventions', link: '/esp3d-tft/version_1x/documentation/api/conventions/' },
+                        { label: 'Variables', link: '/esp3d-tft/version_1x/documentation/api/variables/' },
+                        { label: 'Web Handlers', link: '/esp3d-tft/version_1x/documentation/api/webhandlers/' },
+                        { label: 'Web Sockets', link: '/esp3d-tft/version_1x/documentation/api/websockets/' },
+                      ],
+                    },
+                    { label: 'Notifications', link: '/esp3d-tft/version_1x/documentation/notifications/' },
+                    { label: 'FTP', link: '/esp3d-tft/version_1x/documentation/ftp/' },
+                    { label: 'WebDAV Service', link: '/esp3d-tft/version_1x/documentation/webdavservice/' },
+                    { label: 'Update', link: '/esp3d-tft/version_1x/documentation/update/' },
+                    { label: 'Compilation', link: '/esp3d-tft/version_1x/documentation/compilation/' },
+                    { label: 'FAQ', link: '/esp3d-tft/version_1x/documentation/faq/' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'ESP3D-WebUI',
+          collapsed: true,
+          items: [
+            { label: 'What Is ESP3D-WebUI?', link: '/esp3d-webui/' },
+            {
+              label: 'Version 3.X',
+              collapsed: true,
+              items: [
+                { label: 'Overview', link: '/esp3d-webui/version_3x/' },
+                { label: 'Credits', link: '/esp3d-webui/version_3x/credits/' },
+                { label: 'Features', link: '/esp3d-webui/version_3x/features/' },
+                { label: 'Installation', link: '/esp3d-webui/version_3x/installation/' },
+                {
+                  label: 'Documentation',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', link: '/esp3d-webui/version_3x/documentation/' },
+                    { label: 'Themes', link: '/esp3d-webui/version_3x/documentation/themes/' },
+                    { label: 'Polling', link: '/esp3d-webui/version_3x/documentation/polling/' },
+                    { label: 'Extensions', link: '/esp3d-webui/version_3x/documentation/extensions/' },
+                    { label: 'Camera', link: '/esp3d-webui/version_3x/documentation/camera/' },
+                    { label: 'Extra', link: '/esp3d-webui/version_3x/documentation/extra/' },
+                    { label: 'Macros', link: '/esp3d-webui/version_3x/documentation/macros/' },
+                    { label: 'Translation', link: '/esp3d-webui/version_3x/documentation/translation/' },
+                    { label: 'Update', link: '/esp3d-webui/version_3x/documentation/update/' },
+                    { label: 'Compilation', link: '/esp3d-webui/version_3x/documentation/compilation/' },
+                    {
+                      label: 'API',
+                      collapsed: true,
+                      items: [
+                        { label: 'Overview', link: '/esp3d-webui/version_3x/documentation/api/' },
+                        { label: 'Conventions', link: '/esp3d-webui/version_3x/documentation/api/conventions/' },
+                        { label: 'File Upload', link: '/esp3d-webui/version_3x/documentation/api/fileupload/' },
+                        { label: 'Real-Time Commands', link: '/esp3d-webui/version_3x/documentation/api/realtimecmd/' },
+                        { label: 'Variables List', link: '/esp3d-webui/version_3x/documentation/api/variableslist/' },
+                        { label: 'Web Handlers', link: '/esp3d-webui/version_3x/documentation/api/webhandlers/' },
+                        { label: 'Web Sockets', link: '/esp3d-webui/version_3x/documentation/api/websockets/' },
+                        { label: 'Extensions API', link: '/esp3d-webui/version_3x/documentation/api/extensions/' },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  label: 'Showcase',
+                  collapsed: true,
+                  items: [
+                    { label: 'Overview', link: '/esp3d-webui/version_3x/showcase/' },
+                    { label: 'UI', link: '/esp3d-webui/version_3x/showcase/ui/' },
+                    { label: 'Themes', link: '/esp3d-webui/version_3x/showcase/themes/' },
+                    { label: 'Extensions', link: '/esp3d-webui/version_3x/showcase/extensions/' },
+                  ],
+                },
+              ],
+            },
+            {
+              label: 'Version 2.X',
+              collapsed: true,
+              items: [
+                { label: 'Overview', link: '/esp3d-webui/version_2x/' },
+                { label: 'Credits', link: '/esp3d-webui/version_2x/credits/' },
+                { label: 'Features', link: '/esp3d-webui/version_2x/features/' },
+                { label: 'Installation', link: '/esp3d-webui/version_2x/installation/' },
+                { label: 'Documentation', link: '/esp3d-webui/version_2x/documentation/' },
+                { label: 'Showcase', link: '/esp3d-webui/version_2x/showcase/' },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Extra Tools',
+          collapsed: true,
+          items: [
+            { label: 'Overview', link: '/tools/' },
+            { label: 'SD Tools', link: '/tools/sdtools/' },
+            {
+              label: 'Discovery Tools',
+              collapsed: true,
+              items: [
+                { label: 'Overview', link: '/tools/discovery/' },
+                { label: 'SSDP', link: '/tools/discovery/ssdp/' },
+                { label: 'mDNS', link: '/tools/discovery/mdns/' },
+              ],
+            },
+          ],
+        },
+        { label: 'Sponsoring', link: '/sponsoring/', attrs: { class: 'sidebar-toplink' } },
       ],
 
       /** MkDocs-style ` ```Text ` fences → Shiki `txt` (avoids EC warnings). */

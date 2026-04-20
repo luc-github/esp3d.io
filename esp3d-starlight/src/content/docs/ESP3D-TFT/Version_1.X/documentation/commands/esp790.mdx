@@ -1,0 +1,44 @@
+---
+title: "[ESP790]"
+description: "Do some actions on Global Filesystem:  rmdir / remove / mkdir / exists / create"
+---
+
+Do some actions on Global Filesystem:  rmdir / remove / mkdir / exists / create
+
+## Input
+`[ESP790]&lt;action&gt;=&lt;path&gt; json=&lt;no&gt; pwd=&lt;admin password&gt;`
+
+* json=no
+the output format can be in JSON or plain text
+
+* pwd=&lt;admin password&gt;
+the admin password if authentication is enabled
+
+* action
+  * if action is not empty, it will set the action
+  currently only these actions are supported:
+    - RMDIR (dir)
+    - REMOVE (file)
+    - MKDIR (dir)
+    - EXISTS (file/dir)
+    - CREATE (file)
+
+* path
+   the path to process, must be a valid file or directory on /FS or /SD
+
+## Output
+
+- In json format
+
+```json
+{
+   "cmd":"790",
+   "status":"ok",
+   "data":"ok"
+}
+```
+
+* `cmd` Id of requested command, should be `790`
+* `status` status of command, should be `ok`
+* `data` content of response, here `ok` when action is done
+

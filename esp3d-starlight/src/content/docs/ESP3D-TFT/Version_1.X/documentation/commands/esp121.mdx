@@ -1,0 +1,37 @@
+---
+title: "[ESP121]"
+description: "Get/Set HTTP port"
+---
+
+Get/Set HTTP port
+
+## Input
+`[ESP121]&lt;port&gt; json=&lt;no&gt; pwd=&lt;admin/user password&gt;`
+
+* json=no
+the output format
+can be in JSON or plain text
+
+* pwd=&lt;admin password&gt;
+the admin password if authentication is enabled
+
+* port
+  * if port is empty, it will display current port
+  * if port is not empty, it will set the port
+
+## Output
+
+- In json format
+
+```json
+{
+   "cmd":"121",
+   "status":"ok",
+   "data":"80"
+}
+```
+
+* `cmd` Id of requested command, should be `121`
+* `status` status of command, should be `ok`
+* `data` content of response, here the port
+

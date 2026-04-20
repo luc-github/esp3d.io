@@ -300,6 +300,15 @@ img[data-zoom] {
   -webkit-text-fill-color: #0d1117 !important;
 }
 
+/* Top-level direct link (e.g. Sponsoring) styled like section headers */
+#starlight__sidebar.sidebar-pane .sidebar-content a.sidebar-toplink {
+  display: block;
+  font-size: var(--sl-text-base);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-left: -0.75rem;
+}
+
 /*
  * Séparateurs « accent dégradé » (cohérent avec l’entrée TOC active Galaxy) :
  * moins isolé qu’un seul trait gris au milieu de filets hairline.
