@@ -26,7 +26,7 @@ weight: 8
 - [Sample codes](#sample-codes)
 
 ## Basic code
-Here is basic code for an extension to communicate with the Web UI
+Here is basic code for an extension to communicate with the Web UI.
 
 ```
 <script type="text/javascript">
@@ -54,11 +54,11 @@ Display your HTML here
 
 ```
 
-As you can see, code is minimal - it will fit a panel or a page, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
+As you can see, the code is minimal. It can fit either a panel or a page. WebUI CSS/theme is added by WebUI after loading, so you do not need to add any styles. You can use any existing class available in WebUI.
 
-Communication between frame and main window is done by messages using objects (string / array based), do not use any object that cannot be cloned, or loading will fail.
+Communication between the frame and the main window is done through messages using objects (string/array based). Do not use any object that cannot be cloned, or loading will fail.
 
-One typical use case is when WebUI send notification to extension to inform it that is visible or not, so extension can adjust its own behavior according to this information.
+One typical use case is when WebUI sends notifications to an extension to indicate whether it is visible, so the extension can adjust its behavior accordingly.
 
 The notification message (eventMsg.data) has the following structure:
 ```
@@ -71,10 +71,10 @@ The notification message (eventMsg.data) has the following structure:
 }
 ```
 
-The id  is the id of the node that contain the iframe, which means unlike others messages, notification with specific id are addressed to the iframe of the node and not broadcasted to all iframes, if not the id will be `all`.
+The `id` is the ID of the node that contains the iframe. Unlike other messages, a notification with a specific ID is addressed to the iframe of that node and is not broadcast to all iframes. If no ID is provided, the ID will be `all`.
 Currently notifications are limited to isVisible and isConnected, but it is possible to add more notifications in the future.
 
-Here an example of extension that display all notifications in a list:
+Here is an example of an extension that displays all notifications in a list:
 ```html
 <script type="text/javascript">
 let output = ""
@@ -124,10 +124,10 @@ Example: `\{type:'cmd', target:'webui',id:'terminal', content:'[ESP111]'\}`
 **type** is `cmd` (mandatory)  
 **target** is `webui` (mandatory)  
 **id** is `terminal` (optional)  
-**content** is the command that need to be sent, in our case `[ESP111]` (mandatory)
+**content** is the command that needs to be sent, in this case `[ESP111]` (mandatory)
 
-Note: there is no `noDispatch:true` so answer, if any from ESP firmware, will be sent   
-Note 2: there is no way to prevent the answer to be spread if it come from external board from serial, even if `id` and `noDispatch` are set
+Note: there is no `noDispatch:true`, so any answer from ESP firmware will be sent.   
+Note 2: there is no way to prevent the answer from being broadcast if it comes from an external board over serial, even if `id` and `noDispatch` are set.
 
 * Answer format: check the `eventMsg.data`    
 
@@ -182,7 +182,7 @@ Example: `\{type:'query', target:'webui', id:'filemanager', url:'files', args:\{
 **target** is `webui` (mandatory)    
 **id** is `terminal` (optional)    
 **url** is the base url in our case `files` for `/files` (mandatory)     
-**args** is the set of arguments url in our case `\{action:'list', path:'/'\}` for `/files?action=list&path=/` (optional for query)     
+**args** is the set of URL arguments, in this case `\{action:'list', path:'/'\}` for `/files?action=list&path=/` (optional for query)     
 
 Note:  `noDispatch:true` and `id:'term'` are applicable in this case if needed     
 
@@ -251,16 +251,16 @@ Example:
 **target** is `webui` (mandatory)    
 **id** is `filemanager` (optional)    
 **url** is the base url in our case `files` for `/files` (mandatory for upload)     
-**content** is the file in an array object (mandatory)   
+**content** is the file as an array object (mandatory)   
 **size** is the file size (mandatory)     
 **path** is the file target path (not including name) (mandatory)   
-**size** is the filename (not including path) (mandatory)   
-**args** is an object with optional arguments like for query, they are no used in post but in url itself   
+**filename** is the file name (without path) (mandatory)   
+**args** is an object with optional arguments as in query; they are not used in POST body but in the URL itself   
 
 Note:  `noDispatch:true` and `id:'filemanager'` are applicable in this case if needed    
 
 * Answer format: check the `eventMsg.data`   
-    for upload the initiator does not contain the file content
+    For upload, the initiator does not contain the file content.
   - if success   
   
     ```
@@ -340,14 +340,14 @@ Note:  `noDispatch:true` and `id:'filemanager'` are applicable in this case if n
     **content** has the response's **status** which is `error`, and the error itself **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference but without the file content   
 
 ---
-### Send webdownload request   
+### Send web download request   
 Example:   
 `\{type:'download', target:'webui', id:'filemanager', url:'preferences.json'\}`   
 
 **type** is `download` (mandatory)    
 **target** is `webui` (mandatory)    
 **id** is `filemanager` (optional)    
-**url** is the url of the file in our case `preferences.json` for `/preferences.json` (mandatory)     
+**url** is the URL of the file, in this case `preferences.json` for `/preferences.json` (mandatory)     
 **args** is an object with optional arguments like for query   
 
 Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDispatch:true` as the purpose is to get response   
@@ -372,20 +372,20 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
     }
     ```
     
-    **type** is `upload`    
+**type** is `download`    
     **id** is the id set in output message to help to screen       
-    **content** has the response's **status** which is `success`, the response itself **response**, in our case a blob  which is the file that need to be read properly, and also the  **initiator** is the initial command for reference    
+    **content** has the response **status** (`success`), the response itself (`response`) - in this case a blob that must be read properly - and the **initiator** (the initial command for reference)    
     
   - progression message  
   
     ```
     {
-        "type": "upload",
+        "type": "download",
         "response": {
             "status": "progress",
             "progress": "100",
             "initiator": {
-                            "type":"upload", 
+                            "type":"download", 
                             "target":"webui", 
                             "id":"filemanager", 
                             "url":"preferences.json",
@@ -408,7 +408,7 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
             "status": "error",
             "error": "404",
             "initiator": {
-                            "type":"upload", 
+                            "type":"download", 
                             "target":"webui", 
                             "id":"filemanager", 
                             "url":"preferences.json",
@@ -424,13 +424,13 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
 
 ---
 ### Send sound notification
-There is no answer for this message, so `id` is not necessary  
+There is no answer for this message, so `id` is not required.  
 
   - Generate a beep notification    
     Example:    
     `\{type:'sound', target:'webui', content:'beep'\}`   
 
-    **type** is `` (mandatory)    
+    **type** is `sound` (mandatory)    
     **target** is `webui` (mandatory)    
     **sound** is the sound type, in our case `beep` (mandatory)      
 
@@ -438,7 +438,7 @@ There is no answer for this message, so `id` is not necessary
     Example:    
     `\{type:'sound', target:'webui', content:'error'\}`    
 
-    **type** is `` (mandatory)     
+    **type** is `sound` (mandatory)     
     **target** is `webui` (mandatory)     
     **sound** is the sound type, in our case `error` (mandatory)     
 
@@ -449,12 +449,12 @@ There is no answer for this message, so `id` is not necessary
     **type** is `sound` (mandatory)     
     **target** is `webui` (mandatory)     
     **sound** is the sound type, in our case `seq` (mandatory)     
-    **seq** is an array of sequence of beep, in our case `[\{ f: 1046, d: 200 \},\{ f: 1318, d: 100 \}]` (mandatory),  `f` is frequency and `d` is duration of the beep   
+    **seq** is an array of beep sequences, in this case `[\{ f: 1046, d: 200 \},\{ f: 1318, d: 100 \}]` (mandatory). `f` is frequency and `d` is beep duration   
 
 ---
 ### Send toast notification
 
-There is no answer for this message, so `id` is not necessary     
+There is no answer for this message, so `id` is not required.     
 
   - Generate a success toast notification   
     Example:    
@@ -481,14 +481,14 @@ There is no answer for this message, so `id` is not necessary
 
 ---
 ### Send translation request
-- simple translation
+- Simple translation
     Example:    
     `\{type:'translate', target:'webui', id:'transpanel', content:'S153'\}`   
 
     **type** is `translate` (mandatory)     
     **target** is `webui` (mandatory)      
     **id** is `transpanel` (optional)     
-    **content** is the text that need to be translated, in our case `S153` (mandatory)    
+    **content** is the text that needs to be translated, in this case `S153` (mandatory)    
 
     * Answer format: check the `eventMsg.data`   
 
@@ -512,7 +512,7 @@ There is no answer for this message, so `id` is not necessary
         **id** is the id set in command message to help to screen    
         **content** has the response itself **response**, in our case `Your session will end soon, do you want to stay connected ?` and also the  **initiator** is the initial command for reference   
 
- - full dump of translations  
+- Full dump of translations  
     Example:    
     `\{type:'translate', target:'webui', id:'transpanel', all:'true'\}`    
 
@@ -555,7 +555,7 @@ This allows you to collect all capabilities for a specific topic:
 
 Note: this API only collects existing data. So for `features`, `interface`, `extensions`, and `settings`, you may get an empty response if the corresponding query has not been done.
 
-About settings the format may differ from one firmware to another, so you need to check the response to know how to use it, response is always a variable named machineSettings and important content may usualy located in `machineSettings.cache`    
+For settings, the format may differ from one firmware to another, so you need to check the response to know how to use it. The response is always a variable named `machineSettings`, and important content is usually located in `machineSettings.cache`.    
 
 Example:    
 `\{type:'capabilities', target:'webui', id:'connection'\}`     
@@ -648,11 +648,11 @@ Example:
 ---
 ### Send icon request
 
-The WebUI already a set of icons, so no need to bother with new icons, you can request a specific one if needed
+WebUI already includes a set of icons, so you do not need to add new ones. You can request a specific icon if needed.
 
 Note: some icons may be specific to a system, so they may not be available everywhere. The SVG icon is returned in the response using quotes in the SVG tag, so be sure to use it properly.
 
-Main icons are :
+Main icons are:
 ```
 None: null,
 Activity: <Activity />,

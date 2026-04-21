@@ -4,14 +4,14 @@ description : "Web Sockets description, messages and parameters"
 title : "Web Sockets"
 ---
 
-There are 2 websocket servers:
+There are two WebSocket servers:
 
 -   **Terminal websocket** — streams data to WebUI and exchanges internal messages
 -   **Data websocket** — exchanges data with an external client (not used by WebUI)
 
 ---
 
-## Terminal websocket
+## Terminal WebSocket
 
 Uses subprotocol `webui-v3`. Port is web port + 1 (e.g. 80 → 81).
 
@@ -54,7 +54,7 @@ Format: `<label>:<message>`
 
 ---
 
-## Data websocket
+## Data WebSocket
 
 Uses subprotocol `arduino`. Port is configurable (e.g. 8282).
 

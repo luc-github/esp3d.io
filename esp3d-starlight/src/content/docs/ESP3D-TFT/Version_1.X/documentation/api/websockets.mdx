@@ -3,22 +3,22 @@ title: "Web Sockets"
 description: "Web Sockets description, messages and parameters"
 ---
 
-There are 2 websocket servers:
+There are two WebSocket servers:
 
--   terminal websocket
-    used to stream data to webUI and exchange internal data
+-   Terminal WebSocket
+    used to stream data to WebUI and exchange internal data
 
--   data websocket
-    used to exchange data with external client (not used by WebUI)
+-   Data WebSocket
+    used to exchange data with external clients (not used by WebUI)
 
-## Terminal websocket
+## Terminal WebSocket
 
 use subprotocol `webui-v3` and port is same as web port but use address `/ws`
  
 ### &lt;u&gt;text mode&lt;/u&gt;
 
 Reserved
-messages between WebUI / ESP
+Messages between WebUI / ESP
 Format: `&lt;label&gt;:&lt;message&gt;`
 
 -   from ESP to WebUI
@@ -53,23 +53,23 @@ Reserved
     stream data from ESP to WebUI
 
 -   from WEBUI to ESP  
-    [-> File transfert from WebUI to ESP : not implemented yet]
+    [-> File transfer from WebUI to ESP: not implemented yet]
 
-## Data websocket
+## Data WebSocket
 
 use sub protocol `arduino` and port same as web port but use address `/wsdata`
 
 ### &lt;u&gt;text mode&lt;/u&gt;
 
-This mode is used to transfert all GCODE commands and their answers from printer/cnc
+This mode is used to transfer all G-code commands and their responses from the printer/CNC.
 
 ### &lt;u&gt;binary mode&lt;/u&gt;
 
-This mode is used to transfert files to / from esp board
+This mode is used to transfer files to/from the ESP board.
 
-it use frame of 1024 bytes, can be increased after test
+It uses frames of 1024 bytes and can be increased after testing.
 
-the frame format is :
+The frame format is:
  2 bytes: for frame type
  2 bytes: for frame size to check some integrity, currently as already part of frame no checksume is used
  x bytes : extra data according frame type
@@ -89,7 +89,7 @@ with hexadecimal values:
   | - | - | - | - |
  
 
- Response frame use inverted header:
+ Response frame uses an inverted header:
 Response Status: 
 
  | `R` | `S` | 0 | 1 | `A` |
@@ -100,7 +100,7 @@ with hexadecimal values:
  | 0x52 | 0x53 | 0 | 1 | 0x41 |
  | - | - | - | - | - |
 
-the first byte of answer is the state:   
+The first byte of the response indicates the state:   
 
 |Code | Hexa | Meaning|
 |-|-|-|
@@ -111,7 +111,7 @@ the first byte of answer is the state:
 |`D` | 0x44|download ongoing
 |`U` | 0x55|upload ongoing
 
-extra data may be added :
+Extra data may be added:
 
 #### For Error:
 error code and string, 
@@ -149,12 +149,12 @@ xx bytes : filename string
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
 ### Start upload frame
-header is : 
+Header is: 
 
 | `S` | `U` | 0 | 0 |   
 | - | - | - | - |
 
-the content is: 
+The content is: 
 1 byte : path size 0->255
 XX bytes : the path string
 1 byte : the filename size 0->255
@@ -164,15 +164,15 @@ xx bytes : filename string
 |`S`|`U`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
-if answer is :
+If the answer is:
 
 |`U`|`S`|0|1|`O`|
 |-|-|-|-|-|
 
-it means transfert can start
+It means transfer can start.
 
-### Transfert upload frame
-header is :
+### Transfer upload frame
+Header is:
 
 | `U` | `P` | x | x | ID | ID | ID | ID |..|..|  
 | - | - | - | - | - | - | - | - | - | - |
@@ -185,13 +185,13 @@ if packet is received the answer is:
 |`P`|`U`|0|5|`O`| ID | ID | ID | ID |
 |-|-|-|-|-|-|-|-|-|
 
-### Start dowload frame
-header is : 
+### Start download frame
+Header is: 
 
 | `S` | `D` | 0 | 0 |   
 | - | - | - | - |
 
-the content is: 
+The content is: 
 1 byte : path size 0->255
 XX bytes : the path string
 1 byte : the filename size 0->255
@@ -201,15 +201,15 @@ xx bytes : filename string
 |`S`|`D`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
-if answer is :
+If the answer is:
 
 |`D`|`S`|0|1|`O`|
 |-|-|-|-|-|
 
-it means transfert can start
+It means transfer can start.
 
-### Transfert download frame
-header is : 
+### Transfer download frame
+Header is: 
 
 | `D` | `P` | x | x | ID | ID | ID | ID |..|..|  
 | - | - | - | - | - | - | - | - | - | - |
@@ -223,7 +223,7 @@ if packet is received the answer is :
 |-|-|-|-|-|-|-|-|-|
 
 ### Command frame
-header is : 
+Header is: 
 
 | `C` | `M` | 0 | 1 | X |
 | - | - | - | - |-|
@@ -234,7 +234,7 @@ Commands:
 |-|-|-|
 |`A` | 0x41| abort|
 
-Abort command frame 
+Abort command frame
 
 | `C` | `M` | 0 | 1 | `A` |
 | - | - | - | - |-|

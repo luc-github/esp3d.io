@@ -4,17 +4,17 @@ description: "Web handlers description and parameters"
 ---
 
 ### / (GET)
-root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
-if you call specific file, it will look for the filename and filename.gz (compressed)
-if no file is defined and there is not index.html(.gz) it will display embedded page
-another way to show the embedded page is /?forcefallback=yes
+The root is the default handler where all files are served. If no file is defined, it looks for index.html or index.html.gz (compressed).
+If you call a specific file, it looks for filename and filename.gz (compressed).
+If no file is defined and there is no index.html(.gz), it displays the embedded page.
+Another way to show the embedded page is /?forcefallback=yes.
 
 ### /sd/ (GET)
-it will serve any file from SD card if there is one, it is only a wrapper to read SD card, no upload
+It serves any file from the SD card if present. It is only a wrapper for SD card reading; no upload.
 
 ### /files (GET/POST)
-this handler handle all commands for FS, including upload on FS.   
-    possible options/arguments are:   
+This handler processes all commands for the file system (FS), including uploads.   
+    Possible options/arguments are:   
 - `quiet=yes` can be used when you don't want list files but just upload them    
 - `path=...` define the path to the file    
 - `action=...` define the action to execute which can be:  
@@ -24,10 +24,10 @@ this handler handle all commands for FS, including upload on FS.
             delete the directory defined by `filename=...` it will also use `path=...` to do full path    
         - createdir
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
-- `createPath=yes` when doing upload and the path do not exists, it will create it, POST only
+- `createPath=yes` when uploading, if the path does not exist, it is created (POST only)
 - `(filename)S=...` give the size of uploaded file with (filename) name, must be set before the file is uploaded, POST only   
 
-the output is a json file:  
+The output is a JSON object:  
 
     ```json
     {   
@@ -51,23 +51,23 @@ the output is a json file:
     }
     ```
 ### /sdfiles (GET/POST) )
-this handler handle all commands for SD, including upload on SD (only shared and direct SD)     
-    possible options/arguments are:   
+This handler processes all commands for SD, including uploads to SD (shared and direct SD only).     
+    Possible options/arguments are:   
 - `quiet=yes` can be used when you don't want list files but just upload them    
 - `path=...` define the path to the file    
 - `action=...` define the action to execute which can be:  
         - list
-            Will refresh the stats of the files
+            Refreshes file statistics
         - delete   
             delete the file defined by `filename=...` it will also use `path=...` to do full path  
         - deletedir  
             delete the directory defined by `filename=...` it will also use `path=...` to do full path    
         - createdir
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
-- `createPath=yes` when doing upload and the path do not exists, it will create it, POST only
+- `createPath=yes` when uploading, if the path does not exist, it is created (POST only)
 - `(filename)S=...` give the size of uploaded file with (filename) name, must be set before the file is uploaded, POST only   
 
-the output is a json file:   
+The output is a JSON object:   
 
     ```json
     {
@@ -92,16 +92,16 @@ the output is a json file:
     }
     ```
 ### /upload (POST)
-this handler is for MKS boards using MKS communication protocol if enabled, it handle only upload on SD    
+This handler is for MKS boards (when the MKS protocol is enabled). It handles SD uploads only.    
 
 ### /command (GET)
-this handler is for all commands the parameter is `cmd=...`
+This handler is for all commands. The parameter is `cmd=...`
 if it is an `[ESPXXX]` command the answer is the `[ESPXXX]` response
 if it is not an `[ESPXXX]` command the answer is `ESP3D says: command forwarded` and can be ignored
 
 ### /login (GET/POST)
-this handler is for authentication function if enabled
-    possible options/arguments are:  
+This handler manages authentication when enabled.
+    Possible options/arguments are:  
         - `DISCONNECT=YES`
             it will clear current session, remove authentication cookie, set status to `disconnected` and response code to 401
         - `SUBMIT=YES`
@@ -110,7 +110,7 @@ this handler is for authentication function if enabled
 
 Output:
 
-- if authentified and no submission:   
+- if authenticated and no submission:   
     `\{"status":"Identified","authentication_lvl":"admin"\}` and code 200
 - if not authenticated and no submission:  
     `\{"status":"Wrong authentication!","authentication_lvl":"guest"\}` and code 401
@@ -119,16 +119,16 @@ Output:
 this handler is a shortcut to [ESP420] command in text mode, to get output in json add `json=yes`
 
 ### /updatefw (GET/POST)
-this handler is for FW upload and update
-Answer output is :
+This handler is for firmware upload and update.
+Response output is:
 `\{"status":"..."\}` if upload is successful the ESP will restart
 
 ### /snap (GET)
-this handler is on esp32cam with camera enabled to capture a Frame
-it answer by sending a jpg image 
+This handler is for ESP32-CAM with camera enabled to capture a frame.
+It responds by sending a JPG image. 
 
 ### /description.xml (GET)
-this handler is for SSDP if enabled to present device information  
+This handler is for SSDP (if enabled) to present device information.  
 
 ```json
 <root xmlns="urn:schemas-upnp-org:device-1-0">
@@ -155,7 +155,7 @@ this handler is for SSDP if enabled to present device information
 </root>
 ```
 ### Captive portal bypass handlers
-to avoid a redirect to index.html and so a refresh of the page, some classic handler have been added so they all go to / handler actually
+To avoid redirecting to index.html (and therefore refreshing the page), some classic handlers have been added; they all point to /.
  - /generate_204
  - /gconnectivitycheck.gstatic.com
  - /fwlink/

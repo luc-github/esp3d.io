@@ -6,15 +6,15 @@ description: ESP3D 2.1.X API reference
 ## Web Handlers 
 
 ### / (GET)
-root is the default handler where all files will be served, if no file is defined, it looks for index.html or index.html.gz (compressed)
-if you call specific file, it will look for the filename and filename.gz (compressed)
-if no file is defined and there is not index.html(.gz) it will display embedded page
-another way to show the embedded page is /?forcefallback=yes
+The root is the default handler where all files are served. If no file is defined, it looks for index.html or index.html.gz (compressed).
+If you call a specific file, it looks for filename and filename.gz (compressed).
+If no file is defined and there is no index.html(.gz), it displays the embedded page.
+Another way to show the embedded page is /?forcefallback=yes.
 
 
 ### /files (GET/POST)
-this handler handle all commands for FS, including upload on FS.   
-    possible options/arguments are:   
+This handler processes all commands for the file system (FS), including uploads.   
+    Possible options/arguments are:   
 - `quiet=yes` can be used when you don't want list files but just upload them    
 - `path=...` define the path to the file    
 - `action=...` define the action to execute which can be:  
@@ -26,7 +26,7 @@ this handler handle all commands for FS, including upload on FS.
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
 - `<filename>S=...` give the size of uploaded file with `<filename>` name, must be set before the file is uploaded, POST only    
 
-the output is a json file:  
+The output is a JSON object:  
 
     ```
     {   
@@ -54,13 +54,13 @@ the output is a json file:
 this handler is for uploading files to printer SD using M28/M29 protocol
 
 ### /command (GET)
-this handler is for all commands the parameter is `commandText=...`
+This handler is for all commands. The parameter is `commandText=...`
 if it is an `[ESPXXX]` command the answer is the `[ESPXXX]` response
 if it is not an `[ESPXXX]` command the answer is `ESP3D says: command forwarded` and can be ignored
 
 ### /login (GET/POST)
-this handler is for authentication function if enabled
-    possible options/arguments are:  
+This handler manages authentication when enabled.
+    Possible options/arguments are:  
         - `DISCONNECT=YES`
             it will clear current session, remove authentication cookie, set status to `disconnected` and response code to 401
         - `SUBMIT=YES`
@@ -71,10 +71,10 @@ this handler is for authentication function if enabled
 this handler is a shortcut to [ESP420] command in text mode, to get output in json add `json=yes`
 
 ### /updatefw (POST)
-this handler is for FW upload and update
+This handler is for firmware upload and update.
 
 ### /description.xml (GET)
-this handler is for SSDP if enabled to present device information   
+This handler is for SSDP (if enabled) to present device information.   
 
 ```
 <root xmlns="urn:schemas-upnp-org:device-1-0">
@@ -101,7 +101,7 @@ this handler is for SSDP if enabled to present device information
 </root>
 ```
 ### Captive portal bypass handlers
-to avoid a redirect to index.html and so a refresh of the page, some classic handler have been added so they all go to / handler actually
+To avoid redirecting to index.html (and therefore refreshing the page), some classic handlers have been added; they all point to /.
  - /generate_204
  - /gconnectivitycheck.gstatic.com
  - /fwlink/
@@ -115,7 +115,7 @@ use subprotocol `arduino` and web port +1 (e.g: 80+1=>81)
 ### <u>text mode</u>
 
 Reserved
-messages between WebUI / ESP
+Messages between WebUI / ESP
 Format: `<label>:<message>`
 
 -   from ESP to WebUI
