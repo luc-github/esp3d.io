@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "sync:reference": "node scripts/sync-reference.js"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.38.3",

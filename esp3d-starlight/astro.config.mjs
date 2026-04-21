@@ -44,6 +44,7 @@ export default defineConfig({
 
       components: {
         /** Prev/next aussi sous la TOC (footer inchangé). */
+        Sidebar: './src/components/Sidebar.astro',
         PageSidebar: './src/components/PageSidebar.astro',
         Pagination: './src/components/Pagination.astro',
       },
@@ -542,16 +543,32 @@ export default defineConfig({
         },
         {
           tag: 'script',
-          attrs: { defer: true, src: '/mermaid-dark-arrows.js' },
+          attrs: {
+            async: true,
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7000738315770053',
+            crossorigin: 'anonymous',
+          },
         },
+
+        // === 2. Script Google Analytics (gtag) ===
         {
           tag: 'script',
           attrs: {
             async: true,
-            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-TON_ID_ICI',
-            crossorigin: 'anonymous'
-          }
-        }
+            src: 'https://www.googletagmanager.com/gtag/js?id=G-7YYLL9PTPV',
+          },
+        },
+
+        // === 3. Configuration de gtag (le script inline) ===
+        {
+          tag: 'script',
+          content: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7YYLL9PTPV');
+          `,
+        },
       ],
 
       social: [
@@ -564,9 +581,6 @@ export default defineConfig({
 
       editLink: {
         baseUrl: 'https://github.com/luc-github/esp3d.io/edit/main/esp3d-starlight/'
-      },
-      components: {
-        Sidebar: './src/components/Sidebar.astro',
       },
     })
   ],

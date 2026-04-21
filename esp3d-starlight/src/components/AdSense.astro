@@ -1,0 +1,17 @@
+---
+// src/components/AdSense.astro
+const { slot, format = 'auto', style = 'display:block;' } = Astro.props;
+---
+
+<ins
+  class="adsbygoogle"
+  style={style}
+  data-ad-client="ca-pub-7000738315770053"
+  data-ad-slot={slot}
+  data-ad-format={format}
+  data-full-width-responsive="true"
+></ins>
+
+<script is:inline>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

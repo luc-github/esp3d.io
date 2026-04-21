@@ -496,3 +496,25 @@ main .content-panel + .content-panel::before {
     align-self: flex-end;
   }
 }
+
+/* Mermaid (rehype inline SVG): force readable arrows in dark mode */
+:root[data-theme='dark'] svg[id^='mermaid-'] .flowchart-link,
+:root[data-theme='dark'] svg[id^='mermaid-'] .edgePath .path,
+:root[data-theme='dark'] svg[id^='mermaid-'] .edge-thickness-normal,
+:root[data-theme='dark'] svg[id^='mermaid-'] .edge-thickness-thick {
+  stroke: #eef4ff !important;
+  filter: drop-shadow(0 0 0.7px rgba(255, 255, 255, 0.55));
+}
+
+:root[data-theme='dark'] svg[id^='mermaid-'] .marker,
+:root[data-theme='dark'] svg[id^='mermaid-'] .marker path,
+:root[data-theme='dark'] svg[id^='mermaid-'] .marker polygon,
+:root[data-theme='dark'] svg[id^='mermaid-'] .marker circle,
+:root[data-theme='dark'] svg[id^='mermaid-'] .arrowheadPath,
+:root[data-theme='dark'] svg[id^='mermaid-'] .arrowMarkerPath {
+  fill: #eef4ff !important;
+  stroke: #ffffff !important;
+  stroke-width: 1.35px !important;
+  paint-order: stroke fill !important;
+  filter: drop-shadow(0 0 0.9px rgba(255, 255, 255, 0.75));
+}
