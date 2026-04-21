@@ -30,23 +30,23 @@ The output is a JSON object:
 
     ```
     {   
-        "files":[ //the files list  
+        "files":[ //the file list  
             {  
                 "name":"index.html.gz", //the name of the file
-                "size":"83.46 KB", //the formated size of the file 
-                "time":"2022-09-04 11:56:05" //the time when the file was modified last time, this one is optional and depend on (FILESYSTEM_TIMESTAMP_FEATURE)
+                "size":"83.46 KB", //the formatted size of the file 
+                "time":"2022-09-04 11:56:05" //the last modification time, this one is optional and depends on (FILESYSTEM_TIMESTAMP_FEATURE)
             },
             {
-                "name":"subdir", //the name of the file / directory
-                "size":"-1", //the formated size of the file 
-                "time":"" //no time for directories optional as depend on (FILESYSTEM_TIMESTAMP_FEATURE)
+                "name":"subdir", //the name of the file/directory
+                "size":"-1", //the formatted size of the file 
+                "time":"" //no time for directories (optional, depends on (FILESYSTEM_TIMESTAMP_FEATURE)
             }
         ],
         "path":"/", //current path
-        "occupation":"52", //% of occupation
-        "status":"subdir created", //status 
-        "total":"192.00 KB", //Formated total space of Filesystem
-        "used":"100.00 KB" //Formated used space of Filesystem
+        "occupation":"52", //occupation in %
+        "status":"subdir created", //status
+        "total":"192.00 KB", //Formatted total filesystem space
+        "used":"100.00 KB" //Formatted used filesystem space
     }
     ```
 

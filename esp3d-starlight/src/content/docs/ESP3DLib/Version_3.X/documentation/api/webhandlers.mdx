@@ -31,23 +31,23 @@ The output is a JSON object:
 
     ```json
     {   
-        "files":[ //the files list  
+        "files":[ //the file list  
             {  
                 "name":"index.html.gz", //the name of the file
-                "size":"83.46 KB", //the formated size of the file 
-                "time":"2022-09-04 11:56:05" //the time when the file was modified last time, this one is optional and depends on (FILESYSTEM_TIMESTAMP_FEATURE)
+                "size":"83.46 KB", //the formatted size of the file 
+                "time":"2022-09-04 11:56:05" //the last modification time, this one is optional and depends on (FILESYSTEM_TIMESTAMP_FEATURE)
             },
             {
-                "name":"subdir", //the name of the file / directory
+                "name":"subdir", //the name of the file/directory
                 "size":"-1", //the size is -1 because it is a directory
                 "time":"" //no time for directories optional as it depends on (FILESYSTEM_TIMESTAMP_FEATURE)
             }
         ],
         "path":"/", //current path
-        "occupation":"52", //% of occupation
-        "status":"subdir created", //status 
-        "total":"192.00 KB", //Formated total space of Filesystem
-        "used":"100.00 KB" //Formated used space of Filesystem
+        "occupation":"52", //occupation in %
+        "status":"subdir created", //status
+        "total":"192.00 KB", //Formatted total filesystem space
+        "used":"100.00 KB" //Formatted used filesystem space
     }
     ```
 ### /sdfiles (GET/POST) )
@@ -71,24 +71,24 @@ The output is a JSON object:
 
     ```json
     {
-        "files":[ //the files list
+        "files":[ //the file list
             {
                 "name":"3Oc-pika2.gco",//the name of the file
-                "shortname":"3Oc-pika2.gco", //the 8.3 shortname if available, if not the name of the file
-                "size":"83.46 KB", //the formated size of the file 
-                "time":"2022-09-04 11:56:05" //the time when the file was modified last time, this one is optional and depends on (SD_TIMESTAMP_FEATURE)
+                "shortname":"3Oc-pika2.gco", //the 8.3 short name if available; otherwise the file name
+                "size":"83.46 KB", //the formatted size of the file 
+                "time":"2022-09-04 11:56:05" //the last modification time, this one is optional and depends on (SD_TIMESTAMP_FEATURE)
             },
             {
-                "name":"subdir", //the name of the file / directory
+                "name":"subdir", //the name of the file/directory
                 "size":"-1", //the size is -1 because it is a directory
                 "time":"" //no time for directories optional as it depends on (SD_TIMESTAMP_FEATURE)
             }
         ],
         "path":"/", //current path
-        "occupation":"52", //% of occupation
-        "status":"subdir created", //status 
-        "total":"192.00 KB", //Formated total space of Filesystem
-        "used":"100.00 KB" //Formated used space of Filesystem
+        "occupation":"52", //occupation in %
+        "status":"subdir created", //status
+        "total":"192.00 KB", //Formatted total filesystem space
+        "used":"100.00 KB" //Formatted used filesystem space
     }
     ```
 ### /upload (POST)
