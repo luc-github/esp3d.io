@@ -26,7 +26,7 @@ weight: 8
 - [Sample codes](#sample-codes)
 
 ## Basic code
-Here is a basic code for extension to communicate with Web UI
+Here is basic code for an extension to communicate with the Web UI
 
 ```
 <script type="text/javascript">
@@ -56,7 +56,7 @@ Display your HTML here
 
 As you can see, code is minimal - it will fit a panel or a page, webui css / theme will be added by webUI after loaded, so you do not need to add any, you can use any of existing class available in webUI.
 
-Communication between frame and main window is done by messages using objects (string / array based), do not use any object that could not be cloned, or loading will fail.
+Communication between frame and main window is done by messages using objects (string / array based), do not use any object that cannot be cloned, or loading will fail.
 
 One typical use case is when WebUI send notification to extension to inform it that is visible or not, so extension can adjust its own behavior according to this information.
 
@@ -109,13 +109,13 @@ window.onload = (event) => {
 ---
 
 ## Send message
-message structure used by `window.parent.postMessage(msg, '*');` has a defined format, some parameters are madatories, some are optionals and some depend on message type:   
+The message structure used by `window.parent.postMessage(msg, '*');` has a defined format: some parameters are mandatory, some are optional, and some depend on the message type:   
 `\{type:'&lt;message type&gt;', target:'webui', id:'[origin]', noDispatch:[true], XXX:YYY\}`   
-`&lt;message type&gt;` is mandatory, it define the purpose of the message  
-`target:'webui'` is mandatory, it help to screen the message    
-`id:'[origin]'` is optionnal, it define which id must read the response if any, if present it can be used by extension to filter message, no id means the message is for everyone   
-`noDispatch:[true]` is optionnal, if true it will prevent to send answer if any, if not or set to false, it will send answer message if any   
-`XXX:YYY` are optionals/mandatories according message type   
+`&lt;message type&gt;` is mandatory, it defines the purpose of the message  
+`target:'webui'` is mandatory, it helps filter the message    
+`id:'[origin]'` is optional; it defines which ID should read the response, if any. If present, it can be used by the extension to filter messages. No ID means the message is for everyone   
+`noDispatch:[true]` is optional; if true, it prevents sending an answer, if any. If omitted or set to false, it sends an answer message, if any   
+`XXX:YYY` is optional or mandatory depending on the message type   
 
 ---
 
@@ -150,7 +150,7 @@ Note 2: there is no way to prevent the answer to be spread if it come from exter
     ```
     **type** is `cmd`   
     **id** is the id set in command message to help to screen    
-    **content** has the response's **status** which is `success`, the response it self **response**, in our case `192.168.1.111`  and also the  **initiator** is the initial command for reference   
+    **content** has the response's **status** which is `success`, the response itself **response**, in our case `192.168.1.111`  and also the  **initiator** is the initial command for reference   
   - if error  
   
     ```
@@ -172,7 +172,7 @@ Note 2: there is no way to prevent the answer to be spread if it come from exter
 
     **type** is `error` for any error command   
     **id** is the id set in command message to help to screen    
-    **content** has the response's **status** which is `error`, and the error it self **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference
+    **content** has the response's **status** which is `error`, and the error itself **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference
 
 ---
 
@@ -212,7 +212,7 @@ Note:  `noDispatch:true` and `id:'term'` are applicable in this case if needed
     
     **type** is `query`   
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `success`, the response it self **response**, in our case a JSON,  and also the **initiator** is the initial command for reference   
+    **content** has the response's **status** which is `success`, the response itself **response**, in our case a JSON,  and also the **initiator** is the initial command for reference   
     
   - if error   
   
@@ -239,7 +239,7 @@ Note:  `noDispatch:true` and `id:'term'` are applicable in this case if needed
         
     **type** is `query`   
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `error`, and the error it self **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference
+    **content** has the response's **status** which is `error`, and the error itself **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference
 
 ---
 
@@ -285,7 +285,7 @@ Note:  `noDispatch:true` and `id:'filemanager'` are applicable in this case if n
     
     **type** is `upload`    
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `success`, the response it self **response**, in our case a JSON,  and also the  **initiator** is the initial command for reference but without the file content   
+    **content** has the response's **status** which is `success`, the response itself **response**, in our case a JSON,  and also the  **initiator** is the initial command for reference but without the file content   
     
   - progression message  
   
@@ -311,7 +311,7 @@ Note:  `noDispatch:true` and `id:'filemanager'` are applicable in this case if n
     
     **type** is `upload`    
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `progress`, and the progression it self   **progress**, in our case `100` = 100% and also the  **initiator** is the initial command for reference but without the file content  
+    **content** has the response's **status** which is `progress`, and the progress itself   **progress**, in our case `100` = 100% and also the  **initiator** is the initial command for reference but without the file content  
 
   - if error   
   
@@ -337,7 +337,7 @@ Note:  `noDispatch:true` and `id:'filemanager'` are applicable in this case if n
     
     **type** is `upload`    
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `error`, and the error it self **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference but without the file content   
+    **content** has the response's **status** which is `error`, and the error itself **error**, in our case `Cannot connect` and also the  **initiator** is the initial command for reference but without the file content   
 
 ---
 ### Send webdownload request   
@@ -374,7 +374,7 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
     
     **type** is `upload`    
     **id** is the id set in output message to help to screen       
-    **content** has the response's **status** which is `success`, the response it self **response**, in our case a blob  which is the file that need to be read properly, and also the  **initiator** is the initial command for reference    
+    **content** has the response's **status** which is `success`, the response itself **response**, in our case a blob  which is the file that need to be read properly, and also the  **initiator** is the initial command for reference    
     
   - progression message  
   
@@ -397,7 +397,7 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
     
     **type** is `download`    
     **id** is the id set in output message to help to screen      
-    **content** has the response's **status** which is `progress`, and the progression it self **progress**, in our case `100` = 100% and also the  **initiator** is the initial command for reference   
+    **content** has the response's **status** which is `progress`, and the progress itself **progress**, in our case `100` = 100% and also the  **initiator** is the initial command for reference   
 
   - if error   
   
@@ -420,7 +420,7 @@ Note:  `id:'filemanager'` is applicable in this case if needed, but not  `noDisp
     
     **type** is `download`    
     **id** is the id set in output message to help to screen       
-    **content** has the response's **status** which is `error`, and the error it self **error**, in our case `404` (file not found) and also the  **initiator** is the initial command for reference
+    **content** has the response's **status** which is `error`, and the error itself **error**, in our case `404` (file not found) and also the  **initiator** is the initial command for reference
 
 ---
 ### Send sound notification
@@ -510,7 +510,7 @@ There is no answer for this message, so `id` is not necessary
 
         **type** is `translate`     
         **id** is the id set in command message to help to screen    
-        **content** has the response it self **response**, in our case `Your session will end soon, do you want to stay connected ?` and also the  **initiator** is the initial command for reference   
+        **content** has the response itself **response**, in our case `Your session will end soon, do you want to stay connected ?` and also the  **initiator** is the initial command for reference   
 
  - full dump of translations  
     Example:    
@@ -540,7 +540,7 @@ There is no answer for this message, so `id` is not necessary
         ```
         **type** is `translate`     
         **id** is the id set in command message to help to screen      
-        **content** has the response it self **response**, in our case an array of all translations and also the  **initiator** is the initial command for reference      
+        **content** has the response itself **response**, in our case an array of all translations and also the  **initiator** is the initial command for reference      
 
 ---
 ### Send capabilities request   
@@ -606,7 +606,7 @@ Example:
 
     **type** is `capabilities`     
     **id** is the id of requested capability    
-    **content** has the response it self **response**, in our case a JSON and also the  **initiator** is the initial command for reference   
+    **content** has the response itself **response**, in our case a JSON and also the  **initiator** is the initial command for reference   
 
 ---
 ### Save extension settings to preferences.json
@@ -806,7 +806,7 @@ Example:
 
     **type** is `icon`    
     **id** is the id of requested "Activity"    
-    **content** has the response it self **response**, in our case svg using quote , also the **initiator** is the initial command for reference     
+    **content** has the response itself **response**, in our case svg using quote , also the **initiator** is the initial command for reference     
 
 ---
 ### Dispatch message to other extensions
@@ -1200,83 +1200,83 @@ Each modal type has its own specific content structure:
    * content: Contains the response itself (response), the field values entered by the user (fields), and the initiator (initial command for reference)  
 
 #### Fields types and options  
-The fields modal supports the same as the interface fields but with some limitations, each type may support different options.    
+The fields modal supports the same field types as the interface, but with some limitations. Each type may support different options.    
 The existing types and options are:     
 
 1. "pickup":   
-Currently not supported in the modal dialog it is used in interface tab to select language or theme
+Currently not supported in the modal dialog; it is used in the Interface tab to select language or theme
       - "id" (mandatory)  
       - "type" (mandatory)  
       - "label" (mandatory)  
       - "value" (mandatory) a string with the selected value    
  
 2. "boolean":  
-Supported in the modal dialog is used to select a boolean value like for a checkbox or a switch  
+Supported in the modal dialog; used to select a boolean value (for example, a checkbox or a switch)  
       - "id" (mandatory)  
       - "type" (mandatory)  
       - "label" (mandatory)     
       - "value" (mandatory) a boolean value  
-      - "help" (optionnal) a string with a help text in tooltip  
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field  
+      - "help" (optional) a string with help text in a tooltip  
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value  
 
 3. "group":  
-Supported in the modal dialog is used to group fields together, it may contain any type of fields but not another group  
+Supported in the modal dialog; used to group fields together. It may contain any type of field except another group  
       - "id" (mandatory)   
       - "type" (mandatory)  
       - "label" (optional)  
       - "value" (mandatory) an array of fields   
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field   
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value   
 
 4. "number":   
-Supported in the modal dialog is used to select a number value float or integer  
+Supported in the modal dialog; used to select a numeric value (float or integer)  
       - "id" (mandatory)  
       - "type" (mandatory)  
       - "label" (mandatory)  
       - "min" (optional) a string with the minimum value   
       - "max" (optional) a string with the maximum value  
-      - "help" (optionnal) a string with a help text in tooltip  
-      - "step" (optionnal) a string with the step value for the input, can be a float  
-      - "placeholder" (optionnal) a string with a placeholder text   
-      - "append" (optionnal) a string to append to the value input like a unit   
+      - "help" (optional) a string with help text in a tooltip  
+      - "step" (optional) a string with the step value for the input; it can be a float  
+      - "placeholder" (optional) a string with placeholder text   
+      - "append" (optional) a string to append to the value input, such as a unit   
       - "value" (mandatory) a number value   
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field   
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value   
 
 5. "text":   
-  Supported in the modal dialog is used to select a text value   
+  Supported in the modal dialog; used to select a text value   
 
       - "id" (mandatory)   
       - "type" (mandatory)   
       - "label" (mandatory)   
       - "value" (mandatory) a string with the selected value   
-      - "help" (optionnal) a string with a help text in tooltip   
-      - "placeholder" (optionnal) a string with a placeholder text   
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field   
-      - "min" (optionnal) minimum length of the text   
-      - "max" (optionnal) maximum length of the text   
-      - "regexpattern" (optionnal) a string with a regex to validate the text   
-      - "append" (optionnal) a string to append to the value input like a unit   
+      - "help" (optional) a string with help text in a tooltip   
+      - "placeholder" (optional) a string with placeholder text   
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value   
+      - "min" (optional) minimum text length   
+      - "max" (optional) maximum text length   
+      - "regexpattern" (optional) a string with a regex to validate the text   
+      - "append" (optional) a string to append to the value input, such as a unit   
 
 6. "list":
-Currently not supported in the modal dialog it is used in interface tab to select a value from a list (macros, extracontent, panels order, shorkeys)
+Currently not supported in the modal dialog; it is used in the Interface tab to select a value from a list (macros, extra content, panel order, shortcuts)
       - "id" (mandatory)
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
-      - "fixed" (optionnal) 
-      - "sorted" (optionnal)
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value
+      - "fixed" (optional) 
+      - "sorted" (optional)
       - "type" (mandatory)
       - "label" (mandatory)
       - "value" (mandatory)
-      - "nodelete" (optionnal)
-      - "editable" (optionnal)
+      - "nodelete" (optional)
+      - "editable" (optional)
 
 7. "select":
-Supported in the modal dialog is used to select a value from a drop list
+Supported in the modal dialog; used to select a value from a dropdown list
       - "id" (mandatory)
       - "type" (mandatory)     
       - "label" (optional)
       - "value" (mandatory) a string with the selected value
       - "options" (mandatory) an array of objects with the options
-      - "help" (optionnal) a string with a help text in tooltip
-      - "depend" (optionnal) this is not supported in the modal dialog, but used in interface tab to show or hide a field based on the value of another field
+      - "help" (optional) a string with help text in a tooltip
+      - "depend" (optional) this is not supported in the modal dialog, but is used in the Interface tab to show or hide a field based on another field's value
 
 #### Handling Messages
 The code listens for messages from the parent window using the handleMessage function. When a message is received, it checks the type and id properties to determine if it's a modal-related message.

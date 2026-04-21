@@ -6,7 +6,7 @@ weight: 2
 
 ## Definition
 The authentication is an additional security layer to protect the ESP3D-TFT web interface and ESP3D-TFT commands from unauthorized access. It is based on a username and a password. The authentication is optional and can be enabled/disabled in the ESP3D-TFT configuration. There are 3 login levels for authentication:
-- guest, which is does not need any authentication
+- guest, which does not require authentication
 - user, which has limited access to ESP3D-TFT features
 - admin, which has full access to ESP3D-TFT features
 
@@ -41,7 +41,7 @@ When user authentication is enabled, the ESPXXX commands will ask for a password
 The session for ESPXXX commands is a sticky session. This means that once authenticated, the session will stay authenticated until the ESP3D-TFT is restarted or session is closed (e.g: Telnet / WebSocket).
 ## Limitations
 
-The current authentication miss a lot of features, like:
+The current authentication system lacks many features, such as:
 - user management
 - https support
 - password encryption
@@ -49,14 +49,14 @@ The current authentication miss a lot of features, like:
 - password expiration in time
 - password lockout if too many failed attempts
 
-So you must not consider authentication as fullproof for security. It is just an additional layer of security.
+So you must not consider authentication as foolproof for security. It is just an additional layer of security.
 
 Because ESPXXX commands only rely on password, do not use same password for user and admin users. If you do so, you will not be able to use ESPXXX commands with user level, everything will be considered as admin when authenticated.
 
 The password are never been displayed in clear text, but they are stored in the ESP3D-TFT configuration in clear text. So if you want to change the password, you must use the WebInterface or ESPXXX commands.
 In web interface the passwords are replaced by `*******` so any modification must be complete not partial.
 
-All passwords and sensitive informations are sent using plain text. So if you want to use ESP3D-TFT in a public network or outside of your local network (which is not recommended), you must use a VPN.
+All passwords and sensitive information are sent using plain text. So if you want to use ESP3D-TFT in a public network or outside of your local network (which is not recommended), you must use a VPN.
 
 ## Scope
 
@@ -132,7 +132,7 @@ Here the scope of right for each authentication level:
 ## API Description
 
 ### Global
-Each authenticated session have unique session id, that will be stored on ESP3D-TFT with additionnal informations:
+Each authenticated session has a unique session ID that is stored on ESP3D-TFT with additional information:
 - session id (25 characters)
 - session level (Guest / Admin / User)
 - client_id (serial / http / telnet / WebSocket)
