@@ -26,7 +26,7 @@ this handler handle all commands for FS, including upload on FS.
         - createdir
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
 - `createPath=yes` when doing upload and the path do not exists, it will create it, POST only
-- `&lt;filename&gt;S=...` give the size of uploaded file with &lt;filename&gt; name, need to be set before file is set in upload, POST only   
+- `&lt;filename&gt;S=...` give the size of uploaded file with &lt;filename&gt; name, must be set before the file is uploaded, POST only   
 
 the output is a json file:  
 
@@ -66,7 +66,7 @@ this handler handle all commands for SD, including upload on SD (only shared and
         - createdir
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
 - `createPath=yes` when doing upload and the path do not exists, it will create it, POST only
-- `&lt;filename&gt;S=...` give the size of uploaded file with &lt;filename&gt; name, need to be set before file is set in upload, POST only   
+- `&lt;filename&gt;S=...` give the size of uploaded file with &lt;filename&gt; name, must be set before the file is uploaded, POST only   
 
 the output is a json file:   
 

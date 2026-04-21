@@ -24,7 +24,7 @@ this handler handle all commands for FS, including upload on FS.
             delete the directory defined by `filename=...` it will also use `path=...` to do full path    
         - `createdir`
              create the directory defined by `filename=...` it will also use `path=...` to do full path  
-- `<filename>S=...` give the size of uploaded file with `<filename>` name, need to be set before file is set in upload, POST only    
+- `<filename>S=...` give the size of uploaded file with `<filename>` name, must be set before the file is uploaded, POST only    
 
 the output is a json file:  
 
@@ -115,7 +115,7 @@ use subprotocol `arduino` and web port +1 (e.g: 80+1=>81)
 ### <u>text mode</u>
 
 Reserved
-messages between webui / ESP
+messages between WebUI / ESP
 Format: `<label>:<message>`
 
 -   from ESP to WebUI
