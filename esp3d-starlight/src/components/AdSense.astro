@@ -5,17 +5,54 @@ const {
   format = 'auto',
   style = 'display:block;',
 } = Astro.props;
+
+const isPreview = import.meta.env.DEV;
 ---
 
-<ins
-  class="adsbygoogle"
-  style={style}
-  data-ad-client="ca-pub-7000738315770053"
-  data-ad-slot={slot}
-  data-ad-format={format}
-  data-full-width-responsive="true"
-></ins>
+{
+  isPreview ? (
+    <div class="adsense-preview" aria-label="AdSense preview block">
+      <div class="adsense-preview-title">AdSense Preview</div>
+      <div class="adsense-preview-meta">slot: {slot}</div>
+      <div class="adsense-preview-meta">format: {format}</div>
+    </div>
+  ) : (
+    <ins
+      class="adsbygoogle"
+      style={style}
+      data-ad-client="ca-pub-7000738315770053"
+      data-ad-slot={slot}
+      data-ad-format={format}
+      data-full-width-responsive="true"
+    ></ins>
+  )
+}
 
-<script is:inline>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+{
+  !isPreview && (
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  )
+}
+
+<style>
+  .adsense-preview {
+    border: 1px dashed var(--sl-color-accent);
+    background: color-mix(in srgb, var(--sl-color-accent) 10%, transparent);
+    border-radius: 0.5rem;
+    min-height: 90px;
+    padding: 0.75rem;
+    color: var(--sl-color-white);
+  }
+
+  .adsense-preview-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .adsense-preview-meta {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+</style>

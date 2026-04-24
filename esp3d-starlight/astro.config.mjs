@@ -44,6 +44,8 @@ export default defineConfig({
 
       components: {
         /** Prev/next aussi sous la TOC (footer inchangé). */
+        Banner: './src/components/Banner.astro',
+        Footer: './src/components/Footer.astro',
         Sidebar: './src/components/Sidebar.astro',
         PageSidebar: './src/components/PageSidebar.astro',
         Pagination: './src/components/Pagination.astro',

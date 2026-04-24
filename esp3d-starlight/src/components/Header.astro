@@ -1,0 +1,26 @@
+---
+import Default from '@astrojs/starlight/components/Header.astro';
+import AdSense from './AdSense.astro';
+
+const headerAdSlot = '';
+---
+
+<Default>
+  <slot />
+</Default>
+
+{
+  headerAdSlot && (
+    <div class="header-adsense-wrap print:hidden" aria-label="Advertisement">
+      <AdSense slot={headerAdSlot} />
+    </div>
+  )
+}
+
+<style>
+  .header-adsense-wrap {
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+    max-width: var(--sl-content-width);
+  }
+</style>
