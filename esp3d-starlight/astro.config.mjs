@@ -577,6 +577,11 @@ export default defineConfig({
           label: 'GitHub',
           href: 'https://github.com/luc-github/esp3d.io',
         },
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://discord.gg/2VPtHqafBm',
+        },
       ],
 
       editLink: {

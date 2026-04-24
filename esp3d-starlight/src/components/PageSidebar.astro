@@ -6,6 +6,9 @@
 import MobileTableOfContents from 'virtual:starlight/components/MobileTableOfContents';
 import TableOfContents from 'virtual:starlight/components/TableOfContents';
 import Pagination from 'virtual:starlight/components/Pagination';
+import AdSense from './AdSense.astro';
+
+const rightSidebarAdSlot = '5447627780';
 ---
 
 {
@@ -19,6 +22,9 @@ import Pagination from 'virtual:starlight/components/Pagination';
 					<TableOfContents />
 					<div class="toc-pagination-wrap print:hidden">
 						<Pagination />
+					</div>
+					<div class="toc-adsense-wrap print:hidden" aria-label="Advertisement">
+						<AdSense slot={rightSidebarAdSlot} />
 					</div>
 				</div>
 			</div>
@@ -70,5 +76,15 @@ import Pagination from 'virtual:starlight/components/Pagination';
 			padding-top: 1rem;
 			position: relative;
 		}
+
+		.toc-adsense-wrap {
+			margin-top: 1.25rem;
+			padding-top: 1rem;
+			border-top: 1px solid var(--sl-color-gray-5);
+		}
+		.toc-adsense-wrap :global(ins.adsbygoogle) {
+			margin: 0 auto;
+		}
+
 	}
 </style>
