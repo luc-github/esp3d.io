@@ -12,14 +12,14 @@ const bannerAdSlot = '1983859643';
 {
   bannerAdSlot && (
     <div class="top-banner-adsense print:hidden" aria-label="Advertisement">
-      <AdSense slot={bannerAdSlot} />
+      <AdSense slot={bannerAdSlot} format="horizontal" />
     </div>
   )
 }
 
 <style>
   .top-banner-adsense {
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.5rem;
     padding: 0 1rem;
     max-width: var(--sl-content-width);
   }

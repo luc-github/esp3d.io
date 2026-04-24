@@ -38,7 +38,7 @@ const rightSidebarAdSlot = '5447627780';
 			padding: 1rem var(--sl-sidebar-pad-x);
 		}
 		.sl-container {
-			width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
+			width: min(13rem, calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x)));
 		}
 		.right-sidebar-panel :global(h2) {
 			color: var(--sl-color-white);
@@ -60,14 +60,14 @@ const rightSidebarAdSlot = '5447627780';
 		}
 		@media (min-width: 72rem) {
 			.sl-container {
-				max-width: calc(
-					(
-						(
-								100vw - var(--sl-sidebar-width) - 2 * var(--sl-content-pad-x) - 2 *
-									var(--sl-sidebar-pad-x)
-							) * 0.25 /* MAGIC NUMBER 🥲 */
-					)
-				);
+				max-width: 13rem;
+			}
+		}
+
+		/* With header ad enabled, start TOC lower on narrower desktop widths. */
+		@media (min-width: 72rem) and (max-width: 110rem) {
+			.right-sidebar-panel {
+				padding-top: clamp(4.5rem, 6vw, 6rem);
 			}
 		}
 

@@ -1,0 +1,52 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+import AdSense from './AdSense.astro';
+
+const leftContentAdSlot = '3557629913';
+---
+
+<div class="md-content-with-left-ad">
+  <aside class="md-left-ad print:hidden" aria-label="In-content left advertisement">
+    <AdSense slot={leftContentAdSlot} />
+  </aside>
+  <div class="md-content-main">
+    <Default>
+      <slot />
+    </Default>
+  </div>
+</div>
+
+<style>
+  .md-content-with-left-ad {
+    display: block;
+  }
+
+  .md-left-ad {
+    display: none;
+  }
+
+  /* Show ad to the left of markdown on desktop wide screens. */
+  @media (min-width: 90rem) {
+    .md-content-with-left-ad {
+      display: grid;
+      grid-template-columns: clamp(8.5rem, 11vw, 11.5rem) minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: start;
+    }
+
+    .md-left-ad {
+      display: block;
+      position: sticky;
+      top: calc(var(--sl-nav-height) + 1rem);
+      width: 100%;
+      min-height: 160px;
+    }
+
+    .md-left-ad :global(ins.adsbygoogle),
+    .md-left-ad :global(.adsense-preview) {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+</style>

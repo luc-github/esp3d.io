@@ -518,3 +518,17 @@ main .content-panel + .content-panel::before {
   paint-order: stroke fill !important;
   filter: drop-shadow(0 0 0.9px rgba(255, 255, 255, 0.75));
 }
+
+/* Slightly reduce left docs sidebar width on desktop. */
+@media (min-width: 50rem) {
+  :root {
+    --sl-sidebar-width: 17.5rem;
+  }
+}
+
+/* Use more center width on ultra-wide screens to reduce empty right gutter. */
+@media (min-width: 100rem) {
+  :root {
+    --sl-content-width: 77rem;
+  }
+}
