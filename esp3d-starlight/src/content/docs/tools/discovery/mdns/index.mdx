@@ -1,0 +1,63 @@
+---
+title: mDNS Discovery
+description: Find your ESP3D device using mDNS (multicast DNS)
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+import { Icon } from 'astro-icon/components';
+
+mDNS (multicast DNS) lets you reach your ESP3D device using a human-readable hostname like `esp3d.local` instead of an IP address — no DNS server required.
+
+By default, ESP3D advertises itself as **`esp3d.local`** on the local network.
+
+---
+
+## By operating system
+
+<CardGrid>
+  <Card title="Windows" icon="seti:windows">
+    Windows 10 and later include built-in mDNS support.
+
+    If it does not work, install **[Bonjour](https://support.apple.com/kb/DL999)** from Apple (included with iTunes).
+
+    You can also use a dedicated browser like **[Bonjour Browser for Windows](https://hobbyistsoftware.com/bonjourbrowser)** to list all mDNS services.
+
+    Then navigate to:
+    ```
+    http://esp3d.local
+    ```
+  </Card>
+  <Card title="macOS / iOS / iPadOS" icon="apple">
+    Supported natively via Bonjour — no installation needed.
+
+    Use **[Discovery - DNS-SD Browser](https://apps.apple.com/us/app/discovery-dns-sd-browser/id1381004916?mt=12)** to browse all mDNS services and find your ESP3D device.
+
+    Search for `esp3d` in the app.
+
+    ![mDNS on iPad](/img/discovery/mdns-ipad.png)
+  </Card>
+  <Card title="Linux" icon="linux">
+    Install **Avahi**, the standard mDNS daemon for Linux:
+
+    ```bash
+    sudo apt install avahi-daemon avahi-utils
+    ```
+
+    Then browse or resolve:
+    ```bash
+    avahi-browse -a
+    avahi-resolve -n esp3d.local
+    ```
+  </Card>
+  <Card title="">
+    <span class="card-platform-header"><span class="card-platform-icon"><Icon name="simple-icons:android" /></span><span class="card-platform-title">Android</span></span>
+
+    Use **[mDNS Discovery](https://play.google.com/store/apps/details?id=com.mdns_discovery.app)** — search for `esp3d` to find your device.
+
+    ![mDNS on Android](/img/discovery/mdns-android.jpg)
+  </Card>
+</CardGrid>
+
+<Aside type="note">
+  The mDNS hostname can be changed in your ESP3D settings. If you have multiple ESP3D devices on the same network, give each a unique hostname to avoid conflicts.
+</Aside>

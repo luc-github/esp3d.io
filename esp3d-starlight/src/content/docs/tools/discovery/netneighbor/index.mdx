@@ -1,0 +1,145 @@
+---
+title: NetNeighbor
+description: Discover and monitor devices on your local network — a free Linux desktop application.
+---
+
+import { Card, CardGrid, LinkButton, Badge } from '@astrojs/starlight/components';
+
+**Discover and monitor devices on your local network.**
+
+<div class="badges">
+  [![badge](https://img.shields.io/badge/NetNeighbor-1.0-red?style=plastic&logo=github)](https://github.com/luc-github/netneighbor/tree/main)
+  [![badge](https://img.shields.io/github/commit-activity/y/luc-github/netneighbor/main?style=plastic)](https://github.com/luc-github/netneighbor/tree/main)
+  [![badge](https://img.shields.io/github/last-commit/luc-github/netneighbor/main?style=plastic)](https://github.com/luc-github/netneighbor/tree/main)
+</div>
+
+This version is the production version, feedback, PR and suggestions are welcome.
+
+NetNeighbor is a free Linux desktop application that automatically finds all devices
+on your network and displays them with icons or in a list — printers, NAS drives,
+cameras, routers, 3D printers, and more.
+
+![NetNeighbor main window](./overview-hero.png)
+
+---
+
+## Features
+
+<CardGrid>
+  <Card title="Instant display" icon="rocket">
+    Previously-seen devices appear immediately at startup from the local cache — no
+    waiting for discovery to complete.
+  </Card>
+  <Card title="Automatic discovery" icon="magnifier">
+    Finds devices without any configuration or active port scan (SSDP, mDNS,
+    WS-Discovery, NetBIOS).
+  </Card>
+  <Card title="One-click connection" icon="external">
+    Opens HTTP, HTTPS, SMB, SSH, FTP, SFTP and Telnet with a double-click.
+    Configurable per device and per scheme.
+  </Card>
+  <Card title="Device management" icon="setting">
+    Rename devices, tag by location, assign a custom icon or type. Settings are
+    stored locally and survive reboots.
+  </Card>
+  <Card title="System tray" icon="laptop">
+    Runs quietly in the background. Optional autostart at login and minimize to tray.
+  </Card>
+  <Card title="Localised" icon="translate">
+    French, Spanish, German, Italian, Dutch, Japanese, Simplified and Traditional
+    Chinese.
+  </Card>
+</CardGrid>
+
+---
+
+## Screenshots
+
+### Device list with sidebar
+
+![Device list with sidebar](./main-list.png)
+
+The sidebar groups devices by type or location. Switch between icon grid and list view
+from the View menu.
+
+### Right-click menu
+
+![Right-click context menu](./context-menu.png)
+
+Right-click any device to open it, view its details, rename it, change its type,
+assign a location, or run a custom command.
+
+### System tray
+
+![System tray menu](./tray-menu.png)
+
+NetNeighbor can minimise to the system tray and start silently at login.
+
+---
+
+## Download
+
+<Badge text="Latest release: 1.0.0" variant="success" />
+
+<CardGrid>
+  <Card title=".deb package" icon="linux">
+    **Recommended** for Ubuntu, Linux Mint, and Debian.
+    Dependencies installed automatically.
+
+    ```bash
+    sudo dpkg -i netneighbor_1.0.0_amd64.deb
+    ```
+  </Card>
+  <Card title="AppImage" icon="puzzle">
+    Runs on any Linux distribution.
+    Requires Python 3 and GTK 3 on the system.
+
+    ```bash
+    chmod +x NetNeighbor-1.0.0-x86_64.AppImage
+    ./NetNeighbor-1.0.0-x86_64.AppImage
+    ```
+  </Card>
+</CardGrid>
+
+<LinkButton href="https://github.com/luc-github/NetNeighbor/releases/latest" icon="github" variant="primary">
+  Download from GitHub Releases
+</LinkButton>
+<LinkButton href="https://github.com/luc-github/NetNeighbor/releases" icon="list-format" variant="minimal">
+  All releases and checksums
+</LinkButton>
+
+---
+
+## Requirements
+
+- Linux desktop (Ubuntu 22.04+, Linux Mint 21+, Debian 12+, or equivalent)
+- Python 3.10 or later · GTK 3
+
+For **NetBIOS name resolution** (Windows device names):
+```bash
+sudo apt install samba-common-bin
+```
+
+For the **system tray icon**:
+```bash
+sudo apt install gir1.2-ayatanaappindicator3-0.1
+```
+
+Both are included automatically when installing the `.deb` package.
+
+---
+
+## Documentation
+
+<CardGrid>
+  <Card title="User documentation" icon="open-book">
+    Detailed guide covering all features, dialogs, preferences, and troubleshooting.
+
+    [Read USER_DOCUMENTATION →](https://github.com/luc-github/NetNeighbor/blob/main/USER_DOCUMENTATION.md)
+  </Card>
+  <Card title="Source code" icon="github">
+    MIT-licensed, contributions welcome.
+
+    [github.com/luc-github/NetNeighbor →](https://github.com/luc-github/NetNeighbor)
+  </Card>
+</CardGrid>

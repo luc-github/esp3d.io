@@ -33,47 +33,229 @@ next:
 * 1 RS485 interface (4pins): RS485-A - RS485-B - GND - V5
 
 ### Pins
-|ESP Pin|  GPIO   | Description                              |
-| ----- | ------- | ---------------------------------------- |
-|   1   |  GND    |  Ground                                  |
-|   2   |  GPIO04 |  LCD_RESET / TP_RST (LCD / Touch Screen) |
-|   3   |  GPIO05 |  TP_SCL (Touch Screen)                   |
-|   4   |  GPIO06 |  TP_SDA (Touch Screen)                   |
-|   5   |  GPIO07 |  TP_INT (Touch Screen)                   |
-|   6   |  EN     |  (Debug Pin 5 / Reset Switch)            |
-|   7   |  GPIO15 |  LCD_DB7 (LCD)                           |
-|   8   |  GPIO16 |  LCD_DB6 (LCD)                           |
-|   9   |  GPIO17 |  LCD_DB5 (LCD)                           |
-|   10  |  GPIO18 |  LCD_DB4 (LCD)                           |
-|   11  |  GPIO08 |  LCD_DB3 (LCD)                           |
-|   12  |  GPIO03 |  LCD_DB2 (LCD)                           |
-|   13  |  GPIO46 |  LCD_DB1 (LCD)                           |
-|   14  |  GPIO19 |  USB_DN (USB OTG)                        |
-|   15  |  GPIO20 |  USB_DP (USB OTG)                        |
-|   16  |  GPIO09 |  LCD_DB0 (LCD)                           |
-|   17  |  GPIO10 |  EXT_IO1 (Export IO)                     |
-|   18  |  GPIO11 |  EXT_IO2 (Export IO)                     |
-|   19  |  GPIO12 |  EXT_IO3 (Export IO)                     |
-|   20  |  GPIO13 |  EXT_IO4 (Export IO)                     |
-|   21  |  GPIO14 |  EXT_IO5 (Export IO)                     |
-|   22  |  GPIO21 |  EXT_IO6 (Export IO)                     |
-|   23  |  GPIO0  |  BOOT / LCD_RS (Debug Pin 6 / LCD)       |
-|   24  |  GPIO47 |  LCD_WR (LCD)                            |
-|   25  |  GPIO48 |  LCD_TE (LCD)                            |
-|   26  |  VCC    |  +3V3                                    |
-|   27  |  GPIO45 |  BL_PWM (LCD Blacklight)                 |
-|   28  |  GPIO35 |  LRCK (Audio)                            |
-|   29  |  GPIO36 |  BCLK (Audio)                            |
-|   30  |  GPIO37 |  DOUT (Audio)                            |
-|   31  |  GPIO38 |  SD_DO (MISO SD card)                    |
-|   32  |  GPIO39 |  SD_CLK (SD card)                        |
-|   33  |  RX0    |  RXD0 3.3V TTL Debug Pin 4               |
-|   34  |  TX0    |  TXD0 3.3V TTL Debug Pin 3               |
-|   35  |  GPIO40 |  SD_DI (MOSI SD card)                    |
-|   36  |  GND    |  Ground                                  |
-|   37  |  GPIO41 |  SD_CS (SD card)                         |
-|   38  |  GPIO42 |  TXD (RS485)                             |
-|   39  |  GPIO02 |  RTS (RS485)                             |
-|   40  |  GPIO01 |  RXD (RS485)                             |
-|   41  |  GND    |  Ground                                  |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>ESP Pin</th>
+      <th>GPIO</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>GPIO04</td>
+      <td>LCD_RESET / TP_RST (LCD / Touch Screen)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>GPIO05</td>
+      <td>TP_SCL (Touch Screen)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>GPIO06</td>
+      <td>TP_SDA (Touch Screen)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>GPIO07</td>
+      <td>TP_INT (Touch Screen)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>EN</td>
+      <td>(Debug Pin 5 / Reset Switch)</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>GPIO15</td>
+      <td>LCD_DB7 (LCD)</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>GPIO16</td>
+      <td>LCD_DB6 (LCD)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>GPIO17</td>
+      <td>LCD_DB5 (LCD)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>GPIO18</td>
+      <td>LCD_DB4 (LCD)</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>GPIO08</td>
+      <td>LCD_DB3 (LCD)</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>GPIO03</td>
+      <td>LCD_DB2 (LCD)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>GPIO46</td>
+      <td>LCD_DB1 (LCD)</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>GPIO19</td>
+      <td>USB_DN (USB OTG)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>GPIO20</td>
+      <td>USB_DP (USB OTG)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>GPIO09</td>
+      <td>LCD_DB0 (LCD)</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>GPIO10</td>
+      <td>EXT_IO1 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>GPIO11</td>
+      <td>EXT_IO2 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>GPIO12</td>
+      <td>EXT_IO3 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>GPIO13</td>
+      <td>EXT_IO4 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>GPIO14</td>
+      <td>EXT_IO5 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>GPIO21</td>
+      <td>EXT_IO6 (Export IO)</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>GPIO0</td>
+      <td>BOOT / LCD_RS (Debug Pin 6 / LCD)</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>GPIO47</td>
+      <td>LCD_WR (LCD)</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>GPIO48</td>
+      <td>LCD_TE (LCD)</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>VCC</td>
+      <td>+3V3</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>GPIO45</td>
+      <td>BL_PWM (LCD Blacklight)</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>GPIO35</td>
+      <td>LRCK (Audio)</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>GPIO36</td>
+      <td>BCLK (Audio)</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>GPIO37</td>
+      <td>DOUT (Audio)</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>GPIO38</td>
+      <td>SD_DO (MISO SD card)</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>GPIO39</td>
+      <td>SD_CLK (SD card)</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>RX0</td>
+      <td>RXD0 3.3V TTL Debug Pin 4</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>TX0</td>
+      <td>TXD0 3.3V TTL Debug Pin 3</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>GPIO40</td>
+      <td>SD_DI (MOSI SD card)</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>GPIO41</td>
+      <td>SD_CS (SD card)</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>GPIO42</td>
+      <td>TXD (RS485)</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>GPIO02</td>
+      <td>RTS (RS485)</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>GPIO01</td>
+      <td>RXD (RS485)</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 

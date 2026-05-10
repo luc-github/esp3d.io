@@ -55,19 +55,73 @@ pins, not log control pins.
 On these newer targets, silencing the ROM log is done **exclusively via 
 eFuses**. Two eFuse fields are relevant, depending on where the ROM prints:
 
-| eFuse field                         | Output channel              | Availability          |
-|-------------------------------------|-----------------------------|-----------------------|
-| `UART_PRINT_CONTROL`                | UART0 (`U0TXD`)             | S2, S3, C3, C6, H2, P4|
-| `DIS_USB_SERIAL_JTAG_ROM_PRINT`     | USB Serial/JTAG controller  | S3, C3, C6, H2, P4 (not S2) |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>eFuse field</th>
+      <th>Output channel</th>
+      <th>Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`UART_PRINT_CONTROL`</td>
+      <td>UART0 (`U0TXD`)</td>
+      <td>S2, S3, C3, C6, H2, P4</td>
+    </tr>
+    <tr>
+      <td>`DIS_USB_SERIAL_JTAG_ROM_PRINT`</td>
+      <td>USB Serial/JTAG controller</td>
+      <td>S3, C3, C6, H2, P4 (not S2)</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 `UART_PRINT_CONTROL` is a **2-bit field** (not a simple on/off). Its values are:
 
-| Value | Behavior                                          |
-|-------|---------------------------------------------------|
-| `0b00`| Force enabled (default)                           |
-| `0b01`| Controlled by GPIO (pin level decides at reset)   |
-| `0b10`| Controlled by GPIO (inverted logic)               |
-| `0b11`| Force disabled (ROM log always silent)            |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`0b00`</td>
+      <td>Force enabled (default)</td>
+    </tr>
+    <tr>
+      <td>`0b01`</td>
+      <td>Controlled by GPIO (pin level decides at reset)</td>
+    </tr>
+    <tr>
+      <td>`0b10`</td>
+      <td>Controlled by GPIO (inverted logic)</td>
+    </tr>
+    <tr>
+      <td>`0b11`</td>
+      <td>Force disabled (ROM log always silent)</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 <aside class="info-panel">
 <p><strong>Note :</strong></p>

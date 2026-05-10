@@ -1,0 +1,33 @@
+---
+title: SD Card Formatter
+description: Format your SD card properly for use with ESP3D using the official SD Association tool
+---
+
+import { Card, CardGrid, LinkButton, Aside } from '@astrojs/starlight/components';
+
+The **SD Memory Card Formatter** is the official formatting tool from the SD Association. It formats SD / SDHC / SDXC / SDUC cards according to SD specifications — recommended over the native OS formatting tools which are not optimized for SD cards.
+
+---
+
+## Supported platforms
+
+<CardGrid>
+  <Card title="Windows" icon="seti:windows">
+    Windows 10 (22H2) and Windows 11 (22H2, 23H2, 24H2).
+
+    Requires administrator rights to run.
+  </Card>
+  <Card title="macOS" icon="apple">
+    macOS Big Sur through Sequoia.
+
+    Apple Silicon Macs may require Rosetta to be installed first.
+  </Card>
+</CardGrid>
+
+<Aside type="tip">
+  Always use this tool to format your SD card before first use with ESP3D. Formatting with Windows Explorer or macOS Disk Utility may result in a layout not optimized for SD cards and can cause read/write issues.
+</Aside>
+
+<LinkButton href="https://www.sdcard.org/downloads/formatter/" icon="download" variant="primary">
+  Download SD Memory Card Formatter
+</LinkButton>

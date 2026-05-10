@@ -1,6 +1,9 @@
 ---
 import Default from '@astrojs/starlight/components/Sidebar.astro';
 import PayPalDonate from './PayPalDonate.astro';
+import AdSense from './AdSense.astro';
+
+const navAdSlot = '6407325970';
 ---
 
 <Default>
@@ -11,6 +14,13 @@ import PayPalDonate from './PayPalDonate.astro';
 <div class="sidebar-donate">
   <PayPalDonate />
 </div>
+
+<!-- Pub AdSense sous PayPal, visible surtout sur mobile/tablette -->
+{navAdSlot && (
+  <div class="sidebar-nav-ad">
+    <AdSense slot={navAdSlot} format="auto" style="display:block;" />
+  </div>
+)}
 
 <style>
   .sidebar-donate {
@@ -25,4 +35,11 @@ import PayPalDonate from './PayPalDonate.astro';
       padding: 1rem;
     }
   }
+
+  .sidebar-nav-ad {
+    margin-top: 1rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+    padding-top: 0.75rem;
+  }
+
 </style>

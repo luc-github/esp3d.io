@@ -33,47 +33,221 @@ next:
 * Header power : VIN - TX - RX - GND
 
 ### Pins
-|ESP Pin|  GPIO   | Description                              |
-| ----- | ------- | ---------------------------------------- |
-|   1   |  GND    |  Ground                                  |
-|   2   |  VCC    |  +3V3                                    |
-|   3   |  EN     |  RST / TFT_RST (Reset / LCD)             |
-|   4   |  GPIO36 |  SENSOR_VP / RTP_IRQ (Res. Touchscreen)  |
-|   5   |  GPIO39 |  SENSOR_VN                               |
-|   6   |  GPIO34 |  ADC                                     |
-|   7   |  GPIO35 |  Header P3 Pin 3                         |
-|   8   |  GPIO32 |  CTP_SCL (Cap. Touchscreen)              |
-|   9   |  GPIO33 |  CTP_SDA (Cap. Touchscreen) / RTP_CS (Res. Touchscreen) |
-|   10  |  GPIO25 |  CTP_RST (Cap. Touchscreen)              |
-|   11  |  GPIO26 |  AUDIO IN-                               |
-|   12  |  GPIO27 |  TFT_BL (TFT)                            |
-|   13  |  GPIO14 |  TFT_SCK (TFT) / RTP_CLK (Res. Touchscreen) |
-|   14  |  GPIO12 |  TFT_SDO (TFT) / RTP_OUT (Res. Touchscreen) |
-|   15  |  GND    |  Ground                                  |
-|   16  |  GPIO13 |  TFT_SDI (TFT) / RTP_DIN (Res. Touchscreen) |
-|   17  | SHD/SD2 |  HOLD (SPI Flash / PSRAM*)               |
-|   18  | SWP/SD3 |  WP (SPI Flash / PSRAM*)                 |
-|   19  | SCS/CMD |  CS (SPI Flash)                          |
-|   20  | SCK/CLK |  SCK (SPI Flash)                         |
-|   21  | SDO/SD0 |  SO (SPI Flash / PSRAM*)                 |
-|   22  | SDI/SD1 |  SI (SPI Flash / PSRAM*)                 |
-|   23  |  GPIO15 |  TFT_CS (TFT)                            |
-|   24  |  GPIO02 |  TFT_RS (TFT)                            |
-|   25  |  GPIO0  |  BOOT_SW                                 |
-|   26  |  GPIO04 |  LED_RGB                                 |
-|   27  |  GPIO16 |  LED_RGB (PSRAM_CS*)                     |
-|   28  |  GPIO17 |  LED_RGB (PSRAM_SCK*)                    |
-|   29  |  GPIO05 |  TF_CS (SD Card)                         |
-|   30  |  GPIO18 |  TF_CLK (SD Card)                        |
-|   31  |  GPIO19 |  MCU_MISO (SD Card)                      |
-|   32  |  NC     |  NA                                      |
-|   33  |  GPIO21 |  CTP_INT* (Cap. Touchscreen) / Headers: P3 Pin 1, CN1 Pin 2 |
-|   34  |  RXD0   |  RXD2 Header P1 Pin 3                    |
-|   35  |  TXD0   |  TXD2 Header P1 Pin 2                    |
-|   36  |  GPIO22 |  Header P3 Pin 2 (also Header CN1 Pin 3 on some boards) |
-|   37  |  GPIO23 |  MCU_MOSI (SD Card)                      |
-|   38  |  GND    |  Ground                                  |
-|   39  |  GND    |  Ground                                  |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>ESP Pin</th>
+      <th>GPIO</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>VCC</td>
+      <td>+3V3</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>EN</td>
+      <td>RST / TFT_RST (Reset / LCD)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>GPIO36</td>
+      <td>SENSOR_VP / RTP_IRQ (Res. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>GPIO39</td>
+      <td>SENSOR_VN</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>GPIO34</td>
+      <td>ADC</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>GPIO35</td>
+      <td>Header P3 Pin 3</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>GPIO32</td>
+      <td>CTP_SCL (Cap. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>GPIO33</td>
+      <td>CTP_SDA (Cap. Touchscreen) / RTP_CS (Res. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>GPIO25</td>
+      <td>CTP_RST (Cap. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>GPIO26</td>
+      <td>AUDIO IN-</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>GPIO27</td>
+      <td>TFT_BL (TFT)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>GPIO14</td>
+      <td>TFT_SCK (TFT) / RTP_CLK (Res. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>GPIO12</td>
+      <td>TFT_SDO (TFT) / RTP_OUT (Res. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>GPIO13</td>
+      <td>TFT_SDI (TFT) / RTP_DIN (Res. Touchscreen)</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>SHD/SD2</td>
+      <td>HOLD (SPI Flash / PSRAM*)</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>SWP/SD3</td>
+      <td>WP (SPI Flash / PSRAM*)</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>SCS/CMD</td>
+      <td>CS (SPI Flash)</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>SCK/CLK</td>
+      <td>SCK (SPI Flash)</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>SDO/SD0</td>
+      <td>SO (SPI Flash / PSRAM*)</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>SDI/SD1</td>
+      <td>SI (SPI Flash / PSRAM*)</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>GPIO15</td>
+      <td>TFT_CS (TFT)</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>GPIO02</td>
+      <td>TFT_RS (TFT)</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>GPIO0</td>
+      <td>BOOT_SW</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>GPIO04</td>
+      <td>LED_RGB</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>GPIO16</td>
+      <td>LED_RGB (PSRAM_CS*)</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>GPIO17</td>
+      <td>LED_RGB (PSRAM_SCK*)</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>GPIO05</td>
+      <td>TF_CS (SD Card)</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>GPIO18</td>
+      <td>TF_CLK (SD Card)</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>GPIO19</td>
+      <td>MCU_MISO (SD Card)</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>NC</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>GPIO21</td>
+      <td>CTP_INT* (Cap. Touchscreen) / Headers: P3 Pin 1, CN1 Pin 2</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>RXD0</td>
+      <td>RXD2 Header P1 Pin 3</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>TXD0</td>
+      <td>TXD2 Header P1 Pin 2</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>GPIO22</td>
+      <td>Header P3 Pin 2 (also Header CN1 Pin 3 on some boards)</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>GPIO23</td>
+      <td>MCU_MOSI (SD Card)</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>GND</td>
+      <td>Ground</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 \* Requires Hardware Mod
 

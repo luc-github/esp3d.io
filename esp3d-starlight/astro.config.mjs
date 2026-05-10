@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy';
 import astroRehypeMermaid from './integrations/astro-rehype-mermaid.js';
+import icon from 'astro-icon';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -28,6 +29,7 @@ export default defineConfig({
   },
 
   integrations: [
+    icon(),
     astroRehypeMermaid({
       strategy: 'inline-svg',
       dark: true,
@@ -150,21 +152,22 @@ export default defineConfig({
                       label: 'ESP Boards',
                       collapsed: true,
                       items: [
-                        { label: 'Overview', link: '/esp3d/version-3x/hardware/esp_boards/' },
+                        { label: 'Overview', link: '/esp3d/version-3x/hardware/esp_boards/' }, 
                         {
-                          label: 'ESP32',
+                          label: 'ESP8285',
                           collapsed: true,
-                          autogenerate: { directory: 'ESP3D/version-3x/hardware/esp_boards/esp32' },
+                          autogenerate: { directory: 'ESP3D/version-3x/hardware/esp_boards/esp8285' },
                         },
                         {
                           label: 'ESP8266',
                           collapsed: true,
                           autogenerate: { directory: 'ESP3D/version-3x/hardware/esp_boards/esp8266' },
                         },
+                       
                         {
-                          label: 'ESP8285',
+                          label: 'ESP32',
                           collapsed: true,
-                          autogenerate: { directory: 'ESP3D/version-3x/hardware/esp_boards/esp8285' },
+                          autogenerate: { directory: 'ESP3D/version-3x/hardware/esp_boards/esp32' },
                         },
                         {
                           label: 'ESP32-PICO',
@@ -511,6 +514,7 @@ export default defineConfig({
                 { label: 'Overview', link: '/tools/discovery/' },
                 { label: 'SSDP', link: '/tools/discovery/ssdp/' },
                 { label: 'mDNS', link: '/tools/discovery/mdns/' },
+                { label: 'NetNeighbor', link: '/tools/discovery/netneighbor/' },
               ],
             },
           ],

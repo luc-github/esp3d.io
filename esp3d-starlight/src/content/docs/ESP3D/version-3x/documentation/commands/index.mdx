@@ -1,30 +1,554 @@
 ---
-description : "Syntax and parameters"
-title : "ESP3D commands"
-weight : 1
+description: "Syntax and parameters"
+title: "ESP3D commands"
+weight: 1
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 ## Conventions
-1 - Add space to separate parameters  
-2 - If parameter has space add `\` in front of space to not be seen as separator   
-3 - `json`, `json=YES`, `json=TRUE`, `json=1` are paremeters to switch output to json  
 
-By default output is plain text, to get json formated output add json or json=yes after main parameters.
+1. Add a space to separate parameters
+2. If a parameter contains a space, add `\` before the space so it is not treated as a separator
+3. `json`, `json=YES`, `json=TRUE`, `json=1` switch the output to JSON format
 
-The json format is: 
-```json 
+By default output is plain text. To get JSON-formatted output add `json` or `json=yes` after the main parameters.
+
+```json
 {
-    cmd:"(command id)", //the id of requested command
-    status:"(ok/error)" //give if it is success or an failure
-    data:"(response)" // response corresponding to answer in json format too
+    cmd:"(command id)",
+    status:"(ok/error)",
+    data:"(response)"
 }
 ```
 
-## Commands
-* Show commands help   
-    `[ESP0]` to get full list    
-    or `[ESP0](number)` for specific command 
+<Aside type="note">
+  Use `[ESP0]` to get the full command list, or `[ESP0](number)` for a specific command.
+</Aside>
 
-import AutoSubpagesList from '~/components/AutoSubpagesList.astro';
+---
 
-<AutoSubpagesList directory="ESP3D/version-3x/documentation/commands" maxDepth={2} />
+## WiFi & Network
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp100/">ESP100</a></td>
+      <td>Set / Display Station SSID</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp101/">ESP101</a></td>
+      <td>Set Station Password</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp102/">ESP102</a></td>
+      <td>Set / Display Station IP mode</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp103/">ESP103</a></td>
+      <td>Set / Display Station IP address</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp104/">ESP104</a></td>
+      <td>Set station fallback mode state at boot</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp105/">ESP105</a></td>
+      <td>Set / Display Access point SSID</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp106/">ESP106</a></td>
+      <td>Set Access point password</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp107/">ESP107</a></td>
+      <td>Set / Display Access point IP value</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp108/">ESP108</a></td>
+      <td>Set / Display Access point channel value</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp110/">ESP110</a></td>
+      <td>Set / Display radio state at boot</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp111/">ESP111</a></td>
+      <td>Display current IP</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp112/">ESP112</a></td>
+      <td>Set / Display Hostname</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp114/">ESP114</a></td>
+      <td>Get / Set boot radio state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp115/">ESP115</a></td>
+      <td>Get / Set immediate network state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp116/">ESP116</a></td>
+      <td>Set / Display Ethernet station IP mode</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp117/">ESP117</a></td>
+      <td>Set / Display Ethernet station IP address</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp118/">ESP118</a></td>
+      <td>Set Ethernet station fallback mode state at boot</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Services
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp120/">ESP120</a></td>
+      <td>Get / Set HTTP state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp121/">ESP121</a></td>
+      <td>Get / Set HTTP port</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp130/">ESP130</a></td>
+      <td>Get / Set Telnet state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp131/">ESP131</a></td>
+      <td>Get / Set Telnet port</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp140/">ESP140</a></td>
+      <td>Sync / Set / Get current time</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp150/">ESP150</a></td>
+      <td>Get / Set boot delay in ms / verbose boot</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp160/">ESP160</a></td>
+      <td>Get / Set WebSocket state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp161/">ESP161</a></td>
+      <td>Get / Set WebSocket port</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp170/">ESP170</a></td>
+      <td>Get / Set Camera commands / values</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp171/">ESP171</a></td>
+      <td>Save frame to target path and filename</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp180/">ESP180</a></td>
+      <td>Get / Set FTP state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp181/">ESP181</a></td>
+      <td>Get / Set FTP ports</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp190/">ESP190</a></td>
+      <td>Get / Set WebDAV state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp191/">ESP191</a></td>
+      <td>Get / Set WebDAV port</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Hardware & Device
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp200/">ESP200</a></td>
+      <td>Get / Set SD state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp201/">ESP201</a></td>
+      <td>Get / Set pin value</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp202/">ESP202</a></td>
+      <td>Get / Set SD card speed factor</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp210/">ESP210</a></td>
+      <td>Get / Set sensor value / type</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp212/">ESP212</a></td>
+      <td>Output to ESP3D screen status</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp214/">ESP214</a></td>
+      <td>Output to ESP3D screen status</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp215/">ESP215</a></td>
+      <td>Start a touch calibration</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp220/">ESP220</a></td>
+      <td>Get ESP3D pins definition</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp250/">ESP250</a></td>
+      <td>Play sound</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp290/">ESP290</a></td>
+      <td>Delay / Pause command</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Scripting
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp300/">ESP300</a></td>
+      <td>Process local Lua script file on /FS or /SD</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp301/">ESP301</a></td>
+      <td>Query and control ESP300 script</td>
+    </tr>
+  </tbody>  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## System Settings
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp400/">ESP400</a></td>
+      <td>Get full ESP3D settings</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp401/">ESP401</a></td>
+      <td>Set ESP3D settings</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp402/">ESP402</a></td>
+      <td>Get / Set SD updater check at boot time</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp410/">ESP410</a></td>
+      <td>List all AP detected around</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp420/">ESP420</a></td>
+      <td>Get ESP3D current status</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp444/">ESP444</a></td>
+      <td>Set ESP3D state</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp450/">ESP450</a></td>
+      <td>List available ESP3D modules / devices</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Authentication
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp500/">ESP500</a></td>
+      <td>Get authentication status</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp510/">ESP510</a></td>
+      <td>Set / Get session timeout</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp550/">ESP550</a></td>
+      <td>Set / Change admin password</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp555/">ESP555</a></td>
+      <td>Set / Change user password</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Notifications
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp600/">ESP600</a></td>
+      <td>Send notification</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp610/">ESP610</a></td>
+      <td>Set / Get notification settings</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp620/">ESP620</a></td>
+      <td>Send notification using encoded URL</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## File System
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp700/">ESP700</a></td>
+      <td>Process local file on /FS or /SD</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp701/">ESP701</a></td>
+      <td>Query and control ESP700 stream</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp710/">ESP710</a></td>
+      <td>Format ESP filesystem</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp715/">ESP715</a></td>
+      <td>Format SD card</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp720/">ESP720</a></td>
+      <td>List files on /FS or defined repository</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp730/">ESP730</a></td>
+      <td>Actions on ESP filesystem: rmdir / remove / mkdir / exists / create</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp740/">ESP740</a></td>
+      <td>List files on /SD or defined repository</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp750/">ESP750</a></td>
+      <td>Actions on SD card: rmdir / remove / mkdir / exists / create</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp780/">ESP780</a></td>
+      <td>List global filesystem</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp790/">ESP790</a></td>
+      <td>Actions on global filesystem: rmdir / remove / mkdir / exists / create</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+---
+
+## Firmware
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp800/">ESP800</a></td>
+      <td>Get ESP3D firmware capabilities</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+---
+
+## Communication
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp900/">ESP900</a></td>
+      <td>Get / Set state for main serial communication</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp901/">ESP901</a></td>
+      <td>Set serial baudrate for main serial communication</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp902/">ESP902</a></td>
+      <td>Set USB serial baudrate</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp910/">ESP910</a></td>
+      <td>Get / Set state for buzzer</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp930/">ESP930</a></td>
+      <td>Get / Set state for serial bridge</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp931/">ESP931</a></td>
+      <td>Get / Set baudrate for serial bridge</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp950/">ESP950</a></td>
+      <td>Get / Set default output</td>
+    </tr>
+    <tr>
+      <td><a href="/esp3d/version-3x/documentation/commands/esp999/">ESP999</a></td>
+      <td>Set quiet boot</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>

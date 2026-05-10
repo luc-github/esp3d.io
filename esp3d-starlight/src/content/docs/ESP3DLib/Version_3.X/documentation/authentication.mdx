@@ -62,84 +62,562 @@ All passwords and sensitive information are sent using plain text. So if you wan
 
 Here the scope of right for each authentication level:   
 
-|Feature | not authenticated | guest  | user | admin |
-|-|:-------------------:|:--------:|:------:|:-------:|
-| Web Interface | No | No | Yes | Yes |
-| Telnet | No | No | Yes | Yes |
-| WebSocket | No | No | Yes | Yes |
-| WebDav | No | No | Yes | Yes |
-| Bluetooth | No | No | Yes | Yes |
-| Upload | No | No | Yes | Yes |
-| Update | No | No | No | Yes |
-| [[ESP0]](../commands/#commands) | Yes | Yes | Yes | Yes |
-| [[ESP100]](../commands/esp100/) | No | No | Get | Get/Set |
-| [[ESP101]](../commands/esp101/) | No | No | No | Set |
-| [[ESP102]](../commands/esp102/) | No | No | Get | Get/Set |
-| [[ESP103]](../commands/esp103/) | No | No | Get | Get/Set |
-| [[ESP104]](../commands/esp104/) | No | No | Get | Get/Set |
-| [[ESP105]](../commands/esp105/) | No | No | Get | Get/Set |
-| [[ESP106]](../commands/esp106/) | No | No | No | Set |
-| [[ESP107]](../commands/esp107/) | No | No | Get | Get/Set |
-| [[ESP108]](../commands/esp108/) | No | No | Get | Get/Set |
-| [[ESP110]](../commands/esp110/) | No | No | Get | Get/Set |
-| [[ESP111]](../commands/esp111/) | No | No | Get | Get |
-| [[ESP112]](../commands/esp112/) | No | No | Get | Get/Set |
-| [[ESP114]](../commands/esp114/) | No | No | Get | Get/Set |
-| [[ESP115]](../commands/esp1115/) | No | No | Get | Get/Set |
-| [[ESP120]](../commands/esp120/) | No | No | Get | Get/Set |
-| [[ESP121]](../commands/esp121/) | No | No | Get | Get/Set |
-| [[ESP130]](../commands/esp130/) | No | No | Get | Get/Set |
-| [[ESP131]](../commands/esp131/) | No | No | Get | Get/Set |
-| [[ESP140]](../commands/esp140/) | No | No | Get | Get/Set |
-| [[ESP150]](../commands/esp150/) | No | No | Get | Get/Set |
-| [[ESP160]](../commands/esp160/) | No | No | Get | Get/Set |
-| [[ESP161]](../commands/esp161/) | No | No | Get | Get/Set |
-| [[ESP170]](../commands/esp170/) | No | No | Get/Set | Get/Set |
-| [[ESP171]](../commands/esp171/) | No | No | Get | Get|
-| [[ESP180]](../commands/esp180/) | No | No | Get | Get/Set |
-| [[ESP181]](../commands/esp181/) | No | No | Get | Get/Set |
-| [[ESP190]](../commands/esp190/) | No | No | Get | Get/Set |
-| [[ESP191]](../commands/esp191/) | No | No | Get | Get/Set |
-| [[ESP200]](../commands/esp200/) | No | No | Get/Set | Get/Set |
-| [[ESP201]](../commands/esp201/) | No | No | Get/Set | Get/Set |
-| [[ESP202]](../commands/esp202/) | No | No | Get | Get/Set |
-| [[ESP210]](../commands/esp210/) | No | No | Get | Get/Set |
-| [[ESP214]](../commands/esp214/) | No | No | Set | Set |
-| [[ESP215]](../commands/esp215/) | No | No | No | Set |
-| [[ESP220]](../commands/esp220/) | No | No | Get | Get |
-| [[ESP250]](../commands/esp250/) | No | No | Set | Set |
-| [[ESP290]](../commands/esp290/) | No | No | Set | Set |
-| [[ESP400]](../commands/esp400/) | No | No | Get | Get |
-| [[ESP401]](../commands/esp401/) | No | No | No | Set |
-| [[ESP402]](../commands/esp402/) | No | No | Get | Get/Set |
-| [[ESP410]](../commands/esp410/) | No | No | Get | Get |
-| [[ESP420]](../commands/esp420/) | No | No | Get | Get |
-| [[ESP444]](../commands/esp444/) | No | No |  Set(only RESTART) | Set |
-| [[ESP450]](../commands/esp450/) | No | No | Get | Get |
-| [[ESP500]](../commands/esp500/) | Get/Set | Get/Set | Get/Set | Get/Set |
-| [[ESP510]](../commands/esp510/) | No | No | Get | Get/Set |
-| [[ESP550]](../commands/esp550/) | No | No | No | Get/Set |
-| [[ESP555]](../commands/esp555/) | No | No | Get/Set | Get/Set |
-| [[ESP600]](../commands/esp600/) | No | No | Set | Set |
-| [[ESP610]](../commands/esp610/) | No | No | Get | Get/Set |
-| [[ESP620]](../commands/esp620/) | No | No | Set | Set |
-| [[ESP700]](../commands/esp700/) | No | No | Set | Set |
-| [[ESP701]](../commands/esp701/) | No | No | Get/Set | Get/Set |
-| [[ESP710]](../commands/esp710/) | No | No | No | Set |
-| [[ESP715]](../commands/esp715/) | No | No | No | Set |
-| [[ESP720]](../commands/esp720/) | No | No | Get | Get |
-| [[ESP730]](../commands/esp730/) | No | No | Get/Set | Get/Set |
-| [[ESP740]](../commands/esp740/) | No | No | Get | Get |
-| [[ESP750]](../commands/esp750/) | No | No | Get/Set | Get/Set |
-| [[ESP780]](../commands/esp780/) | No | No | Get | Get |
-| [[ESP790]](../commands/esp790/) | No | No | Get/Set | Get/Set |
-| [[ESP800]](../commands/esp800/) | No | No | Get/Set | Get/Set |
-| [[ESP900]](../commands/esp900/) | No | No | Get/Set | Get/Set |
-| [[ESP901]](../commands/esp901/) | No | No | Get | Get/Set |
-| [[ESP910]](../commands/esp910/) | No | No | Get/Set | Get/Set |
-| [[ESP930]](../commands/esp930/) | No | No | Get | Get/Set |
-| [[ESP931]](../commands/esp931/) | No | No | Get | Get/Set |
-| [[ESP999]](../commands/esp999/) | No | No | No | Set |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>not authenticated</th>
+      <th>guest</th>
+      <th>user</th>
+      <th>admin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Web Interface</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Telnet</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>WebSocket</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>WebDav</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Bluetooth</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Upload</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Update</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>[[ESP0]](../commands/#commands)</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>[[ESP100]](../commands/esp100/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP101]](../commands/esp101/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP102]](../commands/esp102/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP103]](../commands/esp103/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP104]](../commands/esp104/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP105]](../commands/esp105/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP106]](../commands/esp106/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP107]](../commands/esp107/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP108]](../commands/esp108/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP110]](../commands/esp110/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP111]](../commands/esp111/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP112]](../commands/esp112/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP114]](../commands/esp114/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP115]](../commands/esp1115/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP120]](../commands/esp120/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP121]](../commands/esp121/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP130]](../commands/esp130/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP131]](../commands/esp131/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP140]](../commands/esp140/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP150]](../commands/esp150/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP160]](../commands/esp160/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP161]](../commands/esp161/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP170]](../commands/esp170/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP171]](../commands/esp171/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP180]](../commands/esp180/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP181]](../commands/esp181/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP190]](../commands/esp190/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP191]](../commands/esp191/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP200]](../commands/esp200/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP201]](../commands/esp201/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP202]](../commands/esp202/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP210]](../commands/esp210/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP214]](../commands/esp214/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP215]](../commands/esp215/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP220]](../commands/esp220/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP250]](../commands/esp250/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP290]](../commands/esp290/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP400]](../commands/esp400/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP401]](../commands/esp401/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP402]](../commands/esp402/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP410]](../commands/esp410/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP420]](../commands/esp420/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP444]](../commands/esp444/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set(only RESTART)</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP450]](../commands/esp450/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP500]](../commands/esp500/)</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP510]](../commands/esp510/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP550]](../commands/esp550/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP555]](../commands/esp555/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP600]](../commands/esp600/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP610]](../commands/esp610/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP620]](../commands/esp620/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP700]](../commands/esp700/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP701]](../commands/esp701/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP710]](../commands/esp710/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP715]](../commands/esp715/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP720]](../commands/esp720/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP730]](../commands/esp730/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP740]](../commands/esp740/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP750]](../commands/esp750/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP780]](../commands/esp780/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get</td>
+    </tr>
+    <tr>
+      <td>[[ESP790]](../commands/esp790/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP800]](../commands/esp800/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP900]](../commands/esp900/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP901]](../commands/esp901/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP910]](../commands/esp910/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get/Set</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP930]](../commands/esp930/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP931]](../commands/esp931/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Get</td>
+      <td>Get/Set</td>
+    </tr>
+    <tr>
+      <td>[[ESP999]](../commands/esp999/)</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Set</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 ## API Description
 

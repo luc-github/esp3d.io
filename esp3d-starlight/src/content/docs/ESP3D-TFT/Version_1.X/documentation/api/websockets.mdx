@@ -80,34 +80,88 @@ The frame format is:
  type: client -> esp
   Status Request:
 
-  | `S` | `R` | 0 | 0 |
-  | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`S`</td><td>`R`</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
 
 with hexadecimal values: 
 
-  |0x53 | 0x52 | 0 | 0 |
-  | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>0x53</td><td>0x52</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
  
 
  Response frame uses an inverted header:
 Response Status: 
 
- | `R` | `S` | 0 | 1 | `A` |
- | - | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`R`</td><td>`S`</td><td>0</td><td>1</td><td>`A`</td></tr>
+</tbody>
+</table>
+</div>
 
 with hexadecimal values: 
 
- | 0x52 | 0x53 | 0 | 1 | 0x41 |
- | - | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>0x52</td><td>0x53</td><td>0</td><td>1</td><td>0x41</td></tr>
+</tbody>
+</table>
+</div>
 
 The first byte of the response indicates the state:   
 
-|Code | Hexa | Meaning|
-|-|-|-|
-|`B` | 0x42| busy|
-|`O` | 0x4F|idle/ok|
-|`E` | 0x45|error|
-|`A` | 0x41|abort|
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Hexa</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`B`</td>
+      <td>0x42</td>
+      <td>busy</td>
+    </tr>
+    <tr>
+      <td>`O`</td>
+      <td>0x4F</td>
+      <td>idle/ok</td>
+    </tr>
+    <tr>
+      <td>`E`</td>
+      <td>0x45</td>
+      <td>error</td>
+    </tr>
+    <tr>
+      <td>`A`</td>
+      <td>0x41</td>
+      <td>abort</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 |`D` | 0x44|download ongoing
 |`U` | 0x55|upload ongoing
 
@@ -119,8 +173,13 @@ error code and string,
 1 byte : string size 0->255
 XX bytes for the string
 
-|`R`|`S`|x|x|`C`|4|X|..|..|
-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`R`</td><td>`S`</td><td>x</td><td>x</td><td>`C`</td><td>4</td><td>X</td><td>..</td><td>..</td></tr>
+</tbody>
+</table>
+</div>
 
 #### For Upload:
 Upload information: 
@@ -132,8 +191,13 @@ xx bytes : filename string
 4 bytes : currently processed bytes
 4 bytes : last packet id processed
 
-|`R`|`S`|x|x|`U`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`R`</td><td>`S`</td><td>x</td><td>x</td><td>`U`</td><td>X</td><td>..</td><td>..</td><td>X</td><td>..</td><td>..</td><td>S1</td><td>S1</td><td>S1</td><td>S1</td><td>S2</td><td>S2</td><td>S2</td><td>S2</td></tr>
+</tbody>
+</table>
+</div>
 
 #### For Download:
 Download information:
@@ -145,14 +209,24 @@ xx bytes : filename string
 4 bytes : currently processed bytes
 4 bytes : last packet id processed 
 
-|`R`|`S`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|S2|S2|S2|S2|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`R`</td><td>`S`</td><td>x</td><td>x</td><td>`D`</td><td>X</td><td>..</td><td>..</td><td>X</td><td>..</td><td>..</td><td>S1</td><td>S1</td><td>S1</td><td>S1</td><td>S2</td><td>S2</td><td>S2</td><td>S2</td></tr>
+</tbody>
+</table>
+</div>
 
 ### Start upload frame
 Header is: 
 
-| `S` | `U` | 0 | 0 |   
-| - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`S`</td><td>`U`</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
 
 The content is: 
 1 byte : path size 0->255
@@ -161,35 +235,60 @@ XX bytes : the path string
 xx bytes : filename string
 4 bytes : total file size 
 
-|`S`|`U`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`S`</td><td>`U`</td><td>x</td><td>x</td><td>`D`</td><td>X</td><td>..</td><td>..</td><td>X</td><td>..</td><td>..</td><td>S1</td><td>S1</td><td>S1</td><td>S1</td></tr>
+</tbody>
+</table>
+</div>
 
 If the answer is:
 
-|`U`|`S`|0|1|`O`|
-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`U`</td><td>`S`</td><td>0</td><td>1</td><td>`O`</td></tr>
+</tbody>
+</table>
+</div>
 
 It means transfer can start.
 
 ### Transfer upload frame
 Header is:
 
-| `U` | `P` | x | x | ID | ID | ID | ID |..|..|  
-| - | - | - | - | - | - | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`U`</td><td>`P`</td><td>x</td><td>x</td><td>ID</td><td>ID</td><td>ID</td><td>ID</td><td>..</td><td>..</td></tr>
+</tbody>
+</table>
+</div>
 
 4 bytes is packet id
 XXXX bytes is data
 
 if packet is received the answer is:
 
-|`P`|`U`|0|5|`O`| ID | ID | ID | ID |
-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`P`</td><td>`U`</td><td>0</td><td>5</td><td>`O`</td><td>ID</td><td>ID</td><td>ID</td><td>ID</td></tr>
+</tbody>
+</table>
+</div>
 
 ### Start download frame
 Header is: 
 
-| `S` | `D` | 0 | 0 |   
-| - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`S`</td><td>`D`</td><td>0</td><td>0</td></tr>
+</tbody>
+</table>
+</div>
 
 The content is: 
 1 byte : path size 0->255
@@ -198,43 +297,88 @@ XX bytes : the path string
 xx bytes : filename string
 4 bytes : total file size 
 
-|`S`|`D`|x|x|`D`|X|..|..|X|..|..|S1|S1|S1|S1|
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`S`</td><td>`D`</td><td>x</td><td>x</td><td>`D`</td><td>X</td><td>..</td><td>..</td><td>X</td><td>..</td><td>..</td><td>S1</td><td>S1</td><td>S1</td><td>S1</td></tr>
+</tbody>
+</table>
+</div>
 
 If the answer is:
 
-|`D`|`S`|0|1|`O`|
-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`D`</td><td>`S`</td><td>0</td><td>1</td><td>`O`</td></tr>
+</tbody>
+</table>
+</div>
 
 It means transfer can start.
 
 ### Transfer download frame
 Header is: 
 
-| `D` | `P` | x | x | ID | ID | ID | ID |..|..|  
-| - | - | - | - | - | - | - | - | - | - |
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`D`</td><td>`P`</td><td>x</td><td>x</td><td>ID</td><td>ID</td><td>ID</td><td>ID</td><td>..</td><td>..</td></tr>
+</tbody>
+</table>
+</div>
 
 4 bytes is packet id
 XXXX bytes is data
 
 if packet is received the answer is :
 
-|`P`|`D`|0|5|`O`| ID | ID | ID | ID |
-|-|-|-|-|-|-|-|-|-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`P`</td><td>`D`</td><td>0</td><td>5</td><td>`O`</td><td>ID</td><td>ID</td><td>ID</td><td>ID</td></tr>
+</tbody>
+</table>
+</div>
 
 ### Command frame
 Header is: 
 
-| `C` | `M` | 0 | 1 | X |
-| - | - | - | - |-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`C`</td><td>`M`</td><td>0</td><td>1</td><td>X</td></tr>
+</tbody>
+</table>
+</div>
 
 Commands: 
 
-|Code | Hexa | Meaning|
-|-|-|-|
-|`A` | 0x41| abort|
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Hexa</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`A`</td>
+      <td>0x41</td>
+      <td>abort</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 Abort command frame
 
-| `C` | `M` | 0 | 1 | `A` |
-| - | - | - | - |-|
+<div class="rounded-table">
+<table class="table-line">
+<tbody>
+<tr><td>`C`</td><td>`M`</td><td>0</td><td>1</td><td>`A`</td></tr>
+</tbody>
+</table>
+</div>

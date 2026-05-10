@@ -1,0 +1,45 @@
+---
+title: SSDP Discovery
+description: Find your ESP3D device using SSDP (Simple Service Discovery Protocol)
+---
+
+import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+import { Icon } from 'astro-icon/components';
+
+SSDP (Simple Service Discovery Protocol) is a UPnP-based protocol that allows devices to announce themselves on the local network. ESP3D broadcasts an SSDP response so you can find its IP address without any prior configuration.
+
+---
+
+## By operating system
+
+<CardGrid>
+  <Card title="Windows" icon="seti:windows">
+    Supported natively — open **File Explorer → Network** to see your ESP3D device listed under *Other Devices*.
+
+    Click on the device to open its web interface directly.
+
+    ![SSDP on Windows](/img/discovery/ssdp-win.png)
+  </Card>
+  <Card title="Linux" icon="linux">
+    Install `gupnp-tools` and run `gssdp-discover`:
+
+    ```bash
+    sudo apt install gupnp-tools
+    gssdp-discover -i <interface> --timeout=3
+    ```
+  </Card>
+  <Card title="macOS" icon="apple">
+    No native UPnP/SSDP browser. Use a third-party tool from the Mac App Store such as **Network Radar** or **LanScan**.
+  </Card>
+  <Card title="">
+    <span class="card-platform-header"><span class="card-platform-icon"><Icon name="simple-icons:android" /></span><span class="card-platform-title">Android</span></span>
+
+    Use **[SSDP/UPnP Scanner](https://play.google.com/store/apps/details?id=com.vgc.ssdpscan)** — free app that lists all UPnP devices on your network with their IP address and a direct link.
+
+    ![SSDP on Android](/img/discovery/ssdp-android.jpg)
+  </Card>
+</CardGrid>
+
+<Aside type="note">
+  SSDP must be enabled in your ESP3D configuration. Check your firmware settings if the device does not appear.
+</Aside>

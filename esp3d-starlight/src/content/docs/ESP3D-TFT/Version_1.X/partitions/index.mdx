@@ -4,22 +4,110 @@ title: partitions
 
 ## Sumup of ESP3D-TFT partitions (ESP-IDF)
 
-| Flash Size | App Partition Size | SPIFFS Size |
-|------------|---------------------|-------------|
-| 4 MB       | 1.94 MB (0x1E0000)  | 250 KB (0x3E800) |
-| 8 MB       | 2.5 MB (0x280000)   | 2.94 MB (0x2F0000) |
-| 16 MB      | 2.5 MB (0x280000)   | 10.94 MB (0xAF0000) |
-| 32 MB      | 2.5 MB (0x280000)   | 26.94 MB (0x1AF0000) |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Flash Size</th>
+      <th>App Partition Size</th>
+      <th>SPIFFS Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4 MB</td>
+      <td>1.94 MB (0x1E0000)</td>
+      <td>250 KB (0x3E800)</td>
+    </tr>
+    <tr>
+      <td>8 MB</td>
+      <td>2.5 MB (0x280000)</td>
+      <td>2.94 MB (0x2F0000)</td>
+    </tr>
+    <tr>
+      <td>16 MB</td>
+      <td>2.5 MB (0x280000)</td>
+      <td>10.94 MB (0xAF0000)</td>
+    </tr>
+    <tr>
+      <td>32 MB</td>
+      <td>2.5 MB (0x280000)</td>
+      <td>26.94 MB (0x1AF0000)</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 ## Structure
 
-| Name |   Type | SubType | Offset|  Size | Flags |
-|-|-|-|-|-|-|
-|nvs |      data | nvs |     0x9000 |  0x5000 |
-|otadata |  data | ota |     0xe000 |  0x2000 |
-|app0 |     app |  ota_0 |   0x10000 | TBD |
-|app1 |     app |  ota_1 |   TBD |TBD |
-|spiffs |   data | spiffs |  TBD |TBD |
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>SubType</th>
+      <th>Offset</th>
+      <th>Size</th>
+      <th>Flags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nvs</td>
+      <td>data</td>
+      <td>nvs</td>
+      <td>0x9000</td>
+      <td>0x5000</td>
+    </tr>
+    <tr>
+      <td>otadata</td>
+      <td>data</td>
+      <td>ota</td>
+      <td>0xe000</td>
+      <td>0x2000</td>
+    </tr>
+    <tr>
+      <td>app0</td>
+      <td>app</td>
+      <td>ota_0</td>
+      <td>0x10000</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>app1</td>
+      <td>app</td>
+      <td>ota_1</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td>spiffs</td>
+      <td>data</td>
+      <td>spiffs</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
 
 <aside class="info-panel">
   <strong>Note:</strong>
