@@ -82,6 +82,24 @@
   color: #fca5a5;
 }
 
+/* Text alignment utility */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive image utilities (replaces hardcoded width="...") */
+.img-small {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.img-medium {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
 /* Panel icons */
 .warning-panel::before,
 .info-panel::before,
@@ -142,6 +160,12 @@
 .info-panel h4 {
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+.info-panel h4:first-child,
+.warning-panel h4:first-child,
+.danger-panel h4:first-child {
+  margin-top: 0;
 }
 
 .info-panel p,
@@ -221,7 +245,23 @@ img[data-zoom] {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 1rem 0 1.5rem;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+:root[data-theme='dark'] .badges {
+  background: var(--sl-color-gray-5, #1e293b);
+  border-color: var(--sl-color-gray-4, #334155);
+}
+
+.sl-markdown-content .badges > p {
+  display: contents;
+  margin: 0;
 }
 
 .badges a {
@@ -871,4 +911,244 @@ main .content-panel + .content-panel::before {
 :root[data-theme='dark'] .sl-markdown-content .table-line tbody td code {
   background: var(--sl-color-gray-4, #334155);
   color: var(--sl-color-gray-1, #f1f5f9);
+}
+
+
+/* ============================================================
+   Sponsors page — modernised with Starlight variables + dark mode
+   ============================================================ */
+
+.sponsors-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sponsors-page .intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sponsors-page .lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--sl-color-gray-2, #475569);
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.sponsors-page .reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.sponsors-page .reason-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.sponsors-page .reason-item h4 {
+  color: var(--sl-color-accent, #2563eb);
+  margin: 0 0 1rem 0;
+}
+
+.sponsors-page .repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sponsors-page .repo-card {
+  display: block;
+  border: 1px solid var(--sl-color-gray-5, #e2e8f0);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  background: var(--sl-color-white, #ffffff);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sponsors-page .repo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sponsors-page .repo-card h3 {
+  color: var(--sl-color-accent, #2563eb);
+  margin: 0 0 1rem 0;
+}
+
+.sponsors-page .repo-card p {
+  color: var(--sl-color-gray-2, #475569);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.sponsors-page .repo-link {
+  color: var(--sl-color-accent, #2563eb);
+  font-family: monospace;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.sponsors-page .support-options {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sponsors-page .paypal-button {
+  margin: 2rem 0;
+}
+
+.sponsors-page .benefits {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.sponsors-page .note {
+  color: var(--sl-color-gray-2, #475569);
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.sponsors-page .tier-group {
+  margin-bottom: 4rem;
+}
+
+.sponsors-page .tier-card {
+  border: 1px solid var(--sl-color-gray-5, #e2e8f0);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: var(--sl-color-white, #ffffff);
+}
+
+.sponsors-page .tier-card h4 {
+  color: var(--sl-color-gray-1, #0f172a);
+  margin: 0 0 1rem 0;
+}
+
+.sponsors-page .price {
+  font-size: 1.1rem;
+  color: var(--sl-color-gray-2, #475569);
+  margin-bottom: 1rem;
+}
+
+.sponsors-page .tier-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sponsors-page .tier-card li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.sponsors-page .tier-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--sl-color-accent, #2563eb);
+}
+
+.sponsors-page .sponsor-showcase {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.sponsors-page .sponsor-card {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+  background: var(--sl-color-white, #ffffff);
+}
+
+.sponsors-page .sponsor-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.sponsors-page .contact-info {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--sl-color-gray-6, #f8fafc);
+  border-radius: 8px;
+}
+
+.sponsors-page .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sponsors-page .contact-info li {
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .sponsors-page {
+    padding: 1rem;
+  }
+  .sponsors-page .repo-grid {
+    grid-template-columns: 1fr;
+  }
+  .sponsors-page .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode */
+:root[data-theme='dark'] .sponsors-page .repo-card {
+  background: var(--sl-color-gray-5, #1e293b);
+  border-color: var(--sl-color-gray-4, #334155);
+}
+
+:root[data-theme='dark'] .sponsors-page .repo-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme='dark'] .sponsors-page .repo-card p {
+  color: var(--sl-color-gray-3, #94a3b8);
+}
+
+:root[data-theme='dark'] .sponsors-page .tier-card {
+  background: var(--sl-color-gray-5, #1e293b);
+  border-color: var(--sl-color-gray-4, #334155);
+}
+
+:root[data-theme='dark'] .sponsors-page .tier-card h4 {
+  color: var(--sl-color-gray-1, #f1f5f9);
+}
+
+:root[data-theme='dark'] .sponsors-page .price {
+  color: var(--sl-color-gray-3, #94a3b8);
+}
+
+:root[data-theme='dark'] .sponsors-page .sponsor-card {
+  background: var(--sl-color-gray-5, #1e293b);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme='dark'] .sponsors-page .contact-info {
+  background: var(--sl-color-gray-5, #1e293b);
+}
+
+:root[data-theme='dark'] .sponsors-page .lead,
+:root[data-theme='dark'] .sponsors-page .note {
+  color: var(--sl-color-gray-3, #94a3b8);
 }
