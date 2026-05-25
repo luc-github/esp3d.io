@@ -1,0 +1,84 @@
+---
+title: "Web Handlers"
+---
+
+# Web Handlers
+
+The embedded HTTP server exposes the following endpoints. All paths are relative to the device IP (e.g., `http://192.168.1.100/`).
+
+## Static & System
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Serves the embedded WebUI (`index.html.gz`) |
+| GET | `/favicon.ico` | Device favicon |
+| GET | `/description.xml` | SSDP description XML |
+
+## Commands & Config
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/command?cmd=<command>` | Execute an ESP command (e.g., `[ESP100]`) |
+| GET | `/config` | Serve raw `esp3dcnf.ini` from flash |
+
+## Filesystem
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/files?action=list&path=<path>` | List flash filesystem |
+| POST | `/files` | Upload file(s) to flash (multipart) |
+| GET | `/sdfiles?action=list&path=<path>` | List SD card |
+| POST | `/sdfiles` | Upload file(s) to SD (multipart) |
+
+Actions supported on `/files` and `/sdfiles`:
+- `list` — List directory contents
+- `delete` — Delete a file
+- `deletedir` — Delete a directory
+- `createdir` — Create a directory
+
+## Authentication
+
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/login` | Login with `USER` + `PASSWORD` + `SUBMIT=yes` |
+
+## Camera
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/snap` | Capture a camera frame (JPEG) |
+
+## Firmware Update
+
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/updatefw` | Upload firmware binary for OTA update |
+
+## WebSocket
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/ws` | Terminal/WebUI WebSocket (subprotocol `webui-v3`) |
+| GET | `/wsdata` | Data/tools WebSocket (subprotocol `esp3d-v1`) |
+
+## WebDAV
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/webdav/?*` | Read file/directory |
+| PUT | `/webdav/?*` | Write file |
+| DELETE | `/webdav/?*` | Delete file/directory |
+| MKCOL | `/webdav/?*` | Create directory |
+| PROPFIND | `/webdav/?*` | List properties |
+| OPTIONS | `/webdav/?*` | CORS/options |
+| HEAD | `/webdav/?*` | Check existence |
+
+## Error handling
+
+- **404** — `file_not_found` handler returns a generic error page
+- **401** — `not_authenticated` handler triggers login flow
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>Handler availability depends on build configuration (CMake features). Some handlers are only present when the corresponding service is compiled in.</p>
+</aside>

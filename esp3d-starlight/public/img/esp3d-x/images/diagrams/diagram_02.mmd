@@ -1,0 +1,20 @@
+flowchart TD
+    START([Enter Probe Screen])
+    AXIS[Select Axis]
+    CONFIG[Configure Probe Settings]
+    POSITION[Position Tool]
+    EXECUTE[Execute Probe]
+    RESULT{Success?}
+    SAVE[Save Reference]
+    RETRY[Adjust & Retry]
+    DONE([Exit])
+
+    START --> AXIS
+    AXIS --> CONFIG
+    CONFIG --> POSITION
+    POSITION --> EXECUTE
+    EXECUTE --> RESULT
+    RESULT -->|Yes| SAVE
+    RESULT -->|No| RETRY
+    RETRY --> POSITION
+    SAVE --> DONE

@@ -1,0 +1,28 @@
+---
+title: "Hardware"
+---
+
+ESP3D-X currently supports a limited set of boards. Support for additional boards will be added progressively.
+
+## Supported boards
+
+| Board | MCU | Display | Touch | Encoder | Buttons | SD | Status |
+|---|---|---|---|---|---|---|---|
+| [PiBot CNC Pendant V1](/esp3d-x/version_2x/hardware/pibot-pendant-v1/) | ESP32 | 3.2" TFT 320×240 | Capacitive | ✓ | 3 + switch | ✓ | **Reference board** |
+| ESP32-C3 Bare | ESP32-C3 | — | — | — | — | — | WiFi bridge only |
+| ESP32-S3 WROOM CAM | ESP32-S3 | — | — | — | — | — | In development |
+| FYSETC WiFi Pro | ESP32 | — | — | — | — | — | WiFi bridge only |
+
+## Board profiles
+
+The firmware separates concerns so the same ESP32 + TFT class board can ship in different roles:
+
+- **Connectivity**: UART, Bluetooth, or IP (TCP / WebSocket)
+- **Inputs**: TFT, touch, rotary encoder, buttons, buzzer, SD, etc.
+- **Target firmware**: CNC (FluidNC / grblHAL) or 3D printer (Marlin / Smoothieware / Repetier)
+
+Each board provides a `board_config.cmake` that declares its hardware capabilities.
+
+## Adding a new board
+
+See the [board build guidelines](https://github.com/luc-github/ESP3D-X/blob/main/docs/guides/board_build_guidelines.md) in the repository for step-by-step instructions on adding a new board and creating build variants.

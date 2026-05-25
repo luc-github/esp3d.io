@@ -4,6 +4,65 @@ description: "Steps and supported languages"
 weight: 
 ---
 
+## Language pack manifest (`_manifest`)
+
+Starting with WebUI 3.1, a language pack file can carry an optional `_manifest` key at the top level. It is stripped before translations are applied and never shown to users as a translated string. Existing packs without `_manifest` continue to work without any change.
+
+```json
+{
+    "_manifest": {
+        "version": "1.2.0",
+        "owner": "Jane Doe",
+        "github": "https://github.com/janedoe/esp3d-lang-ar",
+        "description": "Arabic translation for ESP3D WebUI.",
+        "supportedVersion": "3.*",
+        "targetSystem": "*",
+        "rtl": true,
+        "fonts": [
+            {
+                "family": "Noto Naskh Arabic",
+                "src": "https://fonts.gstatic.com/s/notonaskharabic/v33/RrQ5bpV-9Dd1b1OAGA6M9PkyDuVBePeKNaxcsss0Y7bwvc9smDZ.woff2",
+                "format": "woff2",
+                "weight": "400",
+                "display": "swap"
+            }
+        ]
+    },
+    "lang": "العربية",
+    "S1": "الاتصال",
+    "S2": "قطع الاتصال"
+}
+```
+
+The `_manifest` key must be the **first** key in the file.
+
+### `_manifest` fields
+
+| Field | Type | Description |
+|---|---|---|
+| `version` | string | Pack version (semver) |
+| `owner` | string | Author / maintainer name |
+| `github` | string | Repository or homepage URL |
+| `description` | string | Short description (English) |
+| `supportedVersion` | string | WebUI version pattern. Informational only — the pack is never rejected. |
+| `targetSystem` | string | Comma-separated targets. Informational only. |
+| `rtl` | boolean | `true` → sets `dir="rtl"` on `<html>` when this language is active |
+| `fonts` | array | Custom fonts to load when this language is active (same format as theme fonts) |
+
+All fields are optional. An empty `_manifest: {}` is valid.
+
+### RTL support
+
+When `rtl: true` is set, the WebUI adds `dir="rtl"` to `<html>` while the language is active. This reverses flex direction, text alignment, scrollbars, and margins for all standard CSS that respects `dir`. No extra CSS is needed in the pack.
+
+RTL is also propagated into extension iframes automatically.
+
+### Fonts
+
+Some languages require a specific font to display correctly (Arabic, Hebrew, Chinese, Japanese, Korean, etc.). The `fonts` array lets the language pack load that font when active, independently of the active theme. The language pack ensures the font *data* is available; the theme ensures the `font-family` CSS is set.
+
+Font objects support the same three source formats as theme fonts (`data`, `src`, `sources`).
+
 ## Generate template files
 
 Use the script `npm run template` to generate up to date template files for all packs
@@ -159,7 +218,7 @@ To generate a language pack file, you need to:
 
 -   Build the final packs using the following command to compress the final pack targeting the file :
 
-    `npm run buildlangpack lang-&lt;target language&gt;.json`
+    `npm run buildlangpack lang-<target language>.json`
 
     for example :   
     
@@ -178,16 +237,26 @@ To generate a language pack file, you need to:
 
 You can then use the compressed file in the WebUI or the non compressed file to test the language pack with the test server of WebUI 
 
+## Generate all language packs at once
+
+From root `languages/lang-*.json` files, build every pack (and compress) in one go:
+
+```bash
+npm run buildlangpack:all
+```
+
+This runs `buildlangpack` for each root `lang-*.json`. Ensure `npm run template` has been run first.
+
 ## Compare template pack with language pack file
 
 If you have a doubt about missing entries or extra entries, you can use the following script to compare current language pack content against the template language pack to see if the language pack need to be updated.
 
-`npm run check reference=&lt;template path file&gt; target=&lt;not compressed language pack&gt;`
+`npm run check reference=<template path file> target=<not compressed language pack>`
 
 ```
 npm run check target=languages/printerpack/lang-fr.json reference=languages/printerpack/en.json
 
-> ESP3D-WEBUI@3.0.0 check
+> ESP3D-WEBUI@3.1.0 check
 > node ./config/checkpack.js "target=languages/printerpack/lang-fr.json" "reference=languages/printerpack/en.json"
 
 Comparing files
@@ -204,9 +273,56 @@ S24 : Close
 Comparaison done
 ```
 
+## Add missing entries and report untranslated
+
+1. **Add missing keys in root language files** (so they contain every key from the template; untranslated = `""`):
+   ```bash
+   npm run template
+   npm run fill-missing-root
+   ```
+2. **Rebuild all packs** (packs will now include every key; missing translations are `""`):
+   ```bash
+   npm run buildlangpack:all
+   ```
+3. **Add missing keys in existing pack files only** (without rebuilding from root):
+   ```bash
+   npm run fill-missing-keys
+   ```
+4. **Report keys that are missing, empty, or same as English** (for translation or auto-translation):
+   ```bash
+   npm run report-untranslated
+   ```
+   Report is written to `languages/untranslated-report.json`.
+
+## Automatic translation from report
+
+After generating `untranslated-report.json`, you can fill missing/empty entries using **LibreTranslate** (or a compatible API) or **Anthropic (Claude)**.
+
+```bash
+npm run translate-from-report
+```
+
+**Options** (env or CLI):
+- `--report=<path>` — path to report (default: `languages/untranslated-report.json`)
+- `--pack=<name>` — only this pack (e.g. `printerpack`)
+- `--lang=<code>` — only this language (e.g. `fr`)
+- `--include-same` — also translate keys that are currently identical to English
+- `--dry-run` — do not write files; only log what would be translated
+- `--backend=anthropic` — use Claude instead of LibreTranslate
+
+**Env:**
+- `TRANSLATE_BACKEND` — `libretranslate` (default) or `anthropic`
+- `LIBRE_TRANSLATE_URL` — LibreTranslate base URL
+- `LIBRE_TRANSLATE_KEY` — optional LibreTranslate API key
+- `ANTHROPIC_API_KEY` — required for `--backend=anthropic`
+
+## Scan for language packs
+
+Starting with WebUI 3.1, the WebUI can scan for language packs in `/languages` (or root `/` as fallback). The scan reads the `_manifest` if present and displays metadata in the language list. Language packs are never rejected based on `supportedVersion` or `targetSystem` — these fields are informational only.
+
 ## Propose / update language pack files
 
-Please do a PR to webUI 3.0 github branch or submit ticket with at least the reference file, a complete PR include also generated compressed and clear version of the language pack files for each target using the script `npm run buildlangpack lang-&lt;target language&gt;.json`
+Please do a PR to webUI 3.1 github branch or submit ticket with at least the reference file, a complete PR include also generated compressed and clear version of the language pack files for each target using the script `npm run buildlangpack lang-<target language>.json`
 
   
 

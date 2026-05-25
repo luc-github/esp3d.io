@@ -1,6 +1,6 @@
 ---
 title: ESP3D Ecosystem
-description: Official documentation for ESP3D, ESP3DLib, ESP3D-TFT and ESP3D-WebUI
+description: Official documentation for ESP3D, ESP3DLib, ESP3D-TFT, ESP3D-X and ESP3D-WebUI
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
@@ -53,6 +53,8 @@ graph LR
   A -->|No| E{<strong>Hardware ?</strong>}
   E -->|ESP8266| F[ESP3D]
   E -->|ESP32| G{<strong>Has Touchscreen ?</strong>}
-  G -->|Yes| H[ESP3D-TFT]
+  G -->|Yes| H{<strong>CNC Pendant ?</strong>}
+  H -->|Yes| J[ESP3D-X]
+  H -->|No| K[ESP3D-TFT]
   G -->|No| I[ESP3D]
 ```

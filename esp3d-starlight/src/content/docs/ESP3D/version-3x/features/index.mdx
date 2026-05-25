@@ -7,6 +7,9 @@ The V3.X features are :
 
 * Embedded maintenance page (terminal / local FS update / ESP3D Firmware update)
 * WebUI support
+    * Note: The embedded web server does **not** serve Brotli-compressed (`.br`) assets. Brotli requires HTTPS with a valid (non self-signed) certificate and extra memory, which is not available in ESP3D at this time:
+        * **ESP8266 / ESP8285**: Insufficient memory for HTTPS → not supported
+        * **ESP32**: No HTTPS server currently implemented → possible future addition
 * ESP8285 / ESP8266 / ESP32 / ESP32-S2 / ESP32-S3 / ESP32-C3 support
 * Wifi / ethernet support
 * Raw TCP / serial bridge support (light telnet)
@@ -14,6 +17,7 @@ The V3.X features are :
 * Websocket / serial bridge support
 * Serial / Serial bridge support
 * Bluetooth Serial bridge support (when BT supported)
+* WebSocket file transfer support (binary V1 protocol on `/wsdata`)
 * MKS Serial protocol support
 * Serial commands configurations
 * Authentication support (admin / user)
@@ -30,12 +34,13 @@ The V3.X features are :
     * Connection
       * Direct connection
         * e.g.: ESP32cam
-      * Sharing connection using hardware switch
+      * Sharing connection using hardware switch (V2.2 mechanism)
         * e.g.: Panucatt Wifi Backpack / Azteeg X5 WiFi
+        * FYSETC WiFi SD
       * MKS fast upload by serial
-    * NOT SUPPORTED ANYMORE 
+    * NOT SUPPORTED ANYMORE
         * M28/M29 File transfer protocol
-    * Serial file transfer using custom protocol (planned)
+    * WebSocket file transfer using V1 binary protocol on `/wsdata`
 * USB support
     * planned
 * Global FS under FTP / Webdav : SD + Local FS in same directory
@@ -55,7 +60,7 @@ The V3.X features are :
     * WebUI
     * TFT/OLED
     * Email
-    * Line
+    * WhatsApp
     * Telegram
     * PushOver
     * IFTTT

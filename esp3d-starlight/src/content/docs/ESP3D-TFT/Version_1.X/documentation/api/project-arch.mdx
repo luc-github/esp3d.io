@@ -113,7 +113,7 @@ The `hardware` directory contains the hardware specific files like drivers, part
 - `drivers_video_i80`: Contains the drivers for the i80 video drivers which cannot be in common drivers because of the specific sdkconfig
 - `drivers_video_rgb`: Contains the drivers for the rgb video drivers which cannot be in common drivers because of the specific sdkconfig
 - `drivers_usb_otg`: Contains the drivers for the usb otg which cannot be in common drivers because of the specific sdkconfig and hardware
-- `&lt;BOARD_NAME&gt;`: Contains the hardware drivers, definitions, partitions and sdkconfig specific files for the &lt;BOARD_NAME&gt; board
+- `<BOARD_NAME>`: Contains the hardware drivers, definitions, partitions and sdkconfig specific files for the `<BOARD_NAME>` board
 - ...
 
 <div class="rounded-table">
@@ -1155,7 +1155,7 @@ const esp32_camera_config_t camera_config = \{
             .grab_mode =
                 CAMERA_GRAB_WHEN_EMPTY, /*!< When buffers should be filled */
 #if CONFIG_CAMERA_CONVERTER_ENABLED
-            .conv_mode = 0, /*!&lt; RGB<-&gt;YUV Conversion mode */
+            .conv_mode = 0, /*!< RGB<->YUV Conversion mode */
 #endif
 
             .sccb_i2c_port = 0, /*!< If pin_sccb_sda is -1, use the already

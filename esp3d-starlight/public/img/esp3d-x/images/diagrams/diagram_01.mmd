@@ -1,0 +1,91 @@
+flowchart TD
+    subgraph Startup
+        UPDATE[Update Screen]
+        SPLASH[Splash Screen]
+    end
+
+    subgraph Main Navigation
+        MAIN[Main Screen]
+        SETTINGS[Settings Screen]
+        INFO[Information Screen]
+        STATUS[Status Screen]
+        JOG[Jog Screen]
+        SD[SD Screen]
+        MACROS[Macros Screen]
+        PROBE[Probe Screen]
+        TOOL[Change Tool Screen]
+    end
+
+    subgraph Settings Submenu
+        LANG[Languages]
+        OUTPUT[Output Selector]
+        BLUETOOTH[Scan Bluetooth]
+        BAUD[Baudrate]
+        WIFISCAN[WiFi Scan]
+        SERVERSCAN[Server Scan]
+        SETLIST[Settings List]
+        CONNSTATUS[Connection Status]
+    end
+
+    subgraph Settings List Submenu
+        POLLING[Polling]
+        TIMEOUT[Time Out]
+    end
+
+    subgraph Shared Screens
+        MSGBOX[Message Box]
+        INPUT[Input Screen]
+        FWSTATUS[Firmware Status]
+    end
+
+    UPDATE -->|Success/Fail| SPLASH
+    SPLASH -->|Auto| MAIN
+
+    MAIN --> SETTINGS
+    MAIN --> INFO
+    MAIN --> STATUS
+    MAIN --> JOG
+    MAIN --> SD
+    MAIN --> MACROS
+    MAIN --> PROBE
+    MAIN --> TOOL
+    MAIN -.->|Tap Status Icon| FWSTATUS
+    MAIN -.->|Tap Connection Icon| CONNSTATUS
+
+    SETTINGS --> LANG
+    SETTINGS --> OUTPUT
+    SETTINGS --> BLUETOOTH
+    SETTINGS --> BAUD
+    SETTINGS --> WIFISCAN
+    SETTINGS --> SERVERSCAN
+    SETTINGS --> SETLIST
+    SETTINGS --> CONNSTATUS
+
+    SETLIST --> POLLING
+    SETLIST --> TIMEOUT
+    SETLIST --> INPUT
+
+    OUTPUT --> MSGBOX
+
+    CONNSTATUS -->|Auth Fail WiFi| WIFISCAN
+    WIFISCAN --> INPUT
+    WIFISCAN --> CONNSTATUS
+    SERVERSCAN --> CONNSTATUS
+
+    STATUS -.->|Tap Status Icon| FWSTATUS
+    JOG -.->|Tap Status Icon| FWSTATUS
+    PROBE -.->|Tap Status Icon| FWSTATUS
+    TOOL -.->|Tap Status Icon| FWSTATUS
+
+    STATUS -.->|Tap Connection Icon| CONNSTATUS
+    JOG -.->|Tap Connection Icon| CONNSTATUS
+    PROBE -.->|Tap Connection Icon| CONNSTATUS
+    TOOL -.->|Tap Connection Icon| CONNSTATUS
+
+    STATUS --> INPUT
+    JOG --> INPUT
+    SD --> INPUT
+    MACROS --> INPUT
+    TOOL --> INPUT
+
+    TOOL <-->|Optional| PROBE

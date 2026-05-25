@@ -4,6 +4,59 @@ description: "Description and sample code"
 weight: 8
 ---
 
+## Extension manifest
+
+Starting with WebUI 3.1, every extension **must include a manifest** declaring its compatibility and metadata. When you use **Scan for extensions** in Settings → Interface → Extra content, the WebUI reads the manifest for each extension file. The manifest can be **inside the extension HTML** (recommended) or in an **external JSON file** (fallback).
+
+### Embedded manifest (recommended)
+
+Put the manifest **inside** your extension HTML so code and metadata stay in one file. Add a `<script>` block with `id="esp3dext-manifest"` and `type="application/json"`:
+
+```html
+<script type="application/json" id="esp3dext-manifest">
+{
+  "name": "My Extension",
+  "owner": "MyName",
+  "version": "1.0.0",
+  "github": "https://github.com/...",
+  "description": "What this extension does.",
+  "icon": "Tool",
+  "target": "panel",
+  "refreshtime": "0",
+  "supportedVersion": "3.*",
+  "targetSystem": "*"
+}
+</script>
+```
+
+The WebUI fetches the extension file and looks for this block first. If found, it uses it and does not request a separate `.json` file.
+
+### External sidecar manifest (fallback)
+
+If no embedded manifest is found, the WebUI looks for a JSON file with the same base name as the extension file (e.g. `esp3dext-myplugin.json` for `esp3dext-myplugin.html`).
+
+- **Location:** Same directory as the extension `.html` / `.html.gz` file.
+- **Name:** Same base name, `.json` extension.
+
+### Manifest format
+
+| Field | Required | Description |
+|---|---|---|
+| `name` | **Yes** | Display name of the extension in the UI. |
+| `target` | **Yes** | Placement: `panel`, `page`, or `content`. |
+| `supportedVersion` | **Yes** | WebUI version pattern. `*` = any version; `3.*` = any 3.x; `3.1.*` = any 3.1.x. |
+| `targetSystem` | **Yes** | Target filter: `*` (all), `3d printer`, `cnc`, `sand table`, `marlin`, `grbl`, `grblhal`. Multiple values: `"3d printer, cnc"`. |
+| `owner` | No | Author name. |
+| `version` | No | Extension version (e.g. `"1.0.0"`). |
+| `github` | No | Repository or homepage URL. |
+| `description` | No | Short description. |
+| `icon` | No | Icon ID from the WebUI icon set. Default: `"Meh"`. |
+| `refreshtime` | No | Refresh interval in ms, or `"0"` for no refresh. |
+
+If the manifest is missing, invalid, or lacks any required field, the extension is shown as **Unsupported**. If `supportedVersion` or `targetSystem` does not match the current WebUI version or target, the extension is not added by the scan.
+
+See the [Extensions documentation](/esp3d-webui/version_3x/documentation/extensions/#extension-manifest) for more details on file naming, scan behaviour, and installation.
+
 - [Basic code](#basic-code)
 - [Send message](#send-message)
 - [Send GCODE command or ESP command](#send-gcode-command-or-esp-command)
@@ -110,8 +163,8 @@ window.onload = (event) => {
 
 ## Send message
 The message structure used by `window.parent.postMessage(msg, '*');` has a defined format: some parameters are mandatory, some are optional, and some depend on the message type:   
-`\{type:'&lt;message type&gt;', target:'webui', id:'[origin]', noDispatch:[true], XXX:YYY\}`   
-`&lt;message type&gt;` is mandatory, it defines the purpose of the message  
+`\{type:'<message type>', target:'webui', id:'[origin]', noDispatch:[true], XXX:YYY\}`   
+`<message type>` is mandatory, it defines the purpose of the message  
 `target:'webui'` is mandatory, it helps filter the message    
 `id:'[origin]'` is optional; it defines which ID should read the response, if any. If present, it can be used by the extension to filter messages. No ID means the message is for everyone   
 `noDispatch:[true]` is optional; if true, it prevents sending an answer, if any. If omitted or set to false, it sends an answer message, if any   
@@ -1286,5 +1339,36 @@ If the message is a modal response, it logs the clicked button (line.response) a
 For the Fields Modal, if the response is 'create' (response1 because validation is bt1), it updates the defaultSettings object with the values entered in the fields (line.inputData).
 For the Input Modal, if the response is 'create' (response1 because validation is bt1), it displays the entered input value (line.inputData).
 
-## Sample codes   
- 
+## Install an extension in Web UI
+
+### Upload it to local filesystem or any path available to web server
+![image](../../extensions/upload_extension.png)
+
+### Add extra panel or page using this extension
+![image](../../extensions/add_extension.png)
+
+It will be displayed according your settings
+![image](../../extensions/extra_extension_panel.png)
+
+## Sample codes
+
+The following sample extensions demonstrate each API feature. Each file contains an embedded manifest and is ready to use.
+
+| Sample | Description | Download |
+|---|---|---|
+| **Hello World** | Sidecar manifest example (external `.json` file) | [helloworld.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/helloworld.html.gz) / [helloworld.json](/esp3d-webui/version_3x/documentation/api/extensions/attachments/helloworld.json) |
+| **Capabilities 1** | Query WebUI capabilities (connection, features, interface, settings, extensions) | [capabilities1.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/capabilities1.html.gz) |
+| **Capabilities 2** | Query capabilities with a dropdown selector | [capabilities2.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/capabilities2.html.gz) |
+| **Dispatch** | Broadcast messages between extension panels | [dispatch.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/dispatch.html.gz) |
+| **Download** | Download files from the device filesystem | [download.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/download.html.gz) |
+| **Extension Settings** | Save and load extension-specific data to `preferences.json` | [extension_settings.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/extension_settings.html.gz) |
+| **Icons** | Load and display WebUI icons | [icons.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/icons.html.gz) |
+| **Modal** | Demonstrates all four modal dialog types | [modal.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/modal.html.gz) |
+| **Query** | Send API queries (e.g. list files) | [query.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/query.html.gz) |
+| **Sound** | Play device sounds and custom sequences | [sound.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/sound.html.gz) |
+| **Terminal** | Send commands and display output | [terminal.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/terminal.html.gz) |
+| **Toast** | Show toast notifications | [toast.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/toast.html.gz) |
+| **Translate** | Translate UI strings by key | [translate.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/translate.html.gz) |
+| **Upload** | Upload files from browser to device | [upload.html.gz](/esp3d-webui/version_3x/documentation/api/extensions/attachments/upload.html.gz) |
+
+To use a sample, upload the `.html.gz` file to your device (e.g. in `/extensions/`) and use **Scan for extensions** in Settings → Interface → Extra content to add it.

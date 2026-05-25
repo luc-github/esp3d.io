@@ -6,12 +6,12 @@ description: "Process local file on /FS or /SD"
 Process local file on /FS or /SD
 
 ## Input
-`[ESP700]&lt;filename&gt; json=&lt;no&gt; pwd=&lt;admin password&gt;`
+`[ESP700]<filename> json=<no> pwd=<admin password>`
 
 * json=no
 the output format can be in JSON or plain text
 
-* pwd=&lt;admin password&gt;
+* pwd=`<admin password>`
 the admin password if authentication is enabled
 
 * filename
@@ -31,5 +31,5 @@ the admin password if authentication is enabled
 
 * `cmd` Id of requested command, should be `700`
 * `status` status of command, should be `ok`
-* `data` content of response, here `Processing &lt;filename&gt;` when file is processing
+* `data` content of response, here `Processing <filename>` when file is processing
 

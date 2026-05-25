@@ -1,0 +1,68 @@
+---
+title: "Installation"
+---
+
+## Prerequisites
+
+- [ESP-IDF 5.4.x](https://docs.espressif.com/projects/esp-idf/en/v5.4/esp32/get-started/index.html) installed and configured
+- Python 3.8+
+- USB cable connected to your ESP32 board
+
+## Clone the repository
+
+```bash
+git clone https://github.com/luc-github/ESP3D-X.git
+cd ESP3D-X
+```
+
+## Build
+
+The project uses a central build launcher `build_all.py`.
+
+### List available targets
+
+```bash
+python build_all.py --list
+```
+
+### Build a specific variant
+
+For example, the PiBot V1 8MB WiFi FluidNC variant:
+
+```bash
+python build_all.py 8mb_wifi_fluidnc
+```
+
+### Build all variants
+
+```bash
+python build_all.py
+```
+
+### Clean build
+
+```bash
+python build_all.py --clean 8mb_wifi_fluidnc
+```
+
+## Flash
+
+After building, flash the firmware to your board:
+
+```bash
+cd build_8mb_wifi_fluidnc
+idf.py flash
+```
+
+Or use the pre-built installers in the `installer/` directory if available for your board.
+
+## First boot
+
+On first boot, the pendant will create a WiFi access point (if WiFi is enabled) or wait for a Bluetooth/Serial connection. Use the [User Guide](/esp3d-x/version_2x/user-guide/) to learn how to navigate the interface and configure your machine connection.
+
+## Configuration
+
+The pendant can be configured via:
+- On-screen settings menus
+- `esp3dcnf.ini` file on the SD card
+- Embedded WebUI (when WiFi is enabled)

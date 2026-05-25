@@ -1,0 +1,156 @@
+---
+title: "WebSockets"
+---
+
+# WebSocket Protocol
+
+ESP3D-X exposes **two separate WebSocket endpoints** on the same HTTP port. They use different URI paths and subprotocols. A client **must** use the correct pair.
+
+| Endpoint | URI | Subprotocol (`Sec-WebSocket-Protocol`) | Role |
+|----------|-----|----------------------------------------|------|
+| **Terminal / WebUI** | `/ws` | `webui-v3` | Machine/serial stream + WebUI messages |
+| **Data (tools)** | `/wsdata` | `esp3d-v1` | ESP commands + V1 binary file transfer |
+
+**Common mistake:** sending V1 binary opcodes on `/ws`. The server treats binary as raw stream data — **transfers are impossible on that socket by design**.
+
+---
+
+## 1. Terminal WebSocket — `/ws`, subprotocol `webui-v3`
+
+### Text frames (ESP → WebUI)
+
+Format: `<label>:<message>`
+
+| Message | Description |
+|---------|-------------|
+| `currentID:<id>` | Sent on connect; last used session ID |
+| `activeID:<id>` | Broadcast when a new client connects; mismatched IDs should disconnect |
+| `PING:<time_left>:<timeout>` | Authentication keepalive response |
+| `PONG:<server_millis>` | Keepalive reply when auth is disabled |
+| `ERROR:<code>:<message>` | Upload error (e.g., HTTP cancellation not possible) |
+| `NOTIFICATION:<message>` | Forwarded `[ESP600]` message for WebUI toast |
+| `SENSOR:<value>[<unit>]` | Sensor data (e.g., DHT22) |
+
+### Text frames (WebUI → ESP)
+
+| Message | Description |
+|---------|-------------|
+| `PING:<sessionId>` | Auth-enabled keepalive |
+| `PING:0` | Keepalive without authentication |
+
+### Binary frames
+
+**ESP → client:** raw bytes from the CNC/serial stream. No application header.
+
+**Client → ESP:** inbound binary is not interpreted; send commands as TEXT with `\n` line ending.
+
+---
+
+## 2. Data WebSocket — `/wsdata`, subprotocol `esp3d-v1`
+
+This endpoint carries the **ESP3D WebSocket Protocol V1**: binary file-transfer and status frames, plus a text channel for ESP commands.
+
+### On connect
+
+The server sends **one TEXT frame** first: a welcome line (`Welcome to ESP3D-X V…`). Read it before assuming the next message is a command reply.
+
+### Text mode
+
+Used for ESP commands and G-code relay (e.g., `[ESP720]` list flash, `[ESP740]` list SD). Use `json=yes` for directory listings.
+
+Line termination: client TEXT is accumulated until `\n` or `\r`.
+
+### Binary mode — V1 frame format
+
+Packet data size defaults to **1024 bytes**.
+
+All frames share the same header:
+
+| Offset | Size | Content |
+|--------|------|---------|
+| 0 | 2 | Opcode ASCII (e.g., `SR`, `RS`) |
+| 2 | 2 | Payload length, **little-endian** |
+| 4 | N | Payload |
+
+**Status byte** (first payload byte of `US`, `DS`, `PU`, `UE`):
+
+| Byte | Hex | Meaning |
+|------|-----|---------|
+| `O` | 0x4F | ok / idle |
+| `E` | 0x45 | error |
+| `B` | 0x42 | busy |
+| `A` | 0x41 | abort |
+
+#### Frame types
+
+**SR — Status Request (client → ESP)**
+```
+| S | R | 0 | 0 |
+```
+
+**RS — Status Response (ESP → client)**
+- Idle V1: payload = `O` + `1` (2 bytes)
+- Legacy: payload = `O` (1 byte)
+- Upload in progress: `U` + path + filename + sizes
+- Download in progress: `D` + path + filename + sizes
+
+**SU — Start Upload (client → ESP)**
+```
+| S | U | len | path_len | path... | name_len | name... | total_size(4B LE) |
+```
+
+**US — Upload Start ACK (ESP → client)**
+```
+| U | S | 0 | 1 | O |
+```
+
+**UP — Upload Packet (client → ESP)**
+```
+| U | P | len | packet_id(4B LE) | data... |
+```
+
+**PU — Packet Upload ACK (ESP → client)**
+```
+| P | U | 0 | 5 | O | id | id | id | id |
+```
+
+**EU / UE — End Upload**
+Standard end-of-transfer exchange.
+
+**SD — Start Download (client → ESP)**
+```
+| S | D | len | path_len | path... | name_len | name... |
+```
+
+**DS — Download Start ACK (ESP → client)**
+```
+| D | S | 0 | 1 | O |
+```
+
+**DP — Download Packet (ESP → client)**
+```
+| D | P | len | packet_id(4B LE) | data... |
+```
+
+**PD — Packet Download ACK (client → ESP)**
+```
+| P | D | 0 | 5 | O | id | id | id | id |
+```
+
+**CM — Command (client → ESP)**
+```
+| C | M | 0 | 1 | A |   ← abort
+```
+
+### Capability probe
+
+1. Open WebSocket to `/wsdata` with subprotocol `esp3d-v1`.
+2. Consume the mandatory welcome TEXT frame.
+3. Send binary `SR` (`53 52 00 00`).
+4. Wait for binary `RS` (timeout: 2–5 s).
+5. If `RS` payload ≥ 2 bytes and byte 1 = `1`, server supports V1 binary transfer.
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>WebSocket protocol details may change as ESP3D-X is still in active development.</p>
+</aside>

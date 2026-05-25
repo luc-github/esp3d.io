@@ -183,7 +183,7 @@ usage example: `esp3d_hal::millis();`
 * If function
    * Follow function naming syntax
    * Add suffix `_t`
-   e.g: `typedef std::function&lt;bool(const char*, const char*,const char*)&gt; processingFunction_t;`     
+   e.g: `typedef std::function<bool(const char*, const char*,const char*)> processingFunction_t;`     
 
 ### 0 and nullptr/NULL
 Use nullptr for pointers, and '\0' for chars (and not the 0 literal).
@@ -200,7 +200,7 @@ Only use auto type if no need to to do type deduction, C++ code is usually clear
 
 ### Casting 
 * Use C++-style casts   
-e.g: `static_cast&lt;float&gt;(double_value)`
+e.g: `static_cast<float>(double_value)`
 * Do not use C cast unless the cast is to void  
 e.g: `(int)3.5;` 
 

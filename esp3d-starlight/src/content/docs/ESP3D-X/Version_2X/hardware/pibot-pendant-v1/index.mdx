@@ -1,0 +1,76 @@
+---
+title: "PiBot CNC Pendant V1"
+---
+
+The **PiBot CNC Pendant V1** is the reference board for ESP3D-X development. It is an ESP32-based pendant designed to provide a comprehensive and versatile user interface for CNC machines.
+
+![PiBot Pendant Overview](/img/esp3d-x/images/hardware/overview.png)
+
+## Specifications
+
+- **MCU**: ESP32 (4 MB or 8 MB flash variants)
+- **Display**: 3.2" color TFT (320 × 240)
+- **Touch**: Capacitive touch controller (FT6336U)
+- **Inputs**:
+  - Rotary encoder
+  - 3 physical buttons
+  - 4-position switch
+  - 10K potentiometer (analog input)
+- **Audio**: Passive buzzer (SC8002B)
+- **Storage**: MicroSD card interface
+- **Connectivity**: Bluetooth (BLE / BTSerial), WiFi, Serial
+
+## ESP32 GPIO Configuration
+
+### GPIO Function Table
+
+| GPIO | Function | Component | Description |
+|------|----------|-----------|-------------|
+| GPIO0 | BOOT | System | Boot mode selection pin (strapping pin) |
+| GPIO1 | TX0 | System UART0 | Serial interface transmit line |
+| GPIO2 | TFT_DC | TFT Screen | Data/Command Select for display |
+| GPIO3 | RX0 | System UART0 | Serial interface receive line |
+| GPIO4 | Button 1 | Button Matrix | Button with direct ground connection |
+| GPIO5 | SD_CS | MicroSD Card | Chip Select for microSD |
+| GPIO6–11 | SPI Flash | System | Internal SPI flash connection, not available |
+| GPIO12 | TFT_MISO | TFT Screen | Master In Slave Out for display |
+| GPIO13 | TFT_MOSI | TFT Screen | Master Out Slave In for display |
+| GPIO14 | TFT_CLK | TFT Screen | SPI Clock for display |
+| GPIO15 | TFT_CS | TFT Screen | Chip Select for display |
+| GPIO16 | Button 2 | Button Matrix | Button with direct ground connection |
+| GPIO17 | Button 3 | Button Matrix | Button with direct ground connection |
+| GPIO18 | SD_CLK | MicroSD Card | Clock signal for microSD |
+| GPIO19 | SD_MISO | MicroSD Card | Master In Slave Out for microSD |
+| GPIO21 | TFT_LED | TFT Screen | Backlight Control |
+| GPIO22 | Encoder A | Rotary Encoder | A signal (no pull-up resistors) |
+| GPIO23 | SD_MOSI | MicroSD Card | Master Out Slave In for microSD |
+| GPIO25 | TOUCH_SCL | Touch Controller | I2C Clock for FT6336U |
+| GPIO26 | Buzzer | Audio | Passive buzzer (SC8002B) |
+| GPIO27 | Encoder B | Rotary Encoder | B signal (no pull-up resistors) |
+| GPIO32 | TOUCH_SDA | Touch Controller | I2C Data for FT6336U |
+| GPIO33 | Analog Input | Potentiometer | Center tap of 10K potentiometer |
+| GPIO34 | Switch Pos 1 | 4-Position Switch | With 10K pull-up resistor |
+| GPIO35 | Switch Pos 2 | 4-Position Switch | With 10K pull-up resistor |
+| GPIO36 | TOUCH_IRQ | Touch Controller | Interrupt signal from FT6336U |
+| GPIO39 | Switch Pos 3 | 4-Position Switch | With 10K pull-up resistor |
+
+## Schematics
+
+![PiBot Schematics](/img/esp3d-x/schematics.png)
+
+## Build variants
+
+The PiBot V1 supports multiple build variants combining memory size, connectivity, and target firmware:
+
+| Variant | Flash | Connectivity | Target |
+|---|---|---|---|
+| `4mb_wifi_fluidnc` | 4 MB | WiFi | FluidNC |
+| `4mb_bt_fluidnc` | 4 MB | Bluetooth | FluidNC |
+| `8mb_wifi_fluidnc` | 8 MB | WiFi | FluidNC |
+| `8mb_wifi_grblhal` | 8 MB | WiFi | grblHAL |
+| `8mb_bt_fluidnc` | 8 MB | Bluetooth | FluidNC |
+| `8mb_bt_grblhal` | 8 MB | Bluetooth | grblHAL |
+
+## Resources
+
+- [User Guide](/esp3d-x/version_2x/user-guide/)

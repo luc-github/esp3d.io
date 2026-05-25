@@ -1,0 +1,2587 @@
+---
+title: "User Guide"
+---
+
+# ESP3D-X Firmware for PiBot Pendant - User Documentation
+
+This document provides a comprehensive guide to all screens available in the ESP3D-X Firmware for PIBot Pendant for FluidNC/GRBL CNC machines.
+
+> **Version 2.0.0a13+ — May 2026**
+
+<img src="/img/esp3d-x/images/wofty2.png"  width="50%" />
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [User Interface](#user-interface)
+  - [Screen Layout](#screen-layout)
+  - [Input Methods](#input-methods)
+  - [Audio Feedback](#audio-feedback)
+  - [Power Management](#power-management)
+  - [Communication Methods](#communication-methods)
+  - [SD Card Updates](#sd-card-updates)
+- [Navigation Flow](#navigation-flow)
+- [Screen Descriptions](#screen-descriptions)
+  - [Update Screen](#update-screen)
+  - [Splash Screen](#splash-screen)
+  - [Main Screen](#main-screen)
+  - [Connection Status icon/Screen](#connection-status-iconscreen)
+  - [Firmware Status icon/Screen](#firmware-status-iconscreen)
+  - [Information Screen](#information-screen)
+  - [Status Screen](#status-screen)
+  - [Jog Screen](#jog-screen)
+  - [SD Screen](#sd-screen)
+  - [Macros Screen](#macros-screen)
+  - [Probe Screen](#probe-screen)
+  - [Change Tool Screen](#change-tool-screen)
+  - [Settings Screen](#settings-screen)
+  - [Reset Settings](#reset-settings)
+  - [Theme Selection](#theme-selection)
+  - [Languages Screen](#languages-screen)
+  - [Backlight level](#backlight-level)
+  - [Orientation selection](#orientation-selection)
+  - [Sound control](#sound-control)
+  - [Lock button display](#lock-button-display)
+
+  - [Output Selector Screen](#output-selector-screen)
+  - [Output mode configuration](#output-mode-configuration)
+    - [Baudrate Screen](#baudrate-screen)
+    - [Scan Bluetooth Screen](#scan-bluetooth-screen)
+    - [WiFi Scan Screen](#wifi-scan-screen)
+    - [Server Scan Screen](#wifi-scan-server)
+  - [WiFi SSID](#wifi-ssid)
+  - [WiFi Password](#wifi-password)
+  - [Forget Connection](#forget-connection)
+  - [TCP Server Address](#tcp-server-address)
+  - [TCP Server Port](#tcp-server-port)
+  - [Settings List Screen](#settings-list-screen)
+  - [Polling Screen](#polling-screen)
+  - [Timeout Screen](#timeout-screen)
+  - [Extensions Screen](#files-extensions-screen)
+  - [Show / Hide Macros menu](#show-hide-macros-menu)
+  - [Show / Hide Probe menu](#show-hide-probe-menu)
+  - [Show / Hide Change Tool menu](#show-hide-change-tool-menu)
+  - [Enable / Disable the bypass safety](#enable-disable-the-bypass-safety)
+  - [Edit Axis Steps List used for Jog](#edit-axis-steps-list-used-for-jog)
+  - [Edit Axis Feedrates List used for Jog](#edit-axis-feedrates-list-used-for-jog)
+  - [Enable / Disable the Rx / Tx pins](#enable-disable-the-rx-tx-pins)
+- [Settings Reference](#settings-reference)
+- [Appendix](#appendix)
+  - [Hardware Controls Summary](#hardware-controls-summary)
+  - [Screen Hierarchy Reference](#screen-hierarchy-reference)
+  - [Configuration File Reference](#configuration-file-reference)
+
+---
+
+
+## Overview
+
+The ESP3D-X Pendant provides a touchscreen interface for controlling CNC machines running FluidNC or GRBL firmware. It combines multiple input methods to offer a versatile and efficient control experience, whether you prefer touch interaction or physical controls.
+
+
+
+<div align="center">
+
+<div align="center">
+
+<img alt="Pendant Overview" src="/img/esp3d-x/images/hardware/overview.png" width="50%"/>
+
+**Pendant Overview**
+
+</div>
+
+</div>
+
+**Key Features:**
+
+- Touchscreen display with rotatable interface
+- Multiple physical input controls (buttons, encoder, switch, potentiometer)
+- Bluetooth and Serial connectivity to CNC firmware
+- SD card support for firmware updates and configuration
+- Battery-friendly power management
+
+---
+
+## User Interface
+
+### Screen Layout
+
+The pendant display is divided into two main areas:
+| <img alt="Screen Layout" src="/img/esp3d-x/images/hardware/screen.png"/> | \| Zone \| Size \| Description \|
+\|:-----\|:-----\|:------------\|
+\| **Main Area** (1) \| 240 × 240 px \| Primary content area displaying screens, menus, and controls \|
+\| **Button Area** (2) \| 80 × 240 px \| Virtual buttons mirroring the physical buttons below the screen \| |
+|---|---|
+
+
+
+**Screen Rotation:**
+
+The entire display (both zones) can be rotated by 90°, 180°, or 270° in the Settings to accommodate different mounting orientations. The rotation applies to the complete 320 × 240 display area.
+
+| <img alt="Rotation 0°" src="/img/esp3d-x/images/screens/screen_0.png"/> Rotation 0° | <img alt="Rotation 90°" src="/img/esp3d-x/images/screens/screen_90.png"/> Rotation 90° | <img alt="Rotation 180°" src="/img/esp3d-x/images/screens/screen_180.png"/> Rotation 180° | <img alt="Rotation 270°" src="/img/esp3d-x/images/screens/screen_270.png"/> Rotation 270° |
+|---|---|---|---|
+
+
+**Virtual Buttons:**
+
+The button area displays 0 to 3 virtual buttons depending on the current context. These buttons mirror the physical buttons and provide visual feedback when pressed.
+Common ones are:
+| <img alt="Ok button" src="/img/esp3d-x/images/icons/buttons/ok_b.png"/> Ok / Set button, to validate action or activate active control | <img alt="back/cancel button" src="/img/esp3d-x/images/icons/buttons/back_b.png"/> Cancel / Back button, to cancel current action or move to previous screen |
+|---|---|
+
+
+When the middle button displaying:
+
+<div align="center">
+
+<img alt="Switch button" src="/img/esp3d-x/images/icons/buttons/up_down_b.png"/>
+
+**Switch button**
+
+</div>
+
+User when pressing it, to change the side buttons, allowing more actions than the number of physical available buttons .
+These additional actions can be assigned depending on screen and context. 
+The buttons can also be disabled according context / firmware state.
+
+---
+
+### Input Methods
+
+The pendant offers five input methods that work together to provide efficient control:
+| <img alt="device description" src="/img/esp3d-x/images/hardware/device.png"/> | \| # \| Control \| Location \| Description \|
+\|:-:\|:--------\|:---------\|:------------\|
+\| 1 \| **Touchscreen** \| Display surface \| Direct interaction with UI elements. Tap buttons, scroll lists, and select items \|
+\| 2 \| **Physical Buttons** \| Between screen and encoder \| 3 buttons for navigation, selection, and quick actions. Mirrored on screen as virtual buttons \|
+\| 3 \| **Rotary Encoder** \| Below the buttons \| Rotate for navigation in lists, value adjustment, or sending successive commands. Press for selection \|
+\| 4 \| **4-State Switch** \| Right side, below power button \| Rotary switch for context-sensitive selection: view modes, active axis, or operation modes \|
+\| 5 \| **Potentiometer** \| Top right, near USB and RJ11 ports \| Analog control that enables different action modes based on its position \| |
+|---|---|
+
+
+
+**Control Usage by Context:**
+
+| Control | Main/Settings | Jog | Status | SD/Macros |
+|:--------|:--------------|:----|:-------|:----------|
+| Touchscreen | Menu selection | Tap axis buttons | Tap overrides | File selection |
+| Buttons | Navigate/Select | Jog +/- | Navigate views | Navigate/Select |
+| Encoder | Scroll menus | Jog by steps | Scroll views | Scroll file list |
+| Switch | - | Select axis | Select position display | Select mode |
+| Potentiometer | - | - | Select detail view | - |
+
+---
+
+### Audio Feedback
+
+The pendant provides audio feedback for user interactions:
+
+- **Button press** - Confirmation beep
+- **Selection** - Distinct tone for selections
+- **Errors/Warnings** - Alert sounds for important notifications
+- **Navigation** - Subtle feedback when scrolling
+
+Audio feedback can be enabled or disabled in the [Settings Screen](#settings-screen).
+
+---
+
+### Power Management
+
+To preserve battery life and extend screen longevity, the pendant includes an automatic screen timeout feature:
+
+- After a configurable period of user inactivity, the screen backlight turns off automatically
+- Any user interaction (touch, button press, encoder rotation, change switch state, use potentiometer) wakes up the screen
+- The timeout duration can be configured or disabled entirely in the [Time Out Screen](#time-out-screen)
+
+---
+
+### Communication Methods
+
+The pendant can communicate with CNC firmware through several methods:
+
+**Built-in Communication:**
+
+| Method | Description |
+|:-------|:------------|
+| **Serial** | Wired connection via RJ11 port to the CNC controller |
+| **Bluetooth Serial** | Classic Bluetooth wireless connection (SPP profile) |
+| **Bluetooth BLE** | Bluetooth Low Energy wireless connection |
+| **WiFi and Socket TCP** | Wireless TCP connection to a CNC controller running a Telnet/socket server |
+
+**External Module (via Serial input):**
+
+| Method | Description |
+|:-------|:------------|
+| **External Module** | External BT/BLE or other module connected via the UART extension port |
+
+> **WiFi limitations:** Only the **Socket TCP** mode is supported. WebSocket client, WebUI (HTTP server), WebDAV, etc... are **not supported** in the pendant build — they are unnecessary for a CNC pendant and would consume too much RAM and MCU cycles on the ESP32.
+
+> **Note:** The communication method can be changed in the [Output Selector Screen](#output-selector-screen). A restart is required after changing the output method.
+
+---
+
+
+### SD Card Updates
+
+The SD card can be used to update the pendant firmware or restore user settings:
+
+| File | Purpose |
+|:-----|:--------|
+| `esp3dfw.bin` | Firmware update file |
+| `esp3dcnf.ini` | Settings configuration file |
+
+**Update Process:**
+
+1. Copy the update file(s) to the SD card root directory
+2. Insert the SD card and power on the pendant
+3. The [Update Screen](#update-screen) appears automatically
+4. Follow the on-screen instructions
+
+> ⚠️ **Firmware Update Limitations:**
+> 
+> The SD card update only flashes the firmware partition. It does **not** update:
+> - The bootloader
+> - The partition table
+> 
+> This means the `esp3dfw.bin` file must be compatible with the current ESP-IDF version and partition layout already installed on the device.
+> 
+> For a complete update (including bootloader and partition table), use the [Web Installer](https://esp3d.io/esp3d-x/installation/) or perform a manual flash via USB.
+
+See the [Update Screen](#update-screen) section for detailed behavior and status indicators.
+
+For the configuration file format, see [Configuration File Reference](#configuration-file-reference) in the Appendix.
+
+---
+
+## Navigation Flow
+
+### Global Navigation Diagram
+
+```mermaid
+flowchart TD
+    subgraph Startup
+        UPDATE[Update Screen]
+        SPLASH[Splash Screen]
+    end
+
+    subgraph Main Navigation
+        MAIN[Main Screen]
+        SETTINGS[Settings Screen]
+        INFO[Information Screen]
+        STATUS[Status Screen]
+        JOG[Jog Screen]
+        SD[SD Screen]
+        MACROS[Macros Screen]
+        PROBE[Probe Screen]
+        TOOL[Change Tool Screen]
+    end
+
+    subgraph Settings Submenu
+        LANG[Languages]
+        OUTPUT[Output Selector]
+        BLUETOOTH[Scan Bluetooth]
+        BAUD[Baudrate]
+        WIFISCAN[WiFi Scan]
+        SERVERSCAN[Server Scan]
+        SETLIST[Settings List]
+        CONNSTATUS[Connection Status]
+    end
+
+    subgraph Settings List Submenu
+        POLLING[Polling]
+        TIMEOUT[Time Out]
+    end
+
+    subgraph Shared Screens
+        MSGBOX[Message Box]
+        INPUT[Input Screen]
+        FWSTATUS[Firmware Status]
+    end
+
+    UPDATE -->|Success/Fail| SPLASH
+    SPLASH -->|Auto| MAIN
+
+    MAIN --> SETTINGS
+    MAIN --> INFO
+    MAIN --> STATUS
+    MAIN --> JOG
+    MAIN --> SD
+    MAIN --> MACROS
+    MAIN --> PROBE
+    MAIN --> TOOL
+    MAIN -.->|Tap Status Icon| FWSTATUS
+    MAIN -.->|Tap Connection Icon| CONNSTATUS
+
+    SETTINGS --> LANG
+    SETTINGS --> OUTPUT
+    SETTINGS --> BLUETOOTH
+    SETTINGS --> BAUD
+    SETTINGS --> WIFISCAN
+    SETTINGS --> SERVERSCAN
+    SETTINGS --> SETLIST
+    SETTINGS --> CONNSTATUS
+
+    SETLIST --> POLLING
+    SETLIST --> TIMEOUT
+    SETLIST --> INPUT
+
+    OUTPUT --> MSGBOX
+
+    CONNSTATUS -->|Auth Fail WiFi| WIFISCAN
+    WIFISCAN --> INPUT
+    WIFISCAN --> CONNSTATUS
+    SERVERSCAN --> CONNSTATUS
+
+    STATUS -.->|Tap Status Icon| FWSTATUS
+    JOG -.->|Tap Status Icon| FWSTATUS
+    PROBE -.->|Tap Status Icon| FWSTATUS
+    TOOL -.->|Tap Status Icon| FWSTATUS
+
+    STATUS -.->|Tap Connection Icon| CONNSTATUS
+    JOG -.->|Tap Connection Icon| CONNSTATUS
+    PROBE -.->|Tap Connection Icon| CONNSTATUS
+    TOOL -.->|Tap Connection Icon| CONNSTATUS
+
+    STATUS --> INPUT
+    JOG --> INPUT
+    SD --> INPUT
+    MACROS --> INPUT
+    TOOL --> INPUT
+
+    TOOL <-->|Optional| PROBE
+```
+
+---
+
+## Screen Descriptions
+
+### Update Screen
+
+The Update screen appears automatically when firmware update files are detected on the SD card at startup.
+
+**Hardware Controls:** Touch, Buttons
+
+**Supported Files:**
+
+- `esp3dfw.bin` - Firmware update
+- `esp3dcnf.ini` - Settings configuration
+
+**Behavior:**
+
+- On success: File renamed to `.ok` extension, automatic restart
+- On failure: File renamed to `.bad` extension, user confirmation required before restart
+- When both files are present: Firmware update applies first, then settings update after restart
+
+| <img alt="Update Screen - Firmware" src="/img/esp3d-x/images/screens/update_screen.png"/> | <img alt="Update Screen - Settings" src="/img/esp3d-x/images/screens/update_screen_settings.png"/> | <img alt="Update Screen - Failed" src="/img/esp3d-x/images/screens/update_screen_failed.png"/> |
+|---|---|---|
+| Firmware update in progress | Settings update in progress | Update failed |
+
+
+---
+
+### Splash Screen
+
+A brief information screen displaying firmware details. Automatically transitions to the Main screen after a few seconds while core features initialize in the background.
+
+**Hardware Controls:** None (automatic transition)
+
+| <img alt="Splash Screen" src="/img/esp3d-x/images/screens/splash_fluidnc.png"/> Splash Screen | <img alt="Splash Screen" src="/img/esp3d-x/images/screens/splash_grblhal.png"/> Splash Screen |
+|---|---|
+
+
+---
+
+### Main Screen
+
+The central hub of the pendant featuring a circular menu for task selection.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Features:**
+
+- Circular navigation menu for screen selection
+
+<div align="center">
+
+<img alt="Main Screen" src="/img/esp3d-x/images/screens/main_screen_unlocked.png"/>
+
+**Main Screen**
+
+</div>
+
+
+- Clickable firmware status indicator (open Firmware Status screen)
+- Clickable connection indicator (open Connection Status detailed informations)
+- UI lock/unlock toggle to prevent accidental inputs
+
+When locked (user choice or no connection), only the following screens are accessible:
+
+- Information
+- Status
+- Settings
+
+
+<div align="center">
+
+<img alt="Main Screen" src="/img/esp3d-x/images/screens/main_screen.png"/>
+
+**Main Screen**
+
+</div>
+
+
+When unlocked, all screens are accessible:
+
+
+<div align="center">
+
+<img alt="Main Screen Unlocked" src="/img/esp3d-x/images/screens/main_screen_unlocked.png"/>
+
+**Main Screen Unlocked**
+
+</div>
+
+
+Note: Some screens are optionally displayed - user can show/hide: Tool Change, Macros, and Probe screens.
+
+---
+
+### Connection Status icon/Screen
+
+The connection status icon is displayed on the Main screen and other screens. Tapping it opens the Connection Status screen.
+
+**Status icons:**
+
+| <img alt="Not Connected" src="/img/esp3d-x/images/icons/status/no_connection.png"/> Not Connected | <img alt="Connecting" src="/img/esp3d-x/images/icons/status/connecting.png"/> Connecting | <img alt="Connected" src="/img/esp3d-x/images/icons/status/connected.png"/> Connected |
+|---|---|---|
+
+
+**Hardware Controls:** Touch, Buttons
+
+**Display:**
+
+The Connection Status screen shows a color-coded title bar and detailed transport information:
+
+| Title Bar Color | State | Meaning |
+|:--------------|:------|:--------|
+| Green | Connected | Transport and CNC server both connected |
+| Blue | Connecting | Connection in progress (spinner shown) |
+| Orange | Auth Failed / Read-only | Wrong credentials, or connected read-only |
+| Red | Not Connected | Transport disconnected |
+| Grey | Radio Off | Radio disabled |
+
+The screen always shows:
+- **Transport protocol** (Serial, Socket-TCP, Bluetooth, External Module)
+- **Network layer** (WiFi: SSID) — WiFi mode only, orange when WiFi is down
+- **Device info** (CNC host:port, BT device name + MAC, or serial baud rate)
+- **Animated spinner** — visible only while connecting
+
+
+<div align="center">
+
+<img alt="Connection Status Screen" src="/img/esp3d-x/images/screens/connection_status.png"/>
+
+**Connection Status Screen**
+
+</div>
+
+
+**Button 0 (LEFT) — Transport action:**
+
+Depends on transport type and current state:
+
+| Transport | State | Icon | Action |
+|:----------|:------|:----:|:-------|
+| WiFi | WiFi down| (disabled) |
+| WiFi | Not connected / disconnected | <img src="/img/esp3d-x/images/icons/buttons/wifi_s.png" alt="WiFi connect" /> | Reconnect WiFi |
+| WiFi | Connected | <img src="/img/esp3d-x/images/icons/buttons/no_wifi_s.png" alt="WiFi disconnect" /> | Disconnect WiFi |
+| WiFi | Auth failed | <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> | Open password input to correct credentials |
+| Serial | Not connected | <img src="/img/esp3d-x/images/icons/buttons/serial_m.png" alt="Serial connect" /> | Reconnect serial |
+| Serial | Connected | <img src="/img/esp3d-x/images/icons/buttons/disconnect_serial_m.png" alt="Serial disconnect" /> | Disconnect serial |
+| Ext. Module | Not connected | <img src="/img/esp3d-x/images/icons/buttons/ext_module_m.png" alt="Ext connect" /> | Reconnect external module |
+| Ext. Module | Connected | <img src="/img/esp3d-x/images/icons/buttons/connect_bt.png" alt="BT connect" /> | Disconnect external module |
+| Bluetooth | Not connected |<img src="/img/esp3d-x/images/icons/buttons/disconnect_bt.png" alt="BT disconnect" /> | Connect Bluetooth |
+| Bluetooth | Connected | <img src="/img/esp3d-x/images/icons/buttons/disconnect_ext_module_m.png" alt="Ext disconnect" /> | Disconnect Bluetooth |
+| Bluetooth | Auth failed | <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> | Open PIN input to correct Bluetooth PIN/passkey |
+
+**Button 1 (CENTER) — IP CNC action** *(WiFi + Socket TCP builds only):*
+
+| State | Icon | Action |
+|:------|:----:|:-------|
+| Not connected | <img src="/img/esp3d-x/images/icons/buttons/connect_telnet_b.png" alt="Telnet connect" /> | Connect to CNC socket server |
+| Connected / Connecting | <img src="/img/esp3d-x/images/icons/buttons/disconnect_telnet_b.png" alt="Telnet disconnect" /> | Disconnect from CNC server |
+| Auth failed | <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> | Correct server credentials |
+| WiFi down | *(disabled)* | — |
+
+> For Serial and External Module outputs, Button 1 shows a Refresh icon (<img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" />) when connected — tapping it resends initialisation commands to the CNC.
+
+**Button 2 (RIGHT) — Back:** Returns to calling screen.
+
+**WiFi auth-fail unlock flow:**
+
+When the WiFi status is **Auth Failed** (wrong password):
+1. The title bar turns orange and Button 0 shows the <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> icon
+2. Tap Button 0 → a password input screen opens, pre-filled with the saved password
+3. Edit the password and press OK → new password is saved, connection is retried
+4. Press Cancel → return to the WiFi scan screen without retrying
+
+**Bluetooth auth-fail / PIN change:**
+
+When Bluetooth connection shows **Auth Failed**:
+1. Button 0 shows the <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> icon
+2. Tap Button 0 → a PIN input screen opens (4 digits for BT Classic, 6 for BLE)
+3. Enter the correct PIN → bonded devices are cleared and connection is retried
+
+**Serial/WiFi retry behaviour:**
+
+When WiFi fails after 10 retries or when the SSID is not found, the state changes to Not Connected. Press Button 0 to start a new connection cycle.
+
+---
+
+### Firmware Status icon/Screen
+
+
+<div align="center">
+
+<img alt="Firmware Status Icon" src="/img/esp3d-x/images/icons/status/connecting.png"/>
+
+**Firmware Status Icon with unknown status**
+
+</div>
+
+
+**Status Icons:**
+
+| Status | Icon | Description |
+|:-------|:----:|:------------|
+| Unknown| <img src="/img/esp3d-x/images/icons/status/connecting.png" alt="Unknown" /> | Waiting for system report |
+| IDLE | <img src="/img/esp3d-x/images/icons/status/idle.png" alt="Idle" /> | Machine ready |
+| RUN | <img src="/img/esp3d-x/images/icons/status/run.png" alt="Run" /> | Program executing |
+| ALARM | <img src="/img/esp3d-x/images/icons/status/alarm.png" alt="Alarm" /> | Alarm condition active |
+| CHECK | <img src="/img/esp3d-x/images/icons/status/check.png" alt="Check" /> | Check mode |
+| DOOR | <img src="/img/esp3d-x/images/icons/status/door.png" alt="Door" /> | Door open |
+| HOLD | <img src="/img/esp3d-x/images/icons/status/hold.png" alt="Hold" /> | Feed hold active |
+| HOME | <img src="/img/esp3d-x/images/icons/status/home.png" alt="Home" /> | Homing in progress |
+| SLEEP | <img src="/img/esp3d-x/images/icons/status/sleep.png" alt="Sleep" /> | Sleep mode |
+| JOG | <img src="/img/esp3d-x/images/icons/status/jog.png" alt="Jog" /> | Jogging in progress |
+| TOOL | <img src="/img/esp3d-x/images/icons/status/tools.png" alt="Tool" /> | Tool change in progress |
+| ERROR | <img src="/img/esp3d-x/images/icons/status/error.png" alt="Error" /> | Error condition |
+
+Real-time firmware state monitoring and control, accessible by tapping the status indicator on compatible screens.
+
+**Hardware Controls:** Touch, Buttons, Encoder (scrolls message history)
+
+**Display:**
+
+- Current firmware state
+- Scrollable list of the last 20 messages
+- Message color coding: Red = Error, Blue = Info
+
+
+<div align="center">
+
+<img alt="Firmware Status Screen" src="/img/esp3d-x/images/screens/firmware_status_screen.png"/>
+
+**Firmware Status Screen**
+
+</div>
+
+
+**Available Commands by State:**
+
+| State | Primary Action | Icon | Secondary Action | Icon |
+|:------|:---------------|:----:|:-----------------|:----:|
+| **ALARM** | Unlock (`$X` + `?`) | <img src="/img/esp3d-x/images/icons/buttons/alarm_off.png" alt="Unlock" /> | Soft Reset (`0x18` + `?`) | <img src="/img/esp3d-x/images/icons/buttons/soft_reset.png" alt="Reset" /> |
+| **HOLD** | Resume (`~`) | <img src="/img/esp3d-x/images/icons/buttons/play.png" alt="Resume" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+| **RUN** | Feed Hold (`!`) | <img src="/img/esp3d-x/images/icons/buttons/hold_feed.png" alt="Hold" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+| **JOG** | Stop Jog (`0x85`) | <img src="/img/esp3d-x/images/icons/buttons/stop_jog.png" alt="Stop" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+| **IDLE** | Soft Reset (`0x18` + `?`) | <img src="/img/esp3d-x/images/icons/buttons/soft_reset.png" alt="Reset" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+| **ERROR** | Soft Reset (`0x18` + `?`) | <img src="/img/esp3d-x/images/icons/buttons/soft_reset.png" alt="Reset" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+| **Others** | Soft Reset (`0x18` + `?`) | <img src="/img/esp3d-x/images/icons/buttons/soft_reset.png" alt="Reset" /> | Refresh (`?`) | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> |
+
+
+
+---
+
+### Information Screen
+
+
+<div align="center">
+
+<img alt="Information Icon" src="/img/esp3d-x/images/icons/screens/information.png"/>
+
+**Information Icon**
+
+</div>
+
+
+Displays firmware and system details.
+
+**Hardware Controls:** Touch, Buttons
+
+**Content displayed:**
+
+| Field | Description |
+|:------|:------------|
+| Version | ESP3D-X firmware version |
+| Target Firmware | CNC firmware name and version (FluidNC / grblHAL) |
+| Communication | Active output (Serial, WiFi Socket-TCP, Bluetooth, External Module…) |
+| Board / Machine | Target board name |
+| UI Language | Active language pack |
+| Lock State | Locked / Unlocked |
+| Axis Count | Number of configured CNC axes |
+
+
+<div align="center">
+
+<img alt="Information Screen" src="/img/esp3d-x/images/screens/information_screen.png"/>
+
+**Information Screen**
+
+</div>
+
+
+---
+
+### Status Screen
+
+
+<div align="center">
+
+<img alt="Status Icon" src="/img/esp3d-x/images/icons/screens/status.png"/>
+
+**Status Icon**
+
+</div>
+
+
+Provides a global overview of the CNC machine state.
+
+**Hardware Controls:** Touch, Buttons, Switch, Encoder, Potentiometer
+
+**Position Display Modes** (selected via 4-state switch):
+1. Machine Position (MPos)
+
+<div align="center">
+
+<img alt="Status Screen MPos" src="/img/esp3d-x/images/screens/status_screen_spindle_mpos.png"/>
+
+**Status Screen MPos Mode**
+
+</div>
+
+
+2. Work Position (WPos)
+
+<div align="center">
+
+<img alt="Status Screen WPos" src="/img/esp3d-x/images/screens/status_screen_spindle_wpos.png"/>
+
+**Status Screen WPos Mode**
+
+</div>
+
+
+3. Both MPos & WPos
+
+<div align="center">
+
+<img alt="Status Screen MPos &amp; WPos" src="/img/esp3d-x/images/screens/status_screen_spindle_mpos_wpos.png"/>
+
+**Status Screen MPos & WPos Mode**
+
+</div>
+
+
+4. UI Lock Mode
+
+<div align="center">
+
+<img alt="Status Screen Locked" src="/img/esp3d-x/images/screens/status_screen_locked.png"/>
+
+**Status Screen Locked Mode**
+
+</div>
+
+
+**Detail Views** (selected via potentiometer):
+
+- Feed rate and spindle override controls
+
+<div align="center">
+
+<img alt="Status Screen MPos" src="/img/esp3d-x/images/screens/status_screen_spindle_mpos.png"/>
+
+**Override view**
+
+</div>
+
+- Rapid override controls
+
+<div align="center">
+
+<img alt="Status Screen Rapid Override" src="/img/esp3d-x/images/screens/status_screen_rapid_override.png"/>
+
+**Rapid override view**
+
+</div>
+
+- Control Spindle state / Coolant Actions
+
+<div align="center">
+
+<img alt="Status Screen control view" src="/img/esp3d-x/images/screens/status_screen_m3_m9.png"/>
+
+**Control view**
+
+</div>
+
+- Workspace selector, G-code status, feed/spindle controls
+
+| <img alt="Status Screen Workspace view" src="/img/esp3d-x/images/screens/status_screen_workspace.png"/> Workspace view | <img alt="Status Screen GC status view" src="/img/esp3d-x/images/screens/status_screen_gc_status.png"/> GC Status |
+|---|---|
+
+
+- SD card job progress
+
+<div align="center">
+
+<img alt="Status Screen Job view" src="/img/esp3d-x/images/screens/status_screen_job.png"/>
+
+**Job view**
+
+</div>
+
+
+- Fast access to Stop / Pause / Resume buttons
+
+To have better control on job progression, the buttons mode can be switched to stop/pause  or stop/resume according firmware state context anytime by using the middle button.
+
+| <img alt="Stop button" src="/img/esp3d-x/images/icons/buttons/stop.png"/> Stop button | <img alt="Pause button" src="/img/esp3d-x/images/icons/buttons/pause_b.png"/> Pause button | <img alt="Resume button" src="/img/esp3d-x/images/icons/buttons/play.png"/> Resume button |
+|---|---|---|
+
+
+**Additional Features:**
+
+- Real-time endstop state display
+- Clickable firmware status indicator (open Firmware Status screen)
+- Clickable connection indicator (open Connection Status detailed informations)
+
+---
+
+
+### Jog Screen
+
+| <img alt="Jog  Screen" src="/img/esp3d-x/images/screens/jog_screen.png"/> Jog Screen | <img alt="Jog Screen Locked" src="/img/esp3d-x/images/screens/jog_screen_locked.png"/> Jog Screen Locked |
+|---|---|
+
+
+Manual machine movement control with multiple input options.
+
+**Hardware Controls:** Touch, Buttons, Switch, Encoder
+
+**Axis Selection** (via 4-state switch):
+
+- 3-axis machines: X, Y, Z, + Lock mode
+- 4-6 axis machines: X, Y, Z, + Button axis selector
+
+**Jog Modes:**
+- **Step mode** - Discrete movements via encoder or buttons
+
+<div align="center">
+
+<img alt="Jog Screen steps" src="/img/esp3d-x/images/screens/jog_screen_steps.png"/>
+
+**Discrete Jog screen**
+
+</div>
+
+
+- **Continuous mode** - Sustained movement while button held
+
+<div align="center">
+
+<img alt="Jog Screen continuous" src="/img/esp3d-x/images/screens/jog_screen_continous.png"/>
+
+**Continuous Jog screen**
+
+</div>
+
+
+**Features:**
+
+- Configurable step sizes and feed rates
+- Endstop state display (when enabled)
+- Zero axis function
+- Home per axis or all axes (depending on firmware configuration)
+- Real-time position display
+
+**Additional Features:**
+
+- Real-time endstop state display
+- Clickable firmware status indicator (open Firmware Status screen)
+- Clickable connection indicator (open Connection Status detailed informations)
+
+---
+
+
+### SD Screen
+
+
+<div align="center">
+
+<img alt="SD Icon" src="/img/esp3d-x/images/icons/screens/sd.png"/>
+
+**SD Icon**
+
+</div>
+
+
+File browser for the CNC firmware's SD card.
+
+**Hardware Controls:** Touch, Buttons, Switch, Encoder
+
+**Operation Modes** (selected via 4-state switch):
+
+
+
+**Features:**
+
+- Manual refresh of file list
+- File extension filtering (configurable in settings)
+
+| Mode | Icon | Description | 
+|:-----|:----:|:------------|
+| **Process** | <img src="/img/esp3d-x/images/icons/modes/mode_run.png" alt="Run Mode" /> | Process selected file as a job |
+| **Informations / Add Macro** (if macros enabled in settings) | <img src="/img/esp3d-x/images/icons/modes/mode_add_macro.png" alt="Add Macro Mode" /> | Display file informations and Assign/Remove file as a macro for quick access |
+| **Informations** (if macros not enabled in settings) | <img src="/img/esp3d-x/images/icons/modes/mode_information.png" alt="information" /> |  Display file informations |
+| **Rename** | <img src="/img/esp3d-x/images/icons/modes/mode_rename.png" alt="Rename Mode" /> | Rename the selected file |
+| **Delete** | <img src="/img/esp3d-x/images/icons/modes/mode_remove.png" alt="Delete Mode" /> | Remove file from SD card |
+
+**Process mode**
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen.png"/>
+
+**SD Screen Process Mode**
+
+</div>
+
+
+Using set button start processing file if user confirm action
+
+<div align="center">
+
+<img alt="SD Screen Processing Confirmation" src="/img/esp3d-x/images/screens/files_screen_processing.png"/>
+
+**Processing Confirmation**
+
+</div>
+
+
+
+**Informations / Add Macro Mode** (if macros enabled in settings)
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_macro_enabled.png"/>
+
+**Assign / Remove macro Mode**
+
+</div>
+
+
+Using set button display informations screen where user can assign/remove file as a macro 
+
+| <img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_add_macro.png"/> Add File to macros list | <img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_remove_macro.png"/> Remove File from macros list |
+|---|---|
+
+
+**Informations Mode** (if macros not enabled in settings) 
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_no_macro.png"/>
+
+**Informations Mode**
+
+</div>
+
+
+Using set button display file informations screen 
+
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_no_macro_enabled.png"/>
+
+**File Informations**
+
+</div>
+
+
+**Rename Mode**
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_rename.png"/>
+
+**Rename Mode**
+
+</div>
+
+
+Using set button display input editor screen to rename file or cancel action 
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_input_screen.png"/>
+
+**Input Editor for renaming**
+
+</div>
+
+
+**Delete Mode**
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_delete_confirmation.png"/>
+
+**Delete Mode**
+
+</div>
+
+
+Using set button delete file if user confirm action 
+
+<div align="center">
+
+<img alt="SD Screen" src="/img/esp3d-x/images/screens/files_screen_delete_confirmation.png"/>
+
+**Delete Confirmation**
+
+</div>
+
+
+---
+
+### Macros Screen
+
+
+<div align="center">
+
+<img alt="Macros Icon" src="/img/esp3d-x/images/icons/screens/macros.png"/>
+
+**Macros Icon**
+
+</div>
+
+
+Quick access to assigned macro files for frequently used operations.
+
+**Hardware Controls:** Touch, Buttons, Switch, Encoder
+
+**Operation Modes** (selected via 4-state switch):
+
+| Mode | Icon | Description |
+|:-----|:----:|:------------|
+| **Process** | <img src="/img/esp3d-x/images/icons/modes/mode_run.png" alt="Process Mode" /> | Execute the macro |
+| **Rename** | <img src="/img/esp3d-x/images/icons/modes/mode_rename.png" alt="Rename Mode" /> | Change macro display name (does not affect actual file name) |
+| **Reorder** | <img src="/img/esp3d-x/images/icons/modes/mode_reorder.png" alt="Reorder Mode" /> | Change macro position in list |
+| **Remove** | <img src="/img/esp3d-x/images/icons/modes/mode_remove.png" alt="Remove Mode" /> | Remove from macro list (includes clear all option) |
+
+**Process Mode**
+| <img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_no_description.png"/> Macros Screen no description edited | <img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_renamed.png"/> Macros Screen with descriptions |
+|---|---|
+
+
+Using set button start processing macro file if user confirm action
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_confirm_processing.png"/>
+
+**Confirm Processing**
+
+</div>
+
+
+**Rename Mode**
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_edition.png"/>
+
+**Rename Mode**
+
+</div>
+
+
+Using set button display input editor screen change file description or cancel action 
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_rename.png"/>
+
+**Change Description**
+
+</div>
+
+
+**Reorder Mode**
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_reorder.png"/>
+
+**Reorder Mode**
+
+</div>
+
+
+**Delete Mode**
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_delete.png"/>
+
+**Delete Mode**
+
+</div>
+
+
+Using set button remove selected file from macros list if user confirm
+
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_confirm_delete.png"/>
+
+**Delete Mode**
+
+</div>
+
+
+Using clear button clear the full macros list if user confirm
+ 
+<div align="center">
+
+<img alt="Macros Screen" src="/img/esp3d-x/images/screens/macros_screen_confirm_clear.png"/>
+
+**Delete Mode**
+
+</div>
+
+
+---
+
+### Probe Screen
+
+
+<div align="center">
+
+<img alt="Probe Icon" src="/img/esp3d-x/images/icons/screens/probe.png"/>
+
+**Probe Icon**
+
+</div>
+
+
+Axis probing interface for tool measurement and workpiece setup. 
+
+**Hardware Controls:** Touch, Buttons, Switch, Encoder
+
+**Features:**
+
+- Per-axis probe configuration
+- Automatic saving of probe settings per axis
+- Integration with Change Tool workflow
+- Clickable firmware status indicator (opens Firmware Status screen)
+- Clickable connection indicator (open Connection Status detailed informations)
+
+**Axis Selection** (via 4-state switch):
+
+- 3-axis machines: X, Y, Z, + Lock mode
+- 4-6 axis machines: X, Y, Z, + Button axis selector
+
+| <img alt="Probe Screen" src="/img/esp3d-x/images/screens/probe_screen.png"/> Probe Screen | <img alt="Probe Screen" src="/img/esp3d-x/images/screens/probe_screen_lock.png"/> Locked State |
+|---|---|
+
+
+#### Probe Operation Flow
+
+```mermaid
+flowchart TD
+    START([Enter Probe Screen])
+    AXIS[Select Axis]
+    CONFIG[Configure Probe Settings]
+    POSITION[Position Tool]
+    EXECUTE[Execute Probe]
+    RESULT{Success?}
+    SAVE[Save Reference]
+    RETRY[Adjust & Retry]
+    DONE([Exit])
+
+    START --> AXIS
+    AXIS --> CONFIG
+    CONFIG --> POSITION
+    POSITION --> EXECUTE
+    EXECUTE --> RESULT
+    RESULT -->|Yes| SAVE
+    RESULT -->|No| RETRY
+    RETRY --> POSITION
+    SAVE --> DONE
+```
+
+---
+
+### Change Tool Screen
+
+
+<div align="center">
+
+<img alt="Change Tool Icon" src="/img/esp3d-x/images/icons/screens/change_tool.png"/>
+
+**Change Tool Icon**
+
+</div>
+
+
+Guided tool change procedure compatible with FluidNC and grblHAL settings.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Features:**
+
+- Current tool display and selection
+- Manual tool change guidance
+- Optional integrated probe workflow
+- Clickable firmware status indicator (open Firmware Status screen)
+- Clickable connection indicator (open Connection Status detailed informations)
+
+#### Tool Change Flow with Optional Probe
+
+```mermaid
+flowchart TD
+    START([Start Tool Change])
+    SELECT[Select New Tool]
+    CONFIRM{Probe Required?}
+    MANUAL[Manual Tool Change]
+    PROBE[Probe Screen]
+    SETREF[Set Tool Reference]
+    COMPLETE([Tool Change Complete])
+
+    START --> SELECT
+    SELECT --> CONFIRM
+    CONFIRM -->|Yes| PROBE
+    CONFIRM -->|No| MANUAL
+    PROBE --> SETREF
+    MANUAL --> SETREF
+    SETREF --> COMPLETE
+```
+
+1. Set current tool if not done and apply by pressing play, or go to 3 directly 
+
+<div align="center">
+
+<img alt="Change Tool Screen" src="/img/esp3d-x/images/screens/change_tool_screen_set_tool.png"/>
+
+**Set current Tool**
+
+</div>
+
+
+2. Press Play and process probing if necessary or ignore it
+
+<div align="center">
+
+<img alt="Change Tool Screen" src="/img/esp3d-x/images/screens/change_tool_screen_probe.png"/>
+
+**Probe Current tool**
+
+</div>
+
+
+3. Switch to Change tool mode
+
+<div align="center">
+
+<img alt="Change Tool Screen" src="/img/esp3d-x/images/screens/change_tool_screen_change_tool.png"/>
+
+**Set Current Tool**
+
+</div>
+
+
+4. Select new tool using input editor
+
+<div align="center">
+
+<img alt="Change Tool Screen" src="/img/esp3d-x/images/screens/change_tool_screen_tool.png"/>
+
+**Set New Tool Index**
+
+</div>
+
+
+5. Press Play and Follow manual change procedure
+6. (Optional) Probe new tool length
+7. Confirm tool change
+
+---
+
+### Settings Screen
+
+
+<div align="center">
+
+<img alt="Settings Icon" src="/img/esp3d-x/images/icons/screens/settings.png"/>
+
+**Settings Icon**
+
+</div>
+
+
+Comprehensive configuration interface for customizing the pendant behavior.
+
+**Hardware Controls:** Touch, Buttons, Encoder, Virtual Hardware
+
+**Access to:**
+- Reset Settings
+- Theme selection
+- Language selection
+- Backlight level
+- Orientation selection
+- Sound control
+- Lock button display
+- Output selector (communication method)
+    - Bluetooth Serial
+    - Bluetooth Ble
+    - Serial
+- Output mode configuration:
+    - Bluetooth scanning 
+    - Baudrate configuration
+- Additional settings list
+
+See [Settings Reference](#settings-reference) for the complete list of available settings.
+
+
+<div align="center">
+
+<img alt="Settings Screen" src="/img/esp3d-x/images/screens/settings_screen.png"/>
+
+**Settings Screen**
+
+</div>
+
+
+---
+
+### Reset Settings
+
+
+<div align="center">
+
+<img alt="Reset settings Icon" src="/img/esp3d-x/images/icons/settings/sound.png"/>
+
+**Reset Settings Icon**
+
+</div>
+
+
+**Hardware Controls:** Touch, Buttons
+
+This will reset all setting to their default state, a restart is mandatory to be properly applied.
+
+
+<div align="center">
+
+<img alt="Reset setting menu Icon" src="/img/esp3d-x/images/screens/reset_settings.png"/>
+
+**Reset Settings menu**
+
+</div>
+
+
+
+<div align="center">
+
+<img alt="Restart confirmation" src="/img/esp3d-x/images/screens/restart.png"/>
+
+**Apply Reset Confirmation**
+
+</div>
+
+
+
+---
+
+### Theme Selection
+
+
+<div align="center">
+
+<img alt="Theme Icon" src="/img/esp3d-x/images/icons/settings/theme.png"/>
+
+**Theme Icon**
+
+</div>
+
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+This allow to change the color scheme of the UI.
+
+1 - Go tho theme menu
+
+<div align="center">
+
+<img alt="theme menu" src="/img/esp3d-x/images/screens/setting_theme.png"/>
+
+**Theme Menu**
+
+</div>
+
+
+2 - Activate the setting selection pressing menu or set button
+
+<div align="center">
+
+<img alt="Theme Selector" src="/img/esp3d-x/images/screens/setting_theme_selector.png"/>
+
+**Activate Theme Selector**
+
+</div>
+
+
+3 - Change theme using encoder
+
+<div align="center">
+
+<img alt="Change Theme" src="/img/esp3d-x/images/screens/setting_theme_new.png"/>
+
+**Change Theme**
+
+</div>
+
+
+4 - Choose theme by pressing menu or set button
+
+<div align="center">
+
+<img alt="Change Theme" src="/img/esp3d-x/images/screens/setting_theme_activated.png"/>
+
+**Apply Theme**
+
+</div>
+
+
+Setting is saved automaticaly when you press menu or set button, if you press cancel button instead of set button, operation is canceled.
+
+---
+
+### Languages Screen
+
+
+<div align="center">
+
+<img alt="Languages Icon" src="/img/esp3d-x/images/icons/screens/languages.png"/>
+
+**Languages Icon**
+
+</div>
+
+
+Language pack selection for the UI.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+
+<div align="center">
+
+<img alt="Languages setting" src="/img/esp3d-x/images/screens/languages_setting.png"/>
+
+**Languages Menu**
+
+</div>
+
+
+
+**Features:**
+
+- Lists all available language packs from SD card
+- Immediate language switching
+
+> **Note:** The language pack file must be present on the SD card at startup to be loaded.
+
+
+<div align="center">
+
+<img alt="Languages Screen" src="/img/esp3d-x/images/screens/languages_screen.png"/>
+
+**Languages Screen**
+
+</div>
+
+
+---
+
+### Backlight level
+
+<div align="center">
+
+<img alt="Backlight Icon" src="/img/esp3d-x/images/icons/settings/backlight.png"/>
+
+**Backlight Icon**
+
+</div>
+
+
+Change the level of screen backlight.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+
+<div align="center">
+
+<img alt="Backlight setting" src="/img/esp3d-x/images/screens/setting_light.png"/>
+
+**Backlight Menu**
+
+</div>
+
+
+Once menu activated, the backlight level can be changed using encoder from 0% to 100% 
+
+
+<div align="center">
+
+<img alt="Backlight setting" src="/img/esp3d-x/images/screens/setting_light_enabled.png"/>
+
+**Backlight Level Modification**
+
+</div>
+
+
+Setting is saved automaticaly when you press menu or set button, if you press cancel button instead of set button, operation is canceled.
+
+---
+
+### Orientation selection
+
+
+<div align="center">
+
+<img alt="orientation Icon" src="/img/esp3d-x/images/icons/settings/orientation.png"/>
+
+**Orientation Icon**
+
+</div>
+
+
+Change the screen orientation by 0, 90 , 180 and 270 angular degres.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+
+<div align="center">
+
+<img alt="Orientation menu" src="/img/esp3d-x/images/screens/setting_orientation.png"/>
+
+**Orientation Menu**
+
+</div>
+
+
+Once menu activated, the orientation can be changed using encoder.
+| <img alt="orientation setting" src="/img/esp3d-x/images/screens/setting_orientation_enabled.png"/> 0 degrees | <img alt="orientation setting" src="/img/esp3d-x/images/screens/setting_orientation_90.png"/> 90 degrees |
+|---|---|
+
+
+Setting is saved automaticaly when you press menu or set button, if you press cancel button instead of set button, operation is canceled.
+
+---
+
+### Sound control
+
+| <img alt="Sound Icon" src="/img/esp3d-x/images/icons/settings/sound.png"/> Sound Icon | <img alt="Mute Icon" src="/img/esp3d-x/images/icons/settings/no_sound.png"/> No Sound Icon |
+|---|---|
+
+
+Enable or Mute Sound by toggle, the displayed icon represent the current state.
+
+**Hardware Controls:** Touch, Buttons
+
+| <img alt="Sound menu" src="/img/esp3d-x/images/screens/setting_sound.png"/> Mute Menu | <img alt="Sound menu" src="/img/esp3d-x/images/screens/setting_no_sound.png"/> Enable Menu |
+|---|---|
+
+
+Setting is saved automaticaly when you press menu or set button.
+
+---
+
+### Lock button display
+
+| <img alt="Lock UI Icon" src="/img/esp3d-x/images/icons/settings/lock_screen.png"/> Lock Icon | <img alt="Mute Icon" src="/img/esp3d-x/images/icons/settings/lock_disabled.png"/> Unlock Icon |
+|---|---|
+
+
+Allow to show / hide the lock control, the icon displayed represent the current state
+
+**Hardware Controls:** Touch, Buttons
+
+| <img alt="Sound menu" src="/img/esp3d-x/images/screens/settings_screen.png"/> Hide Lock UI Control | <img alt="Sound menu" src="/img/esp3d-x/images/screens/show_lock.png"/> Show Lock UI Control |
+|---|---|
+
+
+Setting is saved automaticaly when you press menu or set button.
+
+---
+
+
+### Output Selector Screen
+
+| <img alt="Serial Icon" src="/img/esp3d-x/images/icons/settings/output_serial.png"/> Serial | <img alt="BT Serial Icon" src="/img/esp3d-x/images/icons/settings/output_bt_serial.png"/> BTSerial | <img alt="BT Ble Icon" src="/img/esp3d-x/images/icons/settings/output_bt_ble.png"/> BTBLE | <img alt="WiFi Icon" src="/img/esp3d-x/images/icons/settings/output_wifi.png"/> WiFi | <img alt="Ext Module Icon" src="/img/esp3d-x/images/icons/settings/output_ext_module.png"/> ExternalModule |
+|---|---|---|---|---|
+
+
+Communication method selection. The menu icon shows the currently active mode.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Available Options:**
+
+| Option | Description |
+|:-------|:------------|
+| **Serial** | Wired connection via RJ11 port |
+| **Bluetooth Serial** | Classic Bluetooth SPP |
+| **Bluetooth BLE** | Bluetooth Low Energy |
+| **WiFi Socket TCP** | Wireless TCP/telnet connection to a CNC controller *(if WiFi build)* |
+| **External Module** | External BT/BLE or other UART module *(if Ext Module build)* |
+
+
+| <img alt="Serial selected" src="/img/esp3d-x/images/screens/setting_serial.png"/> Serial selected | <img alt="BT Serial selected" src="/img/esp3d-x/images/screens/setting_bt_serial.png"/> BT Serial selected |
+|---|---|
+| <img alt="WiFi selected" src="/img/esp3d-x/images/screens/setting_wifi.png"/> WiFi selected | <img alt="Ext Module selected" src="/img/esp3d-x/images/screens/setting_ext_module.png"/> Ext Module selected |
+
+| <img alt="Output Selection Screen" src="/img/esp3d-x/images/screens/output_selection_screen.png"/> Output Selection Screen(BT Firmware) | <img alt="Output Selection Screen WiFi" src="/img/esp3d-x/images/screens/output_selection_screen_wifi.png"/> Output Selection Screen(WiFi Firmware) |
+|---|---|
+
+
+> **Note:** A restart is required after changing the output method. A confirmation message will be displayed.
+
+
+<div align="center">
+
+<img alt="Output Selection Confirmation" src="/img/esp3d-x/images/screens/output_com.png"/>
+
+**Restart Confirmation**
+
+</div>
+
+
+---
+
+
+### Output mode configuration
+
+The configuration icon in the Settings screen adapts to the active output mode:
+
+| Active Output | Configuration Icon | Opens |
+|:-------------|:-----------------:|:------|
+| Serial | <img src="/img/esp3d-x/images/icons/settings/baudrate.png" alt="Baudrate" /> | [Baudrate Screen](#baudrate-screen) |
+| BT Serial / BT BLE | <img src="/img/esp3d-x/images/icons/settings/scan_bluetooth.png" alt="Scan BT" /> | [Scan Bluetooth Screen](#scan-bluetooth-screen) |
+| WiFi (WiFi Part 1)  | <img src="/img/esp3d-x/images/icons/settings/scan_wifi.png" alt="Scan WiFi" />| [WiFi Scan Screen](#wifi-scan-screen) |
+| Socket TCP (WiFi Part 2)| <img src="/img/esp3d-x/images/icons/settings/scan_server.png" alt="Scan Server" />| [Scan Server](#wifi-scan-server) |
+| External Module | <img src="/img/esp3d-x/images/icons/settings/baudrate.png" alt="Baudrate" /> | [Baudrate Screen](#baudrate-screen) (Ext module baud) |
+
+> **WiFi — Two-step connection model:**
+>
+> WiFi mode requires **two separate connection steps**, unlike Serial or Bluetooth where a single connection reaches the CNC controller directly.
+>
+> | Step | Action | Screen |
+> |:----:|:-------|:-------|
+> | **1** | Connect the pendant to a WiFi access point (the network transport) | [WiFi Scan Screen](#wifi-scan-screen) → selects the AP and saves credentials |
+> | **2** | Connect to the CNC controller's TCP socket server (the CNC link) | [Server Scan Screen](#wifi-scan-server) → selects the host:port; or use Button 1 in [Connection Status](#connection-status-iconscreen) |
+>
+> WiFi is only the **remote communication layer** — it replaces the cable. The actual CNC link is the TCP socket connection in step 2. Both steps must succeed for the pendant to communicate with the CNC.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+| <img alt="Baudrate Menu" src="/img/esp3d-x/images/screens/baudrate.png"/> Baudrate (Serial) | <img alt="Scan BT Menu" src="/img/esp3d-x/images/screens/scan_bt_serial_bt.png"/> Scan BT (BT BLE) |
+|---|---|
+| <img alt="Scan BT Serial Menu" src="/img/esp3d-x/images/screens/scan_bt_bt_ble.png"/> Scan BT (BT Serial) | <img alt="WiFi Scan Menu" src="/img/esp3d-x/images/screens/wifi_scan_screen.png"/> WiFi Scan |
+| <img alt="Server Scan Menu" src="/img/esp3d-x/images/screens/scan_server.png"/> Scan Server (WiFi) | <img alt="Baudrate Menu" src="/img/esp3d-x/images/screens/baudrate_ext_module.png"/> Baudrate (External Module) |
+
+
+---
+
+#### Baudrate Screen
+
+
+<div align="center">
+
+<img alt="Baudrate Icon" src="/img/esp3d-x/images/icons/screens/baudrate.png"/>
+
+**Baudrate Icon**
+
+</div>
+
+
+Serial communication speed configuration.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+> **Visibility:** Available when current output is **Serial** or **External Module**
+
+**Features:**
+
+- Select from available baud rates
+- Changes apply immediately
+
+
+<div align="center">
+
+<img alt="Baudrate Screen" src="/img/esp3d-x/images/screens/baudrate_screen.png"/>
+
+**Baudrate Screen**
+
+</div>
+
+
+---
+
+#### Scan Bluetooth Screen
+
+
+<div align="center">
+
+<img alt="Scan Bluetooth Icon" src="/img/esp3d-x/images/icons/screens/scan_bluetooth.png"/>
+
+**Scan Bluetooth Icon**
+
+</div>
+
+
+Bluetooth device discovery and pairing.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+> **Visibility:** Only available when current output is **Bluetooth Serial** or **Bluetooth BLE**
+
+**Features:**
+
+- Scan for available Bluetooth devices (up to 30 s)
+- Select and pair with a device
+- Save target BT host for automatic connection on subsequent startups
+
+
+<div align="center">
+
+<img alt="Scan Bluetooth Screen" src="/img/esp3d-x/images/screens/scan_bt_screen.png"/>
+
+**Scan Bluetooth Screen**
+
+</div>
+
+
+**Bluetooth PIN / Passkey:**
+
+If the CNC controller requires a PIN (BT Classic) or passkey (BLE), you will be prompted on the [Connection Status Screen](#connection-status-iconscreen) when connection fails with **Auth Failed**. Tap the <img src="/img/esp3d-x/images/icons/buttons/unlock_b.png" alt="Unlock" /> button to enter or correct the PIN.
+
+- BT Classic: 4-digit PIN
+- BLE: 6-digit passkey
+- Empty = no authentication (SEC_NONE)
+
+---
+
+#### WiFi Scan Screen
+
+WiFi access point discovery and credential configuration.
+
+> **Step 1 of 2 — Network transport only.** This screen connects the pendant to a WiFi network. After this step the pendant has network access, but it is **not yet connected to the CNC controller**. Proceed to the [Server Scan Screen](#wifi-scan-server) (step 2) to establish the CNC socket link.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+> **Visibility:** Only available when current output is **WiFi**
+
+**Features:**
+
+- Asynchronous scan (UI stays responsive during scan)
+- APs sorted by signal strength (strongest first)
+- Signal percentage displayed for each AP
+- Lock icon <img src="/img/esp3d-x/images/icons/buttons/lock.png" alt="lock" /> for password-protected networks
+- Checkmark for currently configured SSID
+- Scan results reused when returning from password input (no re-scan needed)
+
+**Buttons:**
+
+| Button | Icon | Action |
+|:-------|:----:|:-------|
+| Select / OK | <img src="/img/esp3d-x/images/icons/buttons/ok_b.png" alt="OK" /> | Connect to selected AP |
+| Refresh | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> | Restart scan |
+| Back | <img src="/img/esp3d-x/images/icons/buttons/back_b.png" alt="Back" /> | Return to Settings |
+
+| <img alt="WiFi Scan - Results" src="/img/esp3d-x/images/screens/wifi_scan_screen.png"/> Scan results | <img alt="AP List" src="/img/esp3d-x/images/screens/ap_list.png"/> AP List | <img alt="WiFi Scan - Password entry" src="/img/esp3d-x/images/screens/wifi_scan_password.png"/> Password entry |
+|---|---|---|
+
+
+**Selection flow:**
+
+1. Select an AP from the list and press OK (or tap the item)
+2. **Open network:** SSID saved, connection starts immediately → navigates to Connection Status
+3. **Protected network:** Password input opens (pre-filled with saved password)
+   - Press OK → saves password, starts connection → navigates to Connection Status
+   - Press Cancel → returns to scan results (no reconnect attempt)
+
+---
+
+#### Server Scan Screen
+
+TCP server discovery and selection.
+
+> **Step 2 of 2 — CNC socket link.** This screen connects the pendant to the CNC controller's TCP socket server (telnet/Telnet port). The pendant must already be connected to a WiFi network ([WiFi Scan Screen](#wifi-scan-screen), step 1) before using this screen. Once a server is selected the pendant establishes the actual CNC communication link.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+> **Visibility:** Only available when current output is **WiFi**
+
+**Features:**
+
+- Asynchronous scan (UI stays responsive during scan)
+- Search using mDNS telnet service availability
+- Checkmark for currently selectected server
+
+
+**Buttons:**
+
+| Button | Icon | Action |
+|:-------|:----:|:-------|
+| Select / OK | <img src="/img/esp3d-x/images/icons/buttons/ok_b.png" alt="OK" /> | Connect to selected AP |
+| Refresh | <img src="/img/esp3d-x/images/icons/buttons/refresh.png" alt="Refresh" /> | Restart scan |
+| Back | <img src="/img/esp3d-x/images/icons/buttons/back_b.png" alt="Back" /> | Return to Settings |
+
+| <img alt="Scan Server" src="/img/esp3d-x/images/screens/scan_server.png"/> Scan Server | <img alt="Servers List" src="/img/esp3d-x/images/screens/server_list.png"/> Servers List |
+|---|---|
+
+
+**Selection flow:**
+
+1. Select an AP from the list and press OK (or tap the item)
+2. **Open network:** SSID saved, connection starts immediately → navigates to Connection Status
+3. **Protected network:** Password input opens (pre-filled with saved password)
+   - Press OK → saves password, starts connection → navigates to Connection Status
+   - Press Cancel → returns to scan results (no reconnect attempt)
+
+---
+
+### Settings List Screen
+
+
+<div align="center">
+
+<img alt="Settings List Icon" src="/img/esp3d-x/images/icons/screens/settings_list.png"/>
+
+**Settings List Icon**
+
+</div>
+
+
+Additional UI and hardware configuration options menu.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Provides Access to:**
+
+- Polling interval configuration
+- Screen timeout settings
+- Files extensions list
+- Show/Hide Macro menu
+- Show/Hide Probe menu
+- Show/Hide Change Tool menu
+- Enable/Disable the bypass of safety focus
+- X~C axis list of usable steps for jog
+- X~C axis list of usable feedrate for jog
+- Enable/Disable the Rx/Tx swap
+
+
+<div align="center">
+
+<img alt="Settings Editor menu" src="/img/esp3d-x/images/screens/settings_editor.png"/>
+
+**Settings Editor menu**
+
+</div>
+
+
+
+
+<div align="center">
+
+<img alt="Settings Editor List" src="/img/esp3d-x/images/screens/setting_editor_polling_interval.png"/>
+
+**Settings Editor List**
+
+</div>
+
+
+
+
+
+---
+
+### Polling Screen
+
+
+<div align="center">
+
+<img alt="Settings Editor List" src="/img/esp3d-x/images/screens/setting_editor_polling_interval.png"/>
+
+**Polling Interval**
+
+</div>
+
+
+Configure the automatic status reporting interval.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Usage:**
+
+- FluidNC: Auto-report time
+- grblHAL: Polling period
+
+
+For FluidNC it configure the Autoreporting interval which is set when the firmware confirm communication with FluidNC. 
+Set 0 disable the autoreporting request and use existing one if setup.
+
+
+<div align="center">
+
+<img alt="Settings Editor List" src="/img/esp3d-x/images/screens/setting_polling_screen.png"/>
+
+**Polling Interval Screen**
+
+</div>
+
+
+> **Note:** The pendant need periodical report to display up to date informations, if you disable it in pendant, please ensure there are frequent update from firmware to maintain UI consistency.
+
+---
+
+### Timeout Screen
+
+<div align="center">
+
+<img alt="Timeout Screen" src="/img/esp3d-x/images/screens/setting_editor_screen_timeout.png"/>
+
+**Timeout Screen**
+
+</div>
+
+
+Screen backlight auto-power-off configuration.
+
+**Hardware Controls:** Touch, Buttons, Encoder
+
+**Features:**
+
+- Select inactivity timeout duration from predefined list
+- Option to disable auto-power-off entirely
+
+
+<div align="center">
+
+<img alt="Timeout screen" src="/img/esp3d-x/images/screens/setting_timeout_screen.png"/>
+
+**Timeout Screen**
+
+</div>
+
+
+---
+
+### Files Extensions Screen
+
+
+<div align="center">
+
+<img alt="Extensions Menu" src="/img/esp3d-x/images/screens/setting_editor_extensions.png"/>
+
+**Files Extentions Menu**
+
+</div>
+
+
+Edit the files extensions list used to filter usables files.
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="Extensions screen" src="/img/esp3d-x/images/screens/setting_editor_extensions_screen.png"/>
+
+**Files Extensions Editor Screen**
+
+</div>
+
+
+the extensions are separated by `;` and are not case sensitive.
+
+---
+
+### WiFi SSID 
+
+<div align="center">
+
+<img alt="wifi ssid menu" src="/img/esp3d-x/images/screens/setting_wifi_ssid.png"/>
+
+**Manualy change SSID Access point**
+
+</div>
+
+
+This allow to edit the WiFi Access Point SSID
+
+**Hardware Controls:** Touch, Buttonson est 
+
+
+<div align="center">
+
+<img alt="SSID Editor screen" src="/img/esp3d-x/images/screens/setting_editor_ssid.png"/>
+
+**SSID Editor Screen**
+
+</div>
+
+
+---
+
+### WiFi Password 
+
+<div align="center">
+
+<img alt="wifi password menu" src="/img/esp3d-x/images/screens/setting_wifi_password.png"/>
+
+**Manualy change WiFi password**
+
+</div>
+
+
+This allow to edit the WiFi password
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="WiFi Password Editor screen" src="/img/esp3d-x/images/screens/setting_editor_wifi_password.png"/>
+
+**WiFi Password Editor Screen**
+
+</div>
+
+
+---
+
+### Forget Connection 
+
+<div align="center">
+
+<img alt="forget connection menu" src="/img/esp3d-x/images/screens/setting_forget_connection.png"/>
+
+**Delete all connections parameters**
+
+</div>
+
+
+This allow to delete all current connection parameters: Bluetooth host, password, WiFi SSID, password, connecting server ip and port/
+
+**Hardware Controls:** Touch, Buttons
+
+The action is destructive so it request a user's confirmation.
+
+
+<div align="center">
+
+<img alt="Confirmation of forget connection screen" src="/img/esp3d-x/images/screens/confirmation_forget_connection.png"/>
+
+**Confirmation Dialog**
+
+</div>
+
+
+---
+
+### TCP Server Address 
+
+<div align="center">
+
+<img alt="TCP Server address menu" src="/img/esp3d-x/images/screens/setting_server_address.png"/>
+
+**Manualy change the TCP server address**
+
+</div>
+
+
+This allow to edit the WiFi TCP Socket address
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="TCP Server Address Editor screen" src="/img/esp3d-x/images/screens/setting_editor_server_address.png"/>
+
+**TCP Socket Server Address Editor Screen**
+
+</div>
+
+
+---
+
+### TCP Server Port 
+
+<div align="center">
+
+<img alt="TCP Server port menu" src="/img/esp3d-x/images/screens/setting_server_port.png"/>
+
+**Manualy change the TCP server port**
+
+</div>
+
+
+This allow to edit the WiFi TCP Socket port
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="TCP Server Port Editor screen" src="/img/esp3d-x/images/screens/setting_editor_server_port.png"/>
+
+**TCP Socket Server Port Editor Screen**
+
+</div>
+
+
+---
+
+### Show / Hide Macros menu
+
+
+<div align="center">
+
+<img alt="Macros Menu" src="/img/esp3d-x/images/screens/settings_editor_macros.png"/>
+
+**Show / Hide Macros Menu**
+
+</div>
+
+
+Toggle the display of macros menu.
+
+**Hardware Controls:** Touch, Buttons
+
+---
+
+### Show / Hide Probe menu
+
+
+<div align="center">
+
+<img alt="Extensions Menu" src="/img/esp3d-x/images/screens/setting_editor_probe.png"/>
+
+**Show / Hide Probe Menu**
+
+</div>
+
+
+Toggle the display of probe menu.
+
+**Hardware Controls:** Touch, Buttons
+
+---
+
+### Show / Hide Change Tool menu
+
+
+<div align="center">
+
+<img alt="Change Tool Menu" src="/img/esp3d-x/images/screens/setting_editor_change_tool.png"/>
+
+**Show / Hide Change Tool Menu**
+
+</div>
+
+
+Toggle the display of change tool menu.
+
+**Hardware Controls:** Touch, Buttons
+
+---
+
+### Enable / Disable the bypass safety
+
+
+<div align="center">
+
+<img alt="Change Tool Menu" src="/img/esp3d-x/images/screens/setting_editor_bypass_safety.png"/>
+
+**Enable / Disable The Bypass of Safety Focus Control**
+
+</div>
+
+
+Toggle the Safety Focus Control. If bypass is disabled, the user need to manually enable focus on control to use (e.g: Jog).
+If enabled the working control got auto focus and is activated when entering screen (e.g: Jog control, user can directly use buttons / encoder to jog when entering in Jog screen).
+
+>**Note:** The recommendation is to keep this setting disabled.
+
+**Hardware Controls:** Touch, Buttons
+
+---
+
+### Edit Axis Steps List used for Jog
+
+
+<div align="center">
+
+<img alt="Steps List Editor Menu" src="/img/esp3d-x/images/screens/setting_editor_x_steps.png"/>
+
+**Steps List Editor Menu**
+
+</div>
+
+
+Edit the steps list used by jog screen. Each axis has its own list.
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="Steps List Editor screen" src="/img/esp3d-x/images/screens/setting_editor_x_steps_editor.png"/>
+
+**Steps List Editor Screen**
+
+</div>
+
+
+the values are separated by `;`
+
+
+---
+
+### Edit Axis Feedrates List used for Jog
+
+
+<div align="center">
+
+<img alt="Feedrates  List Editor Menu" src="/img/esp3d-x/images/screens/setting_editor_x_feedrates.png"/>
+
+**Feedrates List Editor Menu**
+
+</div>
+
+
+Edit the steps list used by jog screen. Each axis has its own list.
+
+**Hardware Controls:** Touch, Buttons
+
+
+<div align="center">
+
+<img alt="Feedrates List Editor screen" src="/img/esp3d-x/images/screens/setting_editor_x_feedrates_editor.png"/>
+
+**Feedrates List Editor Screen**
+
+</div>
+
+
+the values are separated by `;`
+
+---
+
+### Enable / Disable the Rx / Tx pins
+
+
+<div align="center">
+
+<img alt="Macros Menu" src="/img/esp3d-x/images/screens/setting_editor_swap_rxtx.png"/>
+
+**Enable / Disable Rx/Tx swap**
+
+</div>
+
+
+Toggle the pins definitions used for Rx and TX in serial communications.
+
+**Hardware Controls:** Touch, Buttons
+
+---
+
+## Settings Reference
+
+Complete list of available settings:
+
+### Display & UI
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/screens/languages.png" alt="Language" /> | Language Pack Selection | UI language |
+| <img src="/img/esp3d-x/images/icons/settings/theme.png" alt="Theme" /> | Theme Selection | Visual theme |
+| <img src="/img/esp3d-x/images/icons/settings/orientation.png" alt="Orientation" /> | Screen Orientation | Display rotation (0°, 90°, 180°, 270°) |
+| <img src="/img/esp3d-x/images/icons/settings/backlight.png" alt="Backlight" /> | Backlight % | Screen brightness |
+| <img src="/img/esp3d-x/images/icons/settings/settings_list.png" alt="Timeout" /> | Screen Time Out | Auto-off delay |
+
+### Audio
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/sound.png" alt="Sound" /> | Sound On/Off | Enable/disable audio feedback |
+
+### Communication
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/output_serial.png" alt="Output" /> <img src="/img/esp3d-x/images/icons/settings/output_bt_serial.png" alt="Output" /> <img src="/img/esp3d-x/images/icons/settings/output_bt_ble.png" alt="Output" /> <img src="/img/esp3d-x/images/icons/settings/output_wifi.png" alt="Output" /> <img src="/img/esp3d-x/images/icons/settings/output_ext_module.png" alt="Output" /> | Output Selector | Serial / BT Serial / BT BLE / WiFi Socket TCP / External Module |
+| <img src="/img/esp3d-x/images/icons/settings/baudrate.png" alt="Baudrate" /> | Baudrate Configuration | Serial or External Module communication speed |
+| <img src="/img/esp3d-x/images/icons/settings/scan_bluetooth.png" alt="Bluetooth" /> | Scan Bluetooth Devices | BT device discovery and pairing |
+| <img src="/img/esp3d-x/images/icons/settings/scan_wifi.png" alt="wifi" />| WiFi Scan | WiFi AP discovery and credential setup |
+| <img src="/img/esp3d-x/images/icons/settings/scan_server.png" alt="wifi" />| Server Scan | TCP Socket Server discovery  using mDNS (telnet) |
+| — | WiFi SSID | Stored WiFi network name (set via WiFi scan) |
+| — | WiFi Password | Stored WiFi password (set via WiFi scan or unlock flow) |
+| — | Hostname | Device network name (used for WiFi, mDNS) |
+| <img src="/img/esp3d-x/images/icons/settings/enabled.png" alt="Macros" /> <img src="/img/esp3d-x/images/icons/settings/disabled.png" alt="Macros" /> | Swap Rx/Tx Pins | Hardware pin configuration |
+| <img src="/img/esp3d-x/images/icons/settings/settings_list.png" alt="Polling" /> | Polling Interval | Status update frequency |
+
+### Features Visibility
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/lock_screen.png" alt="Lock" /> <img src="/img/esp3d-x/images/icons/settings/lock_disabled.png" alt="Lock" /> | Show/Hide Lock Screen Control | UI lock feature |
+| <img src="/img/esp3d-x/images/icons/settings/enabled.png" alt="Macros" /> <img src="/img/esp3d-x/images/icons/settings/disabled.png" alt="Macros" /> | Show/Hide Macros Feature | Macros screen access |
+| <img src="/img/esp3d-x/images/icons/settings/enabled.png" alt="Macros" /> <img src="/img/esp3d-x/images/icons/settings/disabled.png" alt="Macros" /> | Show/Hide Probe Feature | Probe screen access |
+| <img src="/img/esp3d-x/images/icons/settings/enabled.png" alt="Macros" /> <img src="/img/esp3d-x/images/icons/settings/disabled.png" alt="Macros" /> | Show/Hide Change Tool Feature | Tool change screen access |
+
+
+### File Management
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/settings_list.png" alt="Extensions" /> | Files Extensions Filter | Visible file types in SD browser |
+
+### Safety
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/enabled.png" alt="Macros" /> <img src="/img/esp3d-x/images/icons/settings/disabled.png" alt="Macros" /> | Bypass Safety Focus | Skip safety confirmations |
+
+### Axis Configuration
+
+Each axis (X, Y, Z, A, B, C) has:
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/settings_list.png" alt="Steps" /> | Steps Supported List | Available step increments |
+| <img src="/img/esp3d-x/images/icons/settings/settings_list.png" alt="Feedrate" /> | Feedrate Supported List | Available feed rates |
+
+### System
+
+| Icon | Setting | Description |
+|:----:|:--------|:------------|
+| <img src="/img/esp3d-x/images/icons/settings/reset_settings.png" alt="Reset" /> | Reset Settings | Restore default configuration |
+
+
+---
+
+## Appendix
+
+### Hardware Controls Summary
+
+| Screen | Touch | Buttons | Switch | Encoder | Potentiometer | Virtual HW |
+|:-------|:-----:|:-------:|:------:|:-------:|:-------------:|:----------:|
+| Update | ✓ | ✓ | | | | |
+| Splash | | | | | | |
+| Main | ✓ | ✓ | | ✓ | | |
+| Settings | ✓ | ✓ | | ✓ | | ✓ |
+| Information | ✓ | ✓ | | | | |
+| Status | ✓ | ✓ | ✓ | ✓ | ✓ | |
+| Jog | ✓ | ✓ | ✓ | ✓ | | |
+| SD | ✓ | ✓ | ✓ | ✓ | | |
+| Macros | ✓ | ✓ | ✓ | ✓ | | |
+| Probe | ✓ | ✓ | ✓ | ✓ | | |
+| Change Tool | ✓ | ✓ | | ✓ | | |
+| Firmware Status | ✓ | ✓ | | ✓ | | |
+| Connection Status | ✓ | ✓ | | | | |
+| Message Box | ✓ | ✓ | | | | |
+| Input Screen | ✓ | ✓ | | | | |
+| Languages | ✓ | ✓ | | ✓ | | |
+| WiFi Scan | ✓ | ✓ | | ✓ | | |
+| Server Scan | ✓ | ✓ | | ✓ | | |
+| Scan Bluetooth | ✓ | ✓ | | ✓ | | |
+| Baudrate | ✓ | ✓ | | ✓ | | |
+| Output Selector | ✓ | ✓ | | ✓ | | |
+| Settings List | ✓ | ✓ | | ✓ | | |
+| Polling | ✓ | ✓ | | ✓ | | |
+| Time Out | ✓ | ✓ | | ✓ | | |
+
+**Legend:**
+
+- **Touch** - Touchscreen interaction enabled
+- **Buttons** - Physical buttons active
+- **Switch** - 4-state switch used for mode selection
+- **Encoder** - Rotary encoder for navigation/adjustment
+- **Potentiometer** - Analog input active
+- **Virtual HW** - On-screen virtual hardware controls available
+
+---
+
+### Screen Hierarchy Reference
+
+| Screen | Parent(s) | Child Screen(s) |
+|:-------|:----------|:----------------|
+| Update | - | - |
+| Splash | - | Main |
+| Main | Splash | Settings, Information, Status, Jog, SD, Macros, Probe, Change Tool, Message Box, Firmware Status, Connection Status |
+| Settings | Main | Message Box, Languages, Settings List, Scan Bluetooth, WiFi Scan, Server Scan, Baudrate, Output Selector, Connection Status |
+| Information | Main | - |
+| Status | Main | Message Box, Input Screen, Firmware Status, Connection Status |
+| Jog | Main | Message Box, Input Screen, Firmware Status, Connection Status |
+| SD | Main | Message Box, Input Screen |
+| Macros | Main | Message Box, Input Screen |
+| Probe | Main, Change Tool | Message Box, Input Screen, Firmware Status, Connection Status |
+| Change Tool | Main | Probe, Message Box, Input Screen, Firmware Status, Connection Status |
+| Firmware Status | Main, Probe, Status, Change Tool, Jog | - |
+| Connection Status | Multiple (tap icon) | Input Screen (WiFi pwd), WiFi Scan (auth-fail) |
+| Message Box | Multiple | - |
+| Input Screen | Multiple | - |
+| Languages | Settings | - |
+| WiFi Scan | Settings, Connection Status | Input Screen (password), Connection Status |
+| Server Scan | Settings | Connection Status |
+| Scan Bluetooth | Settings | - |
+| Baudrate | Settings | - |
+| Output Selector | Settings | Message Box |
+| Settings List | Settings | Polling, Time Out, Input Screen |
+| Polling | Settings List | - |
+| Time Out | Settings List | - |
+
+---
+
+
+### Configuration File Reference
+
+The `esp3dcnf.ini` file allows you to configure pendant settings via SD card. Place this file on the SD card root directory, and it will be processed on boot.
+
+**File Format:**
+
+- INI format with sections in brackets `[section]`
+- Comments start with semicolon `;`
+- Boolean values: `yes/no`, `on/off`, `true/false`, `1/0`
+- Protected values (passwords/tokens) are replaced with `********` in the `.ok` file after processing
+
+**Example Configuration File:**
+
+```ini
+; =============================================================================
+; ESP3D-X Configuration File
+; =============================================================================
+; 
+; Place this file on the SD card root as: esp3dcnf.ini
+; The firmware will process it on boot and rename it to esp3dcnf.ok
+;
+; Boolean values: yes/no, on/off, true/false, 1/0
+; Protected values (passwords/tokens) will be replaced with ******** in .ok file
+;
+; =============================================================================
+
+; =============================================================================
+; [system] - Core system settings
+; =============================================================================
+[system]
+
+; Serial baud rate (9600, 19200, 38400, 57600, 74880, 115200, 230400, 250000, 500000, 921600, 1000000)
+Baud_rate = 115200
+
+; Target firmware: None, GRBL, GRBLHAL, MARLIN, SMOOTHIEWARE, REPETIER, HP_GL, FLUIDNC
+TargetFW = FLUIDNC
+
+; Output client: SERIAL or USB
+output = SERIAL
+
+; USB serial baud rate (if USB_SERIAL feature enabled)
+; USB_Serial_Baud_rate = 115200
+
+; Swap RX/TX pins (hardware configuration)
+Swap_RX_TX = no
+
+; =============================================================================
+; [network] - Network and connectivity settings
+; =============================================================================
+[network]
+
+; Device hostname (max 32 characters)
+hostname = ESP3D-X
+
+; Radio mode: OFF, BT, STA, AP, SETUP
+radio_mode = BT
+
+; WiFi Station settings (if WIFI feature enabled)
+; sta_fallback = WIFI-SETUP
+; STA_SSID = MyNetwork
+; STA_Password = MyPassword
+; STA_IP_mode = DHCP
+; STA_IP = 192.168.1.100
+; STA_MSK = 255.255.255.0
+; STA_GW = 192.168.1.1
+; STA_DNS = 192.168.1.1
+
+; WiFi Access Point settings (if WIFI feature enabled)
+; AP_SSID = ESP3D-X
+; AP_Password = 12345678
+; AP_IP = 192.168.0.1
+; AP_channel = 2
+
+; Bluetooth settings (if BT feature enabled)
+BT_Address = 00:00:00:00:00:00
+BT_Pin = 1234
+BT_Name = ESP3D-Pendant
+BLE_Address = 00:00:00:00:00:00
+BLE_Passkey = 123456
+BLE_Name = ESP3D-BLE
+
+; =============================================================================
+; [services] - Services configuration
+; =============================================================================
+[services]
+
+; Enable radio at boot
+Radio_enabled = yes
+
+; Check for update files on SD card at boot
+CHECK_FOR_UPDATE = yes
+
+; HTTP server (if WIFI feature enabled)
+; HTTP_Port = 80
+; HTTP_active = yes
+
+; Telnet server (if TELNET feature enabled)
+; TELNET_Port = 23
+; TELNET_active = yes
+
+; WebSocket (if WEBSOCKET feature enabled)
+; WebSocket_active = yes
+
+; WebDAV (if WEBDAV feature enabled)
+; WebDav_active = yes
+
+; Authentication (if AUTHENTICATION feature enabled)
+; ADMIN_PASSWORD = admin
+; USER_PASSWORD = user
+; Session_timeout = 3
+
+; Notifications (if NOTIFICATIONS feature enabled)
+; NOTIF_TYPE = None
+; AUTONOTIFICATION = no
+; NOTIF_TOKEN1 = 
+; NOTIF_TOKEN2 = 
+; NOTIF_TOKEN_Settings = 
+
+; Time settings (if TIMESTAMP feature enabled)
+; Active_Internet_time = yes
+; Time_server1 = 0.pool.ntp.org
+; Time_server2 = 1.pool.ntp.org
+; Time_server3 = 2.pool.ntp.org
+; Time_zone = +00:00
+
+; =============================================================================
+; [screen] - Display and UI settings
+; =============================================================================
+[screen]
+
+; UI language (default, en, fr, de, es, it, etc.)
+UI_language = default
+
+; Status polling interval in milliseconds (0, 50, 75, 100, 200, 300, 500, 1000, 3000, 10000, 30000)
+Polling_interval = 200
+
+; Buzzer enabled
+Buzzer_on = yes
+
+; Brightness level (0-100)
+Brightness = 100
+
+; Screen timeout in seconds (0 = disabled)
+Screen_timeout = 0
+
+; Display orientation (0=portrait, 1=landscape, 2=portrait_inverted, 3=landscape_inverted)
+Orientation = 1
+
+; UI lock enabled
+UI_lock = no
+
+; Hide lock icon when unlocked
+Hide_lock_icon = no
+
+; Theme color index (0-n depending on available themes)
+Theme = 0
+
+; File extensions filter (semicolon-separated, uppercase)
+Files_extensions = GCODE;GCO;NC;TAP;TXT
+
+; =============================================================================
+; [scripts] - GCode scripts
+; =============================================================================
+[scripts]
+
+; Script to run on pause (semicolon-separated GCode commands)
+Pause_script = 
+
+; Script to run on stop
+Stop_script = 
+
+; Script to run on resume
+Resume_script = 
+
+; =============================================================================
+; [pendant] - CNC Pendant specific settings
+; =============================================================================
+[pendant]
+
+; Enable probe feature in UI
+Probe_enabled = yes
+
+; Enable macros feature in UI
+Macros_enabled = yes
+
+; Enable tool change feature in UI
+Tool_change_enabled = yes
+
+; Bypass safety focus check (advanced users only)
+Bypass_safety_focus = no
+
+; Jog step values (semicolon-separated, in mm or degrees for rotary)
+X_jog_steps = 0.01;0.1;1;10;50;100
+Y_jog_steps = 0.01;0.1;1;10;50;100
+Z_jog_steps = 0.01;0.1;1;10;50
+A_jog_steps = 0.1;1;5;15;45;90
+B_jog_steps = 0.1;1;5;15;45;90
+C_jog_steps = 0.1;1;5;15;45;90
+
+; Jog feedrate values (semicolon-separated, mm/min or deg/min for rotary)
+X_jog_feedrates = 100;500;1000;2000;5000
+Y_jog_feedrates = 100;500;1000;2000;5000
+Z_jog_feedrates = 100;500;1000;2000;5000
+A_jog_feedrates = 60;180;360;720;1440
+B_jog_feedrates = 60;180;360;720;1440
+C_jog_feedrates = 60;180;360;720;1440
+```
+
+> **Note:** Settings marked with comments (`;`) are optional or depend on features enabled in your firmware build. Uncomment and modify only the settings you need.
+

@@ -1,0 +1,85 @@
+---
+title: "File Transfer"
+---
+
+# File Transfer
+
+ESP3D-X supports several methods for transferring files to and from the device.
+
+## HTTP Multipart Upload
+
+### Upload to flash filesystem
+
+```http
+POST /files
+Content-Type: multipart/form-data
+```
+
+Form fields:
+- `path` — Target directory path
+- `myfiles` — File(s) to upload
+- `<path><name>S` — Size field for each file
+
+### Upload to SD card
+
+```http
+POST /sdfiles
+```
+
+Same multipart format as flash upload.
+
+### Firmware update
+
+```http
+POST /updatefw
+```
+
+Upload a `.bin` firmware file for OTA update.
+
+## WebDAV
+
+WebDAV provides standard file operations via HTTP methods:
+
+| Method | Action |
+|--------|--------|
+| GET | Read file / list directory |
+| PUT | Write file |
+| DELETE | Delete file/directory |
+| MKCOL | Create directory |
+| PROPFIND | List properties |
+
+Base URL: `http://<esp-ip>/webdav/`
+
+Enable with: `[ESP190]STATE=ON`
+
+## WebSocket V1 Binary Transfer
+
+The `/wsdata` endpoint (subprotocol `esp3d-v1`) supports high-speed binary file transfer using the ESP3D WebSocket Protocol V1.
+
+### Upload sequence
+
+1. **Probe** — Send `SR`, receive `RS` with idle state
+2. **Start** — Send `SU` with path + filename + total size → receive `US` (ack)
+3. **Packets** — Send `UP` with packet ID + data → receive `PU` ack
+4. **End** — Send `EU` → receive `UE`
+
+### Download sequence
+
+1. **Probe** — Send `SR`, receive `RS` with idle state
+2. **Start** — Send `SD` with path + filename → receive `DS` (ack)
+3. **Packets** — Server sends `DP` with packet ID + data → client sends `PD` ack
+4. **End** — Server sends `ED` → client sends `DE`
+
+See [WebSockets API](/esp3d-x/version_2x/documentation/api/websockets/) for the complete V1 frame format.
+
+## SD Tools
+
+SD card files can also be managed via ESP commands:
+- [ESP720](/esp3d-x/version_2x/documentation/commands/esp720/) — List flash filesystem
+- [ESP740](/esp3d-x/version_2x/documentation/commands/esp740/) — List SD filesystem
+- [ESP750](/esp3d-x/version_2x/documentation/commands/esp750/) — SD file operations (remove, mkdir, etc.)
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>Transfer methods and protocol details may change as ESP3D-X is still in active development.</p>
+</aside>

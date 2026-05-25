@@ -1,0 +1,109 @@
+---
+title: "Features"
+---
+
+# ESP3D-X Features
+
+## Communication
+
+* **Serial** : UART communication with the machine controller
+* **Bluetooth** : BLE and Classic Bluetooth Serial
+* **WiFi** : Access Point and Station modes
+* **TCP** : Socket server / client
+* **WebSocket** : Server (`/ws` for WebUI, `/wsdata` for V1 data tools) and client modes
+* **WebUI** : Embedded web interface (monolithic gzipped HTML, offline-safe)
+* **Telnet** : Light TCP socket bridge
+* **mDNS / SSDP** : Network discovery
+
+## Machine Control
+
+* **Target firmwares** : FluidNC, grblHAL, grbl, Marlin, Smoothieware, Repetier
+* **4-axis jogging** : continuous, step, and rapid modes
+* **Real-time status monitoring** : position, feed rate, spindle, overrides
+* **Homing control**
+* **Probe support**
+* **Tool change workflow**
+* **Macro execution** : stream G-code macros from local filesystem
+* **G-code streaming** : host-initiated streaming with pause/resume/abort scripts
+
+## Hardware Inputs
+
+The firmware adapts to available physical inputs. The reference implementation (PiBot V1) includes:
+
+* **Rotary encoder** : menu navigation, value adjustment, jogging by steps
+* **Physical buttons** : 3 buttons for navigation, selection, and quick actions (mirrored on screen as virtual buttons)
+* **4-position switch** : context-sensitive selection (axis, view mode, operation mode)
+* **Potentiometer** : analog control for detail view selection and action modes
+* **Touchscreen** : direct UI interaction when capacitive touch is available
+
+Boards without physical inputs can use `ESP3D_EMULATE_HARDWARE` to enable on-screen controls.
+
+## Display & UI
+
+* 3.2" TFT display with **LVGL 9.2.x**
+* Capacitive touchscreen support
+* UI rotation support (0°, 90°, 180°, 270°)
+* Theme support (Blue, Green, Red, Orange, Yellow, Purple, Pink, Gray, White)
+* Multi-language support
+* Screen lock / unlock with optional hide-lock mode
+* Brightness control
+
+## File & Storage
+
+* **MicroSD card** support (Native SPI, SDIO where available)
+* **LittleFS** local filesystem on flash
+* **Global FS** under WebDAV : SD + Local FS unified view
+* File transfer via HTTP multipart, WebDAV, and WebSocket V1 binary protocol
+* Configuration file (`esp3dcnf.ini`) on SD for initial setup
+* SD-based firmware updates without dual APP partitions (Factory partition mode)
+
+## Factory Partition Update
+
+When at least 2 hardware buttons are assigned (**Next** and **OK**), the firmware can use a **dedicated factory partition**. This allows updating the firmware from SD card **without requiring two APP partitions**, saving flash space on memory-constrained boards.
+
+## Network Services
+
+* WebDAV file access
+* WebSocket terminal and data endpoints
+* Telnet socket server
+* mDNS and SSDP discovery
+
+## Notifications
+
+* WebUI toast messages
+* Email (SMTP)
+* Pushover
+* Telegram
+* IFTTT
+* WhatsApp
+* Auto-notification support
+
+## Security
+
+* Authentication support (admin / user / guest levels)
+* Session timeout configuration
+* Password-protected WiFi and Bluetooth connections
+
+## Time
+
+* Manual time setup
+* Internet time sync via NTP
+* Timezone support
+
+## Update
+
+* OTA firmware update
+* SD card firmware update (with or without factory partition)
+* WebUI update via HTTP upload
+* Check for updates at boot (optional)
+
+## Sensors (optional)
+
+* DHT11/22 temperature & humidity
+* BMP280/BME280 pressure & temperature
+* Analog input (potentiometer)
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha status</h4>
+  <p>Feature availability depends on build configuration and target board. Some features are work-in-progress.</p>
+</aside>

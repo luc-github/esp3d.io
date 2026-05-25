@@ -1,0 +1,124 @@
+---
+title: "Variables"
+---
+
+# Variables & Settings
+
+ESP3D-X exposes its internal settings through the `[ESP400]` command (read all) and `[ESP401]` command (write one). Each setting has a **position** (`P`), a **type** (`T`), and a **value** (`V`).
+
+## Settings structure
+
+Settings are returned as a JSON array by `[ESP400]json=yes`. Each entry contains:
+- `P` — Position (index)
+- `T` — Type (`B`=byte, `S`=string, `A`=IP address, `I`=integer)
+- `V` — Current value
+- `H` — Human-readable label
+- `O` — Options list (for enumerated values)
+- `M` — Minimum value
+- `X` — Maximum value
+- `MS` — Minimum string length
+- `MX` — Maximum string length
+
+## Settings list
+
+### System
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| output | Output client | B | serial port (1), usb port (2) |
+| baud | Baud rate | B | 9600, 19200, 38400, 57600, 74880, 115200, 230400, 250000, 500000, 921600, 1000000 |
+| usb-serial baud | USB serial baud | B | Same as baud |
+| targetfw | Target firmware | B | Unknown(0), Grbl(10), Marlin(20), Smoothieware(40), Repetier(50), grblHAL(80), HP_GL(90), FluidNC(100) |
+| language | UI language | B | Depends on built-in language packs |
+
+### Network
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| radio mode | Radio mode | B | none(0), sta(1), ap(2), setup(3), bt_serial(4), bt_ble(5) |
+| radio_boot | Radio boot mode | B | no(0), yes(1) |
+| hostname | Hostname | S | 1–32 chars |
+| SSID | STA SSID | S | 1–32 chars |
+| pwd | STA password | S | 0–64 chars |
+| ip mode | STA IP mode | B | dhcp(0), static(1) |
+| sta fallback mode | STA fallback | B | none(0), setup(3) |
+| ip | STA static IP | A | IP address |
+| msk | STA static mask | A | IP mask |
+| gw | STA static gateway | A | IP gateway |
+| DNS | STA static DNS | A | IP DNS |
+| SSID | AP SSID | S | 1–32 chars |
+| pwd | AP password | S | 8–64 chars |
+| ip | AP static IP | A | IP address |
+| channel | AP channel | B | 1–14 |
+
+### Security
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| session timeout | Session timeout | B | 0–255 min |
+| admin pwd | Admin password | S | 0–16 chars |
+| user pwd | User password | S | 0–16 chars |
+
+### Services
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| enable | HTTP service | B | no(0), yes(1) |
+| port | HTTP port | I | 1–65535 |
+| port | HTTPS port | I | 1–65535 |
+| enable | WebDAV | B | no(0), yes(1) |
+| enable | Telnet/Socket | B | no(0), yes(1) |
+| port | Telnet/Socket port | I | 1–65535 |
+| enable | WebSocket server | B | no(0), yes(1) |
+| notification | Notification type | B | none(0), pushover(1), email(2), telegram(3), ifttt(4), whatsapp(5), homeassistant(6) |
+| auto notif | Auto notification | B | no(0), yes(1) |
+| t1 | Notification token 1 | S | 0–63 chars |
+| t2 | Notification token 2 | S | 0–63 chars |
+| ts | Notification token setting | S | 0–63 chars |
+
+### G-code Host
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| pause_script | Pause script | S | 0–255 chars |
+| resume_script | Resume script | S | 0–255 chars |
+| stop_script | Stop script | S | 0–255 chars |
+
+### Device
+
+| Position | Label | Type | Values / Range |
+|----------|-------|------|----------------|
+| speedx | SPI divider (SD) | B | 1, 2, 4, 6, 8, 16, 32 |
+| SD updater | Check SD update | B | no(0), yes(1) |
+| theme | Display theme | B | Blue(0), Green(1), Red(2), Orange(3), Yellow(4), Purple(5), Pink(6), Gray(7), White(8) |
+| orientation | Display orientation | B | portrait(0), landscape(1), portrait_inverted(2), landscape_inverted(3) |
+| lockUI | Lock UI | B | no(0), yes(1) |
+| HidelockUI | Hide lock UI | B | no(0), yes(1) |
+| brightness | Brightness | I | 0–100 |
+| buzzer | Buzzer | B | no(0), yes(1) |
+| interval | Sensor interval | I | 0–3600000 ms |
+| i-time | Internet time | B | no(0), yes(1) |
+| tzone | Timezone | S | From supported list |
+| t-server | Time server 1–3 | S | 0–255 chars |
+
+## Read settings
+
+```
+[ESP400]json=yes
+```
+
+## Write a setting
+
+```
+[ESP401]P=<position> T=<type> V=<value>
+```
+
+Example:
+```
+[ESP401]P=baud T=B V=115200
+```
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>Setting positions and availability depend on build configuration (CMake features). Some settings are only present when the corresponding service is compiled in.</p>
+</aside>

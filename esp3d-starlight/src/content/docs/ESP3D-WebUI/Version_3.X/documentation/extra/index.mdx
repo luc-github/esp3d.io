@@ -24,6 +24,16 @@ The supported types of extra content include HTML content, extension-based conte
 
 ![image](extra_list.png)
 
+### Scan for extensions, themes and language packs
+
+Starting with WebUI 3.1, the Extra content panel includes a **Scan** feature that automatically discovers compatible extensions, themes and language packs on the filesystem:
+
+- **Extensions** — scans `/extensions` (or root `/`) for `esp3dext-*` files and directories, reads their manifest, and filters by WebUI version and target system.
+- **Themes** — scans `/themes` (or root `/`) for `theme-*` files, reads their manifest if present, and filters by version and target.
+- **Language packs** — scans `/languages` (or root `/`) for `lang-*.json` files and reads their `_manifest` if present.
+
+The scan shows each item's compatibility status. You can select multiple items and add them in one click with **Add selected**.
+
 ### Extra Content Visibility and Customization
 The extra content can be set to "Show" to control the visibility of the panels and pages. The setting "Visible when starting" only affexct extra content that is displayed on the Dashboard.
 This allows users to manage the display extra content based on their preferences and workflow needs.
@@ -51,8 +61,8 @@ This allows users to manage the display extra content based on their preferences
     If the URL does not start with "http", it means the content is stored on the system's flash memory or SD card.
     For content stored on the SD card, the URL should start with "/sd".
    * Extension:
-    This type of extra content is also HTML-based, but it utilizes the [extension API](/ESP3D-WebUI/v3.x/documentation/api/extensions/).
-    The [extension API](/ESP3D-WebUI/v3.x/documentation/api/extensions/) allows the extra content to inject CSS styles and interact with the main web UI through a  [extension API](/ESP3D-WebUI/v3.x/documentation/api/extensions/).
+    This type of extra content is also HTML-based, but it utilizes the [extension API](/esp3d-webui/version_3x/documentation/api/extensions/).
+    The [extension API](/esp3d-webui/version_3x/documentation/api/extensions/) allows the extra content to inject CSS styles and interact with the main web UI through a  [extension API](/esp3d-webui/version_3x/documentation/api/extensions/).
    * Image:
     This type of extra content can be used to display an image or a snapshot from a remote IP camera.
     The URL can point to a local image file or a remote IP camera feed.

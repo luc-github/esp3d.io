@@ -3,10 +3,10 @@
 title : "[ESP300]"
 description : "Process local lua script file on /FS or /SD"
 ---
-Process local file on /FS or /SD
+Process local lua script file on /FS or /SD
 
 ## Input
-`[ESP700](filename) json=(no) pwd=(admin password)`
+`[ESP300](filename) json=(no) pwd=(admin password)`
 
 * json=no
 the output format can be in JSON or plain text
@@ -15,7 +15,7 @@ the output format can be in JSON or plain text
 the admin password if authentication is enabled
 
 * filename
-  the filename to process, must be a valid file on /FS or /SD
+  the filename to process, must be a valid lua script file on /FS or /SD
 
 
 ## Output
@@ -24,12 +24,12 @@ the admin password if authentication is enabled
 
 ```json
 {
-   "cmd":"700",
+   "cmd":"300",
    "status":"ok",
    "data":"Processing (filename)"
 }
 ```
 
-* `cmd` Id of requested command, should be `700`
+* `cmd` Id of requested command, should be `300`
 * `status` status of command, should be `ok`
 * `data` content of response, here `Processing (filename)` when file is processing

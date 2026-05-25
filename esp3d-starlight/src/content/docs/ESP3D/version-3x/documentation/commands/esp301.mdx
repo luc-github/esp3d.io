@@ -3,10 +3,10 @@
 title : "[ESP301]"
 description : "Query and Control ESP300 script"
 ---
-Query and Control ESP700 stream
+Query and Control ESP300 script
 
 ## Input
-`[ESP701]action=(action) (CLEAR_ERROR)json=(no) pwd=(admin password)`
+`[ESP301]action=(action) (CLEAR_ERROR)json=(no) pwd=(admin password)`
 
 * json=no
 the output format can be in JSON or plain text
@@ -32,20 +32,18 @@ the admin password if authentication is enabled
 
 ```json
 {
-   "cmd":"701",
+   "cmd":"301",
    "status":"ok",
    "data":{
       "status":"processing",
       "total":"1000",
       "processed":"500",
       "type":"1",
-      "name":"/SD/myfile.gco"
+      "name":"/SD/myscript.lua"
    }
 }
 ```
 
-* `cmd` Id of requested command, should be `701`
+* `cmd` Id of requested command, should be `301`
 * `status` status of command, should be `ok`
-* `data` content of response, here the current state of stream
-
-
+* `data` content of response, here the current state of script

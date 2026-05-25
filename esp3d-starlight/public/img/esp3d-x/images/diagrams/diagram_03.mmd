@@ -1,0 +1,16 @@
+flowchart TD
+    START([Start Tool Change])
+    SELECT[Select New Tool]
+    CONFIRM{Probe Required?}
+    MANUAL[Manual Tool Change]
+    PROBE[Probe Screen]
+    SETREF[Set Tool Reference]
+    COMPLETE([Tool Change Complete])
+
+    START --> SELECT
+    SELECT --> CONFIRM
+    CONFIRM -->|Yes| PROBE
+    CONFIRM -->|No| MANUAL
+    PROBE --> SETREF
+    MANUAL --> SETREF
+    SETREF --> COMPLETE

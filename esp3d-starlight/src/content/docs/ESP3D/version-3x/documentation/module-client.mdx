@@ -1,0 +1,88 @@
+---
+
+title : "Module client"
+description : "Architecture of ESP3D module clients"
+weight : 12
+---
+
+## Summary
+
+A module client is a class that represents a client. It handles commands from outside to the ESP3D, and handles commands from ESP3D to outside.
+
+WebDAV, FTP, SSDP and mDNS are **not** module clients — they are modules that handle in/out data differently.
+
+The main clients are:
+- **Serial** — full duplex, default output client for printer/CNC
+- **USB Serial** — full duplex, optional output for ESP32-S2/S3 only
+- **Telnet** — full duplex
+- **WebSocket** — full duplex
+- **HTTP** — half duplex for everything except ESP3D commands (full duplex for ESP commands)
+
+## General description of data flow
+
+The module client fills a buffer char by char until `\n` or `\r` is found or the buffer is full. The data comes from outside: serial port, USB port, telnet, websocket.
+
+The catch of the commands is done by a specific library, and the library informs the module client that a command is received. The module client will then dispatch the command to the ESP3D.
+
+To do that, the module client adds context data to the command:
+- client type
+- authentication level
+- origin of the command
+- target of the command
+- size of the data
+- the data itself
+
+This is called a **message**.
+
+### Dispatch cases
+
+There are 3 cases:
+
+1. **Non-ESP command, origin ≠ printer/CNC** — the message is transferred to the communication module client with the printer/CNC.
+2. **ESP command, any origin** — the message is transferred to the ESP3D. The origin becomes the target to answer the command.
+3. **Non-ESP command, origin = printer/CNC** — the message is dispatched to **all** clients.
+
+The messages are stored in a FIFO which can be accessed from different threads on the ESP32, or sequentially on the ESP8266.
+
+<aside class="warning-panel">
+  <strong>Note:</strong>
+
+  Each message is a unique object — it is not possible to send the same message twice. In case of multiple clients, the message will be duplicated.
+
+  Messages are dynamically allocated in memory. When dispatch is done or fails, the message must be freed to avoid any memory leak.
+
+</aside>
+
+## Serial
+
+Serial is a full duplex client and the default output client for printer/CNC. It uses the native `Serial` library of the ESP32 and ESP8266.
+
+### Output → ESP3D
+
+The Serial API allows hooking a function to be called when data is received:
+
+```cpp
+Serials[_serialIndex]->onReceive(receiveSerialCb);
+```
+
+When called, the function reads data char by char until `\n` or `\r` is found or the buffer is full. The data is packaged as a message and dispatched to the FIFO list by the flush function.
+
+The handle function dispatches the message to the defined target.
+
+### ESP3D → Output
+
+When dispatched, the message is packaged and sent to the targeted output client by the `dispatch(ESP3DMessage *message)` function.
+
+The message data is delivered by `writeBytes(const uint8_t *buffer, size_t size)`, using `availableForWrite()` to know how much data can be sent.
+
+## USB Serial
+
+USB Serial is a full duplex client and an optional output client for **ESP32-S2/S3 only**. It uses the `esp32-usb-serial` library.
+
+The library has two initialization functions:
+- `usb_serial_init()` — basic initialization
+- `usb_serial_create_task()` — creates a dedicated task to handle USB events
+
+If no need to handle USB events, just call `usb_serial_init()` and do not call `usb_serial_create_task()`.
+
+The USB Serial client has a dedicated task that checks if any supported USB Serial device is connected. It tries all drivers one by one until it finds one that matches the supported ones. If a device is found, it hooks a USB event function and an `onReceive` function to handle data.

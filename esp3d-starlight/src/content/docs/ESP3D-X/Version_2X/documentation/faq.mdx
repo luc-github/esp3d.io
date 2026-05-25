@@ -1,0 +1,29 @@
+---
+title: "FAQ"
+---
+
+# Frequently Asked Questions
+
+## General
+
+### What is ESP3D-X?
+ESP3D-X is the next-generation firmware for ESP32-based pendants with TFT displays, successor to ESP3D-TFT.
+
+### Which boards are supported?
+Currently the PiBot CNC Pendant V1 is the reference board. More boards will be added progressively.
+
+### Which machine firmwares are supported?
+FluidNC and grblHAL are actively supported. Marlin and others are planned.
+
+## Troubleshooting
+
+### Build fails
+Ensure you are using ESP-IDF 5.4.x and have run `idf.py set-target esp32`.
+
+### Cannot connect to WiFi
+Use [ESP100](/esp3d-x/version_2x/documentation/commands/esp100/) and [ESP101](/esp3d-x/version_2x/documentation/commands/esp101/) to configure STA credentials.
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>FAQ will be expanded as ESP3D-X development progresses.</p>
+</aside>

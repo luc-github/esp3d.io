@@ -1,5 +1,5 @@
 ---
-description : "SD Card usage examples"
+description : "SD Card usage and shared SD mechanism"
 title : "About SD card"
 weight : 6
 ---
@@ -7,7 +7,7 @@ weight : 6
 <aside class="info-panel">
   <p><strong>Info:</strong></p>
 
-    The SD transfer is current supported on these configurations:   
+    The SD transfer is currently supported on these configurations:   
 
     * MK WiFi modules using MKS Serial Protocol (~110KB/s)
         - MKS Robin 
@@ -20,12 +20,60 @@ weight : 6
         -  on ESPCam32
 </aside>
 
+## Shared SD mechanism V2.2
+
+Starting with ESP3D 3.1, the shared SD mechanism has been updated to **V2.2**. This version introduces a robust three-callback model for sharing the SD card between the ESP module and the main MCU (printer/CNC board).
+
+### Key principles
+
+- **Single source of truth**: one state enum fully describes SD bus ownership.
+- **Atomic transitions**: software state and GPIO state are always changed together.
+- **Safe by default**: any transition to ESP is refused if the MCU is active.
+- **Self-recovery**: a watchdog in `accessFS()` forces release if an access is held too long.
+- **Firmware extensibility**: all MCU interactions are registered callbacks — no `#ifdef` firmware type in the sharing logic.
+- **Three-callback model**: query (is MCU busy?), release hook (tell MCU to unmount), remount hook (tell MCU to remount).
+
+### State model
+
+```
+boot ───► MCU_OWNS ──_enableSharedSD()──► ACQUIRING ──ok──► ESP_OWNS
+              ▲                                              │
+              │           _disableSharedSD()                 │ watchdog timeout
+              └──────────────────────────────────────────────┘
+```
+
+### Configuration defines
+
+The following defines can be set in `board_config.h`:
+
+| Define | Description |
+|---|---|
+| `SD_SHARED_MUX_PIN` | GPIO pin for the SD mux |
+| `SD_SHARED_MUX_ESP_VALUE` | GPIO value when ESP owns (default: 0) |
+| `SD_SHARED_MUX_IDLE_VALUE` | GPIO value when idle (default: 1) |
+| `SD_SHARED_SWITCH_DELAY_MS` | Delay after switching (default: 10) |
+| `SD_SHARED_WATCHDOG_MS` | Watchdog timeout in ms (default: 30000) |
+| `SD_CS_SENSE_PIN` | Optional CS sense pin |
+| `SD_POWER_PIN` | Optional SD power control pin |
+| `SD_SHARED_D1_PIN` / `SD_SHARED_D2_PIN` | Optional data lines (INPUT_PULLUP when MCU owns) |
+
+### Supported firmware integrations
+
+- **grblHAL** — busy check on `STATE_CYCLE/HOMING/JOG`
+- **FluidNC** — `machineIsRunning()`
+- **Marlin** — `card.isMounted() && (IS_SD_PRINTING() || ...)` / `card.release()` / `card.mount()`
+- **FYSETC** — SPI isolation via callbacks
+
+### Reference documents
+
+- [Shared SD Mechanism V2.2 (full specification)](/esp3d/version-3x/documentation/shared_sd_mechanism_v2.2.md)
+- [Sample configuration file](/esp3d/version-3x/documentation/esp3dcnf.ini)
+
 <aside class="danger-panel">
   <strong>Clarification:</strong>
 
-    The M28/M29 protocol is no more supported on ESP3D V3.0, this protocol is slow like hell (0.4 KB/S = 40min for 1MB) so not really usable, often no well managed by FW and suject to error due to external queries.
+    The M28/M29 protocol is no longer supported on ESP3D V3.x. This protocol is extremely slow (~0.4 KB/s = 40min for 1MB), often poorly managed by firmware, and subject to errors due to external queries.
 
-    People usualy after tested once they never use it again and are disappointed and complaining about it.
+    It has been removed from V3.0 and there is no plan to add it back.
 
-    So instead of keeping it using flash space and development time, and having to support it, it has been removed from 3.0, no more M28/M29 support is planned neither add it back.
 </aside>
