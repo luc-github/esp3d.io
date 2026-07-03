@@ -1,0 +1,175 @@
+---
+title: "Lua Scripting"
+description: "Lua interpreter and scripting API for ESP3D-X"
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## About the Lua interpreter
+
+ESP3D-X embeds a **Lua 5.4** scripting engine that can execute Lua scripts directly on the device. Scripts run asynchronously in a dedicated task and can communicate with the connected machine (FluidNC, grblHAL, …) through the ESP3D-X message bus.
+
+Lua is a lightweight, high-level, multi-paradigm programming language designed for embedded use. Please refer to [Lua](https://www.lua.org/) for more information about the language itself.
+
+In addition to the standard Lua libraries, ESP3D-X exposes a few additional functions and constants that let a script interact with the machine and the board's GPIO.
+
+## ESP3D-X functions
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>print(...)</code></td>
+      <td>Send text to the machine output. Do not forget to add <code>\n</code> at the end of a command line.</td>
+    </tr>
+    <tr>
+      <td><code>available()</code></td>
+      <td>Return the number of incoming messages waiting to be read.</td>
+    </tr>
+    <tr>
+      <td><code>readData()</code></td>
+      <td>Read the next incoming message (returns a string, or <code>nil</code> if none).</td>
+    </tr>
+    <tr>
+      <td><code>delay(ms)</code></td>
+      <td>Wait for a number of milliseconds (checks pause/stop while waiting).</td>
+    </tr>
+    <tr>
+      <td><code>yield()</code></td>
+      <td>Yield execution to let the system run.</td>
+    </tr>
+    <tr>
+      <td><code>millis()</code></td>
+      <td>Return the number of milliseconds since the board started.</td>
+    </tr>
+    <tr>
+      <td><code>pinMode(pin, mode)</code></td>
+      <td>Configure the mode of a GPIO pin.</td>
+    </tr>
+    <tr>
+      <td><code>digitalWrite(pin, value)</code></td>
+      <td>Set the level of a GPIO pin.</td>
+    </tr>
+    <tr>
+      <td><code>digitalRead(pin)</code></td>
+      <td>Read the level of a GPIO pin.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Constants
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Constant</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>HIGH</code></td><td>1</td></tr>
+    <tr><td><code>LOW</code></td><td>0</td></tr>
+    <tr><td><code>INPUT</code></td><td>floating input</td></tr>
+    <tr><td><code>OUTPUT</code></td><td>output</td></tr>
+    <tr><td><code>INPUT_PULLUP</code></td><td>input with pull-up</td></tr>
+    <tr><td><code>INPUT_PULLDOWN</code></td><td>input with pull-down</td></tr>
+  </tbody>
+</table>
+</div>
+
+## Standard Lua libraries
+
+The following standard Lua libraries are available to scripts:
+
+`base`, `table`, `string`, `math`, `utf8`.
+
+<Aside type="caution">
+  For safety and memory reasons, the `io`, `os`, `package`, `debug` and `coroutine` libraries are intentionally **not** loaded.
+</Aside>
+
+## Running scripts
+
+Scripts are executed from the filesystem using ESP3D commands:
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>[ESP300]&lt;path&gt;</code></td>
+      <td>Execute the script located at <code>&lt;path&gt;</code> (e.g. <code>[ESP300]/fs/script.lua</code>).</td>
+    </tr>
+    <tr>
+      <td><code>[ESP301]</code></td>
+      <td>Query the interpreter status (<code>idle</code> / <code>running</code> / <code>paused</code> / <code>error</code>).</td>
+    </tr>
+    <tr>
+      <td><code>[ESP301]action=PAUSE</code></td>
+      <td>Pause the running script at the next checkpoint.</td>
+    </tr>
+    <tr>
+      <td><code>[ESP301]action=RESUME</code></td>
+      <td>Resume a paused script.</td>
+    </tr>
+    <tr>
+      <td><code>[ESP301]action=ABORT</code></td>
+      <td>Stop the running script immediately.</td>
+    </tr>
+    <tr>
+      <td><code>[ESP420]</code></td>
+      <td>System status — shows <code>lua: idle</code> or <code>lua: running (&lt;path&gt;)</code>.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Autostart
+
+A script can be launched automatically at startup. This is defined at build time in `customizations/lua/customizations.h`:
+
+```c
+#define ESP3D_LUA_AUTOSTART_SCRIPT "/fs/init.lua"
+```
+
+The autostart script runs asynchronously and does not block the boot sequence.
+
+## Limitations
+
+<div class="rounded-table">
+<table class="table-compact">
+  <thead>
+    <tr>
+      <th>Constraint</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Concurrent scripts</td><td>1 (a new run is rejected while one is active)</td></tr>
+    <tr><td>Maximum script file size</td><td>2048 bytes</td></tr>
+    <tr><td>Maximum incoming message size</td><td>128 bytes (longer messages are truncated)</td></tr>
+    <tr><td><code>analogWrite</code></td><td>not implemented (LEDC conflict with buzzer)</td></tr>
+    <tr><td><code>analogRead</code></td><td>not implemented</td></tr>
+  </tbody>
+</table>
+</div>
+
+<Aside type="note">
+  Because a script runs in an independent task, use `delay(ms)` or `yield()` inside long loops to avoid triggering the ESP32 watchdog.
+</Aside>
+
+<Aside type="caution">
+  The Lua interpreter requires the `LUA_INTERPRETER_SERVICE` feature to be enabled at build time. On Bluetooth-only builds, free memory is limited — use scripting with caution.
+</Aside>

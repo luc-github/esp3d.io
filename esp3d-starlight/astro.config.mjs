@@ -441,6 +441,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { label: 'Overview', link: '/esp3d-x/version_2x/' },
+                { label: 'Credits', link: '/esp3d-x/version_2x/credits/' },
                 { label: 'Features', link: '/esp3d-x/version_2x/features/' },
                 {
                   label: 'Hardware',
@@ -459,6 +460,7 @@ export default defineConfig({
                   items: [
                     { label: 'Overview', link: '/esp3d-x/version_2x/documentation/' },
                     { label: 'Commands', link: '/esp3d-x/version_2x/documentation/commands/' },
+                    { label: 'Lua Scripting', link: '/esp3d-x/version_2x/documentation/lua-scripting/' },
                     { label: 'Authentication', link: '/esp3d-x/version_2x/documentation/authentication/' },
                     { label: 'Camera', link: '/esp3d-x/version_2x/documentation/camera/' },
                     { label: 'Notifications', link: '/esp3d-x/version_2x/documentation/notifications/' },
