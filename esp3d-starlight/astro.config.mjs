@@ -467,8 +467,14 @@ export default defineConfig({
                     { label: 'WebDAV Service', link: '/esp3d-x/version_2x/documentation/webdavservice/' },
                     { label: 'File Transfer', link: '/esp3d-x/version_2x/documentation/file-transfer/' },
                     { label: 'Update', link: '/esp3d-x/version_2x/documentation/update/' },
+                    { label: 'Customization', link: '/esp3d-x/version_2x/documentation/customization/' },
                     { label: 'Compilation', link: '/esp3d-x/version_2x/documentation/compilation/' },
                     { label: 'FAQ', link: '/esp3d-x/version_2x/documentation/faq/' },
+                    {
+                      label: 'Code Reference (CodeWiki)',
+                      collapsed: true,
+                      autogenerate: { directory: 'ESP3D-X/Version_2X/documentation/codewiki' },
+                    },
                     {
                       label: 'API',
                       collapsed: true,

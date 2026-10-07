@@ -8,6 +8,13 @@ title: "ESP250"
 
 **Description:** Generate Buzzer sound
 
+- `F`: frequency in Hz, 100 to 5000
+- `D`: duration in ms, 1 to 3000
+
+The tone is played in the background (the command returns immediately). Returns an error if sound is disabled, a previous `[ESP250]` tone is still playing, or a value is out of range.
+
+Useful to try a note before writing it in `esp3dsound.ini` — see [Customization → Sounds](/esp3d-x/version_2x/documentation/customization/#sounds).
+
 <aside class="warning-panel" data-icon="alert">
   <h4>Pre-alpha documentation</h4>
   <p>Command details may change as ESP3D-X is still in active development.</p>

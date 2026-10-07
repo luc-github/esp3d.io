@@ -964,10 +964,11 @@ main .content-panel + .content-panel::before {
 .sponsors-page .repo-card {
   display: block;
   border: 1px solid var(--sl-color-gray-5, #e2e8f0);
+  border-top: 3px solid var(--sl-color-blue, #60a5fa);
   border-radius: 8px;
   padding: 1.5rem;
   text-align: left;
-  background: var(--sl-color-white, #ffffff);
+  background: var(--sl-color-blue-low, #eff6ff);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -1027,10 +1028,40 @@ main .content-panel + .content-panel::before {
 
 .sponsors-page .tier-card {
   border: 1px solid var(--sl-color-gray-5, #e2e8f0);
+  border-top: 3px solid var(--sl-color-green, #4ade80);
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1rem 0;
-  background: var(--sl-color-white, #ffffff);
+  background: var(--sl-color-green-low, #f0fdf4);
+}
+
+.sponsors-page .tier-card.basic {
+  border-top-color: var(--sl-color-gray-3, #94a3b8);
+  background: var(--sl-color-gray-7, #f1f5f9);
+}
+
+.sponsors-page .tier-card.silver {
+  border-top-color: var(--sl-color-blue, #60a5fa);
+  background: var(--sl-color-blue-low, #eff6ff);
+}
+
+.sponsors-page .tier-card.gold {
+  border-top-color: var(--sl-color-orange, #fb923c);
+  background: var(--sl-color-orange-low, #fff7ed);
+}
+
+.sponsors-page .tier-card.platinum {
+  border-top-color: var(--sl-color-purple, #c084fc);
+  background: var(--sl-color-purple-low, #faf5ff);
+}
+
+.sponsors-page .tier-card.diamond {
+  border-top-color: var(--sl-color-red, #f472b6);
+  background: linear-gradient(
+    135deg,
+    var(--sl-color-purple-low, #faf5ff),
+    var(--sl-color-blue-low, #eff6ff)
+  );
 }
 
 .sponsors-page .tier-card h4 {
@@ -1073,9 +1104,14 @@ main .content-panel + .content-panel::before {
 .sponsors-page .sponsor-card {
   text-align: center;
   padding: 1.5rem;
+  border-top: 3px solid var(--sl-color-purple, #c084fc);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
-  background: var(--sl-color-white, #ffffff);
+  background: linear-gradient(
+    135deg,
+    var(--sl-color-purple-low, #faf5ff),
+    var(--sl-color-blue-low, #eff6ff)
+  );
 }
 
 .sponsors-page .sponsor-logo {
@@ -1087,7 +1123,7 @@ main .content-panel + .content-panel::before {
   text-align: center;
   margin-top: 4rem;
   padding: 2rem;
-  background: var(--sl-color-gray-6, #f8fafc);
+  background: var(--sl-color-orange-low, #fff7ed);
   border-radius: 8px;
 }
 
@@ -1114,8 +1150,9 @@ main .content-panel + .content-panel::before {
 
 /* Dark mode */
 :root[data-theme='dark'] .sponsors-page .repo-card {
-  background: var(--sl-color-gray-5, #1e293b);
-  border-color: var(--sl-color-gray-4, #334155);
+  border-left-color: var(--sl-color-gray-4, #334155);
+  border-right-color: var(--sl-color-gray-4, #334155);
+  border-bottom-color: var(--sl-color-gray-4, #334155);
 }
 
 :root[data-theme='dark'] .sponsors-page .repo-card:hover {
@@ -1127,8 +1164,9 @@ main .content-panel + .content-panel::before {
 }
 
 :root[data-theme='dark'] .sponsors-page .tier-card {
-  background: var(--sl-color-gray-5, #1e293b);
-  border-color: var(--sl-color-gray-4, #334155);
+  border-left-color: var(--sl-color-gray-4, #334155);
+  border-right-color: var(--sl-color-gray-4, #334155);
+  border-bottom-color: var(--sl-color-gray-4, #334155);
 }
 
 :root[data-theme='dark'] .sponsors-page .tier-card h4 {
@@ -1140,12 +1178,7 @@ main .content-panel + .content-panel::before {
 }
 
 :root[data-theme='dark'] .sponsors-page .sponsor-card {
-  background: var(--sl-color-gray-5, #1e293b);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-}
-
-:root[data-theme='dark'] .sponsors-page .contact-info {
-  background: var(--sl-color-gray-5, #1e293b);
 }
 
 :root[data-theme='dark'] .sponsors-page .lead,

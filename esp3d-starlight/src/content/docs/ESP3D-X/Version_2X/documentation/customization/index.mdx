@@ -1,0 +1,253 @@
+---
+title: "Customization"
+---
+
+# Customization
+
+The pendant's look and sound can be personalized **without reinstalling the firmware**: theme colors, sounds, display languages, icons, logo and fonts. Everything is applied from the SD card at power-on.
+
+<aside class="warning-panel" data-icon="alert">
+  <h4>Pre-alpha documentation</h4>
+  <p>ESP3D-X is in active development. Customization details may change.</p>
+</aside>
+
+## Overview
+
+| What | File(s) at the SD card root | Needs a PC? |
+|:-----|:----------------------------|:------------|
+| [Theme colors](#theme-colors) | `esp3dtheme.ini` | No — plain text file |
+| [Sounds](#sounds) | `esp3dsound.ini` | No — plain text file |
+| [Display languages](#display-languages) | `ui_<code>.lng` (e.g. `ui_de.lng`) | No — plain text file |
+| [Icons, logo, fonts](#icons-logo-and-fonts) | `ui_resources.bin`, or single patches in an `esp3dres/` folder | Yes — Python + the customization kit |
+
+**How an SD update runs:**
+
+1. Copy the file to the **root** of the SD card (not in a subfolder), keeping the exact file name.
+2. Insert the card and power on the pendant.
+3. The update screen appears, the change is written, and the pendant **reboots automatically**.
+4. The file is renamed so it does not run again: `.ok` if everything went well, `.bad` if it was rejected (in that case nothing was changed).
+
+:::note[One update per boot]
+If several update files are on the card, they are applied one per reboot, in this order: firmware (`esp3dfw.bin`), settings (`esp3dcnf.ini`), `ui_resources.bin`, `esp3dtheme.ini`, language packs, `esp3dsound.ini`, then the `esp3dres/` patches. Just leave the card in: the pendant chains the reboots on its own.
+:::
+
+All these customizations are stored in the pendant's `ui_resources` area, separate from the settings. They survive firmware updates done from the SD card, and are reset when `ui_resources` is reflashed (e.g. a full install with the [Web Installer](/esp3d-x/version_2x/installation/)).
+
+Customizations only apply to pendants with an SD card slot. Sounds only apply to pendants with a buzzer.
+
+---
+
+## Theme colors
+
+The pendant has 4 themes ("Theme 1" to "Theme 4", chosen in [Settings → Theme](/esp3d-x/version_2x/user-guide/#theme-selection)), and **each of them is customizable**.
+
+Create a text file named `esp3dtheme.ini` with one section per theme you want to change, and only the colors you want to change — everything you don't mention keeps its current value:
+
+```ini
+[theme2]
+accent_active = 0x00FF88
+text_primary  = 0xDDDDDD
+
+[theme4]
+bg_main = 0x101020
+```
+
+- Sections: `[theme1]` to `[theme4]`.
+- Colors are hexadecimal `0xRRGGBB`. An optional opacity can be added as a last byte, `0xRRGGBBAA` (e.g. `0x00FF004C` = green at 30%).
+- An optional `name = My Theme` key gives the theme a custom display name.
+
+The 26 color names:
+
+| Group | Names |
+|:------|:------|
+| Backgrounds | `bg_main`, `bg_panel`, `bg_overlay`, `bg_disabled` |
+| Text and icons | `text_primary`, `text_secondary`, `text_disabled`, `icon_idle` |
+| Borders | `border_idle`, `border_focus` |
+| Accents (button states) | `accent_select`, `accent_active`, `accent_alert`, `accent_action` |
+| Halos around accents | `glow_select`, `glow_active`, `glow_alert`, `glow_action` |
+| Text drawn on an accent | `text_on_select`, `text_on_active`, `text_on_alert`, `text_on_action` |
+| Status indicators | `indicator_success`, `indicator_info`, `indicator_error`, `indicator_warning` |
+
+:::tip
+Set each `text_on_*` color explicitly for good contrast against the matching `accent_*` background. The default values of every theme are in `defaults/themes_default.ini` of the customization kit — copy a section from there as a starting point, or to restore a theme.
+:::
+
+---
+
+## Sounds
+
+On pendants with a buzzer, every sound can be changed or muted individually. The global sound on/off ([Settings → Sound](/esp3d-x/version_2x/user-guide/#sound-control)) still applies on top.
+
+Create a text file named `esp3dsound.ini` with one section per sound you want to change — every sound you don't mention keeps its current value:
+
+```ini
+# Triple beep on error
+[error]
+notes = 200:100, 0:50, 200:100, 0:50, 200:100
+
+# Silent encoder in one direction
+[forward]
+notes = off
+
+# New startup melody
+[startup]
+notes = C5:100, E5:100, G5:100, C6:300
+```
+
+How to write `notes`:
+
+- A list of `frequency:duration` pairs separated by commas; the duration is in milliseconds.
+- The frequency is in Hz (100 to 5000), or a note name from `C3` to `B8`, with `#` for sharps (`C#5`). `0` is a silence.
+- `notes = off` mutes that sound.
+- A line holds at most 127 characters. For a long melody, add more `notes =` lines in the same section: they are appended to the first one.
+- Comments go on their own line only (`#` is also the sharp sign).
+
+The sounds and their limits (anything longer is cut by the firmware, so a sound can never freeze the screen):
+
+| Section | When it plays | Max |
+|:--------|:--------------|:----|
+| `forward`, `backward` | Encoder step, each direction | 1 note, 40 ms |
+| `selection` | Button press / validation | 2 notes, 150 ms |
+| `back` | Leaving a screen | 2 notes, 150 ms |
+| `active_item` | Value chosen in a list | 2 notes, 150 ms |
+| `response_no` | "No" / cancel in a dialog | 2 notes, 150 ms |
+| `error` | Error (command refused, alarm, failure) | 5 notes, 800 ms |
+| `lock` | Lock engaged, or action blocked by the lock | 5 notes, 800 ms |
+| `unlock` | Lock released | 5 notes, 800 ms |
+| `wakeup` | Screen wake-up | 5 notes, 1 s |
+| `success` | Update finished | 5 notes, 1 s |
+| `startup` | Power-on melody | 16 notes, 3 s |
+
+The default sounds:
+
+```ini
+[selection]
+notes = C5:50
+[forward]
+notes = 500:20
+[backward]
+notes = 600:20
+[active_item]
+notes = 600:100
+[back]
+notes = 300:50
+[response_no]
+notes = C4:100
+[error]
+notes = 100:200
+[lock]
+notes = 150:80, 0:40, 150:80
+[unlock]
+notes = 150:80, 0:40, 300:80
+[wakeup]
+notes = C5:50, E5:50, G5:80
+[success]
+notes = C5:100, E5:100, G5:200
+[startup]
+notes = E5:150, E5:150, 0:75, E5:150, 0:75, C5:150, E5:300, G5:300
+```
+
+:::tip
+To try a frequency before writing it down, send [`[ESP250]F=<Hz> D=<ms>`](/esp3d-x/version_2x/documentation/commands/esp250/) to the pendant (one note at a time). To restore all default sounds, put the block above in `esp3dsound.ini`.
+:::
+
+---
+
+## Display languages
+
+The screens are shown in **English by default** — built into the firmware, always available. Up to **3 additional languages** are stored on the pendant (French, Spanish and Italian ship by default) and selected in [Settings → Language](/esp3d-x/version_2x/user-guide/#languages-screen).
+
+**Installing or replacing a language:**
+
+1. Get a `ui_<code>.lng` file, e.g. `ui_de.lng` for German.
+2. Copy it to the SD card root, insert the card and power on.
+3. After the automatic reboot, the file is renamed `ui_de.ok` (or `ui_de.bad` if it was rejected).
+4. Select the new language in **Settings → Language**.
+
+Each pack declares which of the 3 slots it uses (`target_slot`): installing a pack **replaces** the language currently in that slot. English is never affected. Up to 3 `.lng` files (one per slot) can be installed at once.
+
+**Writing your own translation** — a `.lng` file is plain text:
+
+```ini
+[info]
+code=de
+name=Deutsch
+target_slot=1
+
+[translations]
+l_0=Deutsch
+l_1=Einstellungen
+```
+
+- `code` is the short language code used in the file name (`ui_<code>.lng`), `name` is shown in the language list, `target_slot` is 1, 2 or 3 (defaults: French = 1, Spanish = 2, Italian = 3).
+- Start from the template `tools/language_packs/template.lng` of the firmware repository: it lists every text (about 170) with its English default. Any line left out falls back to English.
+- Keep the `%d`, `%s`, `%c` placeholders exactly as in the English text.
+- Only Latin characters are supported (ASCII, accented letters used in French/Spanish/German/Italian/Portuguese, `°`, `¡`, `¿`). Avoid curly quotes, `«»`, `œ`/`æ` and non-Latin scripts.
+- Keep translations short: long texts are cut with `...` on the small screen.
+- A pack is limited to 8 KB.
+
+---
+
+## Icons, logo and fonts
+
+Images and fonts are converted on a PC with the **customization kit** (`ui_resources_kit`), provided with each firmware release (one kit per firmware variant). The kit contains a manifest, Python scripts, and a `defaults/` folder with every image, font, theme and sound used by your firmware. It needs Python 3 (`pip install -r requirements.txt`), not the firmware sources.
+
+:::caution
+Always use the kit that matches the firmware **currently installed** (same version, same connection type, same CNC firmware) — otherwise icons may display incorrectly.
+:::
+
+### Full rebuild
+
+1. Create a folder, e.g. `my_files/`, and put your replacement files in it with **exactly the same name** as the original in `defaults/`:
+   - images: PNG with **exactly the same dimensions** as the original;
+   - fonts: a `.c` file generated with [lv_font_conv](https://github.com/lvgl/lv_font_conv) using the options shown at the top of the original `.c` file, or a `.fnt` file produced by the kit's `ttf_to_fnt.py` (no Node.js needed);
+   - optionally your `esp3dtheme.ini` and `esp3dsound.ini`, which are baked in as well.
+2. In the kit folder, run:
+
+   ```bash
+   python build_ui_resources_from_manifest.py --manifest ui_resources_manifest_XXXXX.json --defaults defaults/ --overrides my_files/ --out ui_resources.bin
+   ```
+
+   The script checks every file (dimensions, format) and writes nothing if something does not match. Add `--dry-run` to only check.
+3. Copy `ui_resources.bin` to the SD card root, insert the card and power on.
+
+### Single icon or font
+
+To change just one image (e.g. the logo) without a full rebuild:
+
+```bash
+python generate_single_resource.py image --name logo --png my_logo.png --manifest ui_resources_manifest_XXXXX.json --out logo.bin
+```
+
+Copy the result into a folder named `esp3dres` at the SD card root (several files can be applied at once). `python generate_single_resource.py list --manifest ...` lists the available names.
+
+The kit's own `README.md` details every image (name, size, where it is used) and the font options.
+
+---
+
+## Restoring the defaults
+
+| What | How |
+|:-----|:----|
+| One theme | Copy its section from the kit's `defaults/themes_default.ini` into `esp3dtheme.ini` |
+| Sounds | Put the [default sounds](#sounds) block in `esp3dsound.ini` |
+| A language | Install the original `ui_fr.lng` / `ui_es.lng` / `ui_it.lng` again |
+| Everything | Rebuild `ui_resources.bin` from the kit **without** `--overrides`, or reflash the `ui_resources` area |
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely cause | Solution |
+|:--------|:-------------|:---------|
+| Nothing happens at power-on | File not at the SD card root, or wrong name | Check the exact name (`esp3dtheme.ini`, `esp3dsound.ini`, `ui_<code>.lng`, `ui_resources.bin`) and location |
+| `esp3dsound.bad` | Syntax error (missing `:`, unknown note name, more than 16 notes, line longer than 127 characters), or a `ui_resources` area older than the sound customization | Fix the file and rename it back to `.ini`; if it still fails, update `ui_resources` (full install or a `ui_resources.bin` from the current kit) |
+| `esp3dtheme.bad` | Invalid file | Check the section names (`[theme1]`…`[theme4]`) and color values |
+| `ui_<code>.bad` | `target_slot` missing or not 1–3, `code`/`name` missing, or the file is larger than 8 KB | Complete the `[info]` section, shorten the file |
+| The kit script refuses to build | An image does not have the original dimensions, or a font has the wrong color format | Resize the image / regenerate the font with the original options |
+| Icons look wrong after an update | The kit does not match the installed firmware | Use the kit of **your** firmware version |
+| A sound is shorter than written | It exceeds its [limit](#sounds) | Shorten it |
+
+:::tip[Technical internals]
+For implementation details, see the CodeWiki: [Update Service](/esp3d-x/version_2x/documentation/codewiki/update_service/), [Buzzer](/esp3d-x/version_2x/documentation/codewiki/buzzer/), [Translations](/esp3d-x/version_2x/documentation/codewiki/translations/), [UI resources tools](/esp3d-x/version_2x/documentation/codewiki/tools_build_scripts_ui_resources/).
+:::

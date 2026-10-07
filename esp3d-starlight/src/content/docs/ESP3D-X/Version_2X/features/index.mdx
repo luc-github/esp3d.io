@@ -4,106 +4,128 @@ title: "Features"
 
 # ESP3D-X Features
 
-## Communication
+A concise overview of what ESP3D-X can do. Availability depends on the **hardware profile**, the **machine target**, and the build configuration — see below.
 
-* **Serial** : UART communication with the machine controller
-* **Bluetooth** : BLE and Classic Bluetooth Serial
-* **WiFi** : Access Point and Station modes
-* **TCP** : Socket server / client
-* **WebSocket** : Server (`/ws` for WebUI, `/wsdata` for V1 data tools) and client modes
-* **WebUI** : Embedded web interface (monolithic gzipped HTML, offline-safe)
-* **Telnet** : Light TCP socket bridge
-* **mDNS / SSDP** : Network discovery
+## Hardware profiles
 
-## Machine Control
+The same firmware adapts to very different boards:
 
-* **Target firmwares** : FluidNC, grblHAL, grbl, Marlin, Smoothieware, Repetier
-* **4-axis jogging** : continuous, step, and rapid modes
-* **Real-time status monitoring** : position, feed rate, spindle, overrides
+| Profile | What it is | Example |
+|---|---|---|
+| **Full pendant** | TFT touchscreen + rotary encoder + buttons + switch + potentiometer + buzzer | PiBot Pendant V1 |
+| **Touch pendant** | TFT touchscreen only — physical controls emulated on screen | ESP32-S3 touch boards |
+| **Headless board** | No screen, no LVGL — pure WiFi↔serial bridge driven from the WebUI | ESP32-C3 Bare |
+
+Feature groups marked 🖥️ require a display; everything else also works headless.
+
+## Machine Control — CNC
+
+Available with FluidNC, grblHAL or grbl targets:
+
+* **Jogging** — continuous, step and rapid modes, up to 4 axes, configurable jog steps and feedrates
+* **Real-time status** — position (WPos/MPos), feed rate, spindle, overrides, pin states, job progress
 * **Homing control**
-* **Probe support**
-* **Tool change workflow**
-* **Macro execution** : stream G-code macros from local filesystem
-* **G-code streaming** : host-initiated streaming with pause/resume/abort scripts
+* **Probe workflow** — guided probing with offset, max travel, retract and feedrate parameters
+* **Tool change workflow** — assisted manual tool change with optional probe
+* **Macros** — store, organize and stream G-code macros from the local filesystem
+* **G-code streaming** — host-initiated streaming with flow control, pause / resume / abort
+* **SD job launch** — run jobs from the controller's SD card (`$SD/Run` on FluidNC/grblHAL)
 
-## Hardware Inputs
+## Machine Control — 3D Printers 🚧
 
-The firmware adapts to available physical inputs. The reference implementation (PiBot V1) includes:
+* **Protocol layer** — command handlers for Marlin, Repetier and Smoothieware are in the tree
+* **Dedicated 3D UI** (temperatures, bed, filament flows) — **in progress**, not yet available in current builds
 
-* **Rotary encoder** : menu navigation, value adjustment, jogging by steps
-* **Physical buttons** : 3 buttons for navigation, selection, and quick actions (mirrored on screen as virtual buttons)
-* **4-position switch** : context-sensitive selection (axis, view mode, operation mode)
-* **Potentiometer** : analog control for detail view selection and action modes
-* **Touchscreen** : direct UI interaction when capacitive touch is available
+## Connectivity (to the machine)
 
-Boards without physical inputs can use `ESP3D_EMULATE_HARDWARE` to enable on-screen controls.
+* **UART serial** — wired link to the controller (RJ11), configurable baud rate, RX/TX pin swap
+* **Bluetooth Classic SPP** — wireless serial link to the controller
+* **Bluetooth LE (GATT)** — low-energy wireless link to the controller
+* **TCP socket client** — CNC over WiFi (raw TCP)
+* **WebSocket client** — CNC over WiFi (`ws://`), with mDNS server discovery
+* **Output selection** — switch the active transport (from the UI 🖥️ or by command)
+* **Bridge mode** — with `TARGET_FW_NONE`, the board acts as a standalone WiFi+SD bridge
 
-## Display & UI
+## Network & Web Services
 
-* 3.2" TFT display with **LVGL 9.2.x**
-* Capacitive touchscreen support
-* UI rotation support (0°, 90°, 180°, 270°)
-* Theme support (Blue, Green, Red, Orange, Yellow, Purple, Pink, Gray, White)
-* Multi-language support
-* Screen lock / unlock with optional hide-lock mode
-* Brightness control
+* **WiFi** — Station and Access Point modes, static IP or DHCP (on-screen scan 🖥️)
+* **Embedded WebUI** — monolithic gzipped web interface served from flash, works offline on LAN
+* **HTTP server** — REST-style endpoints for commands, files, config and update
+* **WebSocket server** — `/ws` terminal endpoint (WebUI) and `/wsdata` binary endpoint (V1 protocol for tools)
+* **WebDAV** — mount the device filesystem and SD card from any WebDAV client
+* **Telnet** — light TCP socket bridge
+* **mDNS / SSDP** — zero-configuration network discovery
+* **NTP time sync** — internet time with timezone support (STA mode)
+* **HTTPS / WSS** — TLS for the embedded server (optional, requires PSRAM boards)
 
-## File & Storage
+## Display & UI 🖥️
 
-* **MicroSD card** support (Native SPI, SDIO where available)
-* **LittleFS** local filesystem on flash
-* **Global FS** under WebDAV : SD + Local FS unified view
-* File transfer via HTTP multipart, WebDAV, and WebSocket V1 binary protocol
-* Configuration file (`esp3dcnf.ini`) on SD for initial setup
-* SD-based firmware updates without dual APP partitions (Factory partition mode)
+* **LVGL 9.2.x touchscreen UI** — purpose-built screens: splash, main menu, jog, status, files, macros, probe, settings
+* **Themes** — 9 color themes (Blue, Green, Red, Orange, Yellow, Purple, Pink, Gray, White)
+* **Multi-language** — translation packs loadable from SD card
+* **Screen rotation** — 0°, 90°, 180°, 270°
+* **Brightness control & screen timeout**
+* **Screen lock** — with optional hidden-lock mode
+* **Virtual buttons** — on-screen mirrors of physical controls, or full touch-only operation
 
-## Factory Partition Update
+## Hardware Inputs 🖥️
 
-When at least 2 hardware buttons are assigned (**Next** and **OK**), the firmware can use a **dedicated factory partition**. This allows updating the firmware from SD card **without requiring two APP partitions**, saving flash space on memory-constrained boards.
+* **Rotary encoder** — menu navigation, value adjustment, step jogging
+* **Physical buttons** — navigation, selection and quick actions
+* **4-position switch** — context-sensitive selection (axis, view, mode)
+* **Potentiometer** — analog control for detail views and action modes
+* **Buzzer** — audio feedback and alarms
+* **Input emulation** — boards without physical inputs expose on-screen equivalents (`ESP3D_EMULATE_HARDWARE`)
 
-## Network Services
+## Files & Storage
 
-* WebDAV file access
-* WebSocket terminal and data endpoints
-* Telnet socket server
-* mDNS and SSDP discovery
+* **MicroSD card** — SPI (SDIO where the board allows)
+* **Flash filesystem** — LittleFS (default) or FAT
+* **Global filesystem** — unified SD + flash view over WebDAV
+* **File transfer** — HTTP multipart upload, WebDAV, or high-speed WebSocket V1 binary protocol
+* **Configuration file** — `esp3dcnf.ini` on SD for initial setup
+
+## Updates
+
+* **OTA update** — firmware upload over HTTP (WebUI or API)
+* **SD card update** — firmware flashed from SD at boot
+* **Factory partition mode** — SD updates without dual APP partitions, saving flash on constrained boards
+* **WebUI update** — the embedded web interface can be updated independently
+* **Update check at boot** — optional
+
+## Scripting & Automation
+
+* **Lua 5.4 interpreter** — run scripts on-device with machine messaging and GPIO access
+* **Autostart script** — launch a Lua script automatically at boot
+* **[ESPxxx] commands** — full command set over any transport (serial, BT, USB, TCP, WebSocket, HTTP)
 
 ## Notifications
 
-* WebUI toast messages
-* Email (SMTP)
-* Pushover
-* Telegram
-* IFTTT
-* WhatsApp
-* Auto-notification support
+* **On-screen toasts** 🖥️ and WebUI notifications
+* **Email (SMTP)**, **Pushover**, **Telegram**, **IFTTT**, **WhatsApp**, **Home Assistant**
+* **Auto-notification** on events (job done, errors, boot)
 
 ## Security
 
-* Authentication support (admin / user / guest levels)
-* Session timeout configuration
-* Password-protected WiFi and Bluetooth connections
-
-## Time
-
-* Manual time setup
-* Internet time sync via NTP
-* Timezone support
-
-## Update
-
-* OTA firmware update
-* SD card firmware update (with or without factory partition)
-* WebUI update via HTTP upload
-* Check for updates at boot (optional)
+* **Authentication** — admin / user / guest levels
+* **Session timeout** — configurable
+* **Password-protected** WiFi AP and Bluetooth pairing
 
 ## Sensors (optional)
 
-* DHT11/22 temperature & humidity
-* BMP280/BME280 pressure & temperature
-* Analog input (potentiometer)
+* **DHT11 / DHT22** — temperature & humidity
+* **BMP280 / BME280** — pressure & temperature
+* **Analog input** — generic analog sensor
+
+## Camera (planned)
+
+* **Snapshot capture** over HTTP/WebUI — requires an ESP32-S3 board with PSRAM and camera BSP
 
 <aside class="warning-panel" data-icon="alert">
-  <h4>Pre-alpha status</h4>
-  <p>Feature availability depends on build configuration and target board. Some features are work-in-progress.</p>
+  <h4>Feature availability</h4>
+  <p>Not every feature is available on every board: connectivity options are mutually exclusive on memory-constrained hardware (e.g. WiFi and Bluetooth cannot run together without PSRAM), and some services are compile-time options. See the <a href="https://github.com/luc-github/ESP3D-X/blob/main/docs/features/features.md">features × SKU matrix</a> for per-board details.</p>
 </aside>
+
+:::tip[Technical internals]
+For implementation details of any feature — architecture, data flows, source references — browse the [Code Reference](/esp3d-x/version_2x/documentation/codewiki/).
+:::

@@ -184,7 +184,7 @@ The pendant provides audio feedback for user interactions:
 - **Errors/Warnings** - Alert sounds for important notifications
 - **Navigation** - Subtle feedback when scrolling
 
-Audio feedback can be enabled or disabled in the [Settings Screen](#settings-screen).
+Audio feedback can be enabled or disabled in the [Settings Screen](#settings-screen). Each sound can also be changed or muted individually — see [Customization → Sounds](/esp3d-x/version_2x/documentation/customization/#sounds).
 
 ---
 
@@ -226,12 +226,19 @@ The pendant can communicate with CNC firmware through several methods:
 
 ### SD Card Updates
 
-The SD card can be used to update the pendant firmware or restore user settings:
+The SD card can be used to update the pendant firmware, restore user settings, or customize the pendant:
 
 | File | Purpose |
 |:-----|:--------|
 | `esp3dfw.bin` | Firmware update file |
 | `esp3dcnf.ini` | Settings configuration file |
+| `ui_resources.bin` | Icons, logo and fonts (built with the customization kit) |
+| `esp3dres/` folder | Single icon or font patches |
+| `esp3dtheme.ini` | Theme colors |
+| `esp3dsound.ini` | Sounds |
+| `ui_<code>.lng` | Display language pack (e.g. `ui_de.lng`) |
+
+See [Customization](/esp3d-x/version_2x/documentation/customization/) for the format of the customization files.
 
 **Update Process:**
 
@@ -1382,6 +1389,8 @@ This allow to change the color scheme of the UI.
 
 Setting is saved automaticaly when you press menu or set button, if you press cancel button instead of set button, operation is canceled.
 
+> **Tip:** the colors of each of the 4 themes can be customized — see [Customization → Theme colors](/esp3d-x/version_2x/documentation/customization/#theme-colors).
+
 ---
 
 ### Languages Screen
@@ -1413,10 +1422,11 @@ Language pack selection for the UI.
 
 **Features:**
 
-- Lists all available language packs from SD card
-- Immediate language switching
+- Lists English (built in) and the languages installed on the pendant (up to 3; French, Spanish and Italian by default)
+- Immediate language switching, no restart needed
+- **Refresh** button to re-read the installed languages
 
-> **Note:** The language pack file must be present on the SD card at startup to be loaded.
+> **Note:** Language packs are stored on the pendant. To install or replace one, copy a `ui_<code>.lng` file to the SD card root and power on — see [Customization → Display languages](/esp3d-x/version_2x/documentation/customization/#display-languages).
 
 
 <div align="center">
@@ -1513,6 +1523,8 @@ Setting is saved automaticaly when you press menu or set button, if you press ca
 
 
 Enable or Mute Sound by toggle, the displayed icon represent the current state.
+
+> **Tip:** each sound can also be changed or muted individually — see [Customization → Sounds](/esp3d-x/version_2x/documentation/customization/#sounds).
 
 **Hardware Controls:** Touch, Buttons
 

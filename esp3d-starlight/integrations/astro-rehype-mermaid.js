@@ -2,7 +2,7 @@ import { fromHtml } from 'hast-util-from-html';
 import { toHtml } from 'hast-util-to-html';
 import { toHast } from 'mdast-util-to-hast';
 import { visit } from 'unist-util-visit';
-import rehypeMermaid from 'rehype-mermaid';
+import rehypeMermaid from './rehype-mermaid-cached.js';
 
 /** Transforme le bloc mermaid en HTML avant le highlighting */
 const remarkMermaidToHtml = () => (tree) => {
